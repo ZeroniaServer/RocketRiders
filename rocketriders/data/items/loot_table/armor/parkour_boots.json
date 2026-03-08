@@ -11,7 +11,7 @@
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_green",
                   "italic": false,

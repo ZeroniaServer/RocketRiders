@@ -25,7 +25,7 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "slot": "feet"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "bold": true,
                   "color": "#2C248A",
                   "italic": false,

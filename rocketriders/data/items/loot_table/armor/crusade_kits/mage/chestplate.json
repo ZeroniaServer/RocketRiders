@@ -71,7 +71,8 @@
                   },
                   " Mage Chestplate"
                 ]
-              ]
+              ],
+              "target": "item_name"
             }
           ],
           "name": "minecraft:leather_chestplate",

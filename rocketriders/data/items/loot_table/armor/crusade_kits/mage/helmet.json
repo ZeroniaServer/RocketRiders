@@ -118,7 +118,8 @@
                   },
                   " Mage Mask"
                 ]
-              ]
+              ],
+              "target": "item_name"
             }
           ],
           "name": "minecraft:pale_oak_fence_gate",

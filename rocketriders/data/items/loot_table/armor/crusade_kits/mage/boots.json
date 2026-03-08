@@ -71,7 +71,8 @@
                   },
                   " Mage Boots"
                 ]
-              ]
+              ],
+              "target": "item_name"
             }
           ],
           "name": "minecraft:leather_boots",

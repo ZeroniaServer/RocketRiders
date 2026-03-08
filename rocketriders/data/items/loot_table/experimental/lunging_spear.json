@@ -94,7 +94,8 @@
                     }
                   ]
                 }
-              ]
+              ],
+              "target": "item_name"
             }
           ],
           "name": "minecraft:iron_spear",

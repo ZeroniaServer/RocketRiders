@@ -1,7 +1,7 @@
 [
   {
     "components": {
-      "minecraft:custom_name": {
+      "minecraft:item_name": {
         "bold": true,
         "color": "dark_purple",
         "italic": false,

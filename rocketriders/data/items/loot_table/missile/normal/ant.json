@@ -114,7 +114,8 @@
                   },
                   "A.N.T."
                 ]
-              ]
+              ],
+              "target": "item_name"
             },
             {
               "function": "minecraft:reference",

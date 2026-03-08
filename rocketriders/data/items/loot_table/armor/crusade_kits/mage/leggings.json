@@ -71,7 +71,8 @@
                   },
                   " Mage Leggings"
                 ]
-              ]
+              ],
+              "target": "item_name"
             }
           ],
           "name": "minecraft:leather_leggings",

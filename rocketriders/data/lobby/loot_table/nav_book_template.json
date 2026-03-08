@@ -10,7 +10,7 @@
                   "navbook": true
                 },
                 "minecraft:item_model": "minecraft:knowledge_book",
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_green",
                   "italic": false,

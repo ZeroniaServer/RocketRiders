@@ -114,7 +114,8 @@
                   },
                   "Broadsword"
                 ]
-              ]
+              ],
+              "target": "item_name"
             },
             {
               "function": "minecraft:reference",

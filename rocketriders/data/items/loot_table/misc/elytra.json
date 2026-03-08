@@ -36,7 +36,7 @@
                   "equip_sound": "minecraft:intentionally_empty",
                   "slot": "chest"
                 },
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_purple",
                   "italic": false,

@@ -6,7 +6,7 @@
           "functions": [
             {
               "components": {
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "bold": true,
                   "color": "gold",
                   "italic": false,
@@ -59,7 +59,8 @@
                   }
                 },
                 " Flag"
-              ]
+              ],
+              "target": "item_name"
             }
           ],
           "name": "minecraft:yellow_banner",

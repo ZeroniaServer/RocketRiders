@@ -25,7 +25,7 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "slot": "feet"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "bold": true,
                       "color": "dark_gray",
                       "italic": false,
@@ -60,7 +60,7 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "slot": "feet"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "bold": true,
                       "color": "#CD7F32",
                       "italic": false,
@@ -94,7 +94,7 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "slot": "feet"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "bold": true,
                       "color": "gray",
                       "italic": false,
@@ -128,7 +128,7 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "slot": "feet"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "bold": true,
                       "color": "gold",
                       "italic": false,
@@ -162,7 +162,7 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "slot": "feet"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "bold": true,
                       "color": "aqua",
                       "italic": false,
@@ -195,7 +195,7 @@
                       "equip_sound": "minecraft:intentionally_empty",
                       "slot": "feet"
                     },
-                    "minecraft:custom_name": {
+                    "minecraft:item_name": {
                       "bold": true,
                       "color": "red",
                       "italic": false,

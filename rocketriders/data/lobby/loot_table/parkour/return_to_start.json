@@ -22,7 +22,7 @@
                   ]
                 },
                 "minecraft:item_model": "minecraft:clock",
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "bold": true,
                   "color": "yellow",
                   "italic": false,

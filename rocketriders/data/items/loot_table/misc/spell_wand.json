@@ -148,7 +148,8 @@
                   },
                   "Spell Wand"
                 ]
-              ]
+              ],
+              "target": "item_name"
             },
             {
               "components": {

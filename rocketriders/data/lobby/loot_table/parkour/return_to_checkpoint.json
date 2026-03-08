@@ -22,7 +22,7 @@
                   ]
                 },
                 "minecraft:item_model": "minecraft:compass",
-                "minecraft:custom_name": {
+                "minecraft:item_name": {
                   "bold": true,
                   "color": "aqua",
                   "italic": false,

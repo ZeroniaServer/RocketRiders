@@ -404,7 +404,8 @@
                   },
                   "Flag of Shameful Loss"
                 ]
-              ]
+              ],
+              "target": "item_name"
             },
             {
               "function": "minecraft:reference",

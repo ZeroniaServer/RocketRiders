@@ -56,7 +56,8 @@
                   },
                   " Knight Helmet"
                 ]
-              ]
+              ],
+              "target": "item_name"
             }
           ],
           "name": "minecraft:netherite_helmet",

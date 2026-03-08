@@ -57,7 +57,8 @@
                   },
                   "Shield"
                 ]
-              ]
+              ],
+              "target": "custom_name"
             },
             {
               "function": "minecraft:reference",

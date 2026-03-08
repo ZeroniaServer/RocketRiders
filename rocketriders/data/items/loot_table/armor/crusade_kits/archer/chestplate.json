@@ -56,7 +56,8 @@
                   },
                   " Archer Chestplate"
                 ]
-              ]
+              ],
+              "target": "item_name"
             }
           ],
           "name": "minecraft:chainmail_chestplate",

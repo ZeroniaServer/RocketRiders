@@ -35,5 +35,5 @@ execute if entity @e[x=0,type=marker,tag=SwappingSides] if score QuickSwap swaps
 execute if entity @e[x=0,type=marker,tag=SwappingSides] if score QuickSwap swapside matches 1 run scoreboard players set SwapPlatformSec swapside 20
 execute if entity @e[x=0,type=marker,tag=SwappingSides] run scoreboard players set SwapPlatformTick swapside 0
 execute if entity @e[x=0,type=marker,tag=SwappingSides] as @a[x=0,predicate=!custom:team/lobby] at @s run playsound entity.zombie_villager.converted master @s ~ ~ ~ 1 1.2
-execute if predicate rr_swap:yellow_team_is_dark as @e[x=0,type=marker,tag=SwappingSides] run function rr_swap:baseswap/lightyellow
-execute if predicate rr_swap:yellow_team_is_light as @e[x=0,type=marker,tag=SwappingSides] run function rr_swap:baseswap/darkyellow
+execute if predicate rr_swap:yellow_team_is_dark as @e[x=0,type=marker,tag=SwappingSides] run function rr_swap:baseswap/dark_blue_light_yellow
+execute if predicate rr_swap:yellow_team_is_light as @e[x=0,type=marker,tag=SwappingSides] run function rr_swap:baseswap/light_blue_dark_yellow

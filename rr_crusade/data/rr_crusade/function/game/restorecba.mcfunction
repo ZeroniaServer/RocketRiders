@@ -25,6 +25,10 @@ execute unless score $CBAcd crusadehp matches 1.. if score $CBAprecd crusadehp m
 execute if score $CBA crusadehp matches 1.. unless score $CBAcd crusadehp matches 1.. positioned 38 49 -37 run playsound minecraft:block.respawn_anchor.set_spawn master @a[x=0] ~ ~ ~ 2 2
 execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 1.. positioned 38 49 -37 run playsound minecraft:block.respawn_anchor.deplete master @a[x=0] ~ ~ ~ 2 2
 
+execute unless score $CBA crusadehp matches 1.. run fill 36 47 -39 40 51 -35 air
+execute unless score $CBA crusadehp matches 1.. run fill 35 52 -39 41 52 -37 air
+execute unless score $CBA crusadehp matches 1.. positioned 38.5 49.6 -36.5 run function rr_crusade:game/crystal_destroyed_particles
+
 #> Expose Portals
 execute if predicate game:blue_portal_revealed run tellraw @a[x=0,predicate=custom:team/yellow] [{score:{name:"#blue",objective:"text.accent_color"}},"\n",[{score:{name:"#blue",objective:"text.main_color"}},"Both ",{score:{name:"#blue",objective:"text.team_name"}}," Crystals have been destroyed!"],{text:"\nA portal has been exposed; destroy it to win!","italic":true}]
 execute if predicate game:blue_portal_revealed run tellraw @a[x=0,predicate=custom:team/blue] [{score:{name:"#blue",objective:"text.accent_color"}},"\n",[{score:{name:"#blue",objective:"text.main_color"}},"Both of your Crystals have been destroyed!"],{text:"\nYour portal is no longer protected; don't let it get destroyed!","italic":true}]

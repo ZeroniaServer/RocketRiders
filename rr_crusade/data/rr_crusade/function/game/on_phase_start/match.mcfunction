@@ -1,3 +1,7 @@
+execute unless predicate game:match_components/red_for_blue run bossbar set rr_crusade:blue color blue
+execute if predicate game:match_components/red_for_blue run bossbar set rr_crusade:blue color red
+execute unless predicate game:match_components/green_for_yellow run bossbar set rr_crusade:yellow color yellow
+execute if predicate game:match_components/green_for_yellow run bossbar set rr_crusade:yellow color green
 
 #Hotfix for being able to cast spells in queue
 summon marker 33 63 -66 {Tags:["airDetectBlue"]}

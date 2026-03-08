@@ -1,5 +1,2 @@
-# arguments: front, middle, back
-
-$fill -14 34 62 38 63 66 $(back) strict
-$fill -14 34 57 38 63 61 $(middle) strict
-$fill -14 34 52 38 63 56 $(front) strict
+execute unless predicate game:modifiers/hardcore/on run function game:place_arena/bases/yellow_template with storage rocketriders:teams yellow.arena_base_blocks
+execute if predicate game:modifiers/hardcore/on run function game:place_arena/bases/yellow_template_hardcore with storage rocketriders:teams yellow.arena_base_blocks

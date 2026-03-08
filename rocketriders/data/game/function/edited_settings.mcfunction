@@ -1,3 +1,7 @@
+## Resolve any manually changed components
+function game:match_components/resolve
+function game:team_attributes/update_all
+
 ## Close modification room dialogs
 dialog clear @a[x=0]
 

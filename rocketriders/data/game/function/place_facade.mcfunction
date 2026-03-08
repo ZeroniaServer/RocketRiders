@@ -50,14 +50,6 @@ fill -89 202 66 -101 211 66 minecraft:air replace minecraft:barrier strict
 fill -101 207 69 -89 186 87 air replace light_gray_stained_glass
 
 #Clear pregame powerup platform, crystal crafters, mini platforms, flags, and castles
-execute unless predicate game:match_components/red_for_blue run fill -101 195 65 -89 201 64 minecraft:blue_stained_glass
-execute if predicate game:match_components/red_for_blue run fill -101 195 65 -89 201 64 minecraft:red_stained_glass
-execute unless predicate game:match_components/red_for_blue run fill -89 201 63 -101 195 62 minecraft:cyan_stained_glass
-execute if predicate game:match_components/red_for_blue run fill -89 201 63 -101 195 62 minecraft:pink_stained_glass
-fill -101 201 60 -89 195 61 minecraft:white_stained_glass
-fill -89 195 91 -101 201 92 minecraft:yellow_stained_glass
-fill -101 201 93 -89 195 94 minecraft:orange_stained_glass
-fill -89 201 95 -101 195 96 minecraft:white_stained_glass
 fill -89 200 72 -101 202 85 air strict
 
 fill -92 200 81 -98 200 75 air strict
@@ -77,6 +69,14 @@ fill -90 202 95 -90 203 95 air
 fill -100 202 95 -100 203 95 air
 fill -100 202 61 -100 203 61 air
 fill -90 202 61 -90 203 61 air
+
+#Set each base's blocks
+fill -101 195 60 -89 201 65 air strict
+execute unless predicate game:modifiers/hardcore/on run function game:place_facade/bases/blue with storage rocketriders:teams blue.arena_base_blocks
+execute if predicate game:modifiers/hardcore/on run function game:place_facade/bases/blue_hardcore with storage rocketriders:teams blue.arena_base_blocks
+fill -101 195 91 -89 201 96 air strict
+execute unless predicate game:modifiers/hardcore/on run function game:place_facade/bases/yellow with storage rocketriders:teams yellow.arena_base_blocks
+execute if predicate game:modifiers/hardcore/on run function game:place_facade/bases/yellow_hardcore with storage rocketriders:teams yellow.arena_base_blocks
 
 # Frames & Portals
 execute unless predicate game:match_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:obsidian strict
@@ -119,33 +119,8 @@ setblock -95 202 95 air
 # Remove Chase blocks
 fill -101 195 66 -89 209 90 air replace #custom:player_heads strict
 
-## Modifiers
 # Molerat
 execute if predicate game:modifiers/molerat/on run fill -101 207 69 -89 186 87 light_gray_stained_glass replace #custom:lobby_air
-
-#Hardcore pregame queue
-execute if predicate game:modifiers/hardcore/on run fill -89 201 63 -101 195 65 air
-execute if predicate game:modifiers/hardcore/on run fill -89 201 93 -101 195 91 air
-execute if predicate game:modifiers/hardcore/on unless predicate game:match_components/red_for_blue run fill -89 201 62 -101 195 62 blue_stained_glass
-execute if predicate game:modifiers/hardcore/on if predicate game:match_components/red_for_blue run fill -89 201 62 -101 195 62 red_stained_glass
-execute if predicate game:modifiers/hardcore/on unless predicate game:match_components/red_for_blue run fill -89 201 61 -101 195 61 cyan_stained_glass
-execute if predicate game:modifiers/hardcore/on if predicate game:match_components/red_for_blue run fill -89 201 61 -101 195 61 pink_stained_glass
-execute if predicate game:modifiers/hardcore/on run fill -89 201 60 -101 195 60 white_stained_glass
-execute if predicate game:modifiers/hardcore/on run fill -89 201 94 -101 195 94 yellow_stained_glass
-execute if predicate game:modifiers/hardcore/on run fill -89 201 95 -101 195 95 orange_stained_glass
-execute if predicate game:modifiers/hardcore/on run fill -89 201 96 -101 195 96 white_stained_glass
-execute if predicate game:modifiers/hardcore/on run scoreboard players set $was_hardcore_facade global 1
-
-#Reset hardcore pregame queue
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 run fill -89 201 96 -101 195 95 white_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 run fill -89 201 94 -101 195 93 orange_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 run fill -89 201 91 -101 195 92 yellow_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 run fill -89 201 60 -101 195 61 white_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 unless predicate game:match_components/red_for_blue run fill -89 201 62 -101 195 63 cyan_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 if predicate game:match_components/red_for_blue run fill -89 201 62 -101 195 63 pink_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 unless predicate game:match_components/red_for_blue run fill -89 201 65 -101 195 64 blue_stained_glass
-execute unless predicate game:modifiers/hardcore/on if score $was_hardcore_facade global matches 1 if predicate game:match_components/red_for_blue run fill -89 201 65 -101 195 64 red_stained_glass
-execute unless predicate game:modifiers/hardcore/on run scoreboard players reset $was_hardcore_facade global
 
 ## Castle
 execute if predicate game:arena_details/castle run function game:place_facade/castle

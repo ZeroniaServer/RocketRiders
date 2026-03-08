@@ -5,14 +5,18 @@ execute unless predicate game:match_components/red_for_blue run data modify stor
     main: "blue",\
     accent: "cyan",\
     light: "light_blue",\
+    light_accent: "white",\
     dark: "blue",\
+    dark_accent: "black",\
 }
 execute if predicate game:match_components/red_for_blue run data modify storage rocketriders:teams blue.block_color_palette set value \
 {\
     main: "red",\
     accent: "pink",\
     light: "pink",\
+    light_accent: "white",\
     dark: "red",\
+    dark_accent: "black",\
 }
 
 # Yellow
@@ -21,7 +25,9 @@ data modify storage rocketriders:teams yellow.block_color_palette set value \
     main: "yellow",\
     accent: "orange",\
     light: "yellow",\
-    dark: "orange",\
+    light_accent: "white",\
+    dark: "yellow",\
+    dark_accent: "orange",\
 }
 
 ## Arena Base Blocks

@@ -1,3 +1,4 @@
 tag @s remove switchGamemodes
 tag @s add swapEnabled
-function game:reset_match_components
+execute store result score $swap_side global run random value 0..1
+function game:match_components/reset

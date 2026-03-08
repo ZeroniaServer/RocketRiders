@@ -4,8 +4,8 @@ execute unless entity @e[limit=1,x=0,type=marker,tag=swapplatform] run summon ma
 
 #Bases
 execute unless score $swap_side global matches 0..1 run scoreboard players set $swap_side global 0
-execute if score $swap_side global matches 0 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"white",back:"white"},yellow:{front:"dark",middle:"black",back:"black"}}
-execute if score $swap_side global matches 1 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"dark",middle:"black",back:"black"},yellow:{front:"light",middle:"white",back:"white"}}
+execute if score $swap_side global matches 0 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"light_accent",back:"white"},yellow:{front:"dark",middle:"dark_accent",back:"black"}}
+execute if score $swap_side global matches 1 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"dark",middle:"dark_accent",back:"black"},yellow:{front:"light",middle:"light_accent",back:"white"}}
 function game:team_attributes/update_block_palette
 
 #1 = darkblue

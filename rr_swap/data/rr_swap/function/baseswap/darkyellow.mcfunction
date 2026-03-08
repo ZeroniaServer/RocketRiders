@@ -1,6 +1,6 @@
 tag @s remove SwappingSides
 scoreboard players set $swap_side global 0
-data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"white",back:"white"},yellow:{front:"dark",middle:"black",back:"black"}}
+data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"light_accent",back:"white"},yellow:{front:"dark",middle:"dark_accent",back:"black"}}
 function game:team_attributes/update_block_palette
 scoreboard players set SwapPlatform swapside 0
 scoreboard players set BossbarA swapside 0

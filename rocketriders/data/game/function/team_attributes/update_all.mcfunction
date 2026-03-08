@@ -20,13 +20,22 @@ execute if predicate game:match_components/red_for_blue run data modify storage 
 }
 
 # Yellow
-data modify storage rocketriders:teams yellow set value \
+execute unless predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow set value \
 {\
     text: {\
         team_name: "Yellow",\
         team_name_lowercase: "yellow",\
         main_color: {color:"gold",text:""},\
         accent_color: {color:"yellow",text:""},\
+    }\
+}
+execute if predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow set value \
+{\
+    text: {\
+        team_name: "Green",\
+        team_name_lowercase: "green",\
+        main_color: {color:"dark_green",text:""},\
+        accent_color: {color:"green",text:""},\
     }\
 }
 

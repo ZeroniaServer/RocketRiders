@@ -67,7 +67,8 @@ execute if entity @a[x=0,tag=JoinBlue] run function lobby:cancelsettings/reset
 execute as @a[x=0] if score @s joinYellow matches 1 if predicate rr:is_cubekrowd run function servermode:joinyellow
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinYellow
 execute unless predicate game:teams/yellow_is_joinable run tag @a[x=0] remove JoinYellow
-execute if predicate custom:periodic_tick/3 if predicate game:teams/yellow_is_joinable at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:yellow_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/yellow_is_joinable unless predicate game:match_components/green_for_yellow at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:yellow_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/yellow_is_joinable if predicate game:match_components/green_for_yellow at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:green_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute if predicate custom:periodic_tick/3 if predicate game:match_components/neutral_items if predicate game:teams/yellow_is_joinable at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:white_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 2 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinyellow
 execute as @a[x=0,tag=tryJoinYellow] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.yellow] run tag @s remove tryJoinYellow

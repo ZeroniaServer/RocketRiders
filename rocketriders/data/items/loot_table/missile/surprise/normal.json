@@ -60,36 +60,6 @@
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:match_components/red_for_blue"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ],
-              "function": "minecraft:set_components"
-            },
-            {
-              "components": {
-                "minecraft:item_model": "minecraft:squid_spawn_egg"
-              },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:match_components/neutral_items"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:match_components/red_for_blue"
-                },
-                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }

@@ -3,8 +3,10 @@ execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] 
 #> Crystals
 fill -101 200 85 -99 202 85 bedrock
 fill -91 200 85 -89 202 85 bedrock
-fill -101 200 84 -99 202 84 yellow_stained_glass
-fill -91 200 84 -89 202 84 yellow_stained_glass
+execute unless predicate game:match_components/green_for_yellow run fill -101 200 84 -99 202 84 yellow_stained_glass
+execute if predicate game:match_components/green_for_yellow run fill -101 200 84 -99 202 84 green_stained_glass
+execute unless predicate game:match_components/green_for_yellow run fill -91 200 84 -89 202 84 yellow_stained_glass
+execute if predicate game:match_components/green_for_yellow run fill -91 200 84 -89 202 84 green_stained_glass
 fill -99 200 72 -101 202 72 bedrock
 fill -91 200 72 -89 202 72 bedrock
 execute unless predicate game:match_components/red_for_blue run fill -99 200 73 -101 202 73 blue_stained_glass

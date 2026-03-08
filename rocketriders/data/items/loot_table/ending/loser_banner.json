@@ -235,6 +235,13 @@
                   }
                 },
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:match_components/green_for_yellow"
+                  }
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
@@ -254,11 +261,11 @@
                     "pattern": "minecraft:half_horizontal_bottom"
                   },
                   {
-                    "color": "red",
+                    "color": "orange",
                     "pattern": "minecraft:stripe_left"
                   },
                   {
-                    "color": "red",
+                    "color": "orange",
                     "pattern": "minecraft:stripe_bottom"
                   },
                   {
@@ -286,6 +293,90 @@
                     "condition": "minecraft:reference",
                     "name": "game:match_components/custom_team_colors"
                   }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:match_components/green_for_yellow"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ],
+              "function": "minecraft:set_components"
+            },
+            {
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:match_components/custom_team_colors"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/green_for_yellow"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ],
+              "function": "minecraft:set_item",
+              "item": "minecraft:green_banner"
+            },
+            {
+              "components": {
+                "minecraft:banner_patterns": [
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:half_horizontal"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:half_horizontal_bottom"
+                  },
+                  {
+                    "color": "green",
+                    "pattern": "minecraft:stripe_left"
+                  },
+                  {
+                    "color": "green",
+                    "pattern": "minecraft:stripe_bottom"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_left"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_bottom"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "minecraft:stripe_right"
+                  },
+                  {
+                    "color": "white",
+                    "pattern": "square_top_left"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:match_components/custom_team_colors"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/green_for_yellow"
                 },
                 {
                   "condition": "minecraft:reference",

@@ -34,10 +34,10 @@ setblock -10 64 64 bedrock
 fill -10 66 64 -10 72 64 oak_fence replace #custom:air
 
 #Clear behind
-fill -14 64 65 39 74 70 air replace yellow_wool
+fill -14 64 65 39 74 70 air replace #custom:wool
 fill -14 64 65 39 74 70 air replace oak_fence
 fill -14 64 65 39 74 70 air replace purple_stained_glass
-fill -14 64 -65 39 74 -70 air replace yellow_wool
+fill -14 64 -65 39 74 -70 air replace #custom:wool
 fill -14 64 -65 39 74 -70 air replace oak_fence
 fill -14 64 -65 39 74 -70 air replace purple_stained_glass
 

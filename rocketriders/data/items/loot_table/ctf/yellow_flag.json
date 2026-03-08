@@ -26,6 +26,16 @@
             {
               "conditions": [
                 {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/green_for_yellow"
+                }
+              ],
+              "function": "minecraft:set_item",
+              "item": "minecraft:lime_banner"
+            },
+            {
+              "conditions": [
+                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {}

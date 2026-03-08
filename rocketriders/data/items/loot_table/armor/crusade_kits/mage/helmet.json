@@ -64,6 +64,29 @@
               },
               "conditions": [
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:match_components/green_for_yellow"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ],
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:item_model": "minecraft:oak_fence_gate"
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/green_for_yellow"
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }

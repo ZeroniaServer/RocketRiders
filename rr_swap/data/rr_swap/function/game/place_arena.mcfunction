@@ -12,7 +12,8 @@ function game:team_attributes/update_block_palette
 execute if predicate rr_swap:blue_team_is_dark unless predicate game:match_components/red_for_blue run fill 38 34 -61 -14 63 -57 black_stained_glass replace cyan_stained_glass
 execute if predicate rr_swap:blue_team_is_dark if predicate game:match_components/red_for_blue run fill 38 34 -61 -14 63 -57 black_stained_glass replace pink_stained_glass
 execute if predicate rr_swap:blue_team_is_dark run fill -14 34 -62 38 63 -66 black_concrete replace white_stained_glass
-execute if predicate rr_swap:blue_team_is_dark run fill -14 63 57 38 34 61 white_stained_glass replace orange_stained_glass
+execute if predicate rr_swap:blue_team_is_dark unless predicate game:match_components/green_for_yellow run fill -14 63 57 38 34 61 white_stained_glass replace orange_stained_glass
+execute if predicate rr_swap:blue_team_is_dark if predicate game:match_components/green_for_yellow run fill -14 63 57 38 34 61 white_stained_glass replace lime_stained_glass
 execute if predicate rr_swap:blue_team_is_dark run fill 38 34 62 -14 63 66 white_concrete replace white_stained_glass
 
 #0 = darkyellow
@@ -27,7 +28,8 @@ execute if predicate rr_swap:yellow_team_is_dark run fill 38 34 62 -14 63 66 bla
 
 #Hardcore bases
 execute if predicate game:modifiers/hardcore/on if predicate rr_swap:blue_team_is_dark run fill -14 63 66 38 34 66 white_concrete replace white_stained_glass
-execute if predicate game:modifiers/hardcore/on if predicate rr_swap:blue_team_is_dark run fill -14 63 65 38 34 65 white_stained_glass replace orange_stained_glass
+execute if predicate game:modifiers/hardcore/on if predicate rr_swap:blue_team_is_dark unless predicate game:match_components/red_for_blue run fill -14 63 65 38 34 65 white_stained_glass replace orange_stained_glass
+execute if predicate game:modifiers/hardcore/on if predicate rr_swap:blue_team_is_dark if predicate game:match_components/red_for_blue run fill -14 63 65 38 34 65 white_stained_glass replace lime_stained_glass
 execute if predicate game:modifiers/hardcore/on if predicate rr_swap:blue_team_is_dark run fill -14 63 -66 38 34 -66 black_concrete replace white_stained_glass
 execute if predicate game:modifiers/hardcore/on if predicate rr_swap:blue_team_is_dark unless predicate game:match_components/red_for_blue run fill -14 63 -65 38 34 -65 black_stained_glass replace cyan_stained_glass
 execute if predicate game:modifiers/hardcore/on if predicate rr_swap:blue_team_is_dark if predicate game:match_components/red_for_blue run fill -14 63 -65 38 34 -65 black_stained_glass replace pink_stained_glass

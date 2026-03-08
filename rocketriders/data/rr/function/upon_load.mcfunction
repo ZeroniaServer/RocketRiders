@@ -19,7 +19,8 @@ team add rocketriders.sort_999.developer "Developer"
 team modify rocketriders.sort_200.lobby color gray
 execute unless predicate game:match_components/red_for_blue run team modify rocketriders.sort_000.blue color blue
 execute if predicate game:match_components/red_for_blue run team modify rocketriders.sort_000.blue color dark_red
-team modify rocketriders.sort_001.yellow color gold
+execute unless predicate game:match_components/green_for_yellow run team modify rocketriders.sort_001.yellow color gold
+execute if predicate game:match_components/green_for_yellow run team modify rocketriders.sort_001.yellow color dark_green
 team modify rocketriders.sort_100.spectator color dark_gray
 team modify rocketriders.sort_999.developer color dark_green
 

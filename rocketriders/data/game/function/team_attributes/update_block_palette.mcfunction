@@ -20,7 +20,7 @@ execute if predicate game:match_components/red_for_blue run data modify storage 
 }
 
 # Yellow
-data modify storage rocketriders:teams yellow.block_color_palette set value \
+execute unless predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow.block_color_palette set value \
 {\
     main: "yellow",\
     accent: "orange",\
@@ -28,6 +28,15 @@ data modify storage rocketriders:teams yellow.block_color_palette set value \
     light_accent: "white",\
     dark: "yellow",\
     dark_accent: "orange",\
+}
+execute if predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow.block_color_palette set value \
+{\
+    main: "green",\
+    accent: "lime",\
+    light: "lime",\
+    light_accent: "white",\
+    dark: "green",\
+    dark_accent: "black",\
 }
 
 ## Arena Base Blocks

@@ -8,7 +8,8 @@ execute at @s as @a[x=0,tag=!particle_beam.this,tag=!hideParticles,predicate=cus
 
 execute unless predicate game:match_components/red_for_blue at @s[predicate=custom:team/blue] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0x0000FF}
 execute if predicate game:match_components/red_for_blue at @s[predicate=custom:team/blue] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0xFF0000}
-execute at @s[predicate=custom:team/yellow] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0xFFFF00}
+execute unless predicate game:match_components/green_for_yellow at @s[predicate=custom:team/yellow] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0xFFFF00}
+execute if predicate game:match_components/green_for_yellow at @s[predicate=custom:team/yellow] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0x00FF00}
 
 tag @s remove particle_beam.this
 

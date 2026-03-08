@@ -18,8 +18,10 @@ execute if predicate game:phase/staging/queue positioned -90 202 95 unless block
 execute if predicate game:phase/staging/queue positioned -100 202 95 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
 execute if predicate game:phase/staging/queue positioned -90 202 61 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
 execute if predicate game:phase/staging/queue positioned -100 202 61 unless block ~ ~ ~ #custom:glass run function rr_ctf:everytick/randomglass
-execute if predicate game:phase/staging/queue positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute if predicate game:phase/staging/queue positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:phase/staging/queue unless predicate game:match_components/green_for_yellow positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:phase/staging/queue if predicate game:match_components/green_for_yellow positioned -90 203 95 unless block ~ ~ ~ green_banner[rotation=8] run setblock ~ ~ ~ green_banner[rotation=8]
+execute if predicate game:phase/staging/queue unless predicate game:match_components/green_for_yellow positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:phase/staging/queue if predicate game:match_components/green_for_yellow positioned -100 203 95 unless block ~ ~ ~ green_banner[rotation=8] run setblock ~ ~ ~ green_banner[rotation=8]
 execute if predicate game:phase/staging/queue unless predicate game:match_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
 execute if predicate game:phase/staging/queue if predicate game:match_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
 execute if predicate game:phase/staging/queue unless predicate game:match_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]

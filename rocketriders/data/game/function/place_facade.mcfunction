@@ -2,8 +2,10 @@
 kill @e[x=0,tag=facade_entity]
 
 #Join pad colors
-execute unless predicate game:match_components/one_team run fill -82 204 92 -78 212 96 minecraft:yellow_concrete replace #custom:concrete strict
-execute unless predicate game:match_components/one_team run setblock -80 211 94 minecraft:ochre_froglight[axis=y] strict
+execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run fill -82 204 92 -78 212 96 minecraft:yellow_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run setblock -80 211 94 minecraft:ochre_froglight[axis=y] strict
+execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run fill -82 204 92 -78 212 96 minecraft:green_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run setblock -80 211 94 minecraft:verdant_froglight[axis=y] strict
 execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:blue_concrete replace #custom:concrete strict
 execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run setblock -80 211 94 minecraft:sea_lantern strict
 execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:red_concrete replace #custom:concrete strict
@@ -15,7 +17,8 @@ execute if predicate game:match_components/red_for_blue run fill -82 204 60 -78 
 execute if predicate game:match_components/red_for_blue run setblock -80 211 62 minecraft:shroomlight
 
 #Bridge colors
-execute unless predicate game:match_components/one_team run place template lobby:left_bridge/yellow -76 200 86 none none 1 0 strict
+execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run place template lobby:left_bridge/yellow -76 200 86 none none 1 0 strict
+execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run place template lobby:left_bridge/green -76 200 86 none none 1 0 strict
 execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run place template lobby:left_bridge/blue -76 200 86 none none 1 0 strict
 execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run place template lobby:left_bridge/red -76 200 86 none none 1 0 strict
 
@@ -30,9 +33,12 @@ execute if predicate game:match_components/red_for_blue run fill -82 186 66 -81 
 execute if predicate game:match_components/red_for_blue run fill -83 187 70 -83 200 77 minecraft:red_concrete replace #custom:concrete strict
 execute if predicate game:match_components/red_for_blue run fill -84 190 75 -84 199 77 minecraft:red_concrete_powder replace #custom:concrete_powder strict
 #Lobby underside colors (yellow)
-execute unless predicate game:match_components/one_team run fill -82 186 79 -81 201 90 minecraft:yellow_terracotta replace #custom:terracotta strict
-execute unless predicate game:match_components/one_team run fill -83 187 79 -83 200 86 minecraft:yellow_concrete replace #custom:concrete strict
-execute unless predicate game:match_components/one_team run fill -84 190 79 -84 199 81 minecraft:yellow_concrete_powder replace #custom:concrete_powder strict
+execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run fill -82 186 79 -81 201 90 minecraft:yellow_terracotta replace #custom:terracotta strict
+execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run fill -83 187 79 -83 200 86 minecraft:yellow_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run fill -84 190 79 -84 199 81 minecraft:yellow_concrete_powder replace #custom:concrete_powder strict
+execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run fill -82 186 79 -81 201 90 minecraft:green_terracotta replace #custom:terracotta strict
+execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run fill -83 187 79 -83 200 86 minecraft:green_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run fill -84 190 79 -84 199 81 minecraft:green_concrete_powder replace #custom:concrete_powder strict
 execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -82 186 79 -81 201 90 minecraft:blue_terracotta replace #custom:terracotta strict
 execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -83 187 79 -83 200 86 minecraft:blue_concrete replace #custom:concrete strict
 execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -84 190 79 -84 199 81 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
@@ -106,11 +112,13 @@ execute if predicate game:match_components/has_flags run setblock -90 202 95 pur
 execute if predicate game:match_components/has_flags run setblock -100 202 95 purple_stained_glass
 execute if predicate game:match_components/has_flags run setblock -90 202 61 purple_stained_glass
 execute if predicate game:match_components/has_flags run setblock -100 202 61 purple_stained_glass
-execute if predicate game:match_components/has_flags positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute if predicate game:match_components/has_flags positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:match_components/has_flags unless predicate game:match_components/green_for_yellow positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:match_components/has_flags unless predicate game:match_components/green_for_yellow positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
+execute if predicate game:match_components/has_flags if predicate game:match_components/green_for_yellow positioned -90 203 95 unless block ~ ~ ~ green_banner[rotation=8] run setblock ~ ~ ~ green_banner[rotation=8]
+execute if predicate game:match_components/has_flags if predicate game:match_components/green_for_yellow positioned -100 203 95 unless block ~ ~ ~ green_banner[rotation=8] run setblock ~ ~ ~ green_banner[rotation=8]
 execute if predicate game:match_components/has_flags unless predicate game:match_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
-execute if predicate game:match_components/has_flags if predicate game:match_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
 execute if predicate game:match_components/has_flags unless predicate game:match_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
+execute if predicate game:match_components/has_flags if predicate game:match_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
 execute if predicate game:match_components/has_flags if predicate game:match_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
 
 # Remove Chase Flag

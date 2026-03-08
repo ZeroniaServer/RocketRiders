@@ -258,6 +258,71 @@
                   }
                 },
                 {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:match_components/green_for_yellow"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ],
+              "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:charged_projectiles": [
+                  {
+                    "components": {
+                      "custom_data": {
+                        "nova_rocket": {
+                          "firework_rocket": true
+                        }
+                      },
+                      "minecraft:custom_model_data": {
+                        "floats": [
+                          2
+                        ],
+                        "strings": [
+                          "rocketriders",
+                          "nova_rocket/firework_rocket",
+                          "green"
+                        ]
+                      },
+                      "minecraft:fireworks": {
+                        "explosions": [
+                          {
+                            "colors": [
+                              3887386,
+                              4312372
+                            ],
+                            "has_trail": true,
+                            "has_twinkle": true,
+                            "shape": "small_ball"
+                          }
+                        ],
+                        "flight_duration": 3
+                      }
+                    },
+                    "id": "minecraft:firework_rocket"
+                  }
+                ]
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:match_components/neutral_items"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/green_for_yellow"
+                },
+                {
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }

@@ -110,5 +110,39 @@
         "red"
       ]
     }
+  },
+  {
+    "conditions": [
+      {
+        "condition": "minecraft:reference",
+        "name": "custom:team/yellow"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:match_components/green_for_yellow"
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:match_components/neutral_items"
+        }
+      }
+    ],
+    "floats": {
+      "mode": "replace_all",
+      "values": [
+        2
+      ]
+    },
+    "function": "minecraft:set_custom_model_data",
+    "strings": {
+      "mode": "replace_section",
+      "offset": 2,
+      "size": 1,
+      "values": [
+        "green"
+      ]
+    }
   }
 ]

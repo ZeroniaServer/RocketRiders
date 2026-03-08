@@ -47,6 +47,18 @@
                 "minecraft:unbreakable": {}
               },
               "function": "minecraft:set_components"
+            },
+            {
+              "components": {
+                "minecraft:dyed_color": 12379022
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/green_for_yellow"
+                }
+              ],
+              "function": "minecraft:set_components"
             }
           ],
           "name": "minecraft:leather_leggings",

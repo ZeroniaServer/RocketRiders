@@ -7,7 +7,7 @@ execute as @e[x=0,type=marker,tag=crusadeWall] at @s run function rr_crusade:gam
 function rr_crusade:game/glassplacement
 scoreboard players set @e[x=0,type=marker,tag=crusadeWall] CmdData 20
 
-#> Yellow
+#> Blue
 #Objectives
 #Main
 fill 20 45 52 4 55 66 minecraft:crying_obsidian
@@ -22,17 +22,19 @@ execute unless predicate game:match_components/red_for_blue run fill -16 47 -35 
 execute if predicate game:match_components/red_for_blue run fill -16 47 -35 -12 51 -39 minecraft:red_stained_glass
 fill -16 51 -40 -12 47 -40 light[level=1]
 
-#> Blue
+#> Yellow
 #Objectives
 #Main
 fill 4 55 -52 20 45 -66 minecraft:crying_obsidian
 #A
 fill -17 52 39 -11 52 37 bedrock
-fill -12 47 39 -16 51 35 minecraft:yellow_stained_glass
+execute unless predicate game:match_components/green_for_yellow run fill -12 47 39 -16 51 35 minecraft:yellow_stained_glass
+execute if predicate game:match_components/green_for_yellow run fill -12 47 39 -16 51 35 minecraft:green_stained_glass
 fill -16 51 40 -12 47 40 light[level=1]
 #B
 fill 35 52 39 41 52 37 bedrock
-fill 40 47 35 36 51 39 minecraft:yellow_stained_glass
+execute unless predicate game:match_components/green_for_yellow run fill 40 47 35 36 51 39 minecraft:yellow_stained_glass
+execute if predicate game:match_components/green_for_yellow run fill 40 47 35 36 51 39 minecraft:green_stained_glass
 fill 36 51 40 40 47 40 light[level=1]
 
 #> prepare crystals and health

@@ -94,6 +94,13 @@
         }
       },
       {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:match_components/green_for_yellow"
+        }
+      },
+      {
         "condition": "minecraft:reference",
         "name": "custom:team/yellow"
       }
@@ -115,6 +122,47 @@
       "components": {
         "minecraft:trim": {
           "material": "minecraft:gold",
+          "pattern": "minecraft:raiser"
+        }
+      },
+      "function": "minecraft:set_components"
+    }
+  },
+  {
+    "conditions": [
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:match_components/one_team"
+        }
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:match_components/green_for_yellow"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "custom:team/yellow"
+      }
+    ],
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "items": "#custom:helmets"
+    },
+    "on_fail": {
+      "components": {
+        "minecraft:trim": {
+          "material": "minecraft:emerald",
+          "pattern": "minecraft:spire"
+        }
+      },
+      "function": "minecraft:set_components"
+    },
+    "on_pass": {
+      "components": {
+        "minecraft:trim": {
+          "material": "minecraft:emerald",
           "pattern": "minecraft:raiser"
         }
       },

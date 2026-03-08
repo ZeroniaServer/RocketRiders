@@ -1,11 +1,7 @@
 [
   {
     "components": {
-      "minecraft:dyed_color": 3949738,
-      "minecraft:trim": {
-        "material": "minecraft:quartz",
-        "pattern": "minecraft:vex"
-      }
+      "minecraft:dyed_color": 3949738
     },
     "conditions": [
       {
@@ -24,11 +20,7 @@
   },
   {
     "components": {
-      "minecraft:dyed_color": 16711680,
-      "minecraft:trim": {
-        "material": "minecraft:quartz",
-        "pattern": "minecraft:vex"
-      }
+      "minecraft:dyed_color": 16711680
     },
     "conditions": [
       {
@@ -44,13 +36,32 @@
   },
   {
     "components": {
-      "minecraft:dyed_color": 16768000,
-      "minecraft:trim": {
-        "material": "minecraft:netherite",
-        "pattern": "minecraft:spire"
-      }
+      "minecraft:dyed_color": 16768000
     },
     "conditions": [
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:match_components/green_for_yellow"
+        }
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "custom:team/yellow"
+      }
+    ],
+    "function": "minecraft:set_components"
+  },
+  {
+    "components": {
+      "minecraft:dyed_color": 8439583
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:reference",
+        "name": "game:match_components/green_for_yellow"
+      },
       {
         "condition": "minecraft:reference",
         "name": "custom:team/yellow"

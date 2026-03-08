@@ -15,7 +15,8 @@ execute if score $CYB crusadehp matches 1.. unless predicate game:game_rules/dis
 execute if score $CYB crusadehp matches 1.. positioned 38 49 37 run kill @a[gamemode=!creative,gamemode=!spectator,predicate=custom:team/any_playing_team,distance=..5]
 execute if score $CYB crusadehp matches 1.. unless predicate game:game_rules/disable_death_messages/on run function custom:game_rules/show_death_messages/on
 execute if score $CYB crusadehp matches 1.. unless score $CYBcd crusadehp matches 1.. positioned 35.999 46.999 34.999 as @e[dx=4.002,dy=4.002,dz=4.002,type=marker,tag=obsidianshield] positioned as @s run function everytick:obsidian_shield_break
-execute if score $CYB crusadehp matches 1.. unless score $CYBcd crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:yellow_stained_glass
+execute if score $CYB crusadehp matches 1.. unless score $CYBcd crusadehp matches 1.. unless predicate game:match_components/green_for_yellow run fill 36 47 35 40 51 39 minecraft:yellow_stained_glass
+execute if score $CYB crusadehp matches 1.. unless score $CYBcd crusadehp matches 1.. if predicate game:match_components/green_for_yellow run fill 36 47 35 40 51 39 minecraft:green_stained_glass
 execute if score $CYB crusadehp matches 1.. run function rr_crusade:game/place_crystal/yellow_b
 execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:tinted_glass
 execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. run data modify entity @e[limit=1,x=0,type=end_crystal,tag=CrusadeYellowB] Invulnerable set value true
@@ -29,7 +30,8 @@ execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=cu
 execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=custom:team/yellow] [{score:{name:"#yellow",objective:"text.accent_color"}},"\n",[{score:{name:"#yellow",objective:"text.main_color"}},"Both of your Crystals have been destroyed!"],{text:"\nYour portal is no longer protected; don't let it get destroyed!","italic":true}]
 execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=!custom:team/any_playing_team] [{score:{name:"#yellow",objective:"text.main_color"}},"\nBoth ",{score:{name:"#yellow",objective:"text.team_name"}}," Crystals have been destroyed!"]
 execute if predicate game:yellow_portal_revealed run function rr_crusade:game/cancel_utility
-execute if predicate game:yellow_portal_revealed run fill 4 45 52 20 55 66 minecraft:yellow_stained_glass strict
+execute if predicate game:yellow_portal_revealed unless predicate game:match_components/green_for_yellow run fill 4 45 52 20 55 66 minecraft:yellow_stained_glass strict
+execute if predicate game:yellow_portal_revealed if predicate game:match_components/green_for_yellow run fill 4 45 52 20 55 66 minecraft:green_stained_glass strict
 execute if predicate game:yellow_portal_revealed run function game:place_portal/yellow
 
 execute unless score $CYB crusadehp matches 1.. run tellraw @a[x=0] [""]

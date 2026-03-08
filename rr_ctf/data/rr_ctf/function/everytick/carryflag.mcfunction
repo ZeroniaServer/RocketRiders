@@ -68,8 +68,8 @@ item replace entity @a[x=0,tag=CarryFlag,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryF
 execute as @a[x=0,tag=CarryFlag] unless entity @s[scores={FlagScore=110..}] run scoreboard players add @s FlagScore 1
 
 execute as @a[x=0,tag=CarryFlag,scores={FlagScore=1}] run function custom:update_armor
-execute if entity @a[limit=1,x=0,tag=CarryFY1,scores={FlagScore=1}] run fill 34 65 63 30 72 64 air replace yellow_wool
-execute if entity @a[limit=1,x=0,tag=CarryFY2,scores={FlagScore=1}] run fill -10 66 64 -14 65 63 air replace yellow_wool
+execute if entity @a[limit=1,x=0,tag=CarryFY1,scores={FlagScore=1}] run fill 34 65 63 30 72 64 air replace #custom:wool
+execute if entity @a[limit=1,x=0,tag=CarryFY2,scores={FlagScore=1}] run fill -10 66 64 -14 65 63 air replace #custom:wool
 execute if entity @a[limit=1,x=0,tag=CarryFB1,scores={FlagScore=1}] run fill -14 65 -64 -10 66 -65 air replace #custom:wool
 execute if entity @a[limit=1,x=0,tag=CarryFB2,scores={FlagScore=1}] run fill 30 65 -64 34 66 -65 air replace #custom:wool
 execute if entity @a[limit=1,x=0,tag=CarryFlag,scores={FlagScore=1}] as @a[x=0,predicate=!custom:team/lobby] at @s run playsound entity.ender_dragon.flap master @s ~ ~ ~ 1 2

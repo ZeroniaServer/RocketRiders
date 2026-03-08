@@ -21,10 +21,16 @@
         "command": "/trigger dev set 15",
         "type": "minecraft:run_command"
       },
-      "label": {
-        "color": "gold",
-        "text": "Yellow"
-      }
+      "label": [
+        {
+          "color": "gold",
+          "text": "Yellow"
+        },
+        {
+          "color": "gray",
+          "text": " (or Green)"
+        }
+      ]
     },
     {
       "action": {

@@ -9,6 +9,8 @@ execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:pl
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_nova_attach
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_spell_emitter
 
+worldborder warning distance 0
+
 ## Gamemode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/play
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_end/match/play

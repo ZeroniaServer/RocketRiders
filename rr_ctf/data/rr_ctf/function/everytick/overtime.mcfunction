@@ -8,7 +8,7 @@ execute if entity @s[scores={SDtime=20..}] run scoreboard players reset @s SDtim
 scoreboard players add @s SDtime 1
 
 ##Preparing for tiebreaker
-execute if entity @s[scores={SDtime=1}] run worldborder warning distance 1000000
+execute if entity @s[scores={SDtime=1}] if predicate game:phase/match/play run worldborder warning distance 1000000
 #Halves the Item Delay (more intense gameplay)
 scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /= $2 constant
 scoreboard players set @s[scores={SDtime=1,MaxItemTime=..1}] MaxItemTime 2

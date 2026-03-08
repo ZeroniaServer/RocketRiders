@@ -18,3 +18,6 @@ function game:match_components/reset
 
 # remove unused scoreboard objectives
 scoreboard objectives remove PlayerCap
+
+# misc
+scoreboard players reset $was_hardcore_facade global

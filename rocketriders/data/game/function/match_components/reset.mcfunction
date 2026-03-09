@@ -11,11 +11,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsEnab
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxEnabled] run function rr_sandbox:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run function rr_swap:set_base_match_components
 
-# Instantly resolve `$max_players_per_team global` score.
-function everytick:resolve_max_players_per_team
-
-# Resolve arena components
+# Resolve components
 function game:match_components/resolve
 
-# Update team attributes
-function game:team_attributes/update_all
+# Instantly resolve `$max_players_per_team global` score.
+function everytick:resolve_max_players_per_team

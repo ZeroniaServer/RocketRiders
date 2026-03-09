@@ -49,7 +49,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifier
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=11}] unless predicate game:modifiers/ninja_jump/on run tellraw @s ["",{"text":"Ninja Jump","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Hardcore
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=12}] if predicate game:modifiers/hardcore/on run tellraw @s ["",{"text":"Hardcore","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players have three hearts of health and bases are one block thick.","color":"gray","italic":true}]
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=12}] if predicate game:modifiers/hardcore/on run tellraw @s ["",{"text":"Hardcore","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players have three hearts of health and bases are only three blocks thick.","color":"gray","italic":true}]
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,scores={modifierID=12}] unless predicate game:modifiers/hardcore/on run tellraw @s ["",{"text":"Hardcore","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Double Portal

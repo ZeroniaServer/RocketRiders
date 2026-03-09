@@ -20,7 +20,7 @@
     "announce_to_chat": true,
     "description": {
       "color": "red",
-      "text": "Lose 5 Crusade Mode games in a row."
+      "text": "Lose 5 Crusade Mode matches in a row."
     },
     "frame": "goal",
     "hidden": false,

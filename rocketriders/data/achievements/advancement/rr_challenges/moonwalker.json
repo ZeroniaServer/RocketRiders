@@ -8,7 +8,7 @@
     "announce_to_chat": true,
     "description": {
       "color": "red",
-      "text": "Walk backwards for the entire game."
+      "text": "Walk backwards for an entire match."
     },
     "frame": "challenge",
     "hidden": false,

@@ -8,7 +8,7 @@
     "announce_to_chat": true,
     "description": {
       "color": "red",
-      "text": "Sprint and jump for the entire game."
+      "text": "Continuously sprint and jump for an entire match."
     },
     "frame": "challenge",
     "hidden": false,

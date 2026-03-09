@@ -87,3 +87,19 @@ execute if score $CBA crusadehp matches 1.. run fill 41 52 -39 35 52 -37 bedrock
 execute if score $CBB crusadehp matches 1.. run fill -11 52 -39 -17 52 -37 bedrock strict
 execute if score $CYA crusadehp matches 1.. run fill -17 52 39 -11 52 37 bedrock strict
 execute if score $CYB crusadehp matches 1.. run fill 35 52 39 41 52 37 bedrock strict
+
+## Regenerating main features
+#middle wall
+execute as @e[x=0,type=marker,tag=crusadeWall] at @s run function rr_crusade:game/wallplacement
+
+#regenerate glass every 30 seconds
+scoreboard players add @e[x=0,type=marker,tag=crusadeWall] CmdData 1
+execute as @e[x=0,type=marker,tag=crusadeWall,scores={CmdData=2400..}] run function rr_crusade:game/glassplacement
+execute as @e[x=0,type=marker,tag=crusadeWall,scores={CmdData=2400..}] run scoreboard players set @s CmdData 0
+
+#place pathways
+function rr_crusade:arenaclear/pathways
+
+#Top layer regen
+execute as @e[x=0,type=marker,tag=airDetectBlue,limit=1] at @s run function rr_crusade:game/airdetectblue
+execute as @e[x=0,type=marker,tag=airDetectYellow,limit=1] at @s run function rr_crusade:game/airdetectyellow

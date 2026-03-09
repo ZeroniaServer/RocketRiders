@@ -22,8 +22,8 @@ scoreboard players add $playercount CmdData 0
 execute if entity @a[x=0,tag=flagschamp] run scoreboard players add $playercount CmdData 1
 execute if entity @a[x=0,tag=killschamp] run scoreboard players add $playercount CmdData 1
 execute if entity @a[x=0,tag=deathchamp] run scoreboard players add $playercount CmdData 1
-execute if entity @s[tag=YellowWon] run tellraw @a[x=0] [{score:{name:"#yellow",objective:"text.main_color"}},"Team ",{score:{name:"#yellow",objective:"text.team_name"}}," Won!"]
-execute if entity @s[tag=BlueWon] run tellraw @a[x=0] [{score:{name:"#blue",objective:"text.main_color"}},"Team ",{score:{name:"#blue",objective:"text.team_name"}}," Won!"]
+execute if entity @s[tag=YellowWon] run tellraw @a[x=0] [{bold:true,score:{name:"#yellow",objective:"text.main_color"}},"Team ",{score:{name:"#yellow",objective:"text.team_name"}}," Won!"]
+execute if entity @s[tag=BlueWon] run tellraw @a[x=0] [{bold:true,score:{name:"#blue",objective:"text.main_color"}},"Team ",{score:{name:"#blue",objective:"text.team_name"}}," Won!"]
 execute if entity @s[tag=BothWon] run tellraw @a[x=0] ["",{"text":"Everyone Wins!","color":"green","bold":true}]
 execute if score $playercount CmdData matches 1.. run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Match Statistics:","color":"dark_green","italic":true}]
 

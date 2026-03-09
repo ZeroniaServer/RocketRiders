@@ -1,6 +1,6 @@
 data modify storage rocketriders:main match_components.dialog set value {\
   "type": "minecraft:confirmation",\
-  "title": "Gamemode Components UI",\
+  "title": "Match Components UI",\
   "body": {\
     "type": "minecraft:plain_message",\
     "contents": ["Gamemode: ", {"bold":true,"text":"","underlined":true}]\
@@ -21,7 +21,7 @@ data modify storage rocketriders:main match_components.dialog set value {\
     },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__castle:$(arena__castle),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details),decreased_icbm_flight_duration:$(decreased_icbm_flight_duration),green_for_yellow:$(green_for_yellow)}"\
+      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__castle:$(arena__castle),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details),decreased_icbm_flight_duration:$(decreased_icbm_flight_duration),green_for_yellow:$(green_for_yellow),arena__regenerate_back_layer:$(arena__regenerate_back_layer)}"\
     }\
   },\
   "no": {\
@@ -48,6 +48,14 @@ execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabl
 ## Components
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:"",label_visible:false,width:200,options:[{id:"",display:{bold:true,text:"Components",underlined:true}}]}
 
+# arena/base_colors (locked)
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__base_colors",label:"🔒 arena/base_colors",width:300,options:[{id:"",display:"{}"}]}
+function custom:resolve_text_component {text_component:{storage:"rocketriders:match",nbt:'components."arena/base_colors"'},write_to:"storage rocketriders:main match_components.dialog.inputs[-1].options[].display"}
+
+# arena/base_materials (locked)
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__base_materials",label:"🔒 arena/base_materials",width:300,options:[{id:"",display:"{}"}]}
+function custom:resolve_text_component {text_component:{storage:"rocketriders:match",nbt:'components."arena/base_materials"'},write_to:"storage rocketriders:main match_components.dialog.inputs[-1].options[].display"}
+
 # arena/bedrock_frame
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__bedrock_frame",label:"arena/bedrock_frame",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/arena/bedrock_frame run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
@@ -63,6 +71,10 @@ execute if predicate game:match_components/arena/no_base_details run data modify
 # arena/no_portal_details
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__no_portal_details",label:"arena/no_portal_details",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/arena/no_portal_details run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
+
+# arena/regenerate_back_layer
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__regenerate_back_layer",label:"arena/regenerate_back_layer",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
+execute if predicate game:match_components/arena/regenerate_back_layer run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
 # armor/*
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"armor__",label:"armor/*",width:300,options:[{id:"0",display:{color:"white",text:"generic"}},{id:"1",display:{color:"white",text:"crusade_kit_dependent"}},{id:"2",display:{color:"white",text:"swap"}}]}

@@ -21,8 +21,8 @@
         "command": "/trigger dev set 5",
         "type": "minecraft:run_command"
       },
-      "label": "Gamemode Components...",
-      "tooltip": "Opens a UI for viewing and editing the current gamemode components.\n\nGamemode components cannot be edited once game settings have been confirmed.\n\nSome gamemode components are tied to a particular gamemode and cannot be changed through this menu."
+      "label": "Match Components...",
+      "tooltip": "Opens a UI for viewing and editing the current match components.\n\nMatch components should not be manually edited once game settings have been confirmed.\n\nSome match components are tied to a particular gamemode and cannot be changed through this menu."
     },
     {
       "action": {

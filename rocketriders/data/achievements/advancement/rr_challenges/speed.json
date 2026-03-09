@@ -8,7 +8,7 @@
     "announce_to_chat": true,
     "description": {
       "color": "green",
-      "text": "Arrive at the Finish Flag first in Chase Mode."
+      "text": "Win a Chase Mode match by reaching the checkered flag."
     },
     "frame": "task",
     "hidden": false,

@@ -42,7 +42,7 @@ execute if predicate game:modifiers/hardcore/on if predicate rr_swap:yellow_team
 execute if predicate game:modifiers/hardcore/on if predicate rr_swap:yellow_team_is_dark if predicate game:match_components/red_for_blue run fill -14 63 -64 38 34 -64 pink_stained_glass replace red_stained_glass
 
 #Bossbar prep
-bossbar set rr_swap:swap_progress players none
+bossbar set rr_swap:swap_progress players
 bossbar set rr_swap:swap_progress value 0
 scoreboard players set SwapPlatform swapside 0
 scoreboard players set BossbarA swapside 0

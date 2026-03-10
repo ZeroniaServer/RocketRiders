@@ -1,1 +1,1 @@
-bossbar set rr_powerups:capture_progress players none
+bossbar set rr_powerups:capture_progress players

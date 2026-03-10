@@ -380,13 +380,13 @@ execute if predicate game:phase/match/play run effect clear @a[x=0,tag=!CarryFla
 execute if predicate game:phase/match/play run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:team/any_playing_team] strength
 execute if predicate game:phase/match/play run effect clear @a[x=0,tag=!CarryFlag,predicate=custom:team/any_playing_team] absorption
 execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/blue,tag=CarryFY1] run bossbar set rr_ctf:fy1 value 0
-execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/blue,tag=CarryFY1] run bossbar set rr_ctf:fy1 players none
+execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/blue,tag=CarryFY1] run bossbar set rr_ctf:fy1 players
 execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/blue,tag=CarryFY2] run bossbar set rr_ctf:fy2 value 0
-execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/blue,tag=CarryFY2] run bossbar set rr_ctf:fy2 players none
+execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/blue,tag=CarryFY2] run bossbar set rr_ctf:fy2 players
 execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/yellow,tag=CarryFB1] run bossbar set rr_ctf:fb1 value 0
-execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/yellow,tag=CarryFB1] run bossbar set rr_ctf:fb1 players none
+execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/yellow,tag=CarryFB1] run bossbar set rr_ctf:fb1 players
 execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/yellow,tag=CarryFB2] run bossbar set rr_ctf:fb2 value 0
-execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/yellow,tag=CarryFB2] run bossbar set rr_ctf:fb2 players none
+execute if predicate game:phase/match/play unless entity @e[x=0,type=player,predicate=custom:team/yellow,tag=CarryFB2] run bossbar set rr_ctf:fb2 players
 
 #Glowing for flag carriers (blink if Sonar is enabled)
 execute if predicate game:phase/match/play unless predicate game:modifiers/sonar/on run effect clear @a[x=0,tag=!CarryFlag] glowing

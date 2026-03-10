@@ -11,16 +11,16 @@ tag @a[x=0] remove CarryFB2
 kill @e[x=0,type=marker,tag=FlagParticle]
 scoreboard players reset @a[x=0] FlagScore
 scoreboard players reset @a[x=0] FlagDeliver
-bossbar set rr_ctf:fy1 players none
+bossbar set rr_ctf:fy1 players
 bossbar set rr_ctf:fy1 name ""
 bossbar set rr_ctf:fy1 value 0
-bossbar set rr_ctf:fy2 players none
+bossbar set rr_ctf:fy2 players
 bossbar set rr_ctf:fy2 name ""
 bossbar set rr_ctf:fy2 value 0
-bossbar set rr_ctf:fb1 players none
+bossbar set rr_ctf:fb1 players
 bossbar set rr_ctf:fb1 name ""
 bossbar set rr_ctf:fb1 value 0
-bossbar set rr_ctf:fb2 players none
+bossbar set rr_ctf:fb2 players
 bossbar set rr_ctf:fb2 name ""
 bossbar set rr_ctf:fb2 value 0
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove CTFOvertime

@@ -77,7 +77,7 @@ bossbar set rr:startgame name ["",{"text":"A match is currently ending.","color"
 ##
 scoreboard players reset * FlagScore
 fill 13 74 68 7 64 61 moving_piston replace air
-bossbar set rr_chase:lead players none
+bossbar set rr_chase:lead players
 bossbar set rr_chase:lead name ["",{"text":"No one is in the lead!","color":"red"}]
 bossbar set rr_chase:lead value 0
 tag @a[x=0] remove InLead
@@ -100,16 +100,16 @@ tag @a[x=0] remove CarryFB2
 kill @e[x=0,type=marker,tag=FlagParticle]
 scoreboard players reset * FlagScore
 scoreboard players reset * FlagDeliver
-bossbar set rr_ctf:fy1 players none
+bossbar set rr_ctf:fy1 players
 bossbar set rr_ctf:fy1 name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
 bossbar set rr_ctf:fy1 value 0
-bossbar set rr_ctf:fy2 players none
+bossbar set rr_ctf:fy2 players
 bossbar set rr_ctf:fy2 name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
 bossbar set rr_ctf:fy2 value 0
-bossbar set rr_ctf:fb1 players none
+bossbar set rr_ctf:fb1 players
 bossbar set rr_ctf:fb1 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
 bossbar set rr_ctf:fb1 value 0
-bossbar set rr_ctf:fb2 players none
+bossbar set rr_ctf:fb2 players
 bossbar set rr_ctf:fb2 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
 bossbar set rr_ctf:fb2 value 0
 scoreboard players reset * FlagDisp
@@ -121,7 +121,7 @@ scoreboard players reset Blue: RoundsWon
 scoreboard players reset Yellow: RoundsWon
 tag @a[x=0] remove InRanked
 
-bossbar set rr_powerups:capture_progress players none
+bossbar set rr_powerups:capture_progress players
 scoreboard players set @e[x=0,type=marker,tag=captureMiddle] capturePoint 0
 kill @e[x=0,type=bee]
 kill @e[x=0,type=armor_stand,tag=BeeShieldDisplay]

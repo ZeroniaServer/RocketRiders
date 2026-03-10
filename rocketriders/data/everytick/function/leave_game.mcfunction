@@ -37,8 +37,10 @@ clear @a[x=0,scores={LeaveGame=1..}]
 tp @a[x=0,scores={LeaveGame=1..},tag=!WasInYellow,tag=!WasInBlue] -43 211 78 90 0
 tp @a[x=0,scores={LeaveGame=1..},tag=WasInYellow] -36 211 96.0 90 0
 tp @a[x=0,scores={LeaveGame=1..},tag=WasInBlue] -36 211 61.0 90 0
+execute unless predicate game:phase/match/closing unless predicate game:phase_last/match/closing run tp @a[x=0,scores={LeaveGame=1..},tag=WasInYellow] -77.50 204.00 92.50 45.00 0.00
+execute unless predicate game:phase/match/closing unless predicate game:phase_last/match/closing run tp @a[x=0,scores={LeaveGame=1..},tag=WasInBlue] -77.50 204.00 64.50 135.00 0.00
+execute unless predicate game:phase/match/closing unless predicate game:phase_last/match/closing run tag @a[x=0,scores={LeaveGame=1..}] add teleport_sound
 execute as @a[x=0,scores={LeaveGame=1..},predicate=custom:is_on_fire] at @s run function game:putoutfire
-execute as @a[x=0,scores={LeaveGame=1..,LeaveMidgame=1..}] at @s run playsound entity.enderman.teleport master @s ~ ~ ~ 1 1
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] flag.is_nova_attached
 scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/infinity] shooting_saber.infinity_time

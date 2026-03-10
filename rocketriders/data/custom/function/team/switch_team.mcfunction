@@ -13,7 +13,7 @@ execute if predicate game:phase/match run advancement grant @s only custom:event
 execute if predicate game:phase/staging run tp @s[predicate=custom:team/blue] -95 202 60 0 0
 execute if predicate game:phase/staging run tp @a[predicate=custom:team/yellow] -95 202 96 180 0
 
-execute at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+tag @s add teleport_sound
 
 dialog clear @s
 

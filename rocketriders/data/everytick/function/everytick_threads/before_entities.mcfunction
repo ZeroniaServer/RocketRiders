@@ -56,6 +56,10 @@ execute as @a[x=0,scores={event.player_uses_written_book=1..}] at @s run functio
 execute as @a[x=0,scores={time_since_attack=101..,primary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
 execute as @a[x=0,scores={time_since_attack=101..,secondary_damage_origin_uuid.0=-2147483648..}] run function custom:event/player_directly_attacked_by_another_player/reset_damage_origins
 
+# Teleport sounds
+execute as @a[x=0,tag=teleport_sound] at @s run playsound minecraft:entity.player.teleport master @s ~ ~ ~ 1 1 1
+tag @a[x=0,tag=teleport_sound] remove teleport_sound
+
 # Item timers
 scoreboard players remove @a[x=0,scores={shooting_saber.infinity_time=1..2147483646}] shooting_saber.infinity_time 1
 execute as @a[x=0,scores={shooting_saber.infinity_time=..0}] run function items:shooting_saber/infinity_deactivate

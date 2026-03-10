@@ -57,7 +57,7 @@ execute if predicate game:phase/match/play run gamemode survival @a[x=0,tag=Join
 execute if predicate game:phase/match/closing/outcome/review run gamemode spectator @a[x=0,tag=JoinBlue]
 execute if predicate game:phase/match run effect clear @a[x=0,tag=JoinBlue] resistance
 effect clear @a[x=0,tag=JoinBlue] invisibility
-execute as @a[x=0,tag=JoinBlue] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+tag @a[x=0,tag=JoinBlue] add teleport_sound
 execute as @a[x=0,tag=JoinBlue] run title @s actionbar ""
 #Achievement keybind tutorial
 execute if predicate rr:has_achievements as @a[x=0,tag=JoinBlue] run advancement grant @s only achievements:inform
@@ -91,7 +91,7 @@ execute if predicate game:phase/match/play run gamemode survival @a[x=0,tag=Join
 execute if predicate game:phase/match/closing/outcome/review run gamemode spectator @a[x=0,tag=JoinYellow]
 execute if predicate game:phase/match run effect clear @a[x=0,tag=JoinYellow] resistance
 effect clear @a[x=0,tag=JoinYellow] invisibility
-execute as @a[x=0,tag=JoinYellow] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+tag @a[x=0,tag=JoinYellow] add teleport_sound
 execute as @a[x=0,tag=JoinYellow] run title @s actionbar ""
 #Achievement keybind tutorial
 execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow] run advancement grant @s only achievements:inform
@@ -119,7 +119,7 @@ execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cube
 execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 execute if predicate game:phase/match run tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
 execute if predicate game:phase/staging run tp @a[x=0,tag=JoinSpec] -95 213 78 90 90
-execute as @a[x=0,tag=JoinSpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+tag @a[x=0,tag=JoinSpec] add teleport_sound
 execute as @a[x=0,tag=JoinSpec] run title @s actionbar ""
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the match!","color":"gray"}]
 execute if predicate game:phase/match if predicate game:modifiers/sonar/on as @a[x=0,tag=JoinSpec] run tellraw @s [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
@@ -131,7 +131,7 @@ execute if predicate game:phase/match run gamemode spectator @a[x=0,tag=JoinSpec
 execute if predicate game:phase/match/pause run gamemode adventure @a[x=0,tag=JoinSpec]
 tag @a[x=0] remove JoinSpec
 tp @a[x=0,tag=AlreadySpec] 12 100 0.5 90 90
-execute as @a[x=0,tag=AlreadySpec] at @s run playsound entity.enderman.teleport master @s ~ ~ ~
+tag @a[x=0,tag=AlreadySpec] add teleport_sound
 tag @a[x=0] remove AlreadySpec
 execute if predicate rr:enable_spectator_leave_cloud if predicate game:phase/match if predicate custom:periodic_tick/3 positioned 12.5 95.0 0.5 run particle minecraft:dust{color:[0,1,0],scale:4} ~ ~ ~ 0.7 0.7 0.7 0.3 5 force @a[x=0,predicate=custom:team/spectator,predicate=custom:in_arena]
 execute if predicate rr:enable_spectator_leave_cloud if predicate game:phase/match if predicate custom:periodic_tick/3 positioned 12.5 95.0 0.5 run particle minecraft:dust{color:[0,1,0],scale:3} ~ ~ ~ 0.8 0.8 0.8 0.3 5 force @a[x=0,predicate=custom:team/spectator,predicate=custom:in_arena]

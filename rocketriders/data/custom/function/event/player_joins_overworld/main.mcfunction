@@ -61,4 +61,4 @@ scoreboard players set #last play_time_save_cooldown -1
 execute in minecraft:overworld as @a[x=0] store result score @s play_time_save_cooldown run scoreboard players add #last play_time_save_cooldown 1
 
 # Notify voting options for server mode
-execute if predicate rr:server_mode/cubekrowd_voting if predicate game:phase/staging run function servermode:notifyvote
+execute if predicate rr:server_mode/cubekrowd_voting if predicate game:phase/staging/configuration run function servermode:notifyvote

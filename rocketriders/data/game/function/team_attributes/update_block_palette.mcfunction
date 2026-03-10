@@ -41,13 +41,15 @@ execute if predicate game:match_components/green_for_yellow run data modify stor
 
 ## Arena Base Blocks
 # blue
-data modify storage rocketriders:main team_attributes set value {arena_base_blocks_front:{material:"stained_glass",color:"white"},arena_base_blocks_middle:{material:"stained_glass",color:"white"},arena_base_blocks_back:{material:"stained_glass",color:"white"}}
+data modify storage rocketriders:main team_attributes set value {arena_base_blocks_front:{material:"stained_glass",color:"white"},arena_base_blocks_middle:{material:"stained_glass",color:"white"},arena_base_blocks_back:{material:"stained_glass",color:"white"},arena_base_blocks_detail:{material:"stained_glass",color:"black"}}
 data modify storage rocketriders:main team_attributes.arena_base_blocks_front.material set from storage rocketriders:match components."arena/base_materials".blue.front
 data modify storage rocketriders:main team_attributes.arena_base_blocks_front.color_source set from storage rocketriders:match components."arena/base_colors".blue.front
 data modify storage rocketriders:main team_attributes.arena_base_blocks_middle.material set from storage rocketriders:match components."arena/base_materials".blue.middle
 data modify storage rocketriders:main team_attributes.arena_base_blocks_middle.color_source set from storage rocketriders:match components."arena/base_colors".blue.middle
 data modify storage rocketriders:main team_attributes.arena_base_blocks_back.material set from storage rocketriders:match components."arena/base_materials".blue.back
 data modify storage rocketriders:main team_attributes.arena_base_blocks_back.color_source set from storage rocketriders:match components."arena/base_colors".blue.back
+data modify storage rocketriders:main team_attributes.arena_base_blocks_detail.material set from storage rocketriders:match components."arena/base_materials".blue.detail
+data modify storage rocketriders:main team_attributes.arena_base_blocks_detail.color_source set from storage rocketriders:match components."arena/base_colors".blue.detail
 
 data modify storage rocketriders:main team_attributes.block_color_palette set from storage rocketriders:teams blue.block_color_palette
 
@@ -84,14 +86,27 @@ execute unless data storage rocketriders:main team_attributes.result run functio
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_stained_glass"
 data modify storage rocketriders:teams blue.arena_base_blocks.back set from storage rocketriders:main team_attributes.result
 
+data remove storage rocketriders:main team_attributes.color
+function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes.arena_base_blocks_detail
+execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.arena_base_blocks_detail.color_source
+data modify storage rocketriders:main team_attributes.arena_base_blocks_detail.color set from storage rocketriders:main team_attributes.color
+data remove storage rocketriders:main team_attributes.result
+function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes.arena_base_blocks_detail
+execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes.arena_base_blocks_detail
+execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes.arena_base_blocks_detail
+execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "black_stained_glass"
+data modify storage rocketriders:teams blue.arena_base_blocks.detail set from storage rocketriders:main team_attributes.result
+
 # yellow
-data modify storage rocketriders:main team_attributes set value {arena_base_blocks_front:{material:"stained_glass",color:"white"},arena_base_blocks_middle:{material:"stained_glass",color:"white"},arena_base_blocks_back:{material:"stained_glass",color:"white"}}
+data modify storage rocketriders:main team_attributes set value {arena_base_blocks_front:{material:"stained_glass",color:"white"},arena_base_blocks_middle:{material:"stained_glass",color:"white"},arena_base_blocks_back:{material:"stained_glass",color:"white"},arena_base_blocks_detail:{material:"stained_glass",color:"black"}}
 data modify storage rocketriders:main team_attributes.arena_base_blocks_front.material set from storage rocketriders:match components."arena/base_materials".yellow.front
 data modify storage rocketriders:main team_attributes.arena_base_blocks_front.color_source set from storage rocketriders:match components."arena/base_colors".yellow.front
 data modify storage rocketriders:main team_attributes.arena_base_blocks_middle.material set from storage rocketriders:match components."arena/base_materials".yellow.middle
 data modify storage rocketriders:main team_attributes.arena_base_blocks_middle.color_source set from storage rocketriders:match components."arena/base_colors".yellow.middle
 data modify storage rocketriders:main team_attributes.arena_base_blocks_back.material set from storage rocketriders:match components."arena/base_materials".yellow.back
 data modify storage rocketriders:main team_attributes.arena_base_blocks_back.color_source set from storage rocketriders:match components."arena/base_colors".yellow.back
+data modify storage rocketriders:main team_attributes.arena_base_blocks_detail.material set from storage rocketriders:match components."arena/base_materials".yellow.detail
+data modify storage rocketriders:main team_attributes.arena_base_blocks_detail.color_source set from storage rocketriders:match components."arena/base_colors".yellow.detail
 
 data modify storage rocketriders:main team_attributes.block_color_palette set from storage rocketriders:teams yellow.block_color_palette
 
@@ -127,3 +142,14 @@ execute unless data storage rocketriders:main team_attributes.result run functio
 execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes.arena_base_blocks_back
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_stained_glass"
 data modify storage rocketriders:teams yellow.arena_base_blocks.back set from storage rocketriders:main team_attributes.result
+
+data remove storage rocketriders:main team_attributes.color
+function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes.arena_base_blocks_detail
+execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.arena_base_blocks_detail.color_source
+data modify storage rocketriders:main team_attributes.arena_base_blocks_detail.color set from storage rocketriders:main team_attributes.color
+data remove storage rocketriders:main team_attributes.result
+function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes.arena_base_blocks_detail
+execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes.arena_base_blocks_detail
+execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes.arena_base_blocks_detail
+execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_stained_glass"
+data modify storage rocketriders:teams yellow.arena_base_blocks.detail set from storage rocketriders:main team_attributes.result

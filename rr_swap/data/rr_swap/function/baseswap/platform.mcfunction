@@ -6,7 +6,7 @@ execute if score SwapPlatformTick swapside matches 20.. run scoreboard players r
 execute if score SwapPlatformTick swapside matches 20.. run scoreboard players set SwapPlatformTick swapside 0
 
 execute if predicate game:phase/match/play/tie_breaker unless score QuickSwap swapside matches 1 run scoreboard players set $swap_side global 0
-execute if predicate game:phase/match/play/tie_breaker unless score QuickSwap swapside matches 1 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"light_accent",back:"white"},yellow:{front:"dark",middle:"dark_accent",back:"black"}}
+execute if predicate game:phase/match/play/tie_breaker unless score QuickSwap swapside matches 1 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"light_accent",back:"white",detail:"white"},yellow:{front:"dark",middle:"dark_accent",back:"black",detail:"black"}}
 execute if predicate game:phase/match/play/tie_breaker unless score QuickSwap swapside matches 1 run function game:team_attributes/update_block_palette
 execute if predicate game:phase/match/play/tie_breaker unless score QuickSwap swapside matches 1 run scoreboard players set SwapPlatform swapside 0
 execute if predicate game:phase/match/play/tie_breaker unless score QuickSwap swapside matches 1 run scoreboard players set BossbarA swapside 0

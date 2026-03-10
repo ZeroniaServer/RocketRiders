@@ -309,6 +309,9 @@ function rr:upon_load/join_pad_sprite
 # Update team attributes
 function game:team_attributes/update_all
 
+# Load assets
+function game:assets/load_all
+
 # Update nav book
 function lobby:update_nav_book
 

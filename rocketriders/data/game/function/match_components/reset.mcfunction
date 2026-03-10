@@ -1,4 +1,4 @@
-## Resets all match components to the base component set of the currently enabled gamemode, plus modifications based on configs
+## Resets all match components to the base component set of the currently enabled game mode, plus modifications based on configs
 scoreboard players reset * match_components
 data modify storage rocketriders:match components set value {}
 

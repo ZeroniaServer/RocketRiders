@@ -9,7 +9,7 @@ execute if predicate game:match_components/short_end_sequence run scoreboard pla
 execute if score $closing_timer.max_tie_window_time global > $closing_timer.max_time_before_review global run scoreboard players operation $closing_timer.max_time_before_review global = $closing_timer.max_tie_window_time global
 scoreboard players set $closing_timer.max_review_time global 320
 
-# Set player gamemodes
+# Put players into adventure mode
 gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 
 # Prevent fireballs from being punched
@@ -35,7 +35,7 @@ effect give @a[x=0,predicate=custom:team/any_playing_team] instant_health 1 100 
 execute unless predicate game:match_components/custom_match_closing_teleport_locations run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute unless predicate game:match_components/custom_match_closing_teleport_locations run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/closing
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/match/closing
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/match/closing

@@ -10,10 +10,10 @@ function arenaclear:refreshitemsigns
 function arenaclear:refreshcustomizer
 tag @s remove refreshing_all_signs
 
-#Temporarily block usage of Gamemode sign
-data modify block -69 192 74 front_text.messages[0] set value {"text":"Gamemode:","color":"#6b006b","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_gamemode_sign"}}
+#Temporarily block usage of Game Mode sign
+data modify block -69 192 74 front_text.messages[0] set value {"text":"Game Mode:","color":"#6b006b","click_event":{"action":"run_command","command":"function arenaclear:modification_room_signs/interact_with_gamemode_sign"}}
 
-#Special gamemode sign for no modes installed/enabled
+#Special Game Mode sign for no modes installed/enabled
 execute unless entity @s[tag=!NoModesInstalled,tag=!NoModesEnabled] run data modify block -69 192 74 front_text.messages[1] set value {"text":"Missingno","color":"light_purple"}
 
 #Refresh repeat sign

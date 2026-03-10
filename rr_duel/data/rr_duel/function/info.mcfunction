@@ -1,4 +1,4 @@
-tellraw @s ["",{"text":"1v1 Duel Mode:","color":"red","bold":true},{"text":" The most competitive gamemode!"}]
+tellraw @s ["",{"text":"1v1 Duel Mode:","color":"red","bold":true},{"text":" The most competitive game mode!"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Best of three against opponent","color":"yellow"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Specifics:","color":"dark_aqua"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Two players duel each other for three rounds"}]

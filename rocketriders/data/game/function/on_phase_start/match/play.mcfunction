@@ -20,7 +20,7 @@ execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:re
 scoreboard players reset @a flag_tablist_display
 scoreboard objectives setdisplay list flag_tablist_display
 
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/play
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/match/play
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/match/play

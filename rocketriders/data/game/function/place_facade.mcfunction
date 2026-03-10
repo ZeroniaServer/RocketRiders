@@ -133,5 +133,5 @@ execute if predicate game:modifiers/molerat/on run fill -101 207 69 -89 186 87 l
 ## Castle
 execute if predicate game:arena_details/castle run function game:place_facade/castle
 
-## Gamemode-specific features
+## Game-mode-specific features
 function #rr:game/place_facade

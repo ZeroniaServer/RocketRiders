@@ -36,7 +36,7 @@ tag @a[x=0] remove beenOnBoth
 ##Add flag that game just cleared (briefly locks joinpads)
 tag @s add JustCleared
 
-##Reset tips for next gamemode
+##Reset tips for next game mode
 function game:tipreset
 
 ##Reset creeper explosion origin uuid map

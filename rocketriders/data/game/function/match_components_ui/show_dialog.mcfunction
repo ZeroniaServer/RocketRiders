@@ -3,7 +3,7 @@ data modify storage rocketriders:main match_components.dialog set value {\
   "title": "Match Components UI",\
   "body": {\
     "type": "minecraft:plain_message",\
-    "contents": ["Gamemode: ", {"bold":true,"text":"","underlined":true}]\
+    "contents": ["Game Mode: ", {"bold":true,"text":"","underlined":true}]\
   },\
   "inputs": [],\
   "yes": {\
@@ -33,7 +33,7 @@ data modify storage rocketriders:main match_components.dialog set value {\
   }\
 }
 
-## Gamemode
+## Game Mode
 data modify storage rocketriders:main match_components.dialog.body.contents[1].extra append from entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=enabled] CustomName
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"game_mode",label:{color:"gray",text:"🔒 Game Mode"},width:300,options:[{id:"",display:{color:"red",text:"unknown"}}]}
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=normalEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"1",display:{color:"white",text:"normal"}}

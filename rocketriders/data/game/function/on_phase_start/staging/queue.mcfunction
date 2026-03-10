@@ -2,7 +2,7 @@
 function lobby:update_nav_book
 execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
 
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/staging/queue
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/staging/queue
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/staging/queue

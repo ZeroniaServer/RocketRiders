@@ -45,7 +45,7 @@ execute unless score $match_repeat_amount global matches 1.. unless predicate ga
 execute if predicate game:repeat_settings/on unless score $mcancel CmdData matches 1 unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
 scoreboard players set $mcancel CmdData 0
 
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_end/match
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_end/match

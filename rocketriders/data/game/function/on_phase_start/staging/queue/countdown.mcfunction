@@ -4,7 +4,7 @@ scoreboard players set $queue_countdown_timer global 0
 bossbar set rr:startgame max 30
 bossbar set rr:startgame color green
 
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/staging/queue/countdown
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/staging/queue/countdown
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/staging/queue/countdown

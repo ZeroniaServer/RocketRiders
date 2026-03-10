@@ -119,7 +119,7 @@ execute as @a[x=0,predicate=custom:team/lobby] at @s if predicate custom:in_aren
 #Locked Modification Room
 execute if predicate game:game_rules/lock_modification_room/on as @a[x=0,predicate=custom:team/lobby,predicate=2811iaj1:in_modification] at @s run function game:kickout
 
-#Players can't switch out of their gamemode while in the lobby or spectating (security, disabled in servermodes)
+#Players can't switch out of their game mode while in the lobby or spectating (security, disabled in servermodes)
 execute if predicate rr:force_gamemodes run gamemode adventure @a[x=0,predicate=custom:team/lobby]
 execute if predicate rr:force_gamemodes if predicate game:phase/staging run gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
 execute if predicate rr:force_gamemodes if predicate game:phase/match unless predicate game:phase/match/pause run gamemode spectator @a[x=0,predicate=custom:team/spectator]

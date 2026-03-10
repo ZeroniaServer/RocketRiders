@@ -38,7 +38,7 @@ scoreboard players operation @s RandomItem += @s MaxItemTime
 execute if predicate game:modifiers/minute_mix/on run scoreboard players set @s RandomItem 1197
 
 
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/play/tie_breaker
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/match/play/tie_breaker
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/match/play/tie_breaker

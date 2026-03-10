@@ -49,7 +49,7 @@ execute as @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=2,yCaptured
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s bCapturedTime 0
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=0}] run scoreboard players set @s yCapturedTime 0
 
-#capture the point (+ optional gamemode stuff)
+#capture the point (+ optional game mode stuff)
 tag @a[x=0,tag=onCapturePoint] remove onCapturePoint
 execute as @e[x=0,type=marker,tag=captureMiddle] at @s as @e[type=player,predicate=custom:team/blue,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint
 execute as @e[x=0,type=marker,tag=captureMiddle] at @s as @e[type=player,predicate=custom:team/yellow,distance=..7.1] at @s if entity @s[y=54,dy=1] run tag @s add onCapturePoint

@@ -1,7 +1,7 @@
 ##
 gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/closing/outcome/review
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_end/match/closing/outcome/review
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_end/match/closing/outcome/review

@@ -22,7 +22,7 @@
         "type": "minecraft:run_command"
       },
       "label": "Match Components...",
-      "tooltip": "Opens a UI for viewing and editing the current match components.\n\nMatch components should not be manually edited once game settings have been confirmed.\n\nSome match components are tied to a particular gamemode and cannot be changed through this menu."
+      "tooltip": "Opens a UI for viewing and editing the current match components.\n\nMatch components should not be manually edited once game settings have been confirmed.\n\nSome match components are tied to a particular game mode and cannot be changed through this menu."
     },
     {
       "action": {

@@ -1,7 +1,7 @@
 ##
 scoreboard players reset $tie_breaker_timer global
 
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/play/tie_breaker
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_end/match/play/tie_breaker
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_end/match/play/tie_breaker

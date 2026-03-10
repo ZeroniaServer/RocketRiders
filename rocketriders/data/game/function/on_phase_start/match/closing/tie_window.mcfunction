@@ -1,4 +1,4 @@
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/closing/tie_window
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/match/closing/tie_window
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/match/closing/tie_window

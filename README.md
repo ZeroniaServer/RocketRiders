@@ -1,6 +1,6 @@
 # 🚀 Rocket Riders 🚀
 
-Rocket Riders is a reimagination of SethBling and Cubehamster's *Missile Wars* for modern versions of Minecraft, featuring all new missiles, utility items, custom achievements, challenging gamemodes and modifiers, and tons more ways to customize your gameplay!
+Rocket Riders is a reimagination of SethBling and Cubehamster's *Missile Wars* for modern versions of Minecraft, featuring all new missiles, utility items, custom achievements, challenging game modes and modifiers, and tons more ways to customize your gameplay!
 
 This is the development repository for the Rocket Riders minigame. It is solely managed by the Zeronia Minigame Development Team.
 

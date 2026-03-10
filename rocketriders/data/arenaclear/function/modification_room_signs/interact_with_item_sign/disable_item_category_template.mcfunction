@@ -4,9 +4,9 @@
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1
 
 # overrides
-execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Item settings are not adjustable in this gamemode."}
-$execute if predicate game:game_rules/disable_item_category/$(category_id)/forced_on run return run tellraw @s {color:"dark_gray",italic:true,text:"$(category_name) items are incompatible with this gamemode."}
-$execute if predicate game:game_rules/disable_item_category/$(category_id)/forced_off run return run tellraw @s {color:"dark_gray",italic:true,text:"$(category_name) items are required in this gamemode."}
+execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Item settings are not adjustable in this game mode."}
+$execute if predicate game:game_rules/disable_item_category/$(category_id)/forced_on run return run tellraw @s {color:"dark_gray",italic:true,text:"$(category_name) items are incompatible with this game mode."}
+$execute if predicate game:game_rules/disable_item_category/$(category_id)/forced_off run return run tellraw @s {color:"dark_gray",italic:true,text:"$(category_name) items are required in this game mode."}
 #$execute if predicate game:item_pool_meta/all_$(category_id)_disabled run return run tellraw @s {color:"dark_gray",italic:true,text:"This category is locked because all $(category_name) are disabled."}
 
 # toggle

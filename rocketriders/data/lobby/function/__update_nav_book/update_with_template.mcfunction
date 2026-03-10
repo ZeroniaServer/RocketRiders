@@ -7,8 +7,8 @@ execute if predicate game:match_components/one_team run data modify storage rock
 execute if predicate game:match_components/one_team run data modify storage rocketriders:navbook first_page_spacing append value "\n"
 
 # description
-data modify storage rocketriders:navbook description set value {color:"dark_gray",text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn the Modification Room, you can easily customize the game with many gamemodes, modifiers, and other settings to play with."}
-execute if predicate rr:server_mode/cubekrowd_voting run data modify storage rocketriders:navbook description set value {color:"dark_gray",text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nAfter each match, you can vote between several gamemodes, modifiers, and base designs to play with for the next round."}
+data modify storage rocketriders:navbook description set value {color:"dark_gray",text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn the Modification Room, you can easily customize the game with many game modes, modifiers, and other settings to play with."}
+execute if predicate rr:server_mode/cubekrowd_voting run data modify storage rocketriders:navbook description set value {color:"dark_gray",text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nAfter each match, you can vote between several game modes, modifiers, and base designs to play with for the next round."}
 execute if predicate rr:server_mode/cubekrowd_duels run data modify storage rocketriders:navbook description set value {color:"dark_gray",text:"\nRocket Riders is a tactical game where two teams ride missiles to the enemy base to destroy their portals.\n\nIn 1v1 Duel Mode, players challenge each other to a best of three, one-on-one tournament with sets of 12 random items."}
 
 # modroom / edit settings

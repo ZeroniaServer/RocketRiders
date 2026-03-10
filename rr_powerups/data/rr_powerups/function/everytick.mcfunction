@@ -4,5 +4,5 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] if score @s[tag=poweru
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsEnabled] run function rr_powerups:ifenabled
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsLast] run function rr_powerups:iflast
 
-#hotfix to remove tags from players in gamemodes other than powerups
+#hotfix to remove tags from players in game modes other than powerups
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!powerupsEnabled] run tag @a[x=0,tag=onCapturePoint] remove onCapturePoint

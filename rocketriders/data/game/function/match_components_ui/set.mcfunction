@@ -1,4 +1,4 @@
-execute unless predicate game:phase/staging/configuration run tellraw @s [{color:"red",text:"You should not change gamemode components after game settings have been confirmed."},{color:"yellow",text:"\nYou can change them manually if you know it is safe to do so using "},{color:"gray",text:"/scoreboard players set $<gamemode_component> match_components <value>"}]
+execute unless predicate game:phase/staging/configuration run tellraw @s [{color:"red",text:"You should not change match components after game settings have been confirmed."},{color:"yellow",text:"\nYou can change them manually if you know it is safe to do so using "},{color:"gray",text:"/scoreboard players set $<gamemode_component> match_components <value>"}]
 execute unless predicate game:phase/staging/configuration run return fail
 
 # game mode

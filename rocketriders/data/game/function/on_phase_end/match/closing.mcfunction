@@ -12,7 +12,7 @@ effect clear @a[x=0,predicate=custom:team/any_playing_team] regeneration
 
 execute as @e[x=0,type=#custom:large_fireballs] run function game:set_fireball_punchable
 
-## Gamemode-specific functions
+## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/closing
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_end/match/closing
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_end/match/closing

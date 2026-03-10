@@ -2,9 +2,9 @@
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1
 
 # overrides
-execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Game Rules are not adjustable in this gamemode."}
-execute if predicate game:game_rules/disable_pierce_prevention/forced_on run return run tellraw @s {color:"dark_gray",italic:true,text:"Pierce Prevention is incompatible with this gamemode."}
-execute if predicate game:game_rules/disable_pierce_prevention/forced_off run return run tellraw @s {color:"dark_gray",italic:true,text:"Pierce Prevention required in this gamemode."}
+execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Game Rules are not adjustable in this game mode."}
+execute if predicate game:game_rules/disable_pierce_prevention/forced_on run return run tellraw @s {color:"dark_gray",italic:true,text:"Pierce Prevention is incompatible with this game mode."}
+execute if predicate game:game_rules/disable_pierce_prevention/forced_off run return run tellraw @s {color:"dark_gray",italic:true,text:"Pierce Prevention required in this game mode."}
 
 # toggle
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed,scores={refreshsigns=0}] store success score $disable_pierce_prevention config unless score $disable_pierce_prevention config matches 1

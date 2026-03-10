@@ -28,7 +28,7 @@
         "type": "minecraft:show_dialog"
       },
       "label": "Quick Launch Game Mode...",
-      "tooltip": "Start a match on a specific gamemode."
+      "tooltip": "Start a match on a specific game mode."
     },
     {
       "action": {
@@ -62,7 +62,7 @@
         "type": "minecraft:run_command"
       },
       "label": "Toggle Developer Mode",
-      "tooltip": "Moves you to the Developer team in creative mode (to bypass gamemode restrictions) or back to the Lobby team in adventure mode."
+      "tooltip": "Moves you to the Developer team in creative mode (to bypass game mode restrictions) or back to the Lobby team in adventure mode."
     }
   ],
   "exit_action": {

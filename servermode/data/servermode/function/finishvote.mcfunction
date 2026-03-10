@@ -24,8 +24,8 @@ execute as @e[x=0,limit=1,type=marker,tag=ServerModeVote5,tag=WonVote] run tag @
 execute as @e[x=0,limit=1,type=marker,tag=ServerModeVote6,tag=WonVote] run tag @e[x=0,type=marker,tag=ServerMode,tag=Set6,limit=1] add WonVote
 
 # Announce winner
-execute if entity @e[x=0,limit=1,type=marker,tag=ServerModeVote] run tellraw @a[x=0] ["",{bold:true,color:"gold",selector:"@e[x=0,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]"},{color:"dark_green",text:" won the vote!"}]
-execute unless entity @e[x=0,limit=1,type=marker,tag=ServerModeVote] run tellraw @a[x=0] [{color:"dark_green",text:"No one voted, so "},{bold:true,color:"gold",selector:"@e[x=0,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]"},{color:"dark_green",text:" was randomly selected."}]
+execute if entity @e[x=0,limit=1,type=marker,tag=ServerModeVote] run tellraw @a[x=0] ["",{bold:true,color:"gold",selector:"@e[x=0,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]"},{color:"#ca00ca",text:" won the vote!"}]
+execute unless entity @e[x=0,limit=1,type=marker,tag=ServerModeVote] run tellraw @a[x=0] [{color:"#ca00ca",text:"No one voted, so "},{bold:true,color:"gold",selector:"@e[x=0,type=marker,tag=ServerMode,tag=Set,tag=WonVote,limit=1]"},{color:"#ca00ca",text:" was randomly selected."}]
 kill @e[x=0,type=marker,tag=ServerModeVote]
 
 # NORMAL MODE SELECTED

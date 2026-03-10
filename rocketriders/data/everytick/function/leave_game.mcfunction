@@ -61,9 +61,6 @@ tag @a[x=0,scores={LeaveGame=1..}] remove beenOnYellow
 tag @a[x=0,scores={LeaveGame=1..}] remove beenOnBlue
 tag @a[x=0,scores={LeaveGame=1..}] remove beenOnBoth
 
-#Voting message if in voting phase
-execute if entity @s[tag=ServerModeVoting,scores={VoteServerMode=3..}] as @a[x=0,scores={LeaveGame=1..}] run function servermode:notifyvote
-
 #Notify game (if already selected)
 execute if predicate game:joinable_match_phase unless entity @s[tag=SMSwitch] run tag @a[x=0,scores={LeaveGame=1..},tag=!informMeLate] add informMe
 

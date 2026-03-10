@@ -59,3 +59,6 @@ execute positioned 25.5 184.5 -5.5 run function custom:summon_persistent_marker_
 # Set play time saving delays
 scoreboard players set #last play_time_save_cooldown -1
 execute in minecraft:overworld as @a[x=0] store result score @s play_time_save_cooldown run scoreboard players add #last play_time_save_cooldown 1
+
+# Notify voting options for server mode
+execute if predicate rr:server_mode/cubekrowd_voting if predicate game:phase/staging run function servermode:notifyvote

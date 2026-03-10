@@ -2,7 +2,7 @@ scoreboard players add @e[x=0,type=marker,tag=ServerMode,tag=Set] VoteServerMode
 
 # Timer
 execute if score $players_online global matches ..1 run scoreboard players set @s VoteServerMode 0
-execute if score $players_online global matches ..1 run bossbar set rr:startgame name [{color:"dark_purple",text:"Vote for game settings using your "},{bold:true,color:"#D586D5",text:"Voting Ballot!"},{color:"dark_purple",text:" Waiting for another player..."}]
+execute if score $players_online global matches ..1 run bossbar set rr:startgame name [{color:"dark_purple",text:"Vote for the next game mode using your "},{bold:true,color:"#D586D5",text:"Voting Ballot!"},{color:"dark_purple",text:" Waiting for another player..."}]
 execute if score $players_online global matches ..1 run bossbar set rr:startgame value 30
 
 execute if score $players_online global matches 2.. run scoreboard players add @s VoteServerMode 1
@@ -20,8 +20,8 @@ execute unless predicate rr:has_voting as @a[x=0,predicate=custom:team/lobby] if
 execute if score @s VoteServerMode matches 1..599 run scoreboard players set $seconds VoteServerMode 619
 execute if score @s VoteServerMode matches 1..599 run scoreboard players operation $seconds VoteServerMode -= @s VoteServerMode
 execute if score @s VoteServerMode matches 1..599 store result bossbar rr:startgame value run scoreboard players operation $seconds VoteServerMode /= $ticks_per_second constant
-execute if score @s VoteServerMode matches 1..599 unless score $seconds VoteServerMode matches 1 run bossbar set rr:startgame name [{color:"dark_purple",text:"Vote for game settings using your "},{bold:true,color:"#D586D5",text:"Voting Ballot!"}," Voting ends in ",{bold:true,color:"light_purple",score:{name:"$seconds",objective:"VoteServerMode"}}," seconds."]
-execute if score @s VoteServerMode matches 1..599 if score $seconds VoteServerMode matches 1 run bossbar set rr:startgame name [{color:"dark_purple",text:"Vote for game settings using your "},{bold:true,color:"#D586D5",text:"Voting Ballot!"}," Voting ends in ",{bold:true,color:"light_purple",text:"1"}," second."]
+execute if score @s VoteServerMode matches 1..599 unless score $seconds VoteServerMode matches 1 run bossbar set rr:startgame name [{color:"dark_purple",text:"Vote for the next game mode using your "},{bold:true,color:"#D586D5",text:"Voting Ballot!"}," Voting ends in ",{bold:true,color:"light_purple",score:{name:"$seconds",objective:"VoteServerMode"}}," seconds."]
+execute if score @s VoteServerMode matches 1..599 if score $seconds VoteServerMode matches 1 run bossbar set rr:startgame name [{color:"dark_purple",text:"Vote for the next game mode using your "},{bold:true,color:"#D586D5",text:"Voting Ballot!"}," Voting ends in ",{bold:true,color:"light_purple",text:"1"}," second."]
 
 #Countdown dings (10 to 1)
 execute if score @s VoteServerMode matches 400 as @a[x=0] at @s run playsound block.note_block.hat master @s ~ ~ ~ 100 0.5

@@ -28,6 +28,8 @@ execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdD
 
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run tag @s add BrokenPlatform
 
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=BrokenPlatform] run scoreboard players set @s capturePoint 0
+
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=BrokenPlatform] store result bossbar rr_powerups:capture_progress value run scoreboard players get @s CmdData
 scoreboard players remove @e[x=0,type=marker,tag=captureMiddle,tag=BrokenPlatform] CmdData 1
 

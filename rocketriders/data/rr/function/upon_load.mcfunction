@@ -310,7 +310,7 @@ function rr:upon_load/join_pad_sprite
 function game:team_attributes/update_all
 
 # Load assets
-function game:assets/load_all
+function game:assets/load
 
 # Update nav book
 function lobby:update_nav_book

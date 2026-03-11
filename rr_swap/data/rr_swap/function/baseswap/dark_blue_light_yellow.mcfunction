@@ -14,7 +14,7 @@ data modify storage rocketriders:main baseswap.yellow_back_old set from storage 
 data modify storage rocketriders:main baseswap.yellow_detail_old set from storage rocketriders:teams yellow.block_palette.detail
 data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"dark",middle:"dark_accent",back:"black",detail:"black"},yellow:{front:"light",middle:"light_accent",back:"white",detail:"white"}}
 function game:team_attributes/update_block_palette
-function game:assets/load_all
+function game:assets/update_palettes
 data modify storage rocketriders:main baseswap.blue_front_new set from storage rocketriders:teams blue.block_palette.front
 data modify storage rocketriders:main baseswap.blue_middle_new set from storage rocketriders:teams blue.block_palette.middle
 data modify storage rocketriders:main baseswap.blue_back_new set from storage rocketriders:teams blue.block_palette.back

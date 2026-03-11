@@ -1,5 +1,3 @@
-## TEAMS
-
 # asset/.../blue
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) structure_void strict
 $place template game:$(asset_id) -160 184 -160 none none 1 0 strict
@@ -21,6 +19,7 @@ $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixe
 fill -161 184 -161 -161 185 -161 air strict
 $setblock -161 184 -161 minecraft:structure_block[mode=save]{author:"",ignoreEntities:1b,integrity:1.0f,metadata:"",mirror:"NONE",mode:"SAVE",name:"game:asset/$(asset_id)/blue",posX:1,posY:0,posZ:1,powered:0b,rotation:"NONE",seed:0L,showair:0b,showboundingbox:1b,sizeX:$(x_length),sizeY:$(y_length),sizeZ:$(z_length),strict:0b} strict
 setblock -161 185 -161 redstone_block
+
 
 # asset/.../yellow
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) structure_void strict

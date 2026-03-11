@@ -7,23 +7,40 @@ data modify storage rocketriders:main baseswap set value {}
 data modify storage rocketriders:main baseswap.blue_front_old set from storage rocketriders:teams blue.block_palette.front
 data modify storage rocketriders:main baseswap.blue_middle_old set from storage rocketriders:teams blue.block_palette.middle
 data modify storage rocketriders:main baseswap.blue_back_old set from storage rocketriders:teams blue.block_palette.back
+data modify storage rocketriders:main baseswap.blue_back_panes_old set from storage rocketriders:teams blue.block_palette.back_panes
 data modify storage rocketriders:main baseswap.blue_detail_old set from storage rocketriders:teams blue.block_palette.detail
 data modify storage rocketriders:main baseswap.yellow_front_old set from storage rocketriders:teams yellow.block_palette.front
 data modify storage rocketriders:main baseswap.yellow_middle_old set from storage rocketriders:teams yellow.block_palette.middle
 data modify storage rocketriders:main baseswap.yellow_back_old set from storage rocketriders:teams yellow.block_palette.back
+data modify storage rocketriders:main baseswap.yellow_back_panes_old set from storage rocketriders:teams yellow.block_palette.back_panes
 data modify storage rocketriders:main baseswap.yellow_detail_old set from storage rocketriders:teams yellow.block_palette.detail
 data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"dark",middle:"dark_accent",back:"black",detail:"black"},yellow:{front:"light",middle:"light_accent",back:"white",detail:"white"}}
 function game:team_attributes/update_block_palette
-function game:assets/update_palettes
 data modify storage rocketriders:main baseswap.blue_front_new set from storage rocketriders:teams blue.block_palette.front
 data modify storage rocketriders:main baseswap.blue_middle_new set from storage rocketriders:teams blue.block_palette.middle
 data modify storage rocketriders:main baseswap.blue_back_new set from storage rocketriders:teams blue.block_palette.back
+data modify storage rocketriders:main baseswap.blue_back_panes_new set from storage rocketriders:teams blue.block_palette.back_panes
 data modify storage rocketriders:main baseswap.blue_detail_new set from storage rocketriders:teams blue.block_palette.detail
 data modify storage rocketriders:main baseswap.yellow_front_new set from storage rocketriders:teams yellow.block_palette.front
 data modify storage rocketriders:main baseswap.yellow_middle_new set from storage rocketriders:teams yellow.block_palette.middle
 data modify storage rocketriders:main baseswap.yellow_back_new set from storage rocketriders:teams yellow.block_palette.back
+data modify storage rocketriders:main baseswap.yellow_back_panes_new set from storage rocketriders:teams yellow.block_palette.back_panes
 data modify storage rocketriders:main baseswap.yellow_detail_new set from storage rocketriders:teams yellow.block_palette.detail
-function rr_swap:baseswap/swap/layers with storage rocketriders:main baseswap
+function game:assets/update_palettes
+
+function rr_swap:baseswap/swap/bases with storage rocketriders:main baseswap
+execute if predicate game:arena_details/middle/layered run function rr_swap:baseswap/swap/details/layered with storage rocketriders:main baseswap
+execute if predicate game:arena_details/top_sides/platform run function rr_swap:baseswap/swap/details/platforms with storage rocketriders:main baseswap
+execute if predicate game:arena_details/top_sides/spikes run function rr_swap:baseswap/swap/details/spikes_top_sides with storage rocketriders:main baseswap
+execute if predicate game:arena_details/middle/slime_pads run function rr_swap:baseswap/swap/details/slime_pads_middle with storage rocketriders:main baseswap
+execute if predicate game:arena_details/bottom/slime_pad run function rr_swap:baseswap/swap/details/slime_pad_bottom with storage rocketriders:main baseswap
+execute if predicate game:arena_details/bottom/cannon run function rr_swap:baseswap/swap/details/cannon_bottom with storage rocketriders:main baseswap
+execute if predicate game:arena_details/top/arch run function rr_swap:baseswap/swap/details/arch with storage rocketriders:main baseswap
+execute if predicate game:arena_details/top_sides/cannons run function rr_swap:baseswap/swap/details/cannons_top with storage rocketriders:main baseswap
+execute if predicate game:arena_details/top/towers run function rr_swap:baseswap/swap/details/towers with storage rocketriders:main baseswap
+execute if predicate game:arena_details/middle/spikes run function rr_swap:baseswap/swap/details/spikes_middle with storage rocketriders:main baseswap
+execute if predicate game:arena_details/bottom/spikes run function rr_swap:baseswap/swap/details/spikes_bottom with storage rocketriders:main baseswap
+execute if predicate game:arena_details/top/spikes run function rr_swap:baseswap/swap/details/spikes_top with storage rocketriders:main baseswap
 
 #Visual titles and subtitles.
 schedule function rr_swap:baseswap/visuals_indimension 60t

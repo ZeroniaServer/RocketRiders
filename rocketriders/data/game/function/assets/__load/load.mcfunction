@@ -23,16 +23,16 @@ scoreboard players set $fixed_opposite_corner_z var -160
 scoreboard players operation $fixed_opposite_corner_z var += $z_length var
 execute store result storage rocketriders:main assets.fixed_opposite_corner_z int 1 run scoreboard players remove $fixed_opposite_corner_z var 1
 
-data modify storage rocketriders:main assets.blue_front set from storage rocketriders:teams blue.arena_base_blocks.front
-data modify storage rocketriders:main assets.blue_middle set from storage rocketriders:teams blue.arena_base_blocks.middle
-data modify storage rocketriders:main assets.blue_back set from storage rocketriders:teams blue.arena_base_blocks.back
-data modify storage rocketriders:main assets.blue_detail set from storage rocketriders:teams blue.arena_base_blocks.detail
-data modify storage rocketriders:main assets.blue_main_color set from storage rocketriders:teams blue.block_color_palette.main
-data modify storage rocketriders:main assets.yellow_front set from storage rocketriders:teams yellow.arena_base_blocks.front
-data modify storage rocketriders:main assets.yellow_middle set from storage rocketriders:teams yellow.arena_base_blocks.middle
-data modify storage rocketriders:main assets.yellow_back set from storage rocketriders:teams yellow.arena_base_blocks.back
-data modify storage rocketriders:main assets.yellow_detail set from storage rocketriders:teams yellow.arena_base_blocks.detail
-data modify storage rocketriders:main assets.yellow_main_color set from storage rocketriders:teams yellow.block_color_palette.main
+data modify storage rocketriders:main assets.blue_front set from storage rocketriders:teams blue.block_palette.front
+data modify storage rocketriders:main assets.blue_middle set from storage rocketriders:teams blue.block_palette.middle
+data modify storage rocketriders:main assets.blue_back set from storage rocketriders:teams blue.block_palette.back
+data modify storage rocketriders:main assets.blue_detail set from storage rocketriders:teams blue.block_palette.detail
+data modify storage rocketriders:main assets.blue_main_color set from storage rocketriders:teams blue.color_palette.main
+data modify storage rocketriders:main assets.yellow_front set from storage rocketriders:teams yellow.block_palette.front
+data modify storage rocketriders:main assets.yellow_middle set from storage rocketriders:teams yellow.block_palette.middle
+data modify storage rocketriders:main assets.yellow_back set from storage rocketriders:teams yellow.block_palette.back
+data modify storage rocketriders:main assets.yellow_detail set from storage rocketriders:teams yellow.block_palette.detail
+data modify storage rocketriders:main assets.yellow_main_color set from storage rocketriders:teams yellow.color_palette.main
 function game:assets/__load/save_structures with storage rocketriders:main assets
 fill -161 184 -161 -161 185 -161 air strict
 

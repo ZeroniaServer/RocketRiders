@@ -12,9 +12,9 @@ execute if predicate game:match_components/one_team if predicate game:match_comp
 execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run setblock -80 211 94 minecraft:shroomlight strict
 
 execute unless predicate game:match_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:blue_concrete replace #custom:concrete strict
-execute unless predicate game:match_components/red_for_blue run setblock -80 211 62 minecraft:sea_lantern
+execute unless predicate game:match_components/red_for_blue run setblock -80 211 62 minecraft:sea_lantern strict
 execute if predicate game:match_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:match_components/red_for_blue run setblock -80 211 62 minecraft:shroomlight
+execute if predicate game:match_components/red_for_blue run setblock -80 211 62 minecraft:shroomlight strict
 
 #Bridge colors
 execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run place template lobby:left_bridge/yellow -76 200 86 none none 1 0 strict
@@ -52,10 +52,10 @@ fill -81 199 86 -81 198 81 minecraft:lime_terracotta replace #custom:terracotta
 fill -89 202 90 -101 211 90 minecraft:air replace minecraft:barrier strict
 fill -89 202 66 -101 211 66 minecraft:air replace minecraft:barrier strict
 
-#Clear pregame molerat
+#Clear facade molerat
 fill -101 207 69 -89 186 87 air replace light_gray_stained_glass
 
-#Clear pregame powerup platform, crystal crafters, mini platforms, flags, and castles
+#Clear facade powerup platform, crystal crafters, mini platforms, flags, and castles
 fill -89 200 72 -101 202 85 air strict
 
 fill -92 200 81 -98 200 75 air strict
@@ -68,13 +68,15 @@ fill -101 200 85 -99 202 84 air strict
 fill -91 200 85 -89 202 84 air strict
 fill -89 200 71 -101 201 72 air strict
 
-fill -97 201 98 -93 202 101 barrier
-fill -97 201 55 -93 202 58 barrier
+fill -97 201 98 -93 202 101 barrier strict
+fill -97 201 55 -93 202 58 barrier strict
 
-fill -90 202 95 -90 203 95 air
-fill -100 202 95 -100 203 95 air
-fill -100 202 61 -100 203 61 air
-fill -90 202 61 -90 203 61 air
+fill -90 202 95 -90 203 95 air strict
+fill -100 202 95 -100 203 95 air strict
+fill -100 202 61 -100 203 61 air strict
+fill -90 202 61 -90 203 61 air strict
+
+fill -89 203 91 -101 199 65 air replace #banners strict
 
 #Set each base's blocks
 fill -101 195 60 -89 201 65 air strict
@@ -93,10 +95,10 @@ execute unless predicate game:match_components/arena/bedrock_frame run fill -102
 execute if predicate game:match_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:bedrock strict
 fill -101 195 97 -89 201 97 air strict
 
-execute if predicate game:match_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 bedrock
-execute if predicate game:match_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 bedrock
-execute unless predicate game:match_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 barrier
-execute unless predicate game:match_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 barrier
+execute if predicate game:match_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 bedrock strict
+execute if predicate game:match_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 bedrock strict
+execute unless predicate game:match_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 barrier strict
+execute unless predicate game:match_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 barrier strict
 
 # Frames & Portals
 execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/default run fill -101 195 59 -89 201 59 minecraft:nether_portal[axis=x] strict
@@ -110,10 +112,10 @@ execute unless predicate game:match_components/portal_crystal_protection if pred
 execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/small run fill -96 197 97 -94 198 97 minecraft:nether_portal[axis=x] strict
 
 # Flags
-execute if predicate game:match_components/has_flags run setblock -90 202 95 purple_stained_glass
-execute if predicate game:match_components/has_flags run setblock -100 202 95 purple_stained_glass
-execute if predicate game:match_components/has_flags run setblock -90 202 61 purple_stained_glass
-execute if predicate game:match_components/has_flags run setblock -100 202 61 purple_stained_glass
+execute if predicate game:match_components/has_flags run setblock -90 202 95 purple_stained_glass strict
+execute if predicate game:match_components/has_flags run setblock -100 202 95 purple_stained_glass strict
+execute if predicate game:match_components/has_flags run setblock -90 202 61 purple_stained_glass strict
+execute if predicate game:match_components/has_flags run setblock -100 202 61 purple_stained_glass strict
 execute if predicate game:match_components/has_flags unless predicate game:match_components/green_for_yellow positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
 execute if predicate game:match_components/has_flags unless predicate game:match_components/green_for_yellow positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
 execute if predicate game:match_components/has_flags if predicate game:match_components/green_for_yellow positioned -90 203 95 unless block ~ ~ ~ green_banner[rotation=8] run setblock ~ ~ ~ green_banner[rotation=8]
@@ -124,7 +126,7 @@ execute if predicate game:match_components/has_flags if predicate game:match_com
 execute if predicate game:match_components/has_flags if predicate game:match_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
 
 # Remove Chase Flag
-setblock -95 202 95 air
+setblock -95 202 95 air strict
 
 # Remove Chase blocks
 fill -101 195 66 -89 209 90 air replace #custom:player_heads strict

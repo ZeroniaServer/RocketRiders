@@ -14,11 +14,30 @@ execute if predicate game:match_components/red_for_blue run fill -99 200 73 -101
 execute unless predicate game:match_components/red_for_blue run fill -91 200 73 -89 202 73 blue_stained_glass
 execute if predicate game:match_components/red_for_blue run fill -91 200 73 -89 202 73 red_stained_glass
 
-# Portal area
+## Portal area
 fill -94 198 91 -96 200 94 minecraft:crying_obsidian
 fill -96 198 65 -94 200 62 minecraft:crying_obsidian
 
-#Set pre-game kit stands
+## Banners
+execute unless predicate game:match_components/red_for_blue run setblock -89 203 65 minecraft:blue_banner[rotation=6]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
+execute unless predicate game:match_components/red_for_blue run setblock -101 203 65 minecraft:blue_banner[rotation=10]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
+execute unless predicate game:match_components/red_for_blue run setblock -98 199 66 minecraft:blue_wall_banner[facing=south]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
+execute unless predicate game:match_components/red_for_blue run setblock -92 199 66 minecraft:blue_wall_banner[facing=south]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
+execute if predicate game:match_components/red_for_blue run setblock -89 203 65 minecraft:red_banner[rotation=6]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
+execute if predicate game:match_components/red_for_blue run setblock -101 203 65 minecraft:red_banner[rotation=10]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
+execute if predicate game:match_components/red_for_blue run setblock -98 199 66 minecraft:red_wall_banner[facing=south]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
+execute if predicate game:match_components/red_for_blue run setblock -92 199 66 minecraft:red_wall_banner[facing=south]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
+
+execute unless predicate game:match_components/green_for_yellow run setblock -101 203 91 minecraft:yellow_banner[rotation=14]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
+execute unless predicate game:match_components/green_for_yellow run setblock -89 203 91 minecraft:yellow_banner[rotation=2]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
+execute unless predicate game:match_components/green_for_yellow run setblock -92 199 90 minecraft:yellow_wall_banner[facing=north]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
+execute unless predicate game:match_components/green_for_yellow run setblock -98 199 90 minecraft:yellow_wall_banner[facing=north]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
+execute if predicate game:match_components/green_for_yellow run setblock -101 203 91 minecraft:green_banner[rotation=14]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
+execute if predicate game:match_components/green_for_yellow run setblock -89 203 91 minecraft:green_banner[rotation=2]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
+execute if predicate game:match_components/green_for_yellow run setblock -92 199 90 minecraft:green_wall_banner[facing=north]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
+execute if predicate game:match_components/green_for_yellow run setblock -98 199 90 minecraft:green_wall_banner[facing=north]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
+
+## Kit Armor Stands & Signs
 #blue
 summon minecraft:armor_stand -93.4 202 64 {Tags:["facade_entity","CrusadeEntity","KitSelect","KnightStand","BlueKit"],Rotation:[180,0],Invulnerable:true,NoBasePlate:true,NoGravity:true,ShowArms:true,Pose:{RightArm:[321,0,0]}}
 summon minecraft:armor_stand -95 202 64 {Tags:["facade_entity","CrusadeEntity","KitSelect","ArcherStand","BlueKit"],Rotation:[180,0],Invulnerable:true,NoBasePlate:true,NoGravity:true,ShowArms:true,Pose:{Head:[0,0,353],RightLeg:[12,0,0],LeftArm:[270,68,0],RightArm:[274,346,0]}}

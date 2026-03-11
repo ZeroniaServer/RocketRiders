@@ -1,6 +1,4 @@
-data modify storage rocketriders:match components."arena/base_materials" set value {front:"stained_glass",middle:"stained_glass",back:"concrete",detail:"stained_glass"}
-execute if predicate rr_swap:blue_team_is_light run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"light_accent",back:"white",detail:"white"},yellow:{front:"dark",middle:"dark_accent",back:"black",detail:"black"}}
-execute if predicate rr_swap:blue_team_is_dark run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"dark",middle:"dark_accent",back:"black",detail:"black"},yellow:{front:"light",middle:"light_accent",back:"white",detail:"white"}}
+function rr_swap:baseswap/set_palettes
 
 scoreboard players set $armor/swap match_components 1
 scoreboard players set $config_override.special_treatment match_components -1

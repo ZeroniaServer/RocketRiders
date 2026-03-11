@@ -20,7 +20,6 @@ schedule clear lobby:cancelsettings/counter
 execute if predicate game:phase/match run return run function game:set_phase/staging.configuration
 
 # during staging
-scoreboard players reset $swap_side global
 execute as @a[x=0] run attribute @s minecraft:attack_speed base reset
 scoreboard players add @a[x=0,predicate=custom:team/any_arena_team] LeaveGame 1
 tp @a[x=0,predicate=custom:team/blue] -36 211 61.0 90 0

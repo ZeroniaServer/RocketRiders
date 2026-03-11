@@ -13,7 +13,6 @@ tag @s remove BothWon
 scoreboard players reset $blue_single_portal var
 scoreboard players reset $yellow_single_portal var
 scoreboard players reset $1v1_duel_time_out_period global
-scoreboard players reset $swap_side global
 
 function custom:game_rules/mob_griefing/off
 execute if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s minecraft:attack_speed base reset

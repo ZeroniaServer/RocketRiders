@@ -14,8 +14,7 @@ data modify storage rocketriders:main baseswap.yellow_middle_old set from storag
 data modify storage rocketriders:main baseswap.yellow_back_old set from storage rocketriders:teams yellow.block_palette.back
 data modify storage rocketriders:main baseswap.yellow_back_panes_old set from storage rocketriders:teams yellow.block_palette.back_panes
 data modify storage rocketriders:main baseswap.yellow_detail_old set from storage rocketriders:teams yellow.block_palette.detail
-data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"light_accent",back:"white",detail:"white"},yellow:{front:"dark",middle:"dark_accent",back:"black",detail:"black"}}
-function game:team_attributes/update_block_palette
+function rr_swap:baseswap/set_palettes
 data modify storage rocketriders:main baseswap.blue_front_new set from storage rocketriders:teams blue.block_palette.front
 data modify storage rocketriders:main baseswap.blue_middle_new set from storage rocketriders:teams blue.block_palette.middle
 data modify storage rocketriders:main baseswap.blue_back_new set from storage rocketriders:teams blue.block_palette.back
@@ -26,7 +25,6 @@ data modify storage rocketriders:main baseswap.yellow_middle_new set from storag
 data modify storage rocketriders:main baseswap.yellow_back_new set from storage rocketriders:teams yellow.block_palette.back
 data modify storage rocketriders:main baseswap.yellow_back_panes_new set from storage rocketriders:teams yellow.block_palette.back_panes
 data modify storage rocketriders:main baseswap.yellow_detail_new set from storage rocketriders:teams yellow.block_palette.detail
-function game:assets/update_palettes
 
 function rr_swap:baseswap/swap/bases with storage rocketriders:main baseswap
 execute if predicate game:arena_details/middle/layered run function rr_swap:baseswap/swap/details/layered with storage rocketriders:main baseswap

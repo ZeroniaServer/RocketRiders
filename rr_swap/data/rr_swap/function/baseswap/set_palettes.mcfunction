@@ -1,0 +1,6 @@
+execute if score $swap_side global matches 1 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"dark",middle:"dark_accent",back:"black",detail:"black"},yellow:{front:"light",middle:"light_accent",back:"white",detail:"white"}}
+execute if score $swap_side global matches 1 run data modify storage rocketriders:match components."arena/base_materials" set value {blue:{front:"stained_glass",middle:"stained_glass",back:"concrete",detail:"stained_glass"},yellow:{front:"stained_glass",middle:"stained_glass",back:"concrete",detail:"stained_glass"}}
+execute unless score $swap_side global matches 1 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"light_accent",back:"white",detail:"white"},yellow:{front:"dark",middle:"dark_accent",back:"black",detail:"black"}}
+execute unless score $swap_side global matches 1 run data modify storage rocketriders:match components."arena/base_materials" set value {blue:{front:"stained_glass",middle:"stained_glass",back:"concrete",detail:"stained_glass"},yellow:{front:"stained_glass",middle:"stained_glass",back:"concrete",detail:"stained_glass"}}
+
+function game:team_attributes/update_block_palette

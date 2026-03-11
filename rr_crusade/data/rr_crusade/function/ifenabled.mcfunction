@@ -7,6 +7,17 @@ execute unless score @s SetGamemode = @e[x=0,type=armor_stand,tag=rr_crusade,lim
 #tips
 function rr_crusade:tip
 
+# facade
+particle minecraft:end_rod -89.5 201.5 73.5 0.25 0.25 0.1 0 1 force @a[x=0,predicate=!custom:in_arena,tag=!noParticles]
+particle minecraft:end_rod -99.5 201.5 73.5 0.25 0.25 0.1 0 1 force @a[x=0,predicate=!custom:in_arena,tag=!noParticles]
+particle minecraft:end_rod -89.5 201.5 84.5 0.25 0.25 0.1 0 1 force @a[x=0,predicate=!custom:in_arena,tag=!noParticles]
+particle minecraft:end_rod -99.5 201.5 84.5 0.25 0.25 0.1 0 1 force @a[x=0,predicate=!custom:in_arena,tag=!noParticles]
+
+execute if predicate custom:coin_flip run particle minecraft:trail{duration:100,color:0xFFFFFF,target:[-94.5,199.5,65.5]} -89.5 201.5 73.5 0.3 0.3 0.0 0 1 force @a[x=0,predicate=!custom:in_arena,tag=!noParticles]
+execute if predicate custom:coin_flip run particle minecraft:trail{duration:100,color:0xFFFFFF,target:[-94.5,199.5,65.5]} -99.5 201.5 73.5 0.3 0.3 0.0 0 1 force @a[x=0,predicate=!custom:in_arena,tag=!noParticles]
+execute if predicate custom:coin_flip run particle minecraft:trail{duration:100,color:0xFFFFFF,target:[-94.5,199.5,91.5]} -89.5 201.5 84.5 0.3 0.3 0.0 0 1 force @a[x=0,predicate=!custom:in_arena,tag=!noParticles]
+execute if predicate custom:coin_flip run particle minecraft:trail{duration:100,color:0xFFFFFF,target:[-94.5,199.5,91.5]} -99.5 201.5 84.5 0.3 0.3 0.0 0 1 force @a[x=0,predicate=!custom:in_arena,tag=!noParticles]
+
 #game
 function rr_crusade:game/gamestart
 execute if predicate game:phase/match run function rr_crusade:game/while_phase/match

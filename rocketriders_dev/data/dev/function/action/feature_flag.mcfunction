@@ -28,7 +28,7 @@ data modify storage rocketriders:main dev.dialog set value {\
 
 # Feature Flags
 function dev:__impl__/feature_flag/option {name:"Colored Portal Frames",description:"Tint the obsidian around portals to match the team color.",index:0,config_id:"colored_portal_frames"}
-function dev:__impl__/feature_flag/option {name:"Rotting Modifier",description:"Adds the Rotting modifier.",index:1,config_id:"rotting_modifier"}
+function dev:__impl__/feature_flag/option {name:"1.4.0 Update",description:"Adds features intended for version 1.4.0.",index:1,config_id:"1_4_0_update"}
 
 # Show Dialog
 function custom:show_dialog with storage rocketriders:main dev

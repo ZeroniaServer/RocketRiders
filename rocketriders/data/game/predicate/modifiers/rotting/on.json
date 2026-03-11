@@ -1,7 +1,7 @@
 [
   {
     "condition": "minecraft:reference",
-    "name": "game:feature_flags/rotting_modifier"
+    "name": "game:feature_flags/1_4_0_update"
   },
   {
     "condition": "minecraft:inverted",

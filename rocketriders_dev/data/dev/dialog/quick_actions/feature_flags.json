@@ -12,7 +12,7 @@
         "command": "/trigger dev set 211",
         "type": "minecraft:run_command"
       },
-      "label": "Rotting Modifier..."
+      "label": "1.4.0 Update..."
     }
   ],
   "after_action": "wait_for_response",

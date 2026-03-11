@@ -22,7 +22,7 @@ execute if predicate game:modifiers/unstable_tnt/on run data modify storage rock
 execute if predicate game:modifiers/hobbits/on run data modify storage rocketriders:modifiers list append value {"text":"Hobbits","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players are two thirds of their normal size, and can sneak under 1-block-tall gaps.","color":"white"}]}}
 execute if predicate game:modifiers/instant_tnt_explosions/on run data modify storage rocketriders:modifiers list append value {"text":"Instant TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Primed TNT instantly explodes.","color":"white"}]}}
 execute if predicate game:modifiers/long_arms/on run data modify storage rocketriders:modifiers list append value {"text":"Long Arms","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"You can reach blocks and players from twice as far away.","color":"white"}]}}
-execute if predicate game:feature_flags/rotting_modifier if predicate game:modifiers/rotting/on run data modify storage rocketriders:modifiers list append value {"text":"Rotting","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Blocks left between the bases will slowly be consumed by rot.","color":"white"}]}}
+execute if predicate game:feature_flags/1_4_0_update if predicate game:modifiers/rotting/on run data modify storage rocketriders:modifiers list append value {"text":"Rotting","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Blocks left between the bases will slowly be consumed by rot.","color":"white"}]}}
 
 #Creates companion list of each modifier's name length
 data modify storage rocketriders:modifiers length set value []
@@ -48,7 +48,7 @@ execute if predicate game:modifiers/unstable_tnt/on run data modify storage rock
 execute if predicate game:modifiers/hobbits/on run data modify storage rocketriders:modifiers length append value 7
 execute if predicate game:modifiers/instant_tnt_explosions/on run data modify storage rocketriders:modifiers length append value 11
 execute if predicate game:modifiers/long_arms/on run data modify storage rocketriders:modifiers length append value 9
-execute if predicate game:feature_flags/rotting_modifier if predicate game:modifiers/rotting/on run data modify storage rocketriders:modifiers length append value 7
+execute if predicate game:feature_flags/1_4_0_update if predicate game:modifiers/rotting/on run data modify storage rocketriders:modifiers length append value 7
 
 #Splits this list into lines for chat legibility
 data modify storage rocketriders:modifiers line set value []

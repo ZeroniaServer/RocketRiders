@@ -4,7 +4,7 @@
   "value": {
     "score": "config",
     "target": {
-      "name": "$rotting_modifier",
+      "name": "$1_4_0_update",
       "type": "minecraft:fixed"
     },
     "type": "minecraft:score"

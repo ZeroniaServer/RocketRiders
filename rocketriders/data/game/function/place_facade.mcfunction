@@ -112,18 +112,8 @@ execute unless predicate game:match_components/portal_crystal_protection if pred
 execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/small run fill -96 197 97 -94 198 97 minecraft:nether_portal[axis=x] strict
 
 # Flags
-execute if predicate game:match_components/has_flags run setblock -90 202 95 purple_stained_glass strict
-execute if predicate game:match_components/has_flags run setblock -100 202 95 purple_stained_glass strict
-execute if predicate game:match_components/has_flags run setblock -90 202 61 purple_stained_glass strict
-execute if predicate game:match_components/has_flags run setblock -100 202 61 purple_stained_glass strict
-execute if predicate game:match_components/has_flags unless predicate game:match_components/green_for_yellow positioned -90 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute if predicate game:match_components/has_flags unless predicate game:match_components/green_for_yellow positioned -100 203 95 unless block ~ ~ ~ yellow_banner[rotation=8] run setblock ~ ~ ~ yellow_banner[rotation=8]
-execute if predicate game:match_components/has_flags if predicate game:match_components/green_for_yellow positioned -90 203 95 unless block ~ ~ ~ green_banner[rotation=8] run setblock ~ ~ ~ green_banner[rotation=8]
-execute if predicate game:match_components/has_flags if predicate game:match_components/green_for_yellow positioned -100 203 95 unless block ~ ~ ~ green_banner[rotation=8] run setblock ~ ~ ~ green_banner[rotation=8]
-execute if predicate game:match_components/has_flags unless predicate game:match_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
-execute if predicate game:match_components/has_flags unless predicate game:match_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ blue_banner[rotation=0] run setblock ~ ~ ~ blue_banner[rotation=0]
-execute if predicate game:match_components/has_flags if predicate game:match_components/red_for_blue positioned -90 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
-execute if predicate game:match_components/has_flags if predicate game:match_components/red_for_blue positioned -100 203 61 unless block ~ ~ ~ red_banner[rotation=0] run setblock ~ ~ ~ red_banner[rotation=0]
+execute if predicate game:match_components/has_flags run function game:place_facade/blue_flags with storage rocketriders:teams blue.block_palette
+execute if predicate game:match_components/has_flags run function game:place_facade/yellow_flags with storage rocketriders:teams yellow.block_palette
 
 # Remove Chase Flag
 setblock -95 202 95 air strict

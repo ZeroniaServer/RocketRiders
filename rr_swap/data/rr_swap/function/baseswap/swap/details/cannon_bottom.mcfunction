@@ -5,7 +5,7 @@ $fill -160 184 -160 -152 192 -152 $(blue_middle_new) replace $(blue_middle_old) 
 $fill -160 184 -160 -152 192 -152 $(blue_back_new) replace $(blue_back_old) strict
 $fill -160 184 -160 -152 192 -152 $(blue_detail_new) replace $(blue_detail_old) strict
 clone -160 184 -160 -152 192 -152 8 39 -55 strict masked
-$fill -160 184 -160 -152 192 -152 $(blue_back_panes_new) replace $(blue_back_panes_old)
+$fill -160 184 -160 -152 192 -152 $(blue_back_stained_glass_pane_new) replace $(blue_back_stained_glass_pane_old)
 clone -160 184 -160 -152 192 -152 8 39 -55 strict filtered #custom:glasspane
 
 ## Yellow
@@ -15,5 +15,5 @@ $fill -160 184 -160 -152 192 -152 $(yellow_middle_new) replace $(yellow_middle_o
 $fill -160 184 -160 -152 192 -152 $(yellow_back_new) replace $(yellow_back_old) strict
 $fill -160 184 -160 -152 192 -152 $(yellow_detail_new) replace $(yellow_detail_old) strict
 clone -160 184 -160 -152 192 -152 8 37 47 strict masked
-$fill -160 184 -160 -152 192 -152 $(yellow_back_panes_new) replace $(yellow_back_panes_old)
+$fill -160 184 -160 -152 192 -152 $(yellow_back_stained_glass_pane_new) replace $(yellow_back_stained_glass_pane_old)
 clone -160 184 -160 -152 192 -152 8 37 47 strict filtered #custom:glasspane

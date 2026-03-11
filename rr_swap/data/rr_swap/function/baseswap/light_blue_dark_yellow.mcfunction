@@ -7,23 +7,23 @@ data modify storage rocketriders:main baseswap set value {}
 data modify storage rocketriders:main baseswap.blue_front_old set from storage rocketriders:teams blue.block_palette.front
 data modify storage rocketriders:main baseswap.blue_middle_old set from storage rocketriders:teams blue.block_palette.middle
 data modify storage rocketriders:main baseswap.blue_back_old set from storage rocketriders:teams blue.block_palette.back
-data modify storage rocketriders:main baseswap.blue_back_panes_old set from storage rocketriders:teams blue.block_palette.back_panes
+data modify storage rocketriders:main baseswap.blue_back_stained_glass_pane_old set from storage rocketriders:teams blue.block_palette.back_stained_glass_pane
 data modify storage rocketriders:main baseswap.blue_detail_old set from storage rocketriders:teams blue.block_palette.detail
 data modify storage rocketriders:main baseswap.yellow_front_old set from storage rocketriders:teams yellow.block_palette.front
 data modify storage rocketriders:main baseswap.yellow_middle_old set from storage rocketriders:teams yellow.block_palette.middle
 data modify storage rocketriders:main baseswap.yellow_back_old set from storage rocketriders:teams yellow.block_palette.back
-data modify storage rocketriders:main baseswap.yellow_back_panes_old set from storage rocketriders:teams yellow.block_palette.back_panes
+data modify storage rocketriders:main baseswap.yellow_back_stained_glass_pane_old set from storage rocketriders:teams yellow.block_palette.back_stained_glass_pane
 data modify storage rocketriders:main baseswap.yellow_detail_old set from storage rocketriders:teams yellow.block_palette.detail
 function rr_swap:baseswap/set_palettes
 data modify storage rocketriders:main baseswap.blue_front_new set from storage rocketriders:teams blue.block_palette.front
 data modify storage rocketriders:main baseswap.blue_middle_new set from storage rocketriders:teams blue.block_palette.middle
 data modify storage rocketriders:main baseswap.blue_back_new set from storage rocketriders:teams blue.block_palette.back
-data modify storage rocketriders:main baseswap.blue_back_panes_new set from storage rocketriders:teams blue.block_palette.back_panes
+data modify storage rocketriders:main baseswap.blue_back_stained_glass_pane_new set from storage rocketriders:teams blue.block_palette.back_stained_glass_pane
 data modify storage rocketriders:main baseswap.blue_detail_new set from storage rocketriders:teams blue.block_palette.detail
 data modify storage rocketriders:main baseswap.yellow_front_new set from storage rocketriders:teams yellow.block_palette.front
 data modify storage rocketriders:main baseswap.yellow_middle_new set from storage rocketriders:teams yellow.block_palette.middle
 data modify storage rocketriders:main baseswap.yellow_back_new set from storage rocketriders:teams yellow.block_palette.back
-data modify storage rocketriders:main baseswap.yellow_back_panes_new set from storage rocketriders:teams yellow.block_palette.back_panes
+data modify storage rocketriders:main baseswap.yellow_back_stained_glass_pane_new set from storage rocketriders:teams yellow.block_palette.back_stained_glass_pane
 data modify storage rocketriders:main baseswap.yellow_detail_new set from storage rocketriders:teams yellow.block_palette.detail
 
 function rr_swap:baseswap/swap/bases with storage rocketriders:main baseswap

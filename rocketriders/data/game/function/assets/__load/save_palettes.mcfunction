@@ -2,7 +2,7 @@
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) structure_void strict
 $place template game:$(asset_id) -160 184 -160 none none 1 0 strict
 
-$fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(blue_back_panes) replace white_stained_glass_pane
+$fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(blue_back_stained_glass_pane) replace white_stained_glass_pane
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=north,half=bottom] replace blue_stained_glass strict
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=east,half=bottom] replace cyan_stained_glass strict
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=south,half=bottom] replace white_stained_glass strict
@@ -29,7 +29,7 @@ $scoreboard players set $rotate_yellow var $(rotate_yellow)
 $execute if score $rotate_yellow var matches 0 positioned -161 184 -161 run place template game:$(asset_id) -160 184 -160 none none 1 0 strict
 $execute if score $rotate_yellow var matches 1 positioned -161 184 -161 run place template game:$(asset_id) ~$(x_length) ~ ~$(z_length) 180 none 1 0 strict
 
-$fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(yellow_back_panes) replace white_stained_glass_pane
+$fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(yellow_back_stained_glass_pane) replace white_stained_glass_pane
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=north,half=bottom] replace blue_stained_glass strict
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=east,half=bottom] replace cyan_stained_glass strict
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=south,half=bottom] replace white_stained_glass strict

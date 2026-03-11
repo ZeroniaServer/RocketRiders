@@ -4,6 +4,7 @@
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) structure_void strict
 $place template game:$(asset_id) -160 184 -160 none none 1 0 strict
 
+$fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(blue_back_panes) replace white_stained_glass_pane
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=north] replace blue_stained_glass strict
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=east] replace cyan_stained_glass strict
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=south] replace white_stained_glass strict
@@ -25,6 +26,7 @@ setblock -161 185 -161 redstone_block
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) structure_void strict
 $execute positioned -161 184 -161 run place template game:$(asset_id) ~$(x_length) ~ ~$(z_length) 180 none 1 0 strict
 
+$fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(yellow_back_panes) replace white_stained_glass_pane
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=north] replace blue_stained_glass strict
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=east] replace cyan_stained_glass strict
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=south] replace white_stained_glass strict

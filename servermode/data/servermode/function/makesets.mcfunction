@@ -29,6 +29,11 @@ tag @e[x=0,tag=Maps,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,
 tag @e[x=0,tag=Maps,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4,tag=!ServermodeSet5,tag=!ServermodeSet6,limit=1,sort=random] add ServermodeSet4
 tag @e[x=0,tag=Maps,tag=!ServermodeSet1,tag=!ServermodeSet2,tag=!ServermodeSet3,tag=!ServermodeSet4,tag=!ServermodeSet5,tag=!ServermodeSet6,limit=1,sort=random] add ServermodeSet5
 
+# Remove classic colors from previous round
+scoreboard players reset $classic_team_colors config
+function game:match_components/reset
+function game:place_facade
+
 # Notify vote
 execute as @a[x=0] run function servermode:notifyvote
 

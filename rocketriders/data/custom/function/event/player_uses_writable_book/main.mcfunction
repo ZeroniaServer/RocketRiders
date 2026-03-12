@@ -1,4 +1,5 @@
 scoreboard players reset @s event.player_uses_writable_book
+execute unless predicate game:phase/match/play run return fail
 
 scoreboard players set $using_spell_wand var 0
 execute if items entity @s weapon.mainhand writable_book[custom_data~{id:"spell_wand"}] run scoreboard players set $using_spell_wand var 1

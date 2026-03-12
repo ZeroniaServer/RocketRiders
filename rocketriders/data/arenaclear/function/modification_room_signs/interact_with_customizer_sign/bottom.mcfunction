@@ -4,6 +4,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefres
 # overrides
 execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Base Details are not adjustable in this game mode."}
 execute if predicate game:match_components/arena/no_base_details run return run tellraw @s {color:"dark_gray",italic:true,text:"Base Details are incompatible with this game mode."}
+execute if predicate game:match_components/arena/castle run return run tellraw @s {color:"dark_gray",italic:true,text:"Base Details are incompatible with this game mode."}
+execute if predicate game:modifiers/hardcore/on run return run tellraw @s {color:"dark_gray",italic:true,text:"Base Details are incompatible with the Hardcore modifier."}
 execute if predicate game:arena_details/middle/layered run return run tellraw @s [{color:"dark_gray",italic:true,text:"This detail is not compatible with the 'Layered' Middle Detail."}]
 
 # cycle options

@@ -14,8 +14,8 @@
             "dimension": "minecraft:overworld",
             "position": {
               "z": {
-                "min": -62,
-                "max": 63
+                "min": -58,
+                "max": 59
               }
             }
           }
@@ -38,8 +38,8 @@
             "dimension": "minecraft:overworld",
             "position": {
               "z": {
-                "min": -50,
-                "max": 51
+                "min": -46,
+                "max": 47
               }
             }
           }

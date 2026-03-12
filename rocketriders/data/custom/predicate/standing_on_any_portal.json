@@ -11,12 +11,7 @@
       },
       "stepping_on": {
         "block": {
-          "blocks": [
-            "minecraft:barrier",
-            "minecraft:nether_portal",
-            "minecraft:blue_stained_glass_pane",
-            "minecraft:yellow_stained_glass_pane"
-          ]
+          "blocks": "#custom:standing_on_portal_blocks"
         }
       }
     }

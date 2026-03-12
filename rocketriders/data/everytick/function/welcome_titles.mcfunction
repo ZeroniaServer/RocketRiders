@@ -3,4 +3,6 @@ playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1.5
 title @s times 10 80 20
 title @s title "Welcome to"
 title @s subtitle [{bold:true,color:"blue",text:"Rocket "},{color:"gold",text:"Riders"},[{bold:false,color:"green",text:" "},{storage:"rocketriders:version",nbt:"name",interpret:true},"!"]]
-tellraw @s ["Welcome to ",[{bold:true,color:"blue",text:"Rocket "},{color:"gold",text:"Riders"},[{bold:false,color:"green",text:" "},{storage:"rocketriders:version",nbt:"name",interpret:true},"!"]]]
+# New players already get a separate tellraw
+tellraw @s[tag=!newPlayer] ["Welcome to ",[{bold:true,color:"blue",text:"Rocket "},{color:"gold",text:"Riders"},[{bold:false,color:"green",text:" "},{storage:"rocketriders:version",nbt:"name",interpret:true},"!"]]]
+tag @s[tag=newPlayer] remove newPlayer

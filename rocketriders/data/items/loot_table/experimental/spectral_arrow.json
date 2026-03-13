@@ -7,8 +7,8 @@
             {
               "components": {
                 "minecraft:custom_data": {
-                  "Droppable": true,
-                  "id": "spectral_arrow"
+                  "id": "spectral_arrow",
+                  "droppable": true
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],

@@ -1,4 +1,5 @@
 ##
+kill @e[x=0,type=#arrows,predicate=!custom:in_arena]
 function lobby:update_nav_book
 tag @a[x=0] remove doing_facade_parkour
 

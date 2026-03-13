@@ -2,6 +2,8 @@
 gamemode spectator @a[x=0,predicate=custom:team/spectator]
 gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 
+kill @e[x=0,type=#arrows,predicate=!custom:in_arena]
+
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/pause
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_end/match/pause

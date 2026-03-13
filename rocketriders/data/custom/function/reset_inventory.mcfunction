@@ -11,7 +11,7 @@ item replace entity @s player.crafting.2 with air
 item replace entity @s player.crafting.3 with air
 item replace entity @s saddle with air
 tag @s add matchOrigin
-execute as @e[x=0,type=item] unless items entity @s contents *[custom_data~{Droppable:true}] if function custom:match_origin run kill @s
+execute as @e[x=0,type=item] unless items entity @s contents *[custom_data~{droppable:true}] if function custom:match_origin run kill @s
 tag @s remove matchOrigin
 
 # Write hotbar and offhand items to a separate container, then update the respective player slots if the item has changed.

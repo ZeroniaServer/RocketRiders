@@ -6,11 +6,10 @@
           "functions": [
             {
               "components": {
-                "!minecraft:potion_duration_scale": {},
                 "minecraft:custom_data": {
-                  "Droppable": true,
                   "id": "tipped_arrow_levitation",
-                  "tipped_arrow_type": "levitation"
+                  "tipped_arrow_type": "levitation",
+                  "droppable": true
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],
@@ -35,7 +34,8 @@
                       "show_particles": true
                     }
                   ]
-                }
+                },
+                "!minecraft:potion_duration_scale": {}
               },
               "function": "minecraft:set_components"
             },

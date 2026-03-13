@@ -14,4 +14,4 @@ execute if items entity @s contents clock run return run kill @s
 execute if items entity @s contents compass run return run kill @s
 
 # Return non-droppable items to their thrower
-execute unless items entity @s contents *[custom_data~{Droppable:1b}] run return run function everytick:return_item_entity_to_thrower
+execute unless items entity @s contents *[custom_data~{droppable:1b}] run return run function everytick:return_item_entity_to_thrower

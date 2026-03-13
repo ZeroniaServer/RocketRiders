@@ -40,13 +40,6 @@
         "condition": "minecraft:all_of",
         "terms": [
           {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:reference",
-              "name": "custom:gliding_downwards"
-            }
-          },
-          {
             "condition": "minecraft:any_of",
             "terms": [
               {

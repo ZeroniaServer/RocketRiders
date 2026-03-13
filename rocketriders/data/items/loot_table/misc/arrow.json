@@ -7,8 +7,8 @@
             {
               "components": {
                 "minecraft:custom_data": {
-                  "Droppable": true,
-                  "id": "arrow"
+                  "id": "arrow",
+                  "droppable": true
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],

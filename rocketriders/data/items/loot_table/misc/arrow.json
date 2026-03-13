@@ -7,8 +7,7 @@
             {
               "components": {
                 "minecraft:custom_data": {
-                  "id": "arrow",
-                  "droppable": true
+                  "id": "arrow"
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],
@@ -28,6 +27,10 @@
               "function": "minecraft:set_components"
             },
             {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
+            },
+            {
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -38,17 +41,13 @@
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:phase/staging"
+                  "name": "game:phase/match/play"
                 }
               ],
               "function": "minecraft:set_custom_data",
               "tag": {
-                "lobby": true
+                "droppable": true
               }
-            },
-            {
-              "function": "minecraft:reference",
-              "name": "items:set_custom_model_data"
             }
           ],
           "name": "minecraft:arrow",

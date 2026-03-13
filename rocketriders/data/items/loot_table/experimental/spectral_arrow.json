@@ -7,8 +7,7 @@
             {
               "components": {
                 "minecraft:custom_data": {
-                  "id": "spectral_arrow",
-                  "droppable": true
+                  "id": "spectral_arrow"
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],
@@ -30,6 +29,25 @@
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
+            },
+            {
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:phase/match/play"
+                }
+              ],
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "droppable": true
+              }
             }
           ],
           "name": "minecraft:spectral_arrow",

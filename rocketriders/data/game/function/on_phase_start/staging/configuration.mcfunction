@@ -1,4 +1,6 @@
 ##
+execute if predicate rr:has_voting run scoreboard players set $voting_timer global 0
+
 function arenaclear:refreshsigns
 
 bossbar set rr:startgame max 30

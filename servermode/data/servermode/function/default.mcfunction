@@ -20,4 +20,4 @@ function lobby:update_nav_book
 
 scoreboard objectives remove joinBlue
 scoreboard objectives remove joinYellow
-scoreboard objectives remove spectate
+scoreboard objectives remove command_spectate

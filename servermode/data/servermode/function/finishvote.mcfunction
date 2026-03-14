@@ -1,4 +1,4 @@
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] VoteServerMode 600
+scoreboard players set $voting_timer global 600
 
 # Close voting ballot
 dialog clear @a[x=0]

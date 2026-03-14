@@ -36,5 +36,3 @@ function game:place_facade
 
 # Notify vote
 execute as @a[x=0] run function servermode:notifyvote
-
-scoreboard players enable @a[x=0] VoteServerMode

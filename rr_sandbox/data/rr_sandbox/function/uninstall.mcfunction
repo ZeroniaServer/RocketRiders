@@ -2,7 +2,7 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function rr_sandbo
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxLast] add needsForceClear
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxLast] run function rr_sandbox:arenaclear/areaclear
 execute if entity @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1] run kill @e[x=0,type=armor_stand,tag=rr_sandbox,limit=1]
-scoreboard objectives remove nomicon
+scoreboard objectives remove sandbox.rocket_nomicon
 scoreboard players reset * gamemodeID
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxLast] unless entity @e[x=0,type=marker,tag=PlacerClear] run function rr_sandbox:game/while_phase/match/closing

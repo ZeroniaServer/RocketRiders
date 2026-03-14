@@ -93,10 +93,5 @@ execute as @e[x=0,type=marker,tag=hyperExtra] at @s run function items:hyperextr
 ##Modifiers
 execute unless predicate game:phase/match/pause run function modifiers:modifiers
 
-## Leave Mid-Match
-execute as @a[scores={LeaveMidgame=1..},predicate=custom:team/any_playing_team] run function game:leave_mid_match
-scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] LeaveMidgame
-scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame
-
 ## Regenerate back layer
 execute unless predicate game:phase/match/pause if predicate game:match_components/arena/regenerate_back_layer run function game:regenerate_back_layer/tick

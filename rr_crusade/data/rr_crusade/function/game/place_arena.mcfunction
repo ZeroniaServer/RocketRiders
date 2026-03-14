@@ -63,28 +63,28 @@ function rr_crusade:game/place_crystal/blue_b
 fill 14 63 -63 14 64 -63 minecraft:obsidian
 summon minecraft:armor_stand 14 65 -63 {Tags:["CrusadeEntity","KitSelect","KnightStand","BlueKit"],Rotation:[180,0],Invulnerable:true,NoBasePlate:true,NoGravity:true,ShowArms:true,Pose:{RightArm:[321.0f,0.0f,0.0f]}}
 summon minecraft:text_display 14 67.125 -63 {Tags:["CrusadeEntity","KitSelect","KnightStand","BlueKit"],billboard:"center",text:{bold:true,color:"dark_green",text:"Knight"},background:0}
-setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 1"}},{bold:true,color:"#008805",text:"Knight"},""]}}
+setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1001"}},{bold:true,color:"#008805",text:"Knight"},""]}}
 fill 12 63 -62 12 64 -62 minecraft:obsidian
 summon minecraft:armor_stand 12 65 -62 {Tags:["CrusadeEntity","KitSelect","ArcherStand","BlueKit"],Rotation:[180,0],Invulnerable:true,NoBasePlate:true,NoGravity:true,ShowArms:true,Pose:{Head:[0.0f,0.0f,353.0f],RightLeg:[12.0f,0.0f,0.0f],LeftArm:[270.0f,68.0f,0.0f],RightArm:[274.0f,346.0f,0.0f]}}
 summon minecraft:text_display 12 67.125 -62 {Tags:["CrusadeEntity","KitSelect","ArcherStand","BlueKit"],billboard:"center",text:{bold:true,color:"red",text:"Archer"},background:0}
-setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 2"}},{bold:true,color:"#008805",text:"Archer"},""]}}
+setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1002"}},{bold:true,color:"#008805",text:"Archer"},""]}}
 fill 10 63 -63 10 64 -63 minecraft:obsidian
 summon minecraft:armor_stand 10 65 -63 {Tags:["CrusadeEntity","KitSelect","MageStand","BlueKit"],Rotation:[180,0],Invulnerable:true,NoBasePlate:true,NoGravity:true,ShowArms:true,Pose:{Head:[345.0f,0.0f,0.0f],LeftLeg:[323.0f,0.0f,0.0f],RightLeg:[38.0f,0.0f,0.0f],LeftArm:[23.0f,0.0f,0.0f],RightArm:[215.0f,0.0f,0.0f]}}
 summon minecraft:text_display 10 67.125 -63 {Tags:["CrusadeEntity","KitSelect","MageStand","BlueKit"],billboard:"center",text:{bold:true,color:"dark_purple",text:"Mage"},background:0}
-setblock 10 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 3"}},{bold:true,color:"#008805",text:"Mage"},""]}}
+setblock 10 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1003"}},{bold:true,color:"#008805",text:"Mage"},""]}}
 #yellow
 fill 14 63 63 14 64 63 minecraft:obsidian
 summon minecraft:armor_stand 10 65 63 {Tags:["CrusadeEntity","KitSelect","KnightStand","YellowKit"],Rotation:[0,0],Invulnerable:true,NoBasePlate:true,NoGravity:true,ShowArms:true,Pose:{RightArm:[321.0f,0.0f,0.0f]}}
 summon minecraft:text_display 10 67.125 63 {Tags:["CrusadeEntity","KitSelect","KnightStand","YellowKit"],billboard:"center",text:{bold:true,color:"dark_green",text:"Knight"},background:0}
-setblock 10 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 1"}},{bold:true,color:"#008805",text:"Knight"},""]}}
+setblock 10 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1001"}},{bold:true,color:"#008805",text:"Knight"},""]}}
 fill 12 63 62 12 64 62 minecraft:obsidian
 summon minecraft:armor_stand 12 65 62 {Tags:["CrusadeEntity","KitSelect","ArcherStand","YellowKit"],Rotation:[0,0],Invulnerable:true,NoBasePlate:true,NoGravity:true,ShowArms:true,Pose:{Head:[0.0f,0.0f,353.0f],RightLeg:[12.0f,0.0f,0.0f],LeftArm:[270.0f,68.0f,0.0f],RightArm:[274.0f,346.0f,0.0f]}}
 summon minecraft:text_display 12 67.125 62 {Tags:["CrusadeEntity","KitSelect","ArcherStand","YellowKit"],billboard:"center",text:{bold:true,color:"red",text:"Archer"},background:0}
-setblock 12 64 63 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 2"}},{bold:true,color:"#008805",text:"Archer"},""]}}
+setblock 12 64 63 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1002"}},{bold:true,color:"#008805",text:"Archer"},""]}}
 fill 10 63 63 10 64 63 minecraft:obsidian
 summon minecraft:armor_stand 14 65 63 {Tags:["CrusadeEntity","KitSelect","MageStand","YellowKit"],Rotation:[0,0],Invulnerable:true,NoBasePlate:true,NoGravity:true,ShowArms:true,Pose:{Head:[345.0f,0.0f,0.0f],LeftLeg:[323.0f,0.0f,0.0f],RightLeg:[38.0f,0.0f,0.0f],LeftArm:[23.0f,0.0f,0.0f],RightArm:[215.0f,0.0f,0.0f]}}
 summon minecraft:text_display 14 67.125 63 {Tags:["CrusadeEntity","KitSelect","MageStand","YellowKit"],billboard:"center",text:{bold:true,color:"dark_purple",text:"Mage"},background:0}
-setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 3"}},{bold:true,color:"#008805",text:"Mage"},""]}}
+setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1003"}},{bold:true,color:"#008805",text:"Mage"},""]}}
 
 #kit stand items
 execute as @e[x=0,type=armor_stand,tag=BlueKit] run function custom:team/join_blue

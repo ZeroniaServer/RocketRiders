@@ -13,7 +13,7 @@ data modify storage rocketriders:main voting.dialog set value {\
       "width": 200,\
       "action": {\
         "type": "minecraft:run_command",\
-        "command": "trigger VoteServerMode set 1"\
+        "command": "trigger vote set 1001"\
       }\
     },\
     {\
@@ -21,7 +21,7 @@ data modify storage rocketriders:main voting.dialog set value {\
       "width": 200,\
       "action": {\
         "type": "minecraft:run_command",\
-        "command": "trigger VoteServerMode set 2"\
+        "command": "trigger vote set 1002"\
       }\
     },\
     {\
@@ -29,7 +29,7 @@ data modify storage rocketriders:main voting.dialog set value {\
       "width": 200,\
       "action": {\
         "type": "minecraft:run_command",\
-        "command": "trigger VoteServerMode set 3"\
+        "command": "trigger vote set 1003"\
       }\
     },\
     {\
@@ -37,7 +37,7 @@ data modify storage rocketriders:main voting.dialog set value {\
       "width": 200,\
       "action": {\
         "type": "minecraft:run_command",\
-        "command": "trigger VoteServerMode set 4"\
+        "command": "trigger vote set 1004"\
       }\
     },\
     {\
@@ -45,7 +45,7 @@ data modify storage rocketriders:main voting.dialog set value {\
       "width": 200,\
       "action": {\
         "type": "minecraft:run_command",\
-        "command": "trigger VoteServerMode set 5"\
+        "command": "trigger vote set 1005"\
       }\
     },\
     {\
@@ -53,7 +53,7 @@ data modify storage rocketriders:main voting.dialog set value {\
       "width": 200,\
       "action": {\
         "type": "minecraft:run_command",\
-        "command": "trigger VoteServerMode set 6"\
+        "command": "trigger vote set 1006"\
       }\
     }\
   ]\

@@ -1,0 +1,17 @@
+{
+  "criteria": {
+    "tick_while_in_overworld": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "location": {
+            "dimension": "minecraft:overworld"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "everytick:trigger_commands/player"
+  }
+}

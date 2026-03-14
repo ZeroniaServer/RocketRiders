@@ -1,0 +1,26 @@
+scoreboard objectives remove settings
+scoreboard objectives remove toggle_ingame_tips
+scoreboard objectives remove toggle_parkour_instructions
+scoreboard objectives remove toggle_particles
+scoreboard objectives remove toggle_auto_fill_hotbar
+scoreboard objectives remove change_default_spell
+scoreboard objectives remove change_starting_crusade_kit
+scoreboard objectives remove set_item_delay
+scoreboard objectives remove set_time_of_day
+scoreboard objectives remove VoteServerMode
+scoreboard objectives remove LobbyWarp
+scoreboard objectives remove displayinfo
+scoreboard objectives remove editSettings
+scoreboard objectives remove LeaveMidgame
+scoreboard objectives remove leaveSpec
+
+scoreboard objectives remove nomicon
+scoreboard objectives add sandbox.rocket_nomicon trigger
+
+scoreboard objectives remove crusadechange
+scoreboard objectives add respawn_as_crusade_kit dummy
+
+scoreboard objectives remove spectate
+scoreboard objectives add spectate trigger
+
+function lobby:replacesigns_indimension

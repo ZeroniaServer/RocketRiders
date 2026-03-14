@@ -96,9 +96,7 @@ execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow] run advanceme
 execute if entity @a[x=0,tag=JoinYellow] run function lobby:cancelsettings/reset
 
 ##Join pad + Leave pad Spectator
-execute as @a[x=0] if score @s spectate matches 1 if predicate rr:is_cubekrowd run function servermode:spectate
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinSpec
-execute if predicate rr:is_cubekrowd unless predicate game:teams/spectator_is_joinable as @a[x=0,tag=JoinSpec] run tellraw @s ["",{"text":"You cannot use /spectate when there is no game to play yet.","color":"red"},{"text":"\n"},{"text":"Please wait for the voting time to end.","italic":true,"color":"red"}]
 execute unless predicate game:teams/spectator_is_joinable run tag @a[x=0] remove JoinSpec
 tag @a[x=0,gamemode=spectator] remove JoinSpec
 execute if predicate custom:periodic_tick/3 if predicate game:teams/spectator_is_joinable at @e[x=0,type=marker,tag=join_pad.spectator] run particle minecraft:falling_dust{block_state:"minecraft:gray_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
@@ -109,12 +107,9 @@ execute as @e[x=0,type=marker,tag=join_pad.spectator] at @s run tag @a[predicate
 execute unless predicate game:teams/spectator_is_joinable run tag @a[x=0] remove AlreadySpec
 execute as @a[x=0,tag=JoinSpec] run function custom:team/join_spectator
 clear @a[x=0,tag=JoinSpec] *
-scoreboard players enable @a[x=0,predicate=custom:team/spectator] leaveSpec
-tag @a[x=0,scores={leaveSpec=1..}] add LeaveTeams
-scoreboard players reset @a[x=0,predicate=!custom:team/spectator] leaveSpec
-execute if predicate rr:enable_spectator_leave_cloud run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or enter the green particle cluster to stop spectating!","color":"dark_green","italic":true}]
-execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
-execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" to stop spectating!","color":"dark_green","italic":true}]
+execute if predicate rr:enable_spectator_leave_cloud run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leave"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or enter the green particle cluster to stop spectating!","color":"dark_green","italic":true}]
+execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leave"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
+execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leave"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 execute if predicate game:phase/match run tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
 execute if predicate game:phase/staging run tp @a[x=0,tag=JoinSpec] -95 213 78 90 90
 tag @a[x=0,tag=JoinSpec] add teleport_sound
@@ -123,7 +118,7 @@ execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text
 execute if predicate game:phase/match if predicate game:modifiers/sonar/on as @a[x=0,tag=JoinSpec] run tellraw @s [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
 execute if predicate rr:enable_spectator_leave_cloud run title @a[x=0,predicate=custom:team/spectator] actionbar {"text":"Enter the green particle cluster to stop spectating!","color":"green","bold":true}
 execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run title @a[x=0,predicate=custom:team/spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
-execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run title @a[x=0,predicate=custom:team/spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/trigger leaveSpec","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
+execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run title @a[x=0,predicate=custom:team/spectator] actionbar [{"text":"Use ","color":"green","bold":true},{"text":"/trigger leave","color":"dark_green"},{"text":" to stop spectating!","color":"green"}]
 gamemode adventure @a[x=0,tag=JoinSpec]
 execute if predicate game:phase/match run gamemode spectator @a[x=0,tag=JoinSpec]
 execute if predicate game:phase/match/pause run gamemode adventure @a[x=0,tag=JoinSpec]

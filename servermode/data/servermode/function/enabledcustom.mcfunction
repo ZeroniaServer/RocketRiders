@@ -33,4 +33,4 @@ function lobby:update_nav_book
 
 scoreboard objectives add joinBlue dummy
 scoreboard objectives add joinYellow dummy
-scoreboard objectives add spectate dummy
+scoreboard objectives add command_spectate dummy

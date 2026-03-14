@@ -30,7 +30,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(normal_trigger_input_id)01"\
+            "command": "/trigger sandbox.rocket_nomicon set $(normal_trigger_input_id)01"\
           }\
         },\
         " ",\
@@ -45,7 +45,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(unbreakable_trigger_input_id)01"\
+            "command": "/trigger sandbox.rocket_nomicon set $(unbreakable_trigger_input_id)01"\
           }\
         },\
         " ",\
@@ -60,7 +60,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(deactivate_trigger_input_id)01"\
+            "command": "/trigger sandbox.rocket_nomicon set $(deactivate_trigger_input_id)01"\
           }\
         }\
     ],\

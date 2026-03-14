@@ -41,35 +41,35 @@ function custom:show_dialog {dialog:\
         "width": 100,\
         "action": {\
           "type": "run_command",\
-          "command": "trigger nomicon set 1000004"\
+          "command": "trigger sandbox.rocket_nomicon set 1000004"\
         }\
       },\
       {\
         "label": "🗡 Weapons/Tools 🏹",\
         "action": {\
           "type": "run_command",\
-          "command": "trigger nomicon set 1000006"\
+          "command": "trigger sandbox.rocket_nomicon set 1000006"\
         }\
       },\
       {\
         "label": "🚀 Missiles 🚀",\
         "action": {\
           "type": "run_command",\
-          "command": "trigger nomicon set 1000003"\
+          "command": "trigger sandbox.rocket_nomicon set 1000003"\
         }\
       },\
       {\
         "label": "🛠 Utilities 🛠",\
         "action": {\
           "type": "run_command",\
-          "command": "trigger nomicon set 1000002"\
+          "command": "trigger sandbox.rocket_nomicon set 1000002"\
         }\
       },\
       {\
         "label": "✨ Powerups ✨",\
         "action": {\
           "type": "run_command",\
-          "command": "trigger nomicon set 1000005"\
+          "command": "trigger sandbox.rocket_nomicon set 1000005"\
         }\
       },\
       {\
@@ -79,7 +79,7 @@ function custom:show_dialog {dialog:\
         },\
         "action": {\
           "type": "run_command",\
-          "command": "trigger nomicon set 1000007"\
+          "command": "trigger sandbox.rocket_nomicon set 1000007"\
         }\
       },\
       {\
@@ -90,7 +90,7 @@ function custom:show_dialog {dialog:\
         "width": 90,\
         "action": {\
           "type": "run_command",\
-          "command": "trigger nomicon set 2000001"\
+          "command": "trigger sandbox.rocket_nomicon set 2000001"\
         }\
       },\
       {\
@@ -101,7 +101,7 @@ function custom:show_dialog {dialog:\
         "width": 90,\
         "action": {\
           "type": "run_command",\
-          "command": "trigger nomicon set 2000002"\
+          "command": "trigger sandbox.rocket_nomicon set 2000002"\
         }\
       }\
     ],\
@@ -109,7 +109,7 @@ function custom:show_dialog {dialog:\
       "label": "Done",\
       "action": {\
         "type": "run_command",\
-        "command": "trigger nomicon set 1000001"\
+        "command": "trigger sandbox.rocket_nomicon set 1000001"\
       }\
     }\
   }\

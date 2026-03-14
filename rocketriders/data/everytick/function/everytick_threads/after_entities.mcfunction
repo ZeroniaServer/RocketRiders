@@ -11,12 +11,9 @@ execute if function experimental:enabled as @a[x=0,predicate=custom:team/any_pla
 
 #Server mode
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] if entity @a[x=0] run function servermode:loop
-scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!ServerModeVoting] VoteServerMode
-execute unless entity @a[x=0,predicate=custom:team/lobby] run scoreboard players reset @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] VoteServerMode
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom run scoreboard players reset $extra_match_repetitions config
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function game:forcestop
 execute if predicate rr:stop_game_if_server_is_empty unless entity @a[x=0] if predicate rr:server_mode/cubekrowd_custom as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:globaldefaults
-execute unless predicate rr:has_voting run scoreboard players reset @a[x=0] VoteServerMode
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] run kill @e[x=0,type=marker,tag=ServerMode]
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMSwitch] run scoreboard players add $smswitch CmdData 1
 execute if score $smswitch CmdData matches 5.. run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=SMSwitch] remove SMSwitch
@@ -50,9 +47,6 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=hardcore] run function modifie
 execute as @a[x=0,predicate=custom:team/lobby,tag=hobbit] run function modifiers:hobbit/reset
 execute as @a[x=0,predicate=custom:team/lobby,tag=long_arms] run function modifiers:long_arms/reset
 function lobby:bookwarp
-scoreboard players enable @a[x=0,predicate=custom:team/lobby] displayinfo
-scoreboard players enable @a[x=0,predicate=custom:team/developer] displayinfo
-execute as @a[x=0,scores={displayinfo=1..}] at @s run function lobby:displayinfo
 execute as @a[x=0,predicate=custom:team/lobby] run function everytick:score_reset
 execute if loaded 25 184 -6 if predicate game:phase/staging run function lobby:credits/cycle
 execute if predicate rr:has_parkour as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function lobby:parkour/parkour
@@ -89,10 +83,6 @@ execute if score $reloaded CmdData matches 1..100 run scoreboard players add $re
 execute if score $reloaded CmdData matches 101 run scoreboard players reset $reloaded
 
 #Edit Settings
-execute unless predicate game:phase/staging/configuration run scoreboard players enable @a[x=0,predicate=!custom:team/any_arena_team] editSettings
-execute if predicate game:phase/staging/configuration run scoreboard players reset @a[x=0] editSettings
-scoreboard players reset @a[x=0,predicate=!custom:team/lobby,predicate=!custom:team/developer] editSettings
-execute as @a[x=0,predicate=!custom:team/any_arena_team,scores={editSettings=1..}] run function lobby:cancelsettings/interact
 execute if predicate rr:has_modification_room if predicate game:match_cancellable_phase if score $mcancel CmdData matches -1 unless entity @a[x=0,predicate=custom:team/blue,limit=1] unless entity @a[x=0,predicate=custom:team/yellow,limit=1] run function lobby:cancelsettings/resume
 execute if predicate rr:has_modification_room if predicate game:match_cancellable_phase if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 79.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute if predicate rr:has_modification_room if predicate game:match_cancellable_phase if score $blue_team_count global matches 0 if score $yellow_team_count global matches 0 if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0,0],scale:2} -56.3 203.5 77.5 0 0 0 0 1 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]

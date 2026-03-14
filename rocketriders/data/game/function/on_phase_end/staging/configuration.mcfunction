@@ -1,4 +1,5 @@
 ##
+scoreboard players reset $voting_timer global
 function lobby:update_nav_book
 function everytick:resolve_max_players_per_team
 

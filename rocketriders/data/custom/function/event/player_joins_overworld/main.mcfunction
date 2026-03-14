@@ -14,6 +14,9 @@ effect clear @s
 clear @s *
 function custom:event/player_joins_overworld/reset_attributes/main
 
+# Reset detection achievements
+advancement revoke @s only everytick:check_command_triggers
+
 # Update join state and time_since_joined_overworld
 scoreboard players set @s event.player_joins_overworld.state -1
 scoreboard players set @s time_since_joined_overworld 0

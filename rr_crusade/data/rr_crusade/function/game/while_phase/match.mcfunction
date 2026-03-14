@@ -45,24 +45,24 @@ execute if score $CBB crusadehp matches 1.. run fill -16 51 -40 -12 47 -40 light
 
 #> Kit signs
 #blue
-execute if score $restore_blue_kit_sign_knight global matches 1 run setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 1"}},{bold:true,color:"#008805",text:"Knight"},""]}} strict
+execute if score $restore_blue_kit_sign_knight global matches 1 run setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1001"}},{bold:true,color:"#008805",text:"Knight"},""]}} strict
 execute if score $restore_blue_kit_sign_knight global matches 1 run scoreboard players reset $restore_blue_kit_sign_knight global
 execute unless block 14 64 -64 minecraft:oak_wall_sign run scoreboard players set $restore_blue_kit_sign_knight global 1
-execute if score $restore_blue_kit_sign_archer global matches 1 run setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 2"}},{bold:true,color:"#008805",text:"Archer"},""]}} strict
+execute if score $restore_blue_kit_sign_archer global matches 1 run setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1002"}},{bold:true,color:"#008805",text:"Archer"},""]}} strict
 execute if score $restore_blue_kit_sign_archer global matches 1 run scoreboard players reset $restore_blue_kit_sign_archer global
 execute unless block 12 64 -63 minecraft:oak_wall_sign run scoreboard players set $restore_blue_kit_sign_archer global 1
-execute if score $restore_blue_kit_sign_mage global matches 1 run setblock 10 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 3"}},{bold:true,color:"#008805",text:"Mage"},""]}} strict
+execute if score $restore_blue_kit_sign_mage global matches 1 run setblock 10 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1003"}},{bold:true,color:"#008805",text:"Mage"},""]}} strict
 execute if score $restore_blue_kit_sign_mage global matches 1 run scoreboard players reset $restore_blue_kit_sign_mage global
 execute unless block 10 64 -64 minecraft:oak_wall_sign run scoreboard players set $restore_blue_kit_sign_mage global 1
 
 #yellow
-execute if score $restore_yellow_kit_sign_knight global matches 1 run setblock 10 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 1"}},{bold:true,color:"#008805",text:"Knight"},""]}} strict
+execute if score $restore_yellow_kit_sign_knight global matches 1 run setblock 10 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1001"}},{bold:true,color:"#008805",text:"Knight"},""]}} strict
 execute if score $restore_yellow_kit_sign_knight global matches 1 run scoreboard players reset $restore_yellow_kit_sign_knight global
 execute unless block 10 64 64 minecraft:oak_wall_sign run scoreboard players set $restore_yellow_kit_sign_knight global 1
-execute if score $restore_yellow_kit_sign_archer global matches 1 run setblock 12 64 63 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 2"}},{bold:true,color:"#008805",text:"Archer"},""]}} strict
+execute if score $restore_yellow_kit_sign_archer global matches 1 run setblock 12 64 63 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1002"}},{bold:true,color:"#008805",text:"Archer"},""]}} strict
 execute if score $restore_yellow_kit_sign_archer global matches 1 run scoreboard players reset $restore_yellow_kit_sign_archer global
 execute unless block 12 64 63 minecraft:oak_wall_sign run scoreboard players set $restore_yellow_kit_sign_archer global 1
-execute if score $restore_yellow_kit_sign_mage global matches 1 run setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 3"}},{bold:true,color:"#008805",text:"Mage"},""]}} strict
+execute if score $restore_yellow_kit_sign_mage global matches 1 run setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusade.respawn_as_kit set 1003"}},{bold:true,color:"#008805",text:"Mage"},""]}} strict
 execute if score $restore_yellow_kit_sign_mage global matches 1 run scoreboard players reset $restore_yellow_kit_sign_mage global
 execute unless block 14 64 64 minecraft:oak_wall_sign run scoreboard players set $restore_yellow_kit_sign_mage global 1
 

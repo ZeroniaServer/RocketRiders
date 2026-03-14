@@ -1,4 +1,4 @@
-scoreboard players reset @s editSettings
+scoreboard players reset @s lobby.edit_settings
 execute positioned -57 203 78 run playsound ui.button.click master @s ~ ~ ~ 1 1
 
 execute unless predicate game:match_cancellable_phase if predicate game:phase/staging/configuration unless predicate rr:has_voting run return run tellraw @s {color:"red",text:"You cannot edit game settings right now. Confirm game settings first."}

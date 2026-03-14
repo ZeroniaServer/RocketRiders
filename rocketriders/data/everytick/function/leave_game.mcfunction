@@ -80,10 +80,7 @@ execute as @a[x=0,scores={LeaveGame=1..}] run function custom:update_armor
 
 #Reset
 execute if entity @a[limit=1,x=0,scores={LeaveGame=1..}] run function everytick:team_count
-scoreboard players set @a[x=0,scores={LeaveGame=1..}] LeaveMidgame 0
-scoreboard players set @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame 0
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteNum
-scoreboard players reset @a[x=0,scores={LeaveGame=1..}] VoteServerMode
 scoreboard players reset @a[x=0,scores={LeaveGame=1..}] LeaveGame
 
 # 1v1 Duel Forfeit

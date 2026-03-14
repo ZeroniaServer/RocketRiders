@@ -42,7 +42,7 @@
                     {
                       "click_event": {
                         "action": "run_command",
-                        "command": "/trigger LobbyWarp set 5"
+                        "command": "/trigger lobby set 5"
                       },
                       "color": "gray",
                       "hover_event": {
@@ -64,7 +64,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger LobbyWarp set 1"
+                      "command": "/trigger lobby set 1"
                     },
                     "color": "gray",
                     "hover_event": {
@@ -79,7 +79,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger LobbyWarp set 1"
+                      "command": "/trigger lobby set 1"
                     },
                     "color": "dark_purple",
                     "hover_event": {
@@ -100,7 +100,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger LobbyWarp set 6"
+                      "command": "/trigger lobby set 6"
                     },
                     "color": "gray",
                     "hover_event": {
@@ -115,7 +115,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger LobbyWarp set 6"
+                      "command": "/trigger lobby set 6"
                     },
                     "color": "dark_purple",
                     "hover_event": {
@@ -131,7 +131,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger LobbyWarp set 7"
+                      "command": "/trigger parkour"
                     },
                     "color": "gray",
                     "hover_event": {
@@ -146,7 +146,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger LobbyWarp set 7"
+                      "command": "/trigger parkour"
                     },
                     "color": "dark_purple",
                     "hover_event": {
@@ -267,7 +267,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger toggle_ingame_tips set 1"
+                      "command": "/trigger options.tips"
                     },
                     "color": "dark_gray",
                     "hover_event": {
@@ -291,7 +291,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger toggle_particles set 1"
+                      "command": "/trigger options.particles"
                     },
                     "color": "dark_gray",
                     "hover_event": {
@@ -311,7 +311,7 @@
                   {
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger toggle_auto_fill_hotbar set 1"
+                      "command": "/trigger options.auto_fill_hotbar"
                     },
                     "color": "dark_gray",
                     "hover_event": {

@@ -15,7 +15,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
       "bold": true,\
       "click_event": {\
         "action": "run_command",\
-        "command": "/trigger nomicon set $(trigger_input_id)01"\
+        "command": "/trigger sandbox.rocket_nomicon set $(trigger_input_id)01"\
       }\
     },\
     [\
@@ -41,7 +41,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(trigger_input_id)01"\
+            "command": "/trigger sandbox.rocket_nomicon set $(trigger_input_id)01"\
           }\
         },\
         " ",\
@@ -63,7 +63,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(trigger_input_id)02"\
+            "command": "/trigger sandbox.rocket_nomicon set $(trigger_input_id)02"\
           }\
         },\
         " ",\
@@ -85,7 +85,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(trigger_input_id)04"\
+            "command": "/trigger sandbox.rocket_nomicon set $(trigger_input_id)04"\
           }\
         },\
         " ",\
@@ -107,7 +107,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(trigger_input_id)08"\
+            "command": "/trigger sandbox.rocket_nomicon set $(trigger_input_id)08"\
           }\
         },\
         " ",\
@@ -129,7 +129,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
           },\
           "click_event": {\
             "action": "run_command",\
-            "command": "/trigger nomicon set $(trigger_input_id)64"\
+            "command": "/trigger sandbox.rocket_nomicon set $(trigger_input_id)64"\
           }\
         }\
     ],\

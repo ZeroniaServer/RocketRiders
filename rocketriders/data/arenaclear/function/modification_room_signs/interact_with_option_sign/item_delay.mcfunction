@@ -9,4 +9,4 @@ execute if predicate game:modifiers/minute_mix/on run return run tellraw @s {"te
 execute if predicate game:game_rules/item_delay/locked run return run tellraw @s {"text":"Item Delay is not adjustable in this game mode.","color":"dark_gray","italic":true}
 
 # open dialog
-function arenaclear:itemdelay/show_dialog
+function everytick:trigger_commands/config.item_delay/show_dialog

@@ -94,7 +94,7 @@ execute unless predicate game:achievements_can_be_awarded as @e[x=0,type=marker,
 execute as @e[x=0,type=marker,tag=SelectedTip,tag=Tip20] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add Tip20
 
 #Opt out message
-execute as @e[x=0,type=marker,tag=SelectedTip] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger toggle_ingame_tips set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop seeing tips"}}},{"text":" to opt out of these messages.","color":"#888888","italic":true}]
+execute as @e[x=0,type=marker,tag=SelectedTip] as @a[x=0,tag=!hideTips] run tellraw @s ["",{"text":"Click ","color":"#888888","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger options.tips set 1002"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop seeing tips"}}},{"text":" to opt out of these messages.","color":"#888888","italic":true}]
 
 #Kills all tip markers and resets timer
 kill @e[x=0,type=marker,tag=HandyTip]

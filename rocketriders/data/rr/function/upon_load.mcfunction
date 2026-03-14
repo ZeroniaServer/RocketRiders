@@ -140,18 +140,23 @@ scoreboard objectives modify text.main_color numberformat fixed ""
 scoreboard objectives add text.accent_color dummy
 scoreboard objectives modify text.accent_color numberformat fixed ""
 
-scoreboard objectives add set_item_delay trigger
-scoreboard objectives add set_time_of_day trigger
-scoreboard objectives add editSettings trigger
-scoreboard objectives add LeaveMidgame trigger
-scoreboard objectives add leaveSpec trigger
-scoreboard objectives add LobbyWarp trigger
-scoreboard objectives add change_default_spell trigger
-scoreboard objectives add change_starting_crusade_kit trigger
-scoreboard objectives add toggle_auto_fill_hotbar trigger
-scoreboard objectives add toggle_particles trigger
-scoreboard objectives add toggle_parkour_instructions trigger
-scoreboard objectives add toggle_ingame_tips trigger
+scoreboard objectives add options trigger
+scoreboard objectives add options.tips trigger
+scoreboard objectives add options.parkour_instructions trigger
+scoreboard objectives add options.particles trigger
+scoreboard objectives add options.auto_fill_hotbar trigger
+scoreboard objectives add options.crusade.default_spell trigger
+scoreboard objectives add options.crusade.starting_kit trigger
+scoreboard objectives add crusade.respawn_as_kit trigger
+scoreboard objectives add config.item_delay trigger
+scoreboard objectives add config.time_of_day trigger
+scoreboard objectives add vote trigger
+scoreboard objectives add lobby trigger
+scoreboard objectives add parkour trigger
+scoreboard objectives add lobby.edit_settings trigger
+scoreboard objectives add leave trigger
+scoreboard objectives add join trigger
+scoreboard objectives add spectate trigger
 
 scoreboard objectives add play_time_save_cooldown custom:play_time
 scoreboard objectives add player_statistics.chase_play_time dummy

@@ -11,7 +11,7 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourT
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the compass to ","color":"green"},{"text":"Return to Checkpoint","color":"aqua","bold":true},{"text":".","color":"green"}]
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the clock to ","color":"green"},{"text":"Return to Start","color":"yellow","bold":true},{"text":".","color":"green"}]
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s [{"text":"- Use the barrier to ","color":"green"},{"text":"Quit Parkour","color":"red","bold":true},{"text":".","color":"green"}]
-execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger toggle_parkour_instructions set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop seeing parkour instructions"}}},{"text":" to no longer see these instructions.","color":"dark_green","italic":true}]
+execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParkourTips] run tellraw @s ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger options.parkour_instructions set 1001"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop seeing parkour instructions"}}},{"text":" to no longer see these instructions.","color":"dark_green","italic":true}]
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour] at @s run playsound minecraft:entity.firework_rocket.twinkle_far master @s ~ ~ ~ 1 1
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour] at @s run playsound minecraft:entity.player.levelup master @s ~ ~ ~ 1 1.3
 execute as @a[x=0,predicate=custom:team/lobby,tag=startParkour,tag=!hideParticles] at @s run particle firework ~ ~1 ~ 0 0 0 0.1 100 force @s
@@ -161,7 +161,7 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] run function custom
 effect clear @a[x=0,predicate=!custom:team/lobby,tag=inParkour] invisibility
 tag @a[x=0,predicate=!custom:team/lobby,tag=inParkour] remove inParkour
 #Don't let non-Parkour players on floor (warp back to parkour start)
-scoreboard players set @a[x=0,predicate=custom:team/lobby,tag=!inParkour,predicate=custom:standing_on_parkour_floor] LobbyWarp 7
+scoreboard players set @a[x=0,predicate=custom:team/lobby,tag=!inParkour,predicate=custom:standing_on_parkour_floor] lobby 7
 
 ##Reset objectives/tags for non-parkour players
 scoreboard players reset @a[x=0,tag=!inParkour] checkpoint
@@ -175,17 +175,6 @@ scoreboard players reset @a[x=0,tag=!inParkour] finalParkourTime
 tag @a[x=0,tag=!inParkour] remove onResetPlate
 tag @a[x=0,tag=!inParkour] remove timeReset
 
-##Toggle Parkour tips
-scoreboard players enable @a[x=0] toggle_parkour_instructions
-tellraw @a[x=0,scores={toggle_parkour_instructions=1..},tag=!hideParkourTips] [{"text":"You will no longer see Parkour instructions.","color":"red"}]
-tellraw @a[x=0,scores={toggle_parkour_instructions=1..},tag=hideParkourTips] [{"text":"You will now see Parkour instructions.","color":"green"}]
-tag @a[x=0,scores={toggle_parkour_instructions=1..},tag=hideParkourTips] add hidParkourTips
-tag @a[x=0,scores={toggle_parkour_instructions=1..},tag=hideParkourTips] remove hideParkourTips
-tag @a[x=0,scores={toggle_parkour_instructions=1..},tag=!hideParkourTips,tag=!hidParkourTips] add hideParkourTips
-tag @a[x=0,scores={toggle_parkour_instructions=1..},tag=hidParkourTips] remove hidParkourTips
-execute as @a[x=0,scores={toggle_parkour_instructions=1..}] run function custom:player_action/playerdata/save
-scoreboard players set @a[x=0] toggle_parkour_instructions 0
-
 ##Return to Lobby Pad
 execute if predicate custom:periodic_tick/3 run particle minecraft:falling_dust{block_state:"minecraft:green_concrete"} 67.5 203.0 118.5 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute as @a[x=67.5,y=201.0,z=118.5,distance=..2,predicate=custom:team/lobby] run trigger LobbyWarp set 1
+execute as @a[x=67.5,y=201.0,z=118.5,distance=..2,predicate=custom:team/lobby] run trigger lobby set 1

@@ -33,3 +33,6 @@ execute unless score $WorldVersion CmdData matches 1313.. run function world_upd
 execute unless score $WorldVersion CmdData matches 1314.. run function world_updates:do_update {version_id: 1314, function: "world_updates:1_3_0-rc3/update", version_display_name: "1.3.0-rc3", is_indev: true}
 # TO DO: add a dummy is_indev:false function that runs for the final release, just so that the version name gets updated and printed in chat for non-dev builds.
 #execute unless score $WorldVersion CmdData matches <num>.. run function world_updates:do_update {version_id: <num>, function: "world_updates:1_3_0/_", version_display_name: "1.3", is_indev: false}
+
+# TO DO: 1.3.1-pre-1 world update
+#execute unless score $WorldVersion CmdData matches <num>.. run function world_updates:do_update {version_id: <num>, function: "world_updates:1_3_1/update", version_display_name: "1.3.1-pre1", is_indev: true}

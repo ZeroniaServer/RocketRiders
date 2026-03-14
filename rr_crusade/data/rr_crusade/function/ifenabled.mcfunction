@@ -24,23 +24,6 @@ execute if predicate game:phase/match run function rr_crusade:game/while_phase/m
 execute if predicate game:phase/match/play run function rr_crusade:game/while_phase/match/play
 execute if predicate game:phase/match/closing run function rr_crusade:game/while_phase/match/closing
 
-#kits
-execute if predicate game:joinable_match_phase run scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] crusadechange
-execute if predicate game:phase/match/closing run scoreboard players reset @a[x=0] crusadechange
-execute if predicate game:phase/staging as @a[x=0,scores={crusadechange=1}] run function rr_crusade:items/kit/give/knight
-execute if predicate game:phase/staging as @a[x=0,scores={crusadechange=2}] run function rr_crusade:items/kit/give/archer
-execute if predicate game:phase/staging as @a[x=0,scores={crusadechange=3}] run function rr_crusade:items/kit/give/mage
-
-execute if predicate game:phase/match/play as @a[x=0,tag=!CrusadeNoteKnight,scores={crusadechange=1}] run function rr_crusade:items/kit/notify/knight
-execute if predicate game:phase/match/play as @a[x=0,tag=!CrusadeNoteArcher,scores={crusadechange=2}] run function rr_crusade:items/kit/notify/archer
-execute if predicate game:phase/match/play as @a[x=0,tag=!CrusadeNoteMage,scores={crusadechange=3}] run function rr_crusade:items/kit/notify/mage
-
-execute if predicate game:phase/staging run tag @a[x=0] remove CrusadeNoteKnight
-execute if predicate game:phase/staging run tag @a[x=0] remove CrusadeNoteArcher
-execute if predicate game:phase/staging run tag @a[x=0] remove CrusadeNoteMage
-
-execute if predicate game:phase/staging run scoreboard players reset @a[x=0,scores={crusadechange=1..}] crusadechange
-
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging run tag @a[x=0] remove informMe

@@ -53,14 +53,14 @@ data modify storage rocketriders:nomicon dialogs.weapons_and_tools.dialog set va
     "label": "Back",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1"\
+      "command": "trigger sandbox.rocket_nomicon set 1"\
     }\
   },\
   "no": {\
     "label": "Done",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1000001"\
+      "command": "trigger sandbox.rocket_nomicon set 1000001"\
     }\
   }\
 }
@@ -128,14 +128,14 @@ data modify storage rocketriders:nomicon dialogs.missiles.dialog set value {\
     "label": "Back",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1"\
+      "command": "trigger sandbox.rocket_nomicon set 1"\
     }\
   },\
   "no": {\
     "label": "Done",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1000001"\
+      "command": "trigger sandbox.rocket_nomicon set 1000001"\
     }\
   }\
 }
@@ -218,14 +218,14 @@ data modify storage rocketriders:nomicon dialogs.utilities.dialog set value {\
     "label": "Back",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1"\
+      "command": "trigger sandbox.rocket_nomicon set 1"\
     }\
   },\
   "no": {\
     "label": "Done",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1000001"\
+      "command": "trigger sandbox.rocket_nomicon set 1000001"\
     }\
   }\
 }
@@ -295,14 +295,14 @@ data modify storage rocketriders:nomicon dialogs.powerups.dialog set value {\
     "label": "Back",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1"\
+      "command": "trigger sandbox.rocket_nomicon set 1"\
     }\
   },\
   "no": {\
     "label": "Done",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1000001"\
+      "command": "trigger sandbox.rocket_nomicon set 1000001"\
     }\
   }\
 }
@@ -371,14 +371,14 @@ data modify storage rocketriders:nomicon dialogs.experimental.dialog set value {
     "label": "Back",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1"\
+      "command": "trigger sandbox.rocket_nomicon set 1"\
     }\
   },\
   "no": {\
     "label": "Done",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1000001"\
+      "command": "trigger sandbox.rocket_nomicon set 1000001"\
     }\
   }\
 }
@@ -418,14 +418,14 @@ data modify storage rocketriders:nomicon dialogs.all.dialog set value {\
     "label": "Back",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1"\
+      "command": "trigger sandbox.rocket_nomicon set 1"\
     }\
   },\
   "no": {\
     "label": "Done",\
     "action": {\
       "type": "run_command",\
-      "command": "trigger nomicon set 1000001"\
+      "command": "trigger sandbox.rocket_nomicon set 1000001"\
     }\
   }\
 }

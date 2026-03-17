@@ -9,6 +9,8 @@ execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdD
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s run playsound minecraft:block.amethyst_cluster.break master @a[x=0] ~ ~ ~ 3 0.7
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s align xyz run particle minecraft:falling_obsidian_tear ~0.5 ~0.5 ~0.5 3 0 3 0.1 100 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] at @s align xyz run particle minecraft:explosion_emitter ~0.5 ~0.5 ~0.5 3 0 3 0.1 20 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..,capturePoint=2}] run function rr_powerups:everytick/crystalpadblue_destroy
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..,capturePoint=1}] run function rr_powerups:everytick/crystalpadyellow_destroy
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run scoreboard players remove @s captureYellow 1
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run scoreboard players remove @s captureBlue 1
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run scoreboard players set @s capturePoint 0

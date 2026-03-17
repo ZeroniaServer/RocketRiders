@@ -2,14 +2,7 @@ execute unless entity @e[x=0,type=end_crystal,tag=PUCrystal,limit=1] if entity @
 execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=98..},limit=1] unless entity @s[scores={PowerupCrystal=20..}] run scoreboard players add @s PowerupCrystal 1
 
 #Destroy platforms when not captured
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2,PowerupCrystal=19..},limit=1] run tp @a[x=0,predicate=custom:team/blue,predicate=rr_powerups:oncrystalblue] 12 64 -66 0 0
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2,PowerupCrystal=19..},limit=1] as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:entity.ender_eye.death master @s
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2,PowerupCrystal=19..},limit=1] run tellraw @a[x=0,predicate=custom:team/blue] {"text":"Crystal Crafter Deactivated!","color":"red","bold":true}
-scoreboard players reset @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96},limit=1] PowerupCrystal
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] run fill 14 63 -68 10 66 -72 air destroy
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] run fill 14 63 -67 10 63 -67 air destroy
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] positioned 12 66 -69 run playsound minecraft:block.respawn_anchor.deplete master @a[x=0] ~ ~ ~ 2 0
-execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2},limit=1] run kill @e[x=0,type=armor_stand,tag=PUCrystalDeco]
+execute as @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=96,capturePoint=2,PowerupCrystal=19..},limit=1] run function rr_powerups:everytick/crystalpadblue_destroy
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=..92},limit=1] run setblock 12 66 -67 obsidian
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=..94},limit=1] run fill 11 65 -67 13 65 -67 obsidian
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=..96},limit=1] run fill 11 64 -67 13 64 -67 obsidian

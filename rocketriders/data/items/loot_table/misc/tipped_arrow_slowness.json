@@ -8,8 +8,7 @@
               "components": {
                 "minecraft:custom_data": {
                   "id": "tipped_arrow_slowness",
-                  "tipped_arrow_type": "slowness",
-                  "droppable": true
+                  "tipped_arrow_type": "slowness"
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],
@@ -42,6 +41,25 @@
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
+            },
+            {
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "type": "minecraft:player"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:phase/match/play"
+                }
+              ],
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "droppable": true
+              }
             }
           ],
           "name": "minecraft:tipped_arrow",

@@ -13,5 +13,8 @@ execute if items entity @s contents barrier run return run kill @s
 execute if items entity @s contents clock run return run kill @s
 execute if items entity @s contents compass run return run kill @s
 
+# Return all items to their thrower outside of play phase
+execute unless predicate game:phase/match/play run return run function everytick:return_item_entity_to_thrower
+
 # Return non-droppable items to their thrower
 execute unless items entity @s contents *[custom_data~{droppable:1b}] run return run function everytick:return_item_entity_to_thrower

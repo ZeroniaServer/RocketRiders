@@ -27,9 +27,6 @@ execute if score $match_play_time global matches 1..5 as @a[x=0,predicate=custom
 ##Enable fall damage (considers modifiers)
 execute if score $match_play_time global matches 10 unless predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/on
 
-##Clear lobby arrows
-execute if score $match_play_time global matches ..4 run clear @a[x=0,predicate=custom:team/any_playing_team] *[custom_data~{lobby:true}]
-
 ##Remove kills
 execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.deaths
 execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.kills

@@ -1,6 +1,9 @@
 # arguments: name, uuid
 ## There is no useful executor or selectable player in this context. Use $(name) macro variable to reference their username.
 
+# ensure leave detection score is set
+$scoreboard players reset $(name) event.player_joins_overworld.state
+
 # remove from team to prevent their next join message from being an unexpected color
 $team leave $(name)
 

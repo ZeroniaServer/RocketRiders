@@ -56,10 +56,10 @@ execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 1.
 execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:tinted_glass
 
 # Glass after cooldown
-execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 positioned 36 47 -39 run function rr_crusade:game/glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
-execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 positioned -16 47 -39 run function rr_crusade:game/glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
-execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 positioned -16 47 35 run function rr_crusade:game/glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
-execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 positioned 36 47 35 run function rr_crusade:game/glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
+execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 positioned 36 47 -39 run function rr_crusade:game/crystal_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
+execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 positioned -16 47 -39 run function rr_crusade:game/crystal_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
+execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 positioned -16 47 35 run function rr_crusade:game/crystal_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
+execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 positioned 36 47 35 run function rr_crusade:game/crystal_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
 
 # End crystals after cooldown
 execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueA,limit=1] Invulnerable set value false

@@ -13,11 +13,11 @@ scoreboard players set @e[x=0,type=marker,tag=crusadeWall] CmdData 20
 fill 20 45 52 4 55 66 minecraft:crying_obsidian
 #A
 fill 41 52 -39 35 52 -37 bedrock
-execute positioned 36 47 -39 run function rr_crusade:game/glass_dynamic_fill with storage rocketriders:teams blue.color_palette
+execute positioned 36 47 -39 run function rr_crusade:game/crystal_glass_dynamic_fill with storage rocketriders:teams blue.color_palette
 fill 36 51 -40 40 47 -40 light[level=1]
 #B
 fill -11 52 -39 -17 52 -37 bedrock
-execute positioned -16 47 -39 run function rr_crusade:game/glass_dynamic_fill with storage rocketriders:teams blue.color_palette
+execute positioned -16 47 -39 run function rr_crusade:game/crystal_glass_dynamic_fill with storage rocketriders:teams blue.color_palette
 fill -16 51 -40 -12 47 -40 light[level=1]
 
 #> Yellow
@@ -26,11 +26,11 @@ fill -16 51 -40 -12 47 -40 light[level=1]
 fill 4 55 -52 20 45 -66 minecraft:crying_obsidian
 #A
 fill -17 52 39 -11 52 37 bedrock
-execute positioned -16 47 35 run function rr_crusade:game/glass_dynamic_fill with storage rocketriders:teams yellow.color_palette
+execute positioned -16 47 35 run function rr_crusade:game/crystal_glass_dynamic_fill with storage rocketriders:teams yellow.color_palette
 fill -16 51 40 -12 47 40 light[level=1]
 #B
 fill 35 52 39 41 52 37 bedrock
-execute positioned 36 47 35 run function rr_crusade:game/glass_dynamic_fill with storage rocketriders:teams yellow.color_palette
+execute positioned 36 47 35 run function rr_crusade:game/crystal_glass_dynamic_fill with storage rocketriders:teams yellow.color_palette
 fill 36 51 40 40 47 40 light[level=1]
 
 #> prepare crystals and health

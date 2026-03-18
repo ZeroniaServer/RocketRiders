@@ -21,7 +21,7 @@ data modify storage rocketriders:main match_components.dialog set value {\
     },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__castle:$(arena__castle),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details),decreased_icbm_flight_duration:$(decreased_icbm_flight_duration),green_for_yellow:$(green_for_yellow),arena__regenerate_back_layer:$(arena__regenerate_back_layer)}"\
+      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__castle:$(arena__castle),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),red_for_blue:$(red_for_blue),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details),decreased_icbm_flight_duration:$(decreased_icbm_flight_duration),green_for_yellow:$(green_for_yellow),arena__regenerate_back_layer:$(arena__regenerate_back_layer),classic_shields:$(classic_shields)}"\
     }\
   },\
   "no": {\
@@ -88,6 +88,10 @@ execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!swapEnabled
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arrow_pickup__",label:"arrow_pickup/*",width:300,options:[{id:"0",display:{color:"white",text:"anyone"}},{id:"1",display:{color:"white",text:"only_crusade_mode_archer_kit"}}]}
 execute if predicate game:match_components/arrow_pickup/only_crusade_mode_archer_kit run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"only_crusade_mode_archer_kit"}}].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"only_crusade_mode_archer_kit"}}].display.color set value "red"
+
+# classic_shields
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"classic_shields",label:"classic_shields",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
+execute if predicate game:match_components/classic_shields run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"true"}}].initial set value true
 
 # cubekrowd/disable_all_but_5_non_lightning_missiles (locked)
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"cubekrowd__disable_all_but_5_non_lightning_missiles",label:"🔒 cubekrowd/disable_all_but_5_non_lightning_missiles",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}

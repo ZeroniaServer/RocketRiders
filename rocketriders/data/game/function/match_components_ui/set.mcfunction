@@ -112,6 +112,10 @@ execute if score $red_for_blue match_components matches 0 run scoreboard players
 $execute store success score $green_for_yellow match_components if predicate {condition:"value_check",value:$(green_for_yellow),range:1}
 execute if score $green_for_yellow match_components matches 0 run scoreboard players reset $green_for_yellow match_components
 
+# classic_shields
+$execute store success score $classic_shields match_components if predicate {condition:"value_check",value:$(classic_shields),range:1}
+execute if score $classic_shields match_components matches 0 run scoreboard players reset $classic_shields match_components
+
 function arenaclear:refreshcheck_indimension
 function game:place_facade
 function lobby:update_nav_book

@@ -1,0 +1,2 @@
+execute as @e[x=0,type=text_display,tag=OldLobbyInfo1,limit=1] run data modify entity @s text set value ["",{color:"blue",text:"Rocket ",shadow_color:[0.05,0.05,0.25,1]},{color:"gold",text:"Riders ",shadow_color:[0.35,0.15,0.05,1]},"c. 2017"]
+execute as @e[x=0,type=text_display,tag=OldLobbyInfo2,limit=1] run data modify entity @s text set value ["",{color:"dark_green",text:"Cubehamster "},"on ",{color:"blue",text:"Rocket ",shadow_color:[0.05,0.05,0.25,1]},{color:"gold",text:"Riders!",shadow_color:[0.35,0.15,0.05,1]}]

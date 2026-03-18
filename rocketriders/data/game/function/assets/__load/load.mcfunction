@@ -9,4 +9,4 @@ execute store result storage rocketriders:main assets.fixed_opposite_corner_z in
 
 $data modify storage rocketriders:assets assets."$(asset_id)" set from storage rocketriders:main assets
 
-function game:assets/__load/save_cutouts with storage rocketriders:main assets
+$function game:assets/__load/types/$(asset_type) with storage rocketriders:main assets

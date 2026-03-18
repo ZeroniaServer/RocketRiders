@@ -15,10 +15,7 @@ setblock -161 185 -161 redstone_block
 
 # asset/.../yellow_cutout
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) structure_void strict
-$scoreboard players set $rotate_yellow var $(rotate_yellow)
-$execute if score $rotate_yellow var matches 0 positioned -161 184 -161 run place template game:$(asset_id) -160 184 -160 none none 1 0 strict
-$execute if score $rotate_yellow var matches 1 positioned -161 184 -161 run place template game:$(asset_id) ~$(x_length) ~ ~$(z_length) 180 none 1 0 strict
-
+$execute positioned -161 184 -161 run place template game:$(asset_id) -160 184 -160 none none 1 0 strict
 $execute positioned -113 183 -161 run fill ~1 ~1 ~1 ~$(x_length) ~$(y_length) ~$(z_length) resin_bricks strict
 $clone -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) -112 184 -160 strict filtered structure_void
 $execute positioned -113 183 -161 run fill ~1 ~1 ~1 ~$(x_length) ~$(y_length) ~$(z_length) air replace structure_void strict

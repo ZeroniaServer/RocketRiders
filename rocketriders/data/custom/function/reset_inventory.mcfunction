@@ -34,8 +34,7 @@ loot replace block 0 184 -16 container.0 27 loot custom:empty
 ## Set items
 # lobby players
 execute if predicate custom:team/lobby run function custom:__impl__/reset_inventory/give_nav_book with storage rocketriders:navbook item
-execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting if predicate game:phase/staging/configuration unless score @s VoteNum matches 1.. unless items block 0 184 -16 container.0 *[custom_data~{id:"voting_ballot"},!custom_data~{voting_ballot:{used:true}}] run loot replace block 0 184 -16 container.0 loot servermode:voting_ballot
-execute if predicate custom:team/lobby if predicate rr:server_mode/cubekrowd_voting if predicate game:phase/staging/configuration if score @s VoteNum matches 1.. unless items block 0 184 -16 container.0 *[custom_data~{id:"voting_ballot"},custom_data~{voting_ballot:{used:true}}] run loot replace block 0 184 -16 container.0 loot servermode:voting_ballot_used
+function servermode:reset_inventory
 execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items block 0 184 -16 container.3 *[custom_data~{id:"parkour/return_to_checkpoint"}] run loot replace block 0 184 -16 container.3 loot lobby:parkour/return_to_checkpoint
 execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items block 0 184 -16 container.5 *[custom_data~{id:"parkour/return_to_start"}] run loot replace block 0 184 -16 container.5 loot lobby:parkour/return_to_start
 execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[tag=inParkour] unless items block 0 184 -16 container.8 *[custom_data~{id:"parkour/quit_parkour"}] run loot replace block 0 184 -16 container.8 loot lobby:parkour/quit_parkour

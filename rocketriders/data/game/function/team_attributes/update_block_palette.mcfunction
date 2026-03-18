@@ -4,9 +4,7 @@ execute unless predicate game:match_components/red_for_blue run data modify stor
     main: "blue",\
     accent: "cyan",\
     light: "light_blue",\
-    light_accent: "white",\
     dark: "blue",\
-    dark_accent: "black",\
     flag: "blue",\
 }
 
@@ -15,9 +13,7 @@ execute if predicate game:match_components/red_for_blue run data modify storage 
     main: "red",\
     accent: "pink",\
     light: "pink",\
-    light_accent: "white",\
     dark: "red",\
-    dark_accent: "black",\
     flag: "red",\
 }
 
@@ -122,9 +118,7 @@ execute unless predicate game:match_components/green_for_yellow run data modify 
     main: "yellow",\
     accent: "orange",\
     light: "yellow",\
-    light_accent: "white",\
     dark: "orange",\
-    dark_accent: "black",\
     flag: "yellow",\
 }
 execute if predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow.color_palette set value \
@@ -132,9 +126,7 @@ execute if predicate game:match_components/green_for_yellow run data modify stor
     main: "green",\
     accent: "lime",\
     light: "lime",\
-    light_accent: "white",\
     dark: "green",\
-    dark_accent: "black",\
     flag: "lime",\
 }
 

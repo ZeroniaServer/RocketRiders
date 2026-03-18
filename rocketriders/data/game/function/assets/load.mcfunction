@@ -40,6 +40,8 @@ function game:assets/__load/load with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge value {asset_id:"flag/stage_2",asset_type:"team",x_length:5,y_length:2,z_length:2}
 function game:assets/__load/load with storage rocketriders:main assets
+
+data modify storage rocketriders:main assets merge value {asset_id:"shield",asset_type:"shield"}
 function game:assets/__load/load with storage rocketriders:main assets
 
 fill -161 184 -161 -161 185 -161 air strict

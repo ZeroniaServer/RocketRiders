@@ -6,6 +6,8 @@ execute unless predicate game:match_components/red_for_blue run data modify stor
     light: "light_blue",\
     dark: "blue",\
     flag: "blue",\
+    shield_center: "cyan",\
+    shield_accent: "blue",\
 }
 
 execute if predicate game:match_components/red_for_blue run data modify storage rocketriders:teams blue.color_palette set value \
@@ -15,6 +17,8 @@ execute if predicate game:match_components/red_for_blue run data modify storage 
     light: "pink",\
     dark: "red",\
     flag: "red",\
+    shield_center: "pink",\
+    shield_accent: "red",\
 }
 
 ## Blue Block Palette
@@ -111,6 +115,20 @@ execute unless data storage rocketriders:main team_attributes.result run functio
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wall_banner"
 data modify storage rocketriders:teams blue.block_palette.flag_wall_banner set from storage rocketriders:main team_attributes.result
 
+# shield_center_stained_glass
+data modify storage rocketriders:main team_attributes set value {team:"blue",material:"stained_glass",color_source:"shield_center"}
+function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_stained_glass_pane"
+data modify storage rocketriders:teams blue.block_palette.shield_center_stained_glass set from storage rocketriders:main team_attributes.result
+
+# shield_accent_stained_glass
+data modify storage rocketriders:main team_attributes set value {team:"blue",material:"stained_glass",color_source:"shield_accent"}
+function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_stained_glass_pane"
+data modify storage rocketriders:teams blue.block_palette.shield_accent_stained_glass set from storage rocketriders:main team_attributes.result
+
 
 ## Yellow Color Palette
 execute unless predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow.color_palette set value \
@@ -120,6 +138,8 @@ execute unless predicate game:match_components/green_for_yellow run data modify 
     light: "yellow",\
     dark: "orange",\
     flag: "yellow",\
+    shield_center: "yellow",\
+    shield_accent: "orange",\
 }
 execute if predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow.color_palette set value \
 {\
@@ -128,6 +148,8 @@ execute if predicate game:match_components/green_for_yellow run data modify stor
     light: "lime",\
     dark: "green",\
     flag: "lime",\
+    shield_center: "lime",\
+    shield_accent: "green",\
 }
 
 ## Yellow Block Palette
@@ -223,3 +245,17 @@ execute unless data storage rocketriders:main team_attributes.result run functio
 execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wall_banner"
 data modify storage rocketriders:teams yellow.block_palette.flag_wall_banner set from storage rocketriders:main team_attributes.result
+
+# shield_center_stained_glass
+data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"stained_glass",color_source:"shield_center"}
+function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_stained_glass_pane"
+data modify storage rocketriders:teams yellow.block_palette.shield_center_stained_glass set from storage rocketriders:main team_attributes.result
+
+# shield_accent_stained_glass
+data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"stained_glass",color_source:"shield_accent"}
+function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_stained_glass_pane"
+data modify storage rocketriders:teams yellow.block_palette.shield_accent_stained_glass set from storage rocketriders:main team_attributes.result

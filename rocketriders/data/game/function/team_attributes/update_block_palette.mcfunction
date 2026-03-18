@@ -5,7 +5,7 @@ execute unless predicate game:match_components/red_for_blue run data modify stor
     accent: "cyan",\
     light: "light_blue",\
     dark: "blue",\
-    flag: "blue",\
+    feature: "blue",\
     shield_center: "cyan",\
     shield_accent: "blue",\
 }
@@ -16,7 +16,7 @@ execute if predicate game:match_components/red_for_blue run data modify storage 
     accent: "pink",\
     light: "pink",\
     dark: "red",\
-    flag: "red",\
+    feature: "red",\
     shield_center: "pink",\
     shield_accent: "red",\
 }
@@ -82,36 +82,23 @@ execute unless data storage rocketriders:main team_attributes.result run data mo
 data modify storage rocketriders:teams blue.block_palette.back_stained_glass_pane set from storage rocketriders:main team_attributes.result
 
 # flag
-data modify storage rocketriders:main team_attributes set value {team:"blue",material:"wool"}
-data modify storage rocketriders:main team_attributes.material set from storage rocketriders:match components."arena/base_materials".blue.flag
-data modify storage rocketriders:main team_attributes.color_source set from storage rocketriders:match components."arena/base_colors".blue.flag
+data modify storage rocketriders:main team_attributes set value {team:"blue",material:"wool",color_source:"feature"}
 function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.color_source
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wool"
 data modify storage rocketriders:teams blue.block_palette.flag set from storage rocketriders:main team_attributes.result
 
 # flag_banner
-data modify storage rocketriders:main team_attributes set value {team:"blue",material:"banner"}
-data modify storage rocketriders:main team_attributes.color_source set from storage rocketriders:match components."arena/base_colors".blue.flag
+data modify storage rocketriders:main team_attributes set value {team:"blue",material:"banner",color_source:"feature"}
 function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.color_source
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_banner"
 data modify storage rocketriders:teams blue.block_palette.flag_banner set from storage rocketriders:main team_attributes.result
 
 # flag_wall_banner
-data modify storage rocketriders:main team_attributes set value {team:"blue",material:"wall_banner"}
-data modify storage rocketriders:main team_attributes.color_source set from storage rocketriders:match components."arena/base_colors".blue.flag
+data modify storage rocketriders:main team_attributes set value {team:"blue",material:"wall_banner",color_source:"feature"}
 function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.color_source
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wall_banner"
 data modify storage rocketriders:teams blue.block_palette.flag_wall_banner set from storage rocketriders:main team_attributes.result
 
@@ -137,7 +124,7 @@ execute unless predicate game:match_components/green_for_yellow run data modify 
     accent: "orange",\
     light: "yellow",\
     dark: "orange",\
-    flag: "yellow",\
+    feature: "yellow",\
     shield_center: "yellow",\
     shield_accent: "orange",\
 }
@@ -147,7 +134,7 @@ execute if predicate game:match_components/green_for_yellow run data modify stor
     accent: "lime",\
     light: "lime",\
     dark: "green",\
-    flag: "lime",\
+    feature: "lime",\
     shield_center: "lime",\
     shield_accent: "green",\
 }
@@ -213,36 +200,23 @@ execute unless data storage rocketriders:main team_attributes.result run data mo
 data modify storage rocketriders:teams yellow.block_palette.back_stained_glass_pane set from storage rocketriders:main team_attributes.result
 
 # flag
-data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"wool"}
-data modify storage rocketriders:main team_attributes.material set from storage rocketriders:match components."arena/base_materials".yellow.flag
-data modify storage rocketriders:main team_attributes.color_source set from storage rocketriders:match components."arena/base_colors".yellow.flag
+data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"wool",color_source:"feature"}
 function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.color_source
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wool"
 data modify storage rocketriders:teams yellow.block_palette.flag set from storage rocketriders:main team_attributes.result
 
 # flag_banner
-data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"banner"}
-data modify storage rocketriders:main team_attributes.color_source set from storage rocketriders:match components."arena/base_colors".yellow.flag
+data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"banner",color_source:"feature"}
 function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.color_source
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_banner"
 data modify storage rocketriders:teams yellow.block_palette.flag_banner set from storage rocketriders:main team_attributes.result
 
 # flag_wall_banner
-data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"wall_banner"}
-data modify storage rocketriders:main team_attributes.color_source set from storage rocketriders:match components."arena/base_colors".yellow.flag
+data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"wall_banner",color_source:"feature"}
 function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.color_source
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes
-execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wall_banner"
 data modify storage rocketriders:teams yellow.block_palette.flag_wall_banner set from storage rocketriders:main team_attributes.result
 

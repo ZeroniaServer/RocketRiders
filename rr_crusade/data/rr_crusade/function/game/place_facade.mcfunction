@@ -1,18 +1,8 @@
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run return fail
 
 #> Crystals
-fill -101 200 85 -99 202 85 bedrock
-fill -91 200 85 -89 202 85 bedrock
-execute unless predicate game:match_components/green_for_yellow run fill -101 200 84 -99 202 84 yellow_stained_glass
-execute if predicate game:match_components/green_for_yellow run fill -101 200 84 -99 202 84 green_stained_glass
-execute unless predicate game:match_components/green_for_yellow run fill -91 200 84 -89 202 84 yellow_stained_glass
-execute if predicate game:match_components/green_for_yellow run fill -91 200 84 -89 202 84 green_stained_glass
-fill -99 200 72 -101 202 72 bedrock
-fill -91 200 72 -89 202 72 bedrock
-execute unless predicate game:match_components/red_for_blue run fill -99 200 73 -101 202 73 blue_stained_glass
-execute if predicate game:match_components/red_for_blue run fill -99 200 73 -101 202 73 red_stained_glass
-execute unless predicate game:match_components/red_for_blue run fill -91 200 73 -89 202 73 blue_stained_glass
-execute if predicate game:match_components/red_for_blue run fill -91 200 73 -89 202 73 red_stained_glass
+function rr_crusade:game/place_facade/crystals_blue with storage rocketriders:teams blue.color_palette
+function rr_crusade:game/place_facade/crystals_yellow with storage rocketriders:teams yellow.color_palette
 
 ## Portal area
 fill -94 198 91 -96 200 94 minecraft:crying_obsidian

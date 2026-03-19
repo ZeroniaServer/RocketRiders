@@ -47,10 +47,10 @@ execute if predicate game:yellow_team_skin/green run data modify storage rocketr
     text: {\
         team_name: "Green",\
         team_name_lowercase: "green",\
-        main_color: {color:"dark_green",text:""},\
-        accent_color: {color:"green",text:""},\
+        main_color: {color:"green",text:""},\
+        accent_color: {color:"#DAFFB2",text:""},\
     },\
-    player_name_color: "dark_green"\
+    player_name_color: "green"\
 }
 
 # Spectator

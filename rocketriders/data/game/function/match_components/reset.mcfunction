@@ -11,7 +11,7 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsEnab
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxEnabled] run function rr_sandbox:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run function rr_swap:set_base_match_components
 
-execute if predicate game:game_rules/classic_team_colors/on run scoreboard players set $red_for_blue match_components 1
+execute if predicate game:game_rules/classic_team_colors/on run scoreboard players set $dark_red_for_blue match_components 1
 execute if predicate game:game_rules/classic_team_colors/on run scoreboard players set $green_for_yellow match_components 1
 
 # Resolve components

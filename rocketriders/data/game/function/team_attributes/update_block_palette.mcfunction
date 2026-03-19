@@ -1,5 +1,5 @@
 ## Blue Color Palette
-execute unless predicate game:match_components/red_for_blue run data modify storage rocketriders:teams blue.color_palette set value \
+execute unless predicate game:match_components/dark_red_for_blue run data modify storage rocketriders:teams blue.color_palette set value \
 {\
     main: "blue",\
     accent: "cyan",\
@@ -10,7 +10,7 @@ execute unless predicate game:match_components/red_for_blue run data modify stor
     shield_accent: "blue",\
 }
 
-execute if predicate game:match_components/red_for_blue run data modify storage rocketriders:teams blue.color_palette set value \
+execute if predicate game:match_components/dark_red_for_blue run data modify storage rocketriders:teams blue.color_palette set value \
 {\
     main: "red",\
     accent: "pink",\

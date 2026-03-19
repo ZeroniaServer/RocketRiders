@@ -104,9 +104,9 @@ execute if score $no_portals match_components matches 0 run scoreboard players r
 $execute store success score $one_team match_components if predicate {condition:"value_check",value:$(one_team),range:1}
 execute if score $one_team match_components matches 0 run scoreboard players reset $one_team match_components
 
-# red_for_blue
-$execute store success score $red_for_blue match_components if predicate {condition:"value_check",value:$(red_for_blue),range:1}
-execute if score $red_for_blue match_components matches 0 run scoreboard players reset $red_for_blue match_components
+# dark_red_for_blue
+$execute store success score $dark_red_for_blue match_components if predicate {condition:"value_check",value:$(dark_red_for_blue),range:1}
+execute if score $dark_red_for_blue match_components matches 0 run scoreboard players reset $dark_red_for_blue match_components
 
 # green_for_yellow
 $execute store success score $green_for_yellow match_components if predicate {condition:"value_check",value:$(green_for_yellow),range:1}

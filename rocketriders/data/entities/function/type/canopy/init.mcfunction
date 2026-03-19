@@ -31,8 +31,8 @@ tag @s remove canopy.forgotten_origin
 
 execute positioned ~ ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
 execute positioned ~ ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
-execute if predicate entities:origin_team/blue unless predicate game:match_components/red_for_blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/blue",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
-execute if predicate entities:origin_team/blue if predicate game:match_components/red_for_blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/red",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
+execute if predicate entities:origin_team/blue unless predicate game:match_components/dark_red_for_blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/blue",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
+execute if predicate entities:origin_team/blue if predicate game:match_components/dark_red_for_blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/red",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
 execute if predicate entities:origin_team/yellow unless predicate game:match_components/green_for_yellow at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/yellow",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
 execute if predicate entities:origin_team/yellow if predicate game:match_components/green_for_yellow at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/green",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
 execute if predicate entities:origin_team/none at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/white",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}

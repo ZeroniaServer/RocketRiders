@@ -19,7 +19,7 @@ scoreboard players set $min_players_per_team match_components 2
 scoreboard players set $neutral_items match_components 1
 scoreboard players set $no_portals match_components 1
 scoreboard players set $one_team match_components 1
-scoreboard players set $red_for_blue match_components 1
+scoreboard players set $dark_red_for_blue match_components 1
 
 # items
 scoreboard players set $item_pool.cluster_fireball match_components -1

@@ -6,32 +6,32 @@ execute unless predicate game:match_components/one_team unless predicate game:ma
 execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run setblock -80 211 94 minecraft:ochre_froglight[axis=y] strict
 execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run fill -82 204 92 -78 212 96 minecraft:green_concrete replace #custom:concrete strict
 execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run setblock -80 211 94 minecraft:verdant_froglight[axis=y] strict
-execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:blue_concrete replace #custom:concrete strict
-execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run setblock -80 211 94 minecraft:sea_lantern strict
-execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run fill -82 204 92 -78 212 96 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run setblock -80 211 94 minecraft:shroomlight strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/dark_red_for_blue run fill -82 204 92 -78 212 96 minecraft:blue_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/dark_red_for_blue run setblock -80 211 94 minecraft:sea_lantern strict
+execute if predicate game:match_components/one_team if predicate game:match_components/dark_red_for_blue run fill -82 204 92 -78 212 96 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team if predicate game:match_components/dark_red_for_blue run setblock -80 211 94 minecraft:shroomlight strict
 
-execute unless predicate game:match_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:blue_concrete replace #custom:concrete strict
-execute unless predicate game:match_components/red_for_blue run setblock -80 211 62 minecraft:sea_lantern strict
-execute if predicate game:match_components/red_for_blue run fill -82 204 60 -78 212 64 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:match_components/red_for_blue run setblock -80 211 62 minecraft:shroomlight strict
+execute unless predicate game:match_components/dark_red_for_blue run fill -82 204 60 -78 212 64 minecraft:blue_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/dark_red_for_blue run setblock -80 211 62 minecraft:sea_lantern strict
+execute if predicate game:match_components/dark_red_for_blue run fill -82 204 60 -78 212 64 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:match_components/dark_red_for_blue run setblock -80 211 62 minecraft:shroomlight strict
 
 #Bridge colors
 execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run place template lobby:left_bridge/yellow -76 200 86 none none 1 0 strict
 execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run place template lobby:left_bridge/green -76 200 86 none none 1 0 strict
-execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run place template lobby:left_bridge/blue -76 200 86 none none 1 0 strict
-execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run place template lobby:left_bridge/red -76 200 86 none none 1 0 strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/dark_red_for_blue run place template lobby:left_bridge/blue -76 200 86 none none 1 0 strict
+execute if predicate game:match_components/one_team if predicate game:match_components/dark_red_for_blue run place template lobby:left_bridge/red -76 200 86 none none 1 0 strict
 
-execute unless predicate game:match_components/red_for_blue run place template lobby:right_bridge/blue -76 200 64 none none 1 0 strict
-execute if predicate game:match_components/red_for_blue run place template lobby:right_bridge/red -76 200 64 none none 1 0 strict
+execute unless predicate game:match_components/dark_red_for_blue run place template lobby:right_bridge/blue -76 200 64 none none 1 0 strict
+execute if predicate game:match_components/dark_red_for_blue run place template lobby:right_bridge/red -76 200 64 none none 1 0 strict
 
 #Lobby underside colors (blue)
-execute unless predicate game:match_components/red_for_blue run fill -82 186 66 -81 201 77 minecraft:blue_terracotta replace #custom:terracotta strict
-execute unless predicate game:match_components/red_for_blue run fill -83 187 70 -83 200 77 minecraft:blue_concrete replace #custom:concrete strict
-execute unless predicate game:match_components/red_for_blue run fill -84 190 75 -84 199 77 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
-execute if predicate game:match_components/red_for_blue run fill -82 186 66 -81 201 77 minecraft:red_terracotta replace #custom:terracotta strict
-execute if predicate game:match_components/red_for_blue run fill -83 187 70 -83 200 77 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:match_components/red_for_blue run fill -84 190 75 -84 199 77 minecraft:red_concrete_powder replace #custom:concrete_powder strict
+execute unless predicate game:match_components/dark_red_for_blue run fill -82 186 66 -81 201 77 minecraft:blue_terracotta replace #custom:terracotta strict
+execute unless predicate game:match_components/dark_red_for_blue run fill -83 187 70 -83 200 77 minecraft:blue_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/dark_red_for_blue run fill -84 190 75 -84 199 77 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
+execute if predicate game:match_components/dark_red_for_blue run fill -82 186 66 -81 201 77 minecraft:red_terracotta replace #custom:terracotta strict
+execute if predicate game:match_components/dark_red_for_blue run fill -83 187 70 -83 200 77 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:match_components/dark_red_for_blue run fill -84 190 75 -84 199 77 minecraft:red_concrete_powder replace #custom:concrete_powder strict
 #Lobby underside colors (yellow)
 execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run fill -82 186 79 -81 201 90 minecraft:yellow_terracotta replace #custom:terracotta strict
 execute unless predicate game:match_components/one_team unless predicate game:match_components/green_for_yellow run fill -83 187 79 -83 200 86 minecraft:yellow_concrete replace #custom:concrete strict
@@ -39,12 +39,12 @@ execute unless predicate game:match_components/one_team unless predicate game:ma
 execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run fill -82 186 79 -81 201 90 minecraft:green_terracotta replace #custom:terracotta strict
 execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run fill -83 187 79 -83 200 86 minecraft:green_concrete replace #custom:concrete strict
 execute unless predicate game:match_components/one_team if predicate game:match_components/green_for_yellow run fill -84 190 79 -84 199 81 minecraft:green_concrete_powder replace #custom:concrete_powder strict
-execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -82 186 79 -81 201 90 minecraft:blue_terracotta replace #custom:terracotta strict
-execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -83 187 79 -83 200 86 minecraft:blue_concrete replace #custom:concrete strict
-execute if predicate game:match_components/one_team unless predicate game:match_components/red_for_blue run fill -84 190 79 -84 199 81 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
-execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run fill -82 186 79 -81 201 90 minecraft:red_terracotta replace #custom:terracotta strict
-execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run fill -83 187 79 -83 200 86 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:match_components/one_team if predicate game:match_components/red_for_blue run fill -84 190 79 -84 199 81 minecraft:red_concrete_powder replace #custom:concrete_powder strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/dark_red_for_blue run fill -82 186 79 -81 201 90 minecraft:blue_terracotta replace #custom:terracotta strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/dark_red_for_blue run fill -83 187 79 -83 200 86 minecraft:blue_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team unless predicate game:match_components/dark_red_for_blue run fill -84 190 79 -84 199 81 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
+execute if predicate game:match_components/one_team if predicate game:match_components/dark_red_for_blue run fill -82 186 79 -81 201 90 minecraft:red_terracotta replace #custom:terracotta strict
+execute if predicate game:match_components/one_team if predicate game:match_components/dark_red_for_blue run fill -83 187 79 -83 200 86 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team if predicate game:match_components/dark_red_for_blue run fill -84 190 79 -84 199 81 minecraft:red_concrete_powder replace #custom:concrete_powder strict
 # Fix for terracotta above underside region
 fill -81 199 86 -81 198 81 minecraft:lime_terracotta replace #custom:terracotta
 

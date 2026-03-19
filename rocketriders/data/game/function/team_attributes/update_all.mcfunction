@@ -1,6 +1,6 @@
 ## Base Attributes
 # Blue
-execute unless predicate game:match_components/red_for_blue run data modify storage rocketriders:teams blue set value \
+execute unless predicate game:match_components/dark_red_for_blue run data modify storage rocketriders:teams blue set value \
 {\
     text: {\
         team_name: "Blue",\
@@ -10,7 +10,7 @@ execute unless predicate game:match_components/red_for_blue run data modify stor
     },\
     player_name_color: "blue"\
 }
-execute if predicate game:match_components/red_for_blue run data modify storage rocketriders:teams blue set value \
+execute if predicate game:match_components/dark_red_for_blue run data modify storage rocketriders:teams blue set value \
 {\
     text: {\
         team_name: "Red",\

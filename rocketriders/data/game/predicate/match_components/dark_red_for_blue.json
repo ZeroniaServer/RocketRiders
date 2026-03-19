@@ -4,7 +4,7 @@
   "value": {
     "score": "match_components",
     "target": {
-      "name": "$red_for_blue",
+      "name": "$dark_red_for_blue",
       "type": "minecraft:fixed"
     },
     "type": "minecraft:score"

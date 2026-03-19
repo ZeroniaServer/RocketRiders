@@ -30,8 +30,8 @@ execute if predicate game:phase/staging run bossbar set rr:startgame players @a[
 execute as @a[x=0] if score @s joinBlue matches 1 if predicate rr:is_cubekrowd run function servermode:joinblue
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinBlue
 execute unless predicate game:teams/blue_is_joinable run tag @a[x=0] remove JoinBlue
-execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable unless predicate game:match_components/red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
-execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable if predicate game:match_components/red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:red_nether_bricks"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable unless predicate game:match_components/dark_red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:blue_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
+execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable if predicate game:match_components/dark_red_for_blue at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:red_nether_bricks"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute as @e[x=0,type=marker,tag=join_pad.blue] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinblue
 execute as @a[x=0,tag=tryJoinBlue] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.blue] run tag @s remove tryJoinBlue
 execute as @a[x=0,tag=JoinBlue] run function custom:team/join_blue

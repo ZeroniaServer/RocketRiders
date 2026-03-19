@@ -60,8 +60,8 @@ execute if score @s entity.age matches 2 if predicate entities:origin_team/yello
 execute if score @s entity.age matches 2 if predicate entities:origin_team/none positioned ~-3 ~-3 ~ run function custom:place_utility_structure {template:"game:asset/shield/stage_3/white",x_length:6,y_length:6,z_length:6,rules:{}}
 execute if score @s entity.age matches 2 run playsound block.glass.break master @a[x=0] ~ ~ ~ 2 0
 execute if score @s entity.age matches 2 run playsound item.shield.break master @a[x=0] ~ ~ ~ 2 0
-execute if score @s entity.age matches 2 if predicate entities:origin_team/blue unless predicate game:match_components/red_for_blue run particle minecraft:block{block_state:"minecraft:blue_stained_glass"} ~ ~ ~ 1 1 0 0.1 50
-execute if score @s entity.age matches 2 if predicate entities:origin_team/blue if predicate game:match_components/red_for_blue run particle minecraft:block{block_state:"minecraft:red_stained_glass"} ~ ~ ~ 1 1 0 0.1 50
+execute if score @s entity.age matches 2 if predicate entities:origin_team/blue unless predicate game:match_components/dark_red_for_blue run particle minecraft:block{block_state:"minecraft:blue_stained_glass"} ~ ~ ~ 1 1 0 0.1 50
+execute if score @s entity.age matches 2 if predicate entities:origin_team/blue if predicate game:match_components/dark_red_for_blue run particle minecraft:block{block_state:"minecraft:red_stained_glass"} ~ ~ ~ 1 1 0 0.1 50
 execute if score @s entity.age matches 2 if predicate entities:origin_team/yellow unless predicate game:match_components/green_for_yellow run particle minecraft:block{block_state:"minecraft:yellow_stained_glass"} ~ ~ ~ 1 1 0 0.1 50
 execute if score @s entity.age matches 2 if predicate entities:origin_team/yellow if predicate game:match_components/green_for_yellow run particle minecraft:block{block_state:"minecraft:green_stained_glass"} ~ ~ ~ 1 1 0 0.1 50
 execute if score @s entity.age matches 2 if predicate entities:origin_team/none run particle minecraft:block{block_state:"minecraft:white_stained_glass"} ~ ~ ~ 1 1 0 0.1 50

@@ -7,7 +7,8 @@ execute unless predicate game:match_components/red_for_blue run data modify stor
         team_name_lowercase: "blue",\
         main_color: {color:"blue",text:""},\
         accent_color: {color:"dark_aqua",text:""},\
-    }\
+    },\
+    player_name_color: "blue"\
 }
 execute if predicate game:match_components/red_for_blue run data modify storage rocketriders:teams blue set value \
 {\
@@ -16,7 +17,8 @@ execute if predicate game:match_components/red_for_blue run data modify storage 
         team_name_lowercase: "red",\
         main_color: {color:"dark_red",text:""},\
         accent_color: {color:"red",text:""},\
-    }\
+    },\
+    player_name_color: "dark_red"\
 }
 
 # Yellow
@@ -27,7 +29,8 @@ execute unless predicate game:match_components/green_for_yellow run data modify 
         team_name_lowercase: "yellow",\
         main_color: {color:"gold",text:""},\
         accent_color: {color:"yellow",text:""},\
-    }\
+    },\
+    player_name_color: "gold"\
 }
 execute if predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow set value \
 {\
@@ -36,10 +39,11 @@ execute if predicate game:match_components/green_for_yellow run data modify stor
         team_name_lowercase: "green",\
         main_color: {color:"dark_green",text:""},\
         accent_color: {color:"green",text:""},\
-    }\
+    },\
+    player_name_color: "dark_green"\
 }
 
-# Spectatpr
+# Spectator
 data modify storage rocketriders:teams spectator set value \
 {\
     text: {\
@@ -49,6 +53,11 @@ data modify storage rocketriders:teams spectator set value \
         accent_color: {color:"gray",text:""},\
     }\
 }
+
+
+## Update team player name colors
+function game:team_attributes/__player_name_color/blue with storage rocketriders:teams blue
+function game:team_attributes/__player_name_color/yellow with storage rocketriders:teams yellow
 
 
 ## Resolve Text Scores

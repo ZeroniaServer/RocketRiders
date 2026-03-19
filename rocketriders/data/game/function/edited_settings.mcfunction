@@ -1,5 +1,7 @@
 ## Resolve any manually changed components
 function game:match_components/resolve
+
+## Update team attributes
 function game:team_attributes/update_all
 
 ## Close modification room dialogs
@@ -13,13 +15,6 @@ function game:place_facade
 
 ## Schedule Molerat (asynchronous)
 execute if predicate game:modifiers/molerat/on run function arenaclear:moleratplace
-
-##Team color
-execute unless predicate game:match_components/red_for_blue run team modify rocketriders.sort_000.blue color blue
-execute if predicate game:match_components/red_for_blue run team modify rocketriders.sort_000.blue color dark_red
-execute unless predicate game:match_components/green_for_yellow run team modify rocketriders.sort_001.yellow color gold
-execute if predicate game:match_components/green_for_yellow run team modify rocketriders.sort_001.yellow color dark_green
-function custom:update_player_text/all
 
 ##Friendly Fire
 execute unless predicate game:match_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire false

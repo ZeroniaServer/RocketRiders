@@ -27,7 +27,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:match_components/green_for_yellow"
+                  "name": "game:yellow_team_skin/green"
                 }
               ],
               "function": "minecraft:set_item",

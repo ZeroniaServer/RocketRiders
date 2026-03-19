@@ -104,13 +104,15 @@ execute if score $no_portals match_components matches 0 run scoreboard players r
 $execute store success score $one_team match_components if predicate {condition:"value_check",value:$(one_team),range:1}
 execute if score $one_team match_components matches 0 run scoreboard players reset $one_team match_components
 
-# dark_red_for_blue
-$execute store success score $dark_red_for_blue match_components if predicate {condition:"value_check",value:$(dark_red_for_blue),range:1}
-execute if score $dark_red_for_blue match_components matches 0 run scoreboard players reset $dark_red_for_blue match_components
+# blue_team_skin
+$scoreboard players set $blue_team_skin match_components $(blue_team_skin)
+execute unless score $blue_team_skin match_components matches 0..2 run scoreboard players reset $blue_team_skin match_components
+execute if score $blue_team_skin match_components matches 0 run scoreboard players reset $blue_team_skin match_components
 
-# green_for_yellow
-$execute store success score $green_for_yellow match_components if predicate {condition:"value_check",value:$(green_for_yellow),range:1}
-execute if score $green_for_yellow match_components matches 0 run scoreboard players reset $green_for_yellow match_components
+# yellow_team_skin
+$scoreboard players set $yellow_team_skin match_components $(yellow_team_skin)
+execute unless score $yellow_team_skin match_components matches 0..1 run scoreboard players reset $yellow_team_skin match_components
+execute if score $yellow_team_skin match_components matches 0 run scoreboard players reset $yellow_team_skin match_components
 
 # classic_shields
 $execute store success score $classic_shields match_components if predicate {condition:"value_check",value:$(classic_shields),range:1}

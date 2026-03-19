@@ -21,7 +21,7 @@ data modify storage rocketriders:main match_components.dialog set value {\
     },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__castle:$(arena__castle),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),dark_red_for_blue:$(dark_red_for_blue),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details),decreased_icbm_flight_duration:$(decreased_icbm_flight_duration),green_for_yellow:$(green_for_yellow),arena__regenerate_back_layer:$(arena__regenerate_back_layer),classic_shields:$(classic_shields)}"\
+      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__castle:$(arena__castle),arena__no_base_details:$(arena__no_base_details),armor__:$(armor__),arrow_pickup__:$(arrow_pickup__),main_item__:$(main_item__),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),blue_team_skin:$(blue_team_skin),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details),decreased_icbm_flight_duration:$(decreased_icbm_flight_duration),yellow_team_skin:$(yellow_team_skin),arena__regenerate_back_layer:$(arena__regenerate_back_layer),classic_shields:$(classic_shields)}"\
     }\
   },\
   "no": {\
@@ -89,6 +89,11 @@ data modify storage rocketriders:main match_components.dialog.inputs append valu
 execute if predicate game:match_components/arrow_pickup/only_crusade_mode_archer_kit run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"only_crusade_mode_archer_kit"}}].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"only_crusade_mode_archer_kit"}}].display.color set value "red"
 
+# blue_team_skin
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"blue_team_skin",label:"blue_team_skin",width:300,options:[{id:"0",display:{color:"white",text:"blue"}},{id:"1",display:{color:"white",text:"dark_red"}},{id:"2",display:{color:"white",text:"classic_red"}}]}
+execute if predicate game:blue_team_skin/dark_red run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
+execute if predicate game:blue_team_skin/classic_red run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].initial set value true
+
 # classic_shields
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"classic_shields",label:"classic_shields",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/classic_shields run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"true"}}].initial set value true
@@ -113,10 +118,6 @@ execute if predicate game:match_components/cubekrowd/disable_shield_or_obsidian_
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"custom_team_colors",label:"custom_team_colors",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/custom_team_colors run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
-# dark_red_for_blue
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"dark_red_for_blue",label:"dark_red_for_blue",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
-execute if predicate game:match_components/dark_red_for_blue run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
-
 # decreased_icbm_flight_duration
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"decreased_icbm_flight_duration",label:"decreased_icbm_flight_duration",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/decreased_icbm_flight_duration run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
@@ -132,10 +133,6 @@ execute if predicate game:match_components/duel_settings_locked run data modify 
 # friendly_fire
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"friendly_fire",label:"friendly_fire",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/friendly_fire run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
-
-# green_for_yellow
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"green_for_yellow",label:"green_for_yellow",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
-execute if predicate game:match_components/green_for_yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
 # has_chase_crystals (locked)
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_chase_crystals",label:"🔒 has_chase_crystals",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
@@ -221,6 +218,11 @@ execute if predicate game:portal_type/none run data modify storage rocketriders:
 execute if predicate game:portal_type/default run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"default"}}].initial set value true
 execute if predicate game:portal_type/small run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"small"}}].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!ctfEnabled,tag=!chaseEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].display.color set value "red"
+
+# yellow_team_skin
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"yellow_team_skin",label:"yellow_team_skin",width:300,options:[{id:"0",display:{color:"white",text:"yellow"}},{id:"1",display:{color:"white",text:"green"}}]}
+execute if predicate game:yellow_team_skin/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
+execute if predicate game:yellow_team_skin/green run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
 ## Append config overridss (locked)
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:"",label_visible:false,width:200,options:[{id:"",display:{bold:true,text:"Config Overrides",underlined:true}}]}

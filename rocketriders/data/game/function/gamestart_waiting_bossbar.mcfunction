@@ -38,7 +38,7 @@ execute if score $missing_yellow_players var matches 1 run scoreboard players di
 ## One team
 execute if predicate game:match_components/one_team run bossbar set rr:startgame name ["Waiting for",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,score:{name:"$missing_blue_players",objective:"var"}},{score:{name:"$blue_more",objective:"var"}}," ",{score:{name:"$blue_missing_plural",objective:"var"}},"..."]
 execute if predicate game:match_components/one_team if predicate game:match_components/custom_team_colors run return run bossbar set rr:startgame color white
-execute if predicate game:match_components/one_team if predicate game:match_components/dark_red_for_blue run return run bossbar set rr:startgame color red
+execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run return run bossbar set rr:startgame color red
 execute if predicate game:match_components/one_team run return run bossbar set rr:startgame color blue
 
 ## Two teams
@@ -55,12 +55,12 @@ execute unless predicate game:teams/blue_is_sufficient unless predicate game:tea
 execute unless predicate game:teams/blue_is_sufficient unless score $missing_blue_players var matches 1 run bossbar set rr:startgame name ["Waiting for",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,score:{name:"$missing_blue_players",objective:"var"}},{score:{name:"$blue_more",objective:"var"}}," ",[{score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}]," players..."]
 execute unless predicate game:teams/blue_is_sufficient if score $missing_blue_players var matches 1 unless score $max_players_per_team global matches 1 run bossbar set rr:startgame name ["Waiting for",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,text:"1"},{score:{name:"$blue_more",objective:"var"}}," ",[{score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}]," player..."]
 execute unless predicate game:teams/blue_is_sufficient if score $missing_blue_players var matches 1 if score $max_players_per_team global matches 1 run bossbar set rr:startgame name ["Waiting for a ",[{score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}]," player..."]
-execute unless predicate game:teams/blue_is_sufficient if predicate game:match_components/green_for_yellow run return run bossbar set rr:startgame color green
+execute unless predicate game:teams/blue_is_sufficient if predicate game:yellow_team_skin/green run return run bossbar set rr:startgame color green
 execute unless predicate game:teams/blue_is_sufficient run return run bossbar set rr:startgame color yellow
 
 # Yellow is insufficient
 execute unless predicate game:teams/yellow_is_sufficient unless score $missing_yellow_players var matches 1 run bossbar set rr:startgame name ["Waiting for",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,score:{name:"$missing_yellow_players",objective:"var"}},{score:{name:"$yellow_more",objective:"var"}}," ",[{score:{name:"#yellow",objective:"text.main_color"}},{score:{name:"#yellow",objective:"text.team_name"}}]," players..."]
 execute unless predicate game:teams/yellow_is_sufficient if score $missing_yellow_players var matches 1 unless score $max_players_per_team global matches 1 run bossbar set rr:startgame name ["Waiting for",{score:{name:"$at_least",objective:"var"}}," ",{bold:true,text:"1"},{score:{name:"$yellow_more",objective:"var"}}," ",[{score:{name:"#yellow",objective:"text.main_color"}},{score:{name:"#yellow",objective:"text.team_name"}}]," player..."]
 execute unless predicate game:teams/yellow_is_sufficient if score $missing_yellow_players var matches 1 if score $max_players_per_team global matches 1 run bossbar set rr:startgame name ["Waiting for a ",[{score:{name:"#yellow",objective:"text.main_color"}},{score:{name:"#yellow",objective:"text.team_name"}}]," player..."]
-execute unless predicate game:teams/yellow_is_sufficient if predicate game:match_components/dark_red_for_blue run return run bossbar set rr:startgame color red
+execute unless predicate game:teams/yellow_is_sufficient if predicate game:blue_team_skin/any_red_skin run return run bossbar set rr:startgame color red
 execute unless predicate game:teams/yellow_is_sufficient run return run bossbar set rr:startgame color blue

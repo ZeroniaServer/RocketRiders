@@ -1,4 +1,4 @@
-execute if predicate game:match_components/dark_red_for_blue run return run function rr_powerups:game/fancyred
+execute if predicate game:blue_team_skin/any_red_skin run return run function rr_powerups:game/fancyred
 
 execute if entity @s[scores={captureBlue=2}] unless entity @s[tag=contested] at @s run playsound minecraft:entity.zombie_villager.converted master @a[x=0] ~ ~ ~ 1 1.2
 execute if entity @s[scores={captureBlue=2..}] unless entity @s[tag=contested] if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[0,1,1],scale:2} 12 55 -6 0 0.6 0 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]

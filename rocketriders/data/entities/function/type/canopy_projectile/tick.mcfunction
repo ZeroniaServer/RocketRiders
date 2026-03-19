@@ -13,10 +13,10 @@ execute if predicate custom:has_vehicle run function custom:projectile_motion_sa
 # Movement trail
 execute if score @s entity.age matches 1.. if predicate custom:periodic_tick/3 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 0 0 0 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
-execute if score @s entity.age matches 1.. if predicate entities:origin_team/blue unless predicate game:match_components/dark_red_for_blue if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[0,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if score @s entity.age matches 1.. if predicate entities:origin_team/blue if predicate game:match_components/dark_red_for_blue if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0.5,0.5],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if score @s entity.age matches 1.. if predicate entities:origin_team/yellow unless predicate game:match_components/green_for_yellow if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,1,0],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if score @s entity.age matches 1.. if predicate entities:origin_team/yellow if predicate game:match_components/green_for_yellow if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if score @s entity.age matches 1.. if predicate entities:origin_team/blue if predicate game:blue_team_skin/blue if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[0,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if score @s entity.age matches 1.. if predicate entities:origin_team/blue if predicate game:blue_team_skin/any_red_skin if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0.5,0.5],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if score @s entity.age matches 1.. if predicate entities:origin_team/yellow if predicate game:yellow_team_skin/yellow if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,1,0],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if score @s entity.age matches 1.. if predicate entities:origin_team/yellow if predicate game:yellow_team_skin/green if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 execute if score @s entity.age matches 1.. if predicate entities:origin_team/none if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 # Deploy

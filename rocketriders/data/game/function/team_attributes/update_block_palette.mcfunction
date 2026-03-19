@@ -1,5 +1,5 @@
 ## Blue Color Palette
-execute unless predicate game:match_components/dark_red_for_blue run data modify storage rocketriders:teams blue.color_palette set value \
+execute if predicate game:blue_team_skin/blue run data modify storage rocketriders:teams blue.color_palette set value \
 {\
     main: "blue",\
     accent: "cyan",\
@@ -10,7 +10,7 @@ execute unless predicate game:match_components/dark_red_for_blue run data modify
     shield_accent: "blue",\
 }
 
-execute if predicate game:match_components/dark_red_for_blue run data modify storage rocketriders:teams blue.color_palette set value \
+execute if predicate game:blue_team_skin/any_red_skin run data modify storage rocketriders:teams blue.color_palette set value \
 {\
     main: "red",\
     accent: "pink",\
@@ -118,7 +118,7 @@ data modify storage rocketriders:teams blue.block_palette.shield_accent_stained_
 
 
 ## Yellow Color Palette
-execute unless predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow.color_palette set value \
+execute if predicate game:yellow_team_skin/yellow run data modify storage rocketriders:teams yellow.color_palette set value \
 {\
     main: "yellow",\
     accent: "orange",\
@@ -128,7 +128,7 @@ execute unless predicate game:match_components/green_for_yellow run data modify 
     shield_center: "yellow",\
     shield_accent: "orange",\
 }
-execute if predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow.color_palette set value \
+execute if predicate game:yellow_team_skin/green run data modify storage rocketriders:teams yellow.color_palette set value \
 {\
     main: "green",\
     accent: "lime",\

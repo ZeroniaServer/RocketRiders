@@ -50,11 +50,8 @@
         "name": "custom:team/blue"
       },
       {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/dark_red_for_blue"
-        }
+        "condition": "minecraft:reference",
+        "name": "game:blue_team_skin/blue"
       },
       {
         "condition": "minecraft:inverted",
@@ -94,7 +91,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:match_components/dark_red_for_blue"
+        "name": "game:blue_team_skin/any_red_skin"
       },
       {
         "condition": "minecraft:inverted",
@@ -170,7 +167,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:match_components/green_for_yellow"
+        "name": "game:yellow_team_skin/green"
       },
       {
         "condition": "minecraft:inverted",

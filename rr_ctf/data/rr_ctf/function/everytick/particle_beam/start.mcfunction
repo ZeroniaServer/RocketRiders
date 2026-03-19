@@ -6,10 +6,10 @@ execute at @s as @a[x=0,tag=!particle_beam.this,tag=!hideParticles,predicate=cus
 execute at @s as @a[x=0,tag=!particle_beam.this,tag=!hideParticles,predicate=custom:in_arena] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{distance:{horizontal:{min:60,max:90}}}} run tag @s[tag=!particle_beam.medium] add particle_beam.far
 execute at @s as @a[x=0,tag=!particle_beam.this,tag=!hideParticles,predicate=custom:in_arena] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{distance:{horizontal:{min:90,max:1000}}}} run tag @s[tag=!particle_beam.far] add particle_beam.very_far
 
-execute unless predicate game:match_components/dark_red_for_blue at @s[predicate=custom:team/blue] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0x0000FF}
-execute if predicate game:match_components/dark_red_for_blue at @s[predicate=custom:team/blue] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0xFF0000}
-execute unless predicate game:match_components/green_for_yellow at @s[predicate=custom:team/yellow] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0xFFFF00}
-execute if predicate game:match_components/green_for_yellow at @s[predicate=custom:team/yellow] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0x00FF00}
+execute if predicate game:blue_team_skin/blue at @s[predicate=custom:team/blue] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0x0000FF}
+execute if predicate game:blue_team_skin/any_red_skin at @s[predicate=custom:team/blue] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0xFF0000}
+execute if predicate game:yellow_team_skin/yellow at @s[predicate=custom:team/yellow] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0xFFFF00}
+execute if predicate game:yellow_team_skin/green at @s[predicate=custom:team/yellow] anchored eyes positioned ^ ^ ^ positioned ~ ~2 ~ run function rr_ctf:everytick/particle_beam/loop {color:0x00FF00}
 
 tag @s remove particle_beam.this
 

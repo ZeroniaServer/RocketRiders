@@ -15,11 +15,8 @@
         }
       },
       {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/dark_red_for_blue"
-        }
+        "condition": "minecraft:reference",
+        "name": "game:blue_team_skin/blue"
       },
       {
         "condition": "minecraft:reference",
@@ -38,11 +35,8 @@
         }
       },
       {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/dark_red_for_blue"
-        }
+        "condition": "minecraft:reference",
+        "name": "game:blue_team_skin/blue"
       },
       {
         "condition": "minecraft:reference",
@@ -80,7 +74,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:match_components/dark_red_for_blue"
+        "name": "game:blue_team_skin/any_red_skin"
       },
       {
         "condition": "minecraft:reference",
@@ -100,7 +94,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:match_components/dark_red_for_blue"
+        "name": "game:blue_team_skin/any_red_skin"
       },
       {
         "condition": "minecraft:reference",
@@ -137,11 +131,8 @@
         }
       },
       {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/green_for_yellow"
-        }
+        "condition": "minecraft:reference",
+        "name": "game:yellow_team_skin/yellow"
       },
       {
         "condition": "minecraft:reference",
@@ -160,11 +151,8 @@
         }
       },
       {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/green_for_yellow"
-        }
+        "condition": "minecraft:reference",
+        "name": "game:yellow_team_skin/yellow"
       },
       {
         "condition": "minecraft:reference",
@@ -202,7 +190,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:match_components/green_for_yellow"
+        "name": "game:yellow_team_skin/green"
       },
       {
         "condition": "minecraft:reference",
@@ -222,7 +210,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:match_components/green_for_yellow"
+        "name": "game:yellow_team_skin/green"
       },
       {
         "condition": "minecraft:reference",

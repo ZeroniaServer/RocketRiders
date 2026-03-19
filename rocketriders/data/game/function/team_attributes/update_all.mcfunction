@@ -1,6 +1,6 @@
 ## Base Attributes
 # Blue
-execute unless predicate game:match_components/dark_red_for_blue run data modify storage rocketriders:teams blue set value \
+execute if predicate game:blue_team_skin/blue run data modify storage rocketriders:teams blue set value \
 {\
     text: {\
         team_name: "Blue",\
@@ -10,7 +10,7 @@ execute unless predicate game:match_components/dark_red_for_blue run data modify
     },\
     player_name_color: "blue"\
 }
-execute if predicate game:match_components/dark_red_for_blue run data modify storage rocketriders:teams blue set value \
+execute if predicate game:blue_team_skin/dark_red run data modify storage rocketriders:teams blue set value \
 {\
     text: {\
         team_name: "Red",\
@@ -20,9 +20,19 @@ execute if predicate game:match_components/dark_red_for_blue run data modify sto
     },\
     player_name_color: "dark_red"\
 }
+execute if predicate game:blue_team_skin/classic_red run data modify storage rocketriders:teams blue set value \
+{\
+    text: {\
+        team_name: "Red",\
+        team_name_lowercase: "red",\
+        main_color: {color:"red",text:""},\
+        accent_color: {color:"#F4A9B8",text:""},\
+    },\
+    player_name_color: "red"\
+}
 
 # Yellow
-execute unless predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow set value \
+execute if predicate game:yellow_team_skin/yellow run data modify storage rocketriders:teams yellow set value \
 {\
     text: {\
         team_name: "Yellow",\
@@ -32,7 +42,7 @@ execute unless predicate game:match_components/green_for_yellow run data modify 
     },\
     player_name_color: "gold"\
 }
-execute if predicate game:match_components/green_for_yellow run data modify storage rocketriders:teams yellow set value \
+execute if predicate game:yellow_team_skin/green run data modify storage rocketriders:teams yellow set value \
 {\
     text: {\
         team_name: "Green",\

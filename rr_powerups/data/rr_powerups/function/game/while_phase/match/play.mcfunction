@@ -100,11 +100,11 @@ bossbar set rr_powerups:capture_progress style progress
 execute if score $match_play_time global matches 1.. run bossbar set rr_powerups:capture_progress players @a[x=0,predicate=!custom:team/lobby]
 
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform] if score @s captureBlue >= @s captureYellow store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureBlue
-execute unless predicate game:match_components/dark_red_for_blue as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue > @s captureYellow run bossbar set rr_powerups:capture_progress color blue
-execute if predicate game:match_components/dark_red_for_blue as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue > @s captureYellow run bossbar set rr_powerups:capture_progress color red
+execute if predicate game:blue_team_skin/blue as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue > @s captureYellow run bossbar set rr_powerups:capture_progress color blue
+execute if predicate game:blue_team_skin/any_red_skin as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue > @s captureYellow run bossbar set rr_powerups:capture_progress color red
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform] if score @s captureYellow >= @s captureBlue store result bossbar rr_powerups:capture_progress value run scoreboard players get @s captureYellow
-execute unless predicate game:match_components/green_for_yellow as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureYellow > @s captureBlue run bossbar set rr_powerups:capture_progress color yellow
-execute if predicate game:match_components/green_for_yellow as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureYellow > @s captureBlue run bossbar set rr_powerups:capture_progress color green
+execute if predicate game:yellow_team_skin/yellow as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureYellow > @s captureBlue run bossbar set rr_powerups:capture_progress color yellow
+execute if predicate game:yellow_team_skin/green as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureYellow > @s captureBlue run bossbar set rr_powerups:capture_progress color green
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!contested,tag=!BrokenPlatform] if score @s captureBlue matches ..0 if score @s captureYellow matches ..0 run bossbar set rr_powerups:capture_progress color white
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=contested,tag=!BrokenPlatform] run bossbar set rr_powerups:capture_progress color red
 

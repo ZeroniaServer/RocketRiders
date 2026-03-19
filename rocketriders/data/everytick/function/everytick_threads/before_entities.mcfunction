@@ -4,7 +4,7 @@
 ####################################
 
 # Store this tick's gametime (+1 because #tick functions run before gametime increments for this tick)
-execute store result score $gametime global run time query gametime
+execute store result score $gametime global run function custom:get_daytime
 scoreboard players add $gametime global 1
 
 # In case of transitioning_phase flag getting stuck while developing

@@ -1,15 +1,20 @@
 {
   "pack": {
-    "min_format": [88,0],
-    "max_format": [94,1],
+    "min_format": 88,
+    "max_format": 101,
     "description": "Rocket Riders Additional Experimental Features."
   },
   "overlays": {
     "entries": [
       {
+        "directory": "overlay-1_21_11",
+        "min_format": 94,
+        "max_format": 94
+      },
+      {
         "directory": "overlay-1_21_10",
-        "min_format": [88,0],
-        "max_format": [88,0]
+        "min_format": 88,
+        "max_format": 88
       }
     ]
   }

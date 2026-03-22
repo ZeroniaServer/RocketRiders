@@ -1,3 +1,0 @@
-execute if entity @s[tag=BlueBot] facing entity @e[limit=1,sort=nearest,predicate=custom:team/yellow,distance=5..45] eyes positioned 0.0 0 0.0 run summon fireball ^ ^ ^4 {Tags:["NormalFireball","BFireball","NewBFireball"],Motion:[0.0d,-0.01d,0.0d],Fire:1000s,CustomName:"a Blue Bot"}
-execute if entity @s[tag=YellowBot] facing entity @e[limit=1,sort=nearest,predicate=custom:team/blue,distance=5..45] eyes positioned 0.0 0 0.0 run summon fireball ^ ^ ^4 {Tags:["NormalFireball","BFireball","NewBFireball"],Motion:[0.0d,-0.01d,0.0d],Fire:1000s,CustomName:"a Blue Bot"}
-execute as @e[x=0,type=fireball,tag=NewBFireball] run function rr_bots:bot/attacks/fireball/fireballfly2

@@ -1,9 +1,0 @@
-# Bot spawning - Gemitwo
-execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGemiSpawn] at @s if block ~ ~-3 ~4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run summon marker ~ ~ ~ {Tags:["missile","bluemissile","BlueGemi"]}
-execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGemiSpawn] at @s if block ~ ~-3 ~4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s remove BotHasGemi
-execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGemiSpawn,tag=BotRider] at @s if block ~ ~-3 ~4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s add Speed20
-execute if entity @s[tag=BlueBot,tag=!DoneSpawning,tag=BotGemiSpawn] at @s if block ~ ~-3 ~4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s add DoneSpawning
-execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGemiSpawn] at @s if block ~ ~-3 ~-4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run summon marker ~ ~ ~ {Tags:["missile","yellowmissile","YellowGemi"]}
-execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGemiSpawn] at @s if block ~ ~-3 ~-4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s remove BotHasGemi
-execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGemiSpawn,tag=BotRider] at @s if block ~ ~-3 ~-4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s add Speed20
-execute if entity @s[tag=YellowBot,tag=!DoneSpawning,tag=BotGemiSpawn] at @s if block ~ ~-3 ~-4 air unless entity @e[type=marker,tag=RecentBotspawn,distance=..7] run tag @s add DoneSpawning

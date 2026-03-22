@@ -1,1 +1,0 @@
-advancement revoke @a only dev:check_triggers_even_while_tick_rate_is_frozen

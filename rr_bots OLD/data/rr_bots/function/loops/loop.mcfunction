@@ -1,1 +1,0 @@
-function rr_bots:bot/bot_controller

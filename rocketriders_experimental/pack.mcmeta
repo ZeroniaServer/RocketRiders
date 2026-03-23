@@ -8,8 +8,8 @@
     "entries": [
       {
         "directory": "overlay-1_21_11",
-        "min_format": 94,
-        "max_format": 88
+        "min_format": 88,
+        "max_format": 94
       },
       {
         "directory": "overlay-1_21_10",

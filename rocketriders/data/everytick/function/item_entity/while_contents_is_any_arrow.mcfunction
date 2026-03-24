@@ -1,5 +1,5 @@
 scoreboard players set $is_near_someone var 0
-execute positioned ~-1.25 ~-0.499999 ~-1.25 as @e[type=player,dx=1.5,dy=0.249998,dz=1.5,predicate=custom:can_pick_up_arrows,predicate=custom:team/any_playing_team] store success score $is_near_someone var run tag @s add item_entity.target_candidate
+execute if predicate game:phase/match/play positioned ~-1.25 ~-0.499999 ~-1.25 as @e[type=player,dx=1.5,dy=0.249998,dz=1.5,predicate=custom:can_pick_up_arrows,predicate=custom:team/any_playing_team] store success score $is_near_someone var run tag @s add item_entity.target_candidate
 
 execute if score $is_near_someone var matches 0 run data modify entity @s[tag=item_entity.was_near_someone] Owner set value [I;0,0,0,0]
 execute if score $is_near_someone var matches 1 run tag @p[distance=0..,tag=item_entity.target_candidate] add item_entity.target

@@ -67,6 +67,9 @@ fill -14 63 39 38 34 29 gray_stained_glass replace orange_stained_glass
 fill -14 63 73 38 34 75 gray_stained_glass replace yellow_stained_glass
 fill -14 63 73 38 34 75 gray_stained_glass replace orange_stained_glass
 
+fill 4 64 54 4 65 52 minecraft:gray_glazed_terracotta[facing=east] replace minecraft:yellow_glazed_terracotta
+fill 20 64 54 20 65 52 minecraft:gray_glazed_terracotta[facing=east] replace minecraft:yellow_glazed_terracotta
+
 #Blue Decorations
 fill -14 84 -66 38 63 -48 red_stained_glass replace blue_stained_glass
 fill -14 84 -66 38 63 -48 pink_stained_glass replace cyan_stained_glass

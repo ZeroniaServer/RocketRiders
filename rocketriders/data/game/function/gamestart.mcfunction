@@ -96,6 +96,10 @@ execute as @a[x=0,tag=JoinYellow] run title @s actionbar ""
 execute if predicate rr:has_achievements as @a[x=0,tag=JoinYellow] run advancement grant @s only achievements:inform
 execute if entity @a[x=0,tag=JoinYellow] run function lobby:cancelsettings/reset
 
+## Rainbow join pad particles
+execute if predicate custom:periodic_tick/3 if predicate game:match_components/custom_team_colors if predicate game:teams/blue_is_joinable at @e[x=0,type=marker,tag=join_pad.blue] run function game:gamestart_rainbow_join_pad_particles
+execute if predicate custom:periodic_tick/3 if predicate game:match_components/custom_team_colors if predicate game:teams/yellow_is_joinable at @e[x=0,type=marker,tag=join_pad.yellow] run function game:gamestart_rainbow_join_pad_particles
+
 ##Join pad + Leave pad Spectator
 execute as @a[x=0] if score @s spectate matches 1 if predicate rr:is_cubekrowd run function servermode:spectate
 execute if entity @s[tag=JustCleared] run tag @a[x=0] remove JoinSpec

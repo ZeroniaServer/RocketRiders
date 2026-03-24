@@ -175,7 +175,7 @@ execute unless predicate game:world_options/show_extra_player_credits/on run \
 #Time of Day
 data modify block -69 192 73 front_text.messages[0] set value {color:"dark_green",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_time_sign"},text:"Time of Day:"}
 data modify block -69 192 73 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click to adjust)"}
-execute store result score $displayed_hour var run time query daytime
+execute store result score $displayed_hour var run function custom:get_daytime
 scoreboard players add $displayed_hour var 6000
 scoreboard players add $displayed_hour var 500
 scoreboard players operation $displayed_hour var %= $24000 constant

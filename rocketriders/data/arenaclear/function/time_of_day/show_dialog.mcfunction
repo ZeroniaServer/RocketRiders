@@ -120,7 +120,7 @@ data modify storage rocketriders:main time_of_day.dialog set value {\
   ]\
 }
 
-execute store result score $displayed_hour var run time query daytime
+execute store result score $displayed_hour var run function custom:get_daytime
 scoreboard players remove $displayed_hour var 18000
 scoreboard players add $displayed_hour var 500
 scoreboard players operation $displayed_hour var %= $24000 constant

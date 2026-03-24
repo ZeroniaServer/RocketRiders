@@ -7,6 +7,7 @@ scoreboard players reset @a[x=0] text.team_name
 scoreboard players reset @a[x=0] text.team_name_lowercase
 scoreboard players reset @a[x=0] text.main_color
 scoreboard players reset @a[x=0] text.accent_color
+scoreboard players reset @a[x=0] text.flag_color
 
 #Normal team colors
 scoreboard players display numberformat @a[x=0,predicate=custom:team/blue] text.team_name fixed {storage:"rocketriders:teams",nbt:"blue.text.team_name",interpret:true}
@@ -24,6 +25,10 @@ scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] 
 scoreboard players display numberformat @a[x=0,predicate=custom:team/blue] text.accent_color fixed {storage:"rocketriders:teams",nbt:"blue.text.accent_color",interpret:true}
 scoreboard players display numberformat @a[x=0,predicate=custom:team/yellow] text.accent_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.accent_color",interpret:true}
 scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] text.accent_color fixed {color:"gray",text:""}
+
+scoreboard players display numberformat @a[x=0,predicate=custom:team/blue] text.flag_color fixed {storage:"rocketriders:teams",nbt:"blue.text.flag_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/yellow] text.flag_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.flag_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] text.flag_color fixed {color:"gray",text:""}
 
 #Custom team colors
 execute if predicate game:match_components/custom_team_colors run return run execute as @a[x=0,predicate=custom:team/any_arena_team] run function custom:update_player_text/self/custom_auto

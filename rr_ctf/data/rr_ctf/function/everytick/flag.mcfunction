@@ -263,10 +263,10 @@ execute if predicate game:phase/match/play run tag @e[x=0,type=player,predicate=
 
 # Show flag carriers in tablist
 execute if predicate game:phase/match/play run scoreboard players reset @a[x=0,tag=!CarryFlag] flag_tablist_display
-execute if predicate game:phase/match/play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFY1] flag_tablist_display fixed [{score:{name:"#yellow",objective:"text.accent_color"}},"🏴"]
-execute if predicate game:phase/match/play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFY2] flag_tablist_display fixed [{score:{name:"#yellow",objective:"text.accent_color"}},"🏴"]
-execute if predicate game:phase/match/play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFB1] flag_tablist_display fixed [{score:{name:"#blue",objective:"text.accent_color"}},"🏴"]
-execute if predicate game:phase/match/play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFB2] flag_tablist_display fixed [{score:{name:"#blue",objective:"text.accent_color"}},"🏴"]
+execute if predicate game:phase/match/play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFY1] flag_tablist_display fixed [{score:{name:"#yellow",objective:"text.flag_color"}},"🏴"]
+execute if predicate game:phase/match/play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFY2] flag_tablist_display fixed [{score:{name:"#yellow",objective:"text.flag_color"}},"🏴"]
+execute if predicate game:phase/match/play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFB1] flag_tablist_display fixed [{score:{name:"#blue",objective:"text.flag_color"}},"🏴"]
+execute if predicate game:phase/match/play run scoreboard players display numberformat @a[x=0,tag=CarryFlag,tag=CarryFB2] flag_tablist_display fixed [{score:{name:"#blue",objective:"text.flag_color"}},"🏴"]
 
 #Add scores for flag carriers
 execute if predicate game:phase/match/play run scoreboard players add @a[x=0,predicate=custom:team/blue] FlagsCaptured 0

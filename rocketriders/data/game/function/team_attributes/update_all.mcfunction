@@ -7,6 +7,7 @@ execute if predicate game:blue_team_skin/blue run data modify storage rocketride
         team_name_lowercase: "blue",\
         main_color: {color:"blue",text:""},\
         accent_color: {color:"dark_aqua",text:""},\
+        flag_color: {color:"dark_aqua",text:""},\
     },\
     player_name_color: "blue"\
 }
@@ -17,6 +18,7 @@ execute if predicate game:blue_team_skin/dark_red run data modify storage rocket
         team_name_lowercase: "red",\
         main_color: {color:"dark_red",text:""},\
         accent_color: {color:"red",text:""},\
+        flag_color: {color:"dark_red",text:""},\
     },\
     player_name_color: "dark_red"\
 }
@@ -27,6 +29,7 @@ execute if predicate game:blue_team_skin/classic_red run data modify storage roc
         team_name_lowercase: "red",\
         main_color: {color:"red",text:""},\
         accent_color: {color:"#F4A9B8",text:""},\
+        flag_color: {color:"red",text:""},\
     },\
     player_name_color: "red"\
 }
@@ -39,6 +42,7 @@ execute if predicate game:yellow_team_skin/yellow run data modify storage rocket
         team_name_lowercase: "yellow",\
         main_color: {color:"gold",text:""},\
         accent_color: {color:"yellow",text:""},\
+        flag_color: {color:"yellow",text:""},\
     },\
     player_name_color: "gold"\
 }
@@ -49,6 +53,7 @@ execute if predicate game:yellow_team_skin/green run data modify storage rocketr
         team_name_lowercase: "green",\
         main_color: {color:"green",text:""},\
         accent_color: {color:"#DAFFB2",text:""},\
+        flag_color: {color:"green",text:""},\
     },\
     player_name_color: "green"\
 }
@@ -75,16 +80,19 @@ scoreboard players display numberformat #blue text.team_name fixed {storage:"roc
 scoreboard players display numberformat #blue text.team_name_lowercase fixed {storage:"rocketriders:teams",nbt:"blue.text.team_name_lowercase",interpret:true}
 scoreboard players display numberformat #blue text.main_color fixed {storage:"rocketriders:teams",nbt:"blue.text.main_color",interpret:true}
 scoreboard players display numberformat #blue text.accent_color fixed {storage:"rocketriders:teams",nbt:"blue.text.accent_color",interpret:true}
+scoreboard players display numberformat #blue text.flag_color fixed {storage:"rocketriders:teams",nbt:"blue.text.flag_color",interpret:true}
 
 scoreboard players display numberformat #yellow text.team_name fixed {storage:"rocketriders:teams",nbt:"yellow.text.team_name",interpret:true}
 scoreboard players display numberformat #yellow text.team_name_lowercase fixed {storage:"rocketriders:teams",nbt:"yellow.text.team_name_lowercase",interpret:true}
 scoreboard players display numberformat #yellow text.main_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.main_color",interpret:true}
 scoreboard players display numberformat #yellow text.accent_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.accent_color",interpret:true}
+scoreboard players display numberformat #yellow text.flag_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.flag_color",interpret:true}
 
 scoreboard players display numberformat #spectator text.team_name fixed {storage:"rocketriders:teams",nbt:"spectator.text.team_name",interpret:true}
 scoreboard players display numberformat #spectator text.team_name_lowercase fixed {storage:"rocketriders:teams",nbt:"spectator.text.team_name_lowercase",interpret:true}
 scoreboard players display numberformat #spectator text.main_color fixed {storage:"rocketriders:teams",nbt:"spectator.text.main_color",interpret:true}
 scoreboard players display numberformat #spectator text.accent_color fixed {storage:"rocketriders:teams",nbt:"spectator.text.accent_color",interpret:true}
+scoreboard players display numberformat #spectator text.flag_color fixed {storage:"rocketriders:teams",nbt:"spectator.text.flag_color",interpret:true}
 
 function custom:update_player_text/all
 

@@ -15,7 +15,7 @@
                     "type": "minecraft:armor"
                   }
                 ],
-                "minecraft:dyed_color": 9538560,
+                "minecraft:dyed_color": 10248968,
                 "minecraft:enchantment_glint_override": false,
                 "minecraft:enchantments": {
                   "minecraft:binding_curse": 1
@@ -27,7 +27,7 @@
                 },
                 "minecraft:item_name": {
                   "bold": true,
-                  "color": "#918C00",
+                  "color": "#9C6308",
                   "italic": false,
                   "text": "Dark Yellow Chestplate"
                 },

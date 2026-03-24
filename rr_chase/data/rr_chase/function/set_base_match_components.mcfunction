@@ -1,5 +1,6 @@
+data modify storage rocketriders:match components."arena/regenerate_back_layer" set value {blue:true,yellow:false}
+
 scoreboard players set $arena/no_yellow_base_details match_components 1
-scoreboard players set $arena/regenerate_back_layer match_components 1
 scoreboard players set $armor/generic match_components 1
 scoreboard players set $blue_team_skin match_components 1
 scoreboard players set $config_override.classic_team_colors match_components -1

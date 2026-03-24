@@ -24,10 +24,6 @@ execute if score $arena/no_base_details match_components matches 0 run scoreboar
 $execute store success score $arena/no_portal_details match_components if predicate {condition:"value_check",value:$(arena__no_portal_details),range:1}
 execute if score $arena/no_portal_details match_components matches 0 run scoreboard players reset $arena/no_portal_details match_components
 
-# arena/regenerate_back_layer
-$execute store success score $arena/regenerate_back_layer match_components if predicate {condition:"value_check",value:$(arena__regenerate_back_layer),range:1}
-execute if score $arena/regenerate_back_layer match_components matches 0 run scoreboard players reset $arena/regenerate_back_layer match_components
-
 # armor/*
 $scoreboard players set $armor var $(armor__)
 execute store success score $armor/generic match_components if score $armor var matches 0

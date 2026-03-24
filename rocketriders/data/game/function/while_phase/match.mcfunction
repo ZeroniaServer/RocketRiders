@@ -99,4 +99,4 @@ scoreboard players enable @a[x=0,predicate=custom:team/any_playing_team] LeaveMi
 scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMidgame
 
 ## Regenerate back layer
-execute unless predicate game:phase/match/pause if predicate game:match_components/arena/regenerate_back_layer run function game:regenerate_back_layer/tick
+execute unless predicate game:phase/match/pause if predicate game:regenerate_back_layer/any run function game:regenerate_back_layer/tick

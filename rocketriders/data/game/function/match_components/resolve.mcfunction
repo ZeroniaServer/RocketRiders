@@ -1,6 +1,7 @@
 # Resolve components
 function game:match_components/__resolve/arena/base_materials
 function game:match_components/__resolve/arena/base_colors
+function game:match_components/__resolve/arena/regenerate_back_layer
 
 # Update team attributes
 function game:team_attributes/update_all

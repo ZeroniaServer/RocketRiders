@@ -1,4 +1,6 @@
 #Flagpole
+fill 10 64 62 14 67 66 air
+
 fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace
 
 fill -14 64 66 39 74 70 air replace white_wool

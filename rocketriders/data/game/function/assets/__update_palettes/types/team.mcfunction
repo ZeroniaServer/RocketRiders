@@ -1,5 +1,5 @@
 # asset/.../blue
-$fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) structure_void strict
+$fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) structure_void strict
 $place template game:$(asset_id) -160 184 -160 none none 1 0 strict
 
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(blue_back_stained_glass_pane) replace white_stained_glass_pane
@@ -24,7 +24,7 @@ setblock -161 185 -161 redstone_block
 
 
 # asset/.../yellow
-$fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) structure_void strict
+$fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) structure_void strict
 $execute positioned -161 184 -161 run place template game:$(asset_id) -160 184 -160 none none 1 0 strict
 
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(yellow_back_stained_glass_pane) replace white_stained_glass_pane

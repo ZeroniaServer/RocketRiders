@@ -20,43 +20,43 @@ data modify storage rocketriders:main assets.yellow_shield_center_stained_glass 
 data modify storage rocketriders:main assets.yellow_shield_accent_stained_glass set from storage rocketriders:teams yellow.block_palette.shield_accent_stained_glass
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/arch"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/cannon"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/cannon_bottom"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/platform"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/slime_pad"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/spikes_bottom"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/spikes_middle_left"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/spikes_middle_right"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/spikes_side"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/spikes_top"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."base_detail/tower"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."flag/stage_1"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."flag/stage_2"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."shield"
-function game:assets/__update_palettes/update with storage rocketriders:main assets
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets

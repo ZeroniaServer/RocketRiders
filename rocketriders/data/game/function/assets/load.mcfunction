@@ -44,6 +44,9 @@ execute positioned -160 184 -160 run function game:assets/__load/load with stora
 data modify storage rocketriders:main assets merge value {asset_id:"shield",asset_type:"shield"}
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:main assets
 
+data modify storage rocketriders:main assets merge value {asset_id:"castle_pathways",asset_type:"castle_pathways"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:main assets
+
 fill -161 184 -161 -161 185 -161 air strict
 
 # save palettes

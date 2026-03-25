@@ -115,8 +115,6 @@ fill 15 64 64 13 67 62 light[level=0] replace #custom:air
 fill 13 64 63 11 67 61 light[level=0] replace #custom:air
 fill 11 64 64 9 67 62 light[level=0] replace #custom:air
 
-function rr_crusade:arenaclear/pathways
-
 #Obsidian placement - Blue and Yellow
 fill 14 63 66 10 63 66 obsidian
 fill 13 63 65 11 63 65 obsidian

@@ -5,12 +5,13 @@ execute if predicate game:game_rules/disable_titles/on run return fail
 execute as @a[x=0,tag=Winner] run title @s times 5 30 5
 
 #If you want to add more splashes just increase this number.
-execute store result score $winsplash CmdData run random value 0..81
+execute store result score $winsplash CmdData run random value 0..83
 
 execute if score $winsplash CmdData matches 18 if predicate game:match_components/one_team run scoreboard players set $winsplash CmdData 0
 execute if score $winsplash CmdData matches 29 if predicate game:match_components/one_team run scoreboard players set $winsplash CmdData 0
 execute if score $winsplash CmdData matches 38 if predicate game:match_components/one_team run scoreboard players set $winsplash CmdData 0
 execute if score $winsplash CmdData matches 57 if entity Evtema3 run scoreboard players set $winsplash CmdData 0
+execute if score $winsplash CmdData matches 83 unless predicate game:modifiers/hobbits/on run scoreboard players set $winsplash CmdData 0
 
 #Add splashes here (just copy paste the line and change the score)
 execute if score $winsplash CmdData matches 0..3 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Take some time to celebrate!"}
@@ -95,3 +96,5 @@ execute if score $winsplash CmdData matches 78 run title @a[x=0,tag=Winner] subt
 execute if score $winsplash CmdData matches 79 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Huzzah!"}
 execute if score $winsplash CmdData matches 80 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Hooray!"}
 execute if score $winsplash CmdData matches 81 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"One for the history books!"}
+execute if score $winsplash CmdData matches 82 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"The power of SethBling compells you!"}
+execute if score $winsplash CmdData matches 83 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"The true meaning of Tiny Takeover"}

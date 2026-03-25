@@ -4,7 +4,6 @@ scoreboard players set $config_override.disable_team_balancing match_components 
 scoreboard players set $config_override.disable_tying match_components 1
 scoreboard players set $config_override.hardcore match_components -1
 scoreboard players set $main_item/shooting_saber match_components 1
-scoreboard players set $min_players_per_team match_components 1
 scoreboard players set $one_team match_components 1
 
 # items

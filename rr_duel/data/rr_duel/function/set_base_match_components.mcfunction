@@ -9,7 +9,6 @@ scoreboard players set $duel_settings_locked match_components 1
 scoreboard players set $lock_playing_teams_during_match match_components 1
 scoreboard players set $main_item/shooting_saber match_components 1
 scoreboard players set $max_players_per_team match_components 1
-scoreboard players set $min_players_per_team match_components 1
 scoreboard players set $no_feathered_vortices match_components 1
 
 # items

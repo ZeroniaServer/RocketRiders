@@ -181,9 +181,9 @@ execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabl
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[4].display.color set value "white"
 
 # max_players_per_team (locked)
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"max_players_per_team",label:"🔒 max_players_per_team",width:300,options:[{id:"",display:{color:"white",text:"0"}}]}
-execute store result storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text int 1 run scoreboard players get $max_players_per_team match_components
-data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set string storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"max_players_per_team",label:"🔒 max_players_per_team",width:300,options:[{id:"",display:{color:"white",text:"∞"}}]}
+execute if score $max_players_per_team match_components matches -2147483648..2147483646 run execute store result storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text int 1 run scoreboard players get $max_players_per_team match_components
+execute if score $max_players_per_team match_components matches -2147483648..2147483646 run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set string storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text
 
 # min_players_per_team (locked)
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"min_players_per_team",label:"🔒 min_players_per_team",width:300,options:[{id:"",display:{color:"white",text:"0"}}]}

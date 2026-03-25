@@ -70,6 +70,17 @@ execute unless data storage rocketriders:main team_attributes.result run functio
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "black_stained_glass"
 data modify storage rocketriders:teams blue.block_palette.detail set from storage rocketriders:main team_attributes.result
 
+# front_glazed_terracotta
+data modify storage rocketriders:main team_attributes set value {team:"blue",material:"glazed_terracotta"}
+data modify storage rocketriders:main team_attributes.color_source set from storage rocketriders:match components."arena/base_colors".blue.front
+function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.color_source
+function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_glazed_terracotta"
+data modify storage rocketriders:teams blue.block_palette.front_glazed_terracotta set from storage rocketriders:main team_attributes.result
+
 # back_stained_glass_pane
 data modify storage rocketriders:main team_attributes set value {team:"blue",material:"stained_glass_pane"}
 data modify storage rocketriders:main team_attributes.color_source set from storage rocketriders:match components."arena/base_colors".blue.back
@@ -187,6 +198,17 @@ execute unless data storage rocketriders:main team_attributes.result run functio
 execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "black_stained_glass"
 data modify storage rocketriders:teams yellow.block_palette.detail set from storage rocketriders:main team_attributes.result
+
+# front_glazed_terracotta
+data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"glazed_terracotta"}
+data modify storage rocketriders:main team_attributes.color_source set from storage rocketriders:match components."arena/base_colors".yellow.front
+function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.color run data modify storage rocketriders:main team_attributes.color set from storage rocketriders:main team_attributes.color_source
+function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_combine_with_color_source with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
+execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_glazed_terracotta"
+data modify storage rocketriders:teams yellow.block_palette.front_glazed_terracotta set from storage rocketriders:main team_attributes.result
 
 # back_stained_glass_pane
 data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"stained_glass_pane"}

@@ -1,5 +1,7 @@
 #Bases
 function game:place_arena/bases
+execute if predicate game:match_components/arena/checkered_yellow_base_front unless predicate game:modifiers/hardcore/on run function game:place_arena/checkered_yellow_base_front
+execute if predicate game:match_components/arena/checkered_yellow_base_front if predicate game:modifiers/hardcore/on run function game:place_arena/checkered_yellow_base_front_hardcore
 
 # Frame
 execute unless predicate game:match_components/arena/bedrock_frame run fill -15 64 67 -15 33 67 minecraft:obsidian replace #custom:basereplace

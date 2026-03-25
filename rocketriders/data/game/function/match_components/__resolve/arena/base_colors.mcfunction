@@ -13,7 +13,7 @@ execute if score $matching var matches 1 run data modify storage rocketriders:ma
 execute if score $matching var matches 1 run data modify storage rocketriders:main match_components.value.yellow set from storage rocketriders:main match_components.value.blue
 execute if score $matching var matches 1 run return run data modify storage rocketriders:match components."arena/base_colors" set from storage rocketriders:main match_components.value
 # Teams do not match
-data modify storage rocketriders:main match_components.value set value {blue:{front:"main",middle:"accent",back:"white"},yellow:{front:"main",middle:"accent",back:"white"}}
+data modify storage rocketriders:main match_components.value set value {blue:{front:"main",middle:"accent",back:"white",detail:"black"},yellow:{front:"main",middle:"accent",back:"white",detail:"black"}}
 data modify storage rocketriders:main match_components.value.blue.front set from storage rocketriders:match components."arena/base_colors".blue.front
 data modify storage rocketriders:main match_components.value.blue.middle set from storage rocketriders:match components."arena/base_colors".blue.middle
 data modify storage rocketriders:main match_components.value.blue.back set from storage rocketriders:match components."arena/base_colors".blue.back

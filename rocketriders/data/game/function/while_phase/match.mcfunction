@@ -100,3 +100,4 @@ scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMi
 
 ## Regenerate back layer
 execute unless predicate game:phase/match/pause if predicate game:regenerate_back_layer/any run function game:regenerate_back_layer/tick
+execute unless predicate game:phase/match/pause if predicate game:regenerate_floor/any run function game:regenerate_floor/tick

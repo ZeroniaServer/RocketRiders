@@ -1,0 +1,2 @@
+$execute if predicate game:regenerate_floor/blue positioned ~ ~ -65.5 positioned ~$(x_offset) ~ ~$(z_offset) run function game:regenerate_floor/column with storage rocketriders:teams blue.block_palette
+$execute if predicate game:regenerate_floor/yellow positioned ~ ~ 66.5 positioned ~$(x_offset) ~ ~-$(z_offset) run function game:regenerate_floor/column with storage rocketriders:teams yellow.block_palette

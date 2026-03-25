@@ -82,6 +82,12 @@ execute if predicate game:regenerate_back_layer/blue unless predicate game:regen
 execute unless predicate game:regenerate_back_layer/blue if predicate game:regenerate_back_layer/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display set value {color:"white",text:"{",extra:[{color:"aqua",text:"blue"},": ",{color:"gold",text:"false"},", ",{color:"aqua",text:"yellow"},": ",{color:"gold",text:"true"},"}"]}
 execute if predicate game:regenerate_back_layer/blue if predicate game:regenerate_back_layer/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display set value {color:"gold",text:"true"}
 
+# arena/regenerate_floor
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__regenerate_floor",label:"🔒 arena/regenerate_floor",width:300,options:[{id:"",display:{color:"gold",text:"false"}}]}
+execute if predicate game:regenerate_floor/blue unless predicate game:regenerate_floor/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display set value {color:"white",text:"{",extra:[{color:"aqua",text:"blue"},": ",{color:"gold",text:"true"},", ",{color:"aqua",text:"yellow"},": ",{color:"gold",text:"false"},"}"]}
+execute unless predicate game:regenerate_floor/blue if predicate game:regenerate_floor/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display set value {color:"white",text:"{",extra:[{color:"aqua",text:"blue"},": ",{color:"gold",text:"false"},", ",{color:"aqua",text:"yellow"},": ",{color:"gold",text:"true"},"}"]}
+execute if predicate game:regenerate_floor/blue if predicate game:regenerate_floor/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display set value {color:"gold",text:"true"}
+
 # armor_type
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"armor_type",label:"armor_type",width:300,options:[{id:"0",display:{color:"white",text:'"',extra:[{color:"green",text:"generic"},'"']}},{id:"1",display:{color:"white",text:'"',extra:[{color:"green",text:"crusade_mode"},'"']}},{id:"2",display:{color:"white",text:'"',extra:[{color:"green",text:"swap_mode"},'"']}}]}
 execute if predicate game:armor_type/generic run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true

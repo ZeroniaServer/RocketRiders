@@ -26,7 +26,7 @@ function rr_chase:chaseblocks/pickup
 execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=28] run tag @s add onBlue
 execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=10] run tag @s add onBlue
 tag @a[x=0,predicate=custom:team/blue] remove InLead
-execute positioned 12 64 65 run tag @p[predicate=custom:team/blue,predicate=custom:in_arena,tag=!onBlue,predicate=custom:alive] add InLead
+execute positioned 12 64 65 run tag @p[gamemode=!spectator,predicate=custom:team/blue,predicate=custom:in_arena,tag=!onBlue,predicate=custom:alive] add InLead
 execute unless predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{location:{position:{z:{max:-45}}}}} run tag @s remove InLead
 execute if predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{location:{position:{z:{max:-63}}}}} run tag @s remove InLead
 
@@ -60,8 +60,8 @@ execute if predicate game:modifiers/sonar/on run scoreboard players operation $g
 execute if predicate game:modifiers/sonar/on if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=InLead] glowing
 
 #Win
-execute positioned 12 64 65 if score $match_play_time global matches 0..4 run tp @a[predicate=custom:team/blue,distance=..2] 12 64 -66 0 0
-execute positioned 12 64 65 run tag @a[predicate=custom:team/blue,distance=..2,limit=1] add Winner
-execute as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run title @s actionbar {"text":""}
-execute if entity @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run tag @a[x=0,predicate=custom:team/blue,tag=!Winner] add Loser
-execute if entity @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run function rr_chase:game/win
+execute positioned 12 64 65 if score $match_play_time global matches 0..4 run tp @a[distance=..2,predicate=custom:team/blue] 12 64 -66 0 0
+execute positioned 12 64 65 run tag @a[limit=1,distance=..2,gamemode=!spectator,predicate=custom:team/blue] add Winner
+execute as @a[limit=1,x=0,predicate=custom:team/blue,tag=Winner] run title @s actionbar ""
+execute if entity @a[limit=1,x=0,predicate=custom:team/blue,tag=Winner] run tag @a[x=0,predicate=custom:team/blue,tag=!Winner] add Loser
+execute if entity @a[limit=1,x=0,predicate=custom:team/blue,tag=Winner] run function rr_chase:game/win

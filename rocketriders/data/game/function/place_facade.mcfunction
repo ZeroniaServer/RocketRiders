@@ -86,8 +86,8 @@ fill -101 195 91 -89 201 96 air strict
 execute unless predicate game:modifiers/hardcore/on run function game:place_facade/bases/yellow with storage rocketriders:teams yellow.block_palette
 execute if predicate game:modifiers/hardcore/on run function game:place_facade/bases/yellow_hardcore with storage rocketriders:teams yellow.block_palette
 
-execute if predicate game:match_components/arena/checkered_yellow_base_front unless predicate game:modifiers/hardcore/on run function game:place_facade/checkered_yellow_base_front
-execute if predicate game:match_components/arena/checkered_yellow_base_front if predicate game:modifiers/hardcore/on run function game:place_facade/checkered_yellow_base_front_hardcore
+execute if predicate game:match_components/arena/checkered_yellow_base_front unless predicate game:modifiers/hardcore/on run function game:place_facade/checkered_yellow_base_front with storage rocketriders:teams yellow.block_palette
+execute if predicate game:match_components/arena/checkered_yellow_base_front if predicate game:modifiers/hardcore/on run function game:place_facade/checkered_yellow_base_front_hardcore with storage rocketriders:teams yellow.block_palette
 
 # Base Frames
 execute unless predicate game:match_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:obsidian strict

@@ -54,6 +54,7 @@ execute if predicate game:yellow_team_skin/green run data modify storage rocketr
         main_color: {color:"green",text:""},\
         accent_color: {color:"#DAFFB2",text:""},\
         flag_color: {color:"green",text:""},\
+        normal_missile_item_prefix_color: {color:"#55C300",text:""},\
     },\
     player_name_color: "green"\
 }

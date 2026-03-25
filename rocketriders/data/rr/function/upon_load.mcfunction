@@ -139,6 +139,8 @@ scoreboard objectives add text.accent_color dummy
 scoreboard objectives modify text.accent_color numberformat fixed ""
 scoreboard objectives add text.flag_color dummy
 scoreboard objectives modify text.flag_color numberformat fixed ""
+scoreboard objectives add text.normal_missile_item_prefix_color dummy
+scoreboard objectives modify text.normal_missile_item_prefix_color numberformat fixed ""
 
 scoreboard objectives add set_item_delay trigger
 scoreboard objectives add set_time_of_day trigger

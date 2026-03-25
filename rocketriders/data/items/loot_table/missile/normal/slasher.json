@@ -100,11 +100,24 @@
                   "italic": false,
                   "text": ""
                 },
-                {
-                  "bold": true,
-                  "color": "#73EB00",
-                  "text": "[Normal] "
-                },
+                [
+                  {
+                    "color": "green",
+                    "text": ""
+                  },
+                  [
+                    {
+                      "score": {
+                        "name": "@s",
+                        "objective": "text.normal_missile_item_prefix_color"
+                      }
+                    },
+                    {
+                      "bold": true,
+                      "text": "[Normal] "
+                    }
+                  ]
+                ],
                 [
                   {
                     "score": {

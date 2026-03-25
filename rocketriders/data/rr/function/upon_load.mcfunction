@@ -20,7 +20,7 @@ team modify rocketriders.sort_200.lobby color gray
 #blue is handled by game:team_attributes/update_all
 #yellow is handled by game:team_attributes/update_all
 team modify rocketriders.sort_100.spectator color dark_gray
-team modify rocketriders.sort_999.developer color dark_green
+team modify rocketriders.sort_999.developer color dark_purple
 
 team modify rocketriders.sort_200.lobby collisionRule never
 team modify rocketriders.sort_000.blue collisionRule never

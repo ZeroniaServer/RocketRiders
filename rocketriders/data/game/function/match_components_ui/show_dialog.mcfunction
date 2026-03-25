@@ -77,8 +77,10 @@ data modify storage rocketriders:main match_components.dialog.inputs append valu
 execute if predicate game:match_components/arena/no_portal_details run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
 # arena/regenerate_back_layer
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__regenerate_back_layer",label:"🔒 arena/regenerate_back_layer",width:300,options:[{id:"",display:"false"}]}
-function custom:resolve_text_component {text_component:{storage:"rocketriders:match",nbt:'components."arena/regenerate_back_layer"'},write_to:"storage rocketriders:main match_components.dialog.inputs[-1].options[].display"}
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__regenerate_back_layer",label:"🔒 arena/regenerate_back_layer",width:300,options:[{id:"",display:{color:"gold",text:"false"}}]}
+execute if predicate game:regenerate_back_layer/blue unless predicate game:regenerate_back_layer/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display set value {color:"white",text:"{",extra:[{color:"aqua",text:"blue"},": ",{color:"gold",text:"true"},", ",{color:"aqua",text:"yellow"},": ",{color:"gold",text:"false"},"}"]}
+execute unless predicate game:regenerate_back_layer/blue if predicate game:regenerate_back_layer/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display set value {color:"white",text:"{",extra:[{color:"aqua",text:"blue"},": ",{color:"gold",text:"false"},", ",{color:"aqua",text:"yellow"},": ",{color:"gold",text:"true"},"}"]}
+execute if predicate game:regenerate_back_layer/blue if predicate game:regenerate_back_layer/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display set value {color:"gold",text:"true"}
 
 # armor_type
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"armor_type",label:"armor_type",width:300,options:[{id:"0",display:{color:"white",text:'"',extra:[{color:"green",text:"generic"},'"']}},{id:"1",display:{color:"white",text:'"',extra:[{color:"green",text:"crusade_mode"},'"']}},{id:"2",display:{color:"white",text:'"',extra:[{color:"green",text:"swap_mode"},'"']}}]}

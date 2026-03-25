@@ -16,6 +16,10 @@ execute if score $arena/bedrock_frame match_components matches 0 run scoreboard 
 $execute store success score $arena/castle match_components if predicate {condition:"value_check",value:$(arena__castle),range:1}
 execute if score $arena/castle match_components matches 0 run scoreboard players reset $arena/castle match_components
 
+# arena/checkered_yellow_base_front
+$execute store success score $arena/checkered_yellow_base_front match_components if predicate {condition:"value_check",value:$(arena__checkered_yellow_base_front),range:1}
+execute if score $arena/checkered_yellow_base_front match_components matches 0 run scoreboard players reset $arena/checkered_yellow_base_front match_components
+
 # arena/no_base_details
 $execute store success score $arena/no_base_details match_components if predicate {condition:"value_check",value:$(arena__no_base_details),range:1}
 execute if score $arena/no_base_details match_components matches 0 run scoreboard players reset $arena/no_base_details match_components

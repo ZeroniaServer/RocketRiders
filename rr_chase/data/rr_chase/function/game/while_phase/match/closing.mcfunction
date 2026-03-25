@@ -7,4 +7,4 @@ tag @a[x=0,predicate=custom:team/blue] remove InLead
 effect clear @a[x=0] glowing
 execute if score $closing_timer global matches 1..2 run tag @a[x=0,predicate=custom:team/any_playing_team] remove force_mount
 execute if score $closing_timer global matches 1..2 run tp @a[x=0,predicate=custom:team/blue,tag=Loser] 12 64 -66 0 0
-execute if score $closing_timer global matches 1..2 run tp @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] 12 64 64 180 0
+execute if score $closing_timer global matches 1..2 run tp @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] 12 64 63 180 0

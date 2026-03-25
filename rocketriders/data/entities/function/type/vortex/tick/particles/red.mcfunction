@@ -1,0 +1,6 @@
+execute unless entity @s[tag=vortex.is_drifting] run particle minecraft:dragon_breath ~ ~-0.2 ~ 0.5 0.5 0 0 5 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute unless entity @s[tag=vortex.is_drifting] run particle minecraft:instant_effect{color:0xDC2828,power:1.6} ~ ~-0.2 ~ 0.5 0.5 0 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute unless entity @s[tag=vortex.is_drifting] run particle minecraft:dust{color:[1,0,0],scale:1} ~ ~-0.2 ~ 0.5 0.5 0 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if entity @s[tag=vortex.is_drifting] run particle minecraft:dragon_breath ^ ^ ^-0.5 0.5 0.5 0.5 0 5 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if entity @s[tag=vortex.is_drifting] run particle minecraft:instant_effect{color:0xDC2828,power:1.6} ^ ^ ^-0.5 0.5 0.5 0.5 0 3 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if entity @s[tag=vortex.is_drifting] run particle minecraft:dust{color:[1,0,0],scale:1} ^ ^ ^-0.5 0.5 0.5 0.5 0 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]

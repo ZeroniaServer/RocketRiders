@@ -73,7 +73,7 @@
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:match_components/main_item/piercing_pickaxe"
+                  "name": "game:main_item/piercing_pickaxe"
                 }
               ],
               "function": "minecraft:set_custom_data",

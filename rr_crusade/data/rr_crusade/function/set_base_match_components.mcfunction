@@ -1,3 +1,5 @@
+data modify storage rocketriders:match components."main_item" set value "crusade_kit_dependent"
+
 scoreboard players set $arena/castle match_components 1
 scoreboard players set $armor/crusade_kit_dependent match_components 1
 scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit match_components 1
@@ -13,7 +15,6 @@ scoreboard players set $decreased_icbm_flight_duration match_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage match_components 1
 scoreboard players set $disable_arrow_stacking match_components 1
 scoreboard players set $has_spells match_components 1
-scoreboard players set $main_item/crusade_kit_dependent match_components 1
 scoreboard players set $portal_crystal_protection match_components 1
 scoreboard players set $small_portals match_components 1
 

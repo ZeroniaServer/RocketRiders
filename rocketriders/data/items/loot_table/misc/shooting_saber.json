@@ -65,11 +65,11 @@
                   "terms": [
                     {
                       "condition": "minecraft:reference",
-                      "name": "game:match_components/main_item/shooting_saber"
+                      "name": "game:main_item/shooting_saber"
                     },
                     {
                       "condition": "minecraft:reference",
-                      "name": "game:match_components/main_item/crusade_kit_dependent"
+                      "name": "game:main_item/crusade_kit_dependent"
                     }
                   ]
                 }

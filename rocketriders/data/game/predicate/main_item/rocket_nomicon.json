@@ -1,10 +1,10 @@
 {
   "condition": "minecraft:value_check",
-  "range": 1,
+  "range": 4,
   "value": {
     "score": "match_components",
     "target": {
-      "name": "$main_item/shooting_saber",
+      "name": "$main_item.enum",
       "type": "minecraft:fixed"
     },
     "type": "minecraft:score"

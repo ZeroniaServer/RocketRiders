@@ -98,7 +98,7 @@
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:match_components/main_item/crusade_kit_dependent"
+                  "name": "game:main_item/crusade_kit_dependent"
                 }
               ],
               "function": "minecraft:set_custom_data",

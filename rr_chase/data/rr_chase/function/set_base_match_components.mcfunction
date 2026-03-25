@@ -1,5 +1,6 @@
 data modify storage rocketriders:match components."arena/base_colors" set value {yellow:{front:"gray",middle:"light_gray",back:"white",detail:"black"}}
 data modify storage rocketriders:match components."arena/regenerate_back_layer" set value {blue:true}
+data modify storage rocketriders:match components."main_item" set value "shooting_saber"
 
 scoreboard players set $arena/checkered_yellow_base_front match_components 1
 scoreboard players set $armor/generic match_components 1
@@ -17,7 +18,6 @@ scoreboard players set $disable_antigrief_system match_components 1
 scoreboard players set $friendly_fire match_components 1
 scoreboard players set $has_chase_blocks match_components 1
 scoreboard players set $has_chase_crystals match_components 1
-scoreboard players set $main_item/shooting_saber match_components 1
 scoreboard players set $min_players_per_team match_components 2
 scoreboard players set $neutral_items match_components 1
 scoreboard players set $no_portals match_components 1

@@ -1,3 +1,4 @@
+data modify storage rocketriders:match components."main_item" set value "shooting_saber"
 function rr_swap:baseswap/set_palettes
 
 scoreboard players set $armor/swap match_components 1
@@ -6,7 +7,6 @@ scoreboard players set $config_override.splash_streams match_components -1
 scoreboard players set $config_override.surprise_eggs match_components -1
 scoreboard players set $item_signs/replace_fireball_with_cluster_fireball match_components 1
 scoreboard players set $item_signs/replace_vortex_with_icbm match_components 1
-scoreboard players set $main_item/shooting_saber match_components 1
 
 # items
 scoreboard players set $config_override.disable_item_category/heavy_missiles match_components -1

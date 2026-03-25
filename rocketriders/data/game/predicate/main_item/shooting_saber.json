@@ -4,7 +4,7 @@
   "value": {
     "score": "match_components",
     "target": {
-      "name": "$main_item/piercing_pickaxe",
+      "name": "$main_item.enum",
       "type": "minecraft:fixed"
     },
     "type": "minecraft:score"

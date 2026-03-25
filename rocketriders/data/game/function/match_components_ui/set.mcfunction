@@ -43,19 +43,13 @@ execute if score $armor/swap match_components matches 0 run scoreboard players r
 $execute store success score $arrow_pickup/only_crusade_mode_archer_kit match_components if predicate {condition:"value_check",value:$(arrow_pickup__),range:1}
 execute if score $arrow_pickup/only_crusade_mode_archer_kit match_components matches 0 run scoreboard players reset $arrow_pickup/only_crusade_mode_archer_kit match_components
 
-# main_item/*
-$scoreboard players set $main_item var $(main_item__)
-execute store success score $main_item/shooting_saber match_components if score $main_item var matches 1
-execute if score $main_item/shooting_saber match_components matches 0 run scoreboard players reset $main_item/shooting_saber match_components
-
-execute store success score $main_item/piercing_pickaxe match_components if score $main_item var matches 2
-execute if score $main_item/piercing_pickaxe match_components matches 0 run scoreboard players reset $main_item/piercing_pickaxe match_components
-
-execute store success score $main_item/crusade_kit_dependent match_components if score $main_item var matches 3
-execute if score $main_item/crusade_kit_dependent match_components matches 0 run scoreboard players reset $main_item/crusade_kit_dependent match_components
-
-execute store success score $main_item/rocket_nomicon match_components if score $main_item var matches 4
-execute if score $main_item/rocket_nomicon match_components matches 0 run scoreboard players reset $main_item/rocket_nomicon match_components
+# main_item
+$scoreboard players set $main_item var $(main_item)
+data remove storage rocketriders:match components."main_item"
+execute if score $main_item var matches 1 run data modify storage rocketriders:match components."main_item" set value "shooting_saber"
+execute if score $main_item var matches 2 run data modify storage rocketriders:match components."main_item" set value "piercing_pickaxe"
+execute if score $main_item var matches 3 run data modify storage rocketriders:match components."main_item" set value "crusade_kit_dependent"
+execute if score $main_item var matches 4 run data modify storage rocketriders:match components."main_item" set value "rocket_nomicon"
 
 # custom_team_colors
 $execute store success score $custom_team_colors match_components if predicate {condition:"value_check",value:$(custom_team_colors),range:1}
@@ -117,6 +111,9 @@ execute if score $yellow_team_skin match_components matches 0 run scoreboard pla
 # classic_shields
 $execute store success score $classic_shields match_components if predicate {condition:"value_check",value:$(classic_shields),range:1}
 execute if score $classic_shields match_components matches 0 run scoreboard players reset $classic_shields match_components
+
+## POST
+function game:match_components/resolve
 
 function arenaclear:refreshcheck_indimension
 function game:place_facade

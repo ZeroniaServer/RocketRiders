@@ -21,4 +21,4 @@ execute if score $checkered_flag_waving_animation_timer global matches 0..19 run
 execute positioned 10 63 66 run function rr_chase:arenaclear/stairleft
 execute positioned 14 63 66 run function rr_chase:arenaclear/stairright
 execute unless predicate game:modifiers/hardcore/on run fill 11 63 62 13 63 64 minecraft:obsidian
-execute if predicate game:modifiers/hardcore/on run fill 11 63 64 13 63 64 minecraft:obsidian
+execute if predicate game:modifiers/hardcore/on run fill 11 63 63 13 63 64 minecraft:obsidian

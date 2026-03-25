@@ -15,8 +15,8 @@ execute if score $x_offset var matches 1..3 if score $z_offset var matches 1..3 
 execute if score $fill_column var matches 1 run function game:regenerate_back_layer/offset with storage rocketriders:main regenerate_back_layer
 
 # Flag support pads
-execute if score $x_offset var matches 2..6 if predicate game:match_components/has_flags if predicate game:modifiers/hardcore/on run function game:regenerate_back_layer/flag_support_pads_blue with storage rocketriders:teams blue.block_palette
-execute if score $x_offset var matches 2..6 if predicate game:match_components/has_flags if predicate game:modifiers/hardcore/on run function game:regenerate_back_layer/flag_support_pads_yellow with storage rocketriders:teams yellow.block_palette
+execute if score $x_offset var matches 2..6 if predicate game:regenerate_back_layer/blue if predicate game:match_components/has_flags if predicate game:modifiers/hardcore/on run function game:regenerate_back_layer/flag_support_pads_blue with storage rocketriders:teams blue.block_palette
+execute if score $x_offset var matches 2..6 if predicate game:regenerate_back_layer/yellow if predicate game:match_components/has_flags if predicate game:modifiers/hardcore/on run function game:regenerate_back_layer/flag_support_pads_yellow with storage rocketriders:teams yellow.block_palette
 
-execute if score $x_offset var matches 46..50 if predicate game:match_components/has_flags if predicate game:modifiers/hardcore/on run function game:regenerate_back_layer/flag_support_pads_blue with storage rocketriders:teams blue.block_palette
-execute if score $x_offset var matches 46..50 if predicate game:match_components/has_flags if predicate game:modifiers/hardcore/on run function game:regenerate_back_layer/flag_support_pads_yellow with storage rocketriders:teams yellow.block_palette
+execute if score $x_offset var matches 46..50 if predicate game:regenerate_back_layer/blue if predicate game:match_components/has_flags if predicate game:modifiers/hardcore/on run function game:regenerate_back_layer/flag_support_pads_blue with storage rocketriders:teams blue.block_palette
+execute if score $x_offset var matches 46..50 if predicate game:regenerate_back_layer/yellow if predicate game:match_components/has_flags if predicate game:modifiers/hardcore/on run function game:regenerate_back_layer/flag_support_pads_yellow with storage rocketriders:teams yellow.block_palette

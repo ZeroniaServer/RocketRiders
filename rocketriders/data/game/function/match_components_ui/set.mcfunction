@@ -28,16 +28,11 @@ execute if score $arena/no_base_details match_components matches 0 run scoreboar
 $execute store success score $arena/no_portal_details match_components if predicate {condition:"value_check",value:$(arena__no_portal_details),range:1}
 execute if score $arena/no_portal_details match_components matches 0 run scoreboard players reset $arena/no_portal_details match_components
 
-# armor/*
-$scoreboard players set $armor var $(armor__)
-execute store success score $armor/generic match_components if score $armor var matches 0
-execute if score $armor/generic match_components matches 0 run scoreboard players reset $armor/generic match_components
-
-execute store success score $armor/crusade_kit_dependent match_components if score $armor var matches 1
-execute if score $armor/crusade_kit_dependent match_components matches 0 run scoreboard players reset $armor/crusade_kit_dependent match_components
-
-execute store success score $armor/swap match_components if score $armor var matches 2
-execute if score $armor/swap match_components matches 0 run scoreboard players reset $armor/swap match_components
+# armor_type
+$scoreboard players set $armor_type var $(armor_type)
+data remove storage rocketriders:match components."armor_type"
+execute if score $armor_type var matches 1 run data modify storage rocketriders:match components."armor_type" set value "crusade_mode"
+execute if score $armor_type var matches 2 run data modify storage rocketriders:match components."armor_type" set value "swap_mode"
 
 # arrow_pickup/only_crusade_mode_archer_kit
 $execute store success score $arrow_pickup/only_crusade_mode_archer_kit match_components if predicate {condition:"value_check",value:$(arrow_pickup__),range:1}

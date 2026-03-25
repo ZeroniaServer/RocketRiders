@@ -1,10 +1,10 @@
 {
   "condition": "minecraft:value_check",
-  "range": 1,
+  "range": 0,
   "value": {
     "score": "match_components",
     "target": {
-      "name": "$armor/crusade_kit_dependent",
+      "name": "$armor_type.enum",
       "type": "minecraft:fixed"
     },
     "type": "minecraft:score"

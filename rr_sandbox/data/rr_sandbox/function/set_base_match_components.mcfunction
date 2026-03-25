@@ -1,6 +1,5 @@
 data modify storage rocketriders:match components."main_item" set value "rocket_nomicon"
 
-scoreboard players set $armor/generic match_components 1
 scoreboard players set $config_override.disable_hotbar_limit match_components 1
 scoreboard players set $config_override.disable_team_balancing match_components 1
 scoreboard players set $config_override.disable_tying match_components 1

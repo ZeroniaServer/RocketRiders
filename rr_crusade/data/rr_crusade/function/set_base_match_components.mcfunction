@@ -1,7 +1,7 @@
+data modify storage rocketriders:match components."armor_type" set value "crusade_mode"
 data modify storage rocketriders:match components."main_item" set value "crusade_kit_dependent"
 
 scoreboard players set $arena/castle match_components 1
-scoreboard players set $armor/crusade_kit_dependent match_components 1
 scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit match_components 1
 scoreboard players set $config_override.clutter_collector match_components -1
 scoreboard players set $config_override.hardcore match_components -1

@@ -19,24 +19,24 @@ execute if predicate custom:team/lobby run return run loot replace entity @s arm
 # Hobbit Modifier
 execute if predicate custom:team/any_playing_team if predicate game:modifiers/hobbits/on unless predicate custom:invisible run loot replace block 0 184 -16 container.3 loot modifiers:hobbit_head
 # Generic Gear
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/generic run loot replace block 0 184 -16 container.0 loot items:armor/generic_gear/boots
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/generic run loot replace block 0 184 -16 container.1 loot items:armor/generic_gear/leggings
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/generic run loot replace block 0 184 -16 container.2 loot items:armor/generic_gear/chestplate
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/generic run loot replace block 0 184 -16 container.0 loot items:armor/generic_gear/boots
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/generic run loot replace block 0 184 -16 container.1 loot items:armor/generic_gear/leggings
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/generic run loot replace block 0 184 -16 container.2 loot items:armor/generic_gear/chestplate
 # Swap Gear
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/swap run loot replace block 0 184 -16 container.0 3 loot items:armor/swap_gear/all
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/swap_mode run loot replace block 0 184 -16 container.0 3 loot items:armor/swap_gear/all
 # Crusade Gear
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/archer/boots
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/archer/leggings
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/archer/chestplate
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/archer/helmet
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/knight/boots
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/knight/leggings
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/knight/chestplate
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/knight/helmet
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/mage/boots
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/mage/leggings
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/mage/chestplate
-execute if predicate custom:team/any_playing_team if predicate game:match_components/armor/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/mage/helmet
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/archer/boots
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/archer/leggings
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/archer/chestplate
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/archer/helmet
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/knight/boots
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/knight/leggings
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/knight/chestplate
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/knight/helmet
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.0 loot items:armor/crusade_kits/mage/boots
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.1 loot items:armor/crusade_kits/mage/leggings
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.2 loot items:armor/crusade_kits/mage/chestplate
+execute if predicate custom:team/any_playing_team if predicate game:armor_type/crusade_mode if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.3 loot items:armor/crusade_kits/mage/helmet
 
 # Rank Boots
 execute unless function game:norankboots run loot replace block 0 184 -16 container.0 loot items:armor/rank_boots

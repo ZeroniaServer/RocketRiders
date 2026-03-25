@@ -1,6 +1,5 @@
 data modify storage rocketriders:match components."main_item" set value "shooting_saber"
 
-scoreboard players set $armor/generic match_components 1
 scoreboard players set $config_override.rocket_residers match_components -1
 scoreboard players set $config_override.special_treatment match_components -1
 scoreboard players set $custom_base_frames match_components 1

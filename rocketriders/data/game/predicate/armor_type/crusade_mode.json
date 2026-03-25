@@ -4,7 +4,7 @@
   "value": {
     "score": "match_components",
     "target": {
-      "name": "$armor/generic",
+      "name": "$armor_type.enum",
       "type": "minecraft:fixed"
     },
     "type": "minecraft:score"

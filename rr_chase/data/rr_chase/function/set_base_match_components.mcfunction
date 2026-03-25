@@ -3,7 +3,6 @@ data modify storage rocketriders:match components."arena/regenerate_back_layer" 
 data modify storage rocketriders:match components."main_item" set value "shooting_saber"
 
 scoreboard players set $arena/checkered_yellow_base_front match_components 1
-scoreboard players set $armor/generic match_components 1
 scoreboard players set $blue_team_skin match_components 1
 scoreboard players set $config_override.classic_team_colors match_components -1
 scoreboard players set $config_override.collision_control match_components -1

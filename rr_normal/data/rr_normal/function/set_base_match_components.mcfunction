@@ -1,7 +1,5 @@
 data modify storage rocketriders:match components."main_item" set value "shooting_saber"
 
-scoreboard players set $armor/generic match_components 1
-
 # items
 scoreboard players set $item_pool.cluster_fireball match_components -1
 scoreboard players set $item_pool.icbm match_components -1

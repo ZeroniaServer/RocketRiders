@@ -80,13 +80,13 @@ execute if predicate game:match_components/arena/no_portal_details run data modi
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__regenerate_back_layer",label:"🔒 arena/regenerate_back_layer",width:300,options:[{id:"",display:"false"}]}
 function custom:resolve_text_component {text_component:{storage:"rocketriders:match",nbt:'components."arena/regenerate_back_layer"'},write_to:"storage rocketriders:main match_components.dialog.inputs[-1].options[].display"}
 
-# armor/*
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"armor__",label:"armor/*",width:300,options:[{id:"0",display:{color:"white",text:"generic"}},{id:"1",display:{color:"white",text:"crusade_kit_dependent"}},{id:"2",display:{color:"white",text:"swap"}}]}
-execute if predicate game:match_components/armor/generic run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true
-execute if predicate game:match_components/armor/crusade_kit_dependent run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
-execute if predicate game:match_components/armor/swap run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].initial set value true
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"crusade_kit_dependent"}}].display.extra append value {color:"red",text:" ⚠"}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!swapEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"swap"}}].display.extra append value {color:"red",text:" ⚠"}
+# armor_type
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"armor_type",label:"armor_type",width:300,options:[{id:"0",display:{color:"white",text:'"',extra:[{color:"green",text:"generic"},'"']}},{id:"1",display:{color:"white",text:'"',extra:[{color:"green",text:"crusade_mode"},'"']}},{id:"2",display:{color:"white",text:'"',extra:[{color:"green",text:"swap_mode"},'"']}}]}
+execute if predicate game:armor_type/generic run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true
+execute if predicate game:armor_type/crusade_mode run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
+execute if predicate game:armor_type/swap_mode run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].initial set value true
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].display.extra append value {color:"red",text:" ⚠"}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!swapEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].display.extra append value {color:"red",text:" ⚠"}
 
 # arrow_pickup/*
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arrow_pickup__",label:"arrow_pickup/*",width:300,options:[{id:"0",display:{color:"white",text:"anyone"}},{id:"1",display:{color:"white",text:"only_crusade_mode_archer_kit"}}]}

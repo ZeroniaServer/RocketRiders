@@ -1,6 +1,7 @@
 data modify storage rocketriders:match components."arena/base_colors" set value {yellow:{front:"gray",middle:"light_gray",back:"white",detail:"black"}}
 data modify storage rocketriders:match components."arena/regenerate_back_layer" set value {blue:true}
 data modify storage rocketriders:match components."main_item" set value "shooting_saber"
+data modify storage rocketriders:match components."shield_type" set value "checkered"
 
 scoreboard players set $arena/checkered_yellow_base_front match_components 1
 scoreboard players set $blue_team_skin match_components 1

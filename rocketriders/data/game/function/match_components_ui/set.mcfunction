@@ -103,9 +103,11 @@ $scoreboard players set $yellow_team_skin match_components $(yellow_team_skin)
 execute unless score $yellow_team_skin match_components matches 0..1 run scoreboard players reset $yellow_team_skin match_components
 execute if score $yellow_team_skin match_components matches 0 run scoreboard players reset $yellow_team_skin match_components
 
-# classic_shields
-$execute store success score $classic_shields match_components if predicate {condition:"value_check",value:$(classic_shields),range:1}
-execute if score $classic_shields match_components matches 0 run scoreboard players reset $classic_shields match_components
+# shield_type
+$scoreboard players set $shield_type var $(shield_type)
+data remove storage rocketriders:match components."shield_type"
+execute if score $shield_type var matches 1 run data modify storage rocketriders:match components."shield_type" set value "checkered"
+execute if score $shield_type var matches 2 run data modify storage rocketriders:match components."shield_type" set value "classic"
 
 ## POST
 function game:match_components/resolve

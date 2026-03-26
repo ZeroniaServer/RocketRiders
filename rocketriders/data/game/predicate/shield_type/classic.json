@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "range": 2,
+  "value": {
+    "score": "match_components",
+    "target": {
+      "name": "$shield_type.enum",
+      "type": "minecraft:fixed"
+    },
+    "type": "minecraft:score"
+  }
+}

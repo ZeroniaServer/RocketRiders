@@ -1,7 +1,8 @@
 # asset/shield/stage_*/blue
 fill -160 184 -160 -154 190 -160 structure_void strict
-execute unless predicate game:match_components/classic_shields run place template game:shield/normal -160 184 -160 none none 1 0 strict
-execute if predicate game:match_components/classic_shields run place template game:shield/classic -160 184 -160 none none 1 0 strict
+execute if predicate game:shield_type/normal run place template game:shield/normal -160 184 -160 none none 1 0 strict
+execute if predicate game:shield_type/checkered run place template game:shield/checkered -160 184 -160 none none 1 0 strict
+execute if predicate game:shield_type/classic run place template game:shield/classic -160 184 -160 none none 1 0 strict
 
 fill -160 184 -160 -154 190 -160 resin_brick_stairs[facing=north,half=bottom] replace cyan_stained_glass strict
 fill -160 184 -160 -154 190 -160 resin_brick_stairs[facing=east,half=bottom] replace blue_stained_glass strict
@@ -25,8 +26,9 @@ setblock -161 185 -161 redstone_block
 
 # asset/shield/stage_*/yellow
 fill -160 184 -160 -154 190 -160 structure_void strict
-execute unless predicate game:match_components/classic_shields run place template game:shield/normal -160 184 -160 none none 1 0 strict
-execute if predicate game:match_components/classic_shields run place template game:shield/classic -160 184 -160 none none 1 0 strict
+execute if predicate game:shield_type/normal run place template game:shield/normal -160 184 -160 none none 1 0 strict
+execute if predicate game:shield_type/checkered run place template game:shield/checkered -160 184 -160 none none 1 0 strict
+execute if predicate game:shield_type/classic run place template game:shield/classic -160 184 -160 none none 1 0 strict
 
 fill -160 184 -160 -154 190 -160 resin_brick_stairs[facing=north,half=bottom] replace cyan_stained_glass strict
 fill -160 184 -160 -154 190 -160 resin_brick_stairs[facing=east,half=bottom] replace blue_stained_glass strict
@@ -50,7 +52,12 @@ setblock -161 185 -161 redstone_block
 
 # asset/shield/stage_*/white
 fill -160 184 -160 -154 190 -160 structure_void strict
-place template game:shield/white -160 184 -160 none none 1 0 strict
+execute if predicate game:shield_type/normal run place template game:shield/normal -160 184 -160 none none 1 0 strict
+execute if predicate game:shield_type/checkered run place template game:shield/checkered -160 184 -160 none none 1 0 strict
+execute if predicate game:shield_type/classic run place template game:shield/classic -160 184 -160 none none 1 0 strict
+
+fill -160 184 -160 -154 190 -160 white_stained_glass replace cyan_stained_glass strict
+fill -160 184 -160 -154 190 -160 light_gray_stained_glass replace blue_stained_glass strict
 
 fill -161 184 -161 -161 185 -161 air strict
 setblock -161 184 -161 minecraft:structure_block[mode=save]{author:"",ignoreEntities:1b,integrity:1.0f,metadata:"",mirror:"NONE",mode:"SAVE",name:"game:asset/shield/stage_3/white",posX:1,posY:0,posZ:1,powered:0b,rotation:"NONE",seed:0L,showair:0b,showboundingbox:0b,sizeX:7,sizeY:7,sizeZ:1,strict:0b} strict

@@ -35,10 +35,10 @@ execute positioned -160 184 -160 run function game:assets/__load/load with stora
 data modify storage rocketriders:main assets merge value {asset_id:"base_detail/tower",asset_type:"team_directional",x_length:9,y_length:12,z_length:9}
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:main assets
 
-data modify storage rocketriders:main assets merge value {asset_id:"flag/stage_1",asset_type:"team",x_length:5,y_length:2,z_length:2}
+data modify storage rocketriders:main assets merge value {asset_id:"flag/stage_1",asset_type:"flag",stage:"1"}
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:main assets
 
-data modify storage rocketriders:main assets merge value {asset_id:"flag/stage_2",asset_type:"team",x_length:5,y_length:2,z_length:2}
+data modify storage rocketriders:main assets merge value {asset_id:"flag/stage_2",asset_type:"flag",stage:"2"}
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:main assets
 
 data modify storage rocketriders:main assets merge value {asset_id:"shield",asset_type:"shield"}

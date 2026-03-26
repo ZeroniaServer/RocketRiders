@@ -4,7 +4,7 @@
   "value": {
     "score": "match_components",
     "target": {
-      "name": "$arena/checkered_yellow_base_front",
+      "name": "$checkered_yellow_base",
       "type": "minecraft:fixed"
     },
     "type": "minecraft:score"

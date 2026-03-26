@@ -149,6 +149,16 @@ execute if predicate game:yellow_team_skin/green run data modify storage rocketr
     shield_center: "lime",\
     shield_accent: "green",\
 }
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:teams yellow.color_palette set value \
+{\
+    main: "gray",\
+    accent: "light_gray",\
+    light: "light_gray",\
+    dark: "gray",\
+    feature: "white",\
+    shield_center: "white",\
+    shield_accent: "black",\
+}
 
 ## Yellow Block Palette
 # front
@@ -211,20 +221,20 @@ execute unless data storage rocketriders:main team_attributes.result run data mo
 data modify storage rocketriders:teams yellow.block_palette.front_glazed_terracotta set from storage rocketriders:main team_attributes.result
 
 # front_checkered_black
-execute if predicate game:match_components/arena/checkered_yellow_base_front run data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"stained_glass",color:"black"}
-execute if predicate game:match_components/arena/checkered_yellow_base_front run data modify storage rocketriders:main team_attributes.material set from storage rocketriders:match components."arena/base_materials".yellow.front
-execute if predicate game:match_components/arena/checkered_yellow_base_front run function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
-execute if predicate game:match_components/arena/checkered_yellow_base_front run execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
-execute if predicate game:match_components/arena/checkered_yellow_base_front run execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "black_stained_glass"
-execute if predicate game:match_components/arena/checkered_yellow_base_front run data modify storage rocketriders:teams yellow.block_palette.front_checkered_black set from storage rocketriders:main team_attributes.result
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"stained_glass",color:"black"}
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:main team_attributes.material set from storage rocketriders:match components."arena/base_materials".yellow.front
+execute if predicate game:match_components/checkered_yellow_base run function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
+execute if predicate game:match_components/checkered_yellow_base run execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
+execute if predicate game:match_components/checkered_yellow_base run execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "black_stained_glass"
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:teams yellow.block_palette.front_checkered_black set from storage rocketriders:main team_attributes.result
 
 # front_checkered_white
-execute if predicate game:match_components/arena/checkered_yellow_base_front run data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"stained_glass",color:"white"}
-execute if predicate game:match_components/arena/checkered_yellow_base_front run data modify storage rocketriders:main team_attributes.material set from storage rocketriders:match components."arena/base_materials".yellow.front
-execute if predicate game:match_components/arena/checkered_yellow_base_front run function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
-execute if predicate game:match_components/arena/checkered_yellow_base_front run execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
-execute if predicate game:match_components/arena/checkered_yellow_base_front run execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_stained_glass"
-execute if predicate game:match_components/arena/checkered_yellow_base_front run data modify storage rocketriders:teams yellow.block_palette.front_checkered_white set from storage rocketriders:main team_attributes.result
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"stained_glass",color:"white"}
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:main team_attributes.material set from storage rocketriders:match components."arena/base_materials".yellow.front
+execute if predicate game:match_components/checkered_yellow_base run function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
+execute if predicate game:match_components/checkered_yellow_base run execute unless data storage rocketriders:main team_attributes.result run function game:team_attributes/__resolve_block_palettes/try_material with storage rocketriders:main team_attributes
+execute if predicate game:match_components/checkered_yellow_base run execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_stained_glass"
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:teams yellow.block_palette.front_checkered_white set from storage rocketriders:main team_attributes.result
 
 # back_stained_glass_pane
 data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"stained_glass_pane"}

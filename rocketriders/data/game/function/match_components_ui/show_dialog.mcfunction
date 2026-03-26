@@ -21,7 +21,7 @@ data modify storage rocketriders:main match_components.dialog set value {\
     },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__castle:$(arena__castle),arena__no_base_details:$(arena__no_base_details),armor_type:$(armor_type),arrow_pickup__:$(arrow_pickup__),main_item:$(main_item),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),blue_team_skin:$(blue_team_skin),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details),decreased_icbm_flight_duration:$(decreased_icbm_flight_duration),yellow_team_skin:$(yellow_team_skin),arena__checkered_yellow_base_front:$(arena__checkered_yellow_base_front),shield_type:$(shield_type)}"\
+      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_frame:$(arena__bedrock_frame),arena__castle:$(arena__castle),arena__no_base_details:$(arena__no_base_details),armor_type:$(armor_type),arrow_pickup__:$(arrow_pickup__),main_item:$(main_item),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),blue_team_skin:$(blue_team_skin),no_achievements:$(no_achievements),arena__no_portal_details:$(arena__no_portal_details),decreased_icbm_flight_duration:$(decreased_icbm_flight_duration),yellow_team_skin:$(yellow_team_skin),checkered_yellow_base:$(checkered_yellow_base),shield_type:$(shield_type)}"\
     }\
   },\
   "no": {\
@@ -64,10 +64,6 @@ execute if predicate game:match_components/arena/bedrock_frame run data modify s
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__castle",label:"arena/castle",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/arena/castle run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
-# arena/checkered_yellow_base_front
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__checkered_yellow_base_front",label:"arena/checkered_yellow_base_front",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
-execute if predicate game:match_components/arena/checkered_yellow_base_front run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
-
 # arena/no_base_details
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__no_base_details",label:"arena/no_base_details",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/arena/no_base_details run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
@@ -105,6 +101,10 @@ execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnab
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"blue_team_skin",label:"blue_team_skin",width:300,options:[{id:"0",display:{color:"white",text:"blue"}},{id:"1",display:{color:"white",text:"dark_red"}},{id:"2",display:{color:"white",text:"classic_red"}}]}
 execute if predicate game:blue_team_skin/dark_red run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 execute if predicate game:blue_team_skin/classic_red run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].initial set value true
+
+# checkered_yellow_base
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"checkered_yellow_base",label:"checkered_yellow_base",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
 # cubekrowd/disable_all_but_5_non_lightning_missiles (locked)
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"cubekrowd__disable_all_but_5_non_lightning_missiles",label:"🔒 cubekrowd/disable_all_but_5_non_lightning_missiles",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}

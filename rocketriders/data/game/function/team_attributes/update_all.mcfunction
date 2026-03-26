@@ -58,6 +58,17 @@ execute if predicate game:yellow_team_skin/green run data modify storage rocketr
     },\
     player_name_color: "green"\
 }
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:teams yellow set value \
+{\
+    text: {\
+        team_name: "Checkered",\
+        team_name_lowercase: "checkered",\
+        main_color: {color:"white",text:""},\
+        accent_color: {color:"gray",text:""},\
+        flag_color: {color:"white",text:""},\
+    },\
+    player_name_color: "white"\
+}
 
 # Spectator
 data modify storage rocketriders:teams spectator set value \

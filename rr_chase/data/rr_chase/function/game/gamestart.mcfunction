@@ -6,3 +6,4 @@ execute if predicate game:phase/match/play if score $match_play_time global matc
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue
+tag @a[x=0] remove JoinYellow

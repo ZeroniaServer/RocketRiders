@@ -12,10 +12,6 @@ execute if predicate game:phase/match run function rr_chase:game/while_phase/mat
 execute if predicate game:phase/match/play run function rr_chase:game/while_phase/match/play
 execute if predicate game:phase/match/closing run function rr_chase:game/while_phase/match/closing
 
-#disable yellow
-tag @a[x=0] remove JoinYellow
-execute as @a[x=0,predicate=custom:team/yellow] run function custom:leave
-
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:edited_settings
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging run tag @a[x=0] remove informMe

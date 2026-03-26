@@ -237,7 +237,7 @@ execute if predicate game:shield_type/classic run data modify storage rocketride
 
 # yellow_team_skin
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"yellow_team_skin",label:"yellow_team_skin",width:300,options:[{id:"0",display:{color:"white",text:"yellow"}},{id:"1",display:{color:"white",text:"green"}}]}
-execute if predicate game:yellow_team_skin/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
+execute if predicate game:yellow_team_skin/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true
 execute if predicate game:yellow_team_skin/green run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
 ## Append config overridss (locked)

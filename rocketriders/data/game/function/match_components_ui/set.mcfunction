@@ -109,6 +109,10 @@ data remove storage rocketriders:match components."shield_type"
 execute if score $shield_type var matches 1 run data modify storage rocketriders:match components."shield_type" set value "checkered"
 execute if score $shield_type var matches 2 run data modify storage rocketriders:match components."shield_type" set value "classic"
 
+# crusade_banners
+$execute store success score $crusade_banners match_components if predicate {condition:"value_check",value:$(crusade_banners),range:1}
+execute if score $crusade_banners match_components matches 0 run scoreboard players reset $crusade_banners match_components
+
 ## POST
 function game:match_components/resolve
 

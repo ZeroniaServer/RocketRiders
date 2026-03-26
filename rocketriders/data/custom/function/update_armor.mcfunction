@@ -50,10 +50,8 @@ execute if predicate custom:team/any_playing_team if predicate game:phase/match/
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:invisible run execute store result storage rocketriders:main update_armor.random_asset_id_2 int 1 run random value 0..2147483646
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:invisible run function custom:__impl__/update_armor/make_invisible with storage rocketriders:main update_armor
 # CTF Flag
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFB1] run loot replace block 0 184 -16 container.3 loot items:ctf/blue_flag
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFB2] run loot replace block 0 184 -16 container.3 loot items:ctf/blue_flag
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFY1] run loot replace block 0 184 -16 container.3 loot items:ctf/yellow_flag
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag,tag=CarryFY2] run loot replace block 0 184 -16 container.3 loot items:ctf/yellow_flag
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag] unless entity @s[tag=!CarryFB1,tag=!CarryFB2] run function custom:__impl__/update_armor/flag_blue with storage rocketriders:teams blue.team_banner
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag] unless entity @s[tag=!CarryFY1,tag=!CarryFY2] run function custom:__impl__/update_armor/flag_yellow with storage rocketriders:teams yellow.team_banner
 # Game Ending
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Winner] run loot replace block 0 184 -16 container.2 loot items:ending/celebratory_elytra
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Loser] run loot replace block 0 184 -16 container.3 loot items:ending/loser_banner

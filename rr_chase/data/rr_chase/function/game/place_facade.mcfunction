@@ -31,7 +31,7 @@ execute unless predicate game:modifiers/molerat/on run setblock -92 202 87 minec
 execute if predicate game:modifiers/molerat/on run setblock -92 202 86 minecraft:player_wall_head[facing=east]{profile:{properties:[{name:"textures",value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjk5NDJkZDEzMzhhYmVhZThiODI3NGE0MWFlMWRjZGYyYjdiZTQ0OWYyOGQ2YjY1MGVjMDZlNDkxZTcwZjU3MCJ9fX0="}]}} strict
 
 #Banner in pregame queue
-setblock -95 202 95 white_banner[rotation=8]{patterns:[{pattern:"minecraft:half_vertical_right",color:"black"},{pattern:"minecraft:square_top_left",color:"black"},{pattern:"minecraft:square_bottom_left",color:"black"},{pattern:"minecraft:square_top_right",color:"white"},{pattern:"minecraft:square_bottom_right",color:"white"}]}
+function rr_chase:game/place_facade/place_banner with storage rocketriders:teams yellow.team_banner
 
 #Stairs in pregame queue
 fill -94 201 95 -96 201 96 obsidian replace white_stained_glass

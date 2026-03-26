@@ -9,7 +9,12 @@ execute if predicate game:blue_team_skin/blue run data modify storage rocketride
         accent_color: {color:"dark_aqua",text:""},\
         flag_color: {color:"dark_aqua",text:""},\
     },\
-    player_name_color: "blue"\
+    player_name_color: "blue",\
+    team_banner: {\
+        base_color: "blue",\
+        accent_color: "light_blue",\
+        patterns: []\
+    },\
 }
 execute if predicate game:blue_team_skin/dark_red run data modify storage rocketriders:teams blue set value \
 {\
@@ -20,7 +25,12 @@ execute if predicate game:blue_team_skin/dark_red run data modify storage rocket
         accent_color: {color:"red",text:""},\
         flag_color: {color:"dark_red",text:""},\
     },\
-    player_name_color: "dark_red"\
+    player_name_color: "dark_red",\
+    team_banner: {\
+        base_color: "red",\
+        accent_color: "pink",\
+        patterns: []\
+    },\
 }
 execute if predicate game:blue_team_skin/classic_red run data modify storage rocketriders:teams blue set value \
 {\
@@ -31,8 +41,16 @@ execute if predicate game:blue_team_skin/classic_red run data modify storage roc
         accent_color: {color:"#F4A9B8",text:""},\
         flag_color: {color:"red",text:""},\
     },\
-    player_name_color: "red"\
+    player_name_color: "red",\
+    team_banner: {\
+        base_color: "red",\
+        accent_color: "pink",\
+        patterns: []\
+    },\
 }
+execute if predicate game:match_components/crusade_banners run data modify storage rocketriders:teams blue.team_banner.patterns append value {color:"ACCENT_COLOR",pattern:"minecraft:flow"}
+execute if predicate game:match_components/crusade_banners run data modify storage rocketriders:teams blue.team_banner.patterns append value {color:"ACCENT_COLOR",pattern:"minecraft:border"}
+execute if predicate game:match_components/crusade_banners run data modify storage rocketriders:teams blue.team_banner.patterns[{color:"ACCENT_COLOR"}].color set from storage rocketriders:teams blue.team_banner.accent_color
 
 # Yellow
 execute if predicate game:yellow_team_skin/yellow run data modify storage rocketriders:teams yellow set value \
@@ -44,7 +62,12 @@ execute if predicate game:yellow_team_skin/yellow run data modify storage rocket
         accent_color: {color:"yellow",text:""},\
         flag_color: {color:"yellow",text:""},\
     },\
-    player_name_color: "gold"\
+    player_name_color: "gold",\
+    team_banner: {\
+        base_color: "yellow",\
+        accent_color: "orange",\
+        patterns: []\
+    },\
 }
 execute if predicate game:yellow_team_skin/green run data modify storage rocketriders:teams yellow set value \
 {\
@@ -56,19 +79,22 @@ execute if predicate game:yellow_team_skin/green run data modify storage rocketr
         flag_color: {color:"green",text:""},\
         normal_missile_item_prefix_color: {color:"#55C300",text:""},\
     },\
-    player_name_color: "green"\
-}
-execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:teams yellow set value \
-{\
-    text: {\
-        team_name: "Checkered",\
-        team_name_lowercase: "checkered",\
-        main_color: {color:"white",text:""},\
-        accent_color: {color:"gray",text:""},\
-        flag_color: {color:"white",text:""},\
+    player_name_color: "green",\
+    team_banner: {\
+        base_color: "lime",\
+        accent_color: "green",\
+        patterns: []\
     },\
-    player_name_color: "white"\
 }
+execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:teams yellow.team_banner set value \
+{\
+    base_color: "white",\
+    accent_color: "black",\
+    patterns: [{color:"black",pattern:"half_vertical_right"},{color:"black",pattern:"square_top_left"},{color:"black",pattern:"square_bottom_left"},{color:"white",pattern:"square_top_right"},{color:"white",pattern:"square_bottom_right"}]\
+}
+execute if predicate game:match_components/crusade_banners unless predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:teams yellow.team_banner.patterns append value {color:"ACCENT_COLOR",pattern:"minecraft:flower"}
+execute if predicate game:match_components/crusade_banners run data modify storage rocketriders:teams yellow.team_banner.patterns append value {color:"ACCENT_COLOR",pattern:"minecraft:border"}
+execute if predicate game:match_components/crusade_banners run data modify storage rocketriders:teams yellow.team_banner.patterns[{color:"ACCENT_COLOR"}].color set from storage rocketriders:teams yellow.team_banner.accent_color
 
 # Spectator
 data modify storage rocketriders:teams spectator set value \

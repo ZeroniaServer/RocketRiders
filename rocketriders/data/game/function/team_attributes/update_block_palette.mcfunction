@@ -99,19 +99,23 @@ function game:team_attributes/__resolve_block_palettes/try_combine_with_color wi
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wool"
 data modify storage rocketriders:teams blue.block_palette.flag set from storage rocketriders:main team_attributes.result
 
-# flag_banner
-data modify storage rocketriders:main team_attributes set value {team:"blue",material:"banner",color_source:"feature"}
-function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+# team_banner_standing
+data modify storage rocketriders:main team_attributes set value {team:"blue",material:"banner"}
+data modify storage rocketriders:main team_attributes.color set from storage rocketriders:teams blue.team_banner.base_color
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_banner"
-data modify storage rocketriders:teams blue.block_palette.flag_banner set from storage rocketriders:main team_attributes.result
+data modify storage rocketriders:teams blue.block_palette.team_banner_standing set from storage rocketriders:main team_attributes.result
 
-# flag_wall_banner
-data modify storage rocketriders:main team_attributes set value {team:"blue",material:"wall_banner",color_source:"feature"}
-function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+# team_banner_wall
+data modify storage rocketriders:main team_attributes set value {team:"blue",material:"wall_banner"}
+data modify storage rocketriders:main team_attributes.color set from storage rocketriders:teams blue.team_banner.base_color
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wall_banner"
-data modify storage rocketriders:teams blue.block_palette.flag_wall_banner set from storage rocketriders:main team_attributes.result
+data modify storage rocketriders:teams blue.block_palette.team_banner_wall set from storage rocketriders:main team_attributes.result
+
+# team_banner_patterns
+data modify storage rocketriders:teams blue.block_palette.team_banner_patterns set value []
+data modify storage rocketriders:teams blue.block_palette.team_banner_patterns set from storage rocketriders:teams blue.team_banner.patterns
 
 # shield_center_stained_glass
 data modify storage rocketriders:main team_attributes set value {team:"blue",material:"stained_glass",color_source:"shield_center"}
@@ -254,19 +258,23 @@ function game:team_attributes/__resolve_block_palettes/try_combine_with_color wi
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wool"
 data modify storage rocketriders:teams yellow.block_palette.flag set from storage rocketriders:main team_attributes.result
 
-# flag_banner
-data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"banner",color_source:"feature"}
-function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+# team_banner_standing
+data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"banner"}
+data modify storage rocketriders:main team_attributes.color set from storage rocketriders:teams yellow.team_banner.base_color
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_banner"
-data modify storage rocketriders:teams yellow.block_palette.flag_banner set from storage rocketriders:main team_attributes.result
+data modify storage rocketriders:teams yellow.block_palette.team_banner_standing set from storage rocketriders:main team_attributes.result
 
-# flag_wall_banner
-data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"wall_banner",color_source:"feature"}
-function game:team_attributes/__resolve_block_palettes/get_color_from_team_palette with storage rocketriders:main team_attributes
+# team_banner_wall
+data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"wall_banner"}
+data modify storage rocketriders:main team_attributes.color set from storage rocketriders:teams yellow.team_banner.base_color
 function game:team_attributes/__resolve_block_palettes/try_combine_with_color with storage rocketriders:main team_attributes
 execute unless data storage rocketriders:main team_attributes.result run data modify storage rocketriders:main team_attributes.result set value "white_wall_banner"
-data modify storage rocketriders:teams yellow.block_palette.flag_wall_banner set from storage rocketriders:main team_attributes.result
+data modify storage rocketriders:teams yellow.block_palette.team_banner_wall set from storage rocketriders:main team_attributes.result
+
+# team_banner_patterns
+data modify storage rocketriders:teams yellow.block_palette.team_banner_patterns set value []
+data modify storage rocketriders:teams yellow.block_palette.team_banner_patterns set from storage rocketriders:teams yellow.team_banner.patterns
 
 # shield_center_stained_glass
 data modify storage rocketriders:main team_attributes set value {team:"yellow",material:"stained_glass",color_source:"shield_center"}

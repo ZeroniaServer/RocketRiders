@@ -9,31 +9,8 @@ fill -94 198 91 -96 200 94 minecraft:crying_obsidian
 fill -96 198 65 -94 200 62 minecraft:crying_obsidian
 
 ## Banners
-execute if predicate game:blue_team_skin/blue unless predicate game:arena_details/castle run setblock -89 202 65 minecraft:blue_banner[rotation=6]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/blue unless predicate game:arena_details/castle run setblock -101 202 65 minecraft:blue_banner[rotation=10]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/blue if predicate game:arena_details/castle run setblock -89 203 65 minecraft:blue_banner[rotation=6]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/blue if predicate game:arena_details/castle run setblock -101 203 65 minecraft:blue_banner[rotation=10]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/blue run setblock -98 199 66 minecraft:blue_wall_banner[facing=south]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/blue run setblock -92 199 66 minecraft:blue_wall_banner[facing=south]{components:{},patterns:[{color:"light_blue",pattern:"minecraft:flow"},{color:"light_blue",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/any_red_skin unless predicate game:arena_details/castle run setblock -89 202 65 minecraft:red_banner[rotation=6]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/any_red_skin unless predicate game:arena_details/castle run setblock -101 202 65 minecraft:red_banner[rotation=10]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/any_red_skin if predicate game:arena_details/castle run setblock -89 203 65 minecraft:red_banner[rotation=6]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/any_red_skin if predicate game:arena_details/castle run setblock -101 203 65 minecraft:red_banner[rotation=10]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/any_red_skin run setblock -98 199 66 minecraft:red_wall_banner[facing=south]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
-execute if predicate game:blue_team_skin/any_red_skin run setblock -92 199 66 minecraft:red_wall_banner[facing=south]{components:{},patterns:[{color:"pink",pattern:"minecraft:flow"},{color:"pink",pattern:"minecraft:border"}]}
-
-execute if predicate game:yellow_team_skin/yellow unless predicate game:arena_details/castle run setblock -101 202 91 minecraft:yellow_banner[rotation=14]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/yellow unless predicate game:arena_details/castle run setblock -89 202 91 minecraft:yellow_banner[rotation=2]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/yellow if predicate game:arena_details/castle run setblock -101 203 91 minecraft:yellow_banner[rotation=14]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/yellow if predicate game:arena_details/castle run setblock -89 203 91 minecraft:yellow_banner[rotation=2]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/yellow run setblock -92 199 90 minecraft:yellow_wall_banner[facing=north]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/yellow run setblock -98 199 90 minecraft:yellow_wall_banner[facing=north]{components:{},patterns:[{color:"orange",pattern:"minecraft:flower"},{color:"orange",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/green unless predicate game:arena_details/castle run setblock -101 202 91 minecraft:green_banner[rotation=14]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/green unless predicate game:arena_details/castle run setblock -89 202 91 minecraft:green_banner[rotation=2]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/green if predicate game:arena_details/castle run setblock -101 203 91 minecraft:green_banner[rotation=14]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/green if predicate game:arena_details/castle run setblock -89 203 91 minecraft:green_banner[rotation=2]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/green run setblock -92 199 90 minecraft:green_wall_banner[facing=north]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
-execute if predicate game:yellow_team_skin/green run setblock -98 199 90 minecraft:green_wall_banner[facing=north]{components:{},patterns:[{color:"lime",pattern:"minecraft:flower"},{color:"lime",pattern:"minecraft:border"}]}
+function rr_crusade:game/place_facade/blue_banners with storage rocketriders:teams blue.team_banner
+function rr_crusade:game/place_facade/yellow_banners with storage rocketriders:teams yellow.team_banner
 
 ## Kit Armor Stands & Signs
 #blue

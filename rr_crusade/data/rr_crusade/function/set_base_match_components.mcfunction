@@ -11,6 +11,7 @@ scoreboard players set $config_override.molerat match_components -1
 scoreboard players set $config_override.rocket_residers match_components -1
 scoreboard players set $config_override.special_treatment match_components -1
 scoreboard players set $config_override.surprise_eggs match_components -1
+scoreboard players set $crusade_banners match_components 1
 scoreboard players set $custom_pierce_prevention match_components 1
 scoreboard players set $decreased_icbm_flight_duration match_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage match_components 1

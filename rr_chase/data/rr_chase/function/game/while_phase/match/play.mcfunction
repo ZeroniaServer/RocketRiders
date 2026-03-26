@@ -33,9 +33,10 @@ execute if predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=cust
 #Bossbar for who's in the lead
 bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
 bossbar set rr_chase:lead players @a[x=0,predicate=!custom:team/lobby]
-bossbar set rr_chase:lead color red
-execute if entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name [{color:"red",text:""},{bold:true,color:"dark_red",selector:"@p[predicate=custom:team/blue,tag=InLead]"}," is in the lead!"]
-execute unless entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name {color:"red",text:"No one is in the lead!"}
+execute if predicate game:blue_team_skin/blue run bossbar set rr_chase:lead color blue
+execute if predicate game:blue_team_skin/any_red_skin run bossbar set rr_chase:lead color red
+execute as @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name [{score:{name:"@s",objective:"text.accent_color"}},{bold:true,selector:"@s"}," is in the lead!"]
+execute unless entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name [{score:{name:"#blue",objective:"text.accent_color"}},"No one is in the lead!"]
 execute unless entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead value 0
 execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=100..110] run bossbar set rr_chase:lead value 1
 execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=89..99] run bossbar set rr_chase:lead value 2

@@ -50,7 +50,7 @@ execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,d
 
 #Tablist icon for who's in the lead
 scoreboard players display numberformat @a[x=0,tag=!InLead] flag_tablist_display blank
-scoreboard players display numberformat @a[limit=1,x=0,tag=InLead] flag_tablist_display fixed "🏁"
+execute as @a[limit=1,x=0,tag=InLead] run scoreboard players display numberformat @s flag_tablist_display fixed {score:{name:"#yellow",objective:"text.flag"}}
 
 #Glowing for who's in the lead (blink if Sonar is enabled)
 execute unless predicate game:modifiers/sonar/on run effect clear @a[x=0,tag=!InLead] glowing

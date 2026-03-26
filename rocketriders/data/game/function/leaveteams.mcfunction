@@ -2,9 +2,9 @@
 tag @a[x=0,tag=LeaveTeams] remove force_mount
 execute as @a[x=0,tag=LeaveTeams] run ride @s dismount
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/yellow] add LeavingYellow
-execute as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the yellow team!"]
+execute as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/blue] add LeavingBlue
-execute unless predicate game:match_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the blue team!"]
+execute unless predicate game:match_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
 execute if predicate game:match_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the match!"]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/spectator] add LeavingSpec
 execute as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is no longer spectating the match!","color":"gray"}]

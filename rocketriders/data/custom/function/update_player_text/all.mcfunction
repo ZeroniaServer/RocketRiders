@@ -36,4 +36,4 @@ scoreboard players display numberformat @a[x=0,predicate=custom:team/yellow] tex
 scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] text.normal_missile_item_prefix_color fixed {color:"gray",text:""}
 
 #Custom team colors
-execute if predicate game:match_components/custom_team_colors run return run execute as @a[x=0,predicate=custom:team/any_arena_team] run function custom:update_player_text/self/custom_auto
+execute if predicate game:match_components/custom_team_colors run return run execute as @a[x=0,predicate=custom:team/any_arena_team] run function custom:update_player_text/__custom/auto

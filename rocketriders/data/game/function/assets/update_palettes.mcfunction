@@ -60,3 +60,9 @@ execute positioned -160 184 -160 run function game:assets/__update_palettes/upda
 
 data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."shield"
 execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
+
+data modify storage rocketriders:main assets merge from storage rocketriders:assets assets."canopy"
+execute positioned -160 184 -160 run function game:assets/__update_palettes/update with storage rocketriders:main assets
+
+
+fill -161 184 -161 -161 185 -161 air strict

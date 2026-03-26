@@ -8,11 +8,10 @@ scoreboard objectives add crusadekit dummy
 scoreboard objectives add crusadehp dummy
 scoreboard objectives add crusadechange trigger
 
-bossbar add rr_crusade:blue {"text":"Total Crystal Health","color":"white"}
-bossbar add rr_crusade:yellow ""
-
+bossbar add rr_crusade:blue "Total Crystal Health"
 bossbar set rr_crusade:blue color blue
-bossbar set rr_crusade:yellow color yellow
-
 bossbar set rr_crusade:blue max 200
+
+bossbar add rr_crusade:yellow "Total Crystal Health"
+bossbar set rr_crusade:yellow color yellow
 bossbar set rr_crusade:yellow max 200

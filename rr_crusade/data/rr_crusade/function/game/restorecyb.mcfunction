@@ -35,6 +35,7 @@ execute if predicate game:yellow_portal_revealed run tellraw @a[x=0,predicate=!c
 execute if predicate game:yellow_portal_revealed run function rr_crusade:game/cancel_utility
 execute if predicate game:yellow_portal_revealed positioned 4 45 52 run function rr_crusade:game/portal_barrier_dynamic_fill with storage rocketriders:teams yellow.block_palette
 execute if predicate game:yellow_portal_revealed run function game:place_portal/yellow
+execute if predicate game:yellow_portal_revealed run bossbar set rr_crusade:blue name [{score:{name:"#yellow",objective:"text.accent_color"}},"",[{score:{name:"#yellow",objective:"text.main_color"}},{bold:true,score:{name:"#yellow",objective:"text.team_name"}}]," Crystals are Destroyed"]
 
 execute unless score $CYB crusadehp matches 1.. run tellraw @a[x=0] [""]
 

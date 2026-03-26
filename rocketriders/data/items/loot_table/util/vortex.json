@@ -33,6 +33,12 @@
                     "color": "gray",
                     "italic": false,
                     "text": "shot by projectiles. It also follows enemies!"
+                  },
+                  "",
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: 1 second"
                   }
                 ],
                 "minecraft:max_stack_size": 64

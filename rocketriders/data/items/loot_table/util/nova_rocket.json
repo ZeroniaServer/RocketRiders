@@ -32,6 +32,12 @@
                     "color": "gray",
                     "italic": false,
                     "text": "The arch nemesis of the Canopy!"
+                  },
+                  "",
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: 1.5 seconds"
                   }
                 ],
                 "minecraft:tooltip_display": {

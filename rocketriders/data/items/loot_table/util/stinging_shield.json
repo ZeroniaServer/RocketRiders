@@ -28,6 +28,12 @@
                     "color": "gray",
                     "italic": false,
                     "text": "beehives and unstable TNT!"
+                  },
+                  "",
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: 1 second"
                   }
                 ],
                 "minecraft:max_stack_size": 64

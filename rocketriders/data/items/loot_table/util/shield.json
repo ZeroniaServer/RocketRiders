@@ -27,6 +27,12 @@
                     "color": "gray",
                     "italic": false,
                     "text": "This is able to stop most missiles."
+                  },
+                  "",
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: 1 second"
                   }
                 ],
                 "minecraft:max_stack_size": 64

@@ -31,6 +31,12 @@
                     "color": "gray",
                     "italic": false,
                     "text": "but don't play with fire on it!"
+                  },
+                  "",
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: 0.5 seconds"
                   }
                 ],
                 "minecraft:max_stack_size": 64,

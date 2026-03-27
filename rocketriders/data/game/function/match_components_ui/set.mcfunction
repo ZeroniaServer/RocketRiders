@@ -115,6 +115,7 @@ execute if score $crusade_banners match_components matches 0 run scoreboard play
 
 ## POST
 function game:match_components/resolve
+function game:team_attributes/update_all
 
 function arenaclear:refreshcheck_indimension
 function game:place_facade

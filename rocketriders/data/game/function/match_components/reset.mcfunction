@@ -19,3 +19,6 @@ function game:match_components/resolve
 
 # Instantly resolve `$max_players_per_team global` score.
 function everytick:resolve_max_players_per_team
+
+# Update team attributes
+function game:team_attributes/update_all

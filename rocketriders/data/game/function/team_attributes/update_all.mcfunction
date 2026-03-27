@@ -123,6 +123,13 @@ function game:team_attributes/__player_name_color/blue with storage rocketriders
 function game:team_attributes/__player_name_color/yellow with storage rocketriders:teams yellow
 
 
+## Update Friendly Fire
+execute unless predicate game:match_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire false
+execute unless predicate game:match_components/friendly_fire run team modify rocketriders.sort_001.yellow friendlyFire false
+execute if predicate game:match_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire true
+execute if predicate game:match_components/friendly_fire run team modify rocketriders.sort_001.yellow friendlyFire true
+
+
 ## Resolve Text Scores
 scoreboard players display numberformat #blue text.team_name fixed {storage:"rocketriders:teams",nbt:"blue.text.team_name",interpret:true}
 scoreboard players display numberformat #blue text.team_name_lowercase fixed {storage:"rocketriders:teams",nbt:"blue.text.team_name_lowercase",interpret:true}

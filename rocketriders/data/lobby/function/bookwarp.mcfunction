@@ -10,6 +10,7 @@ scoreboard players reset @a[predicate=!custom:team/lobby] LobbyWarp
 #Cancel parkour
 execute if predicate rr:has_parkour as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used a Lobby Warp, so your Parkour run was canceled.","color":"red"}]
 execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run clear @s
+execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run title @s actionbar ""
 execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inParkour
 
 #Teleports

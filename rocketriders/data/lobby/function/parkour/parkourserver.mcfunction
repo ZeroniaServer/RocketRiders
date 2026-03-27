@@ -21,6 +21,7 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour,tag=!hideParti
 
 #Remove tags and clear inventory
 execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour,tag=inParkour] run function custom:reset_inventory
+title @a[x=0,predicate=custom:team/lobby,tag=finishedParkour,tag=inParkour] actionbar ""
 tag @a[x=0,predicate=custom:team/lobby,tag=finishedParkour,tag=inParkour] remove inParkour
 tag @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] remove finishedParkour
 
@@ -35,6 +36,7 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] run function custom
 ##Safety features
 #Only lobby players in Parkour mode
 effect clear @a[x=0,predicate=!custom:team/lobby,tag=inParkour] invisibility
+title @a[x=0,predicate=!custom:team/lobby,tag=inParkour] actionbar ""
 tag @a[x=0,predicate=!custom:team/lobby,tag=inParkour] remove inParkour
 #Don't let non-Parkour players on floor (warp back to parkour start) -- maybe remove?
 execute as @a[x=0,predicate=custom:team/lobby,tag=!inParkour] run scoreboard players set @a[x=0,predicate=custom:standing_on_parkour_floor] LobbyWarp 7

@@ -92,6 +92,7 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=cheatedParkour] at @s run play
 #Remove tags + give advancement
 execute if predicate rr:has_parkour as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour,tag=!cheatedParkour] run advancement grant @s only 2811iaj1:endparkour
 execute if predicate rr:has_parkour as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour,tag=!cheatedParkour] run tag @s add firstParkour
+execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] run title @s actionbar ""
 execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] run tag @s remove inParkour
 execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] run tag @s remove cheatedParkour
 execute as @a[x=0,predicate=custom:team/lobby,tag=finishedParkour] run tag @s remove finishedParkour
@@ -159,6 +160,7 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] run function custom
 ##Safety features
 #Only lobby players in Parkour mode
 effect clear @a[x=0,predicate=!custom:team/lobby,tag=inParkour] invisibility
+title @a[x=0,predicate=!custom:team/lobby,tag=inParkour] actionbar ""
 tag @a[x=0,predicate=!custom:team/lobby,tag=inParkour] remove inParkour
 #Don't let non-Parkour players on floor (warp back to parkour start)
 scoreboard players set @a[x=0,predicate=custom:team/lobby,tag=!inParkour,predicate=custom:standing_on_parkour_floor] LobbyWarp 7

@@ -11,6 +11,3 @@ function game:match_components/__resolve/shield_type
 
 # Update team attributes
 function game:team_attributes/update_all
-
-# Update assets
-function game:assets/update_palettes

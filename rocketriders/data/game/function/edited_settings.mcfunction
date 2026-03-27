@@ -1,8 +1,8 @@
-## Resolve any manually changed components
+## Resolve any manually changed components and update team attributes
 function game:match_components/resolve
 
-## Update team attributes
-function game:team_attributes/update_all
+## Schedule assets refresh
+function game:assets/refresh
 
 ## Close modification room dialogs
 dialog clear @a[x=0]

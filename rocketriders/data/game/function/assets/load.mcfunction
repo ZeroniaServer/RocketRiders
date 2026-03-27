@@ -47,6 +47,6 @@ data modify storage rocketriders:assets assets append value {asset_type:"canopy"
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
 
 # update palettes (do so instantly if /reload is ran in the middle of a match)
-function game:assets/update_palettes
+function game:assets/refresh
 execute if predicate game:phase/match run schedule clear game:assets/__refresh/loop_queue
 execute if predicate game:phase/match run function game:assets/__refresh/loop_load

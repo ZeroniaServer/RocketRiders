@@ -9,6 +9,7 @@ gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
 effect clear @a[x=0,predicate=custom:team/any_playing_team] weakness
 effect clear @a[x=0,predicate=custom:team/any_playing_team] regeneration
+execute as @a[x=0] run attribute @s minecraft:block_interaction_range modifier remove rocketriders:closing_phase
 
 execute as @e[x=0,type=#custom:large_fireballs] run function game:set_fireball_punchable
 

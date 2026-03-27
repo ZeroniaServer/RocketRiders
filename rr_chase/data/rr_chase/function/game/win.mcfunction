@@ -22,8 +22,8 @@ execute as @a[x=0,predicate=custom:team/blue] at @s run stopsound @s
 execute as @a[x=0,predicate=custom:team/blue,tag=Winner] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
 execute as @a[x=0,predicate=custom:team/blue,tag=Loser] at @s run playsound minecraft:entity.wither.spawn master @s ~ ~ ~ 100 2
 title @a[x=0] times 10 80 20
-execute unless predicate game:game_rules/disable_titles/on as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run title @a[x=0,predicate=!custom:team/lobby] title [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," Won!"]
-execute as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run tellraw @a[x=0] [{bold:true,score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," Won!"]
+execute unless predicate game:game_rules/disable_titles/on as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run title @a[x=0,predicate=!custom:team/lobby] title [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," Wins!"]
+execute as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1] run tellraw @a[x=0] [{bold:true,score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," Wins!"]
 
 ##Splashes
 execute as @a[x=0,predicate=custom:team/blue,tag=Winner,limit=1,sort=random] run function rr_chase:game/winsplash

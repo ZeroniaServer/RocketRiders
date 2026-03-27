@@ -12,13 +12,17 @@ execute unless score $force_countdown global matches 1 if predicate rr:wait_for_
 execute unless score $force_countdown global matches 1 if predicate rr:wait_for_sufficient_players unless predicate game:teams/yellow_is_sufficient run return run function game:set_phase/staging.queue.waiting
 
 #Wait for arena to clear
-execute if score $queue_countdown_timer global matches 599..600 unless score $chunk_clear_progress global matches 50.. run scoreboard players set $queue_countdown_timer global 598
 scoreboard players set $waiting_for_arena_to_clear var 0
-execute if score $queue_countdown_timer global matches 598 unless score $chunk_clear_progress global matches 50.. run scoreboard players set $waiting_for_arena_to_clear var 1
+execute if score $queue_countdown_timer global matches 598..600 unless score $chunk_clear_progress global matches 50.. run scoreboard players set $waiting_for_arena_to_clear var 1
+execute if score $queue_countdown_timer global matches 598..600 unless score $assets_refresh_progress global matches 100 run scoreboard players set $waiting_for_arena_to_clear var 1
+execute if score $waiting_for_arena_to_clear var matches 1 run scoreboard players set $queue_countdown_timer global 598
 execute if score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:startgame color red
-execute if score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:startgame max 50
-execute if score $waiting_for_arena_to_clear var matches 1 store result bossbar rr:startgame value run scoreboard players get $chunk_clear_progress global
-execute if score $waiting_for_arena_to_clear var matches 1 run bossbar set rr:startgame name {color:"red",text:"Resetting the arena..."}
+execute if score $waiting_for_arena_to_clear var matches 1 unless score $chunk_clear_progress global matches 50.. run bossbar set rr:startgame max 50
+execute if score $waiting_for_arena_to_clear var matches 1 unless score $chunk_clear_progress global matches 50.. store result bossbar rr:startgame value run scoreboard players get $chunk_clear_progress global
+execute if score $waiting_for_arena_to_clear var matches 1 unless score $chunk_clear_progress global matches 50.. run bossbar set rr:startgame name {color:"red",text:"Resetting the arena..."}
+execute if score $waiting_for_arena_to_clear var matches 1 if score $chunk_clear_progress global matches 50.. unless score $assets_refresh_progress global matches 100 run bossbar set rr:startgame max 100
+execute if score $waiting_for_arena_to_clear var matches 1 if score $chunk_clear_progress global matches 50.. unless score $assets_refresh_progress global matches 100 store result bossbar rr:startgame value run scoreboard players get $assets_refresh_progress global
+execute if score $waiting_for_arena_to_clear var matches 1 if score $chunk_clear_progress global matches 50.. unless score $assets_refresh_progress global matches 100 run bossbar set rr:startgame name {color:"red",text:"Loading assets..."}
 
 #Automatically go to 10 if no (non-parkour/non-vanished) lobby players are on, or if all teams are full
 scoreboard players set $skip_to_ten_seconds var 0

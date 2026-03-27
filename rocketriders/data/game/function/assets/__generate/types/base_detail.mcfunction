@@ -1,6 +1,6 @@
 # asset/.../blue
 $fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) structure_void strict
-$place template game:$(asset_id) -160 184 -160 none none 1 0 strict
+$place template game:base_detail/$(name) -160 184 -160 none none 1 0 strict
 
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(blue_back_stained_glass_pane) replace white_stained_glass_pane
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=north,half=bottom] replace blue_stained_glass strict
@@ -19,13 +19,13 @@ $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixe
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(blue_flag) replace resin_brick_stairs[facing=north,half=top] strict
 
 fill -161 184 -161 -161 185 -161 air strict
-$setblock -161 184 -161 minecraft:structure_block[mode=save]{author:"",ignoreEntities:1b,integrity:1.0f,metadata:"",mirror:"NONE",mode:"SAVE",name:"game:asset/$(asset_id)/blue",posX:1,posY:0,posZ:1,powered:0b,rotation:"NONE",seed:0L,showair:0b,showboundingbox:0b,sizeX:$(x_length),sizeY:$(y_length),sizeZ:$(z_length),strict:0b} strict
+$setblock -161 184 -161 minecraft:structure_block[mode=save]{author:"",ignoreEntities:1b,integrity:1.0f,metadata:"",mirror:"NONE",mode:"SAVE",name:"game:asset/base_detail/$(name)/blue",posX:1,posY:0,posZ:1,powered:0b,rotation:"NONE",seed:0L,showair:0b,showboundingbox:0b,sizeX:$(x_length),sizeY:$(y_length),sizeZ:$(z_length),strict:0b} strict
 setblock -161 185 -161 redstone_block
 
 
 # asset/.../yellow
 $fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) structure_void strict
-$execute positioned -161 184 -161 run place template game:$(asset_id) ~$(x_length) ~ ~$(z_length) 180 none 1 0 strict
+$execute positioned -161 184 -161 run place template game:base_detail/$(name) ~$(x_length) ~ ~$(z_length) 180 none 1 0 strict
 
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(yellow_back_stained_glass_pane) replace white_stained_glass_pane
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) resin_brick_stairs[facing=north,half=bottom] replace blue_stained_glass strict
@@ -44,5 +44,5 @@ $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixe
 $fill -160 184 -160 $(fixed_opposite_corner_x) $(fixed_opposite_corner_y) $(fixed_opposite_corner_z) $(yellow_flag) replace resin_brick_stairs[facing=north,half=top] strict
 
 fill -161 184 -161 -161 185 -161 air strict
-$setblock -161 184 -161 minecraft:structure_block[mode=save]{author:"",ignoreEntities:1b,integrity:1.0f,metadata:"",mirror:"NONE",mode:"SAVE",name:"game:asset/$(asset_id)/yellow",posX:1,posY:0,posZ:1,powered:0b,rotation:"NONE",seed:0L,showair:0b,showboundingbox:0b,sizeX:$(x_length),sizeY:$(y_length),sizeZ:$(z_length),strict:0b} strict
+$setblock -161 184 -161 minecraft:structure_block[mode=save]{author:"",ignoreEntities:1b,integrity:1.0f,metadata:"",mirror:"NONE",mode:"SAVE",name:"game:asset/base_detail/$(name)/yellow",posX:1,posY:0,posZ:1,powered:0b,rotation:"NONE",seed:0L,showair:0b,showboundingbox:0b,sizeX:$(x_length),sizeY:$(y_length),sizeZ:$(z_length),strict:0b} strict
 setblock -161 185 -161 redstone_block

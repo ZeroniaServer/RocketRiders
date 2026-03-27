@@ -16,12 +16,6 @@ function game:place_facade
 ## Schedule Molerat (asynchronous)
 execute if predicate game:modifiers/molerat/on run function arenaclear:moleratplace
 
-##Friendly Fire
-execute unless predicate game:match_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire false
-execute unless predicate game:match_components/friendly_fire run team modify rocketriders.sort_001.yellow friendlyFire false
-execute if predicate game:match_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire true
-execute if predicate game:match_components/friendly_fire run team modify rocketriders.sort_001.yellow friendlyFire true
-
 ##Join pads
 execute if predicate game:match_components/one_team run tag @e[limit=1,x=0,type=marker,tag=join_pad.left] remove join_pad.yellow
 execute if predicate game:match_components/one_team run tag @e[limit=1,x=0,type=marker,tag=join_pad.left] add join_pad.blue

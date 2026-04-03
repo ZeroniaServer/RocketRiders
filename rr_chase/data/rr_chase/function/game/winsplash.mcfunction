@@ -63,7 +63,6 @@ execute if score $winsplash CmdData matches 54 run title @a[x=0,tag=Winner] subt
 execute if score $winsplash CmdData matches 55 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Tutorial complete!","color":"green"}]
 execute if score $winsplash CmdData matches 56 run title @a[x=0,tag=Winner] subtitle ["",{"text":"456,000,000₩","color":"green"}]
 execute if score $winsplash CmdData matches 57 run title @a[x=0,tag=Winner] subtitle ["",{"text":"You're da bomb!","color":"green"}]
-execute if score $winsplash CmdData matches 58 run title @a[x=0,tag=Winner] subtitle ["",{"text":"RR actually stands for Reject Realms!","color":"green"}]
 execute if score $winsplash CmdData matches 59 run title @a[x=0,tag=Winner] subtitle ["",{"text":"What is that I hear? Sounds like skill issue.","color":"green"}]
 execute if score $winsplash CmdData matches 60 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Well done, medal is at -224 77 29 (pranked)","color":"green"}]
 execute if score $winsplash CmdData matches 61 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Now, was that so hard?","color":"green"}]

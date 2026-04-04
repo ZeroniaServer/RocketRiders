@@ -90,7 +90,6 @@ execute if score $winsplash CmdData matches 74 run title @a[x=0,tag=Winner] subt
 execute if score $winsplash CmdData matches 75 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Who trained you?"}
 execute if score $winsplash CmdData matches 76 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Hey, Queen! Girl, you have done it again."}
 execute if score $winsplash CmdData matches 77 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Constantly raising the bar for us all, and doing it flawlessly."}
-execute if score $winsplash CmdData matches 78 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Insert congratulatory message here"}
 execute if score $winsplash CmdData matches 79 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Huzzah!"}
 execute if score $winsplash CmdData matches 80 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Hooray!"}
 execute if score $winsplash CmdData matches 81 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"One for the history books!"}

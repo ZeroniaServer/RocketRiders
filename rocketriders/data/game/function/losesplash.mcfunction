@@ -12,7 +12,6 @@ execute if score $losssplash CmdData matches 0..3 run title @a[x=0,tag=Loser] su
 execute if score $losssplash CmdData matches 4 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"At least we have a cool flag now?"}
 execute if score $losssplash CmdData matches 5 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Exceeded missile deployment limit."}
 execute if score $losssplash CmdData matches 6 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Huh, I swear I saw portals there before."}
-execute if score $losssplash CmdData matches 7 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"I call hacks!"}
 execute if score $losssplash CmdData matches 8 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"At least you tried..."}
 execute if score $losssplash CmdData matches 9 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"So close..."}
 execute if score $losssplash CmdData matches 10 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Your enemy was just having a really good day."}
@@ -82,7 +81,7 @@ execute if score $losssplash CmdData matches 73 run title @a[x=0,tag=Loser] subt
 execute if score $losssplash CmdData matches 74 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Boomer"}
 execute if score $losssplash CmdData matches 75 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Their gaming toilet was better."}
 execute if score $losssplash CmdData matches 76 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Are ya winning, son?"}
-execute if score $losssplash CmdData matches 77 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Pro tip: get gud nub"}
+execute if score $losssplash CmdData matches 77 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Pro tip: get gud n00b"}
 execute if score $losssplash CmdData matches 78 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Try again with your client on."}
 execute if score $losssplash CmdData matches 79 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Couldn't crack the launch codes."}
 execute if score $losssplash CmdData matches 80 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"oof"}
@@ -96,7 +95,7 @@ execute if score $losssplash CmdData matches 87 run title @a[x=0,tag=Loser] subt
 execute if score $losssplash CmdData matches 88 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Congratulations, you successfully failed!"}
 execute if score $losssplash CmdData matches 89 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Please deposit 100 Kromer to unlock winning."}
 execute if score $losssplash CmdData matches 90 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Oof, just like the Glare."}
-execute if score $losssplash CmdData matches 91 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Oof, just like the Copper Golem."}
+execute if score $losssplash CmdData matches 91 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Oof, just like the Rascal."}
 execute if score $losssplash CmdData matches 92 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Please refer to the handbook on how to win."}
 execute if score $losssplash CmdData matches 93 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"r/yesyesyesno"}
 execute if score $losssplash CmdData matches 94 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Do you even have a license for flying these?"}
@@ -107,7 +106,6 @@ execute if score $losssplash CmdData matches 98 run title @a[x=0,tag=Loser] subt
 execute if score $losssplash CmdData matches 99 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Anticheat works, I guess..."}
 execute if score $losssplash CmdData matches 100 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Lost your great win streak sadge"}
 execute if score $losssplash CmdData matches 101 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Balancing is hard!"}
-execute if score $losssplash CmdData matches 102 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"uninstalling minecraft"}
 execute if score $losssplash CmdData matches 103 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Cry about it."}
 execute if score $losssplash CmdData matches 104 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"bruh nawhhhh nah no way bruhhh fr? Bruhhh"}
 execute if score $losssplash CmdData matches 105 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"but the the I when I I but how they do the win I the did well how did the I do"}

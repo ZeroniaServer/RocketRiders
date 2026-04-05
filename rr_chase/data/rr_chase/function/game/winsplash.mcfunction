@@ -5,7 +5,7 @@ execute if predicate game:game_rules/disable_titles/on run return fail
 execute as @a[x=0,tag=Winner] run title @s times 5 30 5
 
 #If you want to add more splashes just increase this number.
-execute store result score $winsplash CmdData run random value 0..65
+execute store result score $winsplash CmdData run random value 0..64
 
 #Add splashes here (just copy paste the line and change the score)
 execute if score $winsplash CmdData matches 0..3 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Take some time to celebrate!","color":"green"}]
@@ -63,10 +63,10 @@ execute if score $winsplash CmdData matches 54 run title @a[x=0,tag=Winner] subt
 execute if score $winsplash CmdData matches 55 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Tutorial complete!","color":"green"}]
 execute if score $winsplash CmdData matches 56 run title @a[x=0,tag=Winner] subtitle ["",{"text":"456,000,000₩","color":"green"}]
 execute if score $winsplash CmdData matches 57 run title @a[x=0,tag=Winner] subtitle ["",{"text":"You're da bomb!","color":"green"}]
-execute if score $winsplash CmdData matches 59 run title @a[x=0,tag=Winner] subtitle ["",{"text":"What is that I hear? Sounds like skill issue.","color":"green"}]
-execute if score $winsplash CmdData matches 60 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Well done, medal is at -224 77 29 (pranked)","color":"green"}]
-execute if score $winsplash CmdData matches 61 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Now, was that so hard?","color":"green"}]
-execute if score $winsplash CmdData matches 62 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Yes Rico, kaboom.","color":"green"}]
-execute if score $winsplash CmdData matches 63 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Hasta la vista, baby!","color":"green"}]
-execute if score $winsplash CmdData matches 64 run title @a[x=0,tag=Winner] subtitle ["",{"text":"W","color":"green"}]
-execute if score $winsplash CmdData matches 65 run title @a[x=0,tag=Winner] subtitle ["",{"text":"The ","color":"green"},{"text":"Rock","color":"green","bold":true},{"text":" really came through!","color":"green"}]
+execute if score $winsplash CmdData matches 58 run title @a[x=0,tag=Winner] subtitle ["",{"text":"What is that I hear? Sounds like skill issue.","color":"green"}]
+execute if score $winsplash CmdData matches 59 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Well done, medal is at -224 77 29 (pranked)","color":"green"}]
+execute if score $winsplash CmdData matches 60 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Now, was that so hard?","color":"green"}]
+execute if score $winsplash CmdData matches 61 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Yes Rico, kaboom.","color":"green"}]
+execute if score $winsplash CmdData matches 62 run title @a[x=0,tag=Winner] subtitle ["",{"text":"Hasta la vista, baby!","color":"green"}]
+execute if score $winsplash CmdData matches 63 run title @a[x=0,tag=Winner] subtitle ["",{"text":"W","color":"green"}]
+execute if score $winsplash CmdData matches 64 run title @a[x=0,tag=Winner] subtitle ["",{"text":"The ","color":"green"},{"text":"Rock","color":"green","bold":true},{"text":" really came through!","color":"green"}]

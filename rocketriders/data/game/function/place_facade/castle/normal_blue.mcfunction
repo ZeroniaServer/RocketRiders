@@ -1,5 +1,4 @@
-$fill -101 201 65 -89 195 64 $(front)
-$fill -101 201 60 -101 195 63 $(front)
+$fill -101 195 60 -101 201 63 $(front)
 $fill -89 195 60 -89 201 63 $(front)
 $setblock -89 202 62 $(front)
 $setblock -89 202 65 $(front)

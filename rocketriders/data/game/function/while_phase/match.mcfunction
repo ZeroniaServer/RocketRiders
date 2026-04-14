@@ -32,7 +32,6 @@ execute if predicate game:game_rules/disable_cannoning/on as @e[x=0,type=tnt,pre
 ##Kill excessive entities for lag reduction purposes (sorry Robo)
 execute store result score $cart_count var if entity @e[x=0,type=tnt_minecart,predicate=custom:in_arena]
 execute if score $cart_count var matches 101.. run tag @e[limit=100,sort=random,x=0,type=tnt_minecart,predicate=custom:in_arena] add safe
-execute if score $cart_count var matches 101.. run kill @e[x=0,type=bee,predicate=custom:in_arena,tag=!safe]
 execute if score $cart_count var matches 101.. run tag @e[x=0,type=tnt_minecart,predicate=custom:in_arena,tag=safe] remove safe
 
 execute store result score $vortex_count var if entity @e[x=0,type=area_effect_cloud,predicate=entities:type/vortex/brain,predicate=custom:in_arena]

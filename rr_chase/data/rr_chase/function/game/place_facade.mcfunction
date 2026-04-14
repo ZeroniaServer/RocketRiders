@@ -34,25 +34,25 @@ execute if predicate game:modifiers/molerat/on run setblock -92 202 86 minecraft
 function rr_chase:game/place_facade/place_banner with storage rocketriders:teams yellow.team_banner
 
 #Stairs in pregame queue
-fill -94 201 95 -96 201 96 obsidian replace white_stained_glass
-fill -93 201 95 -93 201 96 air replace white_stained_glass
-fill -93 200 96 -93 200 95 obsidian replace white_stained_glass
-fill -92 201 95 -92 200 96 air replace white_stained_glass
-fill -92 199 96 -92 199 95 obsidian replace white_stained_glass
-fill -91 201 95 -91 199 96 air replace white_stained_glass
-fill -91 198 96 -91 198 95 obsidian replace white_stained_glass
-fill -90 201 95 -90 198 96 air replace white_stained_glass
-fill -90 197 96 -90 197 95 obsidian replace white_stained_glass
-fill -89 200 95 -89 197 96 air replace white_stained_glass
-fill -89 196 96 -89 196 95 obsidian replace white_stained_glass
-fill -97 201 95 -97 201 96 air replace white_stained_glass
-fill -97 200 96 -97 200 95 obsidian replace white_stained_glass
-fill -98 201 95 -98 200 96 air replace white_stained_glass
-fill -98 199 96 -98 199 95 obsidian replace white_stained_glass
-fill -99 201 95 -99 199 96 air replace white_stained_glass
-fill -99 198 96 -99 198 95 obsidian replace white_stained_glass
-fill -100 201 95 -100 198 96 air replace white_stained_glass
-fill -100 197 96 -100 197 95 obsidian replace white_stained_glass
-fill -101 200 95 -101 197 96 air replace white_stained_glass
-fill -101 196 96 -101 196 95 obsidian replace white_stained_glass
+fill -94 201 95 -96 201 96 obsidian strict
+fill -93 201 95 -93 201 96 air strict
+fill -93 200 96 -93 200 95 obsidian strict
+fill -92 201 95 -92 200 96 air strict
+fill -92 199 96 -92 199 95 obsidian strict
+fill -91 201 95 -91 199 96 air strict
+fill -91 198 96 -91 198 95 obsidian strict
+fill -90 201 95 -90 198 96 air strict
+fill -90 197 96 -90 197 95 obsidian strict
+fill -89 200 95 -89 197 96 air strict
+fill -89 196 96 -89 196 95 obsidian strict
+fill -97 201 95 -97 201 96 air strict
+fill -97 200 96 -97 200 95 obsidian strict
+fill -98 201 95 -98 200 96 air strict
+fill -98 199 96 -98 199 95 obsidian strict
+fill -99 201 95 -99 199 96 air strict
+fill -99 198 96 -99 198 95 obsidian strict
+fill -100 201 95 -100 198 96 air strict
+fill -100 197 96 -100 197 95 obsidian strict
+fill -101 200 95 -101 197 96 air strict
+fill -101 196 96 -101 196 95 obsidian strict
 fill -100 201 95 -90 201 96 barrier replace #custom:lobby_air strict

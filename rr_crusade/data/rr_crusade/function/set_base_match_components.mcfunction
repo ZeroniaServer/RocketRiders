@@ -1,5 +1,6 @@
 data modify storage rocketriders:match components."arena/regenerate_floor" set value true
 data modify storage rocketriders:match components."armor_type" set value "crusade_mode"
+data modify storage rocketriders:match components."castle_type" set value "deepslate"
 data modify storage rocketriders:match components."main_item" set value "crusade_kit_dependent"
 
 scoreboard players set $arena/castle match_components 1

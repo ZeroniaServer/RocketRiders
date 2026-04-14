@@ -75,7 +75,7 @@ execute unless predicate game:match_components/custom_base_frames if predicate g
 
 ## Castle
 # Pathways
-execute if predicate game:arena_details/castle run function game:arena/place_castle_pathways
+execute if predicate game:arena_details/castle if predicate game:castle_type/deepslate run function game:arena/place_castle_pathways
 # Hanging ladders
 execute if predicate game:arena_details/castle unless block 24 62 -52 minecraft:ladder if block 24 61 -52 minecraft:ladder run setblock 24 61 -52 air destroy
 execute if predicate game:arena_details/castle unless block 24 61 -52 minecraft:ladder if block 24 60 -52 minecraft:ladder run setblock 24 60 -52 air destroy

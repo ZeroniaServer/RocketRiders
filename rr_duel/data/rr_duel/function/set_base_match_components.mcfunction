@@ -1,4 +1,5 @@
 scoreboard players set $arena/no_base_details match_components 1
+scoreboard players set $arena/no_portal_details match_components 1
 scoreboard players set $armor/generic match_components 1
 scoreboard players set $config_override.disable_pierce_prevention match_components -1
 scoreboard players set $config_override.disable_tying match_components 1

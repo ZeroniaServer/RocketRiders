@@ -2,7 +2,7 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "slots": {
+    "minecraft:slots": {
       "contents": {
         "predicates": {
           "minecraft:custom_data": {
@@ -11,6 +11,6 @@
         }
       }
     },
-    "type": "minecraft:item"
+    "minecraft:entity_type": "minecraft:item"
   }
 }

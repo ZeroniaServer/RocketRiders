@@ -5,7 +5,7 @@
         "damage": {
           "type": {
             "direct_entity": {
-              "type": "minecraft:arrow"
+              "minecraft:entity_type": "minecraft:arrow"
             },
             "tags": [
               {
@@ -16,12 +16,12 @@
           }
         },
         "entity": {
-          "nbt": {
-            "Tags": [
+          "minecraft:entity_tags": {
+            "all_of": [
               "Bot"
             ]
           },
-          "type": "minecraft:armor_stand"
+          "minecraft:entity_type": "minecraft:armor_stand"
         }
       },
       "trigger": "minecraft:player_hurt_entity"

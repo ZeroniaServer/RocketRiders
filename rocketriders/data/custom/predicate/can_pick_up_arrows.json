@@ -5,11 +5,10 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "type_specific": {
+        "minecraft:type_specific/player": {
           "gamemode": [
             "spectator"
-          ],
-          "type": "minecraft:player"
+          ]
         }
       }
     }
@@ -21,11 +20,10 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "type_specific": {
+          "minecraft:type_specific/player": {
             "gamemode": [
               "creative"
-            ],
-            "type": "minecraft:player"
+            ]
           }
         }
       },

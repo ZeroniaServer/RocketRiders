@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "slots": {
+    "minecraft:slots": {
       "contents": {
         "components": {
           "minecraft:intangible_projectile": {}
         }
       }
     },
-    "type": "#minecraft:arrows"
+    "minecraft:entity_type": "#minecraft:arrows"
   }
 }

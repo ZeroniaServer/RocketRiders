@@ -2,8 +2,8 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "targeted_entity": {
-      "team": "rocketriders.sort_000.blue"
+    "minecraft:targeted_entity": {
+      "minecraft:team": "rocketriders.sort_000.blue"
     }
   }
 }

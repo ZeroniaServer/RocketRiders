@@ -5,7 +5,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "equipment": {
+        "minecraft:equipment": {
           "chest": {
             "components": {
               "minecraft:unbreakable": {}
@@ -22,7 +22,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "equipment": {
+          "minecraft:equipment": {
             "chest": {
               "items": "minecraft:elytra",
               "predicates": {
@@ -53,7 +53,7 @@
                     "condition": "minecraft:entity_properties",
                     "entity": "this",
                     "predicate": {
-                      "location": {
+                      "minecraft:location": {
                         "dimension": "minecraft:overworld",
                         "position": {
                           "z": {
@@ -77,7 +77,7 @@
                     "condition": "minecraft:entity_properties",
                     "entity": "this",
                     "predicate": {
-                      "location": {
+                      "minecraft:location": {
                         "dimension": "minecraft:overworld",
                         "position": {
                           "z": {

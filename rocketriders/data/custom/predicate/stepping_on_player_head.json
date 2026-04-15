@@ -2,7 +2,7 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "stepping_on": {
+    "minecraft:stepping_on": {
       "block": {
         "blocks": "#custom:player_heads"
       }

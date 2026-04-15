@@ -2,7 +2,7 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "components": {
+    "minecraft:components": {
       "minecraft:potion_contents": {
         "custom_effects": [
           {
@@ -14,7 +14,7 @@
         ]
       }
     },
-    "nbt": {
+    "minecraft:nbt": {
       "custom_particle": {
         "type": "minecraft:dragon_breath"
       }

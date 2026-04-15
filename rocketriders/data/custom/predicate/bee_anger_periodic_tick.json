@@ -2,6 +2,6 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "periodic_tick": 500
+    "minecraft:periodic_tick": 500
   }
 }

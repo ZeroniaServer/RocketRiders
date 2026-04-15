@@ -3,13 +3,13 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "flags": {
+      "minecraft:flags": {
         "is_on_ground": true
       },
-      "location": {
+      "minecraft:location": {
         "dimension": "minecraft:overworld"
       },
-      "stepping_on": {
+      "minecraft:stepping_on": {
         "block": {
           "blocks": "#custom:standing_on_portal_blocks"
         }

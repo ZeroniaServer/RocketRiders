@@ -3,7 +3,7 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "location": {
+      "minecraft:location": {
         "position": {
           "z": {
             "min": -50,
@@ -19,7 +19,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "movement": {
+        "minecraft:movement": {
           "z": {
             "min": -20,
             "max": 20

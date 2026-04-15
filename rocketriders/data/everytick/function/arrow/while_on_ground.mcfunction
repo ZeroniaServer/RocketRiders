@@ -5,7 +5,7 @@ execute if entity @s[tag=arrow_pickup.done] run return run kill @s
 scoreboard players add @s entity.age 1
 
 # Destroy arrows shot into the fake void in the lobby
-execute if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{location:{position:{y:{min:186,max:187}}}}} run return run kill @s
+execute if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{y:{min:186,max:187}}}}} run return run kill @s
 
 # Destroy grounded intangible arrows
 execute if predicate custom:intangible_arrow run return run execute if score @s entity.age matches 5.. run function custom:kill_with_smoke_poof

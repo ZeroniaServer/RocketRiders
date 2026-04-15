@@ -6,7 +6,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "type": [
+          "minecraft:entity_type": [
             "minecraft:small_fireball",
             "minecraft:wind_charge",
             "minecraft:breeze_wind_charge",
@@ -23,7 +23,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": [
+              "minecraft:entity_type": [
                 "minecraft:arrow",
                 "minecraft:spectral_arrow",
                 "minecraft:trident",
@@ -38,7 +38,7 @@
               "condition": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "movement": {
+                "minecraft:movement": {
                   "speed": 0
                 }
               }
@@ -50,56 +50,56 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "shield_projectile": {}
             }
           },
-          "type": "minecraft:snowball"
+          "minecraft:entity_type": "minecraft:snowball"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "stinging_shield_projectile": {}
             }
           },
-          "type": "minecraft:snowball"
+          "minecraft:entity_type": "minecraft:snowball"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "nova_rocket": {}
             }
           },
-          "type": "minecraft:firework_rocket"
+          "minecraft:entity_type": "minecraft:firework_rocket"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "icbm": {}
             }
           },
-          "type": "minecraft:snowball"
+          "minecraft:entity_type": "minecraft:snowball"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "nbt": "{fuse:2s}",
-          "type": "minecraft:tnt"
+          "minecraft:nbt": "{fuse:2s}",
+          "minecraft:entity_type": "minecraft:tnt"
         }
       }
     ]

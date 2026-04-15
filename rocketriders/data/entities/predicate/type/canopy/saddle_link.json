@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "predicates": {
+    "minecraft:predicates": {
       "minecraft:custom_data": {
         "canopy": {
           "saddle_link": {}
         }
       }
     },
-    "type": "minecraft:snowball"
+    "minecraft:entity_type": "minecraft:snowball"
   }
 }

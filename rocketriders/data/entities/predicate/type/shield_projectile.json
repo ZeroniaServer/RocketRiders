@@ -2,7 +2,7 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "predicates": {
+    "minecraft:predicates": {
       "minecraft:custom_data": {
         "shield_projectile": {}
       }

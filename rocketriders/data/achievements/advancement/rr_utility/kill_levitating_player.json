@@ -3,14 +3,14 @@
     "requirement": {
       "conditions": {
         "entity": {
-          "effects": {
+          "minecraft:effects": {
             "levitation": {}
           },
-          "type": "minecraft:player"
+          "minecraft:entity_type": "minecraft:player"
         },
         "killing_blow": {
           "direct_entity": {
-            "type": "#minecraft:arrows"
+            "minecraft:entity_type": "#minecraft:arrows"
           },
           "tags": [
             {
@@ -20,7 +20,7 @@
           ]
         },
         "player": {
-          "location": {
+          "minecraft:location": {
             "dimension": "minecraft:overworld"
           }
         }

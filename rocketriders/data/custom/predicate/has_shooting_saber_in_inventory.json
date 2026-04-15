@@ -5,7 +5,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "slots": {
+        "minecraft:slots": {
           "container.*": {
             "predicates": {
               "minecraft:custom_data": {
@@ -20,7 +20,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "slots": {
+        "minecraft:slots": {
           "weapon.offhand": {
             "predicates": {
               "minecraft:custom_data": {
@@ -35,7 +35,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "slots": {
+        "minecraft:slots": {
           "player.cursor": {
             "predicates": {
               "minecraft:custom_data": {

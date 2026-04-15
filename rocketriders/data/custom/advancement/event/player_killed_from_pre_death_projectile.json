@@ -4,11 +4,11 @@
       "conditions": {
         "damage": {
           "source_entity": {
-            "type": "minecraft:player"
+            "minecraft:entity_type": "minecraft:player"
           },
           "type": {
             "direct_entity": {
-              "predicates": {
+              "minecraft:predicates": {
                 "minecraft:custom_data": {
                   "pre_death_projectile": true
                 }

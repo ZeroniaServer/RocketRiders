@@ -5,7 +5,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "slots": {
+        "minecraft:slots": {
           "container.*": {
             "components": {
               "minecraft:damage": 7
@@ -19,7 +19,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "slots": {
+        "minecraft:slots": {
           "weapon.offhand": {
             "components": {
               "minecraft:damage": 7
@@ -33,7 +33,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "slots": {
+        "minecraft:slots": {
           "player.cursor": {
             "components": {
               "minecraft:damage": 7

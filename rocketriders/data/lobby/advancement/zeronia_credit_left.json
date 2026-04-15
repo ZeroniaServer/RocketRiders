@@ -3,14 +3,14 @@
     "left_click": {
       "conditions": {
         "entity": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "zeronia_credit": {
                 "left": true
               }
             }
           },
-          "type": "minecraft:interaction"
+          "minecraft:entity_type": "minecraft:interaction"
         }
       },
       "trigger": "minecraft:player_hurt_entity"
@@ -18,14 +18,14 @@
     "right_click": {
       "conditions": {
         "entity": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "zeronia_credit": {
                 "left": true
               }
             }
           },
-          "type": "minecraft:interaction"
+          "minecraft:entity_type": "minecraft:interaction"
         }
       },
       "trigger": "minecraft:player_interacted_with_entity"

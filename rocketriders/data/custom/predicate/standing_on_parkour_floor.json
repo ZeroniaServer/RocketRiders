@@ -5,10 +5,10 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "location": {
+        "minecraft:location": {
           "dimension": "minecraft:overworld"
         },
-        "stepping_on": {
+        "minecraft:stepping_on": {
           "block": {
             "blocks": "minecraft:black_concrete"
           },
@@ -25,10 +25,10 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "location": {
+        "minecraft:location": {
           "dimension": "minecraft:overworld"
         },
-        "stepping_on": {
+        "minecraft:stepping_on": {
           "block": {
             "blocks": "#custom:parkour_ground_blocks"
           },

@@ -15,7 +15,7 @@
           "condition": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
-            "periodic_tick": 2147483647
+            "minecraft:periodic_tick": 2147483647
           }
         }
       ]
@@ -28,181 +28,181 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "canopy_projectile": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "canopy": {}
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "shield_projectile": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "shield": {}
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "vortex_projectile": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "vortex": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "icbm": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "stinging_shield_projectile": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "stinging_shield": {}
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "punchable_tnt": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:interaction"
+          "minecraft:entity_type": "minecraft:interaction"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "nova_rocket": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "nova_attach": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "spell_emitter": {}
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "damage_spell": {}
             }
@@ -213,21 +213,21 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "health_spell": {
                 "brain": {}
               }
             }
           },
-          "type": "minecraft:area_effect_cloud"
+          "minecraft:entity_type": "minecraft:area_effect_cloud"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "fire_spell": {}
             }
@@ -238,7 +238,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "wind_spell": {}
             }
@@ -249,7 +249,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "rot": {
                 "brain": {}

@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "predicates": {
+    "minecraft:predicates": {
       "minecraft:custom_data": {
         "rot": {
           "dormant": {}
         }
       }
     },
-    "type": "minecraft:marker"
+    "minecraft:entity_type": "minecraft:marker"
   }
 }

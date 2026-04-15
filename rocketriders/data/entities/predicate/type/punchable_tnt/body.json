@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "predicates": {
+    "minecraft:predicates": {
       "minecraft:custom_data": {
         "punchable_tnt": {
           "body": {}
         }
       }
     },
-    "type": "minecraft:tnt"
+    "minecraft:entity_type": "minecraft:tnt"
   }
 }

@@ -23,8 +23,8 @@ execute on origin run tag @s add nova_attach.origin
 execute if predicate entities:origin_team/blue run scoreboard players set $nova_rocket_team var 0
 execute if predicate entities:origin_team/yellow run scoreboard players set $nova_rocket_team var 1
 execute if predicate entities:origin_team/none run scoreboard players set $nova_rocket_team var -1
-execute unless predicate game:modifiers/explosive/on positioned as @s positioned ~ ~-1 ~ as @e[distance=..8,predicate=entities:type/canopy/brain] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{distance:{y:{max:5},horizontal:{max:6}}}} positioned ~ ~1 ~ run function entities:type/nova_rocket/actions/__explode__/check_canopy
-execute if predicate game:modifiers/explosive/on positioned as @s positioned ~ ~-1 ~ as @e[distance=..14,predicate=entities:type/canopy/brain] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{distance:{y:{max:9},horizontal:{max:10}}}} positioned ~ ~1 ~ run function entities:type/nova_rocket/actions/__explode__/check_canopy
+execute unless predicate game:modifiers/explosive/on positioned as @s positioned ~ ~-1 ~ as @e[distance=..8,predicate=entities:type/canopy/brain] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:distance":{y:{max:5},horizontal:{max:6}}}} positioned ~ ~1 ~ run function entities:type/nova_rocket/actions/__explode__/check_canopy
+execute if predicate game:modifiers/explosive/on positioned as @s positioned ~ ~-1 ~ as @e[distance=..14,predicate=entities:type/canopy/brain] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:distance":{y:{max:9},horizontal:{max:10}}}} positioned ~ ~1 ~ run function entities:type/nova_rocket/actions/__explode__/check_canopy
 execute on origin run tag @s remove nova_rocket.origin
 execute on origin run tag @s remove nova_attach.origin
 tag @s remove nova_rocket.explode.this

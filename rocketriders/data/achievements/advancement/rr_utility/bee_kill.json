@@ -3,10 +3,10 @@
     "bee_kill": {
       "conditions": {
         "entity": {
-          "type": "minecraft:bee"
+          "minecraft:entity_type": "minecraft:bee"
         },
         "player": {
-          "location": {
+          "minecraft:location": {
             "dimension": "minecraft:overworld"
           }
         }

@@ -5,7 +5,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "slots": {
+        "minecraft:slots": {
           "container.*": {
             "items": "minecraft:arrow"
           }
@@ -16,7 +16,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "slots": {
+        "minecraft:slots": {
           "weapon.offhand": {
             "items": "minecraft:arrow"
           }
@@ -27,7 +27,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "slots": {
+        "minecraft:slots": {
           "player.cursor": {
             "items": "minecraft:arrow"
           }

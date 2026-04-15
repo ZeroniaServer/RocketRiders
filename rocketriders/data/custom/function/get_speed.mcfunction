@@ -1,4 +1,4 @@
-execute unless predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{movement:{speed:{min:0.1}}}} run return 0
+execute unless predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{speed:{min:0.1}}}} run return 0
 
 data modify storage rocketriders:main get_movement set value {min:0,max:200,mean:100}
 scoreboard players set $min var 0

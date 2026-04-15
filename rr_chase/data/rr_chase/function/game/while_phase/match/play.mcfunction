@@ -27,8 +27,8 @@ execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:t
 execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=10] run tag @s add onBlue
 tag @a[x=0,predicate=custom:team/blue] remove InLead
 execute positioned 12 64 65 run tag @p[gamemode=!spectator,predicate=custom:team/blue,predicate=custom:in_arena,tag=!onBlue,predicate=custom:alive] add InLead
-execute unless predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{location:{position:{z:{max:-45}}}}} run tag @s remove InLead
-execute if predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{location:{position:{z:{max:-63}}}}} run tag @s remove InLead
+execute unless predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{z:{max:-45}}}}} run tag @s remove InLead
+execute if predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{z:{max:-63}}}}} run tag @s remove InLead
 
 #Bossbar for who's in the lead
 bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]

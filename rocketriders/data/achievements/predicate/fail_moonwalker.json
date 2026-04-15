@@ -10,11 +10,10 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "type_specific": {
+          "minecraft:type_specific/player": {
             "input": {
               "forward": true
-            },
-            "type": "minecraft:player"
+            }
           }
         }
       },
@@ -22,12 +21,11 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "type_specific": {
+          "minecraft:type_specific/player": {
             "input": {
               "backward": false,
               "left": true
-            },
-            "type": "minecraft:player"
+            }
           }
         }
       },
@@ -35,12 +33,11 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "type_specific": {
+          "minecraft:type_specific/player": {
             "input": {
               "backward": false,
               "right": true
-            },
-            "type": "minecraft:player"
+            }
           }
         }
       }

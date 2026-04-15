@@ -4,7 +4,7 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "movement": {
+      "minecraft:movement": {
         "y": {
           "max": 0
         }

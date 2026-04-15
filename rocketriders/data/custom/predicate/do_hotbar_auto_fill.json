@@ -3,7 +3,7 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "slots": {
+      "minecraft:slots": {
         "inventory.*": {
           "count": {
             "min": 1
@@ -19,7 +19,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "slots": {
+          "minecraft:slots": {
             "hotbar.0": {
               "count": 0
             }
@@ -30,7 +30,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "slots": {
+          "minecraft:slots": {
             "hotbar.1": {
               "count": 0
             }
@@ -41,7 +41,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "slots": {
+          "minecraft:slots": {
             "hotbar.2": {
               "count": 0
             }
@@ -52,7 +52,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "slots": {
+          "minecraft:slots": {
             "hotbar.3": {
               "count": 0
             }
@@ -63,7 +63,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "slots": {
+          "minecraft:slots": {
             "hotbar.4": {
               "count": 0
             }
@@ -74,7 +74,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "slots": {
+          "minecraft:slots": {
             "hotbar.5": {
               "count": 0
             }
@@ -85,7 +85,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "slots": {
+          "minecraft:slots": {
             "hotbar.6": {
               "count": 0
             }
@@ -96,7 +96,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "slots": {
+          "minecraft:slots": {
             "hotbar.7": {
               "count": 0
             }
@@ -107,7 +107,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "slots": {
+          "minecraft:slots": {
             "hotbar.8": {
               "count": 0
             }

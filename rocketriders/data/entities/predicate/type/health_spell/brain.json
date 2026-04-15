@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
-    "predicates": {
+    "minecraft:predicates": {
       "minecraft:custom_data": {
         "health_spell": {
           "brain": {}
         }
       }
     },
-    "type": "minecraft:area_effect_cloud"
+    "minecraft:entity_type": "minecraft:area_effect_cloud"
   }
 }

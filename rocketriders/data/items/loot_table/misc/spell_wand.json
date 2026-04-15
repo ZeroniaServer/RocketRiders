@@ -63,7 +63,7 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "type": "minecraft:player"
+                    "minecraft:entity_type": "minecraft:player"
                   }
                 },
                 {
@@ -85,7 +85,7 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "type": "minecraft:player"
+                    "minecraft:entity_type": "minecraft:player"
                   }
                 },
                 {
@@ -96,8 +96,8 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "nbt": {
-                      "Tags": [
+                    "minecraft:entity_tags": {
+                      "all_of": [
                         "Loser"
                       ]
                     }
@@ -116,7 +116,7 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "type": "minecraft:player"
+                    "minecraft:entity_type": "minecraft:player"
                   }
                 },
                 {

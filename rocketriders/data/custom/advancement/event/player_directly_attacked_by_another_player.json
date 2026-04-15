@@ -3,7 +3,7 @@
     "get_directly_killed_by_another_player": {
       "conditions": {
         "entity": {
-          "type": "minecraft:player"
+          "minecraft:entity_type": "minecraft:player"
         },
         "player": [
           {
@@ -20,7 +20,7 @@
       "conditions": {
         "damage": {
           "source_entity": {
-            "type": "minecraft:player"
+            "minecraft:entity_type": "minecraft:player"
           }
         },
         "player": [
@@ -41,7 +41,7 @@
     "get_killed_by_mob_with_damage_origins": {
       "conditions": {
         "entity": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "damage_origin": {}
             }
@@ -62,7 +62,7 @@
       "conditions": {
         "damage": {
           "source_entity": {
-            "predicates": {
+            "minecraft:predicates": {
               "minecraft:custom_data": {
                 "damage_origin": {}
               }

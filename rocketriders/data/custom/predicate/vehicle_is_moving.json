@@ -3,7 +3,7 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "vehicle": {}
+      "minecraft:vehicle": {}
     }
   },
   {
@@ -12,8 +12,8 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "vehicle": {
-          "movement": {
+        "minecraft:vehicle": {
+          "minecraft:movement": {
             "speed": 0
           }
         }

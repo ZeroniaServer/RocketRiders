@@ -6,7 +6,7 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "type": [
+          "minecraft:entity_type": [
             "minecraft:arrow",
             "minecraft:spectral_arrow",
             "minecraft:fireball",
@@ -23,48 +23,48 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "shield": {}
             }
           },
-          "type": "minecraft:snowball"
+          "minecraft:entity_type": "minecraft:snowball"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "vortex": {}
             }
           },
-          "type": "minecraft:snowball"
+          "minecraft:entity_type": "minecraft:snowball"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "icbm": {}
             }
           },
-          "type": "minecraft:snowball"
+          "minecraft:entity_type": "minecraft:snowball"
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "stinging_shield": {}
             }
           },
-          "type": "minecraft:snowball"
+          "minecraft:entity_type": "minecraft:snowball"
         }
       }
     ]

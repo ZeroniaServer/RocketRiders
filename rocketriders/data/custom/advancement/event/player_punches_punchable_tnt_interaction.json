@@ -3,17 +3,17 @@
     "punch_punchable_tnt_interaction": {
       "conditions": {
         "entity": {
-          "movement": {
+          "minecraft:movement": {
             "speed": {
               "max": 20
             }
           },
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "punchable_tnt": {}
             }
           },
-          "type": "minecraft:interaction"
+          "minecraft:entity_type": "minecraft:interaction"
         },
         "player": [
           {

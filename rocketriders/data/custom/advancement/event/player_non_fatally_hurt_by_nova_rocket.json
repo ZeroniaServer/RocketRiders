@@ -4,12 +4,12 @@
       "conditions": {
         "damage": {
           "source_entity": {
-            "predicates": {
+            "minecraft:predicates": {
               "minecraft:custom_data": {
                 "nova_rocket_explosion": {}
               }
             },
-            "type": "minecraft:creeper"
+            "minecraft:entity_type": "minecraft:creeper"
           }
         },
         "player": [
@@ -39,12 +39,12 @@
         "damage": {
           "type": {
             "direct_entity": {
-              "predicates": {
+              "minecraft:predicates": {
                 "minecraft:custom_data": {
                   "nova_rocket": {}
                 }
               },
-              "type": "minecraft:firework_rocket"
+              "minecraft:entity_type": "minecraft:firework_rocket"
             }
           }
         },

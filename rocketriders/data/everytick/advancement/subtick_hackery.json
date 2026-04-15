@@ -18,7 +18,7 @@
           }
         ],
         "zombie": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "subtick_hackery": {}
             }

@@ -1,6 +1,7 @@
 data modify storage rocketriders:match components."main_item" set value "shooting_saber"
 
 scoreboard players set $arena/no_base_details match_components 1
+scoreboard players set $arena/no_portal_details match_components 1
 scoreboard players set $config_override.disable_pierce_prevention match_components -1
 scoreboard players set $config_override.disable_tying match_components 1
 scoreboard players set $config_override.item_delay match_components 15

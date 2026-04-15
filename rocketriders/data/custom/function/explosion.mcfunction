@@ -42,6 +42,6 @@ execute as @e[distance=..0.01,type=creeper,tag=explosion.this,limit=1] if functi
 execute if score $actual_explosion_power var matches ..1 if data storage rocketriders:main explosion.modifiers{force_particle_emitter:true} run particle minecraft:explosion_emitter
 
 # Castle cracks
-execute if predicate game:arena_details/castle if predicate custom:tnt_near_castle if data storage rocketriders:main explosion.modifiers{can_crack_deepslate_bricks:true} run function custom:__impl__/explosion/crack_deepslate_bricks
+execute if predicate game:arena_details/castle if predicate game:castle_type/deepslate if predicate custom:tnt_near_castle if data storage rocketriders:main explosion.modifiers{can_crack_deepslate_bricks:true} run function custom:__impl__/explosion/crack_deepslate_bricks
 
 return 1

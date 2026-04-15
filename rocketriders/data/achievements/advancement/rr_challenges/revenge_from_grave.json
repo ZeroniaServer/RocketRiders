@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_fffmedium/root",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -20,6 +21,5 @@
       "color": "#fe6309",
       "text": "Revenge from the Grave!"
     }
-  },
-  "parent": "achievements:rr_fffmedium/root"
+  }
 }

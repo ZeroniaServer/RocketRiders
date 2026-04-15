@@ -1,18 +1,22 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:bow",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "attack_damage",
                     "amount": 3,
                     "id": "rocketriders:saber",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "attack_damage"
+                    "slot": "mainhand"
                   }
                 ],
                 "minecraft:custom_data": {
@@ -48,10 +52,13 @@
                   ]
                 },
                 "minecraft:unbreakable": {}
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -73,21 +80,18 @@
                     }
                   ]
                 }
-              ],
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "main_item": true
-              }
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "attack_damage",
                     "amount": 2.5,
                     "id": "rocketriders:saber",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "attack_damage"
+                    "slot": "mainhand"
                   }
                 ]
               },
@@ -103,10 +107,10 @@
                   "condition": "minecraft:reference",
                   "name": "game:match_components/decreased_shooting_saber_attack_damage"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": []
               },
@@ -133,12 +137,11 @@
                     }
                   }
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -159,26 +162,27 @@
               "target": "item_name"
             },
             {
+              "function": "minecraft:reference",
+              "name": "items:shooting_saber/set_multishot",
               "conditions": [
                 {
                   "condition": "minecraft:reference",
                   "name": "items:shooting_saber/multishot"
                 }
-              ],
-              "function": "minecraft:reference",
-              "name": "items:shooting_saber/set_multishot"
+              ]
             },
             {
+              "function": "minecraft:reference",
+              "name": "items:shooting_saber/set_infinity",
               "conditions": [
                 {
                   "condition": "minecraft:reference",
                   "name": "items:shooting_saber/infinity"
                 }
-              ],
-              "function": "minecraft:reference",
-              "name": "items:shooting_saber/set_infinity"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_name": {
                   "bold": true,
@@ -196,19 +200,15 @@
                   "condition": "minecraft:reference",
                   "name": "items:shooting_saber/multishot"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:bow",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

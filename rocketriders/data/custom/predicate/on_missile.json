@@ -1,5 +1,4 @@
 {
-  "condition": "entity_properties",
   "entity": "this",
   "predicate": {
     "minecraft:stepping_on": {
@@ -7,5 +6,6 @@
         "blocks": "#custom:missileblocks"
       }
     }
-  }
+  },
+  "condition": "entity_properties"
 }

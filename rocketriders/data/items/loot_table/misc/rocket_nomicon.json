@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "!minecraft:written_book_content": {},
                 "minecraft:custom_data": {
@@ -43,10 +47,13 @@
                     "minecraft:written_book_content"
                   ]
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -59,13 +66,13 @@
                   "condition": "minecraft:reference",
                   "name": "game:main_item/rocket_nomicon"
                 }
-              ],
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "main_item": true
-              }
+              ]
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "nomicon": {}
+              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -78,13 +85,10 @@
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/play"
                 }
-              ],
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "nomicon": {}
-              }
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:written_book_content": {
                   "author": "Zeronia",
@@ -138,10 +142,10 @@
                   "condition": "minecraft:reference",
                   "name": "game:phase/staging"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:written_book_content": {
                   "author": "Zeronia",
@@ -190,19 +194,15 @@
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/closing"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:written_book",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

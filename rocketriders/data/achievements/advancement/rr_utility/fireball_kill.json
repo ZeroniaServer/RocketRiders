@@ -1,6 +1,7 @@
 {
   "criteria": {
     "fireball_kill": {
+      "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
           "minecraft:entity_type": "minecraft:player"
@@ -21,8 +22,7 @@
             "dimension": "minecraft:overworld"
           }
         }
-      },
-      "trigger": "minecraft:player_killed_entity"
+      }
     }
   },
   "rewards": {

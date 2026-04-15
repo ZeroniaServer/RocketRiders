@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "#entities:rot_brain_entity_type",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "rot": {
           "brain": {}
         }
       }
-    },
-    "minecraft:entity_type": "#entities:rot_brain_entity_type"
+    }
   }
 }

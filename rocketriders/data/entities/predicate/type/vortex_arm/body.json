@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:item_display",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "vortex_arm": {
           "body": {}
         }
       }
-    },
-    "minecraft:entity_type": "minecraft:item_display"
+    }
   }
 }

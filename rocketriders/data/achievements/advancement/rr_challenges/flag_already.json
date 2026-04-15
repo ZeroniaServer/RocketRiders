@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/get_off_lawn",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -56,6 +57,5 @@
       "color": "#fe6309",
       "text": "Just Give Me That L Already"
     }
-  },
-  "parent": "achievements:rr_challenges/get_off_lawn"
+  }
 }

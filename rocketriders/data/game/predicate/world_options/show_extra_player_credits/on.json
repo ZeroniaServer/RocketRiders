@@ -2,11 +2,11 @@
   "condition": "minecraft:value_check",
   "range": 1,
   "value": {
+    "type": "minecraft:score",
     "score": "config",
     "target": {
-      "name": "$show_extra_player_credits",
-      "type": "minecraft:fixed"
-    },
-    "type": "minecraft:score"
+      "type": "minecraft:fixed",
+      "name": "$show_extra_player_credits"
+    }
   }
 }

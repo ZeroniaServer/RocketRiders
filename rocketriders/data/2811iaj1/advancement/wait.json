@@ -1,4 +1,5 @@
 {
+  "parent": "2811iaj1:modif",
   "criteria": {
     "Impossible": {
       "trigger": "minecraft:impossible"
@@ -21,7 +22,6 @@
       "text": "And now we wait..."
     }
   },
-  "parent": "2811iaj1:modif",
   "rewards": {
     "function": "2811iaj1:wait_indimension"
   }

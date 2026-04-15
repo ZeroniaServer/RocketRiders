@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:block_display",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "rot": {
           "awake": {}
         }
       }
-    },
-    "minecraft:entity_type": "minecraft:block_display"
+    }
   }
 }

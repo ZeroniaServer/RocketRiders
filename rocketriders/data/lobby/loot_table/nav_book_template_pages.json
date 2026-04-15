@@ -1,12 +1,15 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:stone",
           "functions": [
             {
-              "entity": "this",
               "function": "minecraft:set_lore",
+              "entity": "this",
               "lore": [
                 [
                   "",
@@ -40,11 +43,8 @@
                   "\n",
                   [
                     {
-                      "click_event": {
-                        "action": "run_command",
-                        "command": "/trigger LobbyWarp set 5"
-                      },
                       "color": "gray",
+                      "text": "* ",
                       "hover_event": {
                         "action": "show_text",
                         "value": {
@@ -52,7 +52,10 @@
                           "text": "Click to teleport to the Spectator join pad."
                         }
                       },
-                      "text": "* "
+                      "click_event": {
+                        "action": "run_command",
+                        "command": "/trigger LobbyWarp set 5"
+                      }
                     },
                     {
                       "bold": true,
@@ -62,11 +65,8 @@
                   ],
                   "\n",
                   {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 1"
-                    },
                     "color": "gray",
+                    "text": "* ",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -74,14 +74,14 @@
                         "text": "Click to teleport to the Lobby."
                       }
                     },
-                    "text": "* "
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 1"
+                    }
                   },
                   {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 1"
-                    },
                     "color": "dark_purple",
+                    "text": "Lobby",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -89,7 +89,10 @@
                         "text": "Click to teleport to the Lobby."
                       }
                     },
-                    "text": "Lobby"
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 1"
+                    }
                   },
                   {
                     "interpret": true,
@@ -98,11 +101,8 @@
                   },
                   "\n",
                   {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 6"
-                    },
                     "color": "gray",
+                    "text": "* ",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -110,14 +110,14 @@
                         "text": "Click to teleport to the Missile Display Area."
                       }
                     },
-                    "text": "* "
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 6"
+                    }
                   },
                   {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 6"
-                    },
                     "color": "dark_purple",
+                    "text": "Missile Display Area",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -125,15 +125,15 @@
                         "text": "Click to teleport to the Missile Display Area."
                       }
                     },
-                    "text": "Missile Display Area"
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 6"
+                    }
                   },
                   "\n",
                   {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 7"
-                    },
                     "color": "gray",
+                    "text": "*",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -141,14 +141,14 @@
                         "text": "Click to teleport to the Parkour Area."
                       }
                     },
-                    "text": "*"
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 7"
+                    }
                   },
                   {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 7"
-                    },
                     "color": "dark_purple",
+                    "text": " Parkour Area",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -156,7 +156,10 @@
                         "text": "Click to teleport to the Parkour Area."
                       }
                     },
-                    "text": " Parkour Area"
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger LobbyWarp set 7"
+                    }
                   },
                   {
                     "interpret": true,
@@ -165,11 +168,8 @@
                   },
                   "\n      ",
                   {
-                    "click_event": {
-                      "action": "change_page",
-                      "page": 2
-                    },
                     "color": "dark_gray",
+                    "text": "[How to Play]",
                     "hover_event": {
                       "action": "show_text",
                       "value": [
@@ -181,15 +181,15 @@
                         }
                       ]
                     },
-                    "text": "[How to Play]"
+                    "click_event": {
+                      "action": "change_page",
+                      "page": 2
+                    }
                   },
                   "\n  ",
                   {
-                    "click_event": {
-                      "action": "change_page",
-                      "page": 3
-                    },
                     "color": "dark_gray",
+                    "text": "[Settings]",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -197,15 +197,15 @@
                         "text": "Click to configure player settings."
                       }
                     },
-                    "text": "[Settings]"
+                    "click_event": {
+                      "action": "change_page",
+                      "page": 3
+                    }
                   },
                   " ",
                   {
-                    "click_event": {
-                      "action": "change_page",
-                      "page": 4
-                    },
                     "color": "dark_gray",
+                    "text": "[Credits]",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -213,7 +213,10 @@
                         "text": "Click to see credits."
                       }
                     },
-                    "text": "[Credits]"
+                    "click_event": {
+                      "action": "change_page",
+                      "page": 4
+                    }
                   }
                 ],
                 [
@@ -265,11 +268,8 @@
                   },
                   "\n\n      ",
                   {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger toggle_ingame_tips set 1"
-                    },
                     "color": "dark_gray",
+                    "text": "[Ingame Tips]",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -277,7 +277,10 @@
                         "text": "Click to toggle ingame tips."
                       }
                     },
-                    "text": "[Ingame Tips]"
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger toggle_ingame_tips set 1"
+                    }
                   },
                   {
                     "interpret": true,
@@ -289,11 +292,8 @@
                     "text": "\n\n      "
                   },
                   {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger toggle_particles set 1"
-                    },
                     "color": "dark_gray",
+                    "text": "[Particles]",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -301,7 +301,10 @@
                         "text": "Click to toggle particles from Rocket Riders gameplay elements."
                       }
                     },
-                    "text": "[Particles]"
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger toggle_particles set 1"
+                    }
                   },
                   {
                     "bold": true,
@@ -309,11 +312,8 @@
                   },
                   "  ",
                   {
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger toggle_auto_fill_hotbar set 1"
-                    },
                     "color": "dark_gray",
+                    "text": "[Auto-Fill Hotbar]",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -321,7 +321,10 @@
                         "text": "Click to toggle automatic hotbar filling."
                       }
                     },
-                    "text": "[Auto-Fill Hotbar]"
+                    "click_event": {
+                      "action": "run_command",
+                      "command": "/trigger toggle_auto_fill_hotbar set 1"
+                    }
                   },
                   {
                     "interpret": true,
@@ -366,11 +369,8 @@
                     "text": "\nBrought to you by:\n- "
                   },
                   {
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://www.youtube.com/Evtema3"
-                    },
                     "color": "red",
+                    "text": "Evtema3",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -378,7 +378,10 @@
                         "text": "Click to check out Evtema3!"
                       }
                     },
-                    "text": "Evtema3"
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://www.youtube.com/Evtema3"
+                    }
                   },
                   "\n",
                   {
@@ -386,11 +389,8 @@
                     "text": "- "
                   },
                   {
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://www.youtube.com/channel/UC7-j3tkiF9PeT2FVbI8WR4A"
-                    },
                     "color": "#00DB19",
+                    "text": "YZEROgame",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -398,7 +398,10 @@
                         "text": "Click to check out YZEROgame!"
                       }
                     },
-                    "text": "YZEROgame"
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://www.youtube.com/channel/UC7-j3tkiF9PeT2FVbI8WR4A"
+                    }
                   },
                   "\n",
                   {
@@ -406,11 +409,8 @@
                     "text": "- "
                   },
                   {
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://www.youtube.com/channel/UCK1WeblW__mSmkjV4jJ5h-Q"
-                    },
                     "color": "#0248e9",
+                    "text": "Chronos22",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -418,7 +418,10 @@
                         "text": "Click to check out Chronos22!"
                       }
                     },
-                    "text": "Chronos22"
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://www.youtube.com/channel/UCK1WeblW__mSmkjV4jJ5h-Q"
+                    }
                   },
                   "\n",
                   {
@@ -426,11 +429,8 @@
                     "text": "- "
                   },
                   {
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://github.com/DorkOrc"
-                    },
                     "color": "#FF9900",
+                    "text": "DorkOrc",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -438,7 +438,10 @@
                         "text": "Click to check out DorkOrc!"
                       }
                     },
-                    "text": "DorkOrc"
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://github.com/DorkOrc"
+                    }
                   },
                   "\n",
                   {
@@ -446,11 +449,8 @@
                     "text": "- "
                   },
                   {
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://cubekrowd.net/"
-                    },
                     "color": "dark_aqua",
+                    "text": "Cube",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -458,14 +458,14 @@
                         "text": "Click to check out CubeKrowd!"
                       }
                     },
-                    "text": "Cube"
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://cubekrowd.net/"
+                    }
                   },
                   {
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://cubekrowd.net/"
-                    },
                     "color": "gold",
+                    "text": "Krowd",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
@@ -473,7 +473,10 @@
                         "text": "Click to check out CubeKrowd!"
                       }
                     },
-                    "text": "Krowd"
+                    "click_event": {
+                      "action": "open_url",
+                      "url": "https://cubekrowd.net/"
+                    }
                   },
                   "\n",
                   {
@@ -497,12 +500,9 @@
               ],
               "mode": "replace_all"
             }
-          ],
-          "name": "minecraft:stone",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

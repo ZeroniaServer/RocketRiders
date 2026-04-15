@@ -2,11 +2,11 @@
   "condition": "minecraft:value_check",
   "range": 1,
   "value": {
+    "type": "minecraft:score",
     "score": "config",
     "target": {
-      "name": "$lock_modification_room",
-      "type": "minecraft:fixed"
-    },
-    "type": "minecraft:score"
+      "type": "minecraft:fixed",
+      "name": "$lock_modification_room"
+    }
   }
 }

@@ -1,28 +1,32 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_pickaxe",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "minecraft:attack_speed",
                     "amount": -2.2,
                     "display": {
                       "type": "hidden"
                     },
                     "id": "rocketriders:piercing_pickaxe",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_speed"
+                    "slot": "mainhand"
                   },
                   {
+                    "type": "minecraft:attack_damage",
                     "amount": 2.5,
                     "id": "rocketriders:piercing_pickaxe",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_damage"
+                    "slot": "mainhand"
                   }
                 ],
                 "minecraft:can_break": {
@@ -59,10 +63,13 @@
                   ]
                 },
                 "minecraft:unbreakable": {}
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -75,13 +82,10 @@
                   "condition": "minecraft:reference",
                   "name": "game:main_item/piercing_pickaxe"
                 }
-              ],
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "main_item": true
-              }
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:can_break": {
                   "blocks": "#custom:glass_except_light_gray"
@@ -96,10 +100,10 @@
                   "condition": "minecraft:reference",
                   "name": "game:modifiers/molerat/on"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "!minecraft:can_break": {}
               },
@@ -115,10 +119,10 @@
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/closing"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": []
               },
@@ -145,12 +149,11 @@
                     }
                   }
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -174,12 +177,9 @@
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:netherite_pickaxe",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

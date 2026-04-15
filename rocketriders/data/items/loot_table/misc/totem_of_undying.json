@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:totem_of_undying",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "totem_of_undying"
@@ -41,19 +45,15 @@
                     "text": "Only good for one use."
                   }
                 ]
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:totem_of_undying",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

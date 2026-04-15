@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/pacifist",
   "criteria": {
     "AntsSpawned": {
       "trigger": "minecraft:impossible"
@@ -101,6 +102,5 @@
       "color": "#00be2f",
       "text": "Veteran"
     }
-  },
-  "parent": "achievements:rr_challenges/pacifist"
+  }
 }

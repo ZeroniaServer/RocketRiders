@@ -1,15 +1,16 @@
 {
   "criteria": {
     "player_non_fatally_hurt_by_nova_rocket_creeper_explosion": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "source_entity": {
+            "minecraft:entity_type": "minecraft:creeper",
             "minecraft:predicates": {
               "minecraft:custom_data": {
                 "nova_rocket_explosion": {}
               }
-            },
-            "minecraft:entity_type": "minecraft:creeper"
+            }
           }
         },
         "player": [
@@ -31,20 +32,20 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     },
     "player_non_fatally_hurt_by_nova_rocket_firework_explosion": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "type": {
             "direct_entity": {
+              "minecraft:entity_type": "minecraft:firework_rocket",
               "minecraft:predicates": {
                 "minecraft:custom_data": {
                   "nova_rocket": {}
                 }
-              },
-              "minecraft:entity_type": "minecraft:firework_rocket"
+              }
             }
           }
         },
@@ -67,8 +68,7 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     }
   },
   "requirements": [

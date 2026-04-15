@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/blocks_into_bits",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -28,6 +29,5 @@
       "color": "#c20000",
       "text": "Volcanic Hatred"
     }
-  },
-  "parent": "achievements:rr_challenges/blocks_into_bits"
+  }
 }

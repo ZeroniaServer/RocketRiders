@@ -5,12 +5,12 @@
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$config_override.disable_item_category/heavy_missiles",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$config_override.disable_item_category/heavy_missiles"
+        }
       }
     },
     {
@@ -20,48 +20,48 @@
           "condition": "minecraft:value_check",
           "range": -1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.missile/auxiliary",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.missile/auxiliary"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": -1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.missile/juggerbuster",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.missile/juggerbuster"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": -1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.missile/rifter",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.missile/rifter"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": -1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.missile/warhead",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.missile/warhead"
+            }
           }
         }
       ]

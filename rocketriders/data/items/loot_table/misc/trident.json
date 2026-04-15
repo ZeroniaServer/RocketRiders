@@ -1,28 +1,32 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:trident",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "minecraft:attack_damage",
                     "amount": 8.0,
                     "id": "rocketriders:trident",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_damage"
+                    "slot": "mainhand"
                   },
                   {
+                    "type": "minecraft:attack_speed",
                     "amount": -2.9000000953674316,
                     "display": {
                       "type": "hidden"
                     },
                     "id": "rocketriders:trident",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_speed"
+                    "slot": "mainhand"
                   }
                 ],
                 "minecraft:custom_data": {
@@ -65,19 +69,15 @@
                   }
                 ],
                 "minecraft:max_damage": 8
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:trident",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:written_book",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "navbook": true
@@ -25,15 +29,11 @@
                   "author": "Zeronia",
                   "title": ""
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             }
-          ],
-          "name": "minecraft:written_book",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

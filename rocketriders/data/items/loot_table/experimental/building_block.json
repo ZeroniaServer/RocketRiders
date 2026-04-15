@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:white_concrete",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "building_block"
@@ -17,10 +21,11 @@
                     "none"
                   ]
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_item",
+              "item": "minecraft:light_blue_concrete",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -37,11 +42,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_item",
-              "item": "minecraft:light_blue_concrete"
+              ]
             },
             {
+              "function": "minecraft:set_item",
+              "item": "minecraft:red_concrete",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -58,11 +63,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_item",
-              "item": "minecraft:red_concrete"
+              ]
             },
             {
+              "function": "minecraft:set_item",
+              "item": "minecraft:yellow_concrete",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -79,11 +84,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_item",
-              "item": "minecraft:yellow_concrete"
+              ]
             },
             {
+              "function": "minecraft:set_item",
+              "item": "minecraft:lime_concrete",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -100,13 +105,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_item",
-              "item": "minecraft:lime_concrete"
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -115,15 +118,15 @@
                   "text": ""
                 },
                 {
-                  "score": {
-                    "name": "@s",
-                    "objective": "text.main_color"
-                  },
                   "extra": [
                     {
                       "text": "Building Block"
                     }
-                  ]
+                  ],
+                  "score": {
+                    "name": "@s",
+                    "objective": "text.main_color"
+                  }
                 }
               ],
               "target": "item_name"
@@ -132,12 +135,9 @@
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:white_concrete",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

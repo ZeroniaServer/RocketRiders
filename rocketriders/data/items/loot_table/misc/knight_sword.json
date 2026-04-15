@@ -1,28 +1,32 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:stone_sword",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "minecraft:attack_damage",
                     "amount": 4.0,
                     "id": "rocketriders:knight_sword",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_damage"
+                    "slot": "mainhand"
                   },
                   {
+                    "type": "minecraft:attack_speed",
                     "amount": -2.4,
                     "display": {
                       "type": "hidden"
                     },
                     "id": "rocketriders:knight_sword",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_speed"
+                    "slot": "mainhand"
                   }
                 ],
                 "minecraft:custom_data": {
@@ -54,10 +58,10 @@
                   ]
                 },
                 "minecraft:unbreakable": {}
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": []
               },
@@ -84,10 +88,13 @@
                     }
                   }
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -100,15 +107,11 @@
                   "condition": "minecraft:reference",
                   "name": "game:main_item/crusade_kit_dependent"
                 }
-              ],
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "main_item": true
-              }
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -132,12 +135,9 @@
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:stone_sword",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

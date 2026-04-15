@@ -22,12 +22,12 @@
           "max": 0
         },
         "value": {
+          "type": "minecraft:score",
           "score": "crusadehp",
           "target": {
-            "name": "$BlueShield",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
+            "type": "minecraft:fixed",
+            "name": "$BlueShield"
+          }
         }
       }
     ]

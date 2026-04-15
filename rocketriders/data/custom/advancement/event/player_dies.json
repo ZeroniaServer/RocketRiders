@@ -1,6 +1,7 @@
 {
   "criteria": {
     "die_lava": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "type": {
@@ -29,10 +30,10 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     },
     "die_other": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "type": {
@@ -65,10 +66,10 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     },
     "die_void": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "type": {
@@ -97,8 +98,7 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     }
   },
   "requirements": [

@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "enchanted_book",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "!minecraft:stored_enchantments": {},
                 "minecraft:consumable": {
@@ -63,8 +67,7 @@
                   }
                 ],
                 "minecraft:max_stack_size": 1
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:reference",
@@ -75,6 +78,8 @@
               "name": "items:set_custom_model_data"
             },
             {
+              "function": "minecraft:reference",
+              "name": "items:spell_book/fire",
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -94,11 +99,11 @@
                     }
                   }
                 }
-              ],
-              "function": "minecraft:reference",
-              "name": "items:spell_book/fire"
+              ]
             },
             {
+              "function": "minecraft:reference",
+              "name": "items:spell_book/health",
               "conditions": [
                 {
                   "condition": "minecraft:entity_scores",
@@ -107,11 +112,11 @@
                     "default_spell": 1
                   }
                 }
-              ],
-              "function": "minecraft:reference",
-              "name": "items:spell_book/health"
+              ]
             },
             {
+              "function": "minecraft:reference",
+              "name": "items:spell_book/damage",
               "conditions": [
                 {
                   "condition": "minecraft:entity_scores",
@@ -120,11 +125,11 @@
                     "default_spell": 2
                   }
                 }
-              ],
-              "function": "minecraft:reference",
-              "name": "items:spell_book/damage"
+              ]
             },
             {
+              "function": "minecraft:reference",
+              "name": "items:spell_book/wind",
               "conditions": [
                 {
                   "condition": "minecraft:entity_scores",
@@ -133,16 +138,11 @@
                     "default_spell": 3
                   }
                 }
-              ],
-              "function": "minecraft:reference",
-              "name": "items:spell_book/wind"
+              ]
             }
-          ],
-          "name": "enchanted_book",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

@@ -1,19 +1,23 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "writable_book",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "!minecraft:writable_book_content": {},
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "minecraft:attack_damage",
                     "amount": 1.5,
                     "id": "rocketriders:spell_wand",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_damage"
+                    "slot": "mainhand"
                   }
                 ],
                 "minecraft:custom_data": {
@@ -54,10 +58,13 @@
                   "cooldown_group": "rocketriders:spell_wand",
                   "seconds": 0.5
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "main_item": true
+              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -70,13 +77,10 @@
                   "condition": "minecraft:reference",
                   "name": "game:main_item/crusade_kit_dependent"
                 }
-              ],
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "main_item": true
-              }
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": []
               },
@@ -103,10 +107,10 @@
                     }
                   }
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "!minecraft:consumable": {},
                 "!minecraft:use_cooldown": {}
@@ -126,12 +130,11 @@
                     "name": "game:phase/match/play"
                   }
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -152,6 +155,7 @@
               "target": "item_name"
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:breeze_rod"
               },
@@ -167,10 +171,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:blaze_rod"
               },
@@ -186,19 +190,15 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "writable_book",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

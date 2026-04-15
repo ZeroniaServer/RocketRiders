@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/forsaken",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -30,6 +31,5 @@
       "color": "#fe6309",
       "text": "One is the Loneliest Number"
     }
-  },
-  "parent": "achievements:rr_challenges/forsaken"
+  }
 }

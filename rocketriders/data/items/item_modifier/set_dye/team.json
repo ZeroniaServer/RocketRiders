@@ -1,5 +1,6 @@
 [
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 3949738
     },
@@ -12,10 +13,10 @@
         "condition": "minecraft:reference",
         "name": "custom:team/blue"
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 16711680
     },
@@ -28,10 +29,10 @@
         "condition": "minecraft:reference",
         "name": "custom:team/blue"
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 16768000
     },
@@ -44,10 +45,10 @@
         "condition": "minecraft:reference",
         "name": "custom:team/yellow"
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 8439583
     },
@@ -60,7 +61,6 @@
         "condition": "minecraft:reference",
         "name": "custom:team/yellow"
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   }
 ]

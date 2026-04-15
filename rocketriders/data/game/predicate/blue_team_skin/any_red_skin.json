@@ -5,11 +5,11 @@
     "max": 2
   },
   "value": {
+    "type": "minecraft:score",
     "score": "match_components",
     "target": {
-      "name": "$blue_team_skin",
-      "type": "minecraft:fixed"
-    },
-    "type": "minecraft:score"
+      "type": "minecraft:fixed",
+      "name": "$blue_team_skin"
+    }
   }
 }

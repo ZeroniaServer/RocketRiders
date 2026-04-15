@@ -1,23 +1,16 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:alternatives",
           "children": [
             {
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "XP": {
-                      "max": 99
-                    }
-                  }
-                }
-              ],
+              "type": "minecraft:item",
               "functions": [
                 {
+                  "function": "minecraft:set_components",
                   "components": {
                     "minecraft:dyed_color": 4210752,
                     "minecraft:equippable": {
@@ -31,28 +24,27 @@
                       "italic": false,
                       "text": "Unranked Boots"
                     }
-                  },
-                  "function": "minecraft:set_components"
+                  }
                 }
               ],
               "name": "minecraft:leather_boots",
-              "type": "minecraft:item"
-            },
-            {
               "conditions": [
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
                     "XP": {
-                      "min": 100,
-                      "max": 399
+                      "max": 99
                     }
                   }
                 }
-              ],
+              ]
+            },
+            {
+              "type": "minecraft:item",
               "functions": [
                 {
+                  "function": "minecraft:set_components",
                   "components": {
                     "minecraft:dyed_color": 13467442,
                     "minecraft:equippable": {
@@ -66,28 +58,28 @@
                       "italic": false,
                       "text": "Bronze Boots"
                     }
-                  },
-                  "function": "minecraft:set_components"
+                  }
                 }
               ],
               "name": "minecraft:leather_boots",
-              "type": "minecraft:item"
-            },
-            {
               "conditions": [
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
                     "XP": {
-                      "min": 400,
-                      "max": 699
+                      "min": 100,
+                      "max": 399
                     }
                   }
                 }
-              ],
+              ]
+            },
+            {
+              "type": "minecraft:item",
               "functions": [
                 {
+                  "function": "minecraft:set_components",
                   "components": {
                     "minecraft:equippable": {
                       "asset_id": "minecraft:iron",
@@ -100,28 +92,28 @@
                       "italic": false,
                       "text": "Silver Boots"
                     }
-                  },
-                  "function": "minecraft:set_components"
+                  }
                 }
               ],
               "name": "minecraft:iron_boots",
-              "type": "minecraft:item"
-            },
-            {
               "conditions": [
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
                     "XP": {
-                      "min": 700,
-                      "max": 999
+                      "min": 400,
+                      "max": 699
                     }
                   }
                 }
-              ],
+              ]
+            },
+            {
+              "type": "minecraft:item",
               "functions": [
                 {
+                  "function": "minecraft:set_components",
                   "components": {
                     "minecraft:equippable": {
                       "asset_id": "minecraft:gold",
@@ -134,28 +126,28 @@
                       "italic": false,
                       "text": "Gold Boots"
                     }
-                  },
-                  "function": "minecraft:set_components"
+                  }
                 }
               ],
               "name": "minecraft:golden_boots",
-              "type": "minecraft:item"
-            },
-            {
               "conditions": [
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
                     "XP": {
-                      "min": 1000,
-                      "max": 1299
+                      "min": 700,
+                      "max": 999
                     }
                   }
                 }
-              ],
+              ]
+            },
+            {
+              "type": "minecraft:item",
               "functions": [
                 {
+                  "function": "minecraft:set_components",
                   "components": {
                     "minecraft:equippable": {
                       "asset_id": "minecraft:diamond",
@@ -168,27 +160,28 @@
                       "italic": false,
                       "text": "Diamond Boots"
                     }
-                  },
-                  "function": "minecraft:set_components"
+                  }
                 }
               ],
               "name": "minecraft:diamond_boots",
-              "type": "minecraft:item"
-            },
-            {
               "conditions": [
                 {
                   "condition": "minecraft:entity_scores",
                   "entity": "this",
                   "scores": {
                     "XP": {
-                      "min": 1300
+                      "min": 1000,
+                      "max": 1299
                     }
                   }
                 }
-              ],
+              ]
+            },
+            {
+              "type": "minecraft:item",
               "functions": [
                 {
+                  "function": "minecraft:set_components",
                   "components": {
                     "minecraft:equippable": {
                       "asset_id": "minecraft:netherite",
@@ -201,27 +194,36 @@
                       "italic": false,
                       "text": "Champion Boots"
                     }
-                  },
-                  "function": "minecraft:set_components"
+                  }
                 }
               ],
               "name": "minecraft:netherite_boots",
-              "type": "minecraft:item"
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "XP": {
+                      "min": 1300
+                    }
+                  }
+                }
+              ]
             }
-          ],
-          "type": "minecraft:alternatives"
+          ]
         }
       ],
       "functions": [
         {
+          "function": "minecraft:set_components",
           "components": {
             "minecraft:attribute_modifiers": [
               {
+                "type": "minecraft:armor",
                 "amount": 1,
                 "id": "rocketriders:boots",
                 "operation": "add_value",
-                "slot": "feet",
-                "type": "minecraft:armor"
+                "slot": "feet"
               }
             ],
             "minecraft:enchantment_glint_override": false,
@@ -242,10 +244,10 @@
               "pattern": "minecraft:shaper"
             },
             "minecraft:unbreakable": {}
-          },
-          "function": "minecraft:set_components"
+          }
         },
         {
+          "function": "minecraft:set_components",
           "components": {
             "minecraft:trim": {
               "material": "minecraft:lapis",
@@ -261,10 +263,10 @@
               "condition": "minecraft:reference",
               "name": "custom:team/blue"
             }
-          ],
-          "function": "minecraft:set_components"
+          ]
         },
         {
+          "function": "minecraft:set_components",
           "components": {
             "minecraft:trim": {
               "material": "minecraft:redstone",
@@ -280,10 +282,10 @@
               "condition": "minecraft:reference",
               "name": "custom:team/blue"
             }
-          ],
-          "function": "minecraft:set_components"
+          ]
         },
         {
+          "function": "minecraft:set_components",
           "components": {
             "minecraft:trim": {
               "material": "minecraft:gold",
@@ -295,11 +297,9 @@
               "condition": "minecraft:reference",
               "name": "custom:team/yellow"
             }
-          ],
-          "function": "minecraft:set_components"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

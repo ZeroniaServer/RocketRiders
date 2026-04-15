@@ -5,36 +5,36 @@
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$duel_settings_locked",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$duel_settings_locked"
+        }
       }
     },
     {
       "condition": "minecraft:value_check",
       "range": -1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$config_override.snipe_portals",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$config_override.snipe_portals"
+        }
       }
     },
     {
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$no_portals",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$no_portals"
+        }
       }
     }
   ]

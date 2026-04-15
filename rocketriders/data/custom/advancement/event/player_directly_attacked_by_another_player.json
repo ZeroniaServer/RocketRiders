@@ -1,6 +1,7 @@
 {
   "criteria": {
     "get_directly_killed_by_another_player": {
+      "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "entity": {
           "minecraft:entity_type": "minecraft:player"
@@ -13,10 +14,10 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_killed_player"
+      }
     },
     "get_directly_non_fatally_attacked_by_another_player": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "source_entity": {
@@ -35,10 +36,10 @@
             "name": "custom:alive"
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     },
     "get_killed_by_mob_with_damage_origins": {
+      "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "entity": {
           "minecraft:predicates": {
@@ -55,10 +56,10 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_killed_player"
+      }
     },
     "get_non_fatally_hurt_by_mob_with_damage_origins": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "source_entity": {
@@ -81,8 +82,7 @@
             "name": "custom:alive"
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     }
   },
   "requirements": [

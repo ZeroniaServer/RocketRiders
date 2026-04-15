@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:snowball",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "stinging_shield"
@@ -37,12 +41,11 @@
                   }
                 ],
                 "minecraft:max_stack_size": 64
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -71,12 +74,9 @@
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:snowball",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

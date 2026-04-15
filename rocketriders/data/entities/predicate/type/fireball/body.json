@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:fireball",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "fireball": {
           "body": {}
         }
       }
-    },
-    "minecraft:entity_type": "minecraft:fireball"
+    }
   }
 }

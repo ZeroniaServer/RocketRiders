@@ -11,12 +11,12 @@
         "min": 5
       },
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$config_override.item_delay",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$config_override.item_delay"
+        }
       }
     },
     {

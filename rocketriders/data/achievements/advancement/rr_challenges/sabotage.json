@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:a17z/root",
   "criteria": {
     "1": {
       "trigger": "minecraft:impossible"
@@ -3017,6 +3018,5 @@
       "color": "#00be2f",
       "text": "Missile Sabotage"
     }
-  },
-  "parent": "achievements:a17z/root"
+  }
 }

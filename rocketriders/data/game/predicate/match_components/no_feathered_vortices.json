@@ -2,11 +2,11 @@
   "condition": "minecraft:value_check",
   "range": 1,
   "value": {
+    "type": "minecraft:score",
     "score": "match_components",
     "target": {
-      "name": "$no_feathered_vortices",
-      "type": "minecraft:fixed"
-    },
-    "type": "minecraft:score"
+      "type": "minecraft:fixed",
+      "name": "$no_feathered_vortices"
+    }
   }
 }

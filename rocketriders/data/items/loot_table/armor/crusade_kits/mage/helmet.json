@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:pale_oak_fence_gate",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [],
                 "minecraft:enchantment_glint_override": false,
@@ -20,10 +24,10 @@
                     "minecraft:enchantments"
                   ]
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:warped_fence_gate"
               },
@@ -36,10 +40,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:mangrove_fence_gate"
               },
@@ -52,10 +56,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:bamboo_fence_gate"
               },
@@ -68,10 +72,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:oak_fence_gate"
               },
@@ -84,12 +88,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -115,12 +118,9 @@
               ],
               "target": "item_name"
             }
-          ],
-          "name": "minecraft:pale_oak_fence_gate",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

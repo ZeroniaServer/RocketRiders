@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:interaction",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "punchable_tnt": {
           "brain": {}
         }
       }
-    },
-    "minecraft:entity_type": "minecraft:interaction"
+    }
   }
 }

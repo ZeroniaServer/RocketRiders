@@ -5,12 +5,12 @@
       "min": 1
     },
     "value": {
+      "type": "minecraft:score",
       "score": "config",
       "target": {
-        "name": "$extra_match_repetitions",
-        "type": "minecraft:fixed"
-      },
-      "type": "minecraft:score"
+        "type": "minecraft:fixed",
+        "name": "$extra_match_repetitions"
+      }
     }
   },
   {
@@ -19,12 +19,12 @@
       "condition": "minecraft:value_check",
       "range": 2147483647,
       "value": {
+        "type": "minecraft:score",
         "score": "config",
         "target": {
-          "name": "$extra_match_repetitions",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$extra_match_repetitions"
+        }
       }
     }
   }

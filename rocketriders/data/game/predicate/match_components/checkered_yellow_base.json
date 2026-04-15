@@ -2,11 +2,11 @@
   "condition": "minecraft:value_check",
   "range": 1,
   "value": {
+    "type": "minecraft:score",
     "score": "match_components",
     "target": {
-      "name": "$checkered_yellow_base",
-      "type": "minecraft:fixed"
-    },
-    "type": "minecraft:score"
+      "type": "minecraft:fixed",
+      "name": "$checkered_yellow_base"
+    }
   }
 }

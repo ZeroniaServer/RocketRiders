@@ -5,21 +5,21 @@
       "condition": "minecraft:value_check",
       "range": {
         "min": {
+          "type": "minecraft:score",
           "score": "global",
           "target": {
-            "name": "$max_players_per_team",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
+            "type": "minecraft:fixed",
+            "name": "$max_players_per_team"
+          }
         }
       },
       "value": {
+        "type": "minecraft:score",
         "score": "global",
         "target": {
-          "name": "$blue_team_count",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$blue_team_count"
+        }
       }
     },
     {
@@ -27,21 +27,21 @@
       "range": {
         "min": 1,
         "max": {
+          "type": "minecraft:score",
           "score": "global",
           "target": {
-            "name": "$playing_teams_count",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
+            "type": "minecraft:fixed",
+            "name": "$playing_teams_count"
+          }
         }
       },
       "value": {
+        "type": "minecraft:score",
         "score": "config",
         "target": {
-          "name": "$max_players",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$max_players"
+        }
       }
     }
   ]

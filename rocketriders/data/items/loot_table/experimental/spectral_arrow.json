@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:spectral_arrow",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "spectral_arrow"
@@ -23,14 +27,17 @@
                   "italic": false,
                   "text": "Spectral Arrow"
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "droppable": true
+              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -43,18 +50,11 @@
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/play"
                 }
-              ],
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "droppable": true
-              }
+              ]
             }
-          ],
-          "name": "minecraft:spectral_arrow",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

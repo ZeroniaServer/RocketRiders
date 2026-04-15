@@ -5,12 +5,12 @@
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$config_override.disable_item_category/lightning_missiles",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$config_override.disable_item_category/lightning_missiles"
+        }
       }
     },
     {
@@ -20,24 +20,24 @@
           "condition": "minecraft:value_check",
           "range": -1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.missile/hurricane",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.missile/hurricane"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": -1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.missile/thunderbolt",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.missile/thunderbolt"
+            }
           }
         }
       ]

@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "#custom:wind_charge",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "wind_spell": {
           "body": {}
         }
       }
-    },
-    "minecraft:entity_type": "#custom:wind_charge"
+    }
   }
 }

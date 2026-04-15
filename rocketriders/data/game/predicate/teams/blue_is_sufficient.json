@@ -2,20 +2,20 @@
   "condition": "minecraft:value_check",
   "range": {
     "min": {
+      "type": "minecraft:score",
       "score": "match_components",
       "target": {
-        "name": "$min_players_per_team",
-        "type": "minecraft:fixed"
-      },
-      "type": "minecraft:score"
+        "type": "minecraft:fixed",
+        "name": "$min_players_per_team"
+      }
     }
   },
   "value": {
+    "type": "minecraft:score",
     "score": "global",
     "target": {
-      "name": "$blue_team_count",
-      "type": "minecraft:fixed"
-    },
-    "type": "minecraft:score"
+      "type": "minecraft:fixed",
+      "name": "$blue_team_count"
+    }
   }
 }

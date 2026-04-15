@@ -1,4 +1,5 @@
 {
+  "parent": "2811iaj1:wait",
   "criteria": {
     "Impossible": {
       "trigger": "minecraft:impossible"
@@ -21,7 +22,6 @@
       "text": "Play a match"
     }
   },
-  "parent": "2811iaj1:wait",
   "rewards": {
     "function": "2811iaj1:play_indimension"
   }

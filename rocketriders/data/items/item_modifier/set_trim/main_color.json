@@ -1,5 +1,27 @@
 [
   {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "items": "#custom:helmets"
+    },
+    "on_fail": {
+      "function": "minecraft:set_components",
+      "components": {
+        "minecraft:trim": {
+          "material": "minecraft:lapis",
+          "pattern": "minecraft:vex"
+        }
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_components",
+      "components": {
+        "minecraft:trim": {
+          "material": "minecraft:lapis",
+          "pattern": "minecraft:tide"
+        }
+      }
+    },
     "conditions": [
       {
         "condition": "minecraft:inverted",
@@ -16,31 +38,31 @@
         "condition": "minecraft:reference",
         "name": "custom:team/blue"
       }
-    ],
+    ]
+  },
+  {
     "function": "minecraft:filtered",
     "item_filter": {
       "items": "#custom:helmets"
     },
     "on_fail": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
-          "material": "minecraft:lapis",
+          "material": "minecraft:redstone",
           "pattern": "minecraft:vex"
         }
-      },
-      "function": "minecraft:set_components"
+      }
     },
     "on_pass": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
-          "material": "minecraft:lapis",
+          "material": "minecraft:redstone",
           "pattern": "minecraft:tide"
         }
-      },
-      "function": "minecraft:set_components"
-    }
-  },
-  {
+      }
+    },
     "conditions": [
       {
         "condition": "minecraft:inverted",
@@ -57,31 +79,31 @@
         "condition": "minecraft:reference",
         "name": "custom:team/blue"
       }
-    ],
+    ]
+  },
+  {
     "function": "minecraft:filtered",
     "item_filter": {
       "items": "#custom:helmets"
     },
     "on_fail": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
-          "material": "minecraft:redstone",
-          "pattern": "minecraft:vex"
+          "material": "minecraft:gold",
+          "pattern": "minecraft:spire"
         }
-      },
-      "function": "minecraft:set_components"
+      }
     },
     "on_pass": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
-          "material": "minecraft:redstone",
-          "pattern": "minecraft:tide"
+          "material": "minecraft:gold",
+          "pattern": "minecraft:raiser"
         }
-      },
-      "function": "minecraft:set_components"
-    }
-  },
-  {
+      }
+    },
     "conditions": [
       {
         "condition": "minecraft:inverted",
@@ -98,31 +120,31 @@
         "condition": "minecraft:reference",
         "name": "custom:team/yellow"
       }
-    ],
+    ]
+  },
+  {
     "function": "minecraft:filtered",
     "item_filter": {
       "items": "#custom:helmets"
     },
     "on_fail": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
-          "material": "minecraft:gold",
+          "material": "minecraft:emerald",
           "pattern": "minecraft:spire"
         }
-      },
-      "function": "minecraft:set_components"
+      }
     },
     "on_pass": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
-          "material": "minecraft:gold",
+          "material": "minecraft:emerald",
           "pattern": "minecraft:raiser"
         }
-      },
-      "function": "minecraft:set_components"
-    }
-  },
-  {
+      }
+    },
     "conditions": [
       {
         "condition": "minecraft:inverted",
@@ -139,28 +161,6 @@
         "condition": "minecraft:reference",
         "name": "custom:team/yellow"
       }
-    ],
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "items": "#custom:helmets"
-    },
-    "on_fail": {
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:emerald",
-          "pattern": "minecraft:spire"
-        }
-      },
-      "function": "minecraft:set_components"
-    },
-    "on_pass": {
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:emerald",
-          "pattern": "minecraft:raiser"
-        }
-      },
-      "function": "minecraft:set_components"
-    }
+    ]
   }
 ]

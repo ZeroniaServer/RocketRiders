@@ -2,11 +2,11 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:marker",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "spawn_egg": {}
       }
-    },
-    "minecraft:entity_type": "minecraft:marker"
+    }
   }
 }

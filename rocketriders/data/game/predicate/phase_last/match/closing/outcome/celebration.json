@@ -3,48 +3,48 @@
     "condition": "minecraft:value_check",
     "range": 1,
     "value": {
+      "type": "minecraft:score",
       "score": "global",
       "target": {
-        "name": "$phase_last/game",
-        "type": "minecraft:fixed"
-      },
-      "type": "minecraft:score"
+        "type": "minecraft:fixed",
+        "name": "$phase_last/game"
+      }
     }
   },
   {
     "condition": "minecraft:value_check",
     "range": 2,
     "value": {
+      "type": "minecraft:score",
       "score": "global",
       "target": {
-        "name": "$phase_last/game.match",
-        "type": "minecraft:fixed"
-      },
-      "type": "minecraft:score"
+        "type": "minecraft:fixed",
+        "name": "$phase_last/game.match"
+      }
     }
   },
   {
     "condition": "minecraft:value_check",
     "range": 1,
     "value": {
+      "type": "minecraft:score",
       "score": "global",
       "target": {
-        "name": "$phase_last/game.match.closing",
-        "type": "minecraft:fixed"
-      },
-      "type": "minecraft:score"
+        "type": "minecraft:fixed",
+        "name": "$phase_last/game.match.closing"
+      }
     }
   },
   {
     "condition": "minecraft:value_check",
     "range": 0,
     "value": {
+      "type": "minecraft:score",
       "score": "global",
       "target": {
-        "name": "$phase_last/game.match.closing.outcome",
-        "type": "minecraft:fixed"
-      },
-      "type": "minecraft:score"
+        "type": "minecraft:fixed",
+        "name": "$phase_last/game.match.closing.outcome"
+      }
     }
   }
 ]

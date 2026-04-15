@@ -23,48 +23,48 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
           "minecraft:predicates": {
             "minecraft:custom_data": {
               "shield": {}
             }
-          },
-          "minecraft:entity_type": "minecraft:snowball"
+          }
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
           "minecraft:predicates": {
             "minecraft:custom_data": {
               "vortex": {}
             }
-          },
-          "minecraft:entity_type": "minecraft:snowball"
+          }
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
           "minecraft:predicates": {
             "minecraft:custom_data": {
               "icbm": {}
             }
-          },
-          "minecraft:entity_type": "minecraft:snowball"
+          }
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
           "minecraft:predicates": {
             "minecraft:custom_data": {
               "stinging_shield": {}
             }
-          },
-          "minecraft:entity_type": "minecraft:snowball"
+          }
         }
       }
     ]

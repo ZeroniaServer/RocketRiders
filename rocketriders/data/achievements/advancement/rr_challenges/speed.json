@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/helping",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -44,6 +45,5 @@
       "color": "#00be2f",
       "text": "I Am Speed"
     }
-  },
-  "parent": "achievements:rr_challenges/helping"
+  }
 }

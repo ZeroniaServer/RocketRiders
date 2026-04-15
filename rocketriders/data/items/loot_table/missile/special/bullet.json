@@ -1,16 +1,20 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/bullet",
                   "spawn_egg": {
-                    "missile": "bullet",
-                    "type": "missile"
+                    "type": "missile",
+                    "missile": "bullet"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -77,8 +81,7 @@
                     "text": "have to be very careful defusing this one!"
                   }
                 ]
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:copy_custom_data",
@@ -92,8 +95,8 @@
               "source": "this"
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -121,12 +124,9 @@
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:pig_spawn_egg",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

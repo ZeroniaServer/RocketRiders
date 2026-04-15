@@ -18,12 +18,12 @@
           "max": 4
         },
         "value": {
+          "type": "minecraft:score",
           "score": "config",
           "target": {
-            "name": "$arena_details/portal",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
+            "type": "minecraft:fixed",
+            "name": "$arena_details/portal"
+          }
         }
       }
     }

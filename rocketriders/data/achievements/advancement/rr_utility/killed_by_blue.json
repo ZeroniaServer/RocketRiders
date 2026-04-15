@@ -1,6 +1,7 @@
 {
   "criteria": {
     "requirement": {
+      "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "entity": [
           {
@@ -30,8 +31,7 @@
             "name": "custom:team/yellow"
           }
         ]
-      },
-      "trigger": "minecraft:entity_killed_player"
+      }
     }
   },
   "rewards": {

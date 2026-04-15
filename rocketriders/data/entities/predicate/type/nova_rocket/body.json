@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:firework_rocket",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "nova_rocket": {
           "body": {}
         }
       }
-    },
-    "minecraft:entity_type": "minecraft:firework_rocket"
+    }
   }
 }

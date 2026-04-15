@@ -5,36 +5,36 @@
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$duel_settings_locked",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$duel_settings_locked"
+        }
       }
     },
     {
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$config_override.disable_tying",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$config_override.disable_tying"
+        }
       }
     },
     {
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$short_end_sequence",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$short_end_sequence"
+        }
       }
     }
   ]

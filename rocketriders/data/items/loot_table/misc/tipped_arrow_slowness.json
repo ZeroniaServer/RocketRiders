@@ -1,11 +1,16 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:tipped_arrow",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
+                "!minecraft:potion_duration_scale": {},
                 "minecraft:custom_data": {
                   "id": "tipped_arrow_slowness",
                   "tipped_arrow_type": "slowness"
@@ -33,16 +38,18 @@
                       "show_particles": true
                     }
                   ]
-                },
-                "!minecraft:potion_duration_scale": {}
-              },
-              "function": "minecraft:set_components"
+                }
+              }
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             },
             {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "droppable": true
+              },
               "conditions": [
                 {
                   "condition": "minecraft:entity_properties",
@@ -55,18 +62,11 @@
                   "condition": "minecraft:reference",
                   "name": "game:phase/match/play"
                 }
-              ],
-              "function": "minecraft:set_custom_data",
-              "tag": {
-                "droppable": true
-              }
+              ]
             }
-          ],
-          "name": "minecraft:tipped_arrow",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

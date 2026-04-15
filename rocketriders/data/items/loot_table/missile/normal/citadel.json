@@ -1,16 +1,20 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:pig_spawn_egg",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/citadel",
                   "spawn_egg": {
-                    "missile": "citadel",
-                    "type": "missile"
+                    "type": "missile",
+                    "missile": "citadel"
                   }
                 },
                 "minecraft:custom_model_data": {
@@ -76,8 +80,7 @@
                     "text": "the trapdoor on top of it."
                   }
                 ]
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:copy_custom_data",
@@ -91,8 +94,8 @@
               "source": "this"
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -134,12 +137,9 @@
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:pig_spawn_egg",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

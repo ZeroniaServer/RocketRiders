@@ -1,13 +1,18 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:cooked_salmon",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "minecraft:luck",
                     "amount": 0,
                     "display": {
                       "type": "override",
@@ -18,8 +23,7 @@
                     },
                     "id": "rocketriders:slap_fish/fake_knockback_modifier",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:luck"
+                    "slot": "mainhand"
                   }
                 ],
                 "minecraft:break_sound": "minecraft:entity.guardian.flop",
@@ -34,15 +38,15 @@
                     "none"
                   ]
                 },
+                "minecraft:damage": 0,
+                "minecraft:enchantments": {
+                  "minecraft:knockback": 3
+                },
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_purple",
                   "italic": false,
                   "text": "Slap Fish"
-                },
-                "minecraft:damage": 0,
-                "minecraft:enchantments": {
-                  "minecraft:knockback": 3
                 },
                 "minecraft:lore": [
                   {
@@ -67,19 +71,15 @@
                   "disable_blocking_for_seconds": 0.0,
                   "item_damage_per_attack": 1
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:cooked_salmon",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

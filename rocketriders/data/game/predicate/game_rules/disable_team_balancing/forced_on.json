@@ -5,12 +5,12 @@
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$config_override.disable_team_balancing",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$config_override.disable_team_balancing"
+        }
       }
     }
   ]

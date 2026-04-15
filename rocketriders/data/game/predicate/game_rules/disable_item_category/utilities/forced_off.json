@@ -5,24 +5,24 @@
       "condition": "minecraft:value_check",
       "range": 1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$duel_settings_locked",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$duel_settings_locked"
+        }
       }
     },
     {
       "condition": "minecraft:value_check",
       "range": -1,
       "value": {
+        "type": "minecraft:score",
         "score": "match_components",
         "target": {
-          "name": "$config_override.disable_item_category/utilities",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$config_override.disable_item_category/utilities"
+        }
       }
     },
     {
@@ -32,96 +32,96 @@
           "condition": "minecraft:value_check",
           "range": 1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.arrow",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.arrow"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": 1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.canopy",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.canopy"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": 1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.fireball",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.fireball"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": 1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.nova_rocket",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.nova_rocket"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": 1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.obsidian_shield",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.obsidian_shield"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": 1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.shield",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.shield"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": 1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.splash",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.splash"
+            }
           }
         },
         {
           "condition": "minecraft:value_check",
           "range": 1,
           "value": {
+            "type": "minecraft:score",
             "score": "match_components",
             "target": {
-              "name": "$item_pool.vortex",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$item_pool.vortex"
+            }
           }
         }
       ]

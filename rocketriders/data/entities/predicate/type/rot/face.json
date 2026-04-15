@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:text_display",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "rot": {
           "face": {}
         }
       }
-    },
-    "minecraft:entity_type": "minecraft:text_display"
+    }
   }
 }

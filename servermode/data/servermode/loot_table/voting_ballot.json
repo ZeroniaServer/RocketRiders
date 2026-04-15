@@ -1,14 +1,16 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
-          "name": "minecraft:written_book",
-          "type": "minecraft:item"
+          "type": "minecraft:item",
+          "name": "minecraft:written_book"
         }
       ],
       "functions": [
         {
+          "function": "minecraft:set_components",
           "components": {
             "!minecraft:written_book_content": {},
             "minecraft:custom_data": {
@@ -22,11 +24,9 @@
               "italic": false,
               "text": "Voting Ballot"
             }
-          },
-          "function": "minecraft:set_components"
+          }
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

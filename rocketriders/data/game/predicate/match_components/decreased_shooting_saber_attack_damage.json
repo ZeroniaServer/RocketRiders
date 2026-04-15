@@ -2,11 +2,11 @@
   "condition": "minecraft:value_check",
   "range": 1,
   "value": {
+    "type": "minecraft:score",
     "score": "match_components",
     "target": {
-      "name": "$decreased_shooting_saber_attack_damage",
-      "type": "minecraft:fixed"
-    },
-    "type": "minecraft:score"
+      "type": "minecraft:fixed",
+      "name": "$decreased_shooting_saber_attack_damage"
+    }
   }
 }

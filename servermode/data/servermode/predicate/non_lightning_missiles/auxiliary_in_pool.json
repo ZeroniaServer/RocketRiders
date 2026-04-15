@@ -2,11 +2,11 @@
   "condition": "minecraft:value_check",
   "range": 0,
   "value": {
+    "type": "minecraft:score",
     "score": "match_components",
     "target": {
-      "name": "$item_pool.missile/auxiliary",
-      "type": "minecraft:fixed"
-    },
-    "type": "minecraft:score"
+      "type": "minecraft:fixed",
+      "name": "$item_pool.missile/auxiliary"
+    }
   }
 }

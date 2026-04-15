@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/volcanic_hatred",
   "criteria": {
     "1": {
       "trigger": "minecraft:impossible"
@@ -43,7 +44,6 @@
       "text": "Regifting"
     }
   },
-  "parent": "achievements:rr_challenges/volcanic_hatred",
   "requirements": [
     [
       "1"

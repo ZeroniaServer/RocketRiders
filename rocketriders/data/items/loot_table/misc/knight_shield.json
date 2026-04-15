@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:shield",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -42,10 +46,10 @@
                     "minecraft:banner_patterns"
                   ]
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -68,10 +72,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -94,10 +98,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -120,10 +124,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -146,28 +150,27 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
-                  "italic": false,
                   "bold": true,
+                  "italic": false,
                   "text": ""
                 },
                 {
-                  "score": {
-                    "name": "@s",
-                    "objective": "text.main_color"
-                  },
                   "extra": [
                     {
                       "text": "Knight Shield"
                     }
-                  ]
+                  ],
+                  "score": {
+                    "name": "@s",
+                    "objective": "text.main_color"
+                  }
                 }
               ],
               "target": "custom_name"
@@ -176,12 +179,9 @@
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:shield",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

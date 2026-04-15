@@ -1,18 +1,22 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_leggings",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "minecraft:armor",
                     "amount": 2,
                     "id": "rocketriders:leggings",
                     "operation": "add_value",
-                    "slot": "legs",
-                    "type": "minecraft:armor"
+                    "slot": "legs"
                   }
                 ],
                 "minecraft:dyed_color": -1,
@@ -35,8 +39,7 @@
                   ]
                 },
                 "minecraft:unbreakable": {}
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:reference",
@@ -47,8 +50,8 @@
               "name": "items:set_trim/accent_color"
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -74,12 +77,9 @@
               ],
               "target": "item_name"
             }
-          ],
-          "name": "minecraft:leather_leggings",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

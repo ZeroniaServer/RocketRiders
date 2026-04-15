@@ -1,6 +1,7 @@
 {
   "criteria": {
     "requirement": {
+      "trigger": "minecraft:player_hurt_entity",
       "conditions": {
         "damage": {
           "type": {
@@ -23,8 +24,7 @@
           },
           "minecraft:entity_type": "minecraft:zombie"
         }
-      },
-      "trigger": "minecraft:player_hurt_entity"
+      }
     }
   },
   "rewards": {

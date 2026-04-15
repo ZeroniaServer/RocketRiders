@@ -1,6 +1,7 @@
 {
   "criteria": {
     "use_item": {
+      "trigger": "minecraft:using_item",
       "conditions": {
         "item": {
           "predicates": {
@@ -9,8 +10,7 @@
             }
           }
         }
-      },
-      "trigger": "minecraft:using_item"
+      }
     }
   },
   "rewards": {

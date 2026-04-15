@@ -7,12 +7,12 @@
         "min": 1
       },
       "value": {
+        "type": "minecraft:score",
         "score": "global",
         "target": {
-          "name": "$players_in_lobby",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
+          "type": "minecraft:fixed",
+          "name": "$players_in_lobby"
+        }
       }
     },
     {
@@ -28,12 +28,12 @@
             "min": 1
           },
           "value": {
+            "type": "minecraft:score",
             "score": "global",
             "target": {
-              "name": "$playing_teams_count",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$playing_teams_count"
+            }
           }
         }
       ]
@@ -51,12 +51,12 @@
             "min": 1
           },
           "value": {
+            "type": "minecraft:score",
             "score": "global",
             "target": {
-              "name": "$playing_teams_count",
-              "type": "minecraft:fixed"
-            },
-            "type": "minecraft:score"
+              "type": "minecraft:fixed",
+              "name": "$playing_teams_count"
+            }
           }
         }
       ]

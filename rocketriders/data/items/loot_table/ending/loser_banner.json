@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:white_banner",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -62,10 +66,11 @@
                   ]
                 },
                 "minecraft:unbreakable": {}
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_item",
+              "item": "minecraft:blue_banner",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -82,11 +87,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_item",
-              "item": "minecraft:blue_banner"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -139,10 +143,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_item",
+              "item": "minecraft:red_banner",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -159,11 +164,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_item",
-              "item": "minecraft:red_banner"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -216,10 +220,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_item",
+              "item": "minecraft:yellow_banner",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -236,11 +241,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_item",
-              "item": "minecraft:yellow_banner"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -293,10 +297,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_item",
+              "item": "minecraft:green_banner",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
@@ -313,11 +318,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_item",
-              "item": "minecraft:green_banner"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -370,12 +374,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -399,12 +402,9 @@
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:white_banner",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

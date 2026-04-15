@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:snowball",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "stinging_shield_projectile": {
           "body": {}
         }
       }
-    },
-    "minecraft:entity_type": "minecraft:snowball"
+    }
   }
 }

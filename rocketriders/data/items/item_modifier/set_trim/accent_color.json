@@ -1,5 +1,27 @@
 [
   {
+    "function": "minecraft:filtered",
+    "item_filter": {
+      "items": "#custom:helmets"
+    },
+    "on_fail": {
+      "function": "minecraft:set_components",
+      "components": {
+        "minecraft:trim": {
+          "material": "minecraft:quartz",
+          "pattern": "minecraft:vex"
+        }
+      }
+    },
+    "on_pass": {
+      "function": "minecraft:set_components",
+      "components": {
+        "minecraft:trim": {
+          "material": "minecraft:quartz",
+          "pattern": "minecraft:tide"
+        }
+      }
+    },
     "conditions": [
       {
         "condition": "minecraft:inverted",
@@ -16,31 +38,31 @@
         "condition": "minecraft:reference",
         "name": "custom:team/blue"
       }
-    ],
+    ]
+  },
+  {
     "function": "minecraft:filtered",
     "item_filter": {
       "items": "#custom:helmets"
     },
     "on_fail": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
           "material": "minecraft:quartz",
           "pattern": "minecraft:vex"
         }
-      },
-      "function": "minecraft:set_components"
+      }
     },
     "on_pass": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
           "material": "minecraft:quartz",
           "pattern": "minecraft:tide"
         }
-      },
-      "function": "minecraft:set_components"
-    }
-  },
-  {
+      }
+    },
     "conditions": [
       {
         "condition": "minecraft:inverted",
@@ -57,31 +79,31 @@
         "condition": "minecraft:reference",
         "name": "custom:team/blue"
       }
-    ],
+    ]
+  },
+  {
     "function": "minecraft:filtered",
     "item_filter": {
       "items": "#custom:helmets"
     },
     "on_fail": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
-          "material": "minecraft:quartz",
-          "pattern": "minecraft:vex"
+          "material": "minecraft:netherite",
+          "pattern": "minecraft:spire"
         }
-      },
-      "function": "minecraft:set_components"
+      }
     },
     "on_pass": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
-          "material": "minecraft:quartz",
-          "pattern": "minecraft:tide"
+          "material": "minecraft:netherite",
+          "pattern": "minecraft:raiser"
         }
-      },
-      "function": "minecraft:set_components"
-    }
-  },
-  {
+      }
+    },
     "conditions": [
       {
         "condition": "minecraft:inverted",
@@ -98,31 +120,31 @@
         "condition": "minecraft:reference",
         "name": "custom:team/yellow"
       }
-    ],
+    ]
+  },
+  {
     "function": "minecraft:filtered",
     "item_filter": {
       "items": "#custom:helmets"
     },
     "on_fail": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
           "material": "minecraft:netherite",
           "pattern": "minecraft:spire"
         }
-      },
-      "function": "minecraft:set_components"
+      }
     },
     "on_pass": {
+      "function": "minecraft:set_components",
       "components": {
         "minecraft:trim": {
           "material": "minecraft:netherite",
           "pattern": "minecraft:raiser"
         }
-      },
-      "function": "minecraft:set_components"
-    }
-  },
-  {
+      }
+    },
     "conditions": [
       {
         "condition": "minecraft:inverted",
@@ -139,28 +161,6 @@
         "condition": "minecraft:reference",
         "name": "custom:team/yellow"
       }
-    ],
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "items": "#custom:helmets"
-    },
-    "on_fail": {
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:netherite",
-          "pattern": "minecraft:spire"
-        }
-      },
-      "function": "minecraft:set_components"
-    },
-    "on_pass": {
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:netherite",
-          "pattern": "minecraft:raiser"
-        }
-      },
-      "function": "minecraft:set_components"
-    }
+    ]
   }
 ]

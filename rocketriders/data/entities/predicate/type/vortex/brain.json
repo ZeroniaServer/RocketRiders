@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:area_effect_cloud",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "vortex": {
           "brain": {}
         }
       }
-    },
-    "minecraft:entity_type": "minecraft:area_effect_cloud"
+    }
   }
 }

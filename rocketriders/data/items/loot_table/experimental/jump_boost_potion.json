@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:potion",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "!minecraft:use_remainder": {},
                 "minecraft:custom_data": {
@@ -61,19 +65,15 @@
                     "minecraft:potion_contents"
                   ]
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:potion",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

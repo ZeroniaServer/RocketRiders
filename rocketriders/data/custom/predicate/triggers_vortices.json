@@ -50,56 +50,56 @@
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
           "minecraft:predicates": {
             "minecraft:custom_data": {
               "shield_projectile": {}
             }
-          },
-          "minecraft:entity_type": "minecraft:snowball"
+          }
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
           "minecraft:predicates": {
             "minecraft:custom_data": {
               "stinging_shield_projectile": {}
             }
-          },
-          "minecraft:entity_type": "minecraft:snowball"
+          }
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
+          "minecraft:entity_type": "minecraft:firework_rocket",
           "minecraft:predicates": {
             "minecraft:custom_data": {
               "nova_rocket": {}
             }
-          },
-          "minecraft:entity_type": "minecraft:firework_rocket"
+          }
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
           "minecraft:predicates": {
             "minecraft:custom_data": {
               "icbm": {}
             }
-          },
-          "minecraft:entity_type": "minecraft:snowball"
+          }
         }
       },
       {
         "condition": "minecraft:entity_properties",
         "entity": "this",
         "predicate": {
-          "minecraft:nbt": "{fuse:2s}",
-          "minecraft:entity_type": "minecraft:tnt"
+          "minecraft:entity_type": "minecraft:tnt",
+          "minecraft:nbt": "{fuse:2s}"
         }
       }
     ]

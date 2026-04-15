@@ -3,13 +3,13 @@
   "attributes": {
     "minecraft:audio/background_music": {
       "creative": {
-        "max_delay": 24000,
         "min_delay": 12000,
+        "max_delay": 24000,
         "sound": "minecraft:music.creative"
       },
       "default": {
-        "max_delay": 24000,
         "min_delay": 12000,
+        "max_delay": 24000,
         "sound": "minecraft:music.game"
       }
     },
@@ -36,8 +36,8 @@
   "monster_spawn_block_light_limit": 0,
   "monster_spawn_light_level": {
     "type": "minecraft:uniform",
-    "max_inclusive": 7,
-    "min_inclusive": 0
+    "min_inclusive": 0,
+    "max_inclusive": 7
   },
   "timelines": "#minecraft:in_overworld"
 }

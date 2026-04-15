@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/holyland",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -20,6 +21,5 @@
       "color": "#c20000",
       "text": "A Whole New World..."
     }
-  },
-  "parent": "achievements:rr_challenges/holyland"
+  }
 }

@@ -1,18 +1,22 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:leather_boots",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "minecraft:armor",
                     "amount": 1,
                     "id": "rocketriders:boots",
                     "operation": "add_value",
-                    "slot": "feet",
-                    "type": "minecraft:armor"
+                    "slot": "feet"
                   }
                 ],
                 "minecraft:dyed_color": 10137855,
@@ -45,10 +49,10 @@
                   "pattern": "minecraft:spire"
                 },
                 "minecraft:unbreakable": {}
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 16741799
               },
@@ -57,15 +61,11 @@
                   "condition": "minecraft:reference",
                   "name": "game:blue_team_skin/any_red_skin"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             }
-          ],
-          "name": "minecraft:leather_boots",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

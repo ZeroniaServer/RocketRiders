@@ -1,65 +1,65 @@
 {
-  "actions": [
-    {
-      "action": {
-        "command": "trigger settings",
-        "type": "minecraft:run_command"
-      },
-      "label": "Settings..."
-    },
-    {
-      "action": {
-        "command": "trigger settings set 101",
-        "type": "minecraft:run_command"
-      },
-      "label": "Leave Match"
-    },
-    {
-      "action": {
-        "dialog": "experimental:settings_menu/achievements",
-        "type": "minecraft:show_dialog"
-      },
-      "label": "Achievements..."
-    }
-  ],
-  "after_action": "none",
-  "exit_action": {
-    "action": {
-      "command": "trigger settings set -1",
-      "type": "minecraft:run_command"
-    },
-    "label": {
-      "translate": "gui.done"
-    }
-  },
+  "type": "minecraft:multi_action",
+  "title": "Rocket Riders",
   "external_title": [
     "",
     {
       "bold": true,
       "color": "blue",
-      "text": "Rocket",
       "shadow_color": [
         0.05,
         0.05,
         0.25,
         1
-      ]
+      ],
+      "text": "Rocket"
     },
     " ",
     {
       "bold": true,
       "color": "gold",
-      "text": "Riders",
       "shadow_color": [
         0.35,
         0.15,
         0.05,
         1
-      ]
+      ],
+      "text": "Riders"
     },
     "..."
   ],
+  "after_action": "none",
   "pause": false,
-  "title": "Rocket Riders",
-  "type": "minecraft:multi_action"
+  "actions": [
+    {
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger settings"
+      },
+      "label": "Settings..."
+    },
+    {
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger settings set 101"
+      },
+      "label": "Leave Match"
+    },
+    {
+      "action": {
+        "type": "minecraft:show_dialog",
+        "dialog": "experimental:settings_menu/achievements"
+      },
+      "label": "Achievements..."
+    }
+  ],
+  "exit_action": {
+    "action": {
+      "type": "minecraft:run_command",
+      "command": "trigger settings set -1"
+    },
+    "label": {
+      "translate": "gui.done"
+    }
+  }
 }

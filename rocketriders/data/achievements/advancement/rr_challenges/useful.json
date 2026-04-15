@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_fffmedium/root",
   "criteria": {
     "1": {
       "trigger": "minecraft:impossible"
@@ -80,6 +81,5 @@
       "color": "#fe6309",
       "text": "They're Useful!"
     }
-  },
-  "parent": "achievements:rr_fffmedium/root"
+  }
 }

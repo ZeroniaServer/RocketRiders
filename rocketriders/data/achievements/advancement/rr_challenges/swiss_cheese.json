@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/moonwalker",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -30,6 +31,5 @@
       "color": "#c20000",
       "text": "Swiss Cheese"
     }
-  },
-  "parent": "achievements:rr_challenges/moonwalker"
+  }
 }

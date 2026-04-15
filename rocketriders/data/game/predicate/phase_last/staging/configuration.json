@@ -3,24 +3,24 @@
     "condition": "minecraft:value_check",
     "range": 0,
     "value": {
+      "type": "minecraft:score",
       "score": "global",
       "target": {
-        "name": "$phase_last/game",
-        "type": "minecraft:fixed"
-      },
-      "type": "minecraft:score"
+        "type": "minecraft:fixed",
+        "name": "$phase_last/game"
+      }
     }
   },
   {
     "condition": "minecraft:value_check",
     "range": 0,
     "value": {
+      "type": "minecraft:score",
       "score": "global",
       "target": {
-        "name": "$phase_last/game.staging",
-        "type": "minecraft:fixed"
-      },
-      "type": "minecraft:score"
+        "type": "minecraft:fixed",
+        "name": "$phase_last/game.staging"
+      }
     }
   }
 ]

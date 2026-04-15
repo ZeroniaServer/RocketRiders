@@ -1,10 +1,14 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:firework_rocket",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:can_place_on": {
                   "blocks": "#custom:missileandbase"
@@ -39,14 +43,14 @@
                     "minecraft:fireworks"
                   ]
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
-              "count": 5,
-              "function": "minecraft:set_count"
+              "function": "minecraft:set_count",
+              "count": 5
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:fireworks": {
                   "explosions": [
@@ -79,10 +83,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:fireworks": {
                   "explosions": [
@@ -115,10 +119,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:fireworks": {
                   "explosions": [
@@ -151,10 +155,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:fireworks": {
                   "explosions": [
@@ -187,12 +191,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -216,12 +219,9 @@
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:firework_rocket",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

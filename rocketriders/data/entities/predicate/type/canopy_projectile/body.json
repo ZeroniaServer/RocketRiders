@@ -2,13 +2,13 @@
   "condition": "minecraft:entity_properties",
   "entity": "this",
   "predicate": {
+    "minecraft:entity_type": "minecraft:ender_pearl",
     "minecraft:predicates": {
       "minecraft:custom_data": {
         "canopy_projectile": {
           "body": {}
         }
       }
-    },
-    "minecraft:entity_type": "minecraft:ender_pearl"
+    }
   }
 }

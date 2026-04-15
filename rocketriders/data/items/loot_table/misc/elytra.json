@@ -1,18 +1,22 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:elytra",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "minecraft:armor",
                     "amount": 3,
                     "id": "rocketriders:elytra",
                     "operation": "add_value",
-                    "slot": "chest",
-                    "type": "minecraft:armor"
+                    "slot": "chest"
                   }
                 ],
                 "minecraft:custom_data": {
@@ -67,19 +71,15 @@
                     "minecraft:attribute_modifiers"
                   ]
                 }
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
             }
-          ],
-          "name": "minecraft:elytra",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

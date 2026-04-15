@@ -1,5 +1,6 @@
 [
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 3949738
     },
@@ -15,10 +16,10 @@
           "custom_team_color": 1
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 16768000
     },
@@ -34,10 +35,10 @@
           "custom_team_color": 2
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 16711680
     },
@@ -53,10 +54,10 @@
           "custom_team_color": 3
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 65281
     },
@@ -72,10 +73,10 @@
           "custom_team_color": 4
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 11796735
     },
@@ -91,10 +92,10 @@
           "custom_team_color": 5
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 16752877
     },
@@ -110,10 +111,10 @@
           "custom_team_color": 6
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 16744704
     },
@@ -129,10 +130,10 @@
           "custom_team_color": 7
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 16735636
     },
@@ -148,10 +149,10 @@
           "custom_team_color": 8
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 6684628
     },
@@ -167,10 +168,10 @@
           "custom_team_color": 9
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 13959061
     },
@@ -186,10 +187,10 @@
           "custom_team_color": 10
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 16383860
     },
@@ -205,10 +206,10 @@
           "custom_team_color": 11
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   },
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:dyed_color": 7506394
     },
@@ -224,7 +225,6 @@
           "custom_team_color": 12
         }
       }
-    ],
-    "function": "minecraft:set_components"
+    ]
   }
 ]

@@ -1,28 +1,32 @@
 {
   "pools": [
     {
+      "rolls": 1,
       "entries": [
         {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_spear",
           "functions": [
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
+                    "type": "minecraft:attack_damage",
                     "amount": 2.0,
                     "id": "rocketriders:lunging_spear",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_damage"
+                    "slot": "mainhand"
                   },
                   {
+                    "type": "minecraft:attack_speed",
                     "amount": -2.9473683834075928,
                     "display": {
                       "type": "hidden"
                     },
                     "id": "rocketriders:lunging_spear",
                     "operation": "add_value",
-                    "slot": "mainhand",
-                    "type": "minecraft:attack_speed"
+                    "slot": "mainhand"
                   }
                 ],
                 "minecraft:custom_data": {
@@ -32,10 +36,10 @@
                   "minecraft:lunge": 3
                 },
                 "minecraft:max_damage": 5
-              },
-              "function": "minecraft:set_components"
+              }
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:diamond_spear"
               },
@@ -51,10 +55,10 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/blue"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
+              "function": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:golden_spear"
               },
@@ -70,12 +74,11 @@
                   "condition": "minecraft:reference",
                   "name": "custom:team/yellow"
                 }
-              ],
-              "function": "minecraft:set_components"
+              ]
             },
             {
-              "entity": "this",
               "function": "minecraft:set_name",
+              "entity": "this",
               "name": [
                 {
                   "bold": true,
@@ -84,25 +87,22 @@
                   "text": ""
                 },
                 {
-                  "score": {
-                    "name": "@s",
-                    "objective": "text.main_color"
-                  },
                   "extra": [
                     {
                       "text": "Lunging Spear"
                     }
-                  ]
+                  ],
+                  "score": {
+                    "name": "@s",
+                    "objective": "text.main_color"
+                  }
                 }
               ],
               "target": "item_name"
             }
-          ],
-          "name": "minecraft:iron_spear",
-          "type": "minecraft:item"
+          ]
         }
-      ],
-      "rolls": 1
+      ]
     }
   ]
 }

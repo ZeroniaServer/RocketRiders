@@ -1,6 +1,7 @@
 {
   "criteria": {
     "get_killed_from_pre_death_projectile": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "source_entity": {
@@ -31,8 +32,7 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     }
   },
   "rewards": {

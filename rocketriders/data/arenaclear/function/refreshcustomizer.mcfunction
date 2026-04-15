@@ -121,5 +121,5 @@ execute if predicate game:arena_details/bottom/spikes run place template game:ba
 execute if predicate game:arena_details/bottom/cannon run place template game:base_detail_previews/cannon_bottom -49 187 75 none none 1 0 strict
 
 ##Castle
-execute if predicate game:match_components/arena/castle if predicate game:castle_type/normal run place template game:base_detail_previews/castle/normal -44 185 64 none none 1 0 strict
-execute if predicate game:match_components/arena/castle if predicate game:castle_type/deepslate run place template game:base_detail_previews/castle/deepslate -44 185 64 none none 1 0 strict
+execute if predicate game:arena_details/castle if predicate game:castle_type/normal run place template game:base_detail_previews/castle/normal -44 185 64 none none 1 0 strict
+execute if predicate game:arena_details/castle if predicate game:castle_type/deepslate run place template game:base_detail_previews/castle/deepslate -44 185 64 none none 1 0 strict

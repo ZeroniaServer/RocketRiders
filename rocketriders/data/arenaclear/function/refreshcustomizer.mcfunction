@@ -37,7 +37,7 @@ execute unless predicate game:match_components/duel_settings_locked unless entit
 execute if predicate game:match_components/duel_settings_locked run data modify block -58 192 71 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
 
 # MIDDLE DECORATION
-data modify block -58 192 84 front_text.messages set value [{color:"#C55F00",text:"Top Sides Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/middle"}},{color:"#FF7B00",text:""},"",""]
+data modify block -58 192 84 front_text.messages set value [{color:"#C55F00",text:"Middle Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/middle"}},{color:"#FF7B00",text:""},"",""]
 execute if predicate game:arena_details/middle/none run data modify block -58 192 84 front_text.messages[1].text set value "None"
 execute if predicate game:arena_details/middle/slime_pads run data modify block -58 192 84 front_text.messages[1].text set value "Slime Pads"
 execute if predicate game:arena_details/middle/spikes run data modify block -58 192 84 front_text.messages[1].text set value "Spikes"

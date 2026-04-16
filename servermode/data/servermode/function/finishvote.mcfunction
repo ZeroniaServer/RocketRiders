@@ -49,7 +49,7 @@ execute if entity @e[x=0,type=marker,tag=WonVote,tag=ChaseMode] store result sco
 # Reset config
 function game:config/reset
 
-# Select base decorations
+# Select base details
 execute if entity @e[x=0,type=marker,tag=WonVote,tag=Set1] as @e[x=0,type=marker,tag=ServermodeSet1] run function servermode:selectmap
 execute if entity @e[x=0,type=marker,tag=WonVote,tag=Set2] as @e[x=0,type=marker,tag=ServermodeSet2] run function servermode:selectmap
 execute if entity @e[x=0,type=marker,tag=WonVote,tag=Set3] as @e[x=0,type=marker,tag=ServermodeSet3] run function servermode:selectmap

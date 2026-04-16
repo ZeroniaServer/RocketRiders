@@ -54,7 +54,7 @@ fill -14 34 52 38 63 56 black_stained_glass replace yellow_stained_glass
 fill 38 63 57 -14 34 61 light_gray_stained_glass replace orange_stained_glass
 fill -14 34 66 38 63 62 white_stained_glass replace white_stained_glass
 
-#Yellow Decorations
+#Yellow Details
 fill -14 84 66 38 63 48 gray_stained_glass replace yellow_stained_glass
 fill -14 84 66 38 63 48 gray_stained_glass replace orange_stained_glass
 
@@ -67,7 +67,7 @@ fill -14 63 39 38 34 29 gray_stained_glass replace orange_stained_glass
 fill -14 63 73 38 34 75 gray_stained_glass replace yellow_stained_glass
 fill -14 63 73 38 34 75 gray_stained_glass replace orange_stained_glass
 
-#Blue Decorations
+#Blue Details
 fill -14 84 -66 38 63 -48 red_stained_glass replace blue_stained_glass
 fill -14 84 -66 38 63 -48 pink_stained_glass replace cyan_stained_glass
 

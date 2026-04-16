@@ -120,7 +120,7 @@ tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noPlayerCredits
 execute if predicate game:world_options/show_extra_player_credits/on run function lobby:credits/initialize
 execute unless predicate game:world_options/show_extra_player_credits/on run function lobby:credits/stop
 
-## BASE DECORATIONS
+## BASE DETAILS
 # TopDeco score -> arena_details/top config
 execute if score @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco matches 1..3 run scoreboard players operation $arena_details/top config = @e[x=0,type=armor_stand,tag=Selection,limit=1] TopDeco
 

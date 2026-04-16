@@ -3,7 +3,7 @@ execute if entity @s[scores={ForfeitTimeout=1}] run tellraw @a[x=0] ["",{bold:tr
 kill @e[x=0,type=tnt]
 
 execute if predicate game:modifiers/punchable_tnt/on run kill @e[x=0,predicate=entities:type/punchable_tnt]
-execute unless predicate game:phase/match/pause as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute unless predicate game:phase/match/pause as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/reset_inventory
 execute unless predicate game:phase/match/pause run tag @a[x=0,predicate=custom:team/any_playing_team] remove force_mount
 execute unless predicate game:phase/match/pause run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 execute unless predicate game:phase/match/pause run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0

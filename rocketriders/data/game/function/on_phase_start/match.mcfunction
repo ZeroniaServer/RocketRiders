@@ -26,12 +26,12 @@ execute unless predicate game:phase/match/closing run tag @a[x=0] remove Calcula
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
 scoreboard players set @a[x=0,predicate=custom:team/any_playing_team] jumps 0
 #Enabling damage gamerules
-function custom:game_rules/drowning_damage/on
-function custom:game_rules/fire_damage/on
+gamerule minecraft:drowning_damage true
+gamerule minecraft:fire_damage true
 scoreboard players operation $initial_blue_team_count global = $blue_team_count global
 scoreboard players operation $initial_yellow_team_count global = $yellow_team_count global
 function lobby:credits/restart
-function custom:game_rules/mob_griefing/on
+gamerule minecraft:mob_griefing true
 scoreboard players reset $force_countdown global
 
 

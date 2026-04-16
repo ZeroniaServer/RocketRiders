@@ -149,7 +149,7 @@ scoreboard players display numberformat #spectator text.main_color fixed {storag
 scoreboard players display numberformat #spectator text.accent_color fixed {storage:"rocketriders:teams",nbt:"spectator.text.accent_color",interpret:true}
 scoreboard players display numberformat #spectator text.flag fixed {storage:"rocketriders:teams",nbt:"spectator.text.flag",interpret:true}
 
-function custom:update_player_text/all
+function custom:player/update_text/all
 
 
 ## Resolve Block Palettes

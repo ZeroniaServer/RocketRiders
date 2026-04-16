@@ -35,14 +35,14 @@ execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_join
 execute if predicate custom:periodic_tick/3 if predicate game:teams/blue_is_joinable if predicate game:blue_team_skin/classic_red at @e[x=0,type=marker,tag=join_pad.blue] run particle minecraft:falling_dust{block_state:"minecraft:red_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute as @e[x=0,type=marker,tag=join_pad.blue] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinblue
 execute as @a[x=0,tag=tryJoinBlue] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.blue] run tag @s remove tryJoinBlue
-execute as @a[x=0,tag=JoinBlue] run function custom:team/join_blue
+execute as @a[x=0,tag=JoinBlue] run function custom:player/team/join_blue
 execute if entity @a[limit=1,x=0,tag=JoinBlue] run function everytick:team_count
 clear @a[x=0,tag=JoinBlue] *
 execute if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinBlue] run function modifiers:hardcoreset
 execute if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run function modifiers:hobbit/set
 execute if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run function modifiers:long_arms/set
-execute as @a[x=0,tag=JoinBlue] run function custom:update_armor
-execute as @a[x=0,tag=JoinBlue] run function custom:reset_inventory
+execute as @a[x=0,tag=JoinBlue] run function custom:player/update_armor
+execute as @a[x=0,tag=JoinBlue] run function custom:player/reset_inventory
 execute if predicate game:phase/staging run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
 execute if predicate game:phase/staging unless predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
 execute if predicate game:phase/staging if predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the match!"]
@@ -71,13 +71,13 @@ execute if predicate custom:periodic_tick/3 if predicate game:teams/yellow_is_jo
 execute if predicate custom:periodic_tick/3 if predicate game:teams/yellow_is_joinable if predicate game:yellow_team_skin/green at @e[x=0,type=marker,tag=join_pad.yellow] run particle minecraft:falling_dust{block_state:"minecraft:green_concrete"} ~ ~1 ~ 0.5 1 0.5 0.1 5 force @a[x=0,tag=!hideParticles,predicate=!custom:in_arena]
 execute as @e[x=0,type=marker,tag=join_pad.yellow] at @s as @a[distance=..1,predicate=custom:team/lobby,sort=random] run function game:joinyellow
 execute as @a[x=0,tag=tryJoinYellow] at @s unless entity @e[distance=..2,type=marker,tag=join_pad.yellow] run tag @s remove tryJoinYellow
-execute as @a[x=0,tag=JoinYellow] run function custom:team/join_yellow
+execute as @a[x=0,tag=JoinYellow] run function custom:player/team/join_yellow
 clear @a[x=0,tag=JoinYellow] *
 execute if predicate game:modifiers/hardcore/on as @a[x=0,tag=JoinYellow] run function modifiers:hardcoreset
 execute if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run function modifiers:hobbit/set
 execute if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinYellow] run function modifiers:long_arms/set
-execute as @a[x=0,tag=JoinYellow] run function custom:update_armor
-execute as @a[x=0,tag=JoinYellow] run function custom:reset_inventory
+execute as @a[x=0,tag=JoinYellow] run function custom:player/update_armor
+execute as @a[x=0,tag=JoinYellow] run function custom:player/reset_inventory
 execute if predicate game:phase/staging run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
 execute if predicate game:phase/staging as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
 execute if predicate game:phase/staging run tellraw @a[x=0,tag=JoinYellow] [{italic:true,score:{name:"*",objective:"text.accent_color"}},"Fall off the base to return to the Lobby."]
@@ -112,7 +112,7 @@ execute as @a[x=0,tag=tryJoinSpec] at @s unless entity @e[distance=..2,type=mark
 execute unless predicate game:teams/spectator_is_joinable run tag @a[x=0] remove JoinSpec
 execute as @e[x=0,type=marker,tag=join_pad.spectator] at @s run tag @a[predicate=custom:team/spectator,distance=..1] add AlreadySpec
 execute unless predicate game:teams/spectator_is_joinable run tag @a[x=0] remove AlreadySpec
-execute as @a[x=0,tag=JoinSpec] run function custom:team/join_spectator
+execute as @a[x=0,tag=JoinSpec] run function custom:player/team/join_spectator
 clear @a[x=0,tag=JoinSpec] *
 scoreboard players enable @a[x=0,predicate=custom:team/spectator] leaveSpec
 tag @a[x=0,scores={leaveSpec=1..}] add LeaveTeams

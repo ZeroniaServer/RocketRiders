@@ -1,1 +1,1 @@
-function custom:update_armor
+function custom:player/update_armor

@@ -8,7 +8,7 @@ scoreboard players add @s entity.age 1
 execute if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{y:{min:186,max:187}}}}} run return run kill @s
 
 # Destroy grounded intangible arrows
-execute if predicate custom:intangible_arrow run return run execute if score @s entity.age matches 5.. run function custom:kill_with_smoke_poof
+execute if predicate custom:intangible_arrow run return run execute if score @s entity.age matches 5.. run function custom:entity/kill_with_smoke_poof
 
 # Item Pickup
 scoreboard players set $give_item var 0

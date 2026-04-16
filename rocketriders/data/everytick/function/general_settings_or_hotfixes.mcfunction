@@ -150,9 +150,9 @@ tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect_cloud]
 
 #Disable damage gamerules if no game has started
-execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run function custom:game_rules/fall_damage/off
-execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run function custom:game_rules/drowning_damage/off
-execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run function custom:game_rules/fire_damage/off
+execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run gamerule minecraft:fall_damage false
+execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run gamerule minecraft:drowning_damage false
+execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run gamerule minecraft:fire_damage false
 
 #Lobby players have no items besides a book (and boots, if Duel is present or if noYZELO is active)
 #If servermode is not active
@@ -182,7 +182,7 @@ execute if function game:norankboots run item replace entity @a[x=0,predicate=cu
 
 #Servermode teleport out of modification room
 execute unless predicate rr:has_modification_room run tellraw @a[x=0,predicate=2811iaj1:in_modification] ["",{"text":"You shouldn't be here!","color":"red"}]
-execute unless predicate rr:has_modification_room as @a[x=0,predicate=!custom:team/spectator,predicate=2811iaj1:in_modification] at @s run function custom:leave
+execute unless predicate rr:has_modification_room as @a[x=0,predicate=!custom:team/spectator,predicate=2811iaj1:in_modification] at @s run function custom:player/leave_match
 execute unless predicate rr:has_modification_room as @a[x=0,predicate=custom:team/spectator,predicate=2811iaj1:in_modification] run tp @s 12 100 0.5 90 90
 
 #Servermode quick fix for Duel Mode
@@ -200,18 +200,18 @@ tag @a[x=0,tag=was_invisible,predicate=!custom:invisible] remove was_invisible
 execute as @a[x=0,scores={custom_team_color=1..}] unless entity @s[predicate=custom:team/any_playing_team,predicate=game:match_components/custom_team_colors] run scoreboard players reset @s custom_team_color
 
 # Clear the XP bar in the lobby if YZELO is disabled
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=noYZELO] as @a[x=0,predicate=!custom:team/any_playing_team] run function custom:set_xp_bar {level:0,progress:0}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=noYZELO] as @a[x=0,predicate=!custom:team/any_playing_team] run function custom:player/set_xp_bar_empty
 
 # Set item timer in xp bar in-game
-execute unless predicate game:phase/match/play run xp add @a[x=0,predicate=custom:team/any_playing_team] -2147483648 levels
-execute if predicate game:phase/match/play if predicate game:match_components/no_item_timer run xp add @a[x=0,predicate=custom:team/any_playing_team] -2147483648 levels
-execute if predicate game:phase/match/play unless predicate game:match_components/no_item_timer if score $match_play_time global matches ..2 as @a[x=0,predicate=custom:team/any_playing_team] run xp add @a[x=0,predicate=custom:team/any_playing_team] -2147483648 levels
+execute unless predicate game:phase/match/play as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/set_xp_bar_empty
+execute if predicate game:phase/match/play if predicate game:match_components/no_item_timer as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/set_xp_bar_empty
+execute if predicate game:phase/match/play unless predicate game:match_components/no_item_timer if score $match_play_time global matches ..2 as @a[x=0,predicate=custom:team/any_playing_team] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/set_xp_bar_empty
 execute if predicate game:phase/match/play unless predicate game:match_components/no_item_timer if score $match_play_time global matches 3.. run data modify storage rocketriders:main item_time_progress set value {level:0}
 execute if predicate game:phase/match/play unless predicate game:match_components/no_item_timer if score $match_play_time global matches 3.. run scoreboard players operation $item_time_progress var = @e[limit=1,x=0,type=armor_stand,tag=Selection] RandomItem
 execute if predicate game:phase/match/play unless predicate game:match_components/no_item_timer if score $match_play_time global matches 3.. run scoreboard players operation $item_time_progress var *= $1000 constant
 execute if predicate game:phase/match/play unless predicate game:match_components/no_item_timer if score $match_play_time global matches 3.. if predicate game:modifiers/minute_mix/on store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= $1200 constant
 execute if predicate game:phase/match/play unless predicate game:match_components/no_item_timer if score $match_play_time global matches 3.. unless predicate game:modifiers/minute_mix/on store result storage rocketriders:main item_time_progress.progress float 0.001 run scoreboard players operation $item_time_progress var /= @e[limit=1,x=0,type=armor_stand,tag=Selection] MaxItemTime
-execute if predicate game:phase/match/play unless predicate game:match_components/no_item_timer if score $match_play_time global matches 3.. as @a[x=0,predicate=custom:team/any_playing_team] run function custom:set_xp_bar with storage rocketriders:main item_time_progress
+execute if predicate game:phase/match/play unless predicate game:match_components/no_item_timer if score $match_play_time global matches 3.. as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/set_xp_bar with storage rocketriders:main item_time_progress
 
 # Remove flowing water sounds from the lobby
 stopsound @a[x=0,predicate=!custom:in_arena] ambient minecraft:block.water.ambient

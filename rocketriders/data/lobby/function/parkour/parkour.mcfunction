@@ -155,7 +155,7 @@ execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] at @s unless entity
 effect clear @a[x=0,predicate=custom:team/lobby,tag=!inParkour] invisibility
 
 ##Boots (excluding rank)
-execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] run function custom:update_armor
+execute as @a[x=0,predicate=custom:team/lobby,tag=inParkour] run function custom:player/update_armor
 
 ##Safety features
 #Only lobby players in Parkour mode

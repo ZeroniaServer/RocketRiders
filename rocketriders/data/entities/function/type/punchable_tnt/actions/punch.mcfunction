@@ -3,11 +3,11 @@
 execute on attacker if score @s time_since_tnt_punch matches ..0 run return fail
 
 ## Get impulse (motion + direction)
-execute on attacker store result score $impulse_motion_x var run function custom:get_x_velocity
+execute on attacker store result score $impulse_motion_x var run function custom:entity/get_x_velocity
 scoreboard players operation $impulse_motion_x var /= $2 constant
-execute on attacker store result score $impulse_motion_y var run function custom:get_y_velocity
+execute on attacker store result score $impulse_motion_y var run function custom:entity/get_y_velocity
 scoreboard players operation $impulse_motion_y var /= $2 constant
-execute on attacker store result score $impulse_motion_z var run function custom:get_z_velocity
+execute on attacker store result score $impulse_motion_z var run function custom:entity/get_z_velocity
 scoreboard players operation $impulse_motion_z var /= $2 constant
 
 execute positioned 0.0 0.0 0.0 positioned ^ ^ ^0.2 summon marker run function entities:type/punchable_tnt/actions/_punch_/get_impulse

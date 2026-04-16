@@ -1,1 +1,1 @@
-function custom:team/switch_team
+function custom:player/team/switch_team

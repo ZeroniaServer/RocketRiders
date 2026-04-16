@@ -110,4 +110,4 @@ function game:place_facade
 
 ##Update nav book
 function lobby:update_nav_book
-execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
+execute as @a[x=0,predicate=custom:team/lobby] run function custom:player/reset_inventory

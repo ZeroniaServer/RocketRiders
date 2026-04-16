@@ -1,1 +1,0 @@
-gamerule minecraft:freeze_damage false

@@ -14,7 +14,7 @@ scoreboard players reset $blue_single_portal var
 scoreboard players reset $yellow_single_portal var
 scoreboard players reset $1v1_duel_time_out_period global
 
-function custom:game_rules/mob_griefing/off
+gamerule minecraft:mob_griefing false
 execute if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s minecraft:attack_speed base reset
 function achievements:scoresreset
 

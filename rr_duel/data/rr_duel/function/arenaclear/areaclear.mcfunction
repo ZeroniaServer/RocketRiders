@@ -18,7 +18,7 @@ summon marker 11 63 6 {Tags:["ArenaClearChecker"]}
 
 function items:tetrisreset
 
-execute as @e[x=0,type=!player,predicate=custom:in_arena,predicate=!custom:has_vehicle] run function custom:kill_entity_and_passengers
+execute as @e[x=0,type=!player,predicate=custom:in_arena,predicate=!custom:has_vehicle] run function custom:entity/kill_entity_and_passengers
 
 scoreboard players set @e[x=0,type=marker,tag=ArenaClearChecker] ClearArena 90
 tag @e[x=0,type=marker,tag=ArenaClearChecker] add PlacerClear

@@ -4,18 +4,18 @@ execute if predicate game:phase/staging/configuration run return run tellraw @s 
 execute if predicate custom:team/any_playing_team unless predicate game:match_components/one_team run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
 execute if predicate custom:team/any_playing_team if predicate game:match_components/one_team run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the match!"]
 
-execute if predicate game:phase/staging run function custom:team/join_lobby
+execute if predicate game:phase/staging run function custom:player/team/join_lobby
 execute if predicate game:phase/staging run function everytick:team_count
 execute if predicate game:phase/staging run effect clear @s
-execute if predicate game:phase/staging run function custom:reset_inventory
-execute if predicate game:phase/staging run function custom:update_armor
-execute if predicate game:phase/staging run return run execute positioned -82.5 202.0 78.5 run function custom:teleport_with_sound
+execute if predicate game:phase/staging run function custom:player/reset_inventory
+execute if predicate game:phase/staging run function custom:player/update_armor
+execute if predicate game:phase/staging run return run execute positioned -82.5 202.0 78.5 run function custom:player/teleport_with_sound
 
 execute if predicate game:phase/match run tellraw @a[x=0] ["",{selector:"@s",color:"dark_gray"},{color:"gray",text:" is now spectating the match!"}]
-execute if predicate game:phase/match run function custom:team/join_spectator
+execute if predicate game:phase/match run function custom:player/team/join_spectator
 execute if predicate game:phase/match run function everytick:team_count
 execute if predicate game:phase/match if predicate game:phase/match/pause run gamemode adventure @s[gamemode=!adventure]
 execute if predicate game:phase/match unless predicate game:phase/match/pause run gamemode spectator @s[gamemode=!spectator]
-execute if predicate game:phase/match run function custom:update_inventory
-execute if predicate game:phase/match run function custom:update_armor
-execute if predicate game:phase/match run return run execute unless predicate custom:in_arena positioned 12.5 100.0 0.5 rotated 90 90 run function custom:teleport_with_sound
+execute if predicate game:phase/match run function custom:player/update_inventory
+execute if predicate game:phase/match run function custom:player/update_armor
+execute if predicate game:phase/match run return run execute unless predicate custom:in_arena positioned 12.5 100.0 0.5 rotated 90 90 run function custom:player/teleport_with_sound

@@ -38,8 +38,8 @@ summon text_display -94.5 204.75 64.5 {Tags:["facade_entity","CrusadeEntity","Ki
 summon text_display -94.5 204.75 92.5 {Tags:["facade_entity","CrusadeEntity","KitMessage"],Rotation:[0,0],text:"Click a sign to select a kit!"}
 
 #kit stand items
-execute as @e[x=0,type=armor_stand,tag=BlueKit] run function custom:team/join_blue
-execute as @e[x=0,type=armor_stand,tag=YellowKit] run function custom:team/join_yellow
+execute as @e[x=0,type=armor_stand,tag=BlueKit] run function custom:player/team/join_blue
+execute as @e[x=0,type=armor_stand,tag=YellowKit] run function custom:player/team/join_yellow
 
 execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.feet loot items:armor/crusade_kits/knight/boots
 execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.legs loot items:armor/crusade_kits/knight/leggings

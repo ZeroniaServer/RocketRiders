@@ -427,5 +427,5 @@ execute if score $item_pool.vortex match_components matches 1 run data modify st
 execute if score $item_pool.vortex match_components matches -1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"#AFAFFF",text:"🔒 item_pool.vortex"},width:300,options:[{id:"-1",display:"off"}]}
 
 ## Show Dialog
-function custom:show_dialog with storage rocketriders:main match_components
+function custom:player/show_dialog with storage rocketriders:main match_components
 tag @s add last_dialog_opened.match_components_ui

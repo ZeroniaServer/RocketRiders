@@ -1,1 +1,0 @@
-gamerule minecraft:drowning_damage false

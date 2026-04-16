@@ -36,4 +36,4 @@ title @s actionbar ""
 scoreboard players reset @s FlagDeliver
 scoreboard players reset @s FlagScore
 
-function custom:update_armor
+function custom:player/update_armor

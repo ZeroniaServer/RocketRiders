@@ -68,4 +68,4 @@ function custom:resolve_text_component {text_component:[{color:"gold",text:"Chas
 
 execute unless entity @e[limit=1,x=0,type=marker,tag=Set6] run data remove storage rocketriders:main voting.dialog.actions[5]
 
-function custom:show_dialog with storage rocketriders:main voting
+function custom:player/show_dialog with storage rocketriders:main voting

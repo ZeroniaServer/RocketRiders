@@ -25,8 +25,8 @@ effect clear @a[x=0,scores={LeaveGame=1..}]
 effect give @a[x=0,scores={LeaveGame=1..}] instant_health 1 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] resistance infinite 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] night_vision infinite 100 true
-execute as @a[x=0,scores={LeaveGame=1..},predicate=!custom:team/lobby] run function custom:team/join_lobby
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:reset_inventory
+execute as @a[x=0,scores={LeaveGame=1..},predicate=!custom:team/lobby] run function custom:player/team/join_lobby
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/reset_inventory
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode survival
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode adventure
 title @a[x=0,scores={LeaveGame=1..}] times 5 30 5
@@ -76,7 +76,7 @@ execute if entity @s[tag=SMSwitch] run tag @a[x=0] remove informMeLate
 scoreboard players reset @a[x=0,tag=!informMeLate] informMeLate
 
 #Update Armor
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:update_armor
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/update_armor
 
 #Reset
 execute if entity @a[limit=1,x=0,scores={LeaveGame=1..}] run function everytick:team_count

@@ -26,7 +26,7 @@ scoreboard players set @e[x=0,type=player] flag.is_dead 0
 function everytick:score_reset
 
 # Join lobby
-function custom:team/join_lobby
+function custom:player/team/join_lobby
 gamemode adventure @s
 tp @s -43 211 78 90 0
 tp @s @s
@@ -38,7 +38,7 @@ title @s times 5 30 5
 title @s actionbar ""
 title @s title ""
 title @s subtitle ""
-function custom:reset_inventory
+function custom:player/reset_inventory
 
 # Advancements
 execute if predicate game:achievements_can_be_awarded run function achievements:roots

@@ -159,4 +159,4 @@ execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crus
 execute unless entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run execute unless predicate rr:has_parkour run data modify storage rocketriders:main settings.dialog.action.action.template set value "trigger settings set 100000$(auto_fill_hotbar)$(particles)0$(show_tips)"
 
 # Show dialog
-function custom:show_dialog with storage rocketriders:main settings
+function custom:player/show_dialog with storage rocketriders:main settings

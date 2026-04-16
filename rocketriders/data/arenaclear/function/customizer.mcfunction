@@ -42,7 +42,7 @@ tag @s[tag=DefaultOptions] remove DefaultOptions
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run scoreboard players reset $show_extra_player_credits config
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function lobby:credits/stop
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run time set 12925t
-execute unless score @s set_time_of_day matches 0..23999 store result score @s set_time_of_day run function custom:get_daytime
+execute unless score @s set_time_of_day matches 0..23999 store result score @s set_time_of_day run time query minecraft:day
 execute if entity @s[tag=DefaultWorld,tag=!GamemodeRefreshed] run function arenaclear:refreshoptionssigns
 tag @s[tag=DefaultWorld] remove DefaultWorld
 

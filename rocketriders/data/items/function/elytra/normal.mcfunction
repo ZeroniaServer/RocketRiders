@@ -5,7 +5,7 @@ execute unless predicate items:elytra/elytra run title @s title ""
 execute unless predicate items:elytra/elytra run title @s subtitle ["",{bold:true,color:"dark_purple",italic:true,text:"Elytra "},{color:"light_purple",text:"obtained. "},{color:"light_purple",italic:true,text:"Jump to activate!"}]
 
 scoreboard players set @s elytra_time 2147483647
-function custom:update_armor
+function custom:player/update_armor
 item modify entity @s armor.chest {function:"minecraft:set_components",components:{"minecraft:damage":0,"!minecraft:unbreakable":{}}}
 
 execute at @s run playsound minecraft:entity.bat.takeoff master @s ~ ~ ~ 0.2 1

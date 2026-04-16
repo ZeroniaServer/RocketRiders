@@ -1,1 +1,0 @@
-gamerule minecraft:show_death_messages false

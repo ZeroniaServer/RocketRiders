@@ -63,11 +63,11 @@ execute as @e[x=0,type=player,tag=CarryFB2,scores={FlagDeliver=3..},predicate=cu
 execute as @e[x=0,type=player,tag=CarryFB2,scores={FlagDeliver=3..},predicate=custom:team/yellow,predicate=custom:in_own_flag_capturing_zone] run tag @s remove CarryFB2
 execute as @e[x=0,type=player,tag=CarryFB2,scores={FlagDeliver=3..},predicate=custom:team/yellow,predicate=custom:in_own_flag_capturing_zone] run scoreboard players reset @s FlagDeliver
 
-execute as @a[x=0,tag=CarryFlag,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] if items entity @s armor.head #banners run function custom:update_armor
+execute as @a[x=0,tag=CarryFlag,tag=!CarryFY1,tag=!CarryFY2,tag=!CarryFB1,tag=!CarryFB2] if items entity @s armor.head #banners run function custom:player/update_armor
 
 execute as @a[x=0,tag=CarryFlag] unless score @s FlagScore matches 110.. run scoreboard players add @s FlagScore 1
 
-execute as @a[x=0,tag=CarryFlag,scores={FlagScore=1}] run function custom:update_armor
+execute as @a[x=0,tag=CarryFlag,scores={FlagScore=1}] run function custom:player/update_armor
 execute if entity @a[limit=1,x=0,tag=CarryFY1,scores={FlagScore=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #custom:wool
 execute if entity @a[limit=1,x=0,tag=CarryFY2,scores={FlagScore=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #custom:wool
 execute if entity @a[limit=1,x=0,tag=CarryFB1,scores={FlagScore=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #custom:wool

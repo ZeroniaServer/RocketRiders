@@ -22,7 +22,7 @@
           },
           {
             "condition": "minecraft:reference",
-            "name": "custom:alive"
+            "name": "custom:player/alive"
           },
           {
             "condition": "minecraft:inverted",
@@ -58,7 +58,7 @@
           },
           {
             "condition": "minecraft:reference",
-            "name": "custom:alive"
+            "name": "custom:player/alive"
           },
           {
             "condition": "minecraft:inverted",

@@ -2,8 +2,8 @@
 gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
 
 clear @a[x=0,predicate=custom:team/any_arena_team] *
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/reset_inventory
 
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/pause

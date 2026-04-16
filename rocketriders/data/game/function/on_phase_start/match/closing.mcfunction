@@ -24,8 +24,8 @@ clear @a[x=0,predicate=custom:team/any_arena_team] *
 scoreboard players reset @a[x=0] shooting_saber.infinity_time
 scoreboard players reset @a[x=0] shooting_saber.multishot_time
 scoreboard players reset @a[x=0] elytra_time
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/reset_inventory
 effect clear @a[x=0,predicate=custom:team/any_playing_team]
 execute if entity @s[tag=BlueWon] run effect give @a[x=0,predicate=custom:team/yellow] weakness infinite 100 true
 execute if entity @s[tag=YellowWon] run effect give @a[x=0,predicate=custom:team/blue] weakness infinite 100 true

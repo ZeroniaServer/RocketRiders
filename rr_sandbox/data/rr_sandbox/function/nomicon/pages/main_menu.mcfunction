@@ -1,4 +1,4 @@
-function custom:show_dialog {dialog:\
+function custom:player/show_dialog {dialog:\
   {\
     "type": "minecraft:multi_action",\
     "title": [\

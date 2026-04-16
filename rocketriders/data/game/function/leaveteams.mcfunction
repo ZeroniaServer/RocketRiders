@@ -11,7 +11,7 @@ execute as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"t
 execute as @a[x=0,tag=LeavingSpec] run tp @s @s
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/lobby] add WasInLobby
 tag @a[x=0,tag=LeaveTeams] remove doing_facade_parkour
-execute as @a[x=0,tag=LeaveTeams] run function custom:team/join_lobby
+execute as @a[x=0,tag=LeaveTeams] run function custom:player/team/join_lobby
 execute if entity @a[limit=1,x=0,tag=LeaveTeams] run function everytick:team_count
 title @a[x=0,tag=LeaveTeams] actionbar [""]
 title @a[x=0,tag=LeaveTeams] title [""]
@@ -19,7 +19,7 @@ title @a[x=0,tag=LeaveTeams] subtitle [""]
 tp @a[x=0,tag=LeavingYellow] -78 204 92 45 0
 tp @a[x=0,tag=LeavingBlue] -78 204 64 135 0
 tp @a[x=0,tag=LeavingSpec] -43 212 78 90 0
-execute as @a[x=0,tag=LeaveTeams] run function custom:reset_inventory
+execute as @a[x=0,tag=LeaveTeams] run function custom:player/reset_inventory
 effect clear @a[x=0,tag=!WasInLobby,tag=LeaveTeams]
 effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] instant_health 1 100 true
 effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] resistance infinite 100 true

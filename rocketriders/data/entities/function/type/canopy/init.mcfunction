@@ -29,8 +29,8 @@ execute if predicate game:phase/match/play on origin run tag @s remove canopy.or
 execute if predicate game:phase/match/play on origin run function custom:player_action/forget_canopy
 tag @s remove canopy.forgotten_origin
 
-execute positioned ~ ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
-execute positioned ~ ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
+execute positioned ~ ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:block/release_bees_and_destroy_hive
+execute positioned ~ ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:block/release_bees_and_destroy_hive
 execute if predicate entities:origin_team/blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:asset/canopy/blue",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
 execute if predicate entities:origin_team/yellow at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:asset/canopy/yellow",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
 execute if predicate entities:origin_team/none at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:asset/canopy/none",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}

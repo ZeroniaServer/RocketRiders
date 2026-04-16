@@ -114,4 +114,4 @@ function game:team_attributes/update_all
 function arenaclear:refreshcheck_indimension
 function game:place_facade
 function lobby:update_nav_book
-execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
+execute as @a[x=0,predicate=custom:team/lobby] run function custom:player/reset_inventory

@@ -2,12 +2,12 @@
 scoreboard players add @s entity.canopy.movement_cooldown 0
 execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.kill] if score @s entity.canopy.movement_cooldown matches ..45 run function entities:type/canopy/tick/teleporting
 scoreboard players add @s[predicate=entities:do_age,tag=!canopy.forgotten_origin] entity.canopy.movement_cooldown 1
-execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=custom:canopy_nearblue] if function custom:origin_on_blue_team run scoreboard players add @s entity.canopy.movement_cooldown 3
-execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=custom:canopy_nearyellow] if function custom:origin_on_yellow_team run scoreboard players add @s entity.canopy.movement_cooldown 3
+execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=custom:canopy_nearblue] if function custom:entity/origin_is_on_blue_team run scoreboard players add @s entity.canopy.movement_cooldown 3
+execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=custom:canopy_nearyellow] if function custom:entity/origin_is_on_yellow_team run scoreboard players add @s entity.canopy.movement_cooldown 3
 
 # Speed up aging when near the base of its own team color
-execute if entity @s[tag=!canopy.animated,predicate=custom:canopy_nearblue] if function custom:origin_on_blue_team run scoreboard players add @s entity.age 3
-execute if entity @s[tag=!canopy.animated,predicate=custom:canopy_nearyellow] if function custom:origin_on_yellow_team run scoreboard players add @s entity.age 3
+execute if entity @s[tag=!canopy.animated,predicate=custom:canopy_nearblue] if function custom:entity/origin_is_on_blue_team run scoreboard players add @s entity.age 3
+execute if entity @s[tag=!canopy.animated,predicate=custom:canopy_nearyellow] if function custom:entity/origin_is_on_yellow_team run scoreboard players add @s entity.age 3
 
 # Animate platform
 tag @s[tag=canopy.kill,tag=!canopy.animated] add canopy.animated

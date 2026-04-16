@@ -30,7 +30,7 @@ function game:set_phase/staging.queue.waiting
 execute unless predicate rr:server_mode/cubekrowd_duels unless predicate rr:server_mode/cubekrowd_voting run function lobby:cancelsettings/begin
 
 ##Update inventories
-execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
+execute as @a[x=0,predicate=custom:team/lobby] run function custom:player/reset_inventory
 
 ##Stop all sounds
 # execute as @a[x=0] run function everytick:stopsounds

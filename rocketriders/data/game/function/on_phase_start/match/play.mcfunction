@@ -5,7 +5,7 @@ tag @s remove BlueWon
 tag @s remove YellowWon
 tag @s remove BothWon
 
-execute if predicate game:modifiers/no_fall_damage/on run function custom:game_rules/fall_damage/off
+execute if predicate game:modifiers/no_fall_damage/on run gamerule minecraft:fall_damage false
 
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_canopy
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_nova_attach
@@ -14,8 +14,8 @@ tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 
 clear @a[x=0,predicate=custom:team/any_arena_team] *
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/reset_inventory
 
 scoreboard players reset @a flag_tablist_display
 scoreboard objectives setdisplay list flag_tablist_display

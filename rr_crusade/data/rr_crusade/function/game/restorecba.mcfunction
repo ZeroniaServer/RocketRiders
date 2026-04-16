@@ -10,10 +10,10 @@ execute unless score $CBA crusadehp matches 1.. as @a[x=0,predicate=custom:team/
 execute unless score $CBA crusadehp matches 1.. as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:entity.wither.death master @s ~ ~ ~ 1 1
 execute unless score $CBA crusadehp matches 1.. as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:block.glass.break master @s ~ ~ ~ 1 0
 
-execute if score $CBA crusadehp matches 1.. unless predicate game:game_rules/disable_death_messages/on run function custom:game_rules/show_death_messages/off
+execute if score $CBA crusadehp matches 1.. unless predicate game:game_rules/disable_death_messages/on run gamerule minecraft:show_death_messages false
 execute if score $CBA crusadehp matches 1.. unless predicate game:game_rules/disable_death_messages/on positioned 38 49 -37 as @e[type=player,gamemode=!creative,gamemode=!spectator,predicate=custom:team/any_playing_team,distance=..5] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" got too close to an End Crystal","color":"white"}]
 execute if score $CBA crusadehp matches 1.. positioned 38 49 -37 run kill @a[gamemode=!creative,gamemode=!spectator,predicate=custom:team/any_playing_team,distance=..5]
-execute if score $CBA crusadehp matches 1.. unless predicate game:game_rules/disable_death_messages/on run function custom:game_rules/show_death_messages/on
+execute if score $CBA crusadehp matches 1.. unless predicate game:game_rules/disable_death_messages/on run gamerule minecraft:show_death_messages true
 execute if score $CBA crusadehp matches 1.. unless score $CBBcd crusadehp matches 1.. positioned 35.999 46.999 -39.001 as @e[dx=4.002,dy=4.002,dz=4.002,type=marker,tag=obsidianshield] positioned as @s run function everytick:obsidian_shield_break
 execute if score $CBA crusadehp matches 1.. unless score $CBAcd crusadehp matches 1.. positioned 36 47 -39 run function rr_crusade:game/crystal_glass_dynamic_fill with storage rocketriders:teams blue.color_palette
 execute if score $CBA crusadehp matches 1.. run function rr_crusade:game/place_crystal/blue_a

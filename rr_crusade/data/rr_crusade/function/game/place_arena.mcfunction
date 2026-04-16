@@ -83,8 +83,8 @@ summon minecraft:text_display 14 67.125 63 {Tags:["CrusadeEntity","KitSelect","M
 setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 3"}},{bold:true,color:"#008805",text:"Mage"},""]}}
 
 #kit stand items
-execute as @e[x=0,type=armor_stand,tag=BlueKit] run function custom:team/join_blue
-execute as @e[x=0,type=armor_stand,tag=YellowKit] run function custom:team/join_yellow
+execute as @e[x=0,type=armor_stand,tag=BlueKit] run function custom:player/team/join_blue
+execute as @e[x=0,type=armor_stand,tag=YellowKit] run function custom:player/team/join_yellow
 
 execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.feet loot items:armor/crusade_kits/knight/boots
 execute as @e[x=0,type=armor_stand,tag=KnightStand] run loot replace entity @s armor.legs loot items:armor/crusade_kits/knight/leggings

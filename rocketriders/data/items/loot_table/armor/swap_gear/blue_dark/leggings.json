@@ -54,7 +54,13 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:dyed_color": 10551296
+                "minecraft:dyed_color": 10551296,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "#A10000",
+                  "italic": false,
+                  "text": "Dark Red Leggings"
+                }
               },
               "conditions": [
                 {

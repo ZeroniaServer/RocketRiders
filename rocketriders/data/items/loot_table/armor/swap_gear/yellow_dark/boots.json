@@ -54,7 +54,13 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:dyed_color": 5207072
+                "minecraft:dyed_color": 5207072,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "#4F7420",
+                  "italic": false,
+                  "text": "Dark Green Boots"
+                }
               },
               "conditions": [
                 {

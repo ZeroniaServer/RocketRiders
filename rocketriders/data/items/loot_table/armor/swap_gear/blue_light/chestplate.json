@@ -54,7 +54,13 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:dyed_color": 16741799
+                "minecraft:dyed_color": 16741799,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "#FF75A7",
+                  "italic": false,
+                  "text": "Light Red Chestplate"
+                }
               },
               "conditions": [
                 {

@@ -54,7 +54,13 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:dyed_color": 12379022
+                "minecraft:dyed_color": 12379022,
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "#BCE38E",
+                  "italic": false,
+                  "text": "Light Green Leggings"
+                }
               },
               "conditions": [
                 {

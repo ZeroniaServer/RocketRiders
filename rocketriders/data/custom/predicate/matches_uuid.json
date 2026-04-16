@@ -1,5 +1,11 @@
 {
   "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "scale": 1,
+    "score": "playerUUID",
+    "target": "this"
+  },
   "range": {
     "min": {
       "type": "minecraft:score",
@@ -19,11 +25,5 @@
         "name": "$tempuuid"
       }
     }
-  },
-  "value": {
-    "type": "minecraft:score",
-    "scale": 1,
-    "score": "playerUUID",
-    "target": "this"
   }
 }

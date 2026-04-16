@@ -3,7 +3,6 @@
   "terms": [
     {
       "condition": "minecraft:value_check",
-      "range": -1,
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -11,14 +10,14 @@
           "type": "minecraft:fixed",
           "name": "$item_pool.missile/elder_guardian"
         }
-      }
+      },
+      "range": -1
     },
     {
       "condition": "minecraft:all_of",
       "terms": [
         {
           "condition": "minecraft:value_check",
-          "range": 0,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -26,7 +25,8 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/elder_guardian"
             }
-          }
+          },
+          "range": 0
         },
         {
           "condition": "minecraft:reference",

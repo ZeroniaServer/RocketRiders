@@ -1,6 +1,5 @@
 {
   "condition": "minecraft:value_check",
-  "range": 1,
   "value": {
     "type": "minecraft:score",
     "score": "match_components",
@@ -8,5 +7,6 @@
       "type": "minecraft:fixed",
       "name": "$small_portals"
     }
-  }
+  },
+  "range": 1
 }

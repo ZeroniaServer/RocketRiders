@@ -1,9 +1,6 @@
 [
   {
     "condition": "minecraft:value_check",
-    "range": {
-      "min": 1
-    },
     "value": {
       "type": "minecraft:score",
       "score": "config",
@@ -11,13 +8,15 @@
         "type": "minecraft:fixed",
         "name": "$extra_match_repetitions"
       }
+    },
+    "range": {
+      "min": 1
     }
   },
   {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:value_check",
-      "range": 2147483647,
       "value": {
         "type": "minecraft:score",
         "score": "config",
@@ -25,7 +24,8 @@
           "type": "minecraft:fixed",
           "name": "$extra_match_repetitions"
         }
-      }
+      },
+      "range": 2147483647
     }
   }
 ]

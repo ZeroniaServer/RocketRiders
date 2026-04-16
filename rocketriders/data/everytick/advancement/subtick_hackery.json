@@ -6,7 +6,6 @@
         "player": [
           {
             "condition": "minecraft:value_check",
-            "range": 0,
             "value": {
               "type": "minecraft:score",
               "score": "global",
@@ -14,7 +13,8 @@
                 "type": "minecraft:fixed",
                 "name": "$subtick_hackery_done"
               }
-            }
+            },
+            "range": 0
           }
         ],
         "zombie": {

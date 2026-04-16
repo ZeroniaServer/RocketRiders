@@ -18,9 +18,6 @@
       },
       {
         "condition": "minecraft:value_check",
-        "range": {
-          "max": 0
-        },
         "value": {
           "type": "minecraft:score",
           "score": "crusadehp",
@@ -28,6 +25,9 @@
             "type": "minecraft:fixed",
             "name": "$YellowShield"
           }
+        },
+        "range": {
+          "max": 0
         }
       }
     ]

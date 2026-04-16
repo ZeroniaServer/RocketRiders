@@ -3,7 +3,6 @@
   "terms": [
     {
       "condition": "minecraft:value_check",
-      "range": 3,
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -11,14 +10,14 @@
           "type": "minecraft:fixed",
           "name": "$config_override.arena_details/top"
         }
-      }
+      },
+      "range": 3
     },
     {
       "condition": "minecraft:all_of",
       "terms": [
         {
           "condition": "minecraft:value_check",
-          "range": 0,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -26,11 +25,11 @@
               "type": "minecraft:fixed",
               "name": "$config_override.arena_details/top"
             }
-          }
+          },
+          "range": 0
         },
         {
           "condition": "minecraft:value_check",
-          "range": 3,
           "value": {
             "type": "minecraft:score",
             "score": "config",
@@ -38,7 +37,8 @@
               "type": "minecraft:fixed",
               "name": "$arena_details/top"
             }
-          }
+          },
+          "range": 3
         },
         {
           "condition": "minecraft:inverted",

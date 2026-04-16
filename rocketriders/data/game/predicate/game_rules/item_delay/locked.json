@@ -7,9 +7,6 @@
     },
     {
       "condition": "minecraft:value_check",
-      "range": {
-        "min": 5
-      },
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -17,6 +14,9 @@
           "type": "minecraft:fixed",
           "name": "$config_override.item_delay"
         }
+      },
+      "range": {
+        "min": 5
       }
     },
     {

@@ -1,7 +1,6 @@
 [
   {
     "condition": "minecraft:value_check",
-    "range": 0,
     "value": {
       "type": "minecraft:score",
       "score": "global",
@@ -9,7 +8,8 @@
         "type": "minecraft:fixed",
         "name": "$server_mode"
       }
-    }
+    },
+    "range": 0
   },
   {
     "condition": "minecraft:inverted",

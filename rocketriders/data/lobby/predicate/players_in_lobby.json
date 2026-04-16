@@ -3,9 +3,6 @@
   "terms": [
     {
       "condition": "minecraft:value_check",
-      "range": {
-        "min": 1
-      },
       "value": {
         "type": "minecraft:score",
         "score": "global",
@@ -13,6 +10,9 @@
           "type": "minecraft:fixed",
           "name": "$players_in_lobby"
         }
+      },
+      "range": {
+        "min": 1
       }
     },
     {
@@ -24,9 +24,6 @@
         },
         {
           "condition": "minecraft:value_check",
-          "range": {
-            "min": 1
-          },
           "value": {
             "type": "minecraft:score",
             "score": "global",
@@ -34,6 +31,9 @@
               "type": "minecraft:fixed",
               "name": "$playing_teams_count"
             }
+          },
+          "range": {
+            "min": 1
           }
         }
       ]
@@ -47,9 +47,6 @@
         },
         {
           "condition": "minecraft:value_check",
-          "range": {
-            "min": 1
-          },
           "value": {
             "type": "minecraft:score",
             "score": "global",
@@ -57,6 +54,9 @@
               "type": "minecraft:fixed",
               "name": "$playing_teams_count"
             }
+          },
+          "range": {
+            "min": 1
           }
         }
       ]

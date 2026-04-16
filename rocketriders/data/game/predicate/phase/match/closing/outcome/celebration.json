@@ -1,7 +1,6 @@
 [
   {
     "condition": "minecraft:value_check",
-    "range": 1,
     "value": {
       "type": "minecraft:score",
       "score": "global",
@@ -9,11 +8,11 @@
         "type": "minecraft:fixed",
         "name": "$phase/game"
       }
-    }
+    },
+    "range": 1
   },
   {
     "condition": "minecraft:value_check",
-    "range": 2,
     "value": {
       "type": "minecraft:score",
       "score": "global",
@@ -21,11 +20,11 @@
         "type": "minecraft:fixed",
         "name": "$phase/game.match"
       }
-    }
+    },
+    "range": 2
   },
   {
     "condition": "minecraft:value_check",
-    "range": 1,
     "value": {
       "type": "minecraft:score",
       "score": "global",
@@ -33,11 +32,11 @@
         "type": "minecraft:fixed",
         "name": "$phase/game.match.closing"
       }
-    }
+    },
+    "range": 1
   },
   {
     "condition": "minecraft:value_check",
-    "range": 0,
     "value": {
       "type": "minecraft:score",
       "score": "global",
@@ -45,6 +44,7 @@
         "type": "minecraft:fixed",
         "name": "$phase/game.match.closing.outcome"
       }
-    }
+    },
+    "range": 0
   }
 ]

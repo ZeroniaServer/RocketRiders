@@ -3,7 +3,6 @@
   "terms": [
     {
       "condition": "minecraft:value_check",
-      "range": 1,
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -11,14 +10,14 @@
           "type": "minecraft:fixed",
           "name": "$config_override.disable_item_category/normal_missiles"
         }
-      }
+      },
+      "range": 1
     },
     {
       "condition": "minecraft:all_of",
       "terms": [
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -26,11 +25,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/ant"
             }
-          }
+          },
+          "range": -1
         },
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -38,11 +37,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/blade"
             }
-          }
+          },
+          "range": -1
         },
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -50,11 +49,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/catapult"
             }
-          }
+          },
+          "range": -1
         },
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -62,11 +61,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/chronullifier"
             }
-          }
+          },
+          "range": -1
         },
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -74,11 +73,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/citadel"
             }
-          }
+          },
+          "range": -1
         },
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -86,11 +85,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/elder_guardian"
             }
-          }
+          },
+          "range": -1
         },
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -98,11 +97,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/gemini"
             }
-          }
+          },
+          "range": -1
         },
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -110,11 +109,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/lifter"
             }
-          }
+          },
+          "range": -1
         },
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -122,11 +121,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/slasher"
             }
-          }
+          },
+          "range": -1
         },
         {
           "condition": "minecraft:value_check",
-          "range": -1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -134,7 +133,8 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/tomatwo"
             }
-          }
+          },
+          "range": -1
         }
       ]
     }

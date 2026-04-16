@@ -3,7 +3,6 @@
   "terms": [
     {
       "condition": "minecraft:value_check",
-      "range": 1,
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -11,11 +10,11 @@
           "type": "minecraft:fixed",
           "name": "$duel_settings_locked"
         }
-      }
+      },
+      "range": 1
     },
     {
       "condition": "minecraft:value_check",
-      "range": -1,
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -23,14 +22,14 @@
           "type": "minecraft:fixed",
           "name": "$config_override.disable_item_category/lightning_missiles"
         }
-      }
+      },
+      "range": -1
     },
     {
       "condition": "minecraft:any_of",
       "terms": [
         {
           "condition": "minecraft:value_check",
-          "range": 1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -38,11 +37,11 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/hurricane"
             }
-          }
+          },
+          "range": 1
         },
         {
           "condition": "minecraft:value_check",
-          "range": 1,
           "value": {
             "type": "minecraft:score",
             "score": "match_components",
@@ -50,7 +49,8 @@
               "type": "minecraft:fixed",
               "name": "$item_pool.missile/thunderbolt"
             }
-          }
+          },
+          "range": 1
         }
       ]
     }

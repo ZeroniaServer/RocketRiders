@@ -1,6 +1,5 @@
 {
   "condition": "minecraft:value_check",
-  "range": 2,
   "value": {
     "type": "minecraft:score",
     "score": "match_components",
@@ -8,5 +7,6 @@
       "type": "minecraft:fixed",
       "name": "$shield_type.enum"
     }
-  }
+  },
+  "range": 2
 }

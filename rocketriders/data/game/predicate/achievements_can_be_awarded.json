@@ -18,7 +18,6 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:value_check",
-      "range": 1,
       "value": {
         "type": "minecraft:score",
         "score": "global",
@@ -26,7 +25,8 @@
           "type": "minecraft:fixed",
           "name": "$1v1_duel_time_out_period"
         }
-      }
+      },
+      "range": 1
     }
   }
 ]

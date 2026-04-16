@@ -57,6 +57,11 @@ def custom_sort(value: Any, parent: str = None) -> Any:
                 if (k == "weight"):
                     sorted_items.append(((-98,k),k,v))
                     continue
+            
+            # "range" has low priority in value_check predicates
+            if (k == "range") and (("condition","minecraft:value_check") in items):
+                sorted_items.append(((99,k),k,v))
+                continue
 
             # dialog priorities
             if ("title" in value) and ("type" in value):

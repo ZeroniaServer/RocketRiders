@@ -7,6 +7,14 @@
     },
     {
       "condition": "minecraft:value_check",
+      "value": {
+        "type": "minecraft:score",
+        "score": "global",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$yellow_team_count"
+        }
+      },
       "range": {
         "min": {
           "type": "minecraft:score",
@@ -15,14 +23,6 @@
             "type": "minecraft:fixed",
             "name": "$min_players_per_team"
           }
-        }
-      },
-      "value": {
-        "type": "minecraft:score",
-        "score": "global",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$yellow_team_count"
         }
       }
     }

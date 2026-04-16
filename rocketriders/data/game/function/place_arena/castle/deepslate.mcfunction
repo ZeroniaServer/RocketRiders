@@ -8,7 +8,6 @@ fill -13 34 -65 -11 67 -63 minecraft:air strict
 fill 35 34 -65 37 67 -63 minecraft:air strict
 
 # Yellow
-execute if predicate game:match_components/arena/no_yellow_base_details run return 0
 fill -14 34 52 38 63 56 deepslate_bricks
 fill 38 34 57 34 63 66 deepslate_bricks
 fill -14 34 57 -10 63 66 deepslate_bricks

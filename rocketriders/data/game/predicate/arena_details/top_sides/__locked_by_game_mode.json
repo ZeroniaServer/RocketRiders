@@ -1,0 +1,15 @@
+{
+  "condition": "minecraft:inverted",
+  "term": {
+    "condition": "minecraft:value_check",
+    "range": 0,
+    "value": {
+      "type": "minecraft:score",
+      "score": "match_components",
+      "target": {
+        "type": "minecraft:fixed",
+        "name": "$config_override.arena_details/top_sides"
+      }
+    }
+  }
+}

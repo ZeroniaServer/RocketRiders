@@ -3,8 +3,11 @@ data modify storage rocketriders:match components."armor_type" set value "crusad
 data modify storage rocketriders:match components."castle_type" set value "deepslate"
 data modify storage rocketriders:match components."main_item" set value "crusade_kit_dependent"
 
-scoreboard players set $arena/castle match_components 1
 scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit match_components 1
+scoreboard players set $config_override.arena_details/bottom match_components -1
+scoreboard players set $config_override.arena_details/middle match_components -1
+scoreboard players set $config_override.arena_details/top match_components 4
+scoreboard players set $config_override.arena_details/top_sides match_components -1
 scoreboard players set $config_override.clutter_collector match_components -1
 scoreboard players set $config_override.hardcore match_components -1
 scoreboard players set $config_override.item_stacking match_components 1

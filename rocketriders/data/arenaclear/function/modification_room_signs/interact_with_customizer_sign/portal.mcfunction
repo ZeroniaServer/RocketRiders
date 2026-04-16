@@ -2,10 +2,8 @@
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1
 
 # overrides
-execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Details are not adjustable in this game mode."}
-execute if predicate game:match_components/arena/no_portal_details run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Details are incompatible with this game mode."}
-execute if predicate game:match_components/arena/castle run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Details are incompatible with this game mode."}
-execute if predicate game:match_components/no_portals run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Details are incompatible with this game mode."}
+execute if predicate game:match_components/no_portals run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Detail is incompatible with this game mode."}
+execute if predicate game:arena_details/portal/__locked_by_game_mode run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Detail is not adjustable in this game mode."}
 
 # cycle options
 execute unless predicate custom:player_is_holding_shift run scoreboard players add $arena_details/portal config 1

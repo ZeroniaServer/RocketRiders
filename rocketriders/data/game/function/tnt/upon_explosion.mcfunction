@@ -31,7 +31,7 @@ execute if predicate game:phase/match/closing/outcome run kill @s
 execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:modifiers/instant_tnt_explosions/on run data modify entity @s fuse set value 0
 
 # Castle cracks
-execute if predicate game:arena_details/castle unless predicate game:game_rules/friendly_tnt_damage/on if predicate custom:tnt_near_castle run function game:explosion_deepslate_cracks/medium
+execute if predicate game:arena_details/top/castle unless predicate game:game_rules/friendly_tnt_damage/on if predicate custom:tnt_near_castle run function game:explosion_deepslate_cracks/medium
 
 # Trigger nearby vortices
 execute unless predicate game:game_rules/friendly_tnt_damage/on unless predicate game:modifiers/explosive/on positioned ~ ~0.06125 ~ as @e[distance=..5.33,predicate=entities:type/vortex/brain] at @s run function entities:type/vortex/actions/trigger {fuse:0}

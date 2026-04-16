@@ -39,7 +39,7 @@ execute if predicate game:arena_details/top/towers run function rr_swap:baseswap
 execute if predicate game:arena_details/middle/spikes run function rr_swap:baseswap/swap/details/spikes_middle with storage rocketriders:main baseswap
 execute if predicate game:arena_details/bottom/spikes run function rr_swap:baseswap/swap/details/spikes_bottom with storage rocketriders:main baseswap
 execute if predicate game:arena_details/top/spikes run function rr_swap:baseswap/swap/details/spikes_top with storage rocketriders:main baseswap
-execute if predicate game:arena_details/castle run function rr_swap:baseswap/swap/details/castle with storage rocketriders:main baseswap
+execute if predicate game:arena_details/top/castle run function rr_swap:baseswap/swap/details/castle with storage rocketriders:main baseswap
 
 #Visual titles and subtitles.
 schedule function rr_swap:baseswap/visuals_indimension 60t

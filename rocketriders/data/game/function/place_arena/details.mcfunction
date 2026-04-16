@@ -5,7 +5,7 @@
 
 #Runs individual detail placement functions depending on initial tags
 execute unless predicate game:modifiers/hardcore/on run function game:place_arena/details/blue
-execute unless predicate game:modifiers/hardcore/on unless predicate game:match_components/arena/no_yellow_base_details run function game:place_arena/details/yellow
+execute unless predicate game:modifiers/hardcore/on run function game:place_arena/details/yellow
 
 #Spawnpoint obsidian placement - Blue and Yellow
 fill 14 63 66 10 63 66 obsidian strict

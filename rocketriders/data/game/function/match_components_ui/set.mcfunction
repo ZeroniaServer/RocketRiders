@@ -12,21 +12,9 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclea
 $execute store success score $arena/bedrock_frame match_components if predicate {condition:"value_check",value:$(arena__bedrock_frame),range:1}
 execute if score $arena/bedrock_frame match_components matches 0 run scoreboard players reset $arena/bedrock_frame match_components
 
-# arena/castle
-$execute store success score $arena/castle match_components if predicate {condition:"value_check",value:$(arena__castle),range:1}
-execute if score $arena/castle match_components matches 0 run scoreboard players reset $arena/castle match_components
-
 # checkered_yellow_base
 $execute store success score $checkered_yellow_base match_components if predicate {condition:"value_check",value:$(checkered_yellow_base),range:1}
 execute if score $checkered_yellow_base match_components matches 0 run scoreboard players reset $checkered_yellow_base match_components
-
-# arena/no_base_details
-$execute store success score $arena/no_base_details match_components if predicate {condition:"value_check",value:$(arena__no_base_details),range:1}
-execute if score $arena/no_base_details match_components matches 0 run scoreboard players reset $arena/no_base_details match_components
-
-# arena/no_portal_details
-$execute store success score $arena/no_portal_details match_components if predicate {condition:"value_check",value:$(arena__no_portal_details),range:1}
-execute if score $arena/no_portal_details match_components matches 0 run scoreboard players reset $arena/no_portal_details match_components
 
 # armor_type
 $scoreboard players set $armor_type var $(armor_type)

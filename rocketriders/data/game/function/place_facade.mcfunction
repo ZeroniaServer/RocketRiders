@@ -132,7 +132,7 @@ fill -101 195 66 -89 209 90 air replace #custom:player_heads strict
 execute if predicate game:modifiers/molerat/on run fill -101 207 69 -89 186 87 light_gray_stained_glass replace #custom:lobby_air
 
 ## Castle
-execute if predicate game:arena_details/castle run function game:place_facade/castle
+execute if predicate game:arena_details/top/castle run function game:place_facade/castle
 
 ## Game-mode-specific features
 function #rr:game/place_facade

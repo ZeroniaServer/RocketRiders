@@ -24,7 +24,7 @@ execute if predicate game:arena_details/middle/spikes run place template game:as
 $execute if predicate game:arena_details/middle/layered run fill 38 34 -49 -14 40 -51 $(front) replace #custom:air strict
 $execute if predicate game:arena_details/middle/layered run fill -14 41 -50 38 48 -51 $(front) replace #custom:air strict
 $execute if predicate game:arena_details/middle/layered run fill 38 49 -51 -14 56 -51 $(front) replace #custom:air strict
-$execute if predicate game:arena_details/middle/layered run fill -14 63 -55 38 63 -52 $(detail) replace $(front) strict
+$execute if predicate game:arena_details/middle/layered unless predicate game:arena_details/top/castle run fill -14 63 -55 38 63 -52 $(detail) replace $(front) strict
 $execute if predicate game:arena_details/middle/layered run fill 38 41 -49 -14 41 -49 $(detail) replace #custom:air strict
 $execute if predicate game:arena_details/middle/layered run fill 38 57 -51 -14 57 -51 $(detail) replace #custom:air strict
 $execute if predicate game:arena_details/middle/layered run fill -14 49 -50 38 49 -50 $(detail) replace #custom:air strict

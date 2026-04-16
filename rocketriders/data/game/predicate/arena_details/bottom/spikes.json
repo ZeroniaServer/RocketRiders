@@ -1,42 +1,60 @@
-[
-  {
-    "condition": "minecraft:value_check",
-    "range": 2,
-    "value": {
-      "type": "minecraft:score",
-      "score": "config",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$arena_details/bottom"
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:value_check",
+      "range": 2,
+      "value": {
+        "type": "minecraft:score",
+        "score": "match_components",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$config_override.arena_details/bottom"
+        }
       }
+    },
+    {
+      "condition": "minecraft:all_of",
+      "terms": [
+        {
+          "condition": "minecraft:value_check",
+          "range": 0,
+          "value": {
+            "type": "minecraft:score",
+            "score": "match_components",
+            "target": {
+              "type": "minecraft:fixed",
+              "name": "$config_override.arena_details/bottom"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:value_check",
+          "range": 2,
+          "value": {
+            "type": "minecraft:score",
+            "score": "config",
+            "target": {
+              "type": "minecraft:fixed",
+              "name": "$arena_details/bottom"
+            }
+          }
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:reference",
+            "name": "game:modifiers/hardcore/on"
+          }
+        },
+        {
+          "condition": "minecraft:inverted",
+          "term": {
+            "condition": "minecraft:reference",
+            "name": "game:arena_details/middle/layered"
+          }
+        }
+      ]
     }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:match_components/arena/no_base_details"
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:match_components/arena/castle"
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:arena_details/middle/layered"
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/hardcore/on"
-    }
-  }
-]
+  ]
+}

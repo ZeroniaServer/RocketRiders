@@ -14,7 +14,7 @@ spawnpoint @a[x=0,predicate=custom:team/yellow] 12 64 66 -180 0
 execute if predicate game:phase/match/play as @a[x=0,predicate=custom:team/any_playing_team,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[predicate=custom:breaching_lobby] run function game:punishbreach
 execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue] at @s in overworld if entity @s[predicate=custom:breaching_lobby] run tp @s 12 64 -66 0 0
 execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/yellow] at @s in overworld if entity @s[predicate=custom:breaching_lobby] run tp @s 12 64 66 180 0
-execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/spectator] at @s in overworld if entity @s[predicate=custom:breaching_lobby] run tp @s 12 100 0.5 90 90
+execute as @a[x=0,predicate=custom:team/spectator,predicate=custom:breaching_lobby] run tp @s 12 100 0.5 90 90
 
 ##Player void
 execute if predicate game:phase/match/play as @a[x=0,predicate=custom:team/any_arena_team,predicate=custom:in_void] unless score @s ThrowPlat matches 1.. at @s run function game:void

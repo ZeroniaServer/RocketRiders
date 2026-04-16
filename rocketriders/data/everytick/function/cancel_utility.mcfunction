@@ -33,12 +33,5 @@ execute as @e[x=0,type=tnt_minecart] at @s unless predicate custom:insideborder 
 execute as @e[x=0,type=#custom:potion] at @s unless predicate custom:insideborder run kill @s
 
 #Disable obsidian shields near flags
-execute if predicate game:match_components/has_flags positioned -10 65 -64 run kill @e[type=marker,tag=yellowobalone,distance=..5]
-execute if predicate game:match_components/has_flags positioned 34 65 -64 run kill @e[type=marker,tag=yellowobalone,distance=..5]
-execute if predicate game:match_components/has_flags positioned -10 65 64 run kill @e[type=marker,tag=yellowobalone,distance=..5]
-execute if predicate game:match_components/has_flags positioned 34 65 64 run kill @e[type=marker,tag=yellowobalone,distance=..5]
-
-execute if predicate game:match_components/has_flags positioned -10 65 -64 run kill @e[type=marker,tag=blueobalone,distance=..5]
-execute if predicate game:match_components/has_flags positioned 34 65 -64 run kill @e[type=marker,tag=blueobalone,distance=..5]
-execute if predicate game:match_components/has_flags positioned -10 65 64 run kill @e[type=marker,tag=blueobalone,distance=..5]
-execute if predicate game:match_components/has_flags positioned 34 65 64 run kill @e[type=marker,tag=blueobalone,distance=..5]
+execute if predicate game:match_components/has_flags positioned as @e[x=0,type=marker,tag=ctf_flag] run kill @e[type=marker,tag=yellowobalone,distance=..5]
+execute if predicate game:match_components/has_flags positioned as @e[x=0,type=marker,tag=ctf_flag] run kill @e[type=marker,tag=blueobalone,distance=..5]

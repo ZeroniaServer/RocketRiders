@@ -19,5 +19,5 @@ execute if predicate custom:periodic_tick/3 if score @s entity.age matches 1.. i
 execute if predicate custom:periodic_tick/3 if score @s entity.age matches 1.. if predicate entities:origin_team/none run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 # Deploy
-execute if score @s entity.age matches 20.. on vehicle positioned as @s if predicate entities:vortex_can_be_deployed align xyz unless entity @e[limit=1,dx=0,predicate=entities:type/vortex/body] on passengers if entity @s[predicate=entities:type/vortex_projectile/brain] run return run function entities:type/vortex_projectile/actions/deploy
+execute if score @s entity.age matches 20.. on vehicle positioned as @s if predicate entities:vortex_can_be_deployed unless function custom:location/is_near_flag_base align xyz unless entity @e[limit=1,dx=0,predicate=entities:type/vortex/body] on passengers if entity @s[predicate=entities:type/vortex_projectile/brain] run return run function entities:type/vortex_projectile/actions/deploy
 execute if score @s entity.age matches 60.. run return run function entities:type/vortex_projectile/actions/break

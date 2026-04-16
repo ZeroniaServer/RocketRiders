@@ -55,13 +55,6 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "custom:near_flag_base"
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
       "name": "custom:near_or_above_roof"
     }
   }

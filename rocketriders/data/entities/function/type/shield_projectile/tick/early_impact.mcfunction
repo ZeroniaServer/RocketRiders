@@ -11,6 +11,7 @@ execute if score $too_close var matches 1 run return run function entities:type/
 
 ## If impact_utilities is ON
 execute unless predicate entities:shield_can_be_deployed run return run function entities:type/shield_projectile/actions/break
+execute if function custom:location/is_near_flag_base run return run function entities:type/shield_projectile/actions/break
 
 # Convert to a shield entity
 data remove entity @s data.shield_projectile

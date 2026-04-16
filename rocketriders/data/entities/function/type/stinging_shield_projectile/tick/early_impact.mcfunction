@@ -11,6 +11,7 @@ execute if entity @s[y=175,dy=100] run return run function entities:type/stingin
 execute unless predicate custom:insideborder run return run function entities:type/stinging_shield_projectile/actions/break
 
 execute at @s positioned ~ ~2 ~ unless predicate entities:stinging_shield_can_be_deployed positioned as @s run return run function entities:type/stinging_shield_projectile/actions/break
+execute at @s positioned ~ ~2 ~ if function custom:location/is_near_flag_base positioned as @s run return run function entities:type/stinging_shield_projectile/actions/break
 execute at @s run tp ~ ~2 ~
 
 # Re-initialise as a "stinging_shield" entity

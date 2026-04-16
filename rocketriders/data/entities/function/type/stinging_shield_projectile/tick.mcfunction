@@ -16,5 +16,5 @@ execute if score @s entity.age matches 1.. run playsound minecraft:block.honey_b
 execute if score @s entity.age matches 1.. if predicate custom:periodic_tick/3 run particle minecraft:block{block_state:{Name:"minecraft:honey_block"}} ~ ~ ~ 0 0 0 1 10
 
 # Deploy
-execute if score @s entity.age matches 20.. on vehicle positioned as @s if predicate entities:stinging_shield_can_be_deployed run return run function entities:type/stinging_shield_projectile/actions/deploy
+execute if score @s entity.age matches 20.. on vehicle positioned as @s if predicate entities:stinging_shield_can_be_deployed unless function custom:location/is_near_flag_base run return run function entities:type/stinging_shield_projectile/actions/deploy
 execute if score @s entity.age matches 60.. run return run function entities:type/stinging_shield_projectile/actions/break

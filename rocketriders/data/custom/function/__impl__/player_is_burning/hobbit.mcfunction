@@ -19,9 +19,9 @@ execute if block ~0.2 ~1 ~-0.2 #custom:fire run return 1
 execute if block ~0.2 ~1 ~0.2 #custom:fire run return 1
 
 # standing
-execute unless predicate custom:is_sneaking if block ~-0.2 ~1.2 ~-0.2 #custom:fire run return 1
-execute unless predicate custom:is_sneaking if block ~-0.2 ~1.2 ~0.2 #custom:fire run return 1
-execute unless predicate custom:is_sneaking if block ~0.2 ~1.2 ~-0.2 #custom:fire run return 1
-execute unless predicate custom:is_sneaking if block ~0.2 ~1.2 ~0.2 #custom:fire run return 1
+execute unless predicate custom:player/is_sneaking if block ~-0.2 ~1.2 ~-0.2 #custom:fire run return 1
+execute unless predicate custom:player/is_sneaking if block ~-0.2 ~1.2 ~0.2 #custom:fire run return 1
+execute unless predicate custom:player/is_sneaking if block ~0.2 ~1.2 ~-0.2 #custom:fire run return 1
+execute unless predicate custom:player/is_sneaking if block ~0.2 ~1.2 ~0.2 #custom:fire run return 1
 
 return fail

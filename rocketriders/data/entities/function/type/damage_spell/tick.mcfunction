@@ -1,7 +1,7 @@
 # Break when out of bounds
 execute if predicate custom:near_or_above_roof run return run function entities:type/damage_spell/actions/break
-execute if predicate custom:in_void unless predicate custom:moving_up run return run function entities:type/damage_spell/actions/break
-execute unless predicate custom:insideborder run return run function entities:type/damage_spell/actions/break
+execute if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/damage_spell/actions/break
+execute positioned as @s if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/damage_spell/actions/break
 execute unless predicate custom:in_arena run return run function entities:type/damage_spell/actions/break
 
 # Break when near an enemy spawn point
@@ -13,11 +13,11 @@ execute if predicate entities:origin_team/none if predicate custom:near_any_spaw
 # Home onto enemy (prioritise near players without the wither or regeneration effect)
 execute on origin run tag @s add damage_spell.origin
 execute if predicate entities:origin_team/blue positioned ^ ^ ^3 facing entity @p[distance=..30,predicate=custom:team/yellow,tag=!damage_spell.origin,predicate=!custom:near_yellow_spawn_zone] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
-execute if predicate entities:origin_team/blue positioned ^ ^ ^3 facing entity @p[distance=..15,predicate=custom:team/yellow,tag=!damage_spell.origin,predicate=!custom:near_yellow_spawn_zone,predicate=!custom:has_wither_effect] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
+execute if predicate entities:origin_team/blue positioned ^ ^ ^3 facing entity @p[distance=..15,predicate=custom:team/yellow,tag=!damage_spell.origin,predicate=!custom:near_yellow_spawn_zone,predicate=!custom:entity/has_wither_effect] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
 execute if predicate entities:origin_team/yellow positioned ^ ^ ^3 facing entity @p[distance=..30,predicate=custom:team/blue,tag=!damage_spell.origin,predicate=!custom:near_blue_spawn_zone] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
-execute if predicate entities:origin_team/yellow positioned ^ ^ ^3 facing entity @p[distance=..15,predicate=custom:team/blue,tag=!damage_spell.origin,predicate=!custom:near_blue_spawn_zone,predicate=!custom:has_wither_effect] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
+execute if predicate entities:origin_team/yellow positioned ^ ^ ^3 facing entity @p[distance=..15,predicate=custom:team/blue,tag=!damage_spell.origin,predicate=!custom:near_blue_spawn_zone,predicate=!custom:entity/has_wither_effect] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
 execute if predicate entities:origin_team/none positioned ^ ^ ^3 facing entity @p[distance=..30,tag=!damage_spell.origin,predicate=!custom:near_own_spawn_zone] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
-execute if predicate entities:origin_team/none positioned ^ ^ ^3 facing entity @p[distance=..15,tag=!damage_spell.origin,predicate=!custom:near_own_spawn_zone,predicate=!custom:has_wither_effect] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
+execute if predicate entities:origin_team/none positioned ^ ^ ^3 facing entity @p[distance=..15,tag=!damage_spell.origin,predicate=!custom:near_own_spawn_zone,predicate=!custom:entity/has_wither_effect] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
 execute on origin run tag @s remove damage_spell.origin
 
 # Movement (6m/s -> 12m/s)

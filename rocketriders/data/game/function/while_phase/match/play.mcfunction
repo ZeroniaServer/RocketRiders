@@ -22,7 +22,7 @@ function items:full_hotbar
 scoreboard players add $match_play_time global 1
 
 ##Put out players on fire
-execute if score $match_play_time global matches 1..5 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute if score $match_play_time global matches 1..5 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:entity/is_on_fire] at @s run function game:putoutfire
 
 ##Enable fall damage (considers modifiers)
 execute if score $match_play_time global matches 10 unless predicate game:modifiers/no_fall_damage/on run gamerule minecraft:fall_damage true
@@ -50,7 +50,7 @@ execute unless predicate game:match_components/custom_spawnpoint_block_protectio
 execute unless predicate game:match_components/custom_spawnpoint_block_protection run setblock 12 66 -67 obsidian
 
 ## Clear tablist icon for players in non-overworld dimensions
-scoreboard players display numberformat @a[predicate=!custom:indimension] flag_tablist_display blank
+scoreboard players display numberformat @a[predicate=!custom:in_overworld] flag_tablist_display blank
 
 ## Damage players standing inside a portal during Hole In One
 execute if predicate game:arena_details/portal/hole_in_one as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:standing_on_any_portal] positioned as @s if block ~ ~ ~ minecraft:nether_portal run damage @s 4 minecraft:outside_border

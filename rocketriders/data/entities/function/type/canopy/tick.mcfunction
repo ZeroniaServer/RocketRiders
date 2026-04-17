@@ -2,12 +2,12 @@
 scoreboard players add @s entity.canopy.movement_cooldown 0
 execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.kill] if score @s entity.canopy.movement_cooldown matches ..45 run function entities:type/canopy/tick/teleporting
 scoreboard players add @s[predicate=entities:do_age,tag=!canopy.forgotten_origin] entity.canopy.movement_cooldown 1
-execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=custom:canopy_nearblue] if function custom:entity/origin_is_on_blue_team run scoreboard players add @s entity.canopy.movement_cooldown 3
-execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=custom:canopy_nearyellow] if function custom:entity/origin_is_on_yellow_team run scoreboard players add @s entity.canopy.movement_cooldown 3
+execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=entities:canopy/near_blue_base] if function custom:entity/origin_is_on_blue_team run scoreboard players add @s entity.canopy.movement_cooldown 3
+execute if entity @s[tag=!canopy.forgotten_origin,tag=!canopy.animated,predicate=entities:canopy/near_yellow_base] if function custom:entity/origin_is_on_yellow_team run scoreboard players add @s entity.canopy.movement_cooldown 3
 
 # Speed up aging when near the base of its own team color
-execute if entity @s[tag=!canopy.animated,predicate=custom:canopy_nearblue] if function custom:entity/origin_is_on_blue_team run scoreboard players add @s entity.age 3
-execute if entity @s[tag=!canopy.animated,predicate=custom:canopy_nearyellow] if function custom:entity/origin_is_on_yellow_team run scoreboard players add @s entity.age 3
+execute if entity @s[tag=!canopy.animated,predicate=entities:canopy/near_blue_base] if function custom:entity/origin_is_on_blue_team run scoreboard players add @s entity.age 3
+execute if entity @s[tag=!canopy.animated,predicate=entities:canopy/near_yellow_base] if function custom:entity/origin_is_on_yellow_team run scoreboard players add @s entity.age 3
 
 # Animate platform
 tag @s[tag=canopy.kill,tag=!canopy.animated] add canopy.animated
@@ -21,9 +21,9 @@ execute if entity @s[tag=canopy.kill] run return run function entities:type/cano
 execute if score @s entity.age matches 299.. run return run function entities:type/canopy/actions/kill
 
 #Canopy smoke when player on fire is nearby
-execute if score @s entity.age matches 2..299 if entity @e[distance=..3,type=player,predicate=custom:is_on_fire] run scoreboard players add @s canopySmoke 2
+execute if score @s entity.age matches 2..299 if entity @e[distance=..3,type=player,predicate=custom:entity/is_on_fire] run scoreboard players add @s canopySmoke 2
 execute if score @s entity.age matches 2..299 if score @s canopySmoke matches 1.. run scoreboard players remove @s canopySmoke 1
-execute if score @s entity.age matches 2..299 if score @s canopySmoke matches 1.. unless entity @e[distance=..3,type=player,predicate=custom:is_on_fire] run scoreboard players remove @s canopySmoke 1
+execute if score @s entity.age matches 2..299 if score @s canopySmoke matches 1.. unless entity @e[distance=..3,type=player,predicate=custom:entity/is_on_fire] run scoreboard players remove @s canopySmoke 1
 
 execute if score @s entity.age matches 2..299 if score @s canopySmoke matches 1 run playsound block.campfire.crackle master @a[x=0] ~ ~ ~ 2 1
 execute if score @s entity.age matches 2..299 if score @s canopySmoke matches 1 run particle minecraft:large_smoke ~ ~ ~ 1 0 1 0 100 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]

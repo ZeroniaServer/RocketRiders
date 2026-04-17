@@ -1,26 +1,26 @@
 # Break when out of bounds
 execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/fireball/actions/break
-execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:moving_up run return run function entities:type/fireball/actions/break
-execute on vehicle positioned as @s unless predicate custom:insideborder run return run function entities:type/fireball/actions/break
+execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/fireball/actions/break
+execute on vehicle positioned as @s if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/fireball/actions/break
 execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/fireball/actions/break
 
 # Break when near an enemy spawn point
-execute if predicate entities:origin_team/blue on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_yellow_half run return run function entities:type/fireball/actions/break
-execute if predicate entities:origin_team/yellow on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_blue_half run return run function entities:type/fireball/actions/break
+execute if predicate entities:origin_team/blue on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:in_yellow_half run return run function entities:type/fireball/actions/break
+execute if predicate entities:origin_team/yellow on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:in_blue_half run return run function entities:type/fireball/actions/break
 execute if predicate entities:origin_team/none on vehicle positioned as @s if predicate custom:near_any_spawn_zone run return run function entities:type/fireball/actions/break
 
 # Tick age while moving
-execute unless predicate custom:vehicle_is_moving run scoreboard players set @s entity.fireball.time_since_punched 0
-execute if predicate custom:vehicle_is_moving run scoreboard players add @s entity.fireball.time_since_punched 1
+execute unless predicate custom:entity/vehicle_is_moving run scoreboard players set @s entity.fireball.time_since_punched 0
+execute if predicate custom:entity/vehicle_is_moving run scoreboard players add @s entity.fireball.time_since_punched 1
 
 # Early impact
-execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/fireball/tick/impact
+execute unless predicate custom:entity/has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/fireball/tick/impact
 
 # Store the rotation and speed of vehicle
-execute if predicate custom:has_vehicle run function custom:projectile_motion_save
+execute if predicate custom:entity/has_vehicle run function custom:projectile_motion_save
 
 # Movement trail
-execute if predicate custom:periodic_tick/3 on vehicle positioned as @s if predicate custom:is_moving run function entities:type/fireball/tick/particle
+execute if predicate custom:periodic_tick/3 on vehicle positioned as @s if predicate custom:entity/is_moving run function entities:type/fireball/tick/particle
 
 # Ambient sounds
 execute if predicate custom:coin_flip if predicate custom:coin_flip run scoreboard players add @s entity.fireball.ambient_noise_timer 1
@@ -28,7 +28,7 @@ execute if score @s entity.fireball.ambient_noise_timer matches 20.. on vehicle 
 execute if score @s entity.fireball.ambient_noise_timer matches 20.. run scoreboard players set @s entity.fireball.ambient_noise_timer 0
 
 #Fireballs poof Canopies
-execute if predicate custom:vehicle_is_moving on vehicle positioned as @s run function entities:type/fireball/tick/try_poof
+execute if predicate custom:entity/vehicle_is_moving on vehicle positioned as @s run function entities:type/fireball/tick/try_poof
 
 #Disable fireballs near portals (depends on Snipe Portals game rule)
 execute if predicate game:portal_type/default unless predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on on vehicle positioned as @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 1

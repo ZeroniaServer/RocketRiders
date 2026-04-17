@@ -147,7 +147,7 @@ tag @a[x=0,tag=itemDeducted] remove itemDeducted
 tag @a[x=0,tag=wasFullHotbar] remove wasFullHotbar
 
 #Remove dragon breath
-kill @e[x=0,type=area_effect_cloud,predicate=custom:is_dragon_breath_area_effect_cloud]
+kill @e[x=0,type=area_effect_cloud,predicate=custom:area_effect_cloud_type/dragon_breath]
 
 #Disable damage gamerules if no game has started
 execute unless entity @s[predicate=game:phase/match,predicate=!game:phase/match/closing] run gamerule minecraft:fall_damage false
@@ -193,8 +193,8 @@ execute as @a[x=-70,y=200,z=77,dz=2,gamemode=!spectator] run attribute @s minecr
 execute as @a[x=0] unless entity @s[x=-70,y=200,z=77,dy=0.5,dz=2] run attribute @s minecraft:gravity modifier remove rocketriders:learning_to_swim
 
 #Make armour visible again after invisibility wears off
-execute as @a[x=0,tag=was_invisible,predicate=!custom:invisible] run function custom:event/player_becomes_visible/main
-tag @a[x=0,tag=was_invisible,predicate=!custom:invisible] remove was_invisible
+execute as @a[x=0,tag=was_invisible,predicate=!custom:entity/has_invisibility_effect] run function custom:event/player_becomes_visible/main
+tag @a[x=0,tag=was_invisible,predicate=!custom:entity/has_invisibility_effect] remove was_invisible
 
 # Remove custom team colour from those not playing
 execute as @a[x=0,scores={custom_team_color=1..}] unless entity @s[predicate=custom:team/any_playing_team,predicate=game:match_components/custom_team_colors] run scoreboard players reset @s custom_team_color

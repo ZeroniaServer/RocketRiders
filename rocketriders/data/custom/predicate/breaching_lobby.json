@@ -1,16 +1,14 @@
-[
-  {
-    "condition": "minecraft:entity_properties",
-    "entity": "this",
-    "predicate": {
-      "minecraft:location": {
-        "dimension": "minecraft:overworld",
-        "position": {
-          "y": {
-            "min": 182
-          }
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "minecraft:location": {
+      "dimension": "minecraft:overworld",
+      "position": {
+        "y": {
+          "min": 182
         }
       }
     }
   }
-]
+}

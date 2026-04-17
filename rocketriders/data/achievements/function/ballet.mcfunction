@@ -8,6 +8,6 @@ scoreboard players reset @s[tag=FailedBallet] timeSinceJump
 
 #Sprint Detection
 scoreboard players add @s[tag=!FailedBallet] movement 1
-scoreboard players reset @s[tag=!FailedBallet,predicate=custom:is_sprinting] movement
+scoreboard players reset @s[tag=!FailedBallet,predicate=custom:player/is_sprinting] movement
 tag @s[scores={movement=20..}] add FailedBallet
 scoreboard players reset @s[tag=FailedBallet] movement

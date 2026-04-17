@@ -5,8 +5,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefres
 execute if predicate game:repeat_settings/forever run return run tellraw @s [{color:"red",text:"Repeat Settings is not adjustable when set to "},{italic:true,text:"repeat forever"}]
 
 # cycle options
-execute unless predicate custom:player_is_holding_shift run scoreboard players add $extra_match_repetitions config 1
-execute if predicate custom:player_is_holding_shift run scoreboard players remove $extra_match_repetitions config 1
+execute unless predicate custom:player/is_pressing_sneak_key run scoreboard players add $extra_match_repetitions config 1
+execute if predicate custom:player/is_pressing_sneak_key run scoreboard players remove $extra_match_repetitions config 1
 advancement grant @s only lobby:inform_sign_cycling
 
 execute store result score $match_repeat_amount global run scoreboard players operation $extra_match_repetitions config %= $4 constant

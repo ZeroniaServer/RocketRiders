@@ -1,7 +1,6 @@
 ##Runs at the end of the match to reset any ingame statistics for achievements
 scoreboard players reset @a[x=0] jumping
 scoreboard players reset @a[x=0] timeSinceJump
-scoreboard players reset @a[x=0] FallDistance
 scoreboard players reset @a[x=0] gravShot
 scoreboard players reset @a[x=0] regifts
 advancement revoke @a[x=0,tag=!Regifting] only achievements:rr_challenges/regifting

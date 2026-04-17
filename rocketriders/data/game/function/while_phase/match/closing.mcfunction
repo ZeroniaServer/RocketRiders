@@ -7,7 +7,7 @@ execute unless entity @a[limit=1,x=0,predicate=custom:team/any_arena_team] run r
 
 # Timer
 execute unless score $closing_timer global matches 2147483647 run scoreboard players add $closing_timer global 1
-execute if score $closing_timer global matches 2..3 as @a[x=0,predicate=custom:is_on_fire,predicate=custom:team/any_playing_team] at @s run function game:putoutfire
+execute if score $closing_timer global matches 2..3 as @a[x=0,predicate=custom:entity/is_on_fire,predicate=custom:team/any_playing_team] at @s run function game:putoutfire
 
 # Prevent block interactions
 execute as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:block_interaction_range modifier add rocketriders:closing_phase -1 add_multiplied_total

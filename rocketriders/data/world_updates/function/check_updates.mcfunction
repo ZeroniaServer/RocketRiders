@@ -33,4 +33,6 @@ execute unless score $WorldVersion CmdData matches 1313.. run function world_upd
 execute unless score $WorldVersion CmdData matches 1314.. run function world_updates:do_update {version_id: 1314, function: "world_updates:1_3_0-rc3/update", version_display_name: "1.3.0-rc3", is_indev: true}
 execute unless score $WorldVersion CmdData matches 1315.. run function world_updates:do_update {version_id: 1315, function: "world_updates:1_3_0/_", version_display_name: "1.3.0", is_indev: false}
 execute unless score $WorldVersion CmdData matches 1316.. run function world_updates:do_update {version_id: 1316, function: "world_updates:1_3_1/_", version_display_name: "1.3.1", is_indev: false}
-execute unless score $WorldVersion CmdData matches 1317.. run function world_updates:do_update {version_id: 1317, function: "world_updates:1_3_2-pre1/update", version_display_name: "1.3.2-pre1", is_indev: true}
+
+# left room for 1.3.2 versions
+execute unless score $WorldVersion CmdData matches 1400.. run function world_updates:do_update {version_id: 1400, function: "world_updates:1_3_3-pre1/update", version_display_name: "1.3.3-pre1", is_indev: true}

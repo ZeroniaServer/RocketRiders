@@ -1,5 +1,5 @@
 # Delete vehicles
-execute if predicate custom:has_vehicle at @s run function custom:event/player_joins_overworld/delete_vehicle/player
+execute if predicate custom:entity/has_vehicle at @s run function custom:event/player_joins_overworld/delete_vehicle/player
 
 # If player had previously joined, give them a storage entry (legacy score)
 execute if score @s firstJoined matches 1.. run function custom:player_action/playerdata/save

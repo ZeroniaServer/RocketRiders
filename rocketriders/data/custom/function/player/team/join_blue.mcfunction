@@ -1,5 +1,5 @@
 execute store success score $was_in_lobby var if predicate custom:team/lobby
-team join rocketriders.sort_000.blue
+function custom:entity/set_team/blue
 execute if predicate game:match_components/custom_team_colors run function game:assign_custom_team_color
 execute unless predicate game:match_components/custom_team_colors run scoreboard players reset @s custom_team_color
 function custom:player/update_text/self

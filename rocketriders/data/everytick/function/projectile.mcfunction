@@ -18,8 +18,8 @@ scoreboard players operation @s dy -= @s y
 scoreboard players operation @s dz -= @s z
 
 #Consider fall distance of nearest player to amplify vertical motion
-execute at @s store result score @s FallDistance run data get entity @p[scores={ThrowSplash=1..}] fall_distance 150
-scoreboard players operation @s dy -= @s FallDistance
+execute at @s store result score $fall_distance var run data get entity @p[scores={ThrowSplash=1..}] fall_distance 150
+scoreboard players operation @s dy -= $fall_distance var
 
 #Store resultant motion
 execute store result entity @s Motion[0] double 0.00075 run scoreboard players get @s dx

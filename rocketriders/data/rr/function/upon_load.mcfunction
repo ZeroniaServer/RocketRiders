@@ -176,7 +176,6 @@ scoreboard objectives add playerUUID dummy
 scoreboard objectives add PlatTime dummy
 scoreboard objectives add ClearArena dummy
 scoreboard objectives add GamesPlayed dummy
-scoreboard objectives add FallDistance dummy
 scoreboard objectives add bestParkourMins dummy
 scoreboard objectives add bestParkourSecs dummy
 scoreboard objectives add bestParkourDeci dummy

@@ -17,7 +17,7 @@ execute if predicate custom:team/lobby run return run loot replace entity @s arm
 
 ## Playing Teams
 # Hobbit Modifier
-execute if predicate custom:team/any_playing_team if predicate game:modifiers/hobbits/on unless predicate custom:invisible run loot replace block 0 184 -16 container.3 loot modifiers:hobbit_head
+execute if predicate custom:team/any_playing_team if predicate game:modifiers/hobbits/on unless predicate custom:entity/has_invisibility_effect run loot replace block 0 184 -16 container.3 loot modifiers:hobbit_head
 # Generic Gear
 execute if predicate custom:team/any_playing_team if predicate game:armor_type/generic run loot replace block 0 184 -16 container.0 loot items:armor/generic_gear/boots
 execute if predicate custom:team/any_playing_team if predicate game:armor_type/generic run loot replace block 0 184 -16 container.1 loot items:armor/generic_gear/leggings
@@ -43,12 +43,12 @@ execute unless function game:norankboots run loot replace block 0 184 -16 contai
 # Elytra
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate items:elytra/elytra unless items entity @s armor.chest *[custom_data~{id:"elytra"}] run loot replace block 0 184 -16 container.2 loot items:misc/elytra
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate items:elytra/elytra if items entity @s armor.chest *[custom_data~{id:"elytra"}] run item replace block 0 184 -16 container.2 from entity @s armor.chest
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate items:elytra/elytra if items entity @s armor.chest *[custom_data~{id:"elytra",invisible:true}] unless predicate custom:invisible run item modify block 0 184 -16 container.2 [{function:"minecraft:set_components",components:{"minecraft:equippable":{asset_id:"minecraft:elytra",damage_on_hurt:false,equip_sound:"minecraft:item.armor.equip_elytra",slot:"chest"}}},{function:"minecraft:set_custom_data",tag:{invisible:false}}]
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate items:elytra/elytra if items entity @s armor.chest *[custom_data~{id:"elytra",invisible:true}] unless predicate custom:entity/has_invisibility_effect run item modify block 0 184 -16 container.2 [{function:"minecraft:set_components",components:{"minecraft:equippable":{asset_id:"minecraft:elytra",damage_on_hurt:false,equip_sound:"minecraft:item.armor.equip_elytra",slot:"chest"}}},{function:"minecraft:set_custom_data",tag:{invisible:false}}]
 # Invisibility
 #set asset ID to a random string of numbers so that they can't get around the armour invisibility with a resource pack
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:invisible run execute store result storage rocketriders:main update_armor.random_asset_id_1 int 1 run random value 0..2147483646
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:invisible run execute store result storage rocketriders:main update_armor.random_asset_id_2 int 1 run random value 0..2147483646
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:invisible run function custom:__impl__/update_armor/make_invisible with storage rocketriders:main update_armor
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:entity/has_invisibility_effect run execute store result storage rocketriders:main update_armor.random_asset_id_1 int 1 run random value 0..2147483646
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:entity/has_invisibility_effect run execute store result storage rocketriders:main update_armor.random_asset_id_2 int 1 run random value 0..2147483646
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate custom:entity/has_invisibility_effect run function custom:__impl__/update_armor/make_invisible with storage rocketriders:main update_armor
 # CTF Flag
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag] unless entity @s[tag=!CarryFB1,tag=!CarryFB2] run function custom:__impl__/update_armor/flag_blue with storage rocketriders:teams blue.team_banner
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag] unless entity @s[tag=!CarryFY1,tag=!CarryFY2] run function custom:__impl__/update_armor/flag_yellow with storage rocketriders:teams yellow.team_banner

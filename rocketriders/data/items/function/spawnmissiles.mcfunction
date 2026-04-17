@@ -30,8 +30,8 @@ execute if entity @s[tag=yellowmissile] positioned as @s positioned ~ ~-5 ~ run 
 
 ##Prevention
 #Void
-execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearvoid run tag @s add void
-execute if entity @s[tag=!UnableMissile] at @s if predicate custom:nearvoid run tag @s add UnableMissile
+execute if entity @s[tag=!UnableMissile] at @s if predicate custom:near_void run tag @s add void
+execute if entity @s[tag=!UnableMissile] at @s if predicate custom:near_void run tag @s add UnableMissile
 
 #Roof
 execute if entity @s[tag=!UnableMissile] at @s if predicate custom:near_or_above_roof run tag @s add roof

@@ -26,7 +26,7 @@ effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] resistance infinite 100 true
 effect give @a[x=0,tag=!WasInLobby,tag=LeaveTeams] night_vision infinite 100 true
 gamemode adventure @a[x=0,tag=!WasInLobby,tag=LeaveTeams,gamemode=!adventure]
 tag @a[x=0,tag=!WasInLobby,tag=LeaveTeams] remove cursorItem
-execute as @a[x=0,tag=!WasInLobby,tag=LeaveTeams,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute as @a[x=0,tag=!WasInLobby,tag=LeaveTeams,predicate=custom:entity/is_on_fire] at @s run function game:putoutfire
 tag @a[x=0,tag=LeaveTeams,tag=!WasInLobby] add teleport_sound
 tag @a[x=0] remove LeaveTeams
 tag @a[x=0] remove LeavingYellow

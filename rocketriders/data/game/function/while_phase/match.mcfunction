@@ -11,9 +11,9 @@ spawnpoint @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
 spawnpoint @a[x=0,predicate=custom:team/yellow] 12 64 66 -180 0
 
 ##Prevent players from going above the arena
-execute if predicate game:phase/match/play as @a[x=0,predicate=custom:team/any_playing_team,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow] at @s in overworld if entity @s[predicate=custom:breaching_lobby] run function game:punishbreach
-execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue] at @s in overworld if entity @s[predicate=custom:breaching_lobby] run tp @s 12 64 -66 0 0
-execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/yellow] at @s in overworld if entity @s[predicate=custom:breaching_lobby] run tp @s 12 64 66 180 0
+execute if predicate game:phase/match/play as @a[x=0,predicate=custom:team/any_playing_team,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow,predicate=custom:breaching_lobby] at @s run function game:punishbreach
+execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue,predicate=custom:breaching_lobby] run tp @s 12 64 -66 0 0
+execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/yellow,predicate=custom:breaching_lobby] run tp @s 12 64 66 180 0
 execute as @a[x=0,predicate=custom:team/spectator,predicate=custom:breaching_lobby] run tp @s 12 100 0.5 90 90
 
 ##Player void
@@ -27,7 +27,7 @@ function everytick:spawnables
 function everytick:clear_spawnblocks
 function everytick:no_fall
 execute if entity @e[x=0,type=#arrows] run function everytick:fire_arrow
-execute if predicate game:game_rules/disable_cannoning/on as @e[x=0,type=tnt,predicate=custom:tnt_is_moving_too_fast] run function game:slow_down_tnt
+execute if predicate game:game_rules/disable_cannoning/on as @e[x=0,type=tnt,predicate=custom:tnt/is_moving_too_fast] run function game:slow_down_tnt
 
 ##Kill excessive entities for lag reduction purposes (sorry Robo)
 execute store result score $cart_count var if entity @e[x=0,type=tnt_minecart,predicate=custom:in_arena]
@@ -41,15 +41,15 @@ execute if score $vortex_count var matches 101.. run tag @e[limit=100,sort=rando
 execute if score $vortex_count var matches 101.. as @e[x=0,type=area_effect_cloud,predicate=entities:type/vortex/brain,predicate=custom:in_arena,tag=!safe] on vehicle run function custom:entity/kill_entity_and_passengers
 execute if score $vortex_count var matches 101.. run tag @e[x=0,type=area_effect_cloud,predicate=entities:type/vortex/brain,predicate=custom:in_arena,tag=safe] remove safe
 
-execute store result score $fireball_count var if entity @e[x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:is_moving]
-execute if score $fireball_count var matches 101.. run tag @e[limit=100,sort=random,x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:is_moving] add safe
-execute if score $fireball_count var matches 101.. as @e[x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:is_moving,tag=!safe] run function custom:entity/kill_entity_and_passengers
-execute if score $fireball_count var matches 101.. run tag @e[x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:is_moving,tag=safe] remove safe
+execute store result score $fireball_count var if entity @e[x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving]
+execute if score $fireball_count var matches 101.. run tag @e[limit=100,sort=random,x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving] add safe
+execute if score $fireball_count var matches 101.. as @e[x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving,tag=!safe] run function custom:entity/kill_entity_and_passengers
+execute if score $fireball_count var matches 101.. run tag @e[x=0,type=fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving,tag=safe] remove safe
 
-execute store result score $obsidian_shield_projectile_count var if entity @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:is_moving]
-execute if score $obsidian_shield_projectile_count var matches 101.. run tag @e[limit=100,sort=random,x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:is_moving] add safe
-execute if score $obsidian_shield_projectile_count var matches 101.. as @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:is_moving,tag=!safe] run function custom:entity/kill_entity_and_passengers
-execute if score $obsidian_shield_projectile_count var matches 101.. run tag @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:is_moving,tag=safe] remove safe
+execute store result score $obsidian_shield_projectile_count var if entity @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving]
+execute if score $obsidian_shield_projectile_count var matches 101.. run tag @e[limit=100,sort=random,x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving] add safe
+execute if score $obsidian_shield_projectile_count var matches 101.. as @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving,tag=!safe] run function custom:entity/kill_entity_and_passengers
+execute if score $obsidian_shield_projectile_count var matches 101.. run tag @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving,tag=safe] remove safe
 
 ##Regenerate base frames
 execute unless predicate game:match_components/custom_base_frames unless predicate game:match_components/arena/bedrock_frame run fill -15 64 67 39 64 67 obsidian

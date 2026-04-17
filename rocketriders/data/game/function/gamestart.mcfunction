@@ -157,7 +157,7 @@ execute if predicate game:phase/match as @a[x=0,predicate=custom:team/any_arena_
 execute as @a[x=0,predicate=!custom:team/any_arena_team] run attribute @s minecraft:knockback_resistance modifier remove rocketriders:pre_game_queue
 
 ##Keep spectators inside arena
-execute as @a[x=0,predicate=custom:team/spectator] at @s unless predicate custom:insideborder_lenient run tag @s add leftBorder
+execute as @a[x=0,predicate=custom:team/spectator] at @s unless predicate custom:location/within_or_nearby_world_border run tag @s add leftBorder
 tp @a[x=0,predicate=custom:team/spectator,tag=leftBorder] 12 100 0.5 90 90
 tellraw @a[x=0,predicate=custom:team/spectator,tag=leftBorder] {"text":"You cannot leave world border!","color":"red"}
 tag @a[x=0] remove leftBorder
@@ -167,7 +167,7 @@ execute as @a[x=0,gamemode=!spectator,predicate=custom:team/any_playing_team,tag
 execute unless predicate game:match_components/custom_leave_handling run function game:leaveteams
 
 ##Facade Parkour
-execute if predicate game:phase/staging as @a[x=-101,y=197,z=68,dx=12,dy=8,dz=19,gamemode=!spectator,predicate=custom:team/any_playing_team,tag=!doing_facade_parkour,predicate=custom:stepping_on_player_head] run tag @s add doing_facade_parkour
+execute if predicate game:phase/staging as @a[x=-101,y=197,z=68,dx=12,dy=8,dz=19,gamemode=!spectator,predicate=custom:team/any_playing_team,tag=!doing_facade_parkour,predicate=custom:standing_on_player_head] run tag @s add doing_facade_parkour
 execute if predicate game:phase/staging as @a[x=0,gamemode=!spectator,predicate=custom:team/any_playing_team,tag=doing_facade_parkour] run title @s actionbar {color:"green",text:"Jump off to return to the base"}
 execute if predicate game:phase/staging as @a[x=0,gamemode=!spectator,predicate=custom:team/any_playing_team,tag=doing_facade_parkour] at @s if entity @s[x=-84,y=186,z=45,dx=-111,dy=0,dz=110] run function game:end_facade_parkour
 execute if predicate game:phase/staging as @a[x=-101,y=202,z=60,dx=12,dy=1,dz=5,gamemode=!spectator,predicate=custom:team/any_playing_team,tag=doing_facade_parkour] run function game:end_facade_parkour

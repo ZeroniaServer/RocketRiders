@@ -2,6 +2,6 @@
 data modify storage rocketriders:main slow_down_tnt.motion set from entity @s Motion
 
 execute store result storage rocketriders:main slow_down_tnt.motion[2] double 0.001 run data get storage rocketriders:main slow_down_tnt.motion[2] 700
-execute if predicate custom:moving_up store result storage rocketriders:main slow_down_tnt.motion[1] double 0.001 run data get storage rocketriders:main slow_down_tnt.motion[1] 700
+execute if predicate custom:entity/is_moving_upwards store result storage rocketriders:main slow_down_tnt.motion[1] double 0.001 run data get storage rocketriders:main slow_down_tnt.motion[1] 700
 
 data modify entity @s Motion set from storage rocketriders:main slow_down_tnt.motion

@@ -7,8 +7,8 @@ execute if predicate game:modifiers/hardcore/on run return run tellraw @s {color
 execute if predicate game:arena_details/middle/layered run return run tellraw @s [{color:"dark_gray",italic:true,text:"Bottom Detail is not compatible with the 'Layered' Middle Detail."}]
 
 # cycle options
-execute unless predicate custom:player_is_holding_shift run scoreboard players add $arena_details/bottom config 1
-execute if predicate custom:player_is_holding_shift run scoreboard players remove $arena_details/bottom config 1
+execute unless predicate custom:player/is_pressing_sneak_key run scoreboard players add $arena_details/bottom config 1
+execute if predicate custom:player/is_pressing_sneak_key run scoreboard players remove $arena_details/bottom config 1
 advancement grant @s only lobby:inform_sign_cycling
 
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshcustomizer

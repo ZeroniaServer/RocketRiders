@@ -1,7 +1,7 @@
 ## Runs at the start of the tick that a TNT entity explodes (it still exists and will continue to exist until entities get processed later)
 
 # If this TNT should not explode, kill it
-execute unless entity @s[predicate=custom:tnt_can_explode] run return run kill @s
+execute unless entity @s[predicate=custom:tnt/explodable_location] run return run kill @s
 
 # Limit number of TNT explosions in a single tick
 execute if score $tnt_explosions_this_tick var >= $maximum_tnt_explosions_per_tick var run data modify entity @s fuse set value 20
@@ -31,7 +31,7 @@ execute if predicate game:phase/match/closing/outcome run kill @s
 execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:modifiers/instant_tnt_explosions/on run data modify entity @s fuse set value 0
 
 # Castle cracks
-execute if predicate game:arena_details/top/castle unless predicate game:game_rules/friendly_tnt_damage/on if predicate custom:tnt_near_castle run function game:explosion_deepslate_cracks/medium
+execute if predicate game:arena_details/top/castle unless predicate game:game_rules/friendly_tnt_damage/on if predicate custom:tnt/near_castle run function game:explosion_deepslate_cracks/medium
 
 # Trigger nearby vortices
 execute unless predicate game:game_rules/friendly_tnt_damage/on unless predicate game:modifiers/explosive/on positioned ~ ~0.06125 ~ as @e[distance=..5.33,predicate=entities:type/vortex/brain] at @s run function entities:type/vortex/actions/trigger {fuse:0}

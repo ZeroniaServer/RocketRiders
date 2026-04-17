@@ -1,8 +1,8 @@
 #Void spawn prevention
-execute at @s[tag=BlueObshield,tag=!UnableSpawn] if predicate custom:nearvoid run tag @s add void
-execute at @s[tag=BlueObshield,tag=!UnableSpawn] if predicate custom:nearvoid run tag @s add UnableSpawn
-execute at @s[tag=YellowObshield,tag=!UnableSpawn] if predicate custom:nearvoid run tag @s add void
-execute at @s[tag=YellowObshield,tag=!UnableSpawn] if predicate custom:nearvoid run tag @s add UnableSpawn
+execute at @s[tag=BlueObshield,tag=!UnableSpawn] if predicate custom:near_void run tag @s add void
+execute at @s[tag=BlueObshield,tag=!UnableSpawn] if predicate custom:near_void run tag @s add UnableSpawn
+execute at @s[tag=YellowObshield,tag=!UnableSpawn] if predicate custom:near_void run tag @s add void
+execute at @s[tag=YellowObshield,tag=!UnableSpawn] if predicate custom:near_void run tag @s add UnableSpawn
 
 #Roof spawn prevention
 execute at @s[tag=BlueObshield,tag=!UnableSpawn] if predicate custom:near_or_above_roof run tag @s add roof

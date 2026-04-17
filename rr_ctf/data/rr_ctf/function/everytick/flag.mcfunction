@@ -36,8 +36,8 @@ scoreboard players set $pulse_step_length var 3
 scoreboard players operation $stage var = $match_time global
 scoreboard players operation $stage var %= $pulse_period var
 scoreboard players operation $stage var /= $pulse_step_length var
-execute as @e[x=0,type=marker,tag=ctf_flag.blue,predicate=custom:flag_needs_ladders] at @s run function rr_ctf:everytick/flag_pulse with storage rocketriders:teams blue.block_palette
-execute as @e[x=0,type=marker,tag=ctf_flag.yellow,predicate=custom:flag_needs_ladders] at @s run function rr_ctf:everytick/flag_pulse with storage rocketriders:teams yellow.block_palette
+execute as @e[x=0,type=marker,tag=ctf_flag.blue,predicate=custom:location/flag_needs_ladders] at @s run function rr_ctf:everytick/flag_pulse with storage rocketriders:teams blue.block_palette
+execute as @e[x=0,type=marker,tag=ctf_flag.yellow,predicate=custom:location/flag_needs_ladders] at @s run function rr_ctf:everytick/flag_pulse with storage rocketriders:teams yellow.block_palette
 
 #Capture Yellow Flag 1 (the flag on yellow's right)
 execute if predicate game:phase/match/play if score FY1: FlagScore matches 30.. as @e[x=0,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/blue] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass if entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/blue] run tellraw @a[x=0,predicate=!custom:team/any_playing_team] [{score:{name:"#yellow",objective:"text.accent_color"}},"\n",{selector:"@s"}," lowered a ",[{score:{name:"#yellow",objective:"text.main_color"}},{score:{name:"#yellow",objective:"text.team_name"}}]," flag!\n"]

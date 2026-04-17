@@ -8,7 +8,7 @@ data modify storage rocketriders:main explosion.modifiers.nbt merge value {data:
 execute if predicate game:phase/match/closing/outcome run data modify storage rocketriders:main explosion.modifiers.ramp_power_near_portals set value "always"
 
 # Preserve pre_death_projectile
-execute if predicate custom:pre_death_projectile run data modify storage rocketriders:main explosion.modifiers.nbt.data.pre_death_projectile set value true
+execute if predicate custom:entity/is_pre_death_projectile run data modify storage rocketriders:main explosion.modifiers.nbt.data.pre_death_projectile set value true
 
 # Set explosion power
 execute store result score $intended_explosion_power var store result score $actual_explosion_power var run data get storage rocketriders:main explosion.explosion_power
@@ -42,6 +42,6 @@ execute as @e[distance=..0.01,type=creeper,tag=explosion.this,limit=1] if functi
 execute if score $actual_explosion_power var matches ..1 if data storage rocketriders:main explosion.modifiers{force_particle_emitter:true} run particle minecraft:explosion_emitter
 
 # Castle cracks
-execute if predicate game:arena_details/top/castle if predicate game:castle_type/deepslate if predicate custom:tnt_near_castle if data storage rocketriders:main explosion.modifiers{can_crack_deepslate_bricks:true} run function custom:__impl__/explosion/crack_deepslate_bricks
+execute if predicate game:arena_details/top/castle if predicate game:castle_type/deepslate if predicate custom:tnt/near_castle if data storage rocketriders:main explosion.modifiers{can_crack_deepslate_bricks:true} run function custom:__impl__/explosion/crack_deepslate_bricks
 
 return 1

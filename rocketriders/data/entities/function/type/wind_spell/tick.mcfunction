@@ -1,21 +1,21 @@
 # Break when out of bounds
 execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/wind_spell/actions/break
-execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:moving_up run return run function entities:type/wind_spell/actions/break
-execute on vehicle positioned as @s unless predicate custom:insideborder run return run function entities:type/wind_spell/actions/break
+execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/wind_spell/actions/break
+execute on vehicle positioned as @s if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/wind_spell/actions/break
 execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/wind_spell/actions/break
 
 # Break when near an enemy spawn point
 scoreboard players set $team var -1
 execute on origin if predicate custom:team/any_playing_team store success score $team var unless predicate custom:team/blue
-execute if score $team var matches 0 if predicate custom:near_any_spawn_zone_lenient if predicate custom:on_yellow_half run return run function entities:type/wind_spell/actions/break
-execute if score $team var matches 1 if predicate custom:near_any_spawn_zone_lenient if predicate custom:on_blue_half run return run function entities:type/wind_spell/actions/break
+execute if score $team var matches 0 if predicate custom:near_any_spawn_zone_lenient if predicate custom:in_yellow_half run return run function entities:type/wind_spell/actions/break
+execute if score $team var matches 1 if predicate custom:near_any_spawn_zone_lenient if predicate custom:in_blue_half run return run function entities:type/wind_spell/actions/break
 execute if score $team var matches -1 if predicate custom:near_any_spawn_zone_lenient run return run function entities:type/wind_spell/actions/break
 
 # Early impact
-execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/wind_spell/tick/impact
+execute unless predicate custom:entity/has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/wind_spell/tick/impact
 
 # Store the rotation and speed of vehicle
-execute if predicate custom:has_vehicle run function custom:projectile_motion_save
+execute if predicate custom:entity/has_vehicle run function custom:projectile_motion_save
 
 # Smoothen movement with air toggling
 execute on vehicle run data modify entity @s Air set value 0

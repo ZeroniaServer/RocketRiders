@@ -6,9 +6,9 @@
 
 ##Blue Obsidian Shield functionality
 #Detecting motion
-scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball,predicate=custom:is_moving] obshieldtime 1
+scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball,predicate=custom:entity/is_moving] obshieldtime 1
 kill @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=30..}]
-tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:has_vehicle] add blueobalone
+tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:entity/has_vehicle] add blueobalone
 
 #Disable Blue Obsidian Shields inside of portals
 execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=-74,dx=48,dy=25] run kill @s
@@ -17,7 +17,7 @@ execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=blueobal
 execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=-75,dx=48,dy=25,dz=2] run kill @s
 execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=73,dx=48,dy=25,dz=2] run kill @s
 #Disable Blue Obsidian Shields near void
-execute as @e[x=0,type=marker,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
+kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_void]
 #Disable Blue Obsidian Shields near spawnpoints
 kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_any_spawn_zone_lenient]
 
@@ -29,9 +29,9 @@ kill @e[x=0,type=marker,tag=BlueObshield]
 
 ##Yellow Obsidian Shield functionality
 #Detecting motion
-scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball,predicate=custom:is_moving] obshieldtime 1
+scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball,predicate=custom:entity/is_moving] obshieldtime 1
 kill @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=30..}]
-tag @e[x=0,type=marker,tag=yellowobtracker,predicate=!custom:has_vehicle] add yellowobalone
+tag @e[x=0,type=marker,tag=yellowobtracker,predicate=!custom:entity/has_vehicle] add yellowobalone
 
 #Disable Yellow Obsidian Shields inside of portals
 execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
@@ -40,7 +40,7 @@ execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=yellowob
 execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
 execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
 #Disable Yellow Obsidian Shields near void
-execute as @e[x=0,type=marker,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
+kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_void]
 #Disable Yellow Obsidian Shields near spawnpoints
 kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_any_spawn_zone_lenient]
 

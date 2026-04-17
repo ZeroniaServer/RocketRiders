@@ -20,7 +20,7 @@ scoreboard players operation $impulse_y var += $impulse_motion_y var
 scoreboard players operation $impulse_z var += $impulse_motion_z var
 
 # bounce upwards if on ground
-execute on vehicle on vehicle store success score $on_ground var if predicate custom:is_on_ground
+execute on vehicle on vehicle store success score $on_ground var if predicate custom:entity/is_on_ground
 execute if score $on_ground var matches 1 if score $impulse_y var matches ..-1 run scoreboard players operation $impulse_y var *= $-1 constant
 execute if score $on_ground var matches 1 if score $impulse_y var matches ..0200 run scoreboard players set $impulse_y var 0200
 

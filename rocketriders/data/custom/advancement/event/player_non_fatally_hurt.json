@@ -12,7 +12,7 @@
           },
           {
             "condition": "minecraft:reference",
-            "name": "custom:player/alive"
+            "name": "custom:player/is_alive"
           }
         ]
       }

@@ -8,5 +8,5 @@ execute on vehicle on origin run scoreboard players set $target_exists var 1
 execute if score $target_exists var matches 0 run return run function entities:type/nova_attach/actions/break
 
 scoreboard players set $explode var 0
-execute on vehicle on origin if predicate custom:is_on_ground run scoreboard players set $explode var 1
+execute on vehicle on origin if predicate custom:entity/is_on_ground run scoreboard players set $explode var 1
 execute if score @s entity.age matches 15.. if score $explode var matches 1 run function entities:type/nova_attach/actions/explode

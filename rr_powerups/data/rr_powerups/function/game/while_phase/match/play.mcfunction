@@ -2,9 +2,9 @@
 function rr_powerups:everytick/spawnables
 
 # extra crystal explosion
-execute at @e[limit=1,x=0,type=item_display,tag=PUCrystalEntity,tag=PUCrystalPerma,predicate=!custom:has_passenger] run particle minecraft:dragon_breath ~ 55.75 ~ 0 0 0 1 100
-execute at @e[limit=1,x=0,type=item_display,tag=PUCrystalEntity,tag=PUCrystalPerma,predicate=!custom:has_passenger] positioned ~ 55.75 ~ run function custom:explosion {power:7,modifiers:{name:"End Crystal"}}
-kill @e[limit=1,x=0,type=item_display,tag=PUCrystalEntity,tag=PUCrystalPerma,predicate=!custom:has_passenger]
+execute at @e[limit=1,x=0,type=item_display,tag=PUCrystalEntity,tag=PUCrystalPerma,predicate=!custom:entity/has_passenger] run particle minecraft:dragon_breath ~ 55.75 ~ 0 0 0 1 100
+execute at @e[limit=1,x=0,type=item_display,tag=PUCrystalEntity,tag=PUCrystalPerma,predicate=!custom:entity/has_passenger] positioned ~ 55.75 ~ run function custom:explosion {power:7,modifiers:{name:"End Crystal"}}
+kill @e[limit=1,x=0,type=item_display,tag=PUCrystalEntity,tag=PUCrystalPerma,predicate=!custom:entity/has_passenger]
 
 #crystal pads
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={captureYellow=1..}] run function rr_powerups:everytick/crystalpadblue

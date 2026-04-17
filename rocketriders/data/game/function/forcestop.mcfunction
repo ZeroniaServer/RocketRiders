@@ -1,5 +1,5 @@
 ##Operator function for forcing a match to end
-execute unless entity @s[type=armor_stand,tag=Selection,predicate=custom:indimension] run return run execute in minecraft:overworld positioned 0.0 0.0 0.0 as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function game:forcestop
+execute unless entity @s[type=armor_stand,tag=Selection,predicate=custom:in_overworld] run return run execute in minecraft:overworld positioned 0.0 0.0 0.0 as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function game:forcestop
 
 clear @a[x=0,predicate=custom:team/any_playing_team] *
 effect clear @a[x=0,predicate=custom:team/any_playing_team]

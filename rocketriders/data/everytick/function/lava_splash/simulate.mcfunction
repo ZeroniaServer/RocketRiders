@@ -7,7 +7,7 @@ execute store success score $lava_splash splashtick if score $lava_splash splash
 execute store result entity @s Air short 1 run scoreboard players get $lava_splash splashtick
 
 ##Placing water upon impact
-execute as @e[x=0,type=area_effect_cloud,predicate=custom:is_awkward_area_effect_cloud,tag=!lava_splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["lava_splash","lava_splash_alone"],custom_particle:{type:"block",block_state:"minecraft:air"}}
+execute as @e[x=0,type=area_effect_cloud,predicate=custom:area_effect_cloud_type/awkward,tag=!lava_splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["lava_splash","lava_splash_alone"],custom_particle:{type:"block",block_state:"minecraft:air"}}
 
 #Kill if near spawnpoints
 execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked,predicate=custom:near_blue_spawn_zone] run kill @s

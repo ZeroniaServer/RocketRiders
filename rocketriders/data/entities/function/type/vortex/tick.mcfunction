@@ -48,7 +48,7 @@ execute unless block ~ ~ ~ #custom:vortices_ignore run return run function entit
 # projectiles trigger
 scoreboard players set $triggered_by_entity var 0
 tag @s add vortex.this
-execute store success score $triggered_by_entity var as @n[distance=..1.5,predicate=custom:triggers_vortices] run function entities:type/vortex/tick/destroy_trigger_entity
+execute store success score $triggered_by_entity var as @n[distance=..1.5,predicate=custom:entity/triggers_vortices] run function entities:type/vortex/tick/destroy_trigger_entity
 tag @s remove vortex.this
 execute if score $triggered_by_entity var matches 1 run return run function entities:type/vortex/actions/explode
 

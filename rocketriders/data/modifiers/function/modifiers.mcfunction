@@ -29,8 +29,8 @@ execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase
 execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase/match/pause] run effect clear @a[x=0,predicate=custom:team/any_arena_team] darkness
 
 ##Rocket Residers (anti-crossing behavior)
-execute unless predicate game:phase/match/pause if predicate game:modifiers/rocket_residers/on unless predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue,predicate=custom:residers] run tag @s add crosser
-execute unless predicate game:phase/match/pause if predicate game:modifiers/rocket_residers/on unless predicate game:phase/match/closing as @a[x=0,predicate=custom:team/yellow,predicate=custom:residers] run tag @s add crosser
+execute unless predicate game:phase/match/pause if predicate game:modifiers/rocket_residers/on unless predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue,predicate=custom:in_rocket_residers_crosser_zone] run tag @s add crosser
+execute unless predicate game:phase/match/pause if predicate game:modifiers/rocket_residers/on unless predicate game:phase/match/closing as @a[x=0,predicate=custom:team/yellow,predicate=custom:in_rocket_residers_crosser_zone] run tag @s add crosser
 #Hackfix: void works for crossers too
 execute unless predicate game:phase/match/pause as @a[x=0,tag=crosser] run function game:void
 tag @a[x=0] remove crosser

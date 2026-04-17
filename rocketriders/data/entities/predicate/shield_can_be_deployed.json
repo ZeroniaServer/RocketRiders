@@ -26,7 +26,7 @@
                     },
                     {
                       "condition": "minecraft:reference",
-                      "name": "custom:on_blue_half"
+                      "name": "custom:in_blue_half"
                     }
                   ]
                 },
@@ -39,7 +39,7 @@
                     },
                     {
                       "condition": "minecraft:reference",
-                      "name": "custom:on_yellow_half"
+                      "name": "custom:in_yellow_half"
                     }
                   ]
                 }
@@ -58,7 +58,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "custom:nearvoid"
+      "name": "custom:near_void"
     }
   },
   {

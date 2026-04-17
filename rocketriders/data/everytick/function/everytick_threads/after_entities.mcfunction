@@ -7,7 +7,7 @@ tag @e[limit=3,x=0,type=marker,tag=join_pad] remove join_pad.show_barrier
 execute as @a[x=0,gamemode=!spectator] if items entity @s player.crafting.* * run function items:crafting/check
 
 # Hotbar auto-fill
-execute if function experimental:enabled as @a[x=0,predicate=custom:team/any_playing_team,tag=do_hotbar_auto_fill,predicate=custom:do_hotbar_auto_fill] run function everytick:hotbar_auto_fill
+execute if function experimental:enabled as @a[x=0,predicate=custom:team/any_playing_team,tag=do_hotbar_auto_fill,predicate=custom:player/do_hotbar_auto_fill] run function everytick:hotbar_auto_fill
 
 #Server mode
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ServerModeVoting] if entity @a[x=0] run function servermode:loop
@@ -42,8 +42,8 @@ execute if predicate rr:do_custom_regen_system as @e[x=0,type=armor_stand,tag=Se
 execute unless predicate rr:do_custom_regen_system run gamerule minecraft:natural_health_regeneration true
 
 #Night vision/saturation and more lobby functionality
-effect give @a[x=0,predicate=custom:team/lobby,predicate=custom:apply_lobby_night_vision] night_vision infinite 100 true
-effect clear @a[x=0,predicate=custom:team/lobby,predicate=!custom:apply_lobby_night_vision] night_vision
+effect give @a[x=0,predicate=custom:team/lobby,predicate=!custom:in_parkour_area] night_vision infinite 100 true
+effect clear @a[x=0,predicate=custom:team/lobby,predicate=custom:in_parkour_area] night_vision
 execute unless predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
 effect give @a[x=0] saturation infinite 0 true
 execute as @a[x=0,predicate=custom:team/lobby,tag=hardcore] run function modifiers:hardcorereset
@@ -64,8 +64,8 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function everytick
 
 #Arrow pickup
 execute as @e[x=0,type=#arrows,tag=!arrow.processed] at @s run function everytick:arrow/init
-execute unless predicate game:phase/match/closing run scoreboard players set @e[x=0,type=#arrows,predicate=custom:is_moving] entity.age -1
-execute unless predicate game:phase/match/closing as @e[x=0,type=#arrows,predicate=!custom:is_moving] at @s run function everytick:arrow/while_on_ground
+execute unless predicate game:phase/match/closing run scoreboard players set @e[x=0,type=#arrows,predicate=custom:entity/is_moving] entity.age -1
+execute unless predicate game:phase/match/closing as @e[x=0,type=#arrows,predicate=!custom:entity/is_moving] at @s run function everytick:arrow/while_on_ground
 
 #Game ending and arena clearing
 execute if predicate game:phase/match/play/tie_breaker as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:while_phase/match/play/tie_breaker

@@ -3,6 +3,3 @@ $execute if predicate {condition:"minecraft:entity_properties",entity:"this",pre
 $execute positioned ~ ~-1 ~-1 if block ~ ~ ~ #custom:air unless entity @e[limit=1,distance=..5,type=player,gamemode=!spectator] run setblock ~ ~ ~ $(back)
 $execute positioned ~ ~-1 ~ if block ~ ~ ~ #custom:air unless entity @e[limit=1,distance=..5,type=player,gamemode=!spectator] run setblock ~ ~ ~ $(back)
 $execute positioned ~ ~-1 ~1 if block ~ ~ ~ #custom:air unless entity @e[limit=1,distance=..5,type=player,gamemode=!spectator] run setblock ~ ~ ~ $(back)
-
-#$execute if predicate custom:flag_needs_ladders positioned ~ ~-1 ~-2 if block ~ ~ ~ #custom:air unless entity @e[limit=1,distance=..5,type=player,gamemode=!spectator] run setblock ~ ~ ~ $(back)
-#$execute if predicate custom:flag_needs_ladders positioned ~ ~-1 ~2 if block ~ ~ ~ #custom:air unless entity @e[limit=1,distance=..5,type=player,gamemode=!spectator] run setblock ~ ~ ~ $(back)

@@ -1,4 +1,4 @@
-execute unless entity @s[type=armor_stand,tag=Selection,predicate=custom:indimension] in minecraft:overworld positioned 0.0 0.0 0.0 as @e[limit=1,x=0,type=armor_stand,tag=Selection] run return run function custom:player/update_text/all
+execute unless entity @s[type=armor_stand,tag=Selection,predicate=custom:in_overworld] in minecraft:overworld positioned 0.0 0.0 0.0 as @e[limit=1,x=0,type=armor_stand,tag=Selection] run return run function custom:player/update_text/all
 execute unless dimension minecraft:overworld in minecraft:overworld positioned 0.0 0.0 0.0 as @e[limit=1,x=0,type=armor_stand,tag=Selection] run return run function custom:player/update_text/all
 
 ## Set players

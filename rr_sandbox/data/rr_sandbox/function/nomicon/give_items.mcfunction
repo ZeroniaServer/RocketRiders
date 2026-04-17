@@ -38,7 +38,7 @@ execute if score @s nomicon matches 35 run return run function items:elytra/norm
 execute if score @s nomicon matches 36 run return run function items:give/trident with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 37 run function items:shooting_saber/infinity_30_seconds
-execute if score @s nomicon matches 37 run return run execute unless predicate custom:has_shooting_saber_in_inventory run function items:give/shooting_saber with storage rocketriders:main nomicon
+execute if score @s nomicon matches 37 run return run execute unless predicate custom:player/has_shooting_saber_in_inventory run function items:give/shooting_saber with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 38 run return run function items:give/tipped_arrow_blindness with storage rocketriders:main nomicon
 execute if score @s nomicon matches 39 run return run function items:give/tipped_arrow_levitation with storage rocketriders:main nomicon
@@ -67,17 +67,17 @@ execute if score @s nomicon matches 51 run return run function items:give/jump_b
 execute if score @s nomicon matches 52 run return run function items:give/spectral_arrow with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 53 run function items:shooting_saber/multishot_30_seconds
-execute if score @s nomicon matches 53 run return run execute unless predicate custom:has_shooting_saber_in_inventory run function items:give/shooting_saber with storage rocketriders:main nomicon
+execute if score @s nomicon matches 53 run return run execute unless predicate custom:player/has_shooting_saber_in_inventory run function items:give/shooting_saber with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 54 run return run function items:give/building_block with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 55 run function items:shooting_saber/infinity_permanent
-execute if score @s nomicon matches 55 run return run execute unless predicate custom:has_shooting_saber_in_inventory run function items:give/shooting_saber with storage rocketriders:main nomicon
+execute if score @s nomicon matches 55 run return run execute unless predicate custom:player/has_shooting_saber_in_inventory run function items:give/shooting_saber with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 56 run return run execute if predicate items:shooting_saber/infinity run function items:shooting_saber/infinity_deactivate
 
 execute if score @s nomicon matches 57 run function items:shooting_saber/multishot_permanent
-execute if score @s nomicon matches 57 run return run execute unless predicate custom:has_shooting_saber_in_inventory run function items:give/shooting_saber with storage rocketriders:main nomicon
+execute if score @s nomicon matches 57 run return run execute unless predicate custom:player/has_shooting_saber_in_inventory run function items:give/shooting_saber with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 58 run return run execute if predicate items:shooting_saber/multishot run function items:shooting_saber/multishot_deactivate
 execute if score @s nomicon matches 59 run return run function items:give/booster_rocket with storage rocketriders:main nomicon

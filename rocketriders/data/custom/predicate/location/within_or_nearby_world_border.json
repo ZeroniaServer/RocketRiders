@@ -3,8 +3,13 @@
   "predicate": {
     "dimension": "minecraft:overworld",
     "position": {
-      "y": {
-        "max": 0
+      "x": {
+        "min": -177,
+        "max": 192
+      },
+      "z": {
+        "min": -189,
+        "max": 190
       }
     }
   }

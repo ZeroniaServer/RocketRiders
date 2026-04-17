@@ -18,7 +18,7 @@ execute if entity @s[tag=long_arms] unless entity @s[predicate=game:modifiers/lo
 execute if entity @s[tag=long_arms] run function modifiers:long_arms/set
 
 # Put out fire
-execute if entity @s[tag=crosser,predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute if entity @s[tag=crosser,predicate=custom:entity/is_on_fire] at @s run function game:putoutfire
 
 # Apply poison if lobby breach was made
 execute if predicate game:phase/match/play run effect give @s[tag=on_respawn.apply_poison_effect] poison 4 100 true

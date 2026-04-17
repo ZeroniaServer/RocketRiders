@@ -2,7 +2,7 @@
 execute if predicate custom:entity/has_vehicle at @s run function custom:event/player_joins_overworld/delete_vehicle/player
 
 # If player had previously joined, give them a storage entry (legacy score)
-execute if score @s firstJoined matches 1.. run function custom:player_action/playerdata/save
+execute if score @s firstJoined matches 1.. run function custom:player/playerdata/save
 
 # Reset team, scores, triggers, and tags
 team leave @s
@@ -45,7 +45,7 @@ execute if predicate game:achievements_can_be_awarded run function achievements:
 execute if predicate rr:server_mode/realms run advancement grant @s only 2811iaj1:root
 
 # Load data (and initialise if new player)
-execute unless function custom:player_action/playerdata/load run function custom:event/player_joins_overworld/new_player
+execute unless function custom:player/playerdata/load run function custom:event/player_joins_overworld/new_player
 
 # Summon player monitor
 data modify storage rocketriders:main player_monitoring set value {entity_data:{CustomName:[{color:"gray",italic:true,text:"Player Monitor ("},"Unknown Player",")"],data:{player_monitoring:{}}}}

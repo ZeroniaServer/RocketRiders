@@ -9,7 +9,7 @@ execute store result score $value var store result storage rocketriders:main sab
 function achievements:sabotage_loop with storage rocketriders:main sabotage
 
 # save progress
-function custom:player_action/playerdata/save
+function custom:player/playerdata/save
 scoreboard players operation @s prevMinedTNT = @s minedTNT
 
 return 1

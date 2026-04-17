@@ -5,4 +5,4 @@ execute if predicate rr_crusade:kit/knight run function rr_crusade:items/kit/giv
 execute if predicate rr_crusade:kit/archer run function rr_crusade:items/kit/give/archer
 execute if predicate rr_crusade:kit/mage run function rr_crusade:items/kit/give/mage
 
-function custom:player_action/playerdata/save
+function custom:player/playerdata/save

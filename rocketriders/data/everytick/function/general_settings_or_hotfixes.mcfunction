@@ -20,7 +20,7 @@ tag @a[x=0,scores={toggle_particles=1..},tag=hideParticles] add hidParticles
 tag @a[x=0,scores={toggle_particles=1..},tag=hideParticles] remove hideParticles
 tag @a[x=0,scores={toggle_particles=1..},tag=!hideParticles,tag=!hidParticles] add hideParticles
 tag @a[x=0,scores={toggle_particles=1..},tag=hidParticles] remove hidParticles
-execute as @a[x=0,scores={toggle_particles=1..}] run function custom:player_action/playerdata/save
+execute as @a[x=0,scores={toggle_particles=1..}] run function custom:player/playerdata/save
 scoreboard players set @a[x=0] toggle_particles 0
 
 #Toggle hotbar auto-fill
@@ -31,7 +31,7 @@ tag @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=!do_hotbar_auto_fill,tag=!di
 tag @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=disabled_do_hotbar_auto_fill] remove disabled_do_hotbar_auto_fill
 tellraw @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=!do_hotbar_auto_fill] [{"text":"Disabled automatic hotbar filling.","color":"red"}]
 tellraw @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=do_hotbar_auto_fill] [{"text":"Enabled automatic hotbar filling.","color":"green"}]
-execute as @a[x=0,scores={toggle_auto_fill_hotbar=1..}] run function custom:player_action/playerdata/save
+execute as @a[x=0,scores={toggle_auto_fill_hotbar=1..}] run function custom:player/playerdata/save
 scoreboard players set @a[x=0] toggle_auto_fill_hotbar 0
 
 #Toggle ingame tips
@@ -43,7 +43,7 @@ tag @a[x=0,scores={toggle_ingame_tips=1..},tag=hideTips] add hidTips
 tag @a[x=0,scores={toggle_ingame_tips=1..},tag=hideTips] remove hideTips
 tag @a[x=0,scores={toggle_ingame_tips=1..},tag=!hideTips,tag=!hidTips] add hideTips
 tag @a[x=0,scores={toggle_ingame_tips=1..},tag=hidTips] remove hidTips
-execute as @a[x=0,scores={toggle_ingame_tips=1..}] run function custom:player_action/playerdata/save
+execute as @a[x=0,scores={toggle_ingame_tips=1..}] run function custom:player/playerdata/save
 scoreboard players set @a[x=0] toggle_ingame_tips 0
 
 # change_default_spell trigger
@@ -61,7 +61,7 @@ tellraw @a[x=0,scores={change_default_spell=-3}] {color:"green",text:"You will n
 scoreboard players set @a[x=0,scores={change_default_spell=-3}] default_spell 2
 tellraw @a[x=0,scores={change_default_spell=-4}] {color:"green",text:"You will now receive Wind spells in Crusade mode."}
 scoreboard players set @a[x=0,scores={change_default_spell=-4}] default_spell 3
-execute as @a[x=0,scores={change_default_spell=-4..-1}] run function custom:player_action/playerdata/save
+execute as @a[x=0,scores={change_default_spell=-4..-1}] run function custom:player/playerdata/save
 tellraw @a[x=0,scores={change_default_spell=..-5}] {color:"red",text:"That is not a valid option"}
 scoreboard players reset @a change_default_spell
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run scoreboard players enable @a[x=0] change_default_spell
@@ -81,7 +81,7 @@ tellraw @a[x=0,scores={change_starting_crusade_kit=-3}] {color:"green",text:"You
 scoreboard players set @a[x=0,scores={change_starting_crusade_kit=-3}] start_as_crusade_kit 3
 tellraw @a[x=0,scores={change_starting_crusade_kit=-4}] {color:"green",text:"You will now start as a Random Kit in Crusade mode."}
 scoreboard players reset @a[x=0,scores={change_starting_crusade_kit=-4}] start_as_crusade_kit
-execute as @a[x=0,scores={change_starting_crusade_kit=-4..-1}] run function custom:player_action/playerdata/save
+execute as @a[x=0,scores={change_starting_crusade_kit=-4..-1}] run function custom:player/playerdata/save
 tellraw @a[x=0,scores={change_starting_crusade_kit=..-5}] {color:"red",text:"That is not a valid option"}
 scoreboard players reset @a change_starting_crusade_kit
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_crusade] run scoreboard players enable @a[x=0] change_starting_crusade_kit

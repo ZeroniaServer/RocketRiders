@@ -185,7 +185,7 @@ tag @a[x=0,scores={toggle_parkour_instructions=1..},tag=hideParkourTips] add hid
 tag @a[x=0,scores={toggle_parkour_instructions=1..},tag=hideParkourTips] remove hideParkourTips
 tag @a[x=0,scores={toggle_parkour_instructions=1..},tag=!hideParkourTips,tag=!hidParkourTips] add hideParkourTips
 tag @a[x=0,scores={toggle_parkour_instructions=1..},tag=hidParkourTips] remove hidParkourTips
-execute as @a[x=0,scores={toggle_parkour_instructions=1..}] run function custom:player_action/playerdata/save
+execute as @a[x=0,scores={toggle_parkour_instructions=1..}] run function custom:player/playerdata/save
 scoreboard players set @a[x=0] toggle_parkour_instructions 0
 
 ##Return to Lobby Pad

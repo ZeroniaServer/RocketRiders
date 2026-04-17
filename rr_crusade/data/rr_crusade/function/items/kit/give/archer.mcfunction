@@ -8,7 +8,7 @@ execute unless entity @s[predicate=rr_crusade:kit/archer] at @s[tag=!kitarcher] 
 
 scoreboard players set @s crusadekit 2
 scoreboard players set @s[tag=!JoinBlue,tag=!JoinYellow] start_as_crusade_kit 2
-function custom:player_action/playerdata/save
+function custom:player/playerdata/save
 
 function custom:player/update_armor
 function custom:player/reset_inventory

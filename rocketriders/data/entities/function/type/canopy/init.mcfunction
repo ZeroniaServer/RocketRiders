@@ -26,7 +26,7 @@ execute if predicate game:phase/match/play on origin run tag @s add canopy.origi
 execute if predicate game:phase/match/play at @s[tag=!canopy.small] run playsound minecraft:entity.player.teleport player @a[x=0,tag=!canopy.origin] ~ ~2 ~ 1 1
 execute if predicate game:phase/match/play on origin run tag @s remove canopy.origin
 
-execute if predicate game:phase/match/play on origin run function custom:player_action/forget_canopy
+execute if predicate game:phase/match/play on origin run function custom:player/forget_canopy
 tag @s remove canopy.forgotten_origin
 
 execute positioned ~ ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:block/release_bees_and_destroy_hive

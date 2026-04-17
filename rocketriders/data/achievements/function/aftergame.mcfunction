@@ -1,7 +1,7 @@
 scoreboard players add @a[x=0,tag=Winner] wins 1
 scoreboard players add @a[x=0,tag=Loser] losses 1
-execute as @a[x=0,tag=Winner] run function custom:player_action/playerdata/save
-execute as @a[x=0,tag=Loser] run function custom:player_action/playerdata/save
+execute as @a[x=0,tag=Winner] run function custom:player/playerdata/save
+execute as @a[x=0,tag=Loser] run function custom:player/playerdata/save
 
 ##Any achievements to be given by the official end of a match.
 ##The execution of this function may be delayed for the Tie/Tiebreaker window.

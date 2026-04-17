@@ -34,5 +34,5 @@ execute if score @s useful matches 19.. run advancement grant @s only achievemen
 execute if score @s useful matches 20.. run advancement grant @s only achievements:rr_challenges/useful 20
 
 # save progress
-function custom:player_action/playerdata/save
+function custom:player/playerdata/save
 scoreboard players operation @s prevUseful = @s useful

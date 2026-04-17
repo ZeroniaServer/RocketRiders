@@ -5,9 +5,9 @@ scoreboard objectives setdisplay list
 scoreboard players reset @a flag_tablist_display
 
 gamerule minecraft:fall_damage false
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_canopy
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_nova_attach
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/forget_spell_emitter
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/forget_canopy
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/forget_nova_attach
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/forget_spell_emitter
 
 worldborder warning distance 0
 

@@ -75,14 +75,14 @@ execute if predicate game:phase/match/play if predicate custom:team/any_playing_
 
 
 ## General
-execute if predicate custom:player/is_nova_attached run function custom:player_action/trigger_nova_attach
+execute if predicate custom:player/is_nova_attached run function custom:player/trigger_nova_attach
 
 tag @s add matchOrigin
 execute as @e[x=0,predicate=entities:type/canopy_projectile/brain] if function custom:match_origin positioned as @s run function custom:event/player_dies/withdraw_canopy
 tag @s remove matchOrigin
 
-function custom:player_action/forget_canopy
-function custom:player_action/forget_spell_emitter
+function custom:player/forget_canopy
+function custom:player/forget_spell_emitter
 
 tag @s remove onBlue
 tag @s remove onYellow

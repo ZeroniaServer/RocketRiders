@@ -58,18 +58,18 @@ execute if predicate game:arena_details/portal/hole_in_one as @a[x=0,predicate=c
 ## Save play times
 scoreboard players operation @a[x=0] play_time_save_cooldown %= $20 constant
 execute if entity @s[tag=chaseEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.chase_play_time 1
-execute if entity @s[tag=chaseEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player_action/playerdata/save_play_time/chase
+execute if entity @s[tag=chaseEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/chase
 execute if entity @s[tag=crusadeEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.crusade_play_time 1
-execute if entity @s[tag=crusadeEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player_action/playerdata/save_play_time/crusade
+execute if entity @s[tag=crusadeEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/crusade
 execute if entity @s[tag=ctfEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.ctf_play_time 1
-execute if entity @s[tag=ctfEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player_action/playerdata/save_play_time/ctf
+execute if entity @s[tag=ctfEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/ctf
 execute if entity @s[tag=duelEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.duel_play_time 1
-execute if entity @s[tag=duelEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player_action/playerdata/save_play_time/duel
+execute if entity @s[tag=duelEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/duel
 execute if entity @s[tag=normalEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.normal_play_time 1
-execute if entity @s[tag=normalEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player_action/playerdata/save_play_time/normal
+execute if entity @s[tag=normalEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/normal
 execute if entity @s[tag=powerupsEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.powerups_play_time 1
-execute if entity @s[tag=powerupsEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player_action/playerdata/save_play_time/powerups
+execute if entity @s[tag=powerupsEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/powerups
 execute if entity @s[tag=sandboxEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.sandbox_play_time 1
-execute if entity @s[tag=sandboxEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player_action/playerdata/save_play_time/sandbox
+execute if entity @s[tag=sandboxEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/sandbox
 execute if entity @s[tag=swapEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.swap_play_time 1
-execute if entity @s[tag=swapEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player_action/playerdata/save_play_time/swap
+execute if entity @s[tag=swapEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/swap

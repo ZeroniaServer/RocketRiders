@@ -6,7 +6,7 @@ execute unless entity @s[predicate=rr_crusade:kit/knight] at @s[tag=!kitknight] 
 
 scoreboard players set @s crusadekit 1
 scoreboard players set @s[tag=!JoinBlue,tag=!JoinYellow] start_as_crusade_kit 1
-function custom:player_action/playerdata/save
+function custom:player/playerdata/save
 
 function custom:player/update_armor
 function custom:player/reset_inventory

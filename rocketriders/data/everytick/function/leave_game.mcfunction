@@ -12,9 +12,9 @@ execute if predicate game:phase/match unless predicate game:phase/match/closing 
 
 #Clearing effects/tags and teleporting to lobby
 tag @a[x=0,scores={LeaveGame=1..}] remove force_mount
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player_action/forget_canopy
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player_action/forget_nova_attach
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player_action/forget_spell_emitter
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_canopy
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_nova_attach
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_spell_emitter
 execute as @a[x=0,scores={LeaveGame=1..}] run ride @s dismount
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFlag] remove CarryFlag
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY1] remove CarryFY1

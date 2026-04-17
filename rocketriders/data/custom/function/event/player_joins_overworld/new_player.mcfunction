@@ -5,4 +5,4 @@ tellraw @s ["Welcome to ",[{bold:true,color:"blue",text:"Rocket ",shadow_color:[
 
 tag @s add informMeLate
 tag @s add newPlayer
-function custom:player_action/playerdata/save
+function custom:player/playerdata/save

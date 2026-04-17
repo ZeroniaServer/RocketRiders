@@ -20,6 +20,6 @@ advancement grant @s only achievements:rr_zzzhard/end_row3
 scoreboard players reset @s fireballKill
 scoreboard players reset @s minedTNT
 scoreboard players reset @s useful
-function custom:player_action/playerdata/save
+function custom:player/playerdata/save
 
 tellraw @s {color:"green",text:"Your achievements have been reset."}

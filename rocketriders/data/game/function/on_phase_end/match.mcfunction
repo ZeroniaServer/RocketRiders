@@ -19,7 +19,7 @@ execute if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s mi
 function achievements:scoresreset
 
 scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] GamesPlayed 1
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/playerdata/save
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/playerdata/save
 
 tag @a[x=0] remove Winner
 tag @a[x=0] remove Loser

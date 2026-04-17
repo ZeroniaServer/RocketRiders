@@ -1,5 +1,5 @@
 scoreboard players reset @s event.player_dies
-scoreboard players set @s flag.is_dead 1
+tag @s add is_dead
 execute store success score $void_death var if entity @s[advancements={custom:event/player_dies={die_void=true}}]
 execute store success score $lava_death var if entity @s[advancements={custom:event/player_dies={die_lava=true}}]
 advancement revoke @s only custom:event/player_dies

@@ -43,9 +43,9 @@ function everytick:team_count
 execute store result score $players_in_lobby global if entity @a[x=0,predicate=custom:team/lobby]
 
 # Handle respawning
-execute as @e[x=0,type=player,scores={flag.is_dead=1}] at @s run function custom:event/player_respawns/main
-scoreboard players set @a[x=0] flag.is_dead 1
-scoreboard players set @e[x=0,type=player] flag.is_dead 0
+execute as @e[x=0,type=player,tag=is_dead] at @s run function custom:event/player_respawns/main
+tag @a[x=0] add is_dead
+tag @e[x=0,type=player] remove is_dead
 
 # Handle instant item use
 execute as @a[x=0,scores={event.player_uses_pig_spawn_egg=1..}] at @s run function custom:event/player_uses_pig_spawn_egg/main

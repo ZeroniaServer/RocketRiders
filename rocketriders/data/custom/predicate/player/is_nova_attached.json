@@ -1,7 +1,11 @@
 {
-  "condition": "minecraft:entity_scores",
+  "condition": "minecraft:entity_properties",
   "entity": "this",
-  "scores": {
-    "flag.is_nova_attached": 1
+  "predicate": {
+    "minecraft:entity_tags": {
+      "all_of": [
+        "is_nova_attached"
+      ]
+    }
   }
 }

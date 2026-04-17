@@ -88,8 +88,6 @@ scoreboard objectives add event.player_dies custom:deaths
 scoreboard objectives add event.player_uses_writable_book used:writable_book
 scoreboard objectives add event.player_uses_written_book used:written_book
 scoreboard objectives add event.player_uses_pig_spawn_egg used:pig_spawn_egg
-scoreboard objectives add flag.is_dead dummy
-scoreboard objectives add flag.is_nova_attached dummy
 scoreboard objectives add entity.age dummy
 scoreboard objectives add entity.speed dummy
 scoreboard objectives add entity.canopy.movement_cooldown dummy

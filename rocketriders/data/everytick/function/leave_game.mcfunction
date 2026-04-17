@@ -45,7 +45,7 @@ execute unless predicate game:phase/match/closing unless predicate game:phase_la
 execute unless predicate game:phase/match/closing unless predicate game:phase_last/match/closing run tag @a[x=0,scores={LeaveGame=1..}] add teleport_sound
 execute as @a[x=0,scores={LeaveGame=1..},predicate=custom:entity/is_on_fire] at @s run function game:putoutfire
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
-scoreboard players reset @a[x=0,scores={LeaveGame=1..}] flag.is_nova_attached
+tag @a[x=0,scores={LeaveGame=1..}] remove is_nova_attached
 scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/infinity] shooting_saber.infinity_time
 scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/multishot] shooting_saber.multishot_time
 scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:elytra/elytra] elytra_time

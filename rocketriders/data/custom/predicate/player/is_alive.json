@@ -4,10 +4,14 @@
     "condition": "minecraft:any_of",
     "terms": [
       {
-        "condition": "minecraft:entity_scores",
+        "condition": "minecraft:entity_properties",
         "entity": "this",
-        "scores": {
-          "flag.is_dead": 1
+        "predicate": {
+          "minecraft:entity_tags": {
+            "all_of": [
+              "is_dead"
+            ]
+          }
         }
       },
       {

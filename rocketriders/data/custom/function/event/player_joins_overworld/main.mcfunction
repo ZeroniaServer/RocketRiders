@@ -19,8 +19,8 @@ scoreboard players set @s event.player_joins_overworld.state -1
 scoreboard players set @s time_since_joined_overworld 0
 
 # Update is_dead flag
-scoreboard players set @a[x=0] flag.is_dead 1
-scoreboard players set @e[x=0,type=player] flag.is_dead 0
+tag @a[x=0] add is_dead
+tag @e[x=0,type=player] remove is_dead
 
 # Reset scoreboards for ingame statistics/advancements
 function everytick:score_reset

@@ -7,7 +7,7 @@ execute unless entity @a[limit=1,tag=nova_attach.origin] run return fail
 execute unless predicate game:phase/match/play run return fail
 
 ## Set up data
-scoreboard players set @s flag.is_nova_attached 1
+tag @s add is_nova_attached
 playsound minecraft:entity.firework_rocket.launch master @a[x=0] ~ ~ ~ 2 1.2
 effect give @s levitation 1 60 true
 

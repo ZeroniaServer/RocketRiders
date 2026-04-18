@@ -27,6 +27,8 @@ fill -15 63 67 -15 34 67 obsidian
 fill 39 63 67 39 34 67 obsidian
 fill -15 63 -67 -15 34 -67 obsidian
 fill 39 63 -67 39 34 -67 obsidian
+execute as @e[limit=1,x=0,type=marker,tag=captureMiddle] unless score @s captureBlue matches 98.. unless score @s PowerupCrystal matches 1.. run fill 11 64 -67 13 64 -67 obsidian
+execute as @e[limit=1,x=0,type=marker,tag=captureMiddle] unless score @s captureYellow matches 98.. unless score @s PowerupCrystal matches 1.. run fill 11 64 67 13 64 67 obsidian
 
 #Item RNG
 scoreboard players add @s RandomItem 1

@@ -8,9 +8,9 @@ execute unless score $game_mode var matches 1..8 run return fail
 scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1] SetGamemode = $game_mode var
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsigns
 
-# arena/bedrock_frame
-$execute store success score $arena/bedrock_frame match_components if predicate {condition:"value_check",value:$(arena__bedrock_frame),range:1}
-execute if score $arena/bedrock_frame match_components matches 0 run scoreboard players reset $arena/bedrock_frame match_components
+# arena/bedrock_base_frames
+$execute store success score $arena/bedrock_base_frames match_components if predicate {condition:"value_check",value:$(arena__bedrock_base_frames),range:1}
+execute if score $arena/bedrock_base_frames match_components matches 0 run scoreboard players reset $arena/bedrock_base_frames match_components
 
 # checkered_yellow_base
 $execute store success score $checkered_yellow_base match_components if predicate {condition:"value_check",value:$(checkered_yellow_base),range:1}
@@ -106,6 +106,10 @@ $scoreboard players set $castle_type var $(castle_type)
 data remove storage rocketriders:match components."castle_type"
 execute if score $castle_type var matches 1 run data modify storage rocketriders:match components."castle_type" set value "normal"
 execute if score $castle_type var matches 2 run data modify storage rocketriders:match components."castle_type" set value "deepslate"
+
+# arena/classic_base_frames
+$execute store success score $arena/classic_base_frames match_components if predicate {condition:"value_check",value:$(arena__classic_base_frames),range:1}
+execute if score $arena/classic_base_frames match_components matches 0 run scoreboard players reset $arena/classic_base_frames match_components
 
 ## POST
 function game:match_components/resolve

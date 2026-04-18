@@ -52,30 +52,11 @@ execute if score $obsidian_shield_projectile_count var matches 101.. as @e[x=0,t
 execute if score $obsidian_shield_projectile_count var matches 101.. run tag @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving,tag=safe] remove safe
 
 ##Regenerate base frames
-execute unless predicate game:match_components/custom_base_frames unless predicate game:match_components/arena/bedrock_frame run fill -15 64 67 39 64 67 obsidian
-execute unless predicate game:match_components/custom_base_frames unless predicate game:match_components/arena/bedrock_frame run fill -15 33 67 39 33 67 obsidian
-execute unless predicate game:match_components/custom_base_frames unless predicate game:match_components/arena/bedrock_frame run fill -15 64 -67 39 64 -67 obsidian
-execute unless predicate game:match_components/custom_base_frames unless predicate game:match_components/arena/bedrock_frame run fill -15 33 -67 39 33 -67 obsidian
-execute unless predicate game:match_components/custom_base_frames unless predicate game:match_components/arena/bedrock_frame run fill -15 63 67 -15 34 67 obsidian
-execute unless predicate game:match_components/custom_base_frames unless predicate game:match_components/arena/bedrock_frame run fill 39 63 67 39 34 67 obsidian
-execute unless predicate game:match_components/custom_base_frames unless predicate game:match_components/arena/bedrock_frame run fill -15 63 -67 -15 34 -67 obsidian
-execute unless predicate game:match_components/custom_base_frames unless predicate game:match_components/arena/bedrock_frame run fill 39 63 -67 39 34 -67 obsidian
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill -15 64 67 39 64 67 bedrock
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill -15 33 67 39 33 67 bedrock
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill -15 64 -67 39 64 -67 bedrock
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill -15 33 -67 39 33 -67 bedrock
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill -15 63 67 -15 34 67 bedrock
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill 39 63 67 39 34 67 bedrock
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill -15 63 -67 -15 34 -67 bedrock
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill 39 63 -67 39 34 -67 bedrock
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill 10 64 67 14 64 67 obsidian
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill 10 64 -67 14 64 -67 obsidian
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill 39 64 68 -15 64 69 bedrock
-execute unless predicate game:match_components/custom_base_frames if predicate game:match_components/arena/bedrock_frame run fill 39 64 -68 -15 64 -69 bedrock
+function game:place_base_frames
 
 ## Castle
 # Pathways
-execute if predicate game:arena_details/top/castle if predicate game:castle_type/deepslate run function game:arena/place_castle_pathways
+execute if predicate game:arena_details/top/castle if predicate game:castle_type/deepslate run function game:place_castle_pathways
 # Hanging ladders
 execute if predicate game:arena_details/top/castle unless block 24 62 -52 minecraft:ladder if block 24 61 -52 minecraft:ladder run setblock 24 61 -52 air destroy
 execute if predicate game:arena_details/top/castle unless block 24 61 -52 minecraft:ladder if block 24 60 -52 minecraft:ladder run setblock 24 60 -52 air destroy

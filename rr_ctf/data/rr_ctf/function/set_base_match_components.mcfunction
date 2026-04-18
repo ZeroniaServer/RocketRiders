@@ -3,7 +3,7 @@ data modify storage rocketriders:match components."arena/regenerate_back_layer" 
 data modify storage rocketriders:match components."main_item" set value "piercing_pickaxe"
 
 scoreboard players set $additional_canopy_available match_components 1
-scoreboard players set $arena/bedrock_frame match_components 1
+scoreboard players set $arena/bedrock_base_frames match_components 1
 scoreboard players set $config_override.collision_control match_components -1
 scoreboard players set $config_override.rocket_residers match_components -1
 scoreboard players set $custom_pierce_prevention match_components 1

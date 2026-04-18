@@ -5,7 +5,7 @@
     "score": "match_components",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$arena/bedrock_frame"
+      "name": "$arena/classic_base_frames"
     }
   },
   "range": 1

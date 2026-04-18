@@ -90,18 +90,18 @@ execute if predicate game:match_components/checkered_yellow_base unless predicat
 execute if predicate game:match_components/checkered_yellow_base if predicate game:modifiers/hardcore/on run function game:place_facade/checkered_yellow_base_front_hardcore with storage rocketriders:teams yellow.block_palette
 
 # Base Frames
-execute unless predicate game:match_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:obsidian strict
-execute if predicate game:match_components/arena/bedrock_frame run fill -102 194 59 -88 202 59 minecraft:bedrock strict
+execute unless predicate game:match_components/arena/bedrock_base_frames run fill -102 194 59 -88 202 59 minecraft:obsidian strict
+execute if predicate game:match_components/arena/bedrock_base_frames run fill -102 194 59 -88 202 59 minecraft:bedrock strict
 fill -89 195 59 -101 201 59 air strict
 
-execute unless predicate game:match_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:obsidian strict
-execute if predicate game:match_components/arena/bedrock_frame run fill -102 194 97 -88 202 97 minecraft:bedrock strict
+execute unless predicate game:match_components/arena/bedrock_base_frames run fill -102 194 97 -88 202 97 minecraft:obsidian strict
+execute if predicate game:match_components/arena/bedrock_base_frames run fill -102 194 97 -88 202 97 minecraft:bedrock strict
 fill -101 195 97 -89 201 97 air strict
 
-execute if predicate game:match_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 bedrock strict
-execute if predicate game:match_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 bedrock strict
-execute unless predicate game:match_components/arena/bedrock_frame run fill -88 202 98 -102 202 98 barrier strict
-execute unless predicate game:match_components/arena/bedrock_frame run fill -88 202 58 -102 202 58 barrier strict
+execute if predicate game:match_components/arena/bedrock_base_frames run fill -88 202 98 -102 202 98 bedrock strict
+execute if predicate game:match_components/arena/bedrock_base_frames run fill -88 202 58 -102 202 58 bedrock strict
+execute unless predicate game:match_components/arena/bedrock_base_frames run fill -88 202 98 -102 202 98 barrier strict
+execute unless predicate game:match_components/arena/bedrock_base_frames run fill -88 202 58 -102 202 58 barrier strict
 
 # Frames & Portals
 execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/default run fill -101 195 59 -89 201 59 minecraft:nether_portal[axis=x] strict

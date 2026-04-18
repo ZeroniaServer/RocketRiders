@@ -1,25 +1,6 @@
 #Bases
 function game:place_arena/bases
-
-# Frame
-execute unless predicate game:match_components/arena/bedrock_frame run fill -15 64 67 -15 33 67 minecraft:obsidian replace #custom:basereplace
-execute unless predicate game:match_components/arena/bedrock_frame run fill -15 33 67 39 33 67 minecraft:obsidian replace #custom:basereplace
-execute unless predicate game:match_components/arena/bedrock_frame run fill 39 33 67 39 64 67 minecraft:obsidian replace #custom:basereplace
-execute unless predicate game:match_components/arena/bedrock_frame run fill 39 64 67 -15 64 67 minecraft:obsidian replace #custom:basereplace
-execute unless predicate game:match_components/arena/bedrock_frame run fill 39 64 -67 -15 64 -67 minecraft:obsidian replace #custom:basereplace
-execute unless predicate game:match_components/arena/bedrock_frame run fill -15 64 -67 -15 33 -67 minecraft:obsidian replace #custom:basereplace
-execute unless predicate game:match_components/arena/bedrock_frame run fill -15 33 -67 39 33 -67 minecraft:obsidian replace #custom:basereplace
-execute unless predicate game:match_components/arena/bedrock_frame run fill 39 33 -67 39 64 -67 minecraft:obsidian replace #custom:basereplace
-execute if predicate game:match_components/arena/bedrock_frame run fill -15 64 67 -15 33 67 minecraft:bedrock replace #custom:basereplace
-execute if predicate game:match_components/arena/bedrock_frame run fill -15 33 67 39 33 67 minecraft:bedrock replace #custom:basereplace
-execute if predicate game:match_components/arena/bedrock_frame run fill 39 33 67 39 64 67 minecraft:bedrock replace #custom:basereplace
-execute if predicate game:match_components/arena/bedrock_frame run fill 39 64 67 -15 64 67 minecraft:bedrock replace #custom:basereplace
-execute if predicate game:match_components/arena/bedrock_frame run fill 39 64 -67 -15 64 -67 minecraft:bedrock replace #custom:basereplace
-execute if predicate game:match_components/arena/bedrock_frame run fill -15 64 -67 -15 33 -67 minecraft:bedrock replace #custom:basereplace
-execute if predicate game:match_components/arena/bedrock_frame run fill -15 33 -67 39 33 -67 minecraft:bedrock replace #custom:basereplace
-execute if predicate game:match_components/arena/bedrock_frame run fill 39 33 -67 39 64 -67 minecraft:bedrock replace #custom:basereplace
-execute if predicate game:match_components/arena/bedrock_frame run fill -15 64 69 39 64 68 bedrock
-execute if predicate game:match_components/arena/bedrock_frame run fill -15 64 -69 39 64 -68 bedrock
+function game:place_base_frames
 
 #Set portals
 kill @e[x=0,type=text_display,tag=portal_frame_mask]

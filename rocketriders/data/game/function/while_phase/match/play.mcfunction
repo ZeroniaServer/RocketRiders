@@ -34,21 +34,6 @@ execute if score $match_play_time global matches ..4 run scoreboard players rese
 ##Achievements
 function achievements:gain
 
-##Spawn trap hotfix
-fill 14 63 66 10 63 66 obsidian
-fill 13 63 65 11 63 65 obsidian
-setblock 14 63 66 obsidian
-setblock 10 63 66 obsidian
-setblock 12 63 64 obsidian
-execute unless predicate game:match_components/custom_spawnpoint_block_protection run fill 13 65 67 11 65 67 obsidian
-execute unless predicate game:match_components/custom_spawnpoint_block_protection run setblock 12 66 67 obsidian
-fill 11 63 -65 13 63 -66 obsidian
-setblock 12 63 -64 obsidian
-setblock 10 63 -66 obsidian
-setblock 14 63 -66 obsidian
-execute unless predicate game:match_components/custom_spawnpoint_block_protection run fill 11 65 -67 13 65 -67 obsidian
-execute unless predicate game:match_components/custom_spawnpoint_block_protection run setblock 12 66 -67 obsidian
-
 ## Clear tablist icon for players in non-overworld dimensions
 scoreboard players display numberformat @a[predicate=!custom:in_overworld] flag_tablist_display blank
 

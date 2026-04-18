@@ -3,38 +3,28 @@
 ## the lobby with their Navigation Book ##
 ##########################################
 
-#Enable trigger
-scoreboard players enable @a[x=0,predicate=custom:team/lobby] LobbyWarp
+#Permissions
+scoreboard players enable @a[x=0] LobbyWarp
 scoreboard players reset @a[predicate=!custom:team/lobby] LobbyWarp
 
-#Cancel parkour
-execute if predicate rr:has_parkour as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tellraw @s [{"text":"You used a Lobby Warp, so your Parkour run was canceled.","color":"red"}]
-execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run clear @s
-execute as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tag @s remove inParkour
-
 #Teleports
-effect clear @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=7}] night_vision
-execute as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=1..}] unless score @s LobbyWarp matches 7 run effect give @s night_vision infinite 100 true
+execute as @a[x=0,scores={LobbyWarp=1..}] unless function lobby:__bookwarp/try_teleport run scoreboard players reset @s LobbyWarp
 
-tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=1}] -43 211 78 90 0
-execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] unless predicate game:game_rules/lock_modification_room/on run tp @s -64 202 78 90 0
-execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] if predicate game:game_rules/lock_modification_room/on run tellraw @s [{"text":"You do not have access to the Modification Room!","color":"red"}]
-execute if predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] if predicate game:game_rules/lock_modification_room/on run scoreboard players reset @s LobbyWarp
+#Cancel parkour
+execute if predicate rr:has_parkour as @a[x=0,scores={LobbyWarp=1..},tag=inParkour] run tag @s add bookwarp.cancel_parkour
+execute if predicate rr:has_parkour as @a[x=0,scores={LobbyWarp=1..},tag=bookwarp.cancel_parkour] run tag @s remove inParkour
+execute if predicate rr:has_parkour as @a[x=0,scores={LobbyWarp=1..},tag=bookwarp.cancel_parkour] run function custom:reset_inventory
+execute if predicate rr:has_parkour as @a[x=0,scores={LobbyWarp=1..},tag=bookwarp.cancel_parkour] run tellraw @s {color:"red",text:"You used a Lobby Warp, so your Parkour run was canceled."}
+execute if predicate rr:has_parkour run tag @a[x=0,tag=bookwarp.cancel_parkour] remove bookwarp.cancel_parkour
 
-#Message about mod room (server mode)
-execute unless predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] run tellraw @s [{"text":"You cannot access this area.","color":"red"}]
-execute unless predicate rr:has_modification_room as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=2}] run scoreboard players reset @s LobbyWarp
-
-tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=3}] -78 204 64 135 0
-tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=4}] -78 204 92 45 0
-tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=5}] -80 201 78 90 0
-tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=6}] 11 204 78 -90 60
-tp @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=7}] 65 205 -3 0 0
+#Night vision
+execute as @a[scores={LobbyWarp=1..}] at @s if predicate custom:in_parkour_area run effect clear @s night_vision
+execute as @a[scores={LobbyWarp=1..}] at @s unless predicate custom:in_parkour_area run effect give @s night_vision infinite 0 true
 
 #Sound and effects
-execute as @a[x=0,predicate=custom:team/lobby,scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted master @s ~ ~ ~ 1 2
-execute as @a[x=0,predicate=custom:team/lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
-execute as @a[x=0,predicate=custom:team/lobby,tag=!hideParticles,scores={LobbyWarp=1..}] at @s run particle flash{color:0xFFFFFF} ~ ~1 ~ 0 0 0 0 5 force @s
+execute as @a[x=0,scores={LobbyWarp=1..}] at @s run playsound minecraft:entity.zombie_villager.converted master @s ~ ~ ~ 1 2
+execute as @a[x=0,scores={LobbyWarp=1..},tag=!hideParticles] at @s run particle end_rod ~ ~1 ~ 0 0 0 0.1 100 force @s
+execute as @a[x=0,scores={LobbyWarp=1..},tag=!hideParticles] at @s run particle flash{color:0xFFFFFF} ~ ~1 ~ 0 0 0 0 5 force @s
 
 #Reset score
-scoreboard players reset @a[x=0,scores={LobbyWarp=1..}] LobbyWarp
+scoreboard players reset @a[x=0] LobbyWarp

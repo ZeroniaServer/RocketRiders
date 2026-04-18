@@ -44,6 +44,7 @@ execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"6",display:{color:"white",text:"duel"}}
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"7",display:{color:"white",text:"crusade"}}
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"8",display:{color:"white",text:"sandbox"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=classicEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"9",display:{color:"white",text:"classic"}}
 
 ## Components
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:"",label_visible:false,width:200,options:[{id:"",display:{bold:true,text:"Components",underlined:true}}]}

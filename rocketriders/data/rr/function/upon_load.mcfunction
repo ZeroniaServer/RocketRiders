@@ -155,6 +155,7 @@ scoreboard objectives add toggle_ingame_tips trigger
 
 scoreboard objectives add play_time_save_cooldown custom:play_time
 scoreboard objectives add player_statistics.chase_play_time dummy
+scoreboard objectives add player_statistics.classic_play_time dummy
 scoreboard objectives add player_statistics.crusade_play_time dummy
 scoreboard objectives add player_statistics.ctf_play_time dummy
 scoreboard objectives add player_statistics.duel_play_time dummy

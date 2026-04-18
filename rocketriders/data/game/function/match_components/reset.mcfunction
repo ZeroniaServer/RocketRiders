@@ -3,6 +3,7 @@ scoreboard players reset * match_components
 data modify storage rocketriders:match components set value {}
 
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run function rr_chase:set_base_match_components
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=classicEnabled] run function rr_classic:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run function rr_crusade:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=ctfEnabled] run function rr_ctf:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=duelEnabled] run function rr_duel:set_base_match_components

@@ -40,6 +40,7 @@ execute if predicate game:modifiers/minute_mix/on run scoreboard players set @s 
 
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/play/tie_breaker
+execute if entity @s[tag=classicEnabled] run function rr_classic:game/on_phase_start/match/play/tie_breaker
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/match/play/tie_breaker
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/match/play/tie_breaker
 execute if entity @s[tag=duelEnabled] run function rr_duel:game/on_phase_start/match/play/tie_breaker

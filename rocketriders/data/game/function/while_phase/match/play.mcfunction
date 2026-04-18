@@ -44,6 +44,8 @@ execute if predicate game:arena_details/portal/hole_in_one as @a[x=0,predicate=c
 scoreboard players operation @a[x=0] play_time_save_cooldown %= $20 constant
 execute if entity @s[tag=chaseEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.chase_play_time 1
 execute if entity @s[tag=chaseEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/chase
+execute if entity @s[tag=classicEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.classic_play_time 1
+execute if entity @s[tag=classicEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/classic
 execute if entity @s[tag=crusadeEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.crusade_play_time 1
 execute if entity @s[tag=crusadeEnabled] as @a[x=0,scores={play_time_save_cooldown=0}] run function custom:player/playerdata/save_play_time/crusade
 execute if entity @s[tag=ctfEnabled] run scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] player_statistics.ctf_play_time 1

@@ -58,6 +58,13 @@
         "command": "/trigger dev set 108"
       },
       "label": "Launch Sandbox"
+    },
+    {
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 109"
+      },
+      "label": "Launch Classic"
     }
   ],
   "exit_action": {

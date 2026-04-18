@@ -27,4 +27,4 @@ execute as @a[x=0,scores={LobbyWarp=1..},tag=!hideParticles] at @s run particle 
 execute as @a[x=0,scores={LobbyWarp=1..},tag=!hideParticles] at @s run particle flash{color:0xFFFFFF} ~ ~1 ~ 0 0 0 0 5 force @s
 
 #Reset score
-scoreboard players reset @a[x=0] LobbyWarp
+scoreboard players reset @a[x=0,scores={LobbyWarp=1..}] LobbyWarp

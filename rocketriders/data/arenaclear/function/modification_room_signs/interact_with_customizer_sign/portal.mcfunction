@@ -4,7 +4,6 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefres
 # overrides
 execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Details are not adjustable in this game mode."}
 execute if predicate game:match_components/arena/no_portal_details run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Details are incompatible with this game mode."}
-execute if predicate game:match_components/arena/castle run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Details are incompatible with this game mode."}
 execute if predicate game:match_components/no_portals run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Details are incompatible with this game mode."}
 
 # cycle options

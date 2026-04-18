@@ -1,5 +1,7 @@
 execute positioned as @s unless block ~ ~ ~ #custom:vortices_ignore run function entities:type/vortex_projectile/tick/early_impact/move_out_of_block
+
 execute positioned as @s unless predicate entities:vortex_can_be_deployed run return run function entities:type/vortex_projectile/actions/break
+execute positioned as @s if function custom:location/is_near_flag_base run return run function entities:type/vortex_projectile/actions/break
 
 execute positioned as @s if predicate game:game_rules/impact_utilities/on run return run function entities:type/vortex_projectile/actions/deploy
 

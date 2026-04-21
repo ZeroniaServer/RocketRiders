@@ -9,6 +9,7 @@ scoreboard players set $performing_dev_action dev_action 1
 scoreboard players set @s dev_action 1
 
 scoreboard players set $set_game_mode dev_action 0
+execute if score @s dev matches 100 store result score $set_game_mode dev_action run scoreboard players get @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=enabled] gamemodeID
 execute if score @s dev matches 101 store result score $set_game_mode dev_action run scoreboard players get @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_normal] gamemodeID
 execute if score @s dev matches 102 store result score $set_game_mode dev_action run scoreboard players get @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_powerups] gamemodeID
 execute if score @s dev matches 103 store result score $set_game_mode dev_action run scoreboard players get @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=rr_swap] gamemodeID

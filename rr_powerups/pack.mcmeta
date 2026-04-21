@@ -1,7 +1,7 @@
 {
   "pack": {
-    "min_format": 102,
-    "max_format": 102,
+    "min_format": 103,
+    "max_format": 103,
     "description": "Rocket Riders Powerups Game Mode."
   }
 }

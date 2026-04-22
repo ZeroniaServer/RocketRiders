@@ -36,15 +36,15 @@ data modify storage rocketriders:main match_components.dialog set value {\
 ## Game Mode
 data modify storage rocketriders:main match_components.dialog.body.contents[1].extra append from entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=enabled] CustomName
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"game_mode",label:{color:"gray",text:"🔒 Game Mode"},width:300,options:[{id:"",display:{color:"red",text:"unknown"}}]}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=normalEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"1",display:{color:"white",text:"normal"}}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=powerupsEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"2",display:{color:"white",text:"powerups"}}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"3",display:{color:"white",text:"swap"}}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=ctfEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"4",display:{color:"white",text:"ctf"}}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"5",display:{color:"white",text:"chase"}}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"6",display:{color:"white",text:"duel"}}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"7",display:{color:"white",text:"crusade"}}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"8",display:{color:"white",text:"sandbox"}}
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=classicEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"9",display:{color:"white",text:"classic"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=normalEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"normal",display:{color:"white",text:"normal"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=powerupsEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"powerups",display:{color:"white",text:"powerups"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"swap",display:{color:"white",text:"swap"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=ctfEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"ctf",display:{color:"white",text:"ctf"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"chase",display:{color:"white",text:"chase"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"duel",display:{color:"white",text:"duel"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=crusadeEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"crusade",display:{color:"white",text:"crusade"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"sandbox",display:{color:"white",text:"sandbox"}}
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=classicEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[] merge value {id:"classic",display:{color:"white",text:"classic"}}
 
 ## Components
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:"",label_visible:false,width:200,options:[{id:"",display:{bold:true,text:"Components",underlined:true}}]}

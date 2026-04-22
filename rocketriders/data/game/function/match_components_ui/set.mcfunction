@@ -2,11 +2,12 @@ execute unless predicate game:phase/staging/configuration run tellraw @s [{color
 execute unless predicate game:phase/staging/configuration run return fail
 
 # game mode
-$scoreboard players set $game_mode var $(game_mode)
-execute unless score $game_mode var matches 1..8 run return run tellraw @s {color:"red",text:"Game mode number not recognised"}
-execute unless score $game_mode var matches 1..8 run return fail
-scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1] SetGamemode = $game_mode var
-execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:refreshsigns
+scoreboard players set $game_mode var 0
+$execute store result score $game_mode var run scoreboard players get @e[limit=1,x=0,tag=gamemodeAS,tag=rr_$(game_mode)] gamemodeID
+execute if score $game_mode var matches 0 run return run tellraw @s {color:"red",text:"Game mode number not recognised"}
+execute if score $game_mode var matches 0 run return fail
+scoreboard players operation @e[limit=1,x=0,type=armor_stand,tag=Selection] SetGamemode = $game_mode var
+execute as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function arenaclear:refreshsigns
 
 # arena/bedrock_base_frames
 $execute store success score $arena/bedrock_base_frames match_components if predicate {condition:"value_check",value:$(arena__bedrock_base_frames),range:1}

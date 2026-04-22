@@ -4,7 +4,7 @@ ride @s mount @e[distance=..0.01,limit=1,type=tnt,tag=punchable_tnt.this.body]
 ## Set up data
 data modify entity @s data.punchable_tnt set value {neck:{}}
 
-data merge entity @s {width:0,height:0.03}
+data merge entity @s {Invulnerable:true,width:0,height:0.03}
 
 ## Summon brain
 tag @s add punchable_tnt.this.neck

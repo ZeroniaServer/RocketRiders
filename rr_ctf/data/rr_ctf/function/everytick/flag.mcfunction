@@ -57,13 +57,13 @@ execute if score FY1: FlagScore matches ..29 positioned as @e[limit=1,x=0,type=m
 execute if score FY1: FlagScore matches 1..29 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run playsound entity.chicken.egg master @a[x=0] ~ ~1 ~ 1 0.8
 execute if score FY1: FlagScore matches 1..29 run scoreboard players remove FY1: FlagScore 1
 
-execute if score FY1: FlagScore matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_2/yellow ~-4 ~6 ~-1
-execute if score FY1: FlagScore matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_2/yellow ~-4 ~5 ~-1
-execute if score FY1: FlagScore matches 15..18 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_2/yellow ~-4 ~4 ~-1
-execute if score FY1: FlagScore matches 11..14 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_2/yellow ~-4 ~3 ~-1
-execute if score FY1: FlagScore matches 7..10 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_2/yellow ~-4 ~2 ~-1
-execute if score FY1: FlagScore matches 1..6 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_2/yellow ~-4 ~1 ~-1
-execute if score FY1: FlagScore matches 0 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_2/yellow ~-4 ~1 ~-1
+execute if score FY1: FlagScore matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_1/yellow ~-4 ~6 ~-1
+execute if score FY1: FlagScore matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_1/yellow ~-4 ~5 ~-1
+execute if score FY1: FlagScore matches 15..18 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_1/yellow ~-4 ~4 ~-1
+execute if score FY1: FlagScore matches 11..14 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_1/yellow ~-4 ~3 ~-1
+execute if score FY1: FlagScore matches 7..10 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_1/yellow ~-4 ~2 ~-1
+execute if score FY1: FlagScore matches 1..6 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_1/yellow ~-4 ~1 ~-1
+execute if score FY1: FlagScore matches 0 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_1/yellow ~-4 ~1 ~-1
 
 #Capture Yellow Flag 2 (the flag on yellow's left)
 execute if predicate game:phase/match/play if score FY2: FlagScore matches 30.. as @e[x=0,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/blue] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass if entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/blue] run tellraw @a[x=0,predicate=!custom:team/any_playing_team] [{score:{name:"#yellow",objective:"text.accent_color"}},"\n",{selector:"@s"}," lowered a ",[{score:{name:"#yellow",objective:"text.main_color"}},{score:{name:"#yellow",objective:"text.team_name"}}]," flag!\n"]
@@ -83,13 +83,13 @@ execute if score FY2: FlagScore matches ..29 positioned as @e[limit=1,x=0,type=m
 execute if score FY2: FlagScore matches ..29 if score FY2: FlagScore matches 1.. positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run playsound entity.chicken.egg master @a[x=0] ~ ~1 ~ 1 0.8
 execute if score FY2: FlagScore matches ..29 if score FY2: FlagScore matches 1.. run scoreboard players remove FY2: FlagScore 1
 
-execute if score FY2: FlagScore matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_2/yellow ~-4 ~6 ~-1
-execute if score FY2: FlagScore matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_2/yellow ~-4 ~5 ~-1
-execute if score FY2: FlagScore matches 15..18 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_2/yellow ~-4 ~4 ~-1
-execute if score FY2: FlagScore matches 11..14 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_2/yellow ~-4 ~3 ~-1
-execute if score FY2: FlagScore matches 7..10 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_2/yellow ~-4 ~2 ~-1
-execute if score FY2: FlagScore matches 1..6 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_2/yellow ~-4 ~1 ~-1
-execute if score FY2: FlagScore matches 0 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_2/yellow ~-4 ~1 ~-1
+execute if score FY2: FlagScore matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_1/yellow ~-4 ~6 ~-1
+execute if score FY2: FlagScore matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_1/yellow ~-4 ~5 ~-1
+execute if score FY2: FlagScore matches 15..18 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_1/yellow ~-4 ~4 ~-1
+execute if score FY2: FlagScore matches 11..14 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_1/yellow ~-4 ~3 ~-1
+execute if score FY2: FlagScore matches 7..10 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_1/yellow ~-4 ~2 ~-1
+execute if score FY2: FlagScore matches 1..6 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_1/yellow ~-4 ~1 ~-1
+execute if score FY2: FlagScore matches 0 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_1/yellow ~-4 ~1 ~-1
 
 #Capture Blue Flag 1 (the flag on blue's right)
 execute if predicate game:phase/match/play if score FB1: FlagScore matches 30.. as @e[x=0,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/yellow] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass if entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/yellow] run tellraw @a[x=0,predicate=!custom:team/any_playing_team] [{score:{name:"#blue",objective:"text.accent_color"}},"\n",{selector:"@s"}," lowered a ",[{score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}]," flag!\n"]
@@ -109,13 +109,13 @@ execute if score FB1: FlagScore matches ..29 positioned as @e[limit=1,x=0,type=m
 execute if score FB1: FlagScore matches ..29 if score FB1: FlagScore matches 1.. positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] positioned ~ ~1 ~ run playsound entity.chicken.egg master @a[x=0] ~ ~1 ~ 1 0.8
 execute if score FB1: FlagScore matches ..29 if score FB1: FlagScore matches 1.. run scoreboard players remove FB1: FlagScore 1
 
-execute if score FB1: FlagScore matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_2/blue ~-4 ~6 ~-1
-execute if score FB1: FlagScore matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_2/blue ~-4 ~5 ~-1
-execute if score FB1: FlagScore matches 15..18 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_2/blue ~-4 ~4 ~-1
-execute if score FB1: FlagScore matches 11..14 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_2/blue ~-4 ~3 ~-1
-execute if score FB1: FlagScore matches 7..10 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_2/blue ~-4 ~2 ~-1
-execute if score FB1: FlagScore matches 1..6 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_2/blue ~-4 ~1 ~-1
-execute if score FB1: FlagScore matches 0 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_2/blue ~-4 ~1 ~-1
+execute if score FB1: FlagScore matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_1/blue ~-4 ~6 ~-1
+execute if score FB1: FlagScore matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_1/blue ~-4 ~5 ~-1
+execute if score FB1: FlagScore matches 15..18 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_1/blue ~-4 ~4 ~-1
+execute if score FB1: FlagScore matches 11..14 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_1/blue ~-4 ~3 ~-1
+execute if score FB1: FlagScore matches 7..10 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_1/blue ~-4 ~2 ~-1
+execute if score FB1: FlagScore matches 1..6 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_1/blue ~-4 ~1 ~-1
+execute if score FB1: FlagScore matches 0 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_1/blue ~-4 ~1 ~-1
 
 #Capture Blue Flag 2 (the flag on blue's left)
 execute if predicate game:phase/match/play if score FB2: FlagScore matches 30.. as @e[x=0,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/yellow] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass if entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/yellow] run tellraw @a[x=0,predicate=!custom:team/any_playing_team] [{score:{name:"#blue",objective:"text.accent_color"}},"\n",{selector:"@s"}," lowered a ",[{score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}]," flag!\n"]
@@ -135,13 +135,13 @@ execute if score FB2: FlagScore matches ..29 positioned as @e[limit=1,x=0,type=m
 execute if score FB2: FlagScore matches 1..29 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] positioned ~ ~1 ~ run playsound entity.chicken.egg master @a[x=0] ~ ~1 ~ 1 0.8
 execute if score FB2: FlagScore matches 1..29 run scoreboard players remove FB2: FlagScore 1
 
-execute if score FB2: FlagScore matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_2/blue ~-4 ~6 ~-1
-execute if score FB2: FlagScore matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_2/blue ~-4 ~5 ~-1
-execute if score FB2: FlagScore matches 15..18 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_2/blue ~-4 ~4 ~-1
-execute if score FB2: FlagScore matches 11..14 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_2/blue ~-4 ~3 ~-1
-execute if score FB2: FlagScore matches 7..10 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_2/blue ~-4 ~2 ~-1
-execute if score FB2: FlagScore matches 1..6 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_2/blue ~-4 ~1 ~-1
-execute if score FB2: FlagScore matches 0 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_2/blue ~-4 ~1 ~-1
+execute if score FB2: FlagScore matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_1/blue ~-4 ~6 ~-1
+execute if score FB2: FlagScore matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_1/blue ~-4 ~5 ~-1
+execute if score FB2: FlagScore matches 15..18 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_1/blue ~-4 ~4 ~-1
+execute if score FB2: FlagScore matches 11..14 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_1/blue ~-4 ~3 ~-1
+execute if score FB2: FlagScore matches 7..10 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_1/blue ~-4 ~2 ~-1
+execute if score FB2: FlagScore matches 1..6 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_1/blue ~-4 ~1 ~-1
+execute if score FB2: FlagScore matches 0 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_1/blue ~-4 ~1 ~-1
 
 #Add tags for flag carriers
 execute if predicate game:phase/match/play run tag @e[x=0,type=player,tag=CarryFY1,predicate=custom:team/blue] add CarryFlag

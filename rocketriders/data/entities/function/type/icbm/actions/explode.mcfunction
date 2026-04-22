@@ -2,7 +2,7 @@
 execute unless entity @s[predicate=entities:type/icbm/brain] run return run execute on passengers if entity @s[predicate=entities:type/icbm/brain] run function entities:type/icbm/actions/explode
 
 # Kill body and correct position
-execute on vehicle if entity @s[predicate=entities:type/icbm/body] run function custom:player/teleport_passengers_to_self_and_die
+execute on vehicle if entity @s[predicate=entities:type/icbm/body] run function custom:entity/teleport_passengers_to_self_and_die
 
 # Break if near a spawn zone
 execute positioned as @s if predicate custom:near_any_spawn_zone_lenient run return run function entities:type/icbm/actions/break

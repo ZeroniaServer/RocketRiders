@@ -26,7 +26,14 @@
                 "minecraft:entity_data": {
                   "id": "minecraft:marker"
                 },
-                "minecraft:item_model": "minecraft:enderman_spawn_egg"
+                "minecraft:item_model": "minecraft:enderman_spawn_egg",
+                "minecraft:lore": [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: 1.5 seconds"
+                  }
+                ]
               }
             },
             {

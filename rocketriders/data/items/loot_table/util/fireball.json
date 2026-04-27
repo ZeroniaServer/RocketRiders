@@ -32,12 +32,17 @@
                   {
                     "color": "gray",
                     "italic": false,
-                    "text": "Spawns a Fireball. Punch or shoot"
+                    "text": "Spawns a stationary Fireball."
                   },
                   {
                     "color": "gray",
                     "italic": false,
-                    "text": "Fireballs to quickly blow up missiles,"
+                    "text": "Punch fireballs to launch or "
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "redirect them into missiles, "
                   },
                   {
                     "color": "gray",

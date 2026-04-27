@@ -29,20 +29,25 @@
                 },
                 "minecraft:item_model": "minecraft:blaze_spawn_egg",
                 "minecraft:lore": [
-                  {
+                   {
                     "color": "gray",
                     "italic": false,
-                    "text": "Spawns a cluster of Fireballs. Punch or"
+                    "text": "Spawns a stationary Cluster Fireball."
                   },
                   {
                     "color": "gray",
                     "italic": false,
-                    "text": "shoot Fireballs to quickly blow up"
+                    "text": "Punch fireballs to launch or "
                   },
                   {
                     "color": "gray",
                     "italic": false,
-                    "text": "missiles, blocks, or enemy players."
+                    "text": "redirect them into missiles, "
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "blocks, or enemy players."
                   }
                 ]
               }

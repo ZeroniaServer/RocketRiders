@@ -31,6 +31,27 @@
                   {
                     "color": "gray",
                     "italic": false,
+                    "text": "Spawns a stationary Obsidian Fireball."
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Punch them to launch or "
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "redirect them to where you"
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "want to place an obsidian shield."
+                  },
+                  "",
+                  {
+                    "color": "gray",
+                    "italic": false,
                     "text": "Flight Duration: 1.5 seconds"
                   }
                 ]

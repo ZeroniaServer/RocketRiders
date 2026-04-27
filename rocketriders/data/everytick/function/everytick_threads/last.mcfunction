@@ -27,3 +27,6 @@ data remove storage rocketriders:joinwarn subtitle
 execute if score #chunk_clear_inactive_ticks global matches ..-1 run scoreboard players set #chunk_clear_inactive_ticks global 0
 scoreboard players add #chunk_clear_inactive_ticks global 1
 execute unless predicate game:phase/match unless score $chunk_clear_progress global matches 50.. if score #chunk_clear_inactive_ticks global matches 101.. run function arenaclear:brute_force/start
+
+## Return main item if it was accidentally removed
+execute if predicate game:phase/match as @e[x=0,type=player,predicate=!custom:player/has_main_item_in_inventory] run loot give @s loot items:main_item

@@ -1,0 +1,86 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:misc/shooting_saber",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:main_item/shooting_saber"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:misc/piercing_pickaxe",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:main_item/piercing_pickaxe"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:alternatives",
+              "value": "items:misc/piercing_pickaxe",
+              "children": [
+                {
+                  "type": "minecraft:loot_table",
+                  "value": "items:misc/knight_sword",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:reference",
+                      "name": "rr_crusade:kit/knight"
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:loot_table",
+                  "value": "items:misc/shooting_saber",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:reference",
+                      "name": "rr_crusade:kit/archer"
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:loot_table",
+                  "value": "items:misc/spell_wand",
+                  "conditions": [
+                    {
+                      "condition": "minecraft:reference",
+                      "name": "rr_crusade:kit/mage"
+                    }
+                  ]
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:main_item/crusade_kit_dependent"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:misc/rocket_nomicon",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:main_item/rocket_nomicon"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

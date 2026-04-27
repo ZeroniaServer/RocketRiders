@@ -1,0 +1,50 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "minecraft:slots": {
+          "container.*": {
+            "predicates": {
+              "minecraft:custom_data": {
+                "main_item": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "minecraft:slots": {
+          "weapon.offhand": {
+            "predicates": {
+              "minecraft:custom_data": {
+                "main_item": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "minecraft:slots": {
+          "player.cursor": {
+            "predicates": {
+              "minecraft:custom_data": {
+                "main_item": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -15,6 +15,7 @@ scoreboard players set $min_players_per_team match_components 0
 scoreboard players set $no_achievements match_components 1
 scoreboard players set $no_item_timer match_components 1
 scoreboard players set $short_end_sequence match_components 1
+scoreboard players set $stackable_nova_rockets match_components 1
 
 # items
 scoreboard players set $item_pool.missile/auxiliary match_components 1

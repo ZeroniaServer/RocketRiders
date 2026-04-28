@@ -1,5 +1,10 @@
 # arguments: message
 
+execute if score $previous_log_gametime global < $gametime global run fill 0 184 -15 0 185 -15 air strict
+execute if score $previous_log_gametime global < $gametime global run setblock 0 184 -15 test_block[mode=log]{message:"_______",mode:"log",powered:0b} strict
+execute if score $previous_log_gametime global < $gametime global run setblock 0 185 -15 redstone_block
+scoreboard players operation $previous_log_gametime global = $gametime global
+
 fill 0 184 -15 0 185 -15 air strict
 setblock 0 184 -15 test_block[mode=log]{message:"RR >> ",mode:"log",powered:0b} strict
 

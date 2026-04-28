@@ -1,3 +1,5 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: staging.queue"]}
+
 ##
 function lobby:update_nav_book
 execute as @a[x=0,predicate=custom:team/lobby] run function custom:player/reset_inventory

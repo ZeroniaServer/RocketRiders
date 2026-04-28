@@ -1,3 +1,5 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match.play.battle"]}
+
 ##
 
 

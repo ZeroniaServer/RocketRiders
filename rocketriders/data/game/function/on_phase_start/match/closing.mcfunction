@@ -1,3 +1,5 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match.closing"]}
+
 ##
 scoreboard players set $closing_timer global 0
 

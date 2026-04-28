@@ -1,3 +1,5 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: staging.queue.countdown"]}
+
 ##
 scoreboard players set $queue_countdown_timer global 0
 

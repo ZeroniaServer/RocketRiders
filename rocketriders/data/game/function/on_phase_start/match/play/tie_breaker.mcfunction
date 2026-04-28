@@ -1,3 +1,5 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match.play.tie_breaker"]}
+
 ##
 scoreboard players set $tie_breaker_timer global 0
 

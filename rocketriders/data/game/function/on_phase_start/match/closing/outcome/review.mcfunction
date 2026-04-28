@@ -1,3 +1,5 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match.closing.outcome.review"]}
+
 ##
 gamemode spectator @a[x=0,predicate=custom:team/any_playing_team]
 

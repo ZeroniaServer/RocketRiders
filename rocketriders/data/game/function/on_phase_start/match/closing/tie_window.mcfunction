@@ -1,3 +1,5 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match.closing.tie_window"]}
+
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/closing/tie_window
 execute if entity @s[tag=classicEnabled] run function rr_classic:game/on_phase_start/match/closing/tie_window

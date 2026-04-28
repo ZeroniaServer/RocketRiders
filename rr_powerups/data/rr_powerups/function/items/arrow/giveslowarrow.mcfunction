@@ -6,10 +6,10 @@ execute if predicate game:game_rules/item_stacking/on run scoreboard players set
 execute unless predicate game:game_rules/item_stacking/on if entity @s[scores={HasTippedArrows=1..3},tag=fullHotbar] run tag @s remove fullHotbar
 
 #Title/giving
-title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Tipped Arrows already obtained.","color":"light_purple"}
+title @s[scores={HasTippedArrows=4..},tag=!fullHotbar] actionbar {"text":"Maximum Tipped Arrows already obtained.","color":"light_purple"}
 execute if entity @s[scores={HasTippedArrows=4..},tag=!fullHotbar] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
-title @s[scores={HasTippedArrows=..3},tag=!fullHotbar] actionbar {"text":"Slowness Arrows obtained.","color":"light_purple"}
 
+title @s[scores={HasTippedArrows=..3},tag=!fullHotbar] actionbar {"text":"Slowness Arrows obtained.","color":"light_purple"}
 execute if score @s HasTippedArrows matches 0 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_slowness {count:4}
 execute if score @s HasTippedArrows matches 1 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_slowness {count:3}
 execute if score @s HasTippedArrows matches 2 if entity @s[tag=!fullHotbar] run function items:give/tipped_arrow_slowness {count:2}

@@ -1,12 +1,13 @@
 ##Sub-sub-RNG for Special Missiles (used for Special Treatment modifier)
 #Choose between each missile based on Tetris state (no enabled status)
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenBroad] run summon marker 0 0 0 {Tags:["rngBroad","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenBull] run summon marker 0 0 0 {Tags:["rngBull","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenDuplex] run summon marker 0 0 0 {Tags:["rngDuplex","rng3"]}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenHyper] run summon marker 0 0 0 {Tags:["rngHyper","rng3"]}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenBroad] run summon marker 0 0 0 {Tags:["rngBroad","rng3"],CustomName:"rngBroad (Broadsword)"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenBull] run summon marker 0 0 0 {Tags:["rngBull","rng3"],CustomName:"rngBull (Bullet)"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenDuplex] run summon marker 0 0 0 {Tags:["rngDuplex","rng3"],CustomName:"rngDuplex (Duplex)"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenHyper] run summon marker 0 0 0 {Tags:["rngHyper","rng3"],CustomName:"rngHyper (Hypersonic)"}
 
 #Select a missile and run appropriate give function
 tag @e[x=0,type=marker,tag=rng3,sort=random,limit=1] add rngSelected
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:missile/special/rng) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=rng3,tag=rngSelected]"}]}
 
 #> Kill items to prevent duplication glitches
 execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/broadsword"}] run function items:deduct

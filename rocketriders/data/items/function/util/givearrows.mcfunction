@@ -9,7 +9,9 @@ execute unless predicate game:game_rules/item_stacking/on if entity @s[scores={H
 scoreboard players set $give_arrows var 0
 execute unless predicate items:shooting_saber/infinity if score @s HasArrows matches 0..3 unless entity @s[tag=fullHotbar] run scoreboard players set $give_arrows var 1
 execute if predicate items:shooting_saber/infinity if score @s HasArrows matches 0 run scoreboard players set $give_arrows var 1
+execute if predicate game:game_rules/show_debug_logs/on if score $give_arrows var matches 1 run function custom:log {message:["(items:missile/util/givearrows) Gave Arrow(s) to ",{selector:"@s"}]}
 execute if score $give_arrows var matches 1 run title @s actionbar {"text":"Arrows obtained.","color":"aqua"}
+execute if predicate game:game_rules/show_debug_logs/on if score $give_arrows var matches 0 run function custom:log {message:["(items:missile/util/givearrows) Failed to give Arrow(s) to ",{selector:"@s"}]}
 execute if score $give_arrows var matches 0 run title @s actionbar {"text":"Maximum Arrows already obtained.","color":"aqua"}
 execute if score $give_arrows var matches 0 at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 

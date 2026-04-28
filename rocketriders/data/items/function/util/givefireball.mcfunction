@@ -11,6 +11,9 @@ title @s[scores={HasFireball=1..},tag=!fullHotbar,tag=!BackFireball,tag=!itemDed
 execute if entity @s[scores={HasFireball=1..},tag=!fullHotbar,tag=!BackFireball,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[tag=!fullHotbar,tag=!BackFireball,tag=itemDeducted] actionbar {"text":"Fireball already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackFireball,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasFireball=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/util/givefireball) Gave Fireball to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasFireball=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/util/givefireball) Failed to give Fireball to ",{selector:"@s"}]}
 title @s[scores={HasFireball=0},tag=!fullHotbar,tag=!BackFireball,tag=!itemDeducted] actionbar {"text":"Fireball obtained.","color":"aqua"}
 execute if entity @s[scores={HasFireball=0},tag=!fullHotbar] run function items:give/fireball {count:1}
 

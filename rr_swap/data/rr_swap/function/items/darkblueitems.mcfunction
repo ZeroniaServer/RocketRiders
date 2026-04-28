@@ -1,4 +1,5 @@
 #dark
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_swap:items/darkblueitems) Handing out DARK items..."]}
 execute if entity @s[tag=rngBull] as @a[x=0,predicate=custom:team/blue,tag=getItem] run function items:missile/special/givebull
 execute if entity @s[tag=rngDuplex] as @a[x=0,predicate=custom:team/blue,tag=getItem] run function items:missile/special/giveduplex
 execute if entity @s[tag=rngAux] as @a[x=0,predicate=custom:team/blue,tag=getItem] run function items:missile/heavy/giveaux
@@ -7,6 +8,7 @@ execute if entity @s[tag=rngICBM] as @a[x=0,predicate=custom:team/blue,tag=getIt
 execute if entity @s[tag=rngShield] as @a[x=0,predicate=custom:team/blue,tag=getItem] run function items:util/giveshield
 
 #light
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_swap:items/darkblueitems) Handing out LIGHT items..."]}
 execute if entity @s[tag=rngHyper] as @a[x=0,predicate=custom:team/yellow,tag=getItem] run function items:missile/special/givehyper
 execute if entity @s[tag=rngBroad] as @a[x=0,predicate=custom:team/yellow,tag=getItem] run function items:missile/special/givebroad
 execute if entity @s[tag=rngHur] as @a[x=0,predicate=custom:team/yellow,tag=getItem] run function items:missile/lightning/givehur

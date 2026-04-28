@@ -11,6 +11,9 @@ title @s[scores={HasCitadel=1..},tag=!fullHotbar,tag=!BackCitadel,tag=!itemDeduc
 execute if entity @s[scores={HasCitadel=1..},tag=!fullHotbar,tag=!BackCitadel,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[tag=!fullHotbar,tag=!BackCitadel,tag=itemDeducted] actionbar {"text":"Citadel already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackCitadel,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasCitadel=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/givecitadel) Gave Citadel to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasCitadel=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/givecitadel) Failed to give Citadel to ",{selector:"@s"}]}
 title @s[scores={HasCitadel=0},tag=!fullHotbar,tag=!BackCitadel,tag=!itemDeducted] actionbar {"text":"Citadel obtained.","color":"aqua"}
 execute if entity @s[scores={HasCitadel=0},tag=!fullHotbar] run function items:give/missile/citadel {count:1}
 

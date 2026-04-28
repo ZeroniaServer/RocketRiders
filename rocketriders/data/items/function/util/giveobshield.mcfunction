@@ -11,6 +11,9 @@ title @s[scores={HasObshield=1..},tag=!fullHotbar,tag=!BackObshield,tag=!itemDed
 execute if entity @s[scores={HasObshield=1..},tag=!fullHotbar,tag=!BackObshield,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[tag=!fullHotbar,tag=!BackObshield,tag=itemDeducted] actionbar {"text":"Obsidian Shield already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackObshield,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasObshield=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/util/giveobshield) Gave Obsidian Shield to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasObshield=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/util/giveobshield) Failed to give Obsidian Shield to ",{selector:"@s"}]}
 title @s[scores={HasObshield=0},tag=!fullHotbar,tag=!BackObshield,tag=!itemDeducted] actionbar {"text":"Obsidian Shield obtained.","color":"aqua"}
 execute if entity @s[scores={HasObshield=0},tag=!fullHotbar] run function items:give/obsidian_shield {count:1}
 

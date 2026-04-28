@@ -1,8 +1,9 @@
-summon marker 0 0 0 {Tags:["rngBlindArrow","rng2"]}
-summon marker 0 0 0 {Tags:["rngLeviArrow","rng2"]}
-summon marker 0 0 0 {Tags:["rngWitherArrow","rng2"]}
-summon marker 0 0 0 {Tags:["rngSlowArrow","rng2"]}
+summon marker 0 0 0 {Tags:["rngBlindArrow","rng2"],CustomName:"rngBlindArrow (Blindness Arrow)"}
+summon marker 0 0 0 {Tags:["rngLeviArrow","rng2"],CustomName:"rngLeviArrow (Levitation Arrow)"}
+summon marker 0 0 0 {Tags:["rngWitherArrow","rng2"],CustomName:"rngWitherArrow (Wither Arrow)"}
+summon marker 0 0 0 {Tags:["rngSlowArrow","rng2"],CustomName:"rngSlowArrow (Slowness Arrow)"}
 tag @e[x=0,type=marker,tag=rng2,sort=random,limit=1] add rngSelected
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_powerups:items/arrow/rng) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=rng2,tag=rngSelected]"}]}
 
 #> Prevent arrow duplication glitches
 execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=item] if items entity @s contents tipped_arrow run function rr_powerups:items/deduct

@@ -14,10 +14,12 @@ execute unless predicate game:match_components/additional_canopy_available if en
 execute if predicate game:match_components/additional_canopy_available if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!CTF3stack] if entity @s[scores={HasPlat=..1},tag=!fullHotbar] run scoreboard players set $give_canopy var 1
 execute if predicate game:match_components/additional_canopy_available if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CTF3stack] if entity @s[scores={HasPlat=..2},tag=!fullHotbar] run scoreboard players set $give_canopy var 1
 
+execute if predicate game:game_rules/show_debug_logs/on if score $give_canopy var matches 0 run function custom:log {message:["(items:missile/util/givecanopy) Failed to give Canopy to ",{selector:"@s"}]}
 execute if score $give_canopy var matches 0 run title @s[scores={HasPlat=..1}] actionbar {"text":"Canopy already obtained.","color":"aqua"}
 execute if score $give_canopy var matches 0 run title @s[scores={HasPlat=2..}] actionbar {"text":"Maximum Canopies already obtained.","color":"aqua"}
 execute if score $give_canopy var matches 0 at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
+execute if predicate game:game_rules/show_debug_logs/on if score $give_canopy var matches 1 run function custom:log {message:["(items:missile/util/givecanopy) Gave Canopy to ",{selector:"@s"}]}
 execute if score $give_canopy var matches 1 run title @s actionbar {"text":"Canopy obtained.","color":"aqua"}
 execute if score $give_canopy var matches 1 run function items:give/canopy {count:1}
 

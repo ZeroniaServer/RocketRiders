@@ -11,6 +11,9 @@ title @s[scores={HasGemi=1..},tag=!fullHotbar,tag=!BackGemi,tag=!itemDeducted] a
 execute if entity @s[scores={HasGemi=1..},tag=!fullHotbar,tag=!BackGemi,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[tag=!fullHotbar,tag=!BackGemi,tag=itemDeducted] actionbar {"text":"Gemini already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackGemi,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasGemi=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/givegemi) Gave Gemini to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasGemi=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/givegemi) Failed to give Gemini to ",{selector:"@s"}]}
 title @s[scores={HasGemi=0},tag=!fullHotbar,tag=!BackGemi,tag=!itemDeducted] actionbar {"text":"Gemini obtained.","color":"aqua"}
 execute if entity @s[scores={HasGemi=0},tag=!fullHotbar] run function items:give/missile/gemini {count:1}
 

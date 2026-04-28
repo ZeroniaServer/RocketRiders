@@ -10,6 +10,9 @@ title @s[scores={HasBeeShield=1..},tag=!fullHotbar,tag=!itemDeducted] actionbar 
 execute if entity @s[scores={HasBeeShield=1..},tag=!fullHotbar,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Stinging Shield already obtained.","color":"light_purple"}
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasBeeShield=0},tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/givebeeshield) Gave Stinging Shield to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasBeeShield=0},tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/givebeeshield) Failed to give Stinging Shield to ",{selector:"@s"}]}
 title @s[scores={HasBeeShield=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Stinging Shield obtained.","color":"light_purple"}
 loot give @s[scores={HasBeeShield=0},tag=!fullHotbar] loot items:util/stinging_shield
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasBeeShield=0},tag=!fullHotbar] ~ ~ ~ 0.25 2

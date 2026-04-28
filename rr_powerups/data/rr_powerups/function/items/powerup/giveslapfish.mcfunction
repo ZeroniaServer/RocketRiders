@@ -10,6 +10,9 @@ title @s[scores={HasSlapFish=1..},tag=!fullHotbar,tag=!itemDeducted] actionbar {
 execute if entity @s[scores={HasSlapFish=1..},tag=!fullHotbar,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Slap Fish already obtained.","color":"light_purple"}
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasSlapFish=0},tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/giveslapfish) Gave Slap Fish to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasSlapFish=0},tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/giveslapfish) Failed to give Fish to ",{selector:"@s"}]}
 title @s[scores={HasSlapFish=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Slap Fish obtained.","color":"light_purple"}
 loot give @s[scores={HasSlapFish=0},tag=!fullHotbar] loot items:misc/slap_fish
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasSlapFish=0},tag=!fullHotbar] ~ ~ ~ 0.25 2

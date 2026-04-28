@@ -8,6 +8,9 @@ title @s[scores={HasTotem=1..},tag=!fullHotbar,tag=!itemDeducted] actionbar {"te
 execute if entity @s[scores={HasTotem=1..},tag=!fullHotbar,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[tag=!fullHotbar,tag=itemDeducted] actionbar {"text":"Totem of Undying already obtained.","color":"light_purple"}
 execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasTotem=0},tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/givetotem) Gave Totem of Undying to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasTotem=0},tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/givetotem) Failed to give Totem of Undying to ",{selector:"@s"}]}
 title @s[scores={HasTotem=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Totem of Undying obtained.","color":"light_purple"}
 loot give @s[scores={HasTotem=0},tag=!fullHotbar] loot items:misc/totem_of_undying
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasTotem=0},tag=!fullHotbar] ~ ~ ~ 0.25 2

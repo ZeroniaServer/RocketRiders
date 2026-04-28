@@ -1,10 +1,12 @@
-execute if predicate game:item_pool/icbm if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","swapRNGD"]}
-execute if predicate game:item_pool/shield if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenShield] run summon marker 0 0 0 {Tags:["rngShield","swapRNGD"]}
+execute if predicate game:item_pool/icbm if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","swapRNGD"],CustomName:"rngICBM (ICBM)"}
+execute if predicate game:item_pool/shield if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenShield] run summon marker 0 0 0 {Tags:["rngShield","swapRNGD"],CustomName:"rngShield (Shield)"}
 tag @e[x=0,type=marker,tag=swapRNGD,sort=random,limit=1] add SelectedSwapRNG2
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_swap:items/util/rng) Selected (Dark): ",{selector:"@e[limit=1,x=0,type=marker,tag=swapRNGD,tag=SelectedSwapRNG2]"}]}
 
-execute if predicate game:item_pool/fireball if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenFireball] run summon marker 0 0 0 {Tags:["rngFireball","swapRNGL"]}
-execute if predicate game:item_pool/obsidian_shield if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenObshield] run summon marker 0 0 0 {Tags:["rngObshield","swapRNGL"]}
+execute if predicate game:item_pool/fireball if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenFireball] run summon marker 0 0 0 {Tags:["rngFireball","swapRNGL"],CustomName:"rngFireball (Fireball)"}
+execute if predicate game:item_pool/obsidian_shield if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenObshield] run summon marker 0 0 0 {Tags:["rngObshield","swapRNGL"],CustomName:"rngObshield (Obsidian Shield)"}
 tag @e[x=0,type=marker,tag=swapRNGL,sort=random,limit=1] add SelectedSwapRNG2
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_swap:items/util/rng) Selected (Light): ",{selector:"@e[limit=1,x=0,type=marker,tag=swapRNGL,tag=SelectedSwapRNG2]"}]}
 
 #arrows considered separate
 execute if predicate game:item_pool/arrow if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenArrows] run summon marker 0 0 0 {Tags:["rngArrows","SelectedSwapRNG2"]}

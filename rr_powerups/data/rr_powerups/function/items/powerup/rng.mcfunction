@@ -1,15 +1,16 @@
-execute if entity @s[tag=!givenBull] run summon marker 0 0 0 {Tags:["rngBull","rng2"]}
-execute if entity @s[tag=!givenElytra] run summon marker 0 0 0 {Tags:["rngElytra","rng2"]}
-execute if entity @s[tag=!givenHyper] run summon marker 0 0 0 {Tags:["rngHyper","rng2"]}
-execute if entity @s[tag=!givenInfinity] run summon marker 0 0 0 {Tags:["rngInfinity","rng2"]}
-execute if entity @s[tag=!givenLavaSplash] run summon marker 0 0 0 {Tags:["rngLavaSplash","rng2"]}
-execute if entity @s[tag=!givenFish] run summon marker 0 0 0 {Tags:["rngSlapFish","rng2"]}
-execute if entity @s[tag=!givenTotem] run summon marker 0 0 0 {Tags:["rngTotem","rng2"]}
-execute if entity @s[tag=!givenTrident] run summon marker 0 0 0 {Tags:["rngTrident","rng2"]}
-execute if entity @s[tag=!givenBee] run summon marker 0 0 0 {Tags:["rngBeeShield","rng2"]}
-execute if entity @s[tag=!givenDuplex] run summon marker 0 0 0 {Tags:["rngDuplex","rng2"]}
-execute if entity @s[tag=!givenBroad] run summon marker 0 0 0 {Tags:["rngBroad","rng2"]}
+execute if entity @s[tag=!givenBull] run summon marker 0 0 0 {Tags:["rngBull","rng2"],CustomName:"rngBull (Bullet)"}
+execute if entity @s[tag=!givenElytra] run summon marker 0 0 0 {Tags:["rngElytra","rng2"],CustomName:"rngElytra (Elytra)"}
+execute if entity @s[tag=!givenHyper] run summon marker 0 0 0 {Tags:["rngHyper","rng2"],CustomName:"rngHyper (Hypersonic)"}
+execute if entity @s[tag=!givenInfinity] run summon marker 0 0 0 {Tags:["rngInfinity","rng2"],CustomName:"rngInfinity (Infinity Saber)"}
+execute if entity @s[tag=!givenLavaSplash] run summon marker 0 0 0 {Tags:["rngLavaSplash","rng2"],CustomName:"rngLavaSplash (Lava Splash)"}
+execute if entity @s[tag=!givenFish] run summon marker 0 0 0 {Tags:["rngSlapFish","rng2"],CustomName:"rngFish (Slap Fish)"}
+execute if entity @s[tag=!givenTotem] run summon marker 0 0 0 {Tags:["rngTotem","rng2"],CustomName:"rngTotem (Totem of Undying)"}
+execute if entity @s[tag=!givenTrident] run summon marker 0 0 0 {Tags:["rngTrident","rng2"],CustomName:"rngTrident (Trident)"}
+execute if entity @s[tag=!givenBee] run summon marker 0 0 0 {Tags:["rngBeeShield","rng2"],CustomName:"rngBee (Stinging Shield)"}
+execute if entity @s[tag=!givenDuplex] run summon marker 0 0 0 {Tags:["rngDuplex","rng2"],CustomName:"rngDuplex (Duplex)"}
+execute if entity @s[tag=!givenBroad] run summon marker 0 0 0 {Tags:["rngBroad","rng2"],CustomName:"rngBroad (Broadsword)"}
 tag @e[x=0,type=marker,tag=rng2,sort=random,limit=1] add rngSelected
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_powerups:items/powerup/rng) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=rng2,tag=rngSelected]"}]}
 
 #> Kill items to prevent duplication glitches
 execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/bullet"}] run function rr_powerups:items/deduct

@@ -11,6 +11,9 @@ title @s[scores={HasJug=1..},tag=!fullHotbar,tag=!BackJug,tag=!itemDeducted] act
 execute if entity @s[scores={HasJug=1..},tag=!fullHotbar,tag=!BackJug,tag=!itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 title @s[tag=!fullHotbar,tag=!BackJug,tag=itemDeducted] actionbar {"text":"Juggerbuster already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackJug,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
+
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasJug=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/heavy/givejbuster) Gave Juggerbuster to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasJug=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/heavy/givejbuster) Failed to give Juggerbuster to ",{selector:"@s"}]}
 title @s[scores={HasJug=0},tag=!fullHotbar,tag=!BackJug,tag=!itemDeducted] actionbar {"text":"Juggerbuster obtained.","color":"aqua"}
 execute if entity @s[scores={HasJug=0},tag=!fullHotbar] run function items:give/missile/juggerbuster {count:1}
 

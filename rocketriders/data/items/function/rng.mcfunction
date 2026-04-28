@@ -19,6 +19,7 @@ execute if predicate game:modifiers/surprise_eggs/on unless predicate game:item_
 ##Select item and run appropriate sub-RNG function
 tag @e[x=0,type=marker,tag=rng1,sort=random,limit=1] add rngSelected
 
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:rng) Handing out items..."]}
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngMissile] run function items:missile/rng
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngUtil] run function items:util/rng
 

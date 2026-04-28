@@ -80,6 +80,12 @@
             }
           ]
         }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:reference",
+          "name": "custom:team/any_playing_team"
+        }
       ]
     }
   ]

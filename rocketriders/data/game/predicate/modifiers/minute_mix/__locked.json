@@ -1,0 +1,17 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/minute_mix/__forced_on"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/minute_mix/__forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/minute_mix/__incompatible_modifiers"
+    }
+  ]
+}

@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/ninja_jump/forced_off"
+      "name": "game:game_rules/ninja_jump/__forced_off"
     }
   },
   {
@@ -23,7 +23,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/ninja_jump/forced_on"
+        "name": "game:game_rules/ninja_jump/__forced_on"
       }
     ]
   }

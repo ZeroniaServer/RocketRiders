@@ -1,13 +1,13 @@
 [
   {
     "condition": "minecraft:reference",
-    "name": "game:feature_flags/1_4_0_update"
+    "name": "game:feature_flags/1_4_0_update/on"
   },
   {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/rotting/forced_off"
+      "name": "game:game_rules/rotting/__forced_off"
     }
   },
   {
@@ -27,7 +27,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/rotting/forced_on"
+        "name": "game:game_rules/rotting/__forced_on"
       }
     ]
   }

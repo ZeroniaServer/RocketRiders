@@ -73,105 +73,105 @@ data modify block -69 193 73 front_text.messages[2] set value {"text":"World Set
 
 #### GAME RULES ####
 #Pierce Prevention
-execute unless predicate game:game_rules/disable_pierce_prevention/locked unless predicate game:game_rules/disable_pierce_prevention/on run \
+execute unless predicate game:game_rules/disable_pierce_prevention/__locked unless predicate game:game_rules/disable_pierce_prevention/on run \
   data modify block -70 193 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_pierce_prevention"},text:"Pierce Prevention"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute unless predicate game:game_rules/disable_pierce_prevention/locked if predicate game:game_rules/disable_pierce_prevention/on run \
+execute unless predicate game:game_rules/disable_pierce_prevention/__locked if predicate game:game_rules/disable_pierce_prevention/on run \
   data modify block -70 193 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_pierce_prevention"},text:"Pierce Prevention"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_pierce_prevention/forced_on run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_pierce_prevention/__forced_on run \
   data modify block -70 193 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_pierce_prevention"},text:"Pierce Prevention"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_pierce_prevention/forced_off run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_pierce_prevention/__forced_off run \
   data modify block -70 193 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_pierce_prevention"},text:"Pierce Prevention"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:match_components/duel_settings_locked run \
   data modify block -70 193 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_pierce_prevention"},text:"Pierce Prevention"},{bold:true,color:"white",text:"Locked"},"",""]
 
 #Hotbar Limit
-execute unless predicate game:game_rules/disable_hotbar_limit/locked unless predicate game:game_rules/disable_hotbar_limit/on run \
+execute unless predicate game:game_rules/disable_hotbar_limit/__locked unless predicate game:game_rules/disable_hotbar_limit/on run \
   data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute unless predicate game:game_rules/disable_hotbar_limit/locked if predicate game:game_rules/disable_hotbar_limit/on run \
+execute unless predicate game:game_rules/disable_hotbar_limit/__locked if predicate game:game_rules/disable_hotbar_limit/on run \
   data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_hotbar_limit/forced_on run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_hotbar_limit/__forced_on run \
   data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_hotbar_limit/forced_off run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_hotbar_limit/__forced_off run \
   data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:match_components/duel_settings_locked run \
   data modify block -70 191 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_hotbar_limit"},text:"Hotbar Limit"},{bold:true,color:"white",text:"Locked"},"",""]
 
 #Item Stacking
-execute unless predicate game:game_rules/item_stacking/locked if predicate game:game_rules/item_stacking/on run \
+execute unless predicate game:game_rules/item_stacking/__locked if predicate game:game_rules/item_stacking/on run \
   data modify block -70 191 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_stacking"},text:"Item Stacking"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute unless predicate game:game_rules/item_stacking/locked unless predicate game:game_rules/item_stacking/on run \
+execute unless predicate game:game_rules/item_stacking/__locked unless predicate game:game_rules/item_stacking/on run \
   data modify block -70 191 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_stacking"},text:"Item Stacking"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/item_stacking/forced_on run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/item_stacking/__forced_on run \
   data modify block -70 191 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_stacking"},text:"Item Stacking"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/item_stacking/forced_off run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/item_stacking/__forced_off run \
   data modify block -70 191 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_stacking"},text:"Item Stacking"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:match_components/duel_settings_locked run \
   data modify block -70 191 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_stacking"},text:"Item Stacking"},{bold:true,color:"white",text:"Locked"},"",""]
 
 #Item Delay
 execute store result score $temporary_item_delay_value var run function game:config/get_item_delay
-execute unless predicate game:game_rules/item_delay/locked run \
+execute unless predicate game:game_rules/item_delay/__locked run \
   data modify block -70 191 79 front_text.messages set value [{click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_delay"},text:"Item Delay:"},["",{bold:true,score:{name:"$temporary_item_delay_value",objective:"var"}}," seconds"],"",{color:"gray",italic:true,text:"(Click to adjust)"}]
-execute if predicate game:game_rules/item_delay/locked unless predicate game:match_components/no_item_timer run \
+execute if predicate game:game_rules/item_delay/__locked unless predicate game:match_components/no_item_timer run \
   data modify block -70 191 79 front_text.messages set value [{click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_delay"},text:"Item Delay:"},["",{bold:true,score:{name:"$temporary_item_delay_value",objective:"var"}}," seconds"],"",{bold:true,text:"Locked"}]
-execute if predicate game:game_rules/item_delay/locked if predicate game:match_components/no_item_timer run \
+execute if predicate game:game_rules/item_delay/__locked if predicate game:match_components/no_item_timer run \
   data modify block -70 191 79 front_text.messages set value [{click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_delay"},text:"Item Delay:"},["",{bold:true,text:"XX"}," seconds"],"",{bold:true,text:"Locked"}]
 
 #Tiebreakers / Overtime
-execute unless predicate game:match_components/has_overtime unless predicate game:game_rules/disable_tying/locked unless predicate game:game_rules/disable_tying/on run \
+execute unless predicate game:match_components/has_overtime unless predicate game:game_rules/disable_tying/__locked unless predicate game:game_rules/disable_tying/on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute unless predicate game:match_components/has_overtime unless predicate game:game_rules/disable_tying/locked if predicate game:game_rules/disable_tying/on run \
+execute unless predicate game:match_components/has_overtime unless predicate game:game_rules/disable_tying/__locked if predicate game:game_rules/disable_tying/on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/forced_on run \
+execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/__forced_on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/forced_off run \
+execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/__forced_off run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
 execute unless predicate game:match_components/has_overtime if predicate game:match_components/duel_settings_locked run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"white",text:"Locked"},"",""]
 
-execute if predicate game:match_components/has_overtime unless predicate game:game_rules/disable_overtime/locked unless predicate game:game_rules/disable_overtime/on run \
+execute if predicate game:match_components/has_overtime unless predicate game:game_rules/disable_overtime/__locked unless predicate game:game_rules/disable_overtime/on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute if predicate game:match_components/has_overtime unless predicate game:game_rules/disable_overtime/locked if predicate game:game_rules/disable_overtime/on run \
+execute if predicate game:match_components/has_overtime unless predicate game:game_rules/disable_overtime/__locked if predicate game:game_rules/disable_overtime/on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute if predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_overtime/forced_on run \
+execute if predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_overtime/__forced_on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
-execute if predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_overtime/forced_off run \
+execute if predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_overtime/__forced_off run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:match_components/has_overtime if predicate game:match_components/duel_settings_locked run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"white",text:"Locked"},"",""]
 
 #Snipe Portals
-execute unless predicate game:game_rules/snipe_portals/locked if predicate game:game_rules/snipe_portals/on run \
+execute unless predicate game:game_rules/snipe_portals/__locked if predicate game:game_rules/snipe_portals/on run \
   data modify block -70 193 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/snipe_portals"},text:"Snipe Portals"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute unless predicate game:game_rules/snipe_portals/locked unless predicate game:game_rules/snipe_portals/on run \
+execute unless predicate game:game_rules/snipe_portals/__locked unless predicate game:game_rules/snipe_portals/on run \
   data modify block -70 193 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/snipe_portals"},text:"Snipe Portals"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/snipe_portals/forced_on run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/snipe_portals/__forced_on run \
   data modify block -70 193 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/snipe_portals"},text:"Snipe Portals"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/snipe_portals/forced_off run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/snipe_portals/__forced_off run \
   data modify block -70 193 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/snipe_portals"},text:"Snipe Portals"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:match_components/duel_settings_locked run \
   data modify block -70 193 78 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/snipe_portals"},text:"Snipe Portals"},{bold:true,color:"white",text:"Locked"},"",""]
 
 #TNT Cannoning
-execute unless predicate game:game_rules/disable_cannoning/locked unless predicate game:game_rules/disable_cannoning/on run \
+execute unless predicate game:game_rules/disable_cannoning/__locked unless predicate game:game_rules/disable_cannoning/on run \
   data modify block -70 192 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_cannoning"},text:"TNT Cannoning"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute unless predicate game:game_rules/disable_cannoning/locked if predicate game:game_rules/disable_cannoning/on run \
+execute unless predicate game:game_rules/disable_cannoning/__locked if predicate game:game_rules/disable_cannoning/on run \
   data modify block -70 192 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_cannoning"},text:"TNT Cannoning"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_cannoning/forced_on run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_cannoning/__forced_on run \
   data modify block -70 192 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_cannoning"},text:"TNT Cannoning"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_cannoning/forced_off run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_cannoning/__forced_off run \
   data modify block -70 192 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_cannoning"},text:"TNT Cannoning"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:match_components/duel_settings_locked run \
   data modify block -70 192 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_cannoning"},text:"TNT Cannoning"},{bold:true,color:"white",text:"Locked"},"",""]
 
 #Impact Utilities
-execute unless predicate game:game_rules/impact_utilities/locked if predicate game:game_rules/impact_utilities/on run \
+execute unless predicate game:game_rules/impact_utilities/__locked if predicate game:game_rules/impact_utilities/on run \
   data modify block -70 192 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/impact_utilities"},text:"Impact Utilities"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute unless predicate game:game_rules/impact_utilities/locked unless predicate game:game_rules/impact_utilities/on run \
+execute unless predicate game:game_rules/impact_utilities/__locked unless predicate game:game_rules/impact_utilities/on run \
   data modify block -70 192 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/impact_utilities"},text:"Impact Utilities"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/impact_utilities/forced_on run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/impact_utilities/__forced_on run \
   data modify block -70 192 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/impact_utilities"},text:"Impact Utilities"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/impact_utilities/forced_off run \
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/impact_utilities/__forced_off run \
   data modify block -70 192 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/impact_utilities"},text:"Impact Utilities"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
 execute if predicate game:match_components/duel_settings_locked run \
   data modify block -70 192 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/impact_utilities"},text:"Impact Utilities"},{bold:true,color:"white",text:"Locked"},"",""]

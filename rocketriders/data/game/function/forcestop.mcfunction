@@ -29,6 +29,6 @@ execute if predicate rr:server_mode/cubekrowd_voting if entity @s[tag=!forcenorm
 execute if predicate rr:server_mode/cubekrowd_duels run schedule function servermode:forceclear 3t
 function game:set_phase/staging.configuration
 execute unless score $match_repeat_amount global matches 1.. unless predicate game:repeat_settings/forever run scoreboard players reset $extra_match_repetitions config
-execute if predicate game:repeat_settings/on unless score $mcancel CmdData matches 1 unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
+execute if predicate game:repeat_settings/on unless score $mcancel CmdData matches 1 unless entity @s[predicate=game:item_pool/__all_normal_missiles_disabled,predicate=game:item_pool/__all_heavy_missiles_disabled,predicate=game:item_pool/__all_lightning_missiles_disabled,predicate=game:item_pool/__all_utilities_disabled] run function arenaclear:areaclear
 scoreboard players set $mcancel CmdData 0
 return 1

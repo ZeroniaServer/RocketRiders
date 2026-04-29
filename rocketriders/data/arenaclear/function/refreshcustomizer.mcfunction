@@ -4,8 +4,8 @@
 ##########################################
 
 ## WRAP AROUND OPTIONS
-execute unless predicate game:feature_flags/1_4_0_update run scoreboard players operation $arena_details/top config %= $4 constant
-execute if predicate game:feature_flags/1_4_0_update run scoreboard players operation $arena_details/top config %= $5 constant
+execute unless predicate game:feature_flags/1_4_0_update/on run scoreboard players operation $arena_details/top config %= $4 constant
+execute if predicate game:feature_flags/1_4_0_update/on run scoreboard players operation $arena_details/top config %= $5 constant
 execute if score $arena_details/top config matches 0 run scoreboard players reset $arena_details/top config
 scoreboard players operation $arena_details/top_sides config %= $4 constant
 execute if score $arena_details/top_sides config matches 0 run scoreboard players reset $arena_details/top_sides config
@@ -23,8 +23,8 @@ execute if predicate game:arena_details/top/none run data modify block -57 192 7
 execute if predicate game:arena_details/top/arch run data modify block -57 192 76 front_text.messages[1].text set value "Arch"
 execute if predicate game:arena_details/top/towers run data modify block -57 192 76 front_text.messages[1].text set value "Towers"
 execute if predicate game:arena_details/top/spikes run data modify block -57 192 76 front_text.messages[1].text set value "Spikes"
-execute if predicate game:arena_details/top/castle unless predicate game:feature_flags/1_4_0_update run data modify block -57 192 76 front_text.messages[1].text set value "None"
-execute if predicate game:arena_details/top/castle if predicate game:feature_flags/1_4_0_update run data modify block -57 192 76 front_text.messages[1].text set value "Castle"
+execute if predicate game:arena_details/top/castle unless predicate game:feature_flags/1_4_0_update/on run data modify block -57 192 76 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/top/castle if predicate game:feature_flags/1_4_0_update/on run data modify block -57 192 76 front_text.messages[1].text set value "Castle"
 execute unless predicate game:match_components/duel_settings_locked run data modify block -57 192 76 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
 execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/top/__locked_by_game_mode,predicate=!game:modifiers/hardcore/on] run data modify block -57 192 76 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -57 192 76 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}

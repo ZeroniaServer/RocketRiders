@@ -117,4 +117,4 @@ kill @e[x=0,type=marker,tag=RankedRNG]
 tellraw @a[x=0] ""
 
 #Enable/disable heavys
-execute if predicate game:item_pool_meta/all_heavy_missiles_disabled run scoreboard players set $config_overrides.disabled_item_category/heavy_missiles match_components 1
+execute if predicate game:item_pool/__all_heavy_missiles_disabled run scoreboard players set $config_overrides.disabled_item_category/heavy_missiles match_components 1

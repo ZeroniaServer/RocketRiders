@@ -55,9 +55,9 @@ tag @s[tag=DefaultWorld] remove DefaultWorld
 
 ##ITEM DELAY
 execute if predicate rr:has_modification_room if predicate game:modifiers/minute_mix/on run scoreboard players reset @a[x=0,predicate=custom:team/lobby] set_item_delay
-execute if predicate rr:has_modification_room unless predicate game:game_rules/item_delay/locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_item_delay=-1}] run function arenaclear:itemdelay/show_dialog
-execute if predicate rr:has_modification_room unless predicate game:game_rules/item_delay/locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_item_delay=-2147483648..}] unless score @s set_item_delay matches -2..0 run function arenaclear:itemdelay
-execute if predicate rr:has_modification_room if predicate game:game_rules/item_delay/locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_item_delay=-2147483648..}] unless score @s set_item_delay matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this game mode.","color":"dark_gray","italic":true}]
+execute if predicate rr:has_modification_room unless predicate game:game_rules/item_delay/__locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_item_delay=-1}] run function arenaclear:itemdelay/show_dialog
+execute if predicate rr:has_modification_room unless predicate game:game_rules/item_delay/__locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_item_delay=-2147483648..}] unless score @s set_item_delay matches -2..0 run function arenaclear:itemdelay
+execute if predicate rr:has_modification_room if predicate game:game_rules/item_delay/__locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_item_delay=-2147483648..}] unless score @s set_item_delay matches -2..0 run tellraw @s [{"text":"Item Delay is not adjustable in this game mode.","color":"dark_gray","italic":true}]
 scoreboard players reset @a[x=0] set_item_delay
 execute if predicate rr:has_modification_room unless predicate game:modifiers/minute_mix/on run scoreboard players set @a[x=0] set_item_delay -2
 execute if predicate rr:has_modification_room unless predicate game:modifiers/minute_mix/on run scoreboard players enable @a[x=0,predicate=custom:team/lobby] set_item_delay

@@ -7,7 +7,7 @@ execute if predicate game:game_rules/disable_item_category/normal_missiles/on ru
 data modify block -69 193 83 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_category_template {category_id:"normal_missiles",category_name:"Normal Missiles"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item_category/normal_missiles/on run data modify block -69 193 83 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/normal_missiles/on run data modify block -69 193 83 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/normal_missiles/locked run data modify block -69 193 83 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/normal_missiles/__locked run data modify block -69 193 83 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -69 193 83 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Lightning Missiles
@@ -16,7 +16,7 @@ execute if predicate game:game_rules/disable_item_category/lightning_missiles/on
 data modify block -69 191 83 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_category_template {category_id:"lightning_missiles",category_name:"Lightning Missiles"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item_category/lightning_missiles/on run data modify block -69 191 83 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/lightning_missiles/on run data modify block -69 191 83 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/lightning_missiles/locked run data modify block -69 191 83 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/lightning_missiles/__locked run data modify block -69 191 83 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -69 191 83 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Heavy Missiles
@@ -25,7 +25,7 @@ execute if predicate game:game_rules/disable_item_category/heavy_missiles/on run
 data modify block -69 191 81 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_category_template {category_id:"heavy_missiles",category_name:"Heavy Missiles"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item_category/heavy_missiles/on run data modify block -69 191 81 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/heavy_missiles/on run data modify block -69 191 81 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/heavy_missiles/locked run data modify block -69 191 81 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/heavy_missiles/__locked run data modify block -69 191 81 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -69 191 81 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Utilities
@@ -34,7 +34,7 @@ execute if predicate game:game_rules/disable_item_category/utilities/on run setb
 data modify block -69 193 81 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_category_template {category_id:"utilities",category_name:"Utilities"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item_category/utilities/on run data modify block -69 193 81 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/utilities/on run data modify block -69 193 81 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/utilities/locked run data modify block -69 193 81 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item_category/utilities/__locked run data modify block -69 193 81 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -69 193 81 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 
@@ -45,7 +45,7 @@ execute if predicate game:game_rules/disable_item/missile/tomatwo/on run setbloc
 data modify block -67 193 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/tomatwo",category_id:"normal_missiles",plural_item_name:"TomaTwos"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/tomatwo/on run data modify block -67 193 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/tomatwo/on run data modify block -67 193 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/tomatwo/locked run data modify block -67 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/tomatwo/__locked run data modify block -67 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -67 193 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Blade
@@ -54,7 +54,7 @@ execute if predicate game:game_rules/disable_item/missile/blade/on run setblock 
 data modify block -67 192 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/blade",category_id:"normal_missiles",plural_item_name:"Blades"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/blade/on run data modify block -67 192 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/blade/on run data modify block -67 192 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/blade/locked run data modify block -67 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/blade/__locked run data modify block -67 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -67 192 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #A.N.T.
@@ -63,7 +63,7 @@ execute if predicate game:game_rules/disable_item/missile/ant/on run setblock -6
 data modify block -66 193 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/ant",category_id:"normal_missiles",plural_item_name:"A.N.T.s"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/ant/on run data modify block -66 193 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/ant/on run data modify block -66 193 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/ant/locked run data modify block -66 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/ant/__locked run data modify block -66 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -66 193 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Catapult
@@ -72,7 +72,7 @@ execute if predicate game:game_rules/disable_item/missile/catapult/on run setblo
 data modify block -66 192 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/catapult",category_id:"normal_missiles",plural_item_name:"Catapults"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/catapult/on run data modify block -66 192 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/catapult/on run data modify block -66 192 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/catapult/locked run data modify block -66 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/catapult/__locked run data modify block -66 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -66 192 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Slasher
@@ -81,7 +81,7 @@ execute if predicate game:game_rules/disable_item/missile/slasher/on run setbloc
 data modify block -65 193 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/slasher",category_id:"normal_missiles",plural_item_name:"Slashers"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/slasher/on run data modify block -65 193 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/slasher/on run data modify block -65 193 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/slasher/locked run data modify block -65 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/slasher/__locked run data modify block -65 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -65 193 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Lifter
@@ -90,7 +90,7 @@ execute if predicate game:game_rules/disable_item/missile/lifter/on run setblock
 data modify block -65 192 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/lifter",category_id:"normal_missiles",plural_item_name:"Lifters"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/lifter/on run data modify block -65 192 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/lifter/on run data modify block -65 192 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/lifter/locked run data modify block -65 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/lifter/__locked run data modify block -65 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -65 192 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Chronullifier
@@ -99,7 +99,7 @@ execute if predicate game:game_rules/disable_item/missile/chronullifier/on run s
 data modify block -64 193 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/chronullifier",category_id:"normal_missiles",plural_item_name:"Chronullifiers"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/chronullifier/on run data modify block -64 193 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/chronullifier/on run data modify block -64 193 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/chronullifier/locked run data modify block -64 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/chronullifier/__locked run data modify block -64 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -64 193 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Elder Guardian
@@ -108,7 +108,7 @@ execute if predicate game:game_rules/disable_item/missile/elder_guardian/on run 
 data modify block -64 192 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/elder_guardian",category_id:"normal_missiles",plural_item_name:"Elder Guardians"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/elder_guardian/on run data modify block -64 192 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/elder_guardian/on run data modify block -64 192 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/elder_guardian/locked run data modify block -64 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/elder_guardian/__locked run data modify block -64 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -64 192 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Citadel
@@ -117,7 +117,7 @@ execute if predicate game:game_rules/disable_item/missile/citadel/on run setbloc
 data modify block -63 193 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/citadel",category_id:"normal_missiles",plural_item_name:"Citadels"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/citadel/on run data modify block -63 193 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/citadel/on run data modify block -63 193 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/citadel/locked run data modify block -63 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/citadel/__locked run data modify block -63 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -63 193 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Gemini
@@ -126,7 +126,7 @@ execute if predicate game:game_rules/disable_item/missile/gemini/on run setblock
 data modify block -63 192 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/gemini",category_id:"normal_missiles",plural_item_name:"Geminis"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/gemini/on run data modify block -63 192 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/gemini/on run data modify block -63 192 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/gemini/locked run data modify block -63 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/gemini/__locked run data modify block -63 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -63 192 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 
@@ -137,7 +137,7 @@ execute if predicate game:game_rules/disable_item/missile/thunderbolt/on run set
 data modify block -62 193 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/thunderbolt",category_id:"lightning_missiles",plural_item_name:"Thunderbolts"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/thunderbolt/on run data modify block -62 193 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/thunderbolt/on run data modify block -62 193 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/thunderbolt/locked run data modify block -62 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/thunderbolt/__locked run data modify block -62 193 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -62 193 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Hurricane
@@ -146,7 +146,7 @@ execute if predicate game:game_rules/disable_item/missile/hurricane/on run setbl
 data modify block -62 192 72 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/hurricane",category_id:"lightning_missiles",plural_item_name:"Hurricanes"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/hurricane/on run data modify block -62 192 72 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/hurricane/on run data modify block -62 192 72 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/hurricane/locked run data modify block -62 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/hurricane/__locked run data modify block -62 192 72 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -62 192 72 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 
@@ -157,7 +157,7 @@ execute if predicate game:game_rules/disable_item/missile/warhead/on run setbloc
 data modify block -62 193 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/warhead",category_id:"heavy_missiles",plural_item_name:"Warheads"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/warhead/on run data modify block -62 193 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/warhead/on run data modify block -62 193 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/warhead/locked run data modify block -62 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/warhead/__locked run data modify block -62 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -62 193 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Juggerbuster
@@ -166,7 +166,7 @@ execute if predicate game:game_rules/disable_item/missile/juggerbuster/on run se
 data modify block -62 192 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/juggerbuster",category_id:"heavy_missiles",plural_item_name:"Juggerbusters"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/juggerbuster/on run data modify block -62 192 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/juggerbuster/on run data modify block -62 192 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/juggerbuster/locked run data modify block -62 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/juggerbuster/__locked run data modify block -62 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -62 192 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Rifter
@@ -175,7 +175,7 @@ execute if predicate game:game_rules/disable_item/missile/rifter/on run setblock
 data modify block -63 193 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/rifter",category_id:"heavy_missiles",plural_item_name:"Rifters"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/rifter/on run data modify block -63 193 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/rifter/on run data modify block -63 193 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/rifter/locked run data modify block -63 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/rifter/__locked run data modify block -63 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -63 193 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Auxiliary
@@ -184,7 +184,7 @@ execute if predicate game:game_rules/disable_item/missile/auxiliary/on run setbl
 data modify block -63 192 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"missile/auxiliary",category_id:"heavy_missiles",plural_item_name:"Auxiliaries"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/missile/auxiliary/on run data modify block -63 192 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/auxiliary/on run data modify block -63 192 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/auxiliary/locked run data modify block -63 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/missile/auxiliary/__locked run data modify block -63 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -63 192 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 
@@ -195,7 +195,7 @@ execute if predicate game:game_rules/disable_item/arrow/on run setblock -64 193 
 data modify block -64 193 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"arrow",category_id:"utilities",plural_item_name:"Arrows"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/arrow/on run data modify block -64 193 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/arrow/on run data modify block -64 193 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/arrow/locked run data modify block -64 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/arrow/__locked run data modify block -64 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -64 193 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Vortex
@@ -204,14 +204,14 @@ execute unless predicate game:match_components/item_signs/replace_vortex_with_ic
 execute unless predicate game:match_components/item_signs/replace_vortex_with_icbm run data modify block -64 192 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"vortex",category_id:"utilities",plural_item_name:"Vortices"}'}
 execute unless predicate game:match_components/item_signs/replace_vortex_with_icbm unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/vortex/on run data modify block -64 192 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/item_signs/replace_vortex_with_icbm unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/vortex/on run data modify block -64 192 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/item_signs/replace_vortex_with_icbm unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/vortex/locked run data modify block -64 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/item_signs/replace_vortex_with_icbm unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/vortex/__locked run data modify block -64 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute unless predicate game:match_components/item_signs/replace_vortex_with_icbm if predicate game:match_components/duel_settings_locked run data modify block -64 192 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 execute if predicate game:match_components/item_signs/replace_vortex_with_icbm unless predicate game:game_rules/disable_item/icbm/on run setblock -64 192 84 warped_wall_sign[facing=north]{front_text:{messages:[{color:"light_purple",text:"ICBM"},"","",""]}}
 execute if predicate game:match_components/item_signs/replace_vortex_with_icbm if predicate game:game_rules/disable_item/icbm/on run setblock -64 192 84 crimson_wall_sign[facing=north]{front_text:{messages:[{color:"light_purple",text:"ICBM"},"","",""]}}
 execute if predicate game:match_components/item_signs/replace_vortex_with_icbm run data modify block -64 192 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"icbm",category_id:"utilities",plural_item_name:"ICBMs"}'}
 execute if predicate game:match_components/item_signs/replace_vortex_with_icbm unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/icbm/on run data modify block -64 192 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute if predicate game:match_components/item_signs/replace_vortex_with_icbm unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/icbm/on run data modify block -64 192 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute if predicate game:match_components/item_signs/replace_vortex_with_icbm unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/icbm/locked run data modify block -64 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute if predicate game:match_components/item_signs/replace_vortex_with_icbm unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/icbm/__locked run data modify block -64 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/item_signs/replace_vortex_with_icbm if predicate game:match_components/duel_settings_locked run data modify block -64 192 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 execute if predicate game:match_components/item_signs/replace_vortex_with_icbm if predicate game:match_components/decreased_icbm_flight_duration run data modify block -64 192 84 front_text.messages[3] set value {"color":"gray","text":"Reduced Distance"}
 # horrible hardcoded exception for crusade mode to lump both onto the same sign at once (but both are locked so I can get away with just doing this this)
@@ -224,7 +224,7 @@ execute if predicate game:game_rules/disable_item/obsidian_shield/on run setbloc
 data modify block -65 193 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"obsidian_shield",category_id:"utilities",plural_item_name:"Obsidian Shields"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/obsidian_shield/on run data modify block -65 193 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/obsidian_shield/on run data modify block -65 193 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/obsidian_shield/locked run data modify block -65 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/obsidian_shield/__locked run data modify block -65 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -65 193 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Splash
@@ -233,7 +233,7 @@ execute if predicate game:game_rules/disable_item/splash/on run setblock -65 192
 data modify block -65 192 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"splash",category_id:"utilities",plural_item_name:"Splashes"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/splash/on run data modify block -65 192 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/splash/on run data modify block -65 192 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/splash/locked run data modify block -65 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/splash/__locked run data modify block -65 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -65 192 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Fireball
@@ -242,14 +242,14 @@ execute unless predicate game:match_components/item_signs/replace_fireball_with_
 execute unless predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball run data modify block -66 193 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"fireball",category_id:"utilities",plural_item_name:"Fireballs"}'}
 execute unless predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/fireball/on run data modify block -66 193 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/fireball/on run data modify block -66 193 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/fireball/locked run data modify block -66 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/fireball/__locked run data modify block -66 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute unless predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball if predicate game:match_components/duel_settings_locked run data modify block -66 193 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 execute if predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball unless predicate game:game_rules/disable_item/cluster_fireball/on run setblock -66 193 84 warped_wall_sign[facing=north]{front_text:{messages:[{color:"light_purple",text:"Cluster Fireball"},"","",""]}}
 execute if predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball if predicate game:game_rules/disable_item/cluster_fireball/on run setblock -66 193 84 crimson_wall_sign[facing=north]{front_text:{messages:[{color:"light_purple",text:"Cluster Fireball"},"","",""]}}
 execute if predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball run data modify block -66 193 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"cluster_fireball",category_id:"utilities",plural_item_name:"Cluster Fireballs"}'}
 execute if predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/cluster_fireball/on run data modify block -66 193 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute if predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/cluster_fireball/on run data modify block -66 193 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute if predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/cluster_fireball/locked run data modify block -66 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute if predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/cluster_fireball/__locked run data modify block -66 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/item_signs/replace_fireball_with_cluster_fireball if predicate game:match_components/duel_settings_locked run data modify block -66 193 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Canopy
@@ -258,7 +258,7 @@ execute if predicate game:game_rules/disable_item/canopy/on run setblock -66 192
 data modify block -66 192 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"canopy",category_id:"utilities",plural_item_name:"Canopies"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/canopy/on run data modify block -66 192 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/canopy/on run data modify block -66 192 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/canopy/locked run data modify block -66 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/canopy/__locked run data modify block -66 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -66 192 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Nova Rocket
@@ -267,7 +267,7 @@ execute if predicate game:game_rules/disable_item/nova_rocket/on run setblock -6
 data modify block -67 193 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"nova_rocket",category_id:"utilities",plural_item_name:"Nova Rockets"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/nova_rocket/on run data modify block -67 193 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/nova_rocket/on run data modify block -67 193 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/nova_rocket/locked run data modify block -67 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/nova_rocket/__locked run data modify block -67 193 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -67 193 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 #Shield
@@ -276,7 +276,7 @@ execute if predicate game:game_rules/disable_item/shield/on run setblock -67 192
 data modify block -67 192 84 front_text.messages[0].click_event set value {action:"run_command",command:'function arenaclear:modification_room_signs/interact_with_item_sign/disable_item_template {item_id:"shield",category_id:"utilities",plural_item_name:"Shields"}'}
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_item/shield/on run data modify block -67 192 84 front_text.messages[1] set value {bold:true,color:"green",text:"Enabled"}
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/shield/on run data modify block -67 192 84 front_text.messages[1] set value {bold:true,color:"red",text:"Disabled"}
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/shield/locked run data modify block -67 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_item/shield/__locked run data modify block -67 192 84 front_text.messages[2] set value {bold:true,color:"white",text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -67 192 84 front_text.messages[1] set value {"text":"Locked","color":"white","bold":true}
 
 tag @s add SignsRefreshed

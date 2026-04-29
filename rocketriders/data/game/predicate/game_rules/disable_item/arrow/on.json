@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/disable_item/arrow/forced_off"
+      "name": "game:game_rules/disable_item/arrow/__forced_off"
     }
   },
   {
@@ -23,7 +23,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:game_rules/disable_item/arrow/forced_on"
+        "name": "game:game_rules/disable_item/arrow/__forced_on"
       }
     ]
   }

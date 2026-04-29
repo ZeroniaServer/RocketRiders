@@ -1,0 +1,17 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/hobbits/__forced_on"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/hobbits/__forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/hobbits/__incompatible_modifiers"
+    }
+  ]
+}

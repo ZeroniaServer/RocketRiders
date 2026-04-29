@@ -8,13 +8,13 @@ execute unless predicate game:modifiers/special_treatment/on unless entity @s[ta
 execute unless predicate game:modifiers/special_treatment/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
 execute if predicate game:modifiers/special_treatment/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
 execute if predicate game:modifiers/special_treatment/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=givenAllSpecial] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
-execute unless predicate game:item_pool_meta/all_utilities_disabled unless entity @s[tag=givenAllUtil] unless entity @s[tag=!gaveFirstItem] run summon marker 0 0 0 {Tags:["rngUtil","rng1"]}
+execute unless predicate game:item_pool/__all_utilities_disabled unless entity @s[tag=givenAllUtil] unless entity @s[tag=!gaveFirstItem] run summon marker 0 0 0 {Tags:["rngUtil","rng1"]}
 
 ##Surprise Egg modifier - summons extra Missile/Utility AECs to make Surprise Eggs rarer
 execute if predicate game:modifiers/surprise_eggs/on run summon marker 0 0 0 {Tags:["rngSurprise","rng1"]}
 execute if predicate game:modifiers/surprise_eggs/on unless predicate game:modifiers/special_treatment/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
 execute if predicate game:modifiers/surprise_eggs/on if predicate game:modifiers/special_treatment/on unless entity @s[tag=givenAllNormal,tag=givenAllHeavy,tag=givenAllLightning,tag=!givenAllSpecial] run summon marker 0 0 0 {Tags:["rngMissile","rng1"]}
-execute if predicate game:modifiers/surprise_eggs/on unless predicate game:item_pool_meta/all_utilities_disabled unless entity @s[tag=givenAllUtil] unless entity @s[tag=!gaveFirstItem] run summon marker 0 0 0 {Tags:["rngUtil","rng1"]}
+execute if predicate game:modifiers/surprise_eggs/on unless predicate game:item_pool/__all_utilities_disabled unless entity @s[tag=givenAllUtil] unless entity @s[tag=!gaveFirstItem] run summon marker 0 0 0 {Tags:["rngUtil","rng1"]}
 
 ##Select item and run appropriate sub-RNG function
 tag @e[x=0,type=marker,tag=rng1,sort=random,limit=1] add rngSelected

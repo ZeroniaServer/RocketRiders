@@ -1,0 +1,17 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/spam_click/__forced_on"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/spam_click/__forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/spam_click/__incompatible_modifiers"
+    }
+  ]
+}

@@ -3,8 +3,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefres
 
 # overrides
 execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Game Rules are not adjustable in this game mode."}
-execute if predicate game:game_rules/impact_utilities/forced_off run return run tellraw @s {color:"dark_gray",italic:true,text:"Impact Utilities is incompatible with this game mode."}
-execute if predicate game:game_rules/impact_utilities/forced_on run return run tellraw @s {color:"dark_gray",italic:true,text:"Impact Utilities required in this game mode."}
+execute if predicate game:game_rules/impact_utilities/__forced_off run return run tellraw @s {color:"dark_gray",italic:true,text:"Impact Utilities is incompatible with this game mode."}
+execute if predicate game:game_rules/impact_utilities/__forced_on run return run tellraw @s {color:"dark_gray",italic:true,text:"Impact Utilities required in this game mode."}
 
 # toggle
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed,scores={refreshsigns=0}] store success score $impact_utilities config unless score $impact_utilities config matches 1

@@ -1,8 +1,8 @@
 ##RNG starter for selecting a random Yellow missile from Surprise Eggs
 #Choose between each category
-execute unless predicate game:item_pool_meta/all_heavy_missiles_disabled run summon marker ~ ~ ~ {Tags:["surpriseYellowHeavy","surpriseYellow1"]}
-execute unless predicate game:item_pool_meta/all_normal_missiles_disabled run summon marker ~ ~ ~ {Tags:["surpriseYellowNormal","surpriseYellow1"]}
-execute unless predicate game:item_pool_meta/all_lightning_missiles_disabled run summon marker ~ ~ ~ {Tags:["surpriseYellowLightning","surpriseYellow1"]}
+execute unless predicate game:item_pool/__all_heavy_missiles_disabled run summon marker ~ ~ ~ {Tags:["surpriseYellowHeavy","surpriseYellow1"]}
+execute unless predicate game:item_pool/__all_normal_missiles_disabled run summon marker ~ ~ ~ {Tags:["surpriseYellowNormal","surpriseYellow1"]}
+execute unless predicate game:item_pool/__all_lightning_missiles_disabled run summon marker ~ ~ ~ {Tags:["surpriseYellowLightning","surpriseYellow1"]}
 execute if predicate game:modifiers/special_treatment/on run summon marker ~ ~ ~ {Tags:["surpriseYellowSpecial","surpriseYellow1"]}
 
 #Select category and run appropriate sub-RNG function

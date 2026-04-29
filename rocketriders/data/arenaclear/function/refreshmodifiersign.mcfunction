@@ -1,7 +1,7 @@
 ##Refreshes signs for individual Game Modifiers (warped/crimson)
 #Wrap counter around (0-21)
-execute unless predicate game:feature_flags/1_4_0_update run scoreboard players set $total_modifiers constant 22
-execute if predicate game:feature_flags/1_4_0_update run scoreboard players set $total_modifiers constant 23
+execute unless predicate game:feature_flags/1_4_0_update/on run scoreboard players set $total_modifiers constant 22
+execute if predicate game:feature_flags/1_4_0_update/on run scoreboard players set $total_modifiers constant 23
 scoreboard players operation @s modifierID %= $total_modifiers constant
 
 #Instamine
@@ -94,8 +94,8 @@ execute if entity @s[scores={modifierID=21}] if predicate game:modifiers/long_ar
 execute if entity @s[scores={modifierID=21}] unless predicate game:modifiers/long_arms/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Rotting
-execute if predicate game:feature_flags/1_4_0_update if entity @s[scores={modifierID=22}] if predicate game:modifiers/rotting/on run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if predicate game:feature_flags/1_4_0_update if entity @s[scores={modifierID=22}] unless predicate game:modifiers/rotting/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if predicate game:feature_flags/1_4_0_update/on if entity @s[scores={modifierID=22}] if predicate game:modifiers/rotting/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if predicate game:feature_flags/1_4_0_update/on if entity @s[scores={modifierID=22}] unless predicate game:modifiers/rotting/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 ##MODIFIER SELECTION
 function modifiers:modifierselect

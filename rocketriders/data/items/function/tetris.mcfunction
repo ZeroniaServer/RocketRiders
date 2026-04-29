@@ -15,19 +15,19 @@ execute unless predicate game:item_pool/missile/lifter run tag @s add givenLift
 execute unless predicate game:item_pool/missile/chronullifier run tag @s add givenNull
 execute unless predicate game:item_pool/missile/slasher run tag @s add givenSlash
 execute unless predicate game:item_pool/missile/tomatwo run tag @s add givenToma
-execute if predicate game:item_pool_meta/all_normal_missiles_disabled run tag @s add givenAllNormal
+execute if predicate game:item_pool/__all_normal_missiles_disabled run tag @s add givenAllNormal
 
 #Heavy
 execute unless predicate game:item_pool/missile/auxiliary run tag @s add givenAux
 execute unless predicate game:item_pool/missile/juggerbuster run tag @s add givenJbust
 execute unless predicate game:item_pool/missile/rifter run tag @s add givenRift
 execute unless predicate game:item_pool/missile/warhead run tag @s add givenWar
-execute if predicate game:item_pool_meta/all_heavy_missiles_disabled run tag @s add givenAllHeavy
+execute if predicate game:item_pool/__all_heavy_missiles_disabled run tag @s add givenAllHeavy
 
 #Lightning
 execute unless predicate game:item_pool/missile/hurricane run tag @s add givenHur
 execute unless predicate game:item_pool/missile/thunderbolt run tag @s add givenBolt
-execute if predicate game:item_pool_meta/all_lightning_missiles_disabled run tag @s add givenAllLightning
+execute if predicate game:item_pool/__all_lightning_missiles_disabled run tag @s add givenAllLightning
 
 #Utility
 execute unless predicate game:item_pool/arrow run tag @s add givenArrows
@@ -41,7 +41,7 @@ execute unless predicate game:item_pool/shield run tag @s add givenShield
 execute unless predicate game:item_pool/shield run tag @s add givenShieldTwice
 execute unless predicate game:item_pool/splash run tag @s add givenSplash
 execute unless predicate game:item_pool/vortex run tag @s add givenVortex
-execute if predicate game:item_pool_meta/all_utilities_disabled run tag @s add givenAllUtil
+execute if predicate game:item_pool/__all_utilities_disabled run tag @s add givenAllUtil
 
 ##Tetris bag logic
 tag @s[tag=givenAnt,tag=givenBlade,tag=givenCata,tag=givenCita,tag=givenGuard,tag=givenGemi,tag=givenLift,tag=givenNull,tag=givenSlash,tag=givenToma] add givenAllNormal

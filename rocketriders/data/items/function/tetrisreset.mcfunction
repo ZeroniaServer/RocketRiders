@@ -29,11 +29,11 @@ tag @s remove givenBolt
 tag @s remove givenAllLightning
 
 #Special
-execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenBroad
-execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenBull
-execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenDuplex
-execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenHyper
-execute unless predicate game:modifiers/special_treatment/forced_off run tag @s remove givenAllSpecial
+execute unless predicate game:game_rules/special_treatment/__forced_off run tag @s remove givenBroad
+execute unless predicate game:game_rules/special_treatment/__forced_off run tag @s remove givenBull
+execute unless predicate game:game_rules/special_treatment/__forced_off run tag @s remove givenDuplex
+execute unless predicate game:game_rules/special_treatment/__forced_off run tag @s remove givenHyper
+execute unless predicate game:game_rules/special_treatment/__forced_off run tag @s remove givenAllSpecial
 
 #Utility
 tag @s remove givenCanopy

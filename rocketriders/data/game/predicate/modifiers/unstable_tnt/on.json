@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/unstable_tnt/forced_off"
+      "name": "game:game_rules/unstable_tnt/__forced_off"
     }
   },
   {
@@ -23,7 +23,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/unstable_tnt/forced_on"
+        "name": "game:game_rules/unstable_tnt/__forced_on"
       }
     ]
   }

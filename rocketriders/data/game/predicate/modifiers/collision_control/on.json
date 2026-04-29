@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/collision_control/forced_off"
+      "name": "game:game_rules/collision_control/__forced_off"
     }
   },
   {
@@ -23,7 +23,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/collision_control/forced_on"
+        "name": "game:game_rules/collision_control/__forced_on"
       }
     ]
   }

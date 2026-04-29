@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/double_portal/forced_off"
+      "name": "game:game_rules/double_portal/__forced_off"
     }
   },
   {
@@ -23,7 +23,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/double_portal/forced_on"
+        "name": "game:game_rules/double_portal/__forced_on"
       }
     ]
   }

@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/splash_streams/forced_off"
+      "name": "game:game_rules/splash_streams/__forced_off"
     }
   },
   {
@@ -23,7 +23,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/splash_streams/forced_on"
+        "name": "game:game_rules/splash_streams/__forced_on"
       }
     ]
   }

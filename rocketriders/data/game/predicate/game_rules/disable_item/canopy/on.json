@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/disable_item/canopy/forced_off"
+      "name": "game:game_rules/disable_item/canopy/__forced_off"
     }
   },
   {
@@ -23,7 +23,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:game_rules/disable_item/canopy/forced_on"
+        "name": "game:game_rules/disable_item/canopy/__forced_on"
       }
     ]
   }

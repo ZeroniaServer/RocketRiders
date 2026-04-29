@@ -15,8 +15,8 @@ execute unless predicate game:match_components/duel_settings_locked unless predi
 execute if predicate game:match_components/duel_settings_locked run setblock -70 191 77 crimson_wall_sign[facing=east]
 
 #Tiebreakers / Overtime
-execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/on run setblock -70 193 77 crimson_wall_sign[facing=east]
-execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_tying/on run setblock -70 193 77 warped_wall_sign[facing=east]
+execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/tie_window_length/non_zero run setblock -70 193 77 warped_wall_sign[facing=east]
+execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/tie_window_length/non_zero run setblock -70 193 77 crimson_wall_sign[facing=east]
 execute unless predicate game:match_components/has_overtime if predicate game:match_components/duel_settings_locked run setblock -70 193 77 crimson_wall_sign[facing=east]
 
 execute if predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_overtime/on run setblock -70 193 77 crimson_wall_sign[facing=east]
@@ -118,16 +118,20 @@ execute if predicate game:game_rules/item_delay/__locked if predicate game:match
   data modify block -70 191 79 front_text.messages set value [{click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_delay"},text:"Item Delay:"},["",{bold:true,text:"XX"}," seconds"],"",{bold:true,text:"Locked"}]
 
 #Tiebreakers / Overtime
-execute unless predicate game:match_components/has_overtime unless predicate game:game_rules/disable_tying/__locked unless predicate game:game_rules/disable_tying/on run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute unless predicate game:match_components/has_overtime unless predicate game:game_rules/disable_tying/__locked if predicate game:game_rules/disable_tying/on run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/__forced_on run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/__forced_off run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/has_overtime if predicate game:match_components/duel_settings_locked run \
-  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"white",text:"Locked"},"",""]
+execute unless predicate game:match_components/has_overtime store result score $temporary_tie_window_length_value var run function game:config/get_tie_window_length
+execute unless predicate game:match_components/has_overtime if predicate game:feature_flags/1_4_0_update/on if score $temporary_tie_window_length_value var matches 0 run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/tie_window_length"},text:"Tie Window:"},{bold:true,color:"red",text:"Disabled"},"",{color:"gray",italic:true,text:"(Click to adjust)"}]
+execute unless predicate game:match_components/has_overtime if predicate game:feature_flags/1_4_0_update/on if score $temporary_tie_window_length_value var matches 1 run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/tie_window_length"},text:"Tie Window:"},[{color:"white",text:""},{bold:true,text:"1"}," second"],"",{color:"gray",italic:true,text:"(Click to adjust)"}]
+execute unless predicate game:match_components/has_overtime if predicate game:feature_flags/1_4_0_update/on if score $temporary_tie_window_length_value var matches 2.. run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/tie_window_length"},text:"Tie Window:"},[{color:"white",text:""},{bold:true,score:{name:"$temporary_tie_window_length_value",objective:"var"}}," seconds"],"",{color:"gray",italic:true,text:"(Click to adjust)"}]
+execute unless predicate game:match_components/has_overtime unless predicate game:feature_flags/1_4_0_update/on if score $temporary_tie_window_length_value var matches 0 run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/tie_window_length"},text:"Tiebreakers:"},{bold:true,color:"red",text:"Disabled"},"",""]
+execute unless predicate game:match_components/has_overtime unless predicate game:feature_flags/1_4_0_update/on if score $temporary_tie_window_length_value var matches 1.. run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/tie_window_length"},text:"Tiebreakers:"},{bold:true,color:"green",text:"Enabled"},"",""]
+execute unless predicate game:match_components/has_overtime if predicate game:game_rules/tie_window_length/__locked if predicate game:match_components/duel_settings_locked run data modify block -70 193 77 front_text.messages[1] set value {color:"white",bold:true,text:"Locked"}
+execute unless predicate game:match_components/has_overtime if predicate game:game_rules/tie_window_length/__locked unless predicate game:match_components/duel_settings_locked run data modify block -70 193 77 front_text.messages[2] set value {color:"white",bold:true,text:"Locked"}
+execute unless predicate game:match_components/has_overtime if predicate game:game_rules/tie_window_length/__locked run data modify block -70 193 77 front_text.messages[3] set value ""
 
 execute if predicate game:match_components/has_overtime unless predicate game:game_rules/disable_overtime/__locked unless predicate game:game_rules/disable_overtime/on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"green",text:"Enabled"},"",""]

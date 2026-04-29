@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/disable_tying/__forced_off"
+      "name": "game:game_rules/tie_window_length/__forced_zero"
     }
   },
   {
@@ -16,14 +16,16 @@
           "score": "config",
           "target": {
             "type": "minecraft:fixed",
-            "name": "$disable_tying"
+            "name": "$tie_window_length"
           }
         },
-        "range": 1
+        "range": {
+          "min": 0
+        }
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:game_rules/disable_tying/__forced_on"
+        "name": "game:game_rules/tie_window_length/__forced_non_zero"
       }
     ]
   }

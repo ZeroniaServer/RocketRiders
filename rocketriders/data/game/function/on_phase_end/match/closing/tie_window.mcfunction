@@ -1,5 +1,5 @@
 ##
-
+function achievements:aftergame_indimension
 
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/closing/tie_window

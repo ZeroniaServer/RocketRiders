@@ -4,6 +4,8 @@ scoreboard objectives remove flag.is_nova_attached
 scoreboard objectives remove flag.is_dead
 
 execute if score $disable_tying config matches 1 run scoreboard players set $disable_overtime config 1
+execute if score $disable_tying config matches 1 run scoreboard players set $tie_window_length config -1
+scoreboard players reset $disable_tying config
 
 execute if score $instant_tnt_explosions config matches 1 run scoreboard players set $instant_tnt config 1
 scoreboard players reset $instant_tnt_explosions config

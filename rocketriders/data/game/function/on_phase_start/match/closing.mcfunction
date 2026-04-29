@@ -4,8 +4,7 @@ execute if predicate game:game_rules/show_debug_logs/on run function custom:log 
 scoreboard players set $closing_timer global 0
 
 # Set timings
-execute unless predicate game:game_rules/disable_tying/on run scoreboard players set $closing_timer.max_tie_window_time global 100
-execute if predicate game:game_rules/disable_tying/on run scoreboard players set $closing_timer.max_tie_window_time global 0
+execute store result score $closing_timer.max_tie_window_time global run function game:config/get_tie_window_length_ticks
 execute unless predicate game:match_components/short_end_sequence run scoreboard players set $closing_timer.max_time_before_review global 250
 execute if predicate game:match_components/short_end_sequence run scoreboard players set $closing_timer.max_time_before_review global 0
 execute if score $closing_timer.max_tie_window_time global > $closing_timer.max_time_before_review global run scoreboard players operation $closing_timer.max_time_before_review global = $closing_timer.max_tie_window_time global

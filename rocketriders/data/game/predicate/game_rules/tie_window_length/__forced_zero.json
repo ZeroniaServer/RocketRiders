@@ -8,18 +8,6 @@
         "score": "match_components",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$has_overtime"
-        }
-      },
-      "range": 1
-    },
-    {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "score": "match_components",
-        "target": {
-          "type": "minecraft:fixed",
           "name": "$duel_settings_locked"
         }
       },
@@ -32,7 +20,21 @@
         "score": "match_components",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$config_override.disable_tying"
+          "name": "$config_override.tie_window_length"
+        }
+      },
+      "range": {
+        "max": -1
+      }
+    },
+    {
+      "condition": "minecraft:value_check",
+      "value": {
+        "type": "minecraft:score",
+        "score": "match_components",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$has_overtime"
         }
       },
       "range": 1
@@ -45,6 +47,18 @@
         "target": {
           "type": "minecraft:fixed",
           "name": "$short_end_sequence"
+        }
+      },
+      "range": 1
+    },
+    {
+      "condition": "minecraft:value_check",
+      "value": {
+        "type": "minecraft:score",
+        "score": "match_components",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$one_team"
         }
       },
       "range": 1

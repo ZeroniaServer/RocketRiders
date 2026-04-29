@@ -30,7 +30,7 @@ tag @s[tag=DefaultCustomizer] remove DefaultCustomizer
 
 ##RESTORE DEFAULT GAME RULES
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_pierce_prevention config
-execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_tying config
+execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $tie_window_length config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_overtime config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_hotbar_limit config
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $item_stacking config
@@ -61,6 +61,15 @@ execute if predicate rr:has_modification_room if predicate game:game_rules/item_
 scoreboard players reset @a[x=0] set_item_delay
 execute if predicate rr:has_modification_room unless predicate game:modifiers/minute_mix/on run scoreboard players set @a[x=0] set_item_delay -2
 execute if predicate rr:has_modification_room unless predicate game:modifiers/minute_mix/on run scoreboard players enable @a[x=0,predicate=custom:team/lobby] set_item_delay
+
+##TIE WINDOW
+execute if predicate rr:has_modification_room if predicate game:game_rules/tie_window_length/__forced_zero run scoreboard players reset @a[x=0,predicate=custom:team/lobby] set_tie_window
+execute if predicate rr:has_modification_room unless predicate game:game_rules/tie_window_length/__locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_tie_window=-1}] run function arenaclear:tie_window_length/show_dialog
+execute if predicate rr:has_modification_room unless predicate game:game_rules/tie_window_length/__locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_tie_window=-2147483648..}] unless score @s set_tie_window matches -2..-1 run function arenaclear:tie_window_length
+execute if predicate rr:has_modification_room if predicate game:game_rules/tie_window_length/__locked as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_tie_window=-2147483648..}] unless score @s set_tie_window matches -2..-1 run tellraw @s [{"text":"Tie Window is not adjustable in this game mode.","color":"dark_gray","italic":true}]
+scoreboard players reset @a[x=0] set_tie_window
+execute if predicate rr:has_modification_room unless predicate game:game_rules/tie_window_length/__forced_zero run scoreboard players set @a[x=0] set_tie_window -2
+execute if predicate rr:has_modification_room unless predicate game:game_rules/tie_window_length/__forced_zero run scoreboard players enable @a[x=0,predicate=custom:team/lobby] set_tie_window
 
 ##TIME OF DAY
 execute as @a[x=0,predicate=!custom:team/any_arena_team,scores={set_time_of_day=-1}] run function arenaclear:time_of_day/show_dialog

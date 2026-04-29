@@ -8,10 +8,12 @@
         "score": "match_components",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$config_override.disable_tying"
+          "name": "$config_override.tie_window_length"
         }
       },
-      "range": -1
+      "range": {
+        "min": 1
+      }
     }
   ]
 }

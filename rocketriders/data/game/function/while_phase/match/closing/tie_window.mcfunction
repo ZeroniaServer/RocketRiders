@@ -1,4 +1,4 @@
-execute if predicate game:game_rules/disable_tying/on run return run function game:set_phase/match.closing.outcome.celebration
+execute unless predicate game:game_rules/tie_window_length/non_zero run return run function game:set_phase/match.closing.outcome.celebration
 
 ##Tie actionbar notifications
 scoreboard players operation $tie_window_countdown_seconds var = $closing_timer.max_tie_window_time global

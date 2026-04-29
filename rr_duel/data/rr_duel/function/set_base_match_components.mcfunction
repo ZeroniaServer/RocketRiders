@@ -6,7 +6,6 @@ scoreboard players set $config_override.arena_details/portal match_components -1
 scoreboard players set $config_override.arena_details/top match_components -1
 scoreboard players set $config_override.arena_details/top_sides match_components -1
 scoreboard players set $config_override.disable_pierce_prevention match_components -1
-scoreboard players set $config_override.disable_tying match_components 1
 scoreboard players set $config_override.item_delay match_components 15
 scoreboard players set $config_override.wind_down match_components 1
 scoreboard players set $custom_leave_handling match_components 1

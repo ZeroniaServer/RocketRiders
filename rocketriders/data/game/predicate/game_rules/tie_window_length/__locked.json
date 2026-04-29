@@ -3,11 +3,11 @@
   "terms": [
     {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/disable_tying/__forced_on"
+      "name": "game:game_rules/tie_window_length/__forced_non_zero"
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/disable_tying/__forced_off"
+      "name": "game:game_rules/tie_window_length/__forced_zero"
     }
   ]
 }

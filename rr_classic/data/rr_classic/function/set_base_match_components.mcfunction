@@ -9,9 +9,9 @@ scoreboard players set $config_override.arena_details/portal match_components -1
 scoreboard players set $config_override.arena_details/top match_components -1
 scoreboard players set $config_override.arena_details/top_sides match_components -1
 scoreboard players set $config_override.disable_hotbar_limit match_components 1
-scoreboard players set $config_override.disable_tying match_components 1
 scoreboard players set $config_override.impact_utilities match_components -1
 scoreboard players set $config_override.item_stacking match_components -1
+scoreboard players set $config_override.tie_window_length match_components -1
 scoreboard players set $yellow_team_skin match_components 1
 
 # items

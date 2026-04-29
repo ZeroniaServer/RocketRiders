@@ -97,6 +97,10 @@ scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMi
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby] set_item_delay
 execute unless predicate game:phase/staging/configuration run scoreboard players reset @a[x=0] set_item_delay
 execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] set_item_delay
+execute if predicate game:feature_flags/1_4_0_update/on run scoreboard players reset @a[x=0,predicate=!custom:team/lobby] set_tie_window
+execute if predicate game:feature_flags/1_4_0_update/on run execute unless predicate game:phase/staging/configuration run scoreboard players reset @a[x=0] set_tie_window
+execute if predicate game:feature_flags/1_4_0_update/on run execute unless predicate rr:has_modification_room run scoreboard players reset @a[x=0] set_tie_window
+execute unless predicate game:feature_flags/1_4_0_update/on run scoreboard players reset @a[x=0] set_tie_window
 execute unless predicate game:phase/staging/configuration run scoreboard players reset @a[x=0] VoteServerMode
 scoreboard players reset @a[x=0,predicate=!custom:team/lobby] set_time_of_day
 execute unless predicate game:phase/staging/configuration run scoreboard players reset @a[x=0] set_time_of_day

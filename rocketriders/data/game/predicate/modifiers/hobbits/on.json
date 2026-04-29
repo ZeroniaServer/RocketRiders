@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/hobbits/__forced_off"
+      "name": "game:modifiers/hobbits/__forced_off"
     }
   },
   {
@@ -23,7 +23,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:game_rules/hobbits/__forced_on"
+        "name": "game:modifiers/hobbits/__forced_on"
       }
     ]
   }

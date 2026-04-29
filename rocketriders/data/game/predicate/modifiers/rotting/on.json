@@ -7,7 +7,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/rotting/__forced_off"
+      "name": "game:modifiers/rotting/__forced_off"
     }
   },
   {
@@ -27,7 +27,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:game_rules/rotting/__forced_on"
+        "name": "game:modifiers/rotting/__forced_on"
       }
     ]
   }

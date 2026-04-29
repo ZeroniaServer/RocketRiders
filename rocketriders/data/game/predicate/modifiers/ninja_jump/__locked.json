@@ -3,15 +3,15 @@
   "terms": [
     {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/ninja_jump/__forced_on"
+      "name": "game:modifiers/ninja_jump/__forced_on"
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/ninja_jump/__forced_off"
+      "name": "game:modifiers/ninja_jump/__forced_off"
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/ninja_jump/__incompatible_modifiers"
+      "name": "game:modifiers/ninja_jump/__incompatible_modifiers"
     }
   ]
 }

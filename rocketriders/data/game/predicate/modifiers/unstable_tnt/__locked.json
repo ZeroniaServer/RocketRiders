@@ -3,15 +3,15 @@
   "terms": [
     {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/unstable_tnt/__forced_on"
+      "name": "game:modifiers/unstable_tnt/__forced_on"
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/unstable_tnt/__forced_off"
+      "name": "game:modifiers/unstable_tnt/__forced_off"
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/unstable_tnt/__incompatible_modifiers"
+      "name": "game:modifiers/unstable_tnt/__incompatible_modifiers"
     }
   ]
 }

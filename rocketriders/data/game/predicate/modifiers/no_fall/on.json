@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/instant_tnt_explosions/__forced_off"
+      "name": "game:modifiers/no_fall/__forced_off"
     }
   },
   {
@@ -16,14 +16,14 @@
           "score": "config",
           "target": {
             "type": "minecraft:fixed",
-            "name": "$instant_tnt_explosions"
+            "name": "$no_fall"
           }
         },
         "range": 1
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/instant_tnt_explosions/__forced_on"
+        "name": "game:modifiers/no_fall/__forced_on"
       }
     ]
   }

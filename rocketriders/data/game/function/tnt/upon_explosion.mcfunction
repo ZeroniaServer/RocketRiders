@@ -28,7 +28,7 @@ execute if predicate game:phase/match/closing/outcome if score $explosion_power 
 execute if predicate game:phase/match/closing/outcome run kill @s
 
 # Force explosion if necessary
-execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:modifiers/instant_tnt_explosions/on run data modify entity @s fuse set value 0
+execute unless predicate game:game_rules/friendly_tnt_damage/on if predicate game:modifiers/instant_tnt/on run data modify entity @s fuse set value 0
 
 # Castle cracks
 execute if predicate game:arena_details/top/castle unless predicate game:game_rules/friendly_tnt_damage/on if predicate custom:tnt/near_castle run function game:explosion_deepslate_cracks/medium

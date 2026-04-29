@@ -5,6 +5,12 @@ scoreboard objectives remove flag.is_dead
 
 execute if score $disable_tying config matches 1 run scoreboard players set $disable_overtime config 1
 
+execute if score $instant_tnt_explosions config matches 1 run scoreboard players set $instant_tnt config 1
+scoreboard players reset $instant_tnt_explosions config
+
+execute if score $no_fall_damage config matches 1 run scoreboard players set $no_fall config 1
+scoreboard players reset $no_fall_damage config
+
 function game:forcestop
 schedule function game:match_components/reset 5t
 

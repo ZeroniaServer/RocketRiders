@@ -1,6 +1,6 @@
 ##Disables all Modifiers
 scoreboard players reset $instamine config
-scoreboard players reset $no_fall_damage config
+scoreboard players reset $no_fall config
 scoreboard players reset $explosive config
 scoreboard players reset $rocket_residers config
 scoreboard players reset $sonar config
@@ -19,7 +19,7 @@ scoreboard players reset $collision_control config
 scoreboard players reset $punchable_tnt config
 scoreboard players reset $unstable_tnt config
 scoreboard players reset $hobbits config
-scoreboard players reset $instant_tnt_explosions config
+scoreboard players reset $instant_tnt config
 scoreboard players reset $long_arms config
 execute if predicate game:feature_flags/1_4_0_update/on run scoreboard players reset $rotting config
 

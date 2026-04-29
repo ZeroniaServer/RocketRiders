@@ -3,15 +3,15 @@
   "terms": [
     {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/no_fall_damage/__forced_on"
+      "name": "game:modifiers/instant_tnt/__forced_on"
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/no_fall_damage/__forced_off"
+      "name": "game:modifiers/instant_tnt/__forced_off"
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/no_fall_damage/__incompatible_modifiers"
+      "name": "game:modifiers/instant_tnt/__incompatible_modifiers"
     }
   ]
 }

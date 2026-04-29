@@ -9,8 +9,8 @@ execute if entity @s[scores={modifierID=0}] if predicate game:modifiers/instamin
 execute if entity @s[scores={modifierID=0}] unless predicate game:modifiers/instamine/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #No Fall
-execute if entity @s[scores={modifierID=1}] if predicate game:modifiers/no_fall_damage/on run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=1}] unless predicate game:modifiers/no_fall_damage/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=1}] if predicate game:modifiers/no_fall/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=1}] unless predicate game:modifiers/no_fall/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Explosive
 execute if entity @s[scores={modifierID=2}] if predicate game:modifiers/explosive/on run setblock -69 191 75 warped_wall_sign[facing=east]
@@ -82,8 +82,8 @@ execute if entity @s[scores={modifierID=18}] if predicate game:modifiers/unstabl
 execute if entity @s[scores={modifierID=18}] unless predicate game:modifiers/unstable_tnt/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Instant TNT
-execute if entity @s[scores={modifierID=19}] if predicate game:modifiers/instant_tnt_explosions/on run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if entity @s[scores={modifierID=19}] unless predicate game:modifiers/instant_tnt_explosions/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=19}] if predicate game:modifiers/instant_tnt/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if entity @s[scores={modifierID=19}] unless predicate game:modifiers/instant_tnt/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Hobbits
 execute if entity @s[scores={modifierID=20}] if predicate game:modifiers/hobbits/on run setblock -69 191 75 warped_wall_sign[facing=east]

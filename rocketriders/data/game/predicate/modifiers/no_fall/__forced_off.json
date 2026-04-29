@@ -20,7 +20,7 @@
         "score": "match_components",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$config_override.no_fall_damage"
+          "name": "$config_override.no_fall"
         }
       },
       "range": -1

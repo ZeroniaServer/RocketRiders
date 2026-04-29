@@ -36,7 +36,7 @@
     },
     {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/instant_tnt_explosions/on"
+      "name": "game:modifiers/instant_tnt/on"
     }
   ]
 }

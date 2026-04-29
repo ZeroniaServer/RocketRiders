@@ -20,7 +20,7 @@
         "score": "match_components",
         "target": {
           "type": "minecraft:fixed",
-          "name": "$config_override.instant_tnt_explosions"
+          "name": "$config_override.instant_tnt"
         }
       },
       "range": -1

@@ -7,7 +7,7 @@ tag @s remove BlueWon
 tag @s remove YellowWon
 tag @s remove BothWon
 
-execute if predicate game:modifiers/no_fall_damage/on run gamerule minecraft:fall_damage false
+execute if predicate game:modifiers/no_fall/on run gamerule minecraft:fall_damage false
 
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/forget_canopy
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/forget_nova_attach

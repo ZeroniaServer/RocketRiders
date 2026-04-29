@@ -41,12 +41,9 @@ execute if predicate game:world_options/show_extra_player_credits/on run setbloc
 execute unless predicate game:world_options/show_extra_player_credits/on run setblock -69 191 73 crimson_wall_sign[facing=east]
 
 
-####RESTORE DEFAULTS####
+#### RESTORE DEFAULTS ####
 ##Individual signs
-execute if predicate game:arena_details/__can_restore_defaults run data modify block -57 192 78 front_text.messages[1] set value {"text":"Restore Default","color":"#888888","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add RestoreDefault"}}
-execute if predicate game:arena_details/__can_restore_defaults run data modify block -57 192 78 front_text.messages[2] set value {"text":"Base Details","color":"#888888","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
-execute unless predicate game:arena_details/__can_restore_defaults run data modify block -57 192 78 front_text.messages[1] set value {"text":"Restore Default","color":"#888888","click_event":{"action":"run_command","command":"/tellraw @s {\"text\":\"This action cannot be performed in this game mode.\",\"color\":\"dark_gray\",\"italic\":true}"}}
-execute unless predicate game:arena_details/__can_restore_defaults run data modify block -57 192 78 front_text.messages[2] set value {"text":"Base Details","color":"#888888","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
+data modify block -57 192 78 front_text.messages set value ["",{color:"#888888",text:"Restore Default",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/restore_defaults"}},{color:"#888888",text:"Base Details"},[{color:"#666666",font:"minecraft:uniform",text:""},{keybind:"key.sneak"}," to remove all"]]
 data modify block -69 193 74 front_text.messages[1] set value {"text":"Restore Default","color":"light_purple","click_event":{"action":"run_command","command":"/scoreboard players operation @e[x=0,type=armor_stand,tag=Selection,limit=1] SetGamemode = @e[x=0,type=armor_stand,tag=rr_normal] gamemodeID"}}
 data modify block -69 193 74 front_text.messages[2] set value {"text":"Game Mode","color":"light_purple","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
 data modify block -69 193 74 front_text.messages[3] set value {"text":"","click_event":{"action":"run_command","command":"/scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] refreshsigns 1"}}
@@ -70,7 +67,7 @@ data modify block -69 193 73 front_text.messages[0] set value {"text":""}
 data modify block -69 193 73 front_text.messages[1] set value {"text":"Restore Default","color":"dark_green","click_event":{"action":"run_command","command":"/tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add DefaultWorld"}}
 data modify block -69 193 73 front_text.messages[2] set value {"text":"World Settings","color":"dark_green","click_event":{"action":"run_command","command":"/execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"}}
 
-####GAME RULES####
+#### GAME RULES ####
 #Pierce Prevention
 execute unless predicate game:game_rules/disable_pierce_prevention/locked unless predicate game:game_rules/disable_pierce_prevention/on run \
   data modify block -70 193 79 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_pierce_prevention"},text:"Pierce Prevention"},{bold:true,color:"green",text:"Enabled"},"",""]
@@ -165,7 +162,7 @@ execute unless predicate game:match_components/duel_settings_locked if predicate
 execute if predicate game:match_components/duel_settings_locked run \
   data modify block -70 192 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/impact_utilities"},text:"Impact Utilities"},{bold:true,color:"white",text:"Locked"},"",""]
 
-####WORLD SETTINGS####
+#### WORLD SETTINGS ####
 #Player Credits
 execute if predicate game:world_options/show_extra_player_credits/on run \
   data modify block -69 191 73 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/show_extra_player_credits"},text:"Player Credits"},{bold:true,color:"green",text:"Enabled"},"",""]

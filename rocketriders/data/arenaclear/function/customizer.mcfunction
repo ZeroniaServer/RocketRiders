@@ -14,13 +14,19 @@ scoreboard players operation @s SetGamemode %= maxID gamemodeID
 scoreboard players add @s SetGamemode 1
 
 ##RESTORE DEFAULT DETAILS
-execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/top config 1
-execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/top_sides config 1
-execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/middle config 1
-execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/bottom config 1
-execute if entity @s[tag=RestoreDefault] run scoreboard players set $arena_details/portal config 1
-execute if entity @s[tag=RestoreDefault] run function arenaclear:refreshcustomizer
-tag @s[tag=RestoreDefault] remove RestoreDefault
+execute if entity @s[tag=DefaultCustomizer,tag=!DefaultCustomizerAll] run scoreboard players set $arena_details/top config 1
+execute if entity @s[tag=DefaultCustomizer,tag=!DefaultCustomizerAll] run scoreboard players set $arena_details/top_sides config 1
+execute if entity @s[tag=DefaultCustomizer,tag=!DefaultCustomizerAll] run scoreboard players set $arena_details/middle config 1
+execute if entity @s[tag=DefaultCustomizer,tag=!DefaultCustomizerAll] run scoreboard players set $arena_details/bottom config 1
+execute if entity @s[tag=DefaultCustomizer,tag=!DefaultCustomizerAll] run scoreboard players set $arena_details/portal config 1
+execute if entity @s[tag=DefaultCustomizer,tag=DefaultCustomizerAll] run scoreboard players set $arena_details/top config 0
+execute if entity @s[tag=DefaultCustomizer,tag=DefaultCustomizerAll] run scoreboard players set $arena_details/top_sides config 0
+execute if entity @s[tag=DefaultCustomizer,tag=DefaultCustomizerAll] run scoreboard players set $arena_details/middle config 0
+execute if entity @s[tag=DefaultCustomizer,tag=DefaultCustomizerAll] run scoreboard players set $arena_details/bottom config 0
+execute if entity @s[tag=DefaultCustomizer,tag=DefaultCustomizerAll] run scoreboard players set $arena_details/portal config 0
+execute if entity @s[tag=DefaultCustomizer] run function arenaclear:refreshcustomizer
+tag @s[tag=DefaultCustomizer] remove DefaultCustomizerAll
+tag @s[tag=DefaultCustomizer] remove DefaultCustomizer
 
 ##RESTORE DEFAULT GAME RULES
 execute if entity @s[tag=DefaultOptions,tag=!GamemodeRefreshed] run scoreboard players reset $disable_pierce_prevention config

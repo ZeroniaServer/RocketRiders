@@ -30,3 +30,5 @@ fill 68 200 113 66 203 119 minecraft:light[level=15] replace minecraft:light str
 fill 79 217 72 81 209 70 minecraft:light[level=15] replace minecraft:air strict
 fill 66 206 81 64 218 83 minecraft:light[level=15] replace minecraft:air strict
 function world_updates:1_3_3-pre1/try_fill_biome {_:""}
+
+execute as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function arenaclear:refreshoptionssigns

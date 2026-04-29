@@ -3,6 +3,8 @@ scoreboard objectives remove FallDistance
 scoreboard objectives remove flag.is_nova_attached
 scoreboard objectives remove flag.is_dead
 
+execute if score $disable_tying config matches 1 run scoreboard players set $disable_overtime config 1
+
 function game:forcestop
 schedule function game:match_components/reset 5t
 

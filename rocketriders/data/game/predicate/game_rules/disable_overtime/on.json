@@ -1,0 +1,30 @@
+[
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/disable_overtime/forced_off"
+    }
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "score": "config",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "$disable_overtime"
+          }
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:game_rules/disable_overtime/forced_on"
+      }
+    ]
+  }
+]

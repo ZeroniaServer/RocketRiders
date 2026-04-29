@@ -152,6 +152,10 @@ execute if predicate game:match_components/has_chase_crystals run data modify st
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_flags",label:"🔒 has_flags",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:match_components/has_flags run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set value "true"
 
+# has_overtime (locked)
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_overtime",label:"🔒 has_overtime",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:match_components/has_overtime run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set value "true"
+
 # has_powerups (locked)
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_powerups",label:"🔒 has_powerups",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:match_components/has_powerups run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set value "true"
@@ -256,6 +260,9 @@ execute if score $config_override.disable_cannoning match_components matches -1 
 
 execute if score $config_override.disable_hotbar_limit match_components matches 1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_hotbar_limit"},width:300,options:[{id:"1",display:"on"}]}
 execute if score $config_override.disable_hotbar_limit match_components matches -1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_hotbar_limit"},width:300,options:[{id:"-1",display:"off"}]}
+
+execute if score $config_override.disable_overtime match_components matches 1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_overtime"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.disable_overtime match_components matches -1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_overtime"},width:300,options:[{id:"-1",display:"off"}]}
 
 execute if score $config_override.disable_pierce_prevention match_components matches 1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_pierce_prevention"},width:300,options:[{id:"1",display:"on"}]}
 execute if score $config_override.disable_pierce_prevention match_components matches -1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.disable_pierce_prevention"},width:300,options:[{id:"-1",display:"off"}]}

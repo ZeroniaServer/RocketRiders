@@ -6,7 +6,7 @@ execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @
 execute if predicate game:modifiers/minute_mix/on run function rr_ctf:items/minutemix
 
 #Overtime tiebreaker
-execute if score $match_play_time global matches 36000 unless predicate game:game_rules/disable_tying/on run tag @s add CTFOvertime
+execute if score $match_play_time global matches 36000 unless predicate game:game_rules/disable_overtime/on run tag @s add CTFOvertime
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=CTFOvertime] run function rr_ctf:everytick/overtime
 
 #custom prevention message

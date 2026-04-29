@@ -8,6 +8,7 @@ scoreboard players set $config_override.collision_control match_components -1
 scoreboard players set $config_override.rocket_residers match_components -1
 scoreboard players set $custom_pierce_prevention match_components 1
 scoreboard players set $has_flags match_components 1
+scoreboard players set $has_overtime match_components 1
 scoreboard players set $lower_void match_components 1
 scoreboard players set $no_portals match_components 1
 

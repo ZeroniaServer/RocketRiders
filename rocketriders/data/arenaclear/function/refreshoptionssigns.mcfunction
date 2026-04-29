@@ -14,10 +14,14 @@ execute unless predicate game:match_components/duel_settings_locked if predicate
 execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/item_stacking/on run setblock -70 191 77 crimson_wall_sign[facing=east]
 execute if predicate game:match_components/duel_settings_locked run setblock -70 191 77 crimson_wall_sign[facing=east]
 
-#Tiebreakers
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/on run setblock -70 193 77 crimson_wall_sign[facing=east]
-execute unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_tying/on run setblock -70 193 77 warped_wall_sign[facing=east]
-execute if predicate game:match_components/duel_settings_locked run setblock -70 193 77 crimson_wall_sign[facing=east]
+#Tiebreakers / Overtime
+execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/on run setblock -70 193 77 crimson_wall_sign[facing=east]
+execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_tying/on run setblock -70 193 77 warped_wall_sign[facing=east]
+execute unless predicate game:match_components/has_overtime if predicate game:match_components/duel_settings_locked run setblock -70 193 77 crimson_wall_sign[facing=east]
+
+execute if predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_overtime/on run setblock -70 193 77 crimson_wall_sign[facing=east]
+execute if predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked unless predicate game:game_rules/disable_overtime/on run setblock -70 193 77 warped_wall_sign[facing=east]
+execute if predicate game:match_components/has_overtime if predicate game:match_components/duel_settings_locked run setblock -70 193 77 crimson_wall_sign[facing=east]
 
 #Snipe Portals
 execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/snipe_portals/on run setblock -70 193 78 warped_wall_sign[facing=east]
@@ -113,18 +117,28 @@ execute if predicate game:game_rules/item_delay/locked unless predicate game:mat
 execute if predicate game:game_rules/item_delay/locked if predicate game:match_components/no_item_timer run \
   data modify block -70 191 79 front_text.messages set value [{click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/item_delay"},text:"Item Delay:"},["",{bold:true,text:"XX"}," seconds"],"",{bold:true,text:"Locked"}]
 
-#Tie/Tiebreakers
-execute unless predicate game:game_rules/disable_tying/locked unless predicate game:game_rules/disable_tying/on run \
+#Tiebreakers / Overtime
+execute unless predicate game:match_components/has_overtime unless predicate game:game_rules/disable_tying/locked unless predicate game:game_rules/disable_tying/on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"green",text:"Enabled"},"",""]
-execute unless predicate game:game_rules/disable_tying/locked if predicate game:game_rules/disable_tying/on run \
+execute unless predicate game:match_components/has_overtime unless predicate game:game_rules/disable_tying/locked if predicate game:game_rules/disable_tying/on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"red",text:"Disabled"},"",""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/forced_on run \
+execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/forced_on run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
-execute unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/forced_off run \
+execute unless predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_tying/forced_off run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
-execute if predicate game:match_components/duel_settings_locked run \
+execute unless predicate game:match_components/has_overtime if predicate game:match_components/duel_settings_locked run \
   data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_tying"},text:"Tiebreakers"},{bold:true,color:"white",text:"Locked"},"",""]
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=ctfEnabled] run data modify block -70 193 77 front_text.messages[0].text set value "Overtime"
+
+execute if predicate game:match_components/has_overtime unless predicate game:game_rules/disable_overtime/locked unless predicate game:game_rules/disable_overtime/on run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"green",text:"Enabled"},"",""]
+execute if predicate game:match_components/has_overtime unless predicate game:game_rules/disable_overtime/locked if predicate game:game_rules/disable_overtime/on run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"red",text:"Disabled"},"",""]
+execute if predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_overtime/forced_on run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"red",text:"Disabled"},{bold:true,color:"white",text:"Locked"},""]
+execute if predicate game:match_components/has_overtime unless predicate game:match_components/duel_settings_locked if predicate game:game_rules/disable_overtime/forced_off run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"green",text:"Enabled"},{bold:true,color:"white",text:"Locked"},""]
+execute if predicate game:match_components/has_overtime if predicate game:match_components/duel_settings_locked run \
+  data modify block -70 193 77 front_text.messages set value [{color:"white",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_option_sign/disable_overtime"},text:"Overtime"},{bold:true,color:"white",text:"Locked"},"",""]
 
 #Snipe Portals
 execute unless predicate game:game_rules/snipe_portals/locked if predicate game:game_rules/snipe_portals/on run \

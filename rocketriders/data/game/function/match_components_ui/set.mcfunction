@@ -105,8 +105,7 @@ execute if score $crusade_banners match_components matches 0 run scoreboard play
 # castle_type
 $scoreboard players set $castle_type var $(castle_type)
 data remove storage rocketriders:match components."castle_type"
-execute if score $castle_type var matches 1 run data modify storage rocketriders:match components."castle_type" set value "normal"
-execute if score $castle_type var matches 2 run data modify storage rocketriders:match components."castle_type" set value "deepslate"
+execute if score $castle_type var matches 1 run data modify storage rocketriders:match components."castle_type" set value "deepslate"
 
 # arena/classic_base_frames
 $execute store success score $arena/classic_base_frames match_components if predicate {condition:"value_check",value:$(arena__classic_base_frames),range:1}

@@ -1,16 +1,17 @@
 ##Any achievements/conditions to be given if Yellow wins
+# Count air blocks in the base
+execute unless predicate game:modifiers/hardcore/on run fill 38 34 52 -14 63 66 void_air replace #custom:air strict
+execute unless predicate game:modifiers/hardcore/on store result score $total_air_blocks var run fill 38 34 52 -14 63 66 air replace void_air strict
+execute if predicate game:modifiers/hardcore/on run fill 38 34 66 -14 63 64 void_air replace #custom:air strict
+execute if predicate game:modifiers/hardcore/on store result score $total_air_blocks var run fill 38 34 66 -14 63 64 air replace void_air strict
+execute if predicate game:arena_details/top/castle run scoreboard players remove $total_air_blocks var 808
+
 #Swiss Cheese (part 1)
-execute unless predicate game:modifiers/hardcore/on run scoreboard players set SwissCheese SwissCheese 11500
-execute unless predicate game:modifiers/hardcore/on store result score Yellow SwissCheese run clone 38 34 52 -14 63 66 -48 46 -1 filtered air
-#reduce minimum blocks for Hardcore modifier
-execute if predicate game:modifiers/hardcore/on run scoreboard players set SwissCheese SwissCheese 2298
-execute if predicate game:modifiers/hardcore/on store result score Yellow SwissCheese run clone 38 34 66 -14 63 64 -48 46 -1 filtered air
-execute if score Yellow SwissCheese >= SwissCheese SwissCheese run tag @a[x=0,predicate=custom:team/yellow] add SwissCheese
-scoreboard players reset SwissCheese SwissCheese
+execute unless predicate game:modifiers/hardcore/on if score $total_air_blocks var matches 11500.. run tag @a[x=0,predicate=custom:team/yellow] add GrantSwissCheeseAchievement
+execute if predicate game:modifiers/hardcore/on if score $total_air_blocks var matches 2298.. run tag @a[x=0,predicate=custom:team/yellow] add GrantSwissCheeseAchievement
 
 #Simple and Clean (part 1)
-execute if score Yellow SwissCheese matches 0 if score $match_play_time global matches ..2400 run tag @a[x=0,predicate=custom:team/yellow] add SimpleAndClean
-scoreboard players reset Yellow SwissCheese
+execute if score $total_air_blocks var matches 0 if score $match_play_time global matches ..2400 run tag @a[x=0,predicate=custom:team/yellow] add SimpleAndClean
 
 #Deus Ex Machina (part 1)
 execute if predicate game:portal_type/default if function achievements:machina_check/yellow run tag @a[x=0,predicate=custom:team/yellow] add DeusExMachina

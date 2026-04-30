@@ -11,8 +11,8 @@ advancement grant @a[x=0,scores={WinStreak=10..},tag=Loser] only achievements:rr
 scoreboard players reset @a[x=0,tag=Loser] WinStreak
 
 #Swiss Cheese (part 2)
-advancement grant @a[x=0,tag=SwissCheese,tag=Winner] only achievements:rr_challenges/swiss_cheese
-tag @a[x=0] remove SwissCheese
+advancement grant @a[x=0,tag=GrantSwissCheeseAchievement,tag=Winner] only achievements:rr_challenges/swiss_cheese
+tag @a[x=0] remove GrantSwissCheeseAchievement
 
 #Simple And Clean (part 2)
 advancement grant @a[x=0,tag=SimpleAndClean,tag=Winner] only achievements:rr_challenges/simple_and_clean

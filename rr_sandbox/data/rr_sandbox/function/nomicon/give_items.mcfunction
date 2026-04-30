@@ -61,7 +61,7 @@ execute if score @s nomicon matches 46 run return run function items:give/spell_
 
 execute if score @s nomicon matches 47 run return run function items:give/spell_book/fire with storage rocketriders:main nomicon
 execute if score @s nomicon matches 48 run return run function items:give/missile/tomatwo with storage rocketriders:main nomicon
-execute if score @s nomicon matches 49 run return run function items:give/surprise_missile/all with storage rocketriders:main nomicon
+execute if score @s nomicon matches 49 run return run function items:give/surprise_egg with storage rocketriders:main nomicon
 execute if score @s nomicon matches 50 run return run function items:give/invisibility_potion with storage rocketriders:main nomicon
 execute if score @s nomicon matches 51 run return run function items:give/jump_boost_potion with storage rocketriders:main nomicon
 execute if score @s nomicon matches 52 run return run function items:give/spectral_arrow with storage rocketriders:main nomicon

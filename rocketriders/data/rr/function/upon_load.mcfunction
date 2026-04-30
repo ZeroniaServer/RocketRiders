@@ -373,11 +373,7 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "spectral_arrow": "items:experimental/spectral_arrow",\
     "spell_book": "items:misc/spell_book",\
     "spell_wand": "items:misc/spell_wand",\
-    "surprise_missile/all": "items:missile/surprise/all",\
-    "surprise_missile/heavy": "items:missile/surprise/heavy",\
-    "surprise_missile/lightning": "items:missile/surprise/lightning",\
-    "surprise_missile/normal": "items:missile/surprise/normal",\
-    "surprise_missile/special": "items:missile/surprise/special",\
+    "surprise_egg": "items:missile/surprise",\
     "tipped_arrow_blindness": "items:misc/tipped_arrow_blindness",\
     "tipped_arrow_levitation": "items:misc/tipped_arrow_levitation",\
     "tipped_arrow_slowness": "items:misc/tipped_arrow_slowness",\

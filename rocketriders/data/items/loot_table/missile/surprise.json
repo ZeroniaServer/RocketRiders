@@ -11,17 +11,17 @@
               "function": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
-                  "id": "surprise_missile/heavy",
+                  "id": "surprise_egg",
                   "spawn_egg": {
-                    "type": "surprise_missile",
-                    "category": "heavy"
+                    "type": "random_missile",
+                    "category": "all"
                   }
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],
                   "strings": [
                     "rocketriders",
-                    "surprise_missile/heavy",
+                    "surprise_egg",
                     "none"
                   ]
                 },
@@ -100,7 +100,7 @@
                 },
                 {
                   "bold": true,
-                  "color": "dark_red",
+                  "color": "light_purple",
                   "text": "[???] "
                 },
                 [

@@ -19,7 +19,7 @@ execute if data storage rocketriders:main spawn_egg{type:"cluster_fireball"} pos
 ## TODO: Refactor spawning system to use updated format. Until then, just convert the marker into the legacy format.
 execute if data storage rocketriders:main spawn_egg{type:"obsidian_shield"} positioned as @s run function items:spawn_egg/convert_to_legacy_obsidian_shield
 execute if data storage rocketriders:main spawn_egg{type:"missile"} positioned as @s run function items:spawn_egg/convert_to_legacy_missile
-execute if data storage rocketriders:main spawn_egg{type:"surprise_missile"} positioned as @s run function items:spawn_egg/convert_to_legacy_surprise_missile
+execute if data storage rocketriders:main spawn_egg{type:"random_missile"} positioned as @s run function items:spawn_egg/convert_to_legacy_random_missile
 
 tag @a[x=0,tag=placer] remove placer
 kill @s

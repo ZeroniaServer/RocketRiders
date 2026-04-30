@@ -38,5 +38,5 @@ execute if predicate game:phase/match/play run scoreboard players reset @s crusa
 
 # Give knights new shields when they respawn
 execute if predicate game:phase/match/play if predicate custom:team/any_playing_team if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] if predicate rr_crusade:kit/knight run clear @s *[custom_data~{id:"knight_shield"}]
-execute if predicate game:phase/match/play if predicate custom:team/any_playing_team if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] if predicate rr_crusade:kit/knight if items entity @s weapon.offhand * run loot give @s loot items:misc/knight_shield
-execute if predicate game:phase/match/play if predicate custom:team/any_playing_team if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] if predicate rr_crusade:kit/knight unless items entity @s weapon.offhand * run loot replace entity @s weapon.offhand loot items:misc/knight_shield
+execute if predicate game:phase/match/play if predicate custom:team/any_playing_team if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] if predicate rr_crusade:kit/knight if items entity @s weapon.offhand * run loot give @s loot items:item/knight_shield
+execute if predicate game:phase/match/play if predicate custom:team/any_playing_team if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] if predicate rr_crusade:kit/knight unless items entity @s weapon.offhand * run loot replace entity @s weapon.offhand loot items:item/knight_shield

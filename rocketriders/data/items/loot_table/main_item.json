@@ -8,7 +8,7 @@
           "children": [
             {
               "type": "minecraft:loot_table",
-              "value": "items:misc/shooting_saber",
+              "value": "items:item/shooting_saber",
               "conditions": [
                 {
                   "condition": "minecraft:reference",
@@ -18,7 +18,7 @@
             },
             {
               "type": "minecraft:loot_table",
-              "value": "items:misc/piercing_pickaxe",
+              "value": "items:item/piercing_pickaxe",
               "conditions": [
                 {
                   "condition": "minecraft:reference",
@@ -28,11 +28,11 @@
             },
             {
               "type": "minecraft:alternatives",
-              "value": "items:misc/piercing_pickaxe",
+              "value": "items:item/piercing_pickaxe",
               "children": [
                 {
                   "type": "minecraft:loot_table",
-                  "value": "items:misc/knight_sword",
+                  "value": "items:item/knight_sword",
                   "conditions": [
                     {
                       "condition": "minecraft:reference",
@@ -42,7 +42,7 @@
                 },
                 {
                   "type": "minecraft:loot_table",
-                  "value": "items:misc/shooting_saber",
+                  "value": "items:item/shooting_saber",
                   "conditions": [
                     {
                       "condition": "minecraft:reference",
@@ -52,7 +52,7 @@
                 },
                 {
                   "type": "minecraft:loot_table",
-                  "value": "items:misc/spell_wand",
+                  "value": "items:item/spell_wand",
                   "conditions": [
                     {
                       "condition": "minecraft:reference",
@@ -70,7 +70,7 @@
             },
             {
               "type": "minecraft:loot_table",
-              "value": "items:misc/rocket_nomicon",
+              "value": "items:item/rocket_nomicon",
               "conditions": [
                 {
                   "condition": "minecraft:reference",

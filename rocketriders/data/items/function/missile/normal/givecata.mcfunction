@@ -12,8 +12,8 @@ execute if entity @s[scores={HasCata=1..},tag=!fullHotbar,tag=!BackCata,tag=!ite
 title @s[tag=!fullHotbar,tag=!BackCata,tag=itemDeducted] actionbar {"text":"Catapult already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackCata,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
-execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasCata=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/givecata) Gave Catapult to ",{selector:"@s"}]}
-execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasCata=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/givecata) Failed to give Catapult to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasCata=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givecata) Gave Catapult to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasCata=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givecata) Failed to give Catapult to ",{selector:"@s"}]}
 title @s[scores={HasCata=0},tag=!fullHotbar,tag=!BackCata,tag=!itemDeducted] actionbar {"text":"Catapult obtained.","color":"aqua"}
 execute if entity @s[scores={HasCata=0},tag=!fullHotbar] run function items:give/missile/catapult {count:1}
 

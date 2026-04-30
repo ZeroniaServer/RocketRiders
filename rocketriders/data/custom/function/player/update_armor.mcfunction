@@ -41,7 +41,7 @@ execute if predicate custom:team/any_playing_team if predicate game:armor_type/c
 # Rank Boots
 execute unless function game:norankboots run loot replace block 0 184 -16 container.0 loot items:armor/rank_boots
 # Elytra
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate items:elytra/elytra unless items entity @s armor.chest *[custom_data~{id:"elytra"}] run loot replace block 0 184 -16 container.2 loot items:misc/elytra
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate items:elytra/elytra unless items entity @s armor.chest *[custom_data~{id:"elytra"}] run loot replace block 0 184 -16 container.2 loot items:item/elytra
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate items:elytra/elytra if items entity @s armor.chest *[custom_data~{id:"elytra"}] run item replace block 0 184 -16 container.2 from entity @s armor.chest
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate items:elytra/elytra if items entity @s armor.chest *[custom_data~{id:"elytra",invisible:true}] unless predicate custom:entity/has_invisibility_effect run item modify block 0 184 -16 container.2 [{function:"minecraft:set_components",components:{"minecraft:equippable":{asset_id:"minecraft:elytra",damage_on_hurt:false,equip_sound:"minecraft:item.armor.equip_elytra",slot:"chest"}}},{function:"minecraft:set_custom_data",tag:{invisible:false}}]
 # Invisibility
@@ -53,8 +53,8 @@ execute if predicate custom:team/any_playing_team if predicate game:phase/match/
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag] unless entity @s[tag=!CarryFB1,tag=!CarryFB2] run function custom:__impl__/update_armor/flag_blue with storage rocketriders:teams blue.team_banner
 execute if predicate custom:team/any_playing_team if predicate game:phase/match/play if predicate game:match_components/has_flags if entity @s[tag=CarryFlag] unless entity @s[tag=!CarryFY1,tag=!CarryFY2] run function custom:__impl__/update_armor/flag_yellow with storage rocketriders:teams yellow.team_banner
 # Game Ending
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Winner] run loot replace block 0 184 -16 container.2 loot items:ending/celebratory_elytra
-execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Loser] run loot replace block 0 184 -16 container.3 loot items:ending/loser_banner
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Winner] run loot replace block 0 184 -16 container.2 loot items:item/celebratory_elytra
+execute if predicate custom:team/any_playing_team if predicate game:phase/match/closing if entity @s[tag=Loser] run loot replace block 0 184 -16 container.3 loot items:item/flag_of_shameful_loss
 
 # Apply changes
 loot replace entity @s armor.feet 4 mine 0 184 -16 stick[custom_data={drop_contents:true}]

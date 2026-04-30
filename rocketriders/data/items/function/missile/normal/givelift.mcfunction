@@ -12,8 +12,8 @@ execute if entity @s[scores={HasLift=1..},tag=!fullHotbar,tag=!BackLift,tag=!ite
 title @s[tag=!fullHotbar,tag=!BackLift,tag=itemDeducted] actionbar {"text":"Lifter already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackLift,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
-execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasLift=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/givelift) Gave Lifter to ",{selector:"@s"}]}
-execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasLift=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/givelift) Failed to give Lifter to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasLift=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givelift) Gave Lifter to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasLift=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givelift) Failed to give Lifter to ",{selector:"@s"}]}
 title @s[scores={HasLift=0},tag=!fullHotbar,tag=!BackLift,tag=!itemDeducted] actionbar {"text":"Lifter obtained.","color":"aqua"}
 execute if entity @s[scores={HasLift=0},tag=!fullHotbar] run function items:give/missile/lifter {count:1}
 

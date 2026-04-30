@@ -7,7 +7,7 @@ execute if predicate game:item_pool/missile/warhead if entity @e[x=0,type=armor_
 
 #Select a missile and run appropriate give function
 tag @e[x=0,type=marker,tag=rng3,sort=random,limit=1] add rngSelected
-execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:missile/heavy/rng) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=rng3,tag=rngSelected]"}]}
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:item/missile/rng) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=rng3,tag=rngSelected]"}]}
 
 #> Kill items to prevent duplication glitches
 execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,tag=rngSelected,tag=rngAux] as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/auxiliary"}] run function items:deduct
@@ -17,8 +17,8 @@ execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,
 
 function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAux] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/giveaux
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngRift] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/giverift
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngJbuster] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/givejbuster
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngWar] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/givewar
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAux] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/giveaux
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngRift] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/giverift
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngJbuster] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/givejbuster
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngWar] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/givewar
 kill @e[x=0,type=marker,tag=rng3]

@@ -12,8 +12,8 @@ execute if entity @s[scores={HasBroad=1..},tag=!fullHotbar,tag=!BackBroad,tag=!i
 title @s[tag=!fullHotbar,tag=!BackBroad,tag=itemDeducted] actionbar {"text":"Broadsword already obtained.","color":"light_purple"}
 execute if entity @s[tag=!fullHotbar,tag=!BackBroad,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
-execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasBroad=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/special/givebroad) Gave Broadsword to ",{selector:"@s"}]}
-execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasBroad=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/special/givebroad) Failed to give Broadsword to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasBroad=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givebroad) Gave Broadsword to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasBroad=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givebroad) Failed to give Broadsword to ",{selector:"@s"}]}
 title @s[scores={HasBroad=0},tag=!fullHotbar,tag=!BackBroad,tag=!itemDeducted] actionbar {"text":"Broadsword obtained.","color":"light_purple"}
 execute if entity @s[scores={HasBroad=0},tag=!fullHotbar] run function items:give/missile/broadsword {count:1}
 

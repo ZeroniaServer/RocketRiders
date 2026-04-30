@@ -1,2 +1,2 @@
-function items:util/givearrows
+function items:item/givearrows
 function rr_chase:chaseblocks/fullhotbarwarn

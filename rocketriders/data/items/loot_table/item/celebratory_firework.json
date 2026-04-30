@@ -14,13 +14,13 @@
                   "blocks": "#custom:missileandbase"
                 },
                 "minecraft:custom_data": {
-                  "id": "celebratory_fireworks"
+                  "id": "celebratory_firework"
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],
                   "strings": [
                     "rocketriders",
-                    "celebratory_fireworks",
+                    "celebratory_firework",
                     "none"
                   ]
                 },

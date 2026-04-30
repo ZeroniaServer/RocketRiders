@@ -21,7 +21,7 @@ execute if predicate rr_swap:blue_team_is_light unless predicate game:game_rules
 execute if predicate rr_swap:blue_team_is_dark as @e[x=0,type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/darkblueitems
 execute if predicate rr_swap:blue_team_is_light as @e[x=0,type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/lightblueitems
 execute as @e[x=0,type=marker,tag=SelectedSwapRNG3,tag=rngArrows] as @e[x=0,type=item] if items entity @s contents arrow run function items:deduct
-execute as @e[x=0,type=marker,tag=SelectedSwapRNG3,tag=rngArrows] as @a[x=0,predicate=custom:team/any_playing_team] run function items:util/givearrows
+execute as @e[x=0,type=marker,tag=SelectedSwapRNG3,tag=rngArrows] as @a[x=0,predicate=custom:team/any_playing_team] run function items:item/givearrows
 
 kill @e[x=0,type=marker,tag=swapRNGD]
 kill @e[x=0,type=marker,tag=swapRNGL]

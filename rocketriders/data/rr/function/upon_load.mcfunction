@@ -321,64 +321,64 @@ function rr_sandbox:nomicon/load_pages
 
 # Item Custom Data ID to Loot Table Map
 data modify storage rocketriders:items id_to_loot_table_map set value {\
-    "arrow": "items:misc/arrow",\
+    "arrow": "items:item/arrow",\
     "booster_rocket": "items:experimental/booster_rocket",\
     "lunging_spear": "items:experimental/lunging_spear",\
     "building_block": "items:experimental/building_block",\
-    "canopy": "items:util/canopy",\
-    "celebratory_elytra": "items:ending/celebratory_elytra",\
-    "celebratory_fireworks": "items:ending/celebratory_fireworks",\
-    "cluster_fireball": "items:util/cluster_fireball",\
-    "elytra": "items:misc/elytra",\
-    "fireball": "items:util/fireball",\
-    "icbm": "items:util/icbm",\
+    "canopy": "items:item/canopy",\
+    "celebratory_elytra": "items:item/celebratory_elytra",\
+    "celebratory_firework": "items:item/celebratory_firework",\
+    "cluster_fireball": "items:item/cluster_fireball",\
+    "elytra": "items:item/elytra",\
+    "fireball": "items:item/fireball",\
+    "flag_of_shameful_loss": "items:item/flag_of_shameful_loss",\
+    "icbm": "items:item/icbm",\
     "invisibility_potion": "items:experimental/invisibility_potion",\
     "jump_boost_potion": "items:experimental/jump_boost_potion",\
-    "knight_shield": "items:misc/knight_shield",\
-    "knight_sword": "items:misc/knight_sword",\
-    "lava_splash": "items:util/lava_splash",\
-    "loser_banner": "items:ending/loser_banner",\
-    "missile/auxiliary": "items:missile/heavy/auxiliary",\
-    "missile/juggerbuster": "items:missile/heavy/juggerbuster",\
-    "missile/rifter": "items:missile/heavy/rifter",\
-    "missile/warhead": "items:missile/heavy/warhead",\
-    "missile/hurricane": "items:missile/lightning/hurricane",\
-    "missile/thunderbolt": "items:missile/lightning/thunderbolt",\
-    "missile/ant": "items:missile/normal/ant",\
-    "missile/blade": "items:missile/normal/blade",\
-    "missile/catapult": "items:missile/normal/catapult",\
-    "missile/chronullifier": "items:missile/normal/chronullifier",\
-    "missile/citadel": "items:missile/normal/citadel",\
-    "missile/elder_guardian": "items:missile/normal/elder_guardian",\
-    "missile/gemini": "items:missile/normal/gemini",\
-    "missile/lifter": "items:missile/normal/lifter",\
-    "missile/slasher": "items:missile/normal/slasher",\
-    "missile/tomatwo": "items:missile/normal/tomatwo",\
-    "missile/broadsword": "items:missile/special/broadsword",\
-    "missile/bullet": "items:missile/special/bullet",\
-    "missile/duplex": "items:missile/special/duplex",\
-    "missile/hypersonic": "items:missile/special/hypersonic",\
-    "nova_rocket": "items:util/nova_rocket",\
-    "obsidian_shield": "items:util/obsidian_shield",\
+    "knight_shield": "items:item/knight_shield",\
+    "knight_sword": "items:item/knight_sword",\
+    "lava_splash": "items:item/lava_splash",\
+    "missile/auxiliary": "items:item/missile/auxiliary",\
+    "missile/juggerbuster": "items:item/missile/juggerbuster",\
+    "missile/rifter": "items:item/missile/rifter",\
+    "missile/warhead": "items:item/missile/warhead",\
+    "missile/hurricane": "items:item/missile/hurricane",\
+    "missile/thunderbolt": "items:item/missile/thunderbolt",\
+    "missile/ant": "items:item/missile/ant",\
+    "missile/blade": "items:item/missile/blade",\
+    "missile/catapult": "items:item/missile/catapult",\
+    "missile/chronullifier": "items:item/missile/chronullifier",\
+    "missile/citadel": "items:item/missile/citadel",\
+    "missile/elder_guardian": "items:item/missile/elder_guardian",\
+    "missile/gemini": "items:item/missile/gemini",\
+    "missile/lifter": "items:item/missile/lifter",\
+    "missile/slasher": "items:item/missile/slasher",\
+    "missile/tomatwo": "items:item/missile/tomatwo",\
+    "missile/broadsword": "items:item/missile/broadsword",\
+    "missile/bullet": "items:item/missile/bullet",\
+    "missile/duplex": "items:item/missile/duplex",\
+    "missile/hypersonic": "items:item/missile/hypersonic",\
+    "nova_rocket": "items:item/nova_rocket",\
+    "obsidian_shield": "items:item/obsidian_shield",\
     "parkour/quit_parkour": "lobby:parkour/quit_parkour",\
     "parkour/return_to_checkpoint": "lobby:parkour/return_to_checkpoint",\
     "parkour/return_to_start": "lobby:parkour/return_to_start",\
-    "piercing_pickaxe": "items:misc/piercing_pickaxe",\
-    "rocket_nomicon": "items:misc/rocket_nomicon",\
-    "shield": "items:util/shield",\
-    "splash": "items:util/splash",\
-    "stinging_shield": "items:util/stinging_shield",\
-    "shooting_saber": "items:misc/shooting_saber",\
-    "slap_fish": "items:misc/slap_fish",\
+    "piercing_pickaxe": "items:item/piercing_pickaxe",\
+    "rocket_nomicon": "items:item/rocket_nomicon",\
+    "shield": "items:item/shield",\
+    "splash": "items:item/splash",\
+    "stinging_shield": "items:item/stinging_shield",\
+    "shooting_saber": "items:item/shooting_saber",\
+    "slap_fish": "items:item/slap_fish",\
     "spectral_arrow": "items:experimental/spectral_arrow",\
-    "spell_book": "items:misc/spell_book",\
-    "spell_wand": "items:misc/spell_wand",\
-    "surprise_egg": "items:missile/surprise",\
-    "tipped_arrow_blindness": "items:misc/tipped_arrow_blindness",\
-    "tipped_arrow_levitation": "items:misc/tipped_arrow_levitation",\
-    "tipped_arrow_slowness": "items:misc/tipped_arrow_slowness",\
-    "tipped_arrow_wither": "items:misc/tipped_arrow_wither",\
-    "totem_of_undying": "items:misc/totem_of_undying",\
-    "trident": "items:misc/trident",\
-    "vortex": "items:util/vortex",\
+    "spell_book": "items:item/spell_book",\
+    "spell_wand": "items:item/spell_wand",\
+    "surprise_egg": "items:item/surprise_egg",\
+    "tipped_arrow_blindness": "items:item/tipped_arrow_blindness",\
+    "tipped_arrow_levitation": "items:item/tipped_arrow_levitation",\
+    "tipped_arrow_slowness": "items:item/tipped_arrow_slowness",\
+    "tipped_arrow_wither": "items:item/tipped_arrow_wither",\
+    "totem_of_undying": "items:item/totem_of_undying",\
+    "trident": "items:item/trident",\
+    "vortex": "items:item/vortex",\
 }

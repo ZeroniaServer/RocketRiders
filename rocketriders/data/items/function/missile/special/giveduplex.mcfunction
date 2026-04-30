@@ -12,8 +12,8 @@ execute if entity @s[scores={HasDuplex=1..},tag=!fullHotbar,tag=!BackDuplex,tag=
 title @s[tag=!fullHotbar,tag=!BackDuplex,tag=itemDeducted] actionbar {"text":"Duplex already obtained.","color":"light_purple"}
 execute if entity @s[tag=!fullHotbar,tag=!BackDuplex,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
-execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasDuplex=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/special/giveduplex) Gave Duplex to ",{selector:"@s"}]}
-execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasDuplex=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/special/giveduplex) Failed to give Duplex to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasDuplex=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/giveduplex) Gave Duplex to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasDuplex=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/giveduplex) Failed to give Duplex to ",{selector:"@s"}]}
 title @s[scores={HasDuplex=0},tag=!fullHotbar,tag=!BackDuplex,tag=!itemDeducted] actionbar {"text":"Duplex obtained.","color":"light_purple"}
 execute if entity @s[scores={HasDuplex=0},tag=!fullHotbar] run function items:give/missile/duplex {count:1}
 

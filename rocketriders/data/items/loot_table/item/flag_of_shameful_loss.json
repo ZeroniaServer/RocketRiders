@@ -45,13 +45,13 @@
                   }
                 ],
                 "minecraft:custom_data": {
-                  "id": "loser_banner"
+                  "id": "flag_of_shameful_loss"
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],
                   "strings": [
                     "rocketriders",
-                    "loser_banner",
+                    "flag_of_shameful_loss",
                     "none"
                   ]
                 },

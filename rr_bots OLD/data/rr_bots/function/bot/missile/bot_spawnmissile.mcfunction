@@ -47,22 +47,22 @@ kill @e[x=0,type=marker,tag=RideRNG]
 kill @e[x=0,type=marker,tag=BMRNG]
 
 
-execute if entity @s[tag=BotTomaSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/tomatwo
-execute if entity @s[tag=BotAuxSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/heavy/auxiliary
-execute if entity @s[tag=BotBladeSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/blade
-execute if entity @s[tag=BotAntSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/ant
-execute if entity @s[tag=BotCataSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/catapult
-execute if entity @s[tag=BotCitaSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/citadel
-execute if entity @s[tag=BotNullSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/chronullifier
-execute if entity @s[tag=BotGuardSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/elder_guardian
-execute if entity @s[tag=BotGemiSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/gemini
-execute if entity @s[tag=BotHurSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/lightning/hurricane
-execute if entity @s[tag=BotJugSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/heavy/juggerbuster
-execute if entity @s[tag=BotLiftSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/lifter
-execute if entity @s[tag=BotRiftSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/heavy/rifter
-execute if entity @s[tag=BotSlashSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/normal/slasher
-execute if entity @s[tag=BotBoltSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/lightning/thunderbolt
-execute if entity @s[tag=BotWarSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:missile/heavy/warhead
+execute if entity @s[tag=BotTomaSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/tomatwo
+execute if entity @s[tag=BotAuxSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/auxiliary
+execute if entity @s[tag=BotBladeSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/blade
+execute if entity @s[tag=BotAntSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/ant
+execute if entity @s[tag=BotCataSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/catapult
+execute if entity @s[tag=BotCitaSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/citadel
+execute if entity @s[tag=BotNullSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/chronullifier
+execute if entity @s[tag=BotGuardSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/elder_guardian
+execute if entity @s[tag=BotGemiSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/gemini
+execute if entity @s[tag=BotHurSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/hurricane
+execute if entity @s[tag=BotJugSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/juggerbuster
+execute if entity @s[tag=BotLiftSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/lifter
+execute if entity @s[tag=BotRiftSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/rifter
+execute if entity @s[tag=BotSlashSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/slasher
+execute if entity @s[tag=BotBoltSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/thunderbolt
+execute if entity @s[tag=BotWarSpawn,scores={botmisspawn=5}] run loot replace entity @s weapon.offhand loot items:item/missile/warhead
 
 
 

@@ -8,10 +8,10 @@
           "functions": [
             {
               "function": "minecraft:reference",
-              "name": "items:spell_book/health"
+              "name": "items:spell_book/fire"
             }
           ],
-          "value": "items:misc/spell_book"
+          "value": "items:item/spell_book"
         }
       ]
     }

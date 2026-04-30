@@ -3,7 +3,7 @@ tag @s add givenArrows
 tag @s add givenArrowsTwice
 scoreboard players add @s RandomItem 1
 execute if predicate game:game_rules/show_debug_logs/on if predicate game:item_pool/arrow unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime if entity @s[tag=!gaveFirstItem] run function custom:log {message:["(rr_chase:game/while_phase/match/play) Giving arrows to all blue players"]}
-execute if predicate game:item_pool/arrow unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/blue] run function items:util/givearrows
+execute if predicate game:item_pool/arrow unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/blue] run function items:item/givearrows
 execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function items:giverandom
 execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
 execute if predicate game:modifiers/minute_mix/on run function items:minutemix

@@ -12,9 +12,9 @@ execute if predicate game:game_rules/show_debug_logs/on run function custom:log 
 
 function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/giveant
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/givetoma
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/givecata
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/givelift
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/givenull
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/giveant
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/givetoma
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/givecata
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/givelift
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/givenull
 kill @e[x=0,type=marker,tag=crusadeRNG]

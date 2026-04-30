@@ -1,2 +1,2 @@
 clear @s written_book
-loot replace entity @s hotbar.0 loot items:misc/rocket_nomicon
+loot replace entity @s hotbar.0 loot items:item/rocket_nomicon

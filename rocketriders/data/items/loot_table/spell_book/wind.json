@@ -11,7 +11,7 @@
               "name": "items:spell_book/wind"
             }
           ],
-          "value": "items:misc/spell_book"
+          "value": "items:item/spell_book"
         }
       ]
     }

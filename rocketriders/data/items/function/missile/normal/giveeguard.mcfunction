@@ -12,8 +12,8 @@ execute if entity @s[scores={HasGuard=1..},tag=!fullHotbar,tag=!BackGuard,tag=!i
 title @s[tag=!fullHotbar,tag=!BackGuard,tag=itemDeducted] actionbar {"text":"Elder Guardian already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackGuard,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
-execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasGuard=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/giveeguard) Gave Elder Guardian to ",{selector:"@s"}]}
-execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasGuard=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/normal/giveeguard) Failed to give Elder Guardian to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasGuard=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/giveeguard) Gave Elder Guardian to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasGuard=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/giveeguard) Failed to give Elder Guardian to ",{selector:"@s"}]}
 title @s[scores={HasGuard=0},tag=!fullHotbar,tag=!BackGuard,tag=!itemDeducted] actionbar {"text":"Elder Guardian obtained.","color":"aqua"}
 execute if entity @s[scores={HasGuard=0},tag=!fullHotbar] run function items:give/missile/elder_guardian {count:1}
 

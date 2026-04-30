@@ -14,7 +14,7 @@ tag @s[scores={HasTrident=1..}] remove fullHotbar
 execute if predicate game:game_rules/show_debug_logs/on if entity @s[tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/givetrident) Gave Trident to ",{selector:"@s"}]}
 execute if predicate game:game_rules/show_debug_logs/on unless entity @s[tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/givetrident) Failed to give Trident to ",{selector:"@s"}]}
 title @s[scores={HasTrident=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Trident obtained.","color":"light_purple"}
-loot give @s[tag=!fullHotbar] loot items:misc/trident
+loot give @s[tag=!fullHotbar] loot items:item/trident
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasTrident=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenTrident

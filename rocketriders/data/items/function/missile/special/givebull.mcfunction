@@ -12,8 +12,8 @@ execute if entity @s[scores={HasBullet=1..},tag=!fullHotbar,tag=!BackBull,tag=!i
 title @s[tag=!fullHotbar,tag=!BackBull,tag=itemDeducted] actionbar {"text":"Bullet already obtained.","color":"light_purple"}
 execute if entity @s[tag=!fullHotbar,tag=!BackBull,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
-execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasBullet=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/special/givebull) Gave Bullet to ",{selector:"@s"}]}
-execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasBullet=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/special/givebull) Failed to give Bullet to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasBullet=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givebull) Gave Bullet to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasBullet=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givebull) Failed to give Bullet to ",{selector:"@s"}]}
 title @s[scores={HasBullet=0},tag=!fullHotbar,tag=!BackBull,tag=!itemDeducted] actionbar {"text":"Bullet obtained.","color":"light_purple"}
 execute if entity @s[scores={HasBullet=0},tag=!fullHotbar] run function items:give/missile/bullet {count:1}
 

@@ -72,7 +72,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
 }
 
 item replace block 0 184 -16 container.0 with air
-loot replace block 0 184 -16 container.0 loot items:misc/elytra
+loot replace block 0 184 -16 container.0 loot items:item/elytra
 data modify storage rocketriders:nomicon loaded_item set value {id:"minecraft:barrier",components:{"minecraft:item_name":"Elytra","minecraft:lore":[{text:"Invalid loot table!",bold:true,color:"red",italic:false},{text:"The loot table was missing or resulted in no item.",color:"gray",italic:false}]}}
 data modify storage rocketriders:nomicon loaded_item set from block 0 184 -16 Items[{Slot:0b}]
 data remove storage rocketriders:nomicon loaded_item.Slot

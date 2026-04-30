@@ -9,6 +9,6 @@ execute unless entity @s[gamemode=creative] run scoreboard players remove $count
 execute if score $count var matches ..0 if score $mainhand var matches 1 run return run item replace entity @s weapon.mainhand with air
 execute if score $count var matches ..0 if score $mainhand var matches 0 run return run item replace entity @s weapon.offhand with air
 
-execute if score $mainhand var matches 1 run loot replace entity @s weapon.mainhand loot {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:util/nova_rocket"}]}],functions:[{function:"minecraft:set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$count"},score:"var"}}]}
-execute if score $mainhand var matches 0 run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:util/nova_rocket"}]}],functions:[{function:"minecraft:set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$count"},score:"var"}}]}
+execute if score $mainhand var matches 1 run loot replace entity @s weapon.mainhand loot {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:item/nova_rocket"}]}],functions:[{function:"minecraft:set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$count"},score:"var"}}]}
+execute if score $mainhand var matches 0 run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:item/nova_rocket"}]}],functions:[{function:"minecraft:set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$count"},score:"var"}}]}
 

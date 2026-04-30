@@ -14,7 +14,7 @@ execute if entity @s[tag=!fullHotbar,tag=itemDeducted] at @s run playsound minec
 execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasLavaSplash=0},tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/givelavasplash) Gave Lava Splash to ",{selector:"@s"}]}
 execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasLavaSplash=0},tag=!fullHotbar] run function custom:log {message:["(rr_powerups:items/powerup/givelavasplash) Failed to give Lava Splash to ",{selector:"@s"}]}
 title @s[scores={HasLavaSplash=0},tag=!fullHotbar,tag=!itemDeducted] actionbar {"text":"Lava Splash obtained.","color":"light_purple"}
-loot give @s[scores={HasLavaSplash=0},tag=!fullHotbar] loot items:util/lava_splash
+loot give @s[scores={HasLavaSplash=0},tag=!fullHotbar] loot items:item/lava_splash
 execute at @s run playsound minecraft:entity.item.pickup player @s[scores={HasLavaSplash=0},tag=!fullHotbar] ~ ~ ~ 0.25 2
 
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenLavaSplash

@@ -21,7 +21,7 @@ tp @a[x=0,predicate=custom:team/spectator] 12 100 0.5 90 90
 effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
 effect give @a[x=0,predicate=custom:team/any_playing_team] fire_resistance 10 100 true
 #Hotfix for losing shield upon game starting
-execute if predicate game:main_item/crusade_kit_dependent as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
+execute if predicate game:main_item/crusade_kit_dependent as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:item/knight_shield
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function game:notify_join
 execute unless predicate game:phase/match/closing run tag @a[x=0] remove CalculateWin
 execute unless predicate game:phase/match/closing run tag @a[x=0] remove CalculateLoss

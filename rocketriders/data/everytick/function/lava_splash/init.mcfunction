@@ -5,7 +5,7 @@ execute if score $return var matches 1 run return run function everytick:lava_sp
 
 ## Custom Motion
 data merge entity @s {NoGravity:1b,Motion:[0.0d,0.0d,0.0d]}
-loot replace entity @s contents loot items:util/lava_splash
+loot replace entity @s contents loot items:item/lava_splash
 tag @s add lava_splash
 tag @s add self
 execute on origin at @s anchored eyes run tp @e[x=0,type=#custom:potion,tag=self] @s

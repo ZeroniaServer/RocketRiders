@@ -12,9 +12,9 @@ execute if predicate game:game_rules/show_debug_logs/on run function custom:log 
 
 function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngGemi] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/givegemi
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngJbuster] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/givejbuster
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngWar] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/givewar
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAux] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/giveaux
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBlade] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:item/missile/giveblade
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngGemi] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/givegemi
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngJbuster] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/givejbuster
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngWar] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/givewar
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAux] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/heavy/giveaux
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBlade] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/giveblade
 kill @e[x=0,type=marker,tag=crusadeRNG]

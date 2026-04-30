@@ -25,12 +25,12 @@ execute unless predicate game:game_rules/item_stacking/on as @e[x=0,type=marker,
 
 function items:full_hotbar
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function items:item/missile/givebull
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function items:item/missile/givebull
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function items:missile/special/givebull
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function items:missile/special/givebull
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngElytra] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] at @s run function rr_powerups:items/powerup/giveelytra
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngElytra] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] at @s run function rr_powerups:items/powerup/giveelytra
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function items:item/missile/givehyper
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function items:item/missile/givehyper
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function items:missile/special/givehyper
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function items:missile/special/givehyper
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngInfinity] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function rr_powerups:items/powerup/giveinfinity
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngInfinity] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function rr_powerups:items/powerup/giveinfinity
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLavaSplash] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function rr_powerups:items/powerup/givelavasplash
@@ -43,10 +43,10 @@ execute as @e[x=0,type=marker,tag=rngSelected,tag=rngTrident] as @e[x=0,type=mar
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngTrident] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function rr_powerups:items/powerup/givetrident
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBeeShield] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function rr_powerups:items/powerup/givebeeshield
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBeeShield] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function rr_powerups:items/powerup/givebeeshield
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function items:item/missile/giveduplex
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function items:item/missile/giveduplex
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function items:item/missile/givebroad
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function items:item/missile/givebroad
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function items:missile/special/giveduplex
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function items:missile/special/giveduplex
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @e[x=0,type=marker,scores={capturePoint=1}] as @a[x=0,predicate=custom:team/blue] run function items:missile/special/givebroad
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @e[x=0,type=marker,scores={capturePoint=2}] as @a[x=0,predicate=custom:team/yellow] run function items:missile/special/givebroad
 
 #item announcements
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @e[x=0,type=marker,scores={capturePoint=1}] run tellraw @a[x=0,predicate=!custom:team/lobby] [{score:{name:"#blue",objective:"text.accent_color"}},[{bold:true,score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}}]," received: ",[{"text":"[Special] ","color":"dark_purple","bold":true,"italic":true},[{score:{name:"#blue",objective:"text.main_color"}},{"text":"Bullet","italic":true}]]]

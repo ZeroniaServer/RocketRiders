@@ -9,8 +9,8 @@ execute if predicate game:modifiers/special_treatment/on if entity @e[x=0,type=a
 tag @e[x=0,type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:missile/rng) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=rng2,tag=rngSelected]"}]}
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHeavy] run function items:item/missile/rng
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNormal] run function items:item/missile/rng
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLightning] run function items:item/missile/rng
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSpecial] run function items:item/missile/rng
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHeavy] run function items:missile/heavy/rng
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNormal] run function items:missile/normal/rng
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLightning] run function items:missile/lightning/rng
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSpecial] run function items:missile/special/rng
 kill @e[x=0,type=marker,tag=rng2]

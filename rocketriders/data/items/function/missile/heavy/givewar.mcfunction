@@ -12,8 +12,8 @@ execute if entity @s[scores={HasWar=1..},tag=!fullHotbar,tag=!BackWar,tag=!itemD
 title @s[tag=!fullHotbar,tag=!BackWar,tag=itemDeducted] actionbar {"text":"Warhead already obtained.","color":"aqua"}
 execute if entity @s[tag=!fullHotbar,tag=!BackWar,tag=itemDeducted] at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 
-execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasWar=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givewar) Gave Warhead to ",{selector:"@s"}]}
-execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasWar=0},tag=!fullHotbar] run function custom:log {message:["(items:item/missile/givewar) Failed to give Warhead to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on if entity @s[scores={HasWar=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/heavy/givewar) Gave Warhead to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on unless entity @s[scores={HasWar=0},tag=!fullHotbar] run function custom:log {message:["(items:missile/heavy/givewar) Failed to give Warhead to ",{selector:"@s"}]}
 title @s[scores={HasWar=0},tag=!fullHotbar,tag=!BackWar,tag=!itemDeducted] actionbar {"text":"Warhead obtained.","color":"aqua"}
 execute if entity @s[scores={HasWar=0},tag=!fullHotbar] run function items:give/missile/warhead {count:1}
 

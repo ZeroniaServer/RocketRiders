@@ -15,9 +15,6 @@ execute if entity @a[x=0,scores={actionbardelay=50..}] run scoreboard players re
 scoreboard players add @a[x=0,predicate=custom:team/yellow] jumps 0
 scoreboard players add @a[x=0,predicate=custom:team/blue] jumps 0
 
-##Full hotbar check
-function items:full_hotbar
-
 ##Game time
 scoreboard players add $match_play_time global 1
 

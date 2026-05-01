@@ -20,12 +20,12 @@ tag @p[distance=0..,tag=arrow_pickup.target_candidate] add arrow_pickup.target
 tag @a[x=0] remove arrow_pickup.target_candidate
 
 tag @s add arrow_pickup.done
-execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"arrow"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/arrow {count:1}
-execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"tipped_arrow_blindness"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/tipped_arrow_blindness {count:1}
-execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"tipped_arrow_levitation"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/tipped_arrow_levitation {count:1}
-execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"tipped_arrow_slowness"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/tipped_arrow_slowness {count:1}
-execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"tipped_arrow_wither"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/tipped_arrow_wither {count:1}
-execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"spectral_arrow"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give/spectral_arrow {count:1}
+execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"arrow"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give_count/arrow {count:1}
+execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"tipped_arrow_blindness"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give_count/tipped_arrow_blindness {count:1}
+execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"tipped_arrow_levitation"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give_count/tipped_arrow_levitation {count:1}
+execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"tipped_arrow_slowness"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give_count/tipped_arrow_slowness {count:1}
+execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"tipped_arrow_wither"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give_count/tipped_arrow_wither {count:1}
+execute unless predicate custom:arrows/intangible if items entity @s contents *[custom_data~{id:"spectral_arrow"}] as @a[limit=1,x=0,tag=arrow_pickup.target] run function items:give_count/spectral_arrow {count:1}
 execute at @a[limit=1,x=0,tag=arrow_pickup.target] run tp @s ~ ~0.6 ~
 data modify entity @s Air set value 1
 data modify entity @s Air set value 0

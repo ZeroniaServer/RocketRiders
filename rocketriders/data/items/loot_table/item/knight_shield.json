@@ -22,7 +22,8 @@
                 ],
                 "minecraft:base_color": "white",
                 "minecraft:custom_data": {
-                  "id": "knight_shield"
+                  "id": "knight_shield",
+                  "ignore_hotbar_limit": true
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],

@@ -7,7 +7,10 @@
 execute if entity @s[scores={SDtime=20..}] run scoreboard players reset @s SDtime
 scoreboard players add @s SDtime 1
 
-##Preparing for tiebreaker
+## Increase canopy limit by 1 more
+scoreboard players set $increase_item_limit.canopy match_components 2
+
+##Preparing for overtime
 execute if entity @s[scores={SDtime=1}] if predicate game:phase/match/play run worldborder warning distance 1000000
 #Halves the Item Delay (more intense gameplay)
 scoreboard players operation @s[scores={SDtime=1,MaxItemTime=3..}] MaxItemTime /= $2 constant

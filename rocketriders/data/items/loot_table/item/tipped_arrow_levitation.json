@@ -13,7 +13,7 @@
                 "!minecraft:potion_duration_scale": {},
                 "minecraft:custom_data": {
                   "id": "tipped_arrow_levitation",
-                  "tipped_arrow_type": "levitation"
+                  "is_tipped_arrow": true
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],

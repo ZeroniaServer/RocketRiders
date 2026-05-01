@@ -10,11 +10,9 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenNull] 
 tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_crusade:items/missile/mage) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=crusadeRNG,tag=rngSelected]"}]}
 
-function items:full_hotbar
-
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/giveant
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/givetoma
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/givecata
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/givelift
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:missile/normal/givenull
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/ant
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/tomatwo
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/catapult
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/lifter
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/chronullifier
 kill @e[x=0,type=marker,tag=crusadeRNG]

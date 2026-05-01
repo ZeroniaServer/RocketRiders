@@ -7,10 +7,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenSplash
 #Select item and run appropriate give function
 tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected
 
-function items:full_hotbar
-
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_crusade:items/util/archer) Selected: ",{selector:"@e[limit=1,type=marker,tag=rngSelected]"}]}
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givearrows
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givecanopy
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givesplash
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/arrow
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/canopy
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/splash
 kill @e[x=0,type=marker,tag=crusadeRNG]

@@ -7,10 +7,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenNova] 
 #Select item and run appropriate give function
 tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected
 
-function items:full_hotbar
-
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_crusade:items/util/mage) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=crusadeRNG,tag=rngSelected]"}]}
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSpellBook] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function rr_crusade:items/util/givespellbook
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngVortex] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givevortex
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNova] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/givenova
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSpellBook] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/spell_book
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngVortex] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/vortex
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNova] as @a[x=0,predicate=rr_crusade:kit/mage,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/nova_rocket
 kill @e[x=0,type=marker,tag=crusadeRNG]

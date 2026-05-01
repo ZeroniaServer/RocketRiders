@@ -1,7 +1,9 @@
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: staging.configuration"]}
 
 ##
+function game:match_components/reset
 function arenaclear:refreshsigns
+function game:place_facade
 
 bossbar set rr:startgame max 30
 bossbar set rr:startgame value 30

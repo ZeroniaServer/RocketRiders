@@ -7,10 +7,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] 
 #Select item and run appropriate give function
 tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected
 
-function items:full_hotbar
-
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_crusade:items/util/knight) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=crusadeRNG,tag=rngSelected]"}]}
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/giveobshield
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/giveshield
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngICBM] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:util/giveicbm
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/obsidian_shield
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/shield
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngICBM] as @a[x=0,predicate=rr_crusade:kit/knight,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/icbm
 kill @e[x=0,type=marker,tag=crusadeRNG]

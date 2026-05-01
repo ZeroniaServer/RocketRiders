@@ -64,8 +64,7 @@
                     "minecraft:banner_patterns",
                     "minecraft:enchantments"
                   ]
-                },
-                "minecraft:unbreakable": {}
+                }
               }
             },
             {

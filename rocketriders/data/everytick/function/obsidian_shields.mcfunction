@@ -6,7 +6,7 @@
 
 ##Blue Obsidian Shield functionality
 #Detecting motion
-scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball,predicate=custom:entity/is_moving] obshieldtime 1
+scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball,predicate=custom:entity/fireball_min_speed] obshieldtime 1
 kill @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=30..}]
 tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:entity/has_vehicle] add blueobalone
 
@@ -28,7 +28,7 @@ kill @e[x=0,type=marker,tag=BlueObshield]
 
 ##Yellow Obsidian Shield functionality
 #Detecting motion
-scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball,predicate=custom:entity/is_moving] obshieldtime 1
+scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball,predicate=custom:entity/fireball_min_speed] obshieldtime 1
 kill @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=30..}]
 tag @e[x=0,type=marker,tag=yellowobtracker,predicate=!custom:entity/has_vehicle] add yellowobalone
 

@@ -9,9 +9,12 @@ execute if predicate entities:origin_team/blue on vehicle positioned as @s if pr
 execute if predicate entities:origin_team/yellow on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:in_blue_half run return run function entities:type/fireball/actions/break
 execute if predicate entities:origin_team/none on vehicle positioned as @s if predicate custom:near_any_spawn_zone run return run function entities:type/fireball/actions/break
 
+# Freeze when moving too slowly
+execute if predicate custom:entity/vehicle_is_moving on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{speed:{max:0.01}}}} run data modify entity @s Motion set value [0,0,0]
+
 # Tick age while moving
-execute unless predicate custom:entity/vehicle_is_moving run scoreboard players set @s entity.fireball.time_since_punched 0
-execute if predicate custom:entity/vehicle_is_moving run scoreboard players add @s entity.fireball.time_since_punched 1
+execute unless predicate custom:entity/fireball_min_speed run scoreboard players set @s entity.fireball.time_since_punched 0
+execute if predicate custom:entity/fireball_min_speed run scoreboard players add @s entity.fireball.time_since_punched 1
 
 # Early impact
 execute unless predicate custom:entity/has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/fireball/tick/impact

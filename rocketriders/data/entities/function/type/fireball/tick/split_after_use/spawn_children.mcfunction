@@ -13,10 +13,10 @@ execute rotated as @s positioned as @s run tp @s ^0.03 ^ ^
 data modify storage rocketriders:main fireball.right_motion set from entity @s Pos
 
 # Summon children
-execute rotated as @s positioned ^ ^1.5 ^ summon fireball run function entities:type/fireball/tick/split_after_use/child/up
-execute rotated as @s positioned ^ ^-1.5 ^ summon fireball run function entities:type/fireball/tick/split_after_use/child/down
-execute rotated as @s positioned ^-1.5 ^ ^ summon fireball run function entities:type/fireball/tick/split_after_use/child/left
-execute rotated as @s positioned ^1.5 ^ ^ summon fireball run function entities:type/fireball/tick/split_after_use/child/right
+execute rotated as @s positioned ^ ^1.7 ^ summon fireball run function entities:type/fireball/tick/split_after_use/child/up
+execute rotated as @s positioned ^ ^-1.7 ^ summon fireball run function entities:type/fireball/tick/split_after_use/child/down
+execute rotated as @s positioned ^-1.7 ^ ^ summon fireball run function entities:type/fireball/tick/split_after_use/child/left
+execute rotated as @s positioned ^1.7 ^ ^ summon fireball run function entities:type/fireball/tick/split_after_use/child/right
 
 # Kill marker
 kill @s

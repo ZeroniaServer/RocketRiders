@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "minecraft:entity_tags": {
+      "any_of": [
+        "in_geyser_base",
+        "in_geyser_top"
+      ]
+    }
+  }
+}

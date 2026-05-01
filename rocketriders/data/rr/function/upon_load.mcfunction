@@ -323,9 +323,9 @@ function rr_sandbox:nomicon/load_pages
 # Item Custom Data ID to Loot Table Map
 data modify storage rocketriders:items id_to_loot_table_map set value {\
     "arrow": "items:item/arrow",\
-    "booster_rocket": "items:experimental/booster_rocket",\
-    "lunging_spear": "items:experimental/lunging_spear",\
-    "building_block": "items:experimental/building_block",\
+    "booster_rocket": "items:item/booster_rocket",\
+    "lunging_spear": "items:item/lunging_spear",\
+    "building_block": "items:item/building_block",\
     "canopy": "items:item/canopy",\
     "celebratory_elytra": "items:item/celebratory_elytra",\
     "celebratory_firework": "items:item/celebratory_firework",\
@@ -334,8 +334,8 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "fireball": "items:item/fireball",\
     "flag_of_shameful_loss": "items:item/flag_of_shameful_loss",\
     "icbm": "items:item/icbm",\
-    "invisibility_potion": "items:experimental/invisibility_potion",\
-    "jump_boost_potion": "items:experimental/jump_boost_potion",\
+    "invisibility_potion": "items:item/invisibility_potion",\
+    "jump_boost_potion": "items:item/jump_boost_potion",\
     "knight_shield": "items:item/knight_shield",\
     "knight_sword": "items:item/knight_sword",\
     "lava_splash": "items:item/lava_splash",\
@@ -371,7 +371,7 @@ data modify storage rocketriders:items id_to_loot_table_map set value {\
     "stinging_shield": "items:item/stinging_shield",\
     "shooting_saber": "items:item/shooting_saber",\
     "slap_fish": "items:item/slap_fish",\
-    "spectral_arrow": "items:experimental/spectral_arrow",\
+    "spectral_arrow": "items:item/spectral_arrow",\
     "spell_book": "items:item/spell_book",\
     "spell_wand": "items:item/spell_wand",\
     "surprise_egg": "items:item/surprise_egg",\

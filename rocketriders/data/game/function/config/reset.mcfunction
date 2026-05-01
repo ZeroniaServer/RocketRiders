@@ -9,6 +9,7 @@ execute store result score $max_players var run scoreboard players get $max_play
 execute store result score $show_debug_logs var run scoreboard players get $show_debug_logs config
 execute store result score $1_4_0_update var run scoreboard players get $1_4_0_update config
 execute store result score $colored_portal_frames var run scoreboard players get $colored_portal_frames config
+execute store result score $geysers var run scoreboard players get $geysers config
 scoreboard players reset * config
 execute if score $show_extra_player_credits var matches 1 run scoreboard players set $show_extra_player_credits config 1
 execute if score $extra_match_repetitions var matches 1.. run scoreboard players operation $extra_match_repetitions config = $extra_match_repetitions var
@@ -20,6 +21,7 @@ execute if score $max_players var matches 1.. run scoreboard players operation $
 execute if score $show_debug_logs var matches 1.. run scoreboard players operation $show_debug_logs config = $show_debug_logs var
 execute if score $1_4_0_update var matches 1.. run scoreboard players operation $1_4_0_update config = $1_4_0_update var
 execute if score $colored_portal_frames var matches 1.. run scoreboard players operation $colored_portal_frames config = $colored_portal_frames var
+execute if score $geysers var matches 1.. run scoreboard players operation $geysers config = $geysers var
 
 # defaults
 execute if predicate rr:default_config/impact_utilities run scoreboard players set $impact_utilities config 1

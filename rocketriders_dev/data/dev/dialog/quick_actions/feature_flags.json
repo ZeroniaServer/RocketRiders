@@ -17,6 +17,13 @@
         "command": "/trigger dev set 211"
       },
       "label": "1.4.0 Update..."
+    },
+    {
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 221"
+      },
+      "label": "Geysers..."
     }
   ],
   "exit_action": {

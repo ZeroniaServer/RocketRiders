@@ -19,6 +19,11 @@ execute if predicate custom:entity/fireball_min_speed run scoreboard players add
 # Early impact
 execute unless predicate custom:entity/has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/fireball/tick/impact
 
+# Water interaction
+execute if predicate game:feature_flags/geysers/on run scoreboard players set $geyser var 1
+execute if predicate game:feature_flags/geysers/on unless predicate custom:entity/is_touching_water unless block ~-0.5 ~-0.5 ~-0.5 water unless block ~-0.5 ~-0.5 ~0.5 water unless block ~0.5 ~-0.5 ~-0.5 water unless block ~0.5 ~-0.5 ~0.5 water unless block ~-0.5 ~0.5 ~-0.5 water unless block ~-0.5 ~0.5 ~0.5 water unless block ~0.5 ~0.5 ~-0.5 water unless block ~0.5 ~0.5 ~0.5 water run scoreboard players set $geyser var 0
+execute if predicate game:feature_flags/geysers/on if score $geyser var matches 1 on vehicle positioned as @s run return run function entities:type/fireball/tick/geyser
+
 # Store the rotation and speed of vehicle
 execute if predicate custom:entity/has_vehicle run function custom:projectile_motion_save
 

@@ -24,7 +24,6 @@ execute as @e[x=0,type=marker,tag=blueobsidianshield] at @s if block ~ ~ ~ #cust
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=blueobalone] shieldplacement 1
 execute as @e[x=0,type=marker,tag=blueobalone] at @s align xyz positioned ~ ~-1 ~ run function everytick:obsidian_shield_place
-tp @e[x=0,type=marker,tag=BlueObshield] ~ ~-250 ~
 kill @e[x=0,type=marker,tag=BlueObshield]
 
 ##Yellow Obsidian Shield functionality
@@ -47,7 +46,6 @@ execute as @e[x=0,type=marker,tag=yellowobsidianshield] at @s if block ~ ~ ~ #cu
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=yellowobalone] shieldplacement 1
 execute as @e[x=0,type=marker,tag=yellowobalone] at @s align xyz positioned ~ ~-1 ~ run function everytick:obsidian_shield_place
-tp @e[x=0,type=marker,tag=YellowObshield] ~ ~-250 ~
 kill @e[x=0,type=marker,tag=YellowObshield]
 
 ##General Obsidian Shield functionality

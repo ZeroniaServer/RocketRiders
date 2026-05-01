@@ -1,4 +1,4 @@
-execute if predicate game:item_pool/icbm if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","swapRNGD"],CustomName:"rngICBM (ICBM)"}
+execute if predicate game:item_pool/icbm if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","swapRNGD"],CustomName:"rngICBM (I.C.B.M.)"}
 execute if predicate game:item_pool/shield if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenShield] run summon marker 0 0 0 {Tags:["rngShield","swapRNGD"],CustomName:"rngShield (Shield)"}
 tag @e[x=0,type=marker,tag=swapRNGD,sort=random,limit=1] add SelectedSwapRNG2
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_swap:items/util/rng) Selected (Dark): ",{selector:"@e[limit=1,x=0,type=marker,tag=swapRNGD,tag=SelectedSwapRNG2]"}]}

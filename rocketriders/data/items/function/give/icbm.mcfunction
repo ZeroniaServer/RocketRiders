@@ -1,6 +1,6 @@
-#################################################
-## Conditionally gives the executor ICBM items ##
-#################################################
+#####################################################
+## Conditionally gives the executor I.C.B.M. items ##
+#####################################################
 
 ## Game tracking
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=tetrisTime] add givenICBM
@@ -31,22 +31,22 @@ scoreboard players set $give_item var 1
 # full hotbar
 function items:give/__check_full_hotbar
 # limit reached
-execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 1 run title @s actionbar {color:"aqua",text:"ICBM already obtained."}
-execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 2.. run title @s actionbar {color:"aqua",text:"Maximum ICBMs already obtained."}
+execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 1 run title @s actionbar {color:"aqua",text:"I.C.B.M. already obtained."}
+execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 2.. run title @s actionbar {color:"aqua",text:"Maximum I.C.B.M.s already obtained."}
 execute if score $give_item var matches 1 if score $final_batch_size var matches 0 run scoreboard players set $give_item var 0
 
 ## Delay actionbar
 tag @s add DelayActionbar
 
 ## Fail
-execute if score $give_item var matches 0 if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give/icbm) Failed to give ICBM to ",{selector:"@s"}]}
+execute if score $give_item var matches 0 if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give/icbm) Failed to give I.C.B.M. to ",{selector:"@s"}]}
 execute if score $give_item var matches 0 at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 execute if score $give_item var matches 0 run return 0
 
 ## Success
-execute if score $final_batch_size var matches 1 run title @s actionbar {color:"aqua",text:"ICBM obtained."}
-execute if score $final_batch_size var matches 2.. run title @s actionbar {color:"aqua",text:"ICBMs obtained."}
-execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give/icbm) Gave ICBM x",{score:{name:"$final_batch_size",objective:"var"}}," to ",{selector:"@s"}]}
+execute if score $final_batch_size var matches 1 run title @s actionbar {color:"aqua",text:"I.C.B.M. obtained."}
+execute if score $final_batch_size var matches 2.. run title @s actionbar {color:"aqua",text:"I.C.B.M.s obtained."}
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give/icbm) Gave I.C.B.M. x",{score:{name:"$final_batch_size",objective:"var"}}," to ",{selector:"@s"}]}
 execute store result storage rocketriders:main items.count int 1 run scoreboard players get $final_batch_size var
 function items:give_count/icbm with storage rocketriders:main items
 return run scoreboard players get $final_batch_size var

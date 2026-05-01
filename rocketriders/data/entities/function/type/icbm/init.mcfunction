@@ -11,7 +11,7 @@ execute if score $return var matches 1 run return run function entities:type/icb
 data modify entity @s data.icbm set value {body:{}}
 
 data modify storage rocketriders:main icbm.name set value "Intercontinental Ballistic Missile"
-execute on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s ICBM"], write_to:"storage rocketriders:main icbm.name"}
+execute on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s I.C.B.M."], write_to:"storage rocketriders:main icbm.name"}
 data modify entity @s CustomName set from storage rocketriders:main icbm.name
 
 ## Summon brain

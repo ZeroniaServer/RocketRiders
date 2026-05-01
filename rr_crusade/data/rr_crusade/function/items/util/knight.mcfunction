@@ -2,7 +2,7 @@
 #Choose between each item based on Tetris state
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenObshield] run summon marker 0 0 0 {Tags:["rngObshield","crusadeRNG"],CustomName:"rngObshield (Nova Rocket)"}
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenShield] run summon marker 0 0 0 {Tags:["rngShield","crusadeRNG"],CustomName:"rngShield (Shield)"}
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","crusadeRNG"],CustomName:"rngICBM (ICBM)"}
+execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenICBM] run summon marker 0 0 0 {Tags:["rngICBM","crusadeRNG"],CustomName:"rngICBM (I.C.B.M.)"}
 
 #Select item and run appropriate give function
 tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected

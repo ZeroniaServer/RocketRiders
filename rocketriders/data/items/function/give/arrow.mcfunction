@@ -10,7 +10,7 @@ scoreboard players set @e[x=0,type=armor_stand,tag=Bot] botarrowitems 4
 ## Get limit
 scoreboard players set $item_limit var 4
 execute if score $increase_item_limit.arrow match_components matches 1.. run scoreboard players operation $item_limit var += $increase_item_limit.arrow match_components
-#execute if predicate game:game_rules/item_stacking/on run scoreboard players set $item_limit var 64
+execute if predicate game:game_rules/item_stacking/on run scoreboard players set $item_limit var 64
 execute if score $item_limit var matches 65.. run scoreboard players set $item_limit var 64
 
 ## Get inventory count

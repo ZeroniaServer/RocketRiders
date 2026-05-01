@@ -1,6 +1,5 @@
 execute if predicate items:effects/elytra/on run title @s actionbar {color:"aqua",text:"Elytra repaired."}
-execute if predicate items:effects/elytra/on run tag @s add DelayActionbar
-execute if predicate items:effects/elytra/on run scoreboard players set @s actionbardelay 0
+execute if predicate items:effects/elytra/on run function custom:player/delay_actionbar
 execute unless predicate items:effects/elytra/on run title @s title ""
 execute unless predicate items:effects/elytra/on run title @s subtitle ["",{bold:true,color:"dark_purple",italic:true,text:"Elytra "},{color:"light_purple",text:"obtained. "},{color:"light_purple",italic:true,text:"Jump to activate!"}]
 

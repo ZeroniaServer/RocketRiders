@@ -1,5 +1,5 @@
 title @s actionbar {"text":"Infinity Saber expired.","color":"red"}
-tag @s add DelayActionbar
+function custom:player/delay_actionbar
 
 scoreboard players reset @s effects.infinity_saber.time
 function custom:player/update_inventory/shooting_saber

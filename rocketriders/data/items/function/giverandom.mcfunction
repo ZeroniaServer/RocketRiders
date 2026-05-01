@@ -18,9 +18,5 @@ execute if predicate game:modifiers/special_treatment/on if entity @s[tag=givenA
 
 tag @s add gaveFirstItem
 
-##Actionbar notifications
-tag @a[x=0,predicate=custom:team/any_playing_team] add DelayActionbar
-scoreboard players set @a[x=0,predicate=custom:team/any_playing_team] actionbardelay 0
-
 ##Wind Down modifier - subtract two ticks from Item Delay
 execute if predicate game:modifiers/wind_down/on run scoreboard players remove @s[scores={MaxItemTime=62..}] MaxItemTime 2

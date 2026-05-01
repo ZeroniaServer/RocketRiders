@@ -38,7 +38,7 @@ execute if score $give_item var matches 1 if score $final_batch_size var matches
 execute if score $give_item var matches 1 if score $final_batch_size var matches 0 run scoreboard players set $give_item var 0
 
 ## Delay actionbar
-tag @s add DelayActionbar
+function custom:player/delay_actionbar
 
 ## Fail
 execute if score $give_item var matches 0 if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give/missile/catapult) Failed to give Catapult to ",{selector:"@s"}]}

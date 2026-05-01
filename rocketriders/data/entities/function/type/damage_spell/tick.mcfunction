@@ -1,3 +1,7 @@
+execute if entity @s[tag=damage_spell.trailing_arrow] unless predicate custom:entity/has_vehicle run return run kill @s
+execute if entity @s[tag=damage_spell.trailing_arrow] unless predicate custom:entity/vehicle_is_moving run return run kill @s
+execute if entity @s[tag=damage_spell.trailing_arrow] on vehicle rotated as @s positioned 0 0 0 positioned ^ ^ ^2 positioned 0 0 ~ positioned ^ ^ ^-1 facing 0 0 0 facing ^ ^ ^-1 positioned as @s run return run function entities:type/damage_spell/tick/trail_arrow
+
 # Break when out of bounds
 execute if predicate custom:near_or_above_roof run return run function entities:type/damage_spell/actions/break
 execute if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/damage_spell/actions/break
@@ -20,7 +24,7 @@ execute if predicate entities:origin_team/none positioned ^ ^ ^3 facing entity @
 execute on origin run tag @s remove damage_spell.origin
 
 # Break on impact with an arrow and convert the arrow to a wither tipped arrow
-execute positioned as @s positioned ~-1.5 ~-1.5 ~-1.5 if function entities:type/damage_spell/tick/convert_arrow positioned as @s run return run function entities:type/damage_spell/actions/break
+execute positioned as @s positioned ~-1.5 ~-1.5 ~-1.5 if function entities:type/damage_spell/tick/convert_arrow run return 0
 
 # Movement (6m/s -> 12m/s)
 scoreboard players set $speed var 120

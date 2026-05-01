@@ -35,7 +35,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
         },\
         " ",\
         {\
-          "text": "[On]",\
+          "text": "[∞]",\
           "hover_event": {\
             "action": "show_text",\
             "value": {\

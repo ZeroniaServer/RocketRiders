@@ -22,9 +22,9 @@ kill @e[x=0,predicate=entities:type/canopy_projectile]
 # Reset items and effects
 tag @s remove gaveFirstItem
 clear @a[x=0,predicate=custom:team/any_arena_team] *
-scoreboard players reset @a[x=0] shooting_saber.infinity_time
-scoreboard players reset @a[x=0] shooting_saber.multishot_time
-scoreboard players reset @a[x=0] elytra_time
+scoreboard players reset @a[x=0] effects.infinity_saber.time
+scoreboard players reset @a[x=0] effects.multishot_saber.time
+scoreboard players reset @a[x=0] effects.elytra.state
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/update_armor
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/reset_inventory
 effect clear @a[x=0,predicate=custom:team/any_playing_team]

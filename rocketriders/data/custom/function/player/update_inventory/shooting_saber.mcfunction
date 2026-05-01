@@ -1,5 +1,5 @@
-execute if score @s shooting_saber.infinity_time matches ..0 run scoreboard players reset @s shooting_saber.infinity_time
-execute if score @s shooting_saber.multishot_time matches ..0 run scoreboard players reset @s shooting_saber.multishot_time
+execute if score @s effects.infinity_saber.time matches ..0 run scoreboard players reset @s effects.infinity_saber.time
+execute if score @s effects.multishot_saber.time matches ..0 run scoreboard players reset @s effects.multishot_saber.time
 execute if items entity @s hotbar.0 *[custom_data~{id:"shooting_saber"}] run loot replace entity @s hotbar.0 loot items:item/shooting_saber
 execute if items entity @s hotbar.1 *[custom_data~{id:"shooting_saber"}] run loot replace entity @s hotbar.1 loot items:item/shooting_saber
 execute if items entity @s hotbar.2 *[custom_data~{id:"shooting_saber"}] run loot replace entity @s hotbar.2 loot items:item/shooting_saber

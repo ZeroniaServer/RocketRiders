@@ -31,9 +31,9 @@ scoreboard players set @s gravShot 0
 scoreboard players set @s regifts 0
 scoreboard players reset @s match_statistic.deaths
 scoreboard players reset @s match_statistic.kills
-scoreboard players reset @s shooting_saber.infinity_time
-scoreboard players reset @s shooting_saber.multishot_time
-scoreboard players reset @s elytra_time
+scoreboard players reset @s effects.infinity_saber.time
+scoreboard players reset @s effects.multishot_saber.time
+scoreboard players reset @s effects.elytra.state
 
 #Reset advancement criteria progress for the temp trackables also
 function everytick:score_reset_advancements

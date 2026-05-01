@@ -44,7 +44,7 @@ execute if items entity @s player.crafting.1 *[!custom_data~{ignore_hotbar_limit
 execute if items entity @s player.crafting.2 *[!custom_data~{ignore_hotbar_limit:true}] run scoreboard players add $slots_filled var 1
 execute if items entity @s player.crafting.3 *[!custom_data~{ignore_hotbar_limit:true}] run scoreboard players add $slots_filled var 1
 # should elytra take up a slot?
-#execute if predicate items:elytra/elytra run scoreboard players add $slots_filled var 1
+#execute if predicate items:effects/elytra/on run scoreboard players add $slots_filled var 1
 
 execute unless score $slots_filled var matches 9.. run return fail
 

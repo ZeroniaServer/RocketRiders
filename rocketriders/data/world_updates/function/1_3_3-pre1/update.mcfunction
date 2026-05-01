@@ -3,6 +3,9 @@ scoreboard objectives remove FallDistance
 scoreboard objectives remove flag.is_nova_attached
 scoreboard objectives remove flag.is_dead
 scoreboard objectives remove SwissCheese
+scoreboard objectives remove shooting_saber.infinity_time
+scoreboard objectives remove shooting_saber.multishot_time
+scoreboard objectives remove elytra_time
 
 execute if score $disable_tying config matches 1 run scoreboard players set $disable_overtime config 1
 execute if score $disable_tying config matches 1 run scoreboard players set $tie_window_length config -1

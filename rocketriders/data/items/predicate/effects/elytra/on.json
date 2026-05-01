@@ -2,7 +2,7 @@
   "condition": "minecraft:entity_scores",
   "entity": "this",
   "scores": {
-    "elytra_time": {
+    "effects.elytra.state": {
       "min": 1
     }
   }

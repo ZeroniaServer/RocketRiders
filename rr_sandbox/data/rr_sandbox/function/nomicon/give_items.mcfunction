@@ -33,11 +33,11 @@ execute if score @s nomicon matches 33 run return run function items:give_count/
 execute if score @s nomicon matches 34 run return run function items:give_count/totem_of_undying with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 35 unless predicate items:can_activate_elytra run return run tellraw @s {color:"red",text:"Elytra cannot be equipped at the enemy's base"}
-execute if score @s nomicon matches 35 run return run function items:elytra/normal
+execute if score @s nomicon matches 35 run return run function items:effects/elytra/set_normal
 
 execute if score @s nomicon matches 36 run return run function items:give_count/trident with storage rocketriders:main nomicon
 
-execute if score @s nomicon matches 37 run function items:shooting_saber/infinity_30_seconds
+execute if score @s nomicon matches 37 run function items:effects/infinity_saber/set_30_seconds
 execute if score @s nomicon matches 37 run return run execute unless predicate custom:player/has_shooting_saber_in_inventory run function items:give_count/shooting_saber with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 38 run return run function items:give_count/tipped_arrow_blindness with storage rocketriders:main nomicon
@@ -66,28 +66,28 @@ execute if score @s nomicon matches 50 run return run function items:give_count/
 execute if score @s nomicon matches 51 run return run function items:give_count/jump_boost_potion with storage rocketriders:main nomicon
 execute if score @s nomicon matches 52 run return run function items:give_count/spectral_arrow with storage rocketriders:main nomicon
 
-execute if score @s nomicon matches 53 run function items:shooting_saber/multishot_30_seconds
+execute if score @s nomicon matches 53 run function items:effects/multishot_saber/set_30_seconds
 execute if score @s nomicon matches 53 run return run execute unless predicate custom:player/has_shooting_saber_in_inventory run function items:give_count/shooting_saber with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 54 run return run function items:give_count/building_block with storage rocketriders:main nomicon
 
-execute if score @s nomicon matches 55 run function items:shooting_saber/infinity_permanent
+execute if score @s nomicon matches 55 run function items:effects/infinity_saber/set_infinite
 execute if score @s nomicon matches 55 run return run execute unless predicate custom:player/has_shooting_saber_in_inventory run function items:give_count/shooting_saber with storage rocketriders:main nomicon
 
-execute if score @s nomicon matches 56 run return run execute if predicate items:shooting_saber/infinity run function items:shooting_saber/infinity_deactivate
+execute if score @s nomicon matches 56 run return run execute if predicate items:effects/infinity_saber/on run function items:effects/infinity_saber/remove
 
-execute if score @s nomicon matches 57 run function items:shooting_saber/multishot_permanent
+execute if score @s nomicon matches 57 run function items:effects/multishot_saber/set_infinite
 execute if score @s nomicon matches 57 run return run execute unless predicate custom:player/has_shooting_saber_in_inventory run function items:give_count/shooting_saber with storage rocketriders:main nomicon
 
-execute if score @s nomicon matches 58 run return run execute if predicate items:shooting_saber/multishot run function items:shooting_saber/multishot_deactivate
+execute if score @s nomicon matches 58 run return run execute if predicate items:effects/multishot_saber/on run function items:effects/multishot_saber/remove
 execute if score @s nomicon matches 59 run return run function items:give_count/booster_rocket with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 60 if items entity @s armor.chest elytra[unbreakable] run return run tellraw @s {color:"red",text:"You already have an unbreakable elytra equipped"}
-execute if score @s nomicon matches 60 run return run function items:elytra/unbreakable
+execute if score @s nomicon matches 60 run return run function items:effects/elytra/set_unbreakable
 
 execute if score @s nomicon matches 61 unless score $no_lunging_spear global matches 1 run return run function items:give_count/lunging_spear with storage rocketriders:main nomicon
 
-execute if score @s nomicon matches 62 run return run execute if predicate items:elytra/elytra run function items:elytra/deactivate
+execute if score @s nomicon matches 62 run return run execute if predicate items:effects/elytra/on run function items:effects/elytra/remove
 
 execute if score @s nomicon matches 63 run return run function items:give_count/spell_book/health with storage rocketriders:main nomicon
 execute if score @s nomicon matches 64 run return run function items:give_count/spell_book/damage with storage rocketriders:main nomicon

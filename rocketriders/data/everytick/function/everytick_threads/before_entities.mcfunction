@@ -61,13 +61,11 @@ execute as @a[x=0,tag=teleport_sound] at @s run playsound minecraft:entity.playe
 tag @a[x=0,tag=teleport_sound] remove teleport_sound
 
 # Item timers
-scoreboard players remove @a[x=0,scores={shooting_saber.infinity_time=1..2147483646}] shooting_saber.infinity_time 1
-execute as @a[x=0,scores={shooting_saber.infinity_time=..0}] run function items:shooting_saber/infinity_deactivate
-scoreboard players remove @a[x=0,scores={shooting_saber.multishot_time=1..2147483646}] shooting_saber.multishot_time 1
-execute as @a[x=0,scores={shooting_saber.multishot_time=..0}] run function items:shooting_saber/multishot_deactivate
-scoreboard players remove @a[x=0,scores={elytra_time=1..2147483646}] elytra_time 1
-execute as @a[x=0,scores={elytra_time=..0}] run function items:elytra/deactivate
-execute as @a[x=0,predicate=items:elytra/elytra,predicate=custom:team/any_playing_team,gamemode=!spectator,predicate=items:deactivate_elytra] run function items:elytra/deactivate
+scoreboard players remove @a[x=0,scores={effects.infinity_saber.time=1..2147483646}] effects.infinity_saber.time 1
+execute as @a[x=0,scores={effects.infinity_saber.time=..0}] run function items:effects/infinity_saber/remove
+scoreboard players remove @a[x=0,scores={effects.multishot_saber.time=1..2147483646}] effects.multishot_saber.time 1
+execute as @a[x=0,scores={effects.multishot_saber.time=..0}] run function items:effects/multishot_saber/remove
+execute as @a[x=0,predicate=items:effects/elytra/on,predicate=custom:team/any_playing_team,gamemode=!spectator,predicate=items:deactivate_elytra] run function items:effects/elytra/remove
 
 # Thrown items
 execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function everytick:item_entity/init

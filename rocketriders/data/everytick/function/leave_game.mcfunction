@@ -46,9 +46,9 @@ execute unless predicate game:phase/match/closing unless predicate game:phase_la
 execute as @a[x=0,scores={LeaveGame=1..},predicate=custom:entity/is_on_fire] at @s run function game:putoutfire
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
 tag @a[x=0,scores={LeaveGame=1..}] remove is_nova_attached
-scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/infinity] shooting_saber.infinity_time
-scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/multishot] shooting_saber.multishot_time
-scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:elytra/elytra] elytra_time
+scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:effects/infinity_saber/on] effects.infinity_saber.time
+scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:effects/multishot_saber/on] effects.multishot_saber.time
+scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:effects/elytra/on] effects.elytra.state
 
 #Parkour quit
 execute if predicate rr:has_parkour as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]

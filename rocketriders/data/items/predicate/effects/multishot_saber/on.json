@@ -2,7 +2,7 @@
   "condition": "minecraft:entity_scores",
   "entity": "this",
   "scores": {
-    "shooting_saber.infinity_time": {
+    "effects.multishot_saber.time": {
       "min": 1
     }
   }

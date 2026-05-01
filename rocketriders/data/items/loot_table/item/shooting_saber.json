@@ -167,7 +167,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "items:shooting_saber/multishot"
+                  "name": "items:effects/multishot_saber/on"
                 }
               ]
             },
@@ -177,7 +177,7 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "items:shooting_saber/infinity"
+                  "name": "items:effects/infinity_saber/on"
                 }
               ]
             },
@@ -194,11 +194,11 @@
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "items:shooting_saber/infinity"
+                  "name": "items:effects/infinity_saber/on"
                 },
                 {
                   "condition": "minecraft:reference",
-                  "name": "items:shooting_saber/multishot"
+                  "name": "items:effects/multishot_saber/on"
                 }
               ]
             },

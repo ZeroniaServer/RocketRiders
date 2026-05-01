@@ -9,7 +9,6 @@ execute if predicate entities:origin_team/blue if predicate custom:near_yellow_s
 execute if predicate entities:origin_team/yellow if predicate custom:near_blue_spawn_zone run return run function entities:type/damage_spell/actions/break
 execute if predicate entities:origin_team/none if predicate custom:near_any_spawn_zone run return run function entities:type/damage_spell/actions/break
 
-## Magic Clouds
 # Home onto enemy (prioritise near players without the wither or regeneration effect)
 execute on origin run tag @s add damage_spell.origin
 execute if predicate entities:origin_team/blue positioned ^ ^ ^3 facing entity @p[distance=..30,predicate=custom:team/yellow,tag=!damage_spell.origin,predicate=!custom:near_yellow_spawn_zone] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
@@ -19,6 +18,9 @@ execute if predicate entities:origin_team/yellow positioned ^ ^ ^3 facing entity
 execute if predicate entities:origin_team/none positioned ^ ^ ^3 facing entity @p[distance=..30,tag=!damage_spell.origin,predicate=!custom:near_own_spawn_zone] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
 execute if predicate entities:origin_team/none positioned ^ ^ ^3 facing entity @p[distance=..15,tag=!damage_spell.origin,predicate=!custom:near_own_spawn_zone,predicate=!custom:entity/has_wither_effect] eyes positioned ^ ^ ^0.1 facing entity @s feet run rotate @s facing ^ ^ ^-1
 execute on origin run tag @s remove damage_spell.origin
+
+# Break on impact with an arrow and convert the arrow to a wither tipped arrow
+execute positioned as @s positioned ~-1.5 ~-1.5 ~-1.5 if function entities:type/damage_spell/tick/convert_arrow positioned as @s run return run function entities:type/damage_spell/actions/break
 
 # Movement (6m/s -> 12m/s)
 scoreboard players set $speed var 120

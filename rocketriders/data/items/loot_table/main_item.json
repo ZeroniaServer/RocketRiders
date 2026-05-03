@@ -28,7 +28,6 @@
             },
             {
               "type": "minecraft:alternatives",
-              "value": "items:item/piercing_pickaxe",
               "children": [
                 {
                   "type": "minecraft:loot_table",

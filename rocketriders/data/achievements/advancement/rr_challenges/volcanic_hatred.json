@@ -14,6 +14,7 @@
     "frame": "goal",
     "hidden": false,
     "icon": {
+      "id": "minecraft:lingering_potion",
       "components": {
         "minecraft:enchantment_glint_override": true,
         "minecraft:potion_contents": {
@@ -21,8 +22,7 @@
           "custom_effects": [],
           "potion": "minecraft:awkward"
         }
-      },
-      "id": "minecraft:lingering_potion"
+      }
     },
     "show_toast": true,
     "title": {

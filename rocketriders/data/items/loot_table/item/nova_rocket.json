@@ -10,6 +10,8 @@
             {
               "function": "minecraft:set_components",
               "components": {
+                "!minecraft:damage": {},
+                "!minecraft:max_damage": {},
                 "minecraft:custom_data": {
                   "id": "nova_rocket"
                 },
@@ -20,7 +22,6 @@
                     "none"
                   ]
                 },
-                "!minecraft:damage": {},
                 "minecraft:lore": [
                   {
                     "color": "gray",
@@ -44,7 +45,6 @@
                     "text": "Flight Duration: 1.5 seconds"
                   }
                 ],
-                "!minecraft:max_damage": {},
                 "minecraft:max_stack_size": 1,
                 "minecraft:tooltip_display": {
                   "hidden_components": [

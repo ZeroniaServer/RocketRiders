@@ -71,10 +71,10 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
+      "id": "minecraft:lingering_potion",
       "components": {
         "minecraft:potion_contents": "minecraft:water"
-      },
-      "id": "minecraft:lingering_potion"
+      }
     },
     "show_toast": true,
     "title": {

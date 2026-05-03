@@ -14,6 +14,7 @@
     "frame": "task",
     "hidden": false,
     "icon": {
+      "id": "minecraft:white_banner",
       "components": {
         "minecraft:banner_patterns": [
           {
@@ -37,8 +38,7 @@
             "pattern": "square_bottom_right"
           }
         ]
-      },
-      "id": "minecraft:white_banner"
+      }
     },
     "show_toast": true,
     "title": {

@@ -14,10 +14,10 @@
     "frame": "task",
     "hidden": false,
     "icon": {
+      "id": "minecraft:enchanted_book",
       "components": {
         "enchantment_glint_override": true
-      },
-      "id": "minecraft:enchanted_book"
+      }
     },
     "show_toast": true,
     "title": {

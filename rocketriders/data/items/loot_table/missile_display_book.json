@@ -28,8 +28,8 @@
                       "\n     ",
                       {
                         "color": "light_purple",
-                        "text": "Missile Display",
-                        "underlined": true
+                        "underlined": true,
+                        "text": "Missile Display"
                       },
                       "\n",
                       {
@@ -222,8 +222,8 @@
                       "\n     ",
                       {
                         "color": "light_purple",
-                        "text": "Missile Display",
-                        "underlined": true
+                        "underlined": true,
+                        "text": "Missile Display"
                       },
                       "\n",
                       {

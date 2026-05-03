@@ -26,8 +26,8 @@
                   "\n      ",
                   {
                     "color": "light_purple",
-                    "text": "Lobby Warps",
-                    "underlined": true
+                    "underlined": true,
+                    "text": "Lobby Warps"
                   },
                   "\n",
                   {
@@ -36,9 +36,9 @@
                   },
                   "\n\n",
                   {
-                    "interpret": true,
+                    "storage": "rocketriders:navbook",
                     "nbt": "join_teams",
-                    "storage": "rocketriders:navbook"
+                    "interpret": true
                   },
                   "\n",
                   [
@@ -95,9 +95,9 @@
                     }
                   },
                   {
-                    "interpret": true,
+                    "storage": "rocketriders:navbook",
                     "nbt": "modroom",
-                    "storage": "rocketriders:navbook"
+                    "interpret": true
                   },
                   "\n",
                   {
@@ -162,9 +162,9 @@
                     }
                   },
                   {
-                    "interpret": true,
+                    "storage": "rocketriders:navbook",
                     "nbt": "first_page_spacing",
-                    "storage": "rocketriders:navbook"
+                    "interpret": true
                   },
                   "\n      ",
                   {
@@ -234,13 +234,13 @@
                   "\n       ",
                   {
                     "color": "light_purple",
-                    "text": "How to Play",
-                    "underlined": true
+                    "underlined": true,
+                    "text": "How to Play"
                   },
                   {
-                    "interpret": true,
+                    "storage": "rocketriders:navbook",
                     "nbt": "description",
-                    "storage": "rocketriders:navbook"
+                    "interpret": true
                   }
                 ],
                 [
@@ -258,8 +258,8 @@
                   "\n         ",
                   {
                     "color": "light_purple",
-                    "text": "Settings",
-                    "underlined": true
+                    "underlined": true,
+                    "text": "Settings"
                   },
                   "\n",
                   {
@@ -283,9 +283,9 @@
                     }
                   },
                   {
-                    "interpret": true,
+                    "storage": "rocketriders:navbook",
                     "nbt": "parkourtips",
-                    "storage": "rocketriders:navbook"
+                    "interpret": true
                   },
                   {
                     "bold": true,
@@ -327,9 +327,9 @@
                     }
                   },
                   {
-                    "interpret": true,
+                    "storage": "rocketriders:navbook",
                     "nbt": "crusade_mode_settings",
-                    "storage": "rocketriders:navbook"
+                    "interpret": true
                   }
                 ],
                 [
@@ -347,8 +347,8 @@
                   "\n         ",
                   {
                     "color": "light_purple",
-                    "text": "Credits",
-                    "underlined": true
+                    "underlined": true,
+                    "text": "Credits"
                   },
                   "\n\n",
                   {
@@ -489,8 +489,8 @@
                   },
                   {
                     "color": "gold",
-                    "text": "80+",
-                    "underlined": true
+                    "underlined": true,
+                    "text": "80+"
                   },
                   {
                     "color": "dark_purple",

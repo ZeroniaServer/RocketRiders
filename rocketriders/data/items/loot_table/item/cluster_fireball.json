@@ -29,7 +29,7 @@
                 },
                 "minecraft:item_model": "minecraft:blaze_spawn_egg",
                 "minecraft:lore": [
-                   {
+                  {
                     "color": "gray",
                     "italic": false,
                     "text": "Spawns a stationary Cluster Fireball."

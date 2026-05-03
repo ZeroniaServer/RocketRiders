@@ -49,7 +49,7 @@ def custom_sort(value: Any, parent: str = None) -> Any:
                     sorted_items.append(((-98,k),k,v))
                     continue
 
-            # "name" and "weight" have high priority in loot table entries
+            # "name", "weight", and "value" have high priority in loot table entries
             if (parent == "entries"):
                 if (k == "name"):
                     sorted_items.append(((-99,k),k,v))
@@ -57,10 +57,21 @@ def custom_sort(value: Any, parent: str = None) -> Any:
                 if (k == "weight"):
                     sorted_items.append(((-98,k),k,v))
                     continue
+                if (k == "value"):
+                    sorted_items.append(((-99,k),k,v))
+                    continue
             
             # "range" has low priority in value_check predicates
             if (k == "range") and (("condition","minecraft:value_check") in items):
                 sorted_items.append(((99,k),k,v))
+                continue
+
+            # item stack priorities
+            if ((k == "count")) and ("id" in value):
+                sorted_items.append(((1,k),k,v))
+                continue
+            if ((k == "components")) and ("id" in value):
+                sorted_items.append(((2,k),k,v))
                 continue
 
             # dialog priorities
@@ -92,17 +103,32 @@ def custom_sort(value: Any, parent: str = None) -> Any:
                 sorted_items.append(((0,"min"+k[3:]+"1"),k,v))
                 continue
             
-            # "extra" after "text"
-            if (k == "extra") and ("text" in value):
+            # "block", "entity" or "storage" before "nbt"
+            if ((k == "block") or (k == "entity") or (k == "storage")) and ("nbt" in value):
                 sorted_items.append(((1,k),k,v))
                 continue
 
-            # "hover_event" and "click_event" last
-            if (k == "hover_event"):
+            # "formatting" before component type
+            if ((k == "text") or (k == "translate") or (k == "player") or (k == "atlas") or (k == "sprite") or (k == "nbt")) and (("bold" in value) or ("color" in value) or ("font" in value) or ("italic" in value) or ("obfuscated" in value) or ("shadow_color" in value) or ("strikethrough" in value) or ("underlined" in value) or ("block" in value) or ("entity" in value) or ("storage" in value)):
                 sorted_items.append(((2,k),k,v))
                 continue
-            if (k == "click_event"):
+
+            # component type parameters after component type
+            if ((k == "with") and ("translate" in value)) or ((k == "separator") and (("selector" in value) or ("nbt" in value))) or (((k == "plain") or (k == "interpret")) and ("nbt" in value)):
                 sorted_items.append(((3,k),k,v))
+                continue
+
+            # "hover_event" and "click_event" next
+            if (k == "hover_event") and (("text" in value) or ("translate" in value) or ("player" in value) or ("sprite" in value) or ("keybind" in value) or ("nbt" in value)):
+                sorted_items.append(((4,k),k,v))
+                continue
+            if (k == "click_event") and (("text" in value) or ("translate" in value) or ("player" in value) or ("sprite" in value) or ("keybind" in value) or ("nbt" in value)):
+                sorted_items.append(((5,k),k,v))
+                continue
+            
+            # "extra" last
+            if (k == "extra") and (("text" in value) or ("translate" in value) or ("player" in value) or ("sprite" in value) or ("keybind" in value) or ("nbt" in value)):
+                sorted_items.append(((6,k),k,v))
                 continue
             
             # sort everything else alphabetically

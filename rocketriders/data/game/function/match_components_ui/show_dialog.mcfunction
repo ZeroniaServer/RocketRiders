@@ -152,6 +152,10 @@ execute if predicate game:match_components/has_chase_crystals run data modify st
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_flags",label:"🔒 has_flags",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:match_components/has_flags run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set value "true"
 
+# has_nexuses (locked)
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_nexuses",label:"🔒 has_nexuses",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
+execute if predicate game:match_components/has_nexuses run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set value "true"
+
 # has_overtime (locked)
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_overtime",label:"🔒 has_overtime",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:match_components/has_overtime run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set value "true"
@@ -223,10 +227,6 @@ execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!sandboxEnab
 # one_team
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"one_team",label:"one_team",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/one_team run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
-
-# portal_crystal_protection (locked)
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"portal_crystal_protection",label:"🔒 portal_crystal_protection",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
-execute if predicate game:match_components/portal_crystal_protection run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set value "true"
 
 # "portal_type"
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"__portal_type",label:"portal_type",width:300,options:[{id:"0",display:{color:"white",text:"none"}},{id:"1",display:{color:"white",text:"default"}},{id:"2",display:{color:"white",text:"small"}}]}

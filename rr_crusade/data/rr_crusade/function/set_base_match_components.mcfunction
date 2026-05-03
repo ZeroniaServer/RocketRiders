@@ -21,7 +21,7 @@ scoreboard players set $decreased_icbm_flight_duration match_components 1
 scoreboard players set $decreased_shooting_saber_attack_damage match_components 1
 scoreboard players set $disable_arrow_stacking match_components 1
 scoreboard players set $has_spells match_components 1
-scoreboard players set $portal_crystal_protection match_components 1
+scoreboard players set $has_nexuses match_components 1
 scoreboard players set $small_portals match_components 1
 
 # items

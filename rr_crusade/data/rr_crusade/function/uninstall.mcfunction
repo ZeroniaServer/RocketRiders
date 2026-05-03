@@ -10,7 +10,6 @@ execute unless entity @e[x=0,type=armor_stand,tag=rr_crusade,limit=1] run tellra
 execute unless entity @e[x=0,type=armor_stand,tag=rr_crusade,limit=1] run tellraw @s {"text":"Click here to disable the Crusade Mode datapack (recommended).","color":"red","underlined":true,"click_event":{"action":"run_command","command":"/datapack disable 'file/rr_crusade'"},"hover_event":{"action":"show_text","value":{"color":"red","text":"Click to disable the Crusade Mode datapack"}}}
 scoreboard players add @e[x=0,type=armor_stand,tag=Selection,limit=1] refreshsigns 1
 
-kill @e[x=0,type=#custom:crystal,tag=CrusadeEntity]
 scoreboard objectives remove crusadehp
 bossbar remove rr_crusade:yellow
 bossbar remove rr_crusade:blue

@@ -13,7 +13,7 @@
         "condition": "minecraft:inverted",
         "term": {
           "condition": "minecraft:reference",
-          "name": "game:match_components/portal_crystal_protection"
+          "name": "game:match_components/has_nexuses"
         }
       },
       {

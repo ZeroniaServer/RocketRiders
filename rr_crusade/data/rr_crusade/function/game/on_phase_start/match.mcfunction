@@ -1,5 +1,5 @@
-bossbar set rr_crusade:blue name [{score:{name:"#blue",objective:"text.accent_color"}},"Total ",[{score:{name:"#blue",objective:"text.main_color"}},{bold:true,score:{name:"#blue",objective:"text.team_name"}}]," Crystal Health"]
-bossbar set rr_crusade:yellow name [{score:{name:"#yellow",objective:"text.accent_color"}},"Total ",[{score:{name:"#yellow",objective:"text.main_color"}},{bold:true,score:{name:"#yellow",objective:"text.team_name"}}]," Crystal Health"]
+bossbar set rr_crusade:blue name [{score:{name:"#blue",objective:"text.accent_color"}},"Total ",[{score:{name:"#blue",objective:"text.main_color"}},{bold:true,score:{name:"#blue",objective:"text.team_name"}}]," Nexus Health"]
+bossbar set rr_crusade:yellow name [{score:{name:"#yellow",objective:"text.accent_color"}},"Total ",[{score:{name:"#yellow",objective:"text.main_color"}},{bold:true,score:{name:"#yellow",objective:"text.team_name"}}]," Nexus Health"]
 
 execute if predicate game:blue_team_skin/blue run bossbar set rr_crusade:blue color blue
 execute if predicate game:blue_team_skin/any_red_skin run bossbar set rr_crusade:blue color red

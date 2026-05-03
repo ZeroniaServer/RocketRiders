@@ -4,7 +4,7 @@ function game:place_base_frames
 
 #Set portals
 kill @e[x=0,type=text_display,tag=portal_frame_mask]
-execute unless predicate game:match_components/portal_crystal_protection run function game:place_portal/all
+execute unless predicate game:match_components/has_nexuses run function game:place_portal/all
 
 ##Remove blocks in front of portals (extra precaution)
 fill -14 63 67 38 34 73 cave_air

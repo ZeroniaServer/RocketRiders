@@ -5,7 +5,7 @@
     "score": "match_components",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$portal_crystal_protection"
+      "name": "$has_nexuses"
     }
   },
   "range": 1

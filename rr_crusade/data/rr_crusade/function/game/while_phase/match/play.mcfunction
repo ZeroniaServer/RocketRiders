@@ -24,17 +24,17 @@ tag @a[x=0,tag=notInGlass] remove inGlass
 tag @a[x=0] remove notInGlass
 tag @a[x=0,predicate=!custom:team/any_playing_team] remove inGlass
 
-#> Crystal health & bossbars
+#> Nexus health & bossbars
 execute if score $match_play_time global matches 1.. run bossbar set rr_crusade:blue players @a[x=0,predicate=!custom:team/lobby]
 execute if score $match_play_time global matches 1.. run bossbar set rr_crusade:yellow players @a[x=0,predicate=!custom:team/lobby]
 execute store result bossbar rr_crusade:blue value run scoreboard players get $BlueShield crusadehp
 execute store result bossbar rr_crusade:yellow value run scoreboard players get $YellowShield crusadehp
 
 #> Deplete health
-execute if score $BlueShield crusadehp matches 1.. if score $CBA crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueA] run function rr_crusade:game/restorecba
-execute if score $BlueShield crusadehp matches 1.. if score $CBB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueB] run function rr_crusade:game/restorecbb
-execute if score $YellowShield crusadehp matches 1.. if score $CYA crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowA] run function rr_crusade:game/restorecya
-execute if score $YellowShield crusadehp matches 1.. if score $CYB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowB] run function rr_crusade:game/restorecyb
+execute if score $BlueShield crusadehp matches 1.. if score $CBA crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=nexus.blue_a] run function rr_crusade:game/restorecba
+execute if score $BlueShield crusadehp matches 1.. if score $CBB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=nexus.blue_b] run function rr_crusade:game/restorecbb
+execute if score $YellowShield crusadehp matches 1.. if score $CYA crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=nexus.yellow_a] run function rr_crusade:game/restorecya
+execute if score $YellowShield crusadehp matches 1.. if score $CYB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=nexus.yellow_b] run function rr_crusade:game/restorecyb
 
 #> Cooldown behavior
 # Pre cooldown
@@ -56,16 +56,16 @@ execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 1.
 execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:tinted_glass
 
 # Glass after cooldown
-execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 positioned 36 47 -39 run function rr_crusade:game/crystal_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
-execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 positioned -16 47 -39 run function rr_crusade:game/crystal_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
-execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 positioned -16 47 35 run function rr_crusade:game/crystal_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
-execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 positioned 36 47 35 run function rr_crusade:game/crystal_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
+execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 positioned 36 47 -39 run function rr_crusade:game/nexus_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
+execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 positioned -16 47 -39 run function rr_crusade:game/nexus_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
+execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 positioned -16 47 35 run function rr_crusade:game/nexus_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
+execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 positioned 36 47 35 run function rr_crusade:game/nexus_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
 
-# End crystals after cooldown
-execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueA,limit=1] Invulnerable set value false
-execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueB,limit=1] Invulnerable set value false
-execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellowA,limit=1] Invulnerable set value false
-execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellowB,limit=1] Invulnerable set value false
+# Nexuses after cooldown
+execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=nexus.blue_a,limit=1] Invulnerable set value false
+execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=nexus.blue_b,limit=1] Invulnerable set value false
+execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=nexus.yellow_a,limit=1] Invulnerable set value false
+execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=nexus.yellow_b,limit=1] Invulnerable set value false
 
 # Sounds after cooldown
 execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 positioned 38 49 -37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2

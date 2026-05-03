@@ -104,15 +104,15 @@ execute unless predicate game:match_components/arena/bedrock_base_frames run fil
 execute unless predicate game:match_components/arena/bedrock_base_frames run fill -88 202 58 -102 202 58 barrier strict
 
 # Frames & Portals
-execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/default run fill -101 195 59 -89 201 59 minecraft:nether_portal[axis=x] strict
-execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/default run fill -95 195 59 -95 201 59 minecraft:obsidian strict
-execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/small run fill -97 196 59 -93 199 59 minecraft:obsidian strict
-execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/small run fill -96 197 59 -94 198 59 minecraft:nether_portal[axis=x] strict
+execute unless predicate game:match_components/has_nexuses if predicate game:portal_type/default run fill -101 195 59 -89 201 59 minecraft:nether_portal[axis=x] strict
+execute unless predicate game:match_components/has_nexuses if predicate game:portal_type/default run fill -95 195 59 -95 201 59 minecraft:obsidian strict
+execute unless predicate game:match_components/has_nexuses if predicate game:portal_type/small run fill -97 196 59 -93 199 59 minecraft:obsidian strict
+execute unless predicate game:match_components/has_nexuses if predicate game:portal_type/small run fill -96 197 59 -94 198 59 minecraft:nether_portal[axis=x] strict
 
-execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/default run fill -101 195 97 -89 201 97 minecraft:nether_portal[axis=x] strict
-execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/default run fill -95 201 97 -95 195 97 minecraft:obsidian strict
-execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/small run fill -97 196 97 -93 199 97 minecraft:obsidian strict
-execute unless predicate game:match_components/portal_crystal_protection if predicate game:portal_type/small run fill -96 197 97 -94 198 97 minecraft:nether_portal[axis=x] strict
+execute unless predicate game:match_components/has_nexuses if predicate game:portal_type/default run fill -101 195 97 -89 201 97 minecraft:nether_portal[axis=x] strict
+execute unless predicate game:match_components/has_nexuses if predicate game:portal_type/default run fill -95 201 97 -95 195 97 minecraft:obsidian strict
+execute unless predicate game:match_components/has_nexuses if predicate game:portal_type/small run fill -97 196 97 -93 199 97 minecraft:obsidian strict
+execute unless predicate game:match_components/has_nexuses if predicate game:portal_type/small run fill -96 197 97 -94 198 97 minecraft:nether_portal[axis=x] strict
 
 # Flags
 execute if predicate game:match_components/has_flags run setblock -90 202 95 purple_stained_glass strict

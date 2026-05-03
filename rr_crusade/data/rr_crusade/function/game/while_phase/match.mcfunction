@@ -2,8 +2,8 @@
 function rr_crusade:game/cancel_utility
 
 #Set banners/light blocks (wait 1 tick before restoring banner due to MC-302559)
-function rr_crusade:game/place_crystal_labels_blue with storage rocketriders:teams blue.team_banner
-function rr_crusade:game/place_crystal_labels_yellow with storage rocketriders:teams yellow.team_banner
+function rr_crusade:game/place_nexus_labels_blue with storage rocketriders:teams blue.team_banner
+function rr_crusade:game/place_nexus_labels_yellow with storage rocketriders:teams yellow.team_banner
 
 #> Kit signs
 #blue
@@ -44,7 +44,7 @@ execute unless block 10 63 63 obsidian run setblock 10 63 63 obsidian strict
 execute unless block 12 63 62 obsidian run setblock 12 63 62 obsidian strict
 execute unless block 14 63 63 obsidian run setblock 14 63 63 obsidian strict
 
-# Prevent crystal bedrock being overwritten by utilities & missiles
+# Prevent nexus bedrock being overwritten by utilities & missiles
 execute if score $CBA crusadehp matches 1.. run fill 41 52 -39 35 52 -37 bedrock strict
 execute if score $CBB crusadehp matches 1.. run fill -11 52 -39 -17 52 -37 bedrock strict
 execute if score $CYA crusadehp matches 1.. run fill -17 52 39 -11 52 37 bedrock strict

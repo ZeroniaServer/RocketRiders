@@ -48,5 +48,5 @@ execute if items entity @s player.crafting.3 *[!custom_data~{ignore_hotbar_limit
 
 execute unless score $slots_filled var matches 9.. run return fail
 
-title @s actionbar {color:"red",text:"All usable slots are filled; you cannot receive new types of items."}
+title @s actionbar {color:"red",text:"All usable slots are filled; you cannot receive new types of items"}
 scoreboard players set $give_item var 0

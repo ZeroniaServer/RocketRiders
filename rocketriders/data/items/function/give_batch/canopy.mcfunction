@@ -31,8 +31,8 @@ scoreboard players set $give_item var 1
 # full hotbar
 function items:give_batch/__check_full_hotbar
 # limit reached
-execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 1 run title @s actionbar {color:"aqua",text:"Canopy already obtained."}
-execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 2.. run title @s actionbar {color:"aqua",text:"Maximum Canopies already obtained."}
+execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 1 run title @s actionbar {color:"aqua",text:"Canopy already obtained"}
+execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 2.. run title @s actionbar {color:"aqua",text:"Maximum Canopies already obtained"}
 execute if score $give_item var matches 1 if score $final_batch_size var matches 0 run scoreboard players set $give_item var 0
 
 ## Delay actionbar
@@ -44,8 +44,8 @@ execute if score $give_item var matches 0 at @s run playsound minecraft:block.no
 execute if score $give_item var matches 0 run return 0
 
 ## Success
-execute if score $final_batch_size var matches 1 run title @s actionbar {color:"aqua",text:"Canopy obtained."}
-execute if score $final_batch_size var matches 2.. run title @s actionbar {color:"aqua",text:"Canopies obtained."}
+execute if score $final_batch_size var matches 1 run title @s actionbar {color:"aqua",text:"Canopy obtained"}
+execute if score $final_batch_size var matches 2.. run title @s actionbar {color:"aqua",text:"Canopies obtained"}
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give_batch/canopy) Gave Canopy x",{score:{name:"$final_batch_size",objective:"var"}}," to ",{selector:"@s"}]}
 execute store result storage rocketriders:main items.count int 1 run scoreboard players get $final_batch_size var
 function items:give_count/canopy with storage rocketriders:main items

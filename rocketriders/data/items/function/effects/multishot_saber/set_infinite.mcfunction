@@ -1,4 +1,4 @@
-execute if predicate items:effects/multishot_saber/on run title @s actionbar [{"text":"Multishot Saber timer set to ","color":"light_purple"},{"text":"∞.","color":"red"}]
+execute if predicate items:effects/multishot_saber/on run title @s actionbar [{color:"light_purple",text:"Multishot Saber timer set to "},{color:"red",text:"∞"}]
 execute if predicate items:effects/multishot_saber/on run function custom:player/delay_actionbar
 execute unless predicate items:effects/multishot_saber/on run title @s title ""
 execute unless predicate items:effects/multishot_saber/on run title @s subtitle ["",{"text":"Multishot Saber:","color":"dark_purple","italic":true,"bold":true},{"text":" Lasts ","color":"light_purple","italic":true},{"text":"forever.","color":"red"}]

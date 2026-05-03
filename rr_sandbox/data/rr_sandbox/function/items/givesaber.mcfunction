@@ -1,6 +1,6 @@
-loot give @s loot items:item/shooting_saber
-title @s[predicate=!items:effects/infinity_saber/on,predicate=!items:effects/multishot_saber/on] actionbar {"text":"Shooting Saber obtained.","color":"light_purple"}
-title @s[predicate=!items:effects/infinity_saber/on,predicate=items:effects/multishot_saber/on] actionbar {"text":"Multishot Saber obtained.","color":"light_purple"}
-title @s[predicate=items:effects/infinity_saber/on,predicate=!items:effects/multishot_saber/on] actionbar {"text":"Infinity Saber obtained.","color":"light_purple"}
-title @s[predicate=items:effects/infinity_saber/on,predicate=items:effects/multishot_saber/on] actionbar {"text":"Multishot-Infinity Saber obtained.","color":"light_purple"}
-playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
+function items:give_count/shooting_saber {count:1}
+
+execute if predicate items:effects/infinity_saber/on if predicate items:effects/multishot_saber/on run return run title @s actionbar {color:"light_purple",text:"Multishot-Infinity Saber obtained"}
+execute if predicate items:effects/multishot_saber/on run title @s actionbar {color:"light_purple",text:"Multishot Saber obtained"}
+execute if predicate items:effects/infinity_saber/on run title @s actionbar {color:"light_purple",text:"Infinity Saber obtained"}
+title @s actionbar {color:"light_purple",text:"Shooting Saber obtained"}

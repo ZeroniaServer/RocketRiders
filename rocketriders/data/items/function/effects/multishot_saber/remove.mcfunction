@@ -1,4 +1,4 @@
-title @s actionbar {"text":"Multishot Saber expired.","color":"red"}
+title @s actionbar {color:"red",text:"Multishot Saber expired"}
 function custom:player/delay_actionbar
 
 scoreboard players reset @s effects.multishot_saber.time

@@ -1,3 +1,2 @@
-loot give @s loot items:item/knight_sword
-title @s actionbar {"text":"Knight Sword obtained.","color":"light_purple"}
-execute at @s run playsound minecraft:entity.item.pickup player @s ~ ~ ~ 0.25 2
+function items:give_count/knight_sword {count:1}
+title @s actionbar {color:"light_purple",text:"Knight Sword obtained"}

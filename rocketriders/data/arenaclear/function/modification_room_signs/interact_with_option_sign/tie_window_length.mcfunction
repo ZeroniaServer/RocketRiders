@@ -4,9 +4,11 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefres
 # overrides
 execute if predicate game:feature_flags/1_4_0_update/on if predicate custom:team/any_arena_team run return run tellraw @s {"text":"You cannot modify Tie Window while on a team","color":"red"}
 execute if predicate game:feature_flags/1_4_0_update/on if predicate game:match_components/duel_settings_locked run return run tellraw @s {"text":"Game Rules are not adjustable in this game mode.","color":"dark_gray","italic":true}
-execute if predicate game:feature_flags/1_4_0_update/on if predicate game:game_rules/tie_window_length/__locked run return run tellraw @s {"text":"Tie Window is not adjustable in this game mode.","color":"dark_gray","italic":true}
+execute if predicate game:feature_flags/1_4_0_update/on if predicate game:game_rules/tie_window_length/__forced_zero run return run tellraw @s {color:"dark_gray",italic:true,text:"Tie Window is incompatible with this game mode."}
+execute if predicate game:feature_flags/1_4_0_update/on if predicate game:game_rules/tie_window_length/__forced_non_zero run return run tellraw @s {color:"dark_gray",italic:true,text:"Tie Window is required in this game mode."}
 execute unless predicate game:feature_flags/1_4_0_update/on if predicate game:match_components/duel_settings_locked run return run tellraw @s {"text":"Game Rules are not adjustable in this game mode.","color":"dark_gray","italic":true}
-execute unless predicate game:feature_flags/1_4_0_update/on if predicate game:game_rules/tie_window_length/__locked run return run tellraw @s {"text":"Tiebreakers are not adjustable in this game mode.","color":"dark_gray","italic":true}
+execute unless predicate game:feature_flags/1_4_0_update/on if predicate game:game_rules/tie_window_length/__forced_zero run return run tellraw @s {color:"dark_gray",italic:true,text:"Tiebreakers are incompatible with this game mode."}
+execute unless predicate game:feature_flags/1_4_0_update/on if predicate game:game_rules/tie_window_length/__forced_non_zero run return run tellraw @s {color:"dark_gray",italic:true,text:"Tiebreakers are required in this game mode."}
 
 # open dialog
 execute if predicate game:feature_flags/1_4_0_update/on run return run function arenaclear:tie_window_length/show_dialog

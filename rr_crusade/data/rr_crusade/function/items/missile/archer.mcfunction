@@ -10,9 +10,9 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenBroad]
 tag @e[x=0,type=marker,tag=crusadeRNG,sort=random,limit=1] add rngSelected
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(rr_crusade:items/missile/archer) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=crusadeRNG,tag=rngSelected]"}]}
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCitadel] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/citadel
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSlash] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/slasher
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngThun] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/thunderbolt
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHur] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/hurricane
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/broadsword
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCitadel] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/citadel
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSlash] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/slasher
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngThun] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/thunderbolt
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHur] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/hurricane
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @a[x=0,predicate=rr_crusade:kit/archer,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/broadsword
 kill @e[x=0,type=marker,tag=crusadeRNG]

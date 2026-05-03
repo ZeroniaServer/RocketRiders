@@ -1,1 +1,1 @@
-function items:give/arrow
+function items:give_batch/arrow

@@ -22,6 +22,6 @@ tag @e[x=0,type=marker,tag=rng1,sort=random,limit=1] add rngSelected
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:rng) Handing out items..."]}
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngMissile] run function items:rng/missile
 execute as @e[x=0,type=marker,tag=rngSelected,tag=rngUtil] run function items:rng/util
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,predicate=custom:team/blue,tag=getItem] run function items:give/surprise_egg
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,predicate=custom:team/yellow,tag=getItem] run function items:give/surprise_egg
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,predicate=custom:team/blue,tag=getItem] run function items:give_batch/surprise_egg
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSurprise] as @a[x=0,predicate=custom:team/yellow,tag=getItem] run function items:give_batch/surprise_egg
 kill @e[x=0,type=marker,tag=rng1]

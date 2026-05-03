@@ -10,7 +10,7 @@ execute if entity @s[tag=!gaveFirstItem] run scoreboard players set $CTFRNG RNGs
 
 #Give canopy (25% chance) - cannot have a streak greater than 2 canopies in a row
 execute if predicate game:game_rules/show_debug_logs/on if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if score $CTFRNG RNGscore matches 0 run function custom:log {message:["(rr_ctf:items/giverandom) Handing out canopy (special 25% logic)..."]}
-execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if score $CTFRNG RNGscore matches 0 as @a[x=0,predicate=custom:team/any_playing_team] run function items:give/canopy
+execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if score $CTFRNG RNGscore matches 0 as @a[x=0,predicate=custom:team/any_playing_team] run function items:give_batch/canopy
 execute if entity @s[tag=gaveFirstItem,tag=!canopyStreaked,scores={canopyStreak=..1}] if score $CTFRNG RNGscore matches 0 run scoreboard players add @s canopyStreak 1
 execute if entity @s[tag=canopyStreaked] if score $CTFRNG RNGscore matches 0 run function items:rng
 execute if entity @s[tag=canopyStreaked] if score $CTFRNG RNGscore matches 0 run function items:tetris

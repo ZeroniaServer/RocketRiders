@@ -16,14 +16,14 @@ execute if predicate game:item_pool/missile/gemini if entity @e[x=0,type=armor_s
 tag @e[x=0,type=marker,tag=rng3,sort=random,limit=1] add rngSelected
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:rng/missile/normal) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=rng3,tag=rngSelected]"}]}
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/ant
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/lifter
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBlade] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/blade
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/catapult
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngEguard] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/elder_guardian
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/chronullifier
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSlash] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/slasher
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/tomatwo
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCitadel] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/citadel
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngGemi] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/gemini
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngAnt] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/ant
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngLift] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/lifter
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBlade] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/blade
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCata] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/catapult
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngEguard] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/elder_guardian
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNull] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/chronullifier
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSlash] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/slasher
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngToma] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/tomatwo
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCitadel] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/citadel
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngGemi] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/gemini
 kill @e[x=0,type=marker,tag=rng3]

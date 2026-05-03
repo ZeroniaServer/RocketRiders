@@ -16,7 +16,7 @@ execute as @e[x=0,type=marker,tag=SelectedSwapRNG3,tag=rngArrows] run tag @e[x=0
 
 execute if predicate rr_swap:blue_team_is_dark as @e[x=0,type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/darkblueitems
 execute if predicate rr_swap:blue_team_is_light as @e[x=0,type=marker,tag=SelectedSwapRNG2,tag=!rngArrows] run function rr_swap:items/lightblueitems
-execute as @e[x=0,type=marker,tag=SelectedSwapRNG3,tag=rngArrows] as @a[x=0,predicate=custom:team/any_playing_team] run function items:give/arrow
+execute as @e[x=0,type=marker,tag=SelectedSwapRNG3,tag=rngArrows] as @a[x=0,predicate=custom:team/any_playing_team] run function items:give_batch/arrow
 
 kill @e[x=0,type=marker,tag=swapRNGD]
 kill @e[x=0,type=marker,tag=swapRNGL]

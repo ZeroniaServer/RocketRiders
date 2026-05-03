@@ -9,8 +9,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!givenHyper]
 tag @e[x=0,type=marker,tag=rng3,sort=random,limit=1] add rngSelected
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:rng/missile/special) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=rng3,tag=rngSelected]"}]}
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/broadsword
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/bullet
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/duplex
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/missile/hypersonic
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBroad] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/broadsword
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngBull] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/bullet
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngDuplex] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/duplex
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngHyper] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/missile/hypersonic
 kill @e[x=0,type=marker,tag=rng3]

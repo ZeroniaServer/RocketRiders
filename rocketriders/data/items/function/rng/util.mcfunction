@@ -13,12 +13,12 @@ execute if predicate game:item_pool/nova_rocket if entity @e[x=0,type=armor_stan
 tag @e[x=0,type=marker,tag=rng2,sort=random,limit=1] add rngSelected
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:rng/util) Selected: ",{selector:"@e[limit=1,x=0,type=marker,tag=rng2,tag=rngSelected]"}]}
 
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/arrow
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngFireball] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/fireball
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/obsidian_shield
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/canopy
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/shield
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/splash
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngVortex] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/vortex
-execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNova] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give/nova_rocket
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngArrows] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/arrow
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngFireball] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/fireball
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngObshield] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/obsidian_shield
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngCanopy] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/canopy
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngShield] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/shield
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngSplash] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/splash
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngVortex] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/vortex
+execute as @e[x=0,type=marker,tag=rngSelected,tag=rngNova] as @a[x=0,tag=getItem,predicate=custom:team/any_playing_team] run function items:give_batch/nova_rocket
 kill @e[x=0,type=marker,tag=rng2]

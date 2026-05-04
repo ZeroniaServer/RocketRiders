@@ -9,7 +9,7 @@ execute unless predicate game:match_components/one_team as @a[x=0,tag=LeavingBlu
 execute if predicate game:match_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the match!"]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/spectator] add LeavingSpec
 execute as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is no longer spectating the match!","color":"gray"}]
-execute as @a[x=0,tag=LeavingSpec] run tp @s @s
+execute as @a[x=0,tag=LeaveTeams] run tp @s @s
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/lobby] add WasInLobby
 tag @a[x=0,tag=LeaveTeams] remove doing_facade_parkour
 execute as @a[x=0,tag=LeaveTeams] run function custom:player/team/join_lobby

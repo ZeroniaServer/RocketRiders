@@ -166,7 +166,7 @@ title @a[x=0,tag=spawnzoneMSGCFB,limit=1] actionbar {color:"red",text:"You canno
 title @a[x=0,tag=roofMSGOS,limit=1] actionbar {color:"red",text:"You cannot spawn obsidian shields at this height"}
 title @a[x=0,tag=voidMSGOS,limit=1] actionbar {color:"red",text:"You cannot spawn obsidian shields at this height"}
 
-execute as @a[x=0] unless entity @s[tag=!MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG,tag=!roofMSGFB,tag=!voidMSGFB,tag=!spawnzoneMSGFB,tag=!roofMSGCFB,tag=!voidMSGCFB,tag=!spawnzoneMSGCFB,tag=!roofMSGOS,tag=!voidMSGOS,tag=!preventionMSG] run function custom:delay_actionbar
+execute as @a[x=0] unless entity @s[tag=!MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG,tag=!roofMSGFB,tag=!voidMSGFB,tag=!spawnzoneMSGFB,tag=!roofMSGCFB,tag=!voidMSGCFB,tag=!spawnzoneMSGCFB,tag=!roofMSGOS,tag=!voidMSGOS,tag=!preventionMSG] run function custom:player/delay_actionbar
 
 ##Tag removal
 execute unless predicate game:match_components/custom_pierce_prevention run tag @a[x=0,tag=preventionMSG,limit=1] remove preventionMSG

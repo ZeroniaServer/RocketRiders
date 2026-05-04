@@ -125,7 +125,7 @@ execute as @a[x=0,tag=BackObshield,tag=!giveback.mainhand_free,gamemode=!creativ
 tag @a remove giveback.mainhand_free
 
 ##Unable message
-tag @a[x=0,tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG,tag=!roofMSGFB,tag=!voidMSGFB,tag=!roofMSGOS,tag=!voidMSGOS,limit=1] add preventionMSG
+tag @a[x=0,tag=MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG,tag=!roofMSGFB,tag=!voidMSGFB,tag=!spawnzoneMSGFB,tag=!roofMSGCFB,tag=!voidMSGCFB,tag=!spawnzoneMSGCFB,tag=!roofMSGOS,tag=!voidMSGOS,limit=1] add preventionMSG
 execute unless predicate game:match_components/custom_pierce_prevention run title @a[x=0,tag=preventionMSG,limit=1] actionbar {color:"red",text:"You cannot spawn missiles inside of portals"}
 title @a[x=0,tag=roofMSG,limit=1] actionbar {color:"red",text:"You cannot spawn missiles at this height"}
 title @a[x=0,tag=voidMSG,limit=1] actionbar {color:"red",text:"You cannot spawn missiles at this height"}
@@ -141,6 +141,8 @@ title @a[x=0,tag=voidMSGCFB,limit=1] actionbar {color:"red",text:"You cannot spa
 title @a[x=0,tag=spawnzoneMSGCFB,limit=1] actionbar {color:"red",text:"You cannot spawn cluster fireballs near an enemy's spawnpoint"}
 title @a[x=0,tag=roofMSGOS,limit=1] actionbar {color:"red",text:"You cannot spawn obsidian shields at this height"}
 title @a[x=0,tag=voidMSGOS,limit=1] actionbar {color:"red",text:"You cannot spawn obsidian shields at this height"}
+
+execute as @a[x=0] unless entity @s[tag=!MissiMSG,tag=!roofMSG,tag=!voidMSG,tag=!antigriefMSG,tag=!spawnpointMSG,tag=!collisionMSG,tag=!roofMSGFB,tag=!voidMSGFB,tag=!spawnzoneMSGFB,tag=!roofMSGCFB,tag=!voidMSGCFB,tag=!spawnzoneMSGCFB,tag=!roofMSGOS,tag=!voidMSGOS,tag=!preventionMSG] run function custom:player/delay_actionbar
 
 ##Tag removal
 execute unless predicate game:match_components/custom_pierce_prevention run tag @a[x=0,tag=preventionMSG,limit=1] remove preventionMSG

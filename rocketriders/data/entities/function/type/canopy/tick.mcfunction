@@ -97,7 +97,7 @@ execute if score @s entity.age matches 299 run particle minecraft:block{block_st
 
 #Canopy watering (one time use - Splash extends Canopy duration)
 scoreboard players set $in_water var 0
-execute if score @s[tag=!canopy.watered] entity.age matches 2..299 store success score $in_water var run clone ~-2 ~-1 ~-2 ~2 ~2 ~2 ~-2 ~-1 ~-2 filtered water force
+execute if score @s[tag=!canopy.watered,tag=canopy.animated] entity.age matches 2..299 store success score $in_water var run clone ~-2 ~-1 ~-2 ~2 ~2 ~2 ~-2 ~-1 ~-2 filtered water force
 execute if score $in_water var matches 1 run setblock ~ ~1 ~ sponge
 execute if score $in_water var matches 1 run fill ~-2 ~-1 ~-2 ~2 ~2 ~2 air replace water
 execute if score $in_water var matches 1 run setblock ~ ~1 ~ oak_wood[axis=y]

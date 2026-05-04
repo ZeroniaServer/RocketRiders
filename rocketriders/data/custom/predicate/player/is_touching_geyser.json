@@ -5,7 +5,7 @@
     "minecraft:entity_tags": {
       "any_of": [
         "in_geyser_base",
-        "in_geyser_top"
+        "in_geyser_plume"
       ]
     }
   }

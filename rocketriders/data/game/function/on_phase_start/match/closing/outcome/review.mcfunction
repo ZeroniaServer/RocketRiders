@@ -1,6 +1,7 @@
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match.closing.outcome.review"]}
 
 ##
+kill @e[x=0,type=firework_rocket]
 gamemode spectator @a[x=0,predicate=custom:team/any_playing_team]
 
 ## Game-mode-specific functions

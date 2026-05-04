@@ -12,6 +12,7 @@ execute if predicate game:phase/match unless predicate game:phase/match/closing 
 
 #Clearing effects/tags and teleporting to lobby
 tag @a[x=0,scores={LeaveGame=1..}] remove force_mount
+execute if entity @a[x=0,scores={LeaveGame=1..}] as @e[x=0,type=firework_rocket] if function custom:kill_elytra_firework run kill
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_canopy
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_nova_attach
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_spell_emitter

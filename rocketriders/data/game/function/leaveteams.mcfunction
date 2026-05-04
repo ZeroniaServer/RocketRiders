@@ -1,5 +1,6 @@
 ##Handles players leaving teams
 tag @a[x=0,tag=LeaveTeams] remove force_mount
+execute if entity @a[x=0,tag=LeaveTeams] as @e[x=0,type=firework_rocket] if function custom:kill_elytra_firework run kill
 execute as @a[x=0,tag=LeaveTeams] run ride @s dismount
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/yellow] add LeavingYellow
 execute as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]

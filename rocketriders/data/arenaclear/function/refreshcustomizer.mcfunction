@@ -17,18 +17,6 @@ scoreboard players operation $arena_details/portal config %= $5 constant
 execute if score $arena_details/portal config matches 0 run scoreboard players reset $arena_details/portal config
 
 ## DETAILS
-# TOP DETAIL
-data modify block -57 192 76 front_text.messages set value [{color:"dark_green",text:"Top Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/top"}},{color:"green",text:"None"},"",""]
-execute if predicate game:arena_details/top/none run data modify block -57 192 76 front_text.messages[1].text set value "None"
-execute if predicate game:arena_details/top/arch run data modify block -57 192 76 front_text.messages[1].text set value "Arch"
-execute if predicate game:arena_details/top/towers run data modify block -57 192 76 front_text.messages[1].text set value "Towers"
-execute if predicate game:arena_details/top/spikes run data modify block -57 192 76 front_text.messages[1].text set value "Spikes"
-execute if predicate game:arena_details/top/castle unless predicate game:feature_flags/1_4_0_update/on run data modify block -57 192 76 front_text.messages[1].text set value "None"
-execute if predicate game:arena_details/top/castle if predicate game:feature_flags/1_4_0_update/on run data modify block -57 192 76 front_text.messages[1].text set value "Castle"
-execute unless predicate game:match_components/duel_settings_locked run data modify block -57 192 76 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
-execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/top/__locked_by_game_mode,predicate=!game:modifiers/hardcore/on] run data modify block -57 192 76 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
-execute if predicate game:match_components/duel_settings_locked run data modify block -57 192 76 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
-
 # TOP SIDES DETAIL
 data modify block -58 192 71 front_text.messages set value [{color:"#0090B8",text:"Top Sides Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/top_sides"}},{color:"#00C8FF",text:""},"",""]
 execute if predicate game:arena_details/top_sides/none run data modify block -58 192 71 front_text.messages[1].text set value "None"
@@ -38,26 +26,8 @@ execute if predicate game:arena_details/top_sides/cannons run data modify block 
 execute unless predicate game:match_components/duel_settings_locked run data modify block -58 192 71 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
 execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/top_sides/__locked_by_game_mode,predicate=!game:modifiers/hardcore/on,predicate=!game:arena_details/top/castle] run data modify block -58 192 71 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -58 192 71 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
-
-# MIDDLE DETAIL
-data modify block -58 192 84 front_text.messages set value [{color:"#C55F00",text:"Middle Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/middle"}},{color:"#FF7B00",text:""},"",""]
-execute if predicate game:arena_details/middle/none run data modify block -58 192 84 front_text.messages[1].text set value "None"
-execute if predicate game:arena_details/middle/slime_pads run data modify block -58 192 84 front_text.messages[1].text set value "Slime Pads"
-execute if predicate game:arena_details/middle/spikes run data modify block -58 192 84 front_text.messages[1].text set value "Spikes"
-execute if predicate game:arena_details/middle/layered run data modify block -58 192 84 front_text.messages[1].text set value "Layered"
-execute unless predicate game:match_components/duel_settings_locked run data modify block -58 192 84 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
-execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/middle/__locked_by_game_mode,predicate=!game:modifiers/hardcore/on] run data modify block -58 192 84 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
-execute if predicate game:match_components/duel_settings_locked run data modify block -58 192 84 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
-
-# BOTTOM DETAIL
-data modify block -57 192 80 front_text.messages set value [{color:"#BF4DB8",text:"Bottom Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/bottom"}},{color:"#FF6AF6",text:""},"",""]
-execute if predicate game:arena_details/bottom/none run data modify block -57 192 80 front_text.messages[1].text set value "None"
-execute if predicate game:arena_details/bottom/slime_pad run data modify block -57 192 80 front_text.messages[1].text set value "Slime Pad"
-execute if predicate game:arena_details/bottom/spikes run data modify block -57 192 80 front_text.messages[1].text set value "Spikes"
-execute if predicate game:arena_details/bottom/cannon run data modify block -57 192 80 front_text.messages[1].text set value "Cannon"
-execute unless predicate game:match_components/duel_settings_locked run data modify block -57 192 80 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
-execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/bottom/__locked_by_game_mode,predicate=!game:modifiers/hardcore/on,predicate=!game:arena_details/middle/layered] run data modify block -57 192 80 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
-execute if predicate game:match_components/duel_settings_locked run data modify block -57 192 80 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
+setblock -57 192 71 minecraft:cyan_stained_glass
+execute if predicate game:arena_details/top_sides/__locked_by_game_mode run setblock -57 192 71 minecraft:light_gray_stained_glass
 
 # PORTAL DETAIL
 data modify block -58 192 73 front_text.messages set value [{color:"#5A0079",text:"Portal Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/portal"}},{color:"#7900A4",text:""},"",""]
@@ -69,6 +39,46 @@ execute if predicate game:arena_details/portal/hole_in_one run data modify block
 execute unless predicate game:match_components/duel_settings_locked run data modify block -58 192 73 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
 execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/portal/__locked_by_game_mode,predicate=!game:match_components/no_portals] run data modify block -58 192 73 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -58 192 73 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
+setblock -57 192 73 minecraft:purple_stained_glass
+execute if predicate game:arena_details/portal/__locked_by_game_mode run setblock -57 192 73 minecraft:light_gray_stained_glass
+
+# TOP DETAIL
+data modify block -57 192 76 front_text.messages set value [{color:"dark_green",text:"Top Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/top"}},{color:"green",text:"None"},"",""]
+execute if predicate game:arena_details/top/none run data modify block -57 192 76 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/top/arch run data modify block -57 192 76 front_text.messages[1].text set value "Arch"
+execute if predicate game:arena_details/top/towers run data modify block -57 192 76 front_text.messages[1].text set value "Towers"
+execute if predicate game:arena_details/top/spikes run data modify block -57 192 76 front_text.messages[1].text set value "Spikes"
+execute if predicate game:arena_details/top/castle unless predicate game:feature_flags/1_4_0_update/on run data modify block -57 192 76 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/top/castle if predicate game:feature_flags/1_4_0_update/on run data modify block -57 192 76 front_text.messages[1].text set value "Castle"
+execute unless predicate game:match_components/duel_settings_locked run data modify block -57 192 76 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
+execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/top/__locked_by_game_mode,predicate=!game:modifiers/hardcore/on] run data modify block -57 192 76 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute if predicate game:match_components/duel_settings_locked run data modify block -57 192 76 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
+setblock -56 192 76 minecraft:lime_stained_glass
+execute if predicate game:arena_details/top/__locked_by_game_mode run setblock -56 192 76 minecraft:light_gray_stained_glass
+
+# BOTTOM DETAIL
+data modify block -57 192 80 front_text.messages set value [{color:"#BF4DB8",text:"Bottom Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/bottom"}},{color:"#FF6AF6",text:""},"",""]
+execute if predicate game:arena_details/bottom/none run data modify block -57 192 80 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/bottom/slime_pad run data modify block -57 192 80 front_text.messages[1].text set value "Slime Pad"
+execute if predicate game:arena_details/bottom/spikes run data modify block -57 192 80 front_text.messages[1].text set value "Spikes"
+execute if predicate game:arena_details/bottom/cannon run data modify block -57 192 80 front_text.messages[1].text set value "Cannon"
+execute unless predicate game:match_components/duel_settings_locked run data modify block -57 192 80 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
+execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/bottom/__locked_by_game_mode,predicate=!game:modifiers/hardcore/on,predicate=!game:arena_details/middle/layered] run data modify block -57 192 80 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute if predicate game:match_components/duel_settings_locked run data modify block -57 192 80 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
+setblock -56 192 80 minecraft:pink_stained_glass
+execute if predicate game:arena_details/bottom/__locked_by_game_mode run setblock -56 192 80 minecraft:light_gray_stained_glass
+
+# MIDDLE DETAIL
+data modify block -58 192 84 front_text.messages set value [{color:"#C55F00",text:"Middle Detail:",click_event:{action:"run_command",command:"function arenaclear:modification_room_signs/interact_with_customizer_sign/middle"}},{color:"#FF7B00",text:""},"",""]
+execute if predicate game:arena_details/middle/none run data modify block -58 192 84 front_text.messages[1].text set value "None"
+execute if predicate game:arena_details/middle/slime_pads run data modify block -58 192 84 front_text.messages[1].text set value "Slime Pads"
+execute if predicate game:arena_details/middle/spikes run data modify block -58 192 84 front_text.messages[1].text set value "Spikes"
+execute if predicate game:arena_details/middle/layered run data modify block -58 192 84 front_text.messages[1].text set value "Layered"
+execute unless predicate game:match_components/duel_settings_locked run data modify block -58 192 84 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
+execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/middle/__locked_by_game_mode,predicate=!game:modifiers/hardcore/on] run data modify block -58 192 84 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute if predicate game:match_components/duel_settings_locked run data modify block -58 192 84 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
+setblock -57 192 84 minecraft:orange_stained_glass
+execute if predicate game:arena_details/middle/__locked_by_game_mode run setblock -57 192 84 minecraft:light_gray_stained_glass
 
 ## Removes existing displays
 fill -45 196 92 -55 185 64 minecraft:light[level=15] strict

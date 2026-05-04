@@ -30,24 +30,6 @@
   ],
   "body": [
     {
-      "type": "minecraft:item",
-      "item": {
-        "id": "minecraft:player_head",
-        "components": {
-          "minecraft:profile": {
-            "id": [
-              1909544700,
-              370756089,
-              -1576344790,
-              1695827449
-            ]
-          }
-        }
-      },
-      "show_decorations": false,
-      "show_tooltip": false
-    },
-    {
       "type": "minecraft:plain_message",
       "contents": [
         "",

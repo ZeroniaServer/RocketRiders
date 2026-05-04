@@ -58,8 +58,8 @@ execute if score $triggered_by_entity var matches 1 run return run function enti
 tag @s remove vortex.is_drifting
 execute on vehicle run tag @s remove vortex.is_drifting
 execute if entity @s[tag=!vortex.is_primed] run function entities:type/vortex/tick/drift_detection_range {distance:4}
-execute if entity @s[tag=vortex.is_primed] if score @s entity.vortex.drifting_for_ticks matches 0 run function entities:type/vortex/tick/drift_detection_range {distance:5.5}
-execute if entity @s[tag=vortex.is_primed] if score @s entity.vortex.drifting_for_ticks matches 1.. run function entities:type/vortex/tick/drift_detection_range {distance:5.75}
+execute if entity @s[tag=vortex.is_primed] if score @s entity.vortex.drifting_for_ticks matches 0 run function entities:type/vortex/tick/drift_detection_range {distance:6}
+execute if entity @s[tag=vortex.is_primed] if score @s entity.vortex.drifting_for_ticks matches 1.. run function entities:type/vortex/tick/drift_detection_range {distance:6.5}
 
 # settle into the block grid when drifting stops
 execute if score @s entity.vortex.drifting_for_ticks matches 1.. if entity @s[tag=!vortex.is_drifting,tag=!vortex.neutral_landmine] on vehicle run data merge entity @s {teleport_duration:10,start_interpolation:0,interpolation_duration:10,transformation:{scale:[0.8,0.8,0.8]}}

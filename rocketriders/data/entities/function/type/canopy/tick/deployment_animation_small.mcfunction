@@ -2,25 +2,25 @@
 execute if score @s entity.age matches 0..49 if predicate custom:periodic_tick/3 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 1 0 1 0.1 10
 execute if score @s entity.age matches 0 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 2
 
-execute if score @s entity.age matches 9.. positioned ~ ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_wood[axis=y]
-execute if score @s entity.age matches 9.. positioned ~ ~ ~-1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
-execute if score @s entity.age matches 9.. positioned ~ ~ ~1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
+execute if score @s entity.age matches 9.. positioned ~ ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ oak_wood[axis=y] destroy
+execute if score @s entity.age matches 9.. positioned ~ ~ ~-1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] destroy
+execute if score @s entity.age matches 9.. positioned ~ ~ ~1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] destroy
 execute if score @s entity.age matches 9 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 2
 
-execute if score @s entity.age matches 19.. positioned ~-1 ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
-execute if score @s entity.age matches 19.. positioned ~1 ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] replace
-execute if score @s entity.age matches 19.. positioned ~ ~ ~-2 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] replace
-execute if score @s entity.age matches 19.. positioned ~ ~ ~2 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] replace
+execute if score @s entity.age matches 19.. positioned ~-1 ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] destroy
+execute if score @s entity.age matches 19.. positioned ~1 ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ jungle_leaves[persistent=true] destroy
+execute if score @s entity.age matches 19.. positioned ~ ~ ~-2 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] destroy
+execute if score @s entity.age matches 19.. positioned ~ ~ ~2 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] destroy
 execute if score @s entity.age matches 19 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 1
 
-execute if score @s entity.age matches 29.. positioned ~-1 ~ ~-1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
-execute if score @s entity.age matches 29.. positioned ~-1 ~ ~1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
-execute if score @s entity.age matches 29.. positioned ~1 ~ ~-1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
-execute if score @s entity.age matches 29.. positioned ~1 ~ ~1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] replace
+execute if score @s entity.age matches 29.. positioned ~-1 ~ ~-1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] destroy
+execute if score @s entity.age matches 29.. positioned ~-1 ~ ~1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] destroy
+execute if score @s entity.age matches 29.. positioned ~1 ~ ~-1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] destroy
+execute if score @s entity.age matches 29.. positioned ~1 ~ ~1 if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ spruce_leaves[persistent=true] destroy
 execute if score @s entity.age matches 29 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 1
 
-execute if score @s entity.age matches 39.. positioned ~-2 ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] replace
-execute if score @s entity.age matches 39.. positioned ~2 ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] replace
+execute if score @s entity.age matches 39.. positioned ~-2 ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] destroy
+execute if score @s entity.age matches 39.. positioned ~2 ~ ~ if block ~ ~ ~ #custom:canopy_replaceable unless block ~ ~ ~ minecraft:crying_obsidian run setblock ~ ~ ~ birch_leaves[persistent=true] destroy
 execute if score @s entity.age matches 39 run playsound block.grass.break master @a[x=0] ~ ~ ~ 2 1
 
 execute if score @s entity.age matches 39.. run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~2 ~ 1 1 1 1 300

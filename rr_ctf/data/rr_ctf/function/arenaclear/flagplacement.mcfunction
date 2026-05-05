@@ -1,6 +1,6 @@
 scoreboard players set $flags_captured_by_blue global 0
 scoreboard players set $flags_captured_by_yellow global 0
-scoreboard players set $blue ctf_sidebar 0
+scoreboard players set $blue ctf_sidebar 2
 scoreboard players display name $blue ctf_sidebar ["",[{score:{name:"#blue",objective:"text.main_color"}},{score:{name:"#blue",objective:"text.team_name"}},":"]]
 scoreboard players display numberformat $blue ctf_sidebar fixed ["",{text:"0",color:red,bold:true},{text:"/2 ",color:white},{score:{name:"#yellow",objective:"text.flag"}}]
 scoreboard players set $yellow ctf_sidebar 1

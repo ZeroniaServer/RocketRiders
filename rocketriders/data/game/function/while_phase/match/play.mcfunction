@@ -27,6 +27,7 @@ execute if score $match_play_time global matches 10 unless predicate game:modifi
 ##Remove kills
 execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.deaths
 execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.kills
+execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.flags_captured
 
 ##Achievements
 function achievements:gain

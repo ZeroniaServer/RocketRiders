@@ -8,6 +8,33 @@ scoreboard objectives remove shooting_saber.multishot_time
 scoreboard objectives remove elytra_time
 scoreboard objectives remove ObshieldSpawned
 
+scoreboard objectives remove FlagsCaptured
+scoreboard objectives remove FlagDeliver
+scoreboard objectives remove FlagScore
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run scoreboard objectives add carrying_flag_time dummy
+scoreboard objectives remove FlagDisp
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run scoreboard objectives add ctf_sidebar dummy
+bossbar remove rr_ctf:fb1
+bossbar remove rr_ctf:fb2
+bossbar remove rr_ctf:fy1
+bossbar remove rr_ctf:fy2
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar add rr_ctf:flag/yellow_right ""
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_right color blue
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_right style notched_10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_right max 10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar add rr_ctf:flag/yellow_left ""
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_left color blue
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_left style notched_10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_left max 10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar add rr_ctf:flag/blue_right ""
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_right color yellow
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_right style notched_10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_right max 10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar add rr_ctf:flag/blue_left ""
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_left color yellow
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_left style notched_10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_left max 10
+
 execute if score $disable_tying config matches 1 run scoreboard players set $disable_overtime config 1
 execute if score $disable_tying config matches 1 run scoreboard players set $tie_window_length config -1
 scoreboard players reset $disable_tying config

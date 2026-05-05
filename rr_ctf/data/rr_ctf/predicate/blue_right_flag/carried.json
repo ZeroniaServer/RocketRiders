@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$flag_state.blue_right"
+    },
+    "score": "global"
+  },
+  "range": -1
+}

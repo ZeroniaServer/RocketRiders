@@ -91,7 +91,7 @@ tag @s remove beenOnBlue
 tag @s remove beenOnYellow
 tag @s remove beenOnBoth
 
-execute if entity @s[tag=CarryFlag] run function custom:event/player_dies/restore_flag
+execute if entity @s[predicate=custom:player/is_carrying_flag] run function custom:event/player_dies/restore_flag
 
 
 ## Forget previous damage origins and reset damage/attack timers

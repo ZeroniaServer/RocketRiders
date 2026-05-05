@@ -2,9 +2,9 @@
 #Calculates who has the most of each score
 
 tag @a[x=0] remove flagschamp
-scoreboard players operation #max FlagsCaptured > @a[x=0,scores={FlagsCaptured=1..}] FlagsCaptured
-execute as @a[x=0,scores={FlagsCaptured=1..}] if score @s FlagsCaptured = #max FlagsCaptured run tag @s add flagschamp
-scoreboard players reset #max FlagsCaptured
+scoreboard players operation #max match_statistic.flags_captured > @a[x=0,scores={match_statistic.flags_captured=1..}] match_statistic.flags_captured
+execute as @a[x=0,scores={match_statistic.flags_captured=1..}] if score @s match_statistic.flags_captured = #max match_statistic.flags_captured run tag @s add flagschamp
+scoreboard players reset #max match_statistic.flags_captured
 
 tag @a[x=0] remove killschamp
 scoreboard players operation #max match_statistic.kills > @a[x=0,scores={match_statistic.kills=1..}] match_statistic.kills
@@ -28,10 +28,10 @@ execute if entity @s[tag=BothWon] run tellraw @a[x=0] {bold:true,color:"green",t
 execute if score $playercount CmdData matches 1.. run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Match Statistics:","color":"dark_green","italic":true}]
 
 execute store result score $playercount CmdData if entity @a[x=0,tag=flagschamp]
-execute if score $playercount CmdData matches 1 if entity @a[x=0,tag=flagschamp,scores={FlagsCaptured=2..}] run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- ","color":"green"},{"selector":"@a[x=0,tag=flagschamp]","bold":false},{"text":" is the MVP: ","color":"green"},{"score":{"name":"@r[tag=flagschamp]","objective":"FlagsCaptured"},"color":"dark_green"},{"text":" flags captured!","color":"green"}]
-execute if score $playercount CmdData matches 2.. if entity @a[x=0,tag=flagschamp,scores={FlagsCaptured=2..}] run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- ","color":"green"},{"selector":"@a[x=0,tag=flagschamp]","bold":false},{"text":" are the MVPs: ","color":"green"},{"score":{"name":"@r[tag=flagschamp]","objective":"FlagsCaptured"},"color":"dark_green"},{"text":" flags captured each!","color":"green"}]
-execute if score $playercount CmdData matches 1 if entity @a[x=0,tag=flagschamp,scores={FlagsCaptured=1}] run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- ","color":"green"},{"selector":"@a[x=0,tag=flagschamp]","bold":false},{"text":" is the MVP: ","color":"green"},{"score":{"name":"@r[tag=flagschamp]","objective":"FlagsCaptured"},"color":"dark_green"},{"text":" flag captured!","color":"green"}]
-execute if score $playercount CmdData matches 2.. if entity @a[x=0,tag=flagschamp,scores={FlagsCaptured=1}] run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- ","color":"green"},{"selector":"@a[x=0,tag=flagschamp]","bold":false},{"text":" are the MVPs: ","color":"green"},{"score":{"name":"@r[tag=flagschamp]","objective":"FlagsCaptured"},"color":"dark_green"},{"text":" flag captured each!","color":"green"}]
+execute if score $playercount CmdData matches 1 if entity @a[x=0,tag=flagschamp,scores={match_statistic.flags_captured=2..}] run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- ","color":"green"},{"selector":"@a[x=0,tag=flagschamp]","bold":false},{"text":" is the MVP: ","color":"green"},{"score":{"name":"@r[tag=flagschamp]","objective":"match_statistic.flags_captured"},"color":"dark_green"},{"text":" flags captured!","color":"green"}]
+execute if score $playercount CmdData matches 2.. if entity @a[x=0,tag=flagschamp,scores={match_statistic.flags_captured=2..}] run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- ","color":"green"},{"selector":"@a[x=0,tag=flagschamp]","bold":false},{"text":" are the MVPs: ","color":"green"},{"score":{"name":"@r[tag=flagschamp]","objective":"match_statistic.flags_captured"},"color":"dark_green"},{"text":" flags captured each!","color":"green"}]
+execute if score $playercount CmdData matches 1 if entity @a[x=0,tag=flagschamp,scores={match_statistic.flags_captured=1}] run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- ","color":"green"},{"selector":"@a[x=0,tag=flagschamp]","bold":false},{"text":" is the MVP: ","color":"green"},{"score":{"name":"@r[tag=flagschamp]","objective":"match_statistic.flags_captured"},"color":"dark_green"},{"text":" flag captured!","color":"green"}]
+execute if score $playercount CmdData matches 2.. if entity @a[x=0,tag=flagschamp,scores={match_statistic.flags_captured=1}] run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- ","color":"green"},{"selector":"@a[x=0,tag=flagschamp]","bold":false},{"text":" are the MVPs: ","color":"green"},{"score":{"name":"@r[tag=flagschamp]","objective":"match_statistic.flags_captured"},"color":"dark_green"},{"text":" flag captured each!","color":"green"}]
 
 execute store result score $playercount CmdData if entity @a[x=0,tag=killschamp]
 execute if score $playercount CmdData matches 1 if entity @a[x=0,tag=killschamp,scores={match_statistic.kills=2..}] run tellraw @a[x=0] ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- ","color":"green"},{"selector":"@a[x=0,tag=killschamp]","bold":false},{"text":" is that guy that murders people: ","color":"green"},{"score":{"name":"@r[tag=killschamp]","objective":"match_statistic.kills"},"color":"dark_green"},{"text":" kills!","color":"green"}]
@@ -47,4 +47,4 @@ execute if score $playercount CmdData matches 2.. if entity @a[x=0,tag=deathcham
 
 #Resets scores
 scoreboard players reset @a[x=0] CmdData
-scoreboard players reset @a[x=0] FlagsCaptured
+scoreboard players reset @a[x=0] match_statistic.flags_captured

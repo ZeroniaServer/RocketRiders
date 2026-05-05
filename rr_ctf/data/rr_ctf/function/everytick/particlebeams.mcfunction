@@ -1,15 +1,15 @@
 # Particle beam trail for flag carriers. Everyone but the carrier can see it (and no one in lobby). Gradually becomes thicker the further away you are from it.
-execute as @a[x=0,tag=CarryFlag] run function rr_ctf:everytick/particle_beam/start
+execute as @a[x=0,predicate=custom:player/is_carrying_flag] run function rr_ctf:everytick/particle_beam/start
 
 # Fancy spinny particles
-execute as @e[x=0,type=marker,tag=FlagParticleBlue] at @s unless entity @e[type=player,tag=CarryFlag,predicate=custom:team/blue,distance=..4,limit=1] run kill @s
-execute as @e[x=0,type=marker,tag=FlagParticleYellow] at @s unless entity @e[type=player,tag=CarryFlag,predicate=custom:team/yellow,distance=..4,limit=1] run kill @s
+execute as @e[x=0,type=marker,tag=FlagParticleBlue] at @s unless entity @e[type=player,predicate=custom:player/is_carrying_flag,predicate=custom:team/blue,distance=..4,limit=1] run kill @s
+execute as @e[x=0,type=marker,tag=FlagParticleYellow] at @s unless entity @e[type=player,predicate=custom:player/is_carrying_flag,predicate=custom:team/yellow,distance=..4,limit=1] run kill @s
 
-execute as @a[x=0,tag=CarryFlag,predicate=custom:team/blue] at @s unless entity @e[type=marker,tag=FlagParticleBlue,distance=..4,limit=1] run summon marker ~ ~ ~ {Tags:["FlagParticle","FlagParticleBlue"]}
-execute as @a[x=0,tag=CarryFlag,predicate=custom:team/yellow] at @s unless entity @e[type=marker,tag=FlagParticleYellow,distance=..4,limit=1] run summon marker ~ ~ ~ {Tags:["FlagParticle","FlagParticleYellow"]}
+execute as @a[x=0,predicate=custom:player/is_carrying_flag,predicate=custom:team/blue] at @s unless entity @e[type=marker,tag=FlagParticleBlue,distance=..4,limit=1] run summon marker ~ ~ ~ {Tags:["FlagParticle","FlagParticleBlue"]}
+execute as @a[x=0,predicate=custom:player/is_carrying_flag,predicate=custom:team/yellow] at @s unless entity @e[type=marker,tag=FlagParticleYellow,distance=..4,limit=1] run summon marker ~ ~ ~ {Tags:["FlagParticle","FlagParticleYellow"]}
 
-execute as @a[x=0,tag=CarryFlag,predicate=custom:team/blue] anchored eyes at @s run tp @e[x=0,type=marker,tag=FlagParticleBlue,limit=1,sort=nearest] ~ ~1 ~
-execute as @a[x=0,tag=CarryFlag,predicate=custom:team/yellow] anchored eyes at @s run tp @e[x=0,type=marker,tag=FlagParticleYellow,limit=1,sort=nearest] ~ ~1 ~
+execute as @a[x=0,predicate=custom:player/is_carrying_flag,predicate=custom:team/blue] anchored eyes at @s run tp @e[x=0,type=marker,tag=FlagParticleBlue,limit=1,sort=nearest] ~ ~1 ~
+execute as @a[x=0,predicate=custom:player/is_carrying_flag,predicate=custom:team/yellow] anchored eyes at @s run tp @e[x=0,type=marker,tag=FlagParticleYellow,limit=1,sort=nearest] ~ ~1 ~
 
 execute as @e[x=0,type=marker,tag=FlagParticle,y_rotation=120,x_rotation=90] run tag @s add FPMoveOpposite
 execute as @e[x=0,type=marker,tag=FlagParticle,y_rotation=120,x_rotation=-90] run tag @s remove FPMoveOpposite

@@ -17,11 +17,10 @@ execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_cano
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_nova_attach
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_spell_emitter
 execute as @a[x=0,scores={LeaveGame=1..}] run ride @s dismount
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFlag] remove CarryFlag
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY1] remove CarryFY1
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY2] remove CarryFY2
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFB1] remove CarryFB1
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFB2] remove CarryFB2
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.yellow_right] remove carrying_flag.yellow_right
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.yellow_left] remove carrying_flag.yellow_left
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.blue_right] remove carrying_flag.blue_right
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.blue_left] remove carrying_flag.blue_left
 effect clear @a[x=0,scores={LeaveGame=1..}]
 effect give @a[x=0,scores={LeaveGame=1..}] instant_health 1 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] resistance infinite 100 true

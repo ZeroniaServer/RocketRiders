@@ -112,6 +112,7 @@ scoreboard objectives add was_on_arena_team dummy
 
 scoreboard objectives add match_statistic.deaths dummy
 scoreboard objectives add match_statistic.kills dummy
+scoreboard objectives add match_statistic.flags_captured dummy
 
 scoreboard objectives add effects.infinity_saber.time dummy
 scoreboard objectives add effects.multishot_saber.time dummy

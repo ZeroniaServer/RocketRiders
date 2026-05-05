@@ -1,5 +1,4 @@
 execute if score $closing_timer global matches 1 run effect give @a[x=0,predicate=custom:team/blue,tag=Loser] weakness infinite 100 true
-scoreboard players reset * FlagScore
 execute if score $closing_timer global matches 1.. run fill 13 74 68 7 64 61 moving_piston replace #custom:air
 
 execute if score $closing_timer global matches 1..10 run function rr_chase:chaseblocks/killall

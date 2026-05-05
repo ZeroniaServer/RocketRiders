@@ -18,7 +18,6 @@ scoreboard players set @s JugbSpawned 0
 scoreboard players set @s LifterSpawned 0
 scoreboard players set @s MissilesSpawned 0
 scoreboard players set @s NullSpawned 0
-scoreboard players set @s ObshieldSpawned 0
 scoreboard players set @s RifterSpawned 0
 scoreboard players set @s SlashSpawned 0
 scoreboard players set @s ThunSpawned 0

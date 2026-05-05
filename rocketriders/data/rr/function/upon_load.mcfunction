@@ -286,7 +286,6 @@ scoreboard objectives add HyperSpawned minecraft.used:minecraft.turtle_spawn_egg
 scoreboard objectives add BulletSpawned minecraft.used:minecraft.skeleton_horse_spawn_egg
 scoreboard objectives add DuplexSpawned minecraft.used:minecraft.parrot_spawn_egg
 scoreboard objectives add BroadSpawned minecraft.used:minecraft.magma_cube_spawn_egg
-scoreboard objectives add ObshieldSpawned minecraft.used:minecraft.enderman_spawn_egg
 scoreboard objectives add BSurpriseSpawned minecraft.used:minecraft.squid_spawn_egg
 scoreboard objectives add YSurpriseSpawned minecraft.used:minecraft.cod_spawn_egg
 scoreboard objectives add BowShot minecraft.used:minecraft.bow

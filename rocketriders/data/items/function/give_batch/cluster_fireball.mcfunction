@@ -16,7 +16,6 @@ tag @s add matchOrigin
 execute as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"cluster_fireball"},!custom_data~{droppable:true}] if function custom:match_origin run function items:give_batch/__return_item
 tag @s remove matchOrigin
 execute store result score $inventory_count var run clear @s *[custom_data~{id:"cluster_fireball"}] 0
-execute if entity @s[tag=BackFireball] run scoreboard players add $inventory_count var 1
 
 ## Get batch size
 scoreboard players set $intended_batch_size var 1

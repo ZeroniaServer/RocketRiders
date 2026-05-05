@@ -45,7 +45,7 @@
             "hover_event": {
               "action": "show_text",
               "value": {
-                "color": "#7358FE",
+                "color": "#5865F2",
                 "text": "Click to join our Discord community"
               }
             },

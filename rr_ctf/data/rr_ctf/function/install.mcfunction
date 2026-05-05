@@ -24,7 +24,7 @@ bossbar set rr_ctf:flag/yellow_right color blue
 bossbar set rr_ctf:flag/yellow_right style notched_10
 bossbar set rr_ctf:flag/yellow_right max 10
 
-scoreboard objectives add ctf_sidebar dummy ["",{"text":"Flag Count","color":"green","bold":true}]
+scoreboard objectives add ctf_sidebar dummy {bold:true,color:"green",text:"Flag Count"}
 execute if entity @e[x=0,type=armor_stand,tag=rr_ctf,limit=1] run tellraw @s {"text":"Capture the Flag Mode installed.","color":"green","bold":true}
 scoreboard players add @e[x=0,type=armor_stand,tag=rr_ctf,limit=1] CmdData 1
 execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forcestop

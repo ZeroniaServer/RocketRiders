@@ -13,7 +13,7 @@ scoreboard objectives remove FlagDeliver
 scoreboard objectives remove FlagScore
 execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run scoreboard objectives add carrying_flag_time dummy
 scoreboard objectives remove FlagDisp
-execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run scoreboard objectives add ctf_sidebar dummy
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run scoreboard objectives add ctf_sidebar dummy {bold:true,color:"green",text:"Flag Count"}
 bossbar remove rr_ctf:fb1
 bossbar remove rr_ctf:fb2
 bossbar remove rr_ctf:fy1

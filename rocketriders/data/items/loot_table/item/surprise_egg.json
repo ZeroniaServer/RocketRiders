@@ -13,8 +13,7 @@
                 "minecraft:custom_data": {
                   "id": "surprise_egg",
                   "spawn_egg": {
-                    "type": "random_missile",
-                    "category": "all"
+                    "type": "random_missile"
                   }
                 },
                 "minecraft:custom_model_data": {

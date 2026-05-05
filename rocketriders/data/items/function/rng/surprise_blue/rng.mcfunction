@@ -7,7 +7,7 @@ execute if predicate game:modifiers/special_treatment/on run summon marker ~ ~ ~
 
 #Select category and run appropriate sub-RNG function
 tag @e[type=marker,tag=surpriseBlue1,sort=random,limit=1,distance=..1] add rngSelected
-execute if entity @e[x=0,type=marker,tag=surpriseBlueHeavy,tag=rngSelected] run function items:surprise_blue/rngheavy
-execute if entity @e[x=0,type=marker,tag=surpriseBlueNormal,tag=rngSelected] run function items:surprise_blue/rngnormal
-execute if entity @e[x=0,type=marker,tag=surpriseBlueLightning,tag=rngSelected] run function items:surprise_blue/rnglightning
-execute if entity @e[x=0,type=marker,tag=surpriseBlueSpecial,tag=rngSelected] run function items:surprise_blue/rngspecial
+execute if entity @e[x=0,type=marker,tag=surpriseBlueHeavy,tag=rngSelected] run function items:rng/surprise_blue/rngheavy
+execute if entity @e[x=0,type=marker,tag=surpriseBlueNormal,tag=rngSelected] run function items:rng/surprise_blue/rngnormal
+execute if entity @e[x=0,type=marker,tag=surpriseBlueLightning,tag=rngSelected] run function items:rng/surprise_blue/rnglightning
+execute if entity @e[x=0,type=marker,tag=surpriseBlueSpecial,tag=rngSelected] run function items:rng/surprise_blue/rngspecial

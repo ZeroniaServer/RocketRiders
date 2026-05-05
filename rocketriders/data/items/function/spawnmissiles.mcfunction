@@ -4,17 +4,8 @@
 ####################################################
 
 ##Surprise Egg
-execute if entity @s[tag=BlueSurprise] run function items:surprise_blue/rng
-execute if entity @s[tag=BlueSurpriseNormal] run function items:surprise_blue/rngnormal
-execute if entity @s[tag=BlueSurpriseHeavy] run function items:surprise_blue/rngheavy
-execute if entity @s[tag=BlueSurpriseLightning] run function items:surprise_blue/rnglightning
-execute if entity @s[tag=BlueSurpriseSpecial] run function items:surprise_blue/rngspecial
-
-execute if entity @s[tag=YellowSurprise] run function items:surprise_yellow/rng
-execute if entity @s[tag=YellowSurpriseNormal] run function items:surprise_yellow/rngnormal
-execute if entity @s[tag=YellowSurpriseHeavy] run function items:surprise_yellow/rngheavy
-execute if entity @s[tag=YellowSurpriseLightning] run function items:surprise_yellow/rnglightning
-execute if entity @s[tag=YellowSurpriseSpecial] run function items:surprise_yellow/rngspecial
+execute if entity @s[tag=BlueSurprise] run function items:rng/surprise_blue/rng
+execute if entity @s[tag=YellowSurprise] run function items:rng/surprise_yellow/rng
 
 ##Flipping Capability
 execute if entity @s[tag=yellowmissile] if entity @a[limit=1,x=0,tag=spawn_egg.placer,tag=FlipMissile,predicate=custom:team/yellow] run tag @s add missileflip

@@ -11,7 +11,7 @@ function game:assets/refresh
 dialog clear @a[x=0]
 
 ## Per-game-mode upon edited settings
-function #rr:upon_edited_settings
+function #rr:game/upon_confirmed_settings
 
 ## Place facade
 function game:place_facade

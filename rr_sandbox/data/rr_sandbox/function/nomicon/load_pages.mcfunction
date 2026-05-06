@@ -1,3 +1,5 @@
+execute unless entity @s summon marker if function custom:entity/kill_marker run return run function rr_sandbox:nomicon/load_pages
+
 data remove storage rocketriders:nomicon dialogs
 
 ##

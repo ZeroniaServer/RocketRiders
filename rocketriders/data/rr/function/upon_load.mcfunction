@@ -305,17 +305,12 @@ scoreboard objectives add prevUseful dummy
 scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevFellVoid dummy
 
-# Fix join pad sprite depending on version
-function rr:upon_load/join_pad_sprite
-
 # Update team attributes
 function game:team_attributes/update_all
 
-# Load assets
 function game:assets/load
 
 # Update nav book
 function lobby:update_nav_book
 
-# Nomicon Dialog Data
 function rr_sandbox:nomicon/load_pages

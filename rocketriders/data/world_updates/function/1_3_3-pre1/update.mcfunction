@@ -78,7 +78,9 @@ scoreboard players reset $restore_yellow_kit_sign_mage global
 scoreboard players reset $flags_captured_by_blue global
 scoreboard players reset $flags_captured_by_yellow global
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove BlueWon
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove BlueWonFirst
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove YellowWon
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove YellowWonFirst
 tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove BothWon
 
 # expand parkour area wall

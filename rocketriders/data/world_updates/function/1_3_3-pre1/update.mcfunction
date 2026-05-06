@@ -77,6 +77,9 @@ scoreboard players reset $restore_yellow_kit_sign_archer global
 scoreboard players reset $restore_yellow_kit_sign_mage global
 scoreboard players reset $flags_captured_by_blue global
 scoreboard players reset $flags_captured_by_yellow global
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove BlueWon
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove YellowWon
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove BothWon
 
 # expand parkour area wall
 fill 95 186 -6 36 219 -16 minecraft:black_concrete hollow

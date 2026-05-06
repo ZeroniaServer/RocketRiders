@@ -15,5 +15,5 @@ tag @a[x=0,tag=preventionMSG] remove preventionMSG
 
 #win
 execute if score $flags_captured_by_blue match matches 2 if score $flags_captured_by_yellow match matches 2 run function game:winboth
-execute if entity @s[tag=!BothWon] if score $flags_captured_by_blue match matches 2 run function game:winblue
-execute if entity @s[tag=!BothWon] if score $flags_captured_by_yellow match matches 2 run function game:winyellow
+execute unless predicate game:outcome/both_won if score $flags_captured_by_blue match matches 2 run function game:winblue
+execute unless predicate game:outcome/both_won if score $flags_captured_by_yellow match matches 2 run function game:winyellow

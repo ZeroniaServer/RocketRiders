@@ -28,8 +28,8 @@ scoreboard players reset @a[x=0] effects.elytra.state
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/update_armor
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/reset_inventory
 effect clear @a[x=0,predicate=custom:team/any_playing_team]
-execute if entity @s[tag=BlueWon] run effect give @a[x=0,predicate=custom:team/yellow] weakness infinite 100 true
-execute if entity @s[tag=YellowWon] run effect give @a[x=0,predicate=custom:team/blue] weakness infinite 100 true
+execute if predicate game:outcome/blue_won_only run effect give @a[x=0,predicate=custom:team/yellow] weakness infinite 100 true
+execute if predicate game:outcome/yellow_won_only run effect give @a[x=0,predicate=custom:team/blue] weakness infinite 100 true
 effect give @a[x=0,predicate=custom:team/any_playing_team] resistance infinite 100 true
 effect give @a[x=0,predicate=custom:team/any_playing_team] instant_health 1 100 true
 

@@ -75,5 +75,5 @@ execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 
 
 #> Win condition
 execute if function game:check/blue_portal_broken if function game:check/yellow_portal_broken run function game:winbothcheck
-execute if entity @s[tag=!BothWon] if function game:check/blue_portal_broken run function rr_crusade:game/winyellow
-execute if entity @s[tag=!BothWon] if function game:check/yellow_portal_broken run function rr_crusade:game/winblue
+execute unless predicate game:outcome/both_won if function game:check/blue_portal_broken run function rr_crusade:game/winyellow
+execute unless predicate game:outcome/both_won if function game:check/yellow_portal_broken run function rr_crusade:game/winblue

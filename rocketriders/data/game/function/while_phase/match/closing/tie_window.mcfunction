@@ -11,6 +11,6 @@ execute if score $closing_sequence.time match >= $closing_sequence.max_tie_windo
 execute if score $closing_sequence.time match >= $closing_sequence.max_tie_window_time match run return run function game:set_phase/match.closing.outcome.celebration
 
 ##System for ties (works with Double Portal modifier)
-execute if entity @s[tag=BlueWon,tag=!YellowWon] if function game:check/blue_portal_broken run return run function game:set_phase/match.play.tie_breaker
-execute if entity @s[tag=YellowWon,tag=!BlueWon] if function game:check/yellow_portal_broken run return run function game:set_phase/match.play.tie_breaker
-execute if entity @s[tag=YellowWon,tag=BlueWon] run return run function game:set_phase/match.play.tie_breaker
+execute if predicate game:outcome/blue_won_only unless predicate game:outcome/yellow_won_only if function game:check/blue_portal_broken run return run function game:set_phase/match.play.tie_breaker
+execute if predicate game:outcome/yellow_won_only unless predicate game:outcome/blue_won_only if function game:check/yellow_portal_broken run return run function game:set_phase/match.play.tie_breaker
+execute if predicate game:outcome/blue_won_only if predicate game:outcome/yellow_won_only run return run function game:set_phase/match.play.tie_breaker

@@ -127,6 +127,6 @@ execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=2}] 
 execute if entity @e[x=0,type=marker,tag=captureMiddle,scores={capturePoint=2}] if entity @s[scores={PowerupDisplay=..1}] run title @a[x=0,predicate=custom:team/yellow,tag=!DelayActionbar] actionbar [{color:"dark_purple",text:"A new "},{bold:true,text:"powerup"}," will be given out in ",{bold:true,color:"light_purple",score:{name:"@e[x=0,type=armor_stand,tag=Selection,limit=1]",objective:"PowerupDisplay"}}," second!"]
 
 #win
-execute if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon] if function game:check/blue_portal_broken if function game:check/yellow_portal_broken run function game:winbothcheck
-execute if entity @s[tag=!BothWon,tag=!BlueWon] if function game:check/yellow_portal_broken run function game:winblue
-execute if entity @s[tag=!BothWon,tag=!YellowWon] if function game:check/blue_portal_broken run function game:winyellow
+execute unless predicate game:outcome/both_won unless predicate game:outcome/blue_won_only unless predicate game:outcome/yellow_won_only if function game:check/blue_portal_broken if function game:check/yellow_portal_broken run function game:winbothcheck
+execute unless predicate game:outcome/both_won unless predicate game:outcome/blue_won_only if function game:check/yellow_portal_broken run function game:winblue
+execute unless predicate game:outcome/both_won unless predicate game:outcome/yellow_won_only if function game:check/blue_portal_broken run function game:winyellow

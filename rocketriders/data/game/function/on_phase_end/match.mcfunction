@@ -4,11 +4,6 @@ gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
 scoreboard players reset * match
 scoreboard players reset $initial_blue_team_count global
 scoreboard players reset $initial_yellow_team_count global
-tag @s remove BlueWon
-tag @s remove YellowWon
-tag @s remove BlueWonFirst
-tag @s remove YellowWonFirst
-tag @s remove BothWon
 
 gamerule minecraft:mob_griefing false
 execute if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s minecraft:attack_speed base reset

@@ -16,12 +16,12 @@ execute if predicate game:yellow_portal_revealed run function game:place_portal/
 # Grant Premature Celebration achievement
 tag @a[x=0] remove Winner
 tag @a[x=0] remove Loser
-execute if predicate game:achievements_can_be_awarded if entity @s[tag=BlueWonFirst] run advancement grant @a[x=0,predicate=custom:team/blue] only achievements:rr_challenges/premature
-execute if entity @s[tag=BlueWonFirst] as @a[x=0,predicate=custom:team/blue] run function custom:player/update_armor
-tag @s remove BlueWonFirst
-execute if predicate game:achievements_can_be_awarded if entity @s[tag=YellowWonFirst] run advancement grant @a[x=0,predicate=custom:team/yellow] only achievements:rr_challenges/premature
-execute if entity @s[tag=YellowWonFirst] as @a[x=0,predicate=custom:team/yellow] run function custom:player/update_armor
-tag @s remove YellowWonFirst
+execute if predicate game:outcome/blue_won_first if predicate game:achievements_can_be_awarded run advancement grant @a[x=0,predicate=custom:team/blue] only achievements:rr_challenges/premature
+execute if predicate game:outcome/blue_won_first as @a[x=0,predicate=custom:team/blue] run function custom:player/update_armor
+scoreboard players reset $blue_won_first match
+execute if predicate game:outcome/yellow_won_first if predicate game:achievements_can_be_awarded run advancement grant @a[x=0,predicate=custom:team/yellow] only achievements:rr_challenges/premature
+execute if predicate game:outcome/yellow_won_first as @a[x=0,predicate=custom:team/yellow] run function custom:player/update_armor
+scoreboard players reset $yellow_won_first match
 
 # Revert the celebration
 function achievements:scoresreset

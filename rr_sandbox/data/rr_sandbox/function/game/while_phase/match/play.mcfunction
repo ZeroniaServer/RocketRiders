@@ -8,5 +8,5 @@ scoreboard players reset @a[x=0,predicate=!custom:player/can_use_nomicon] nomico
 execute as @a[x=0,predicate=custom:player/can_use_nomicon,scores={nomicon=1..}] run function rr_sandbox:game/nomicon
 
 #win
-execute if entity @s[tag=!BothWon] if function game:check/blue_portal_broken run function rr_sandbox:game/win
-execute if entity @s[tag=!BothWon] if function game:check/yellow_portal_broken run function rr_sandbox:game/win
+execute unless predicate game:outcome/both_won if function game:check/blue_portal_broken run function rr_sandbox:game/win
+execute unless predicate game:outcome/both_won if function game:check/yellow_portal_broken run function rr_sandbox:game/win

@@ -7,6 +7,6 @@ execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @
 execute if predicate game:modifiers/minute_mix/on run function items:minutemix
 
 #win
-execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BothWon,tag=!BlueWon,tag=!YellowWon] if function game:check/blue_portal_broken if function game:check/yellow_portal_broken run function rr_duel:game/winboth
-execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BothWon,tag=!BlueWon] if function game:check/blue_portal_broken run function rr_duel:game/winyellow
-execute unless entity @s[tag=CriteriaTrue] if entity @s[tag=!BothWon,tag=!YellowWon] if function game:check/yellow_portal_broken run function rr_duel:game/winblue
+execute unless entity @s[tag=CriteriaTrue] unless predicate game:outcome/both_won unless predicate game:outcome/blue_won_only unless predicate game:outcome/yellow_won_only if function game:check/blue_portal_broken if function game:check/yellow_portal_broken run function rr_duel:game/winboth
+execute unless entity @s[tag=CriteriaTrue] unless predicate game:outcome/both_won unless predicate game:outcome/blue_won_only if function game:check/blue_portal_broken run function rr_duel:game/winyellow
+execute unless entity @s[tag=CriteriaTrue] unless predicate game:outcome/both_won unless predicate game:outcome/yellow_won_only if function game:check/yellow_portal_broken run function rr_duel:game/winblue

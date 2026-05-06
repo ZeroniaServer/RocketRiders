@@ -57,12 +57,12 @@ execute as @a[limit=1,x=0,tag=InLead] run scoreboard players display numberforma
 #Glowing for who's in the lead (blink if Sonar is enabled)
 execute unless predicate game:modifiers/sonar/on run effect clear @a[x=0,tag=!InLead] glowing
 execute unless predicate game:modifiers/sonar/on run effect give @a[limit=1,x=0,tag=InLead] glowing infinite 0 true
-execute if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var = $match_time global
+execute if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var = $time match
 execute if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var %= $20 constant
 execute if predicate game:modifiers/sonar/on if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=InLead] glowing
 
 #Win
-execute positioned 12 64 65 if score $match_play_time global matches 0..4 run tp @a[distance=..2,predicate=custom:team/blue] 12 64 -66 0 0
+execute positioned 12 64 65 if score $play_time match matches 0..4 run tp @a[distance=..2,predicate=custom:team/blue] 12 64 -66 0 0
 execute positioned 12 64 65 run tag @a[limit=1,distance=..2,gamemode=!spectator,predicate=custom:team/blue] add Winner
 execute as @a[limit=1,x=0,predicate=custom:team/blue,tag=Winner] run title @s actionbar ""
 execute if entity @a[limit=1,x=0,predicate=custom:team/blue,tag=Winner] run tag @a[x=0,predicate=custom:team/blue,tag=!Winner] add Loser

@@ -1,8 +1,8 @@
 ##
-scoreboard players reset $closing_timer global
-scoreboard players reset $closing_timer.max_tie_window_time global
-scoreboard players reset $closing_timer.max_time_before_review global
-scoreboard players reset $closing_timer.max_review_time global
+scoreboard players reset $closing_sequence.time match
+scoreboard players reset $closing_sequence.max_tie_window_time match
+scoreboard players reset $closing_sequence.max_time_before_review match
+scoreboard players reset $closing_sequence.max_review_time match
 
 gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 

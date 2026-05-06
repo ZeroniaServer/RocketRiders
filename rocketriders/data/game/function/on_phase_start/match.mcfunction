@@ -4,8 +4,8 @@ execute if predicate game:game_rules/show_debug_logs/on run function custom:log 
 gamemode spectator @a[x=0,predicate=custom:team/spectator]
 gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 
-scoreboard players set $match_time global 0
-scoreboard players set $match_play_time global 0
+scoreboard players set $time match 0
+scoreboard players set $play_time match 0
 
 scoreboard objectives add UUIDTracker dummy
 scoreboard objectives add KillerUUID dummy

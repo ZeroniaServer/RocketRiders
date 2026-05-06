@@ -16,18 +16,18 @@ scoreboard players add @a[x=0,predicate=custom:team/yellow] jumps 0
 scoreboard players add @a[x=0,predicate=custom:team/blue] jumps 0
 
 ##Game time
-scoreboard players add $match_play_time global 1
+scoreboard players add $play_time match 1
 
 ##Put out players on fire
-execute if score $match_play_time global matches 1..5 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:entity/is_on_fire] at @s run function game:putoutfire
+execute if score $play_time match matches 1..5 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:entity/is_on_fire] at @s run function game:putoutfire
 
 ##Enable fall damage (considers modifiers)
-execute if score $match_play_time global matches 10 unless predicate game:modifiers/no_fall/on run gamerule minecraft:fall_damage true
+execute if score $play_time match matches 10 unless predicate game:modifiers/no_fall/on run gamerule minecraft:fall_damage true
 
 ##Remove kills
-execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.deaths
-execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.kills
-execute if score $match_play_time global matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.flags_captured
+execute if score $play_time match matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.deaths
+execute if score $play_time match matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.kills
+execute if score $play_time match matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.flags_captured
 
 ##Achievements
 function achievements:gain

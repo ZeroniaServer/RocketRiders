@@ -4,7 +4,7 @@
 ########################################################
 
 ##Game time
-scoreboard players add $match_time global 1
+scoreboard players add $time match 1
 
 ##Player spawnpoints
 spawnpoint @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0

@@ -7,5 +7,5 @@ bossbar remove rr_duel:resetting_arena
 bossbar remove rr_duel:forfeit_timer
 
 scoreboard players reset @s ForfeitTimeout
-scoreboard players reset $1v1_duel_time_out_period global
+scoreboard players reset $1v1_duel_time_out_period match
 tag @a[x=0] remove Forfeiter

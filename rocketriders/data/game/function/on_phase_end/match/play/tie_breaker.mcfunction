@@ -1,5 +1,5 @@
 ##
-scoreboard players reset $tie_breaker_timer global
+scoreboard players reset $tie_breaker_sequence.time match
 
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match/play/tie_breaker

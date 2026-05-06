@@ -25,8 +25,8 @@ tag @a[x=0] remove notInGlass
 tag @a[x=0,predicate=!custom:team/any_playing_team] remove inGlass
 
 #> Nexus health & bossbars
-execute if score $match_play_time global matches 1.. run bossbar set rr_crusade:blue players @a[x=0,predicate=!custom:team/lobby]
-execute if score $match_play_time global matches 1.. run bossbar set rr_crusade:yellow players @a[x=0,predicate=!custom:team/lobby]
+execute if score $play_time match matches 1.. run bossbar set rr_crusade:blue players @a[x=0,predicate=!custom:team/lobby]
+execute if score $play_time match matches 1.. run bossbar set rr_crusade:yellow players @a[x=0,predicate=!custom:team/lobby]
 execute store result bossbar rr_crusade:blue value run scoreboard players get $BlueShield crusadehp
 execute store result bossbar rr_crusade:yellow value run scoreboard players get $YellowShield crusadehp
 

@@ -1,8 +1,7 @@
 ##
 gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
 
-scoreboard players reset $match_time global
-scoreboard players reset $match_play_time global
+scoreboard players reset * match
 scoreboard players reset $initial_blue_team_count global
 scoreboard players reset $initial_yellow_team_count global
 tag @s remove BlueWon
@@ -12,7 +11,6 @@ tag @s remove YellowWonFirst
 tag @s remove BothWon
 scoreboard players reset $blue_single_portal var
 scoreboard players reset $yellow_single_portal var
-scoreboard players reset $1v1_duel_time_out_period global
 
 gamerule minecraft:mob_griefing false
 execute if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s minecraft:attack_speed base reset

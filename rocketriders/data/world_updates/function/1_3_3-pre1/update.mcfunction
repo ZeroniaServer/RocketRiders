@@ -52,6 +52,32 @@ scoreboard objectives remove modifierID
 function game:forcestop
 schedule function game:match_components/reset 5t
 
+scoreboard players reset $match_time global
+scoreboard players reset $match_play_time global
+scoreboard players reset $closing_timer.time global
+scoreboard players reset $closing_timer.max_tie_window_time global
+scoreboard players reset $closing_timer.max_time_before_review global
+scoreboard players reset $closing_timer.max_review_time global
+scoreboard players reset $flag_state.blue_left match
+scoreboard players reset $flag_state.blue_right match
+scoreboard players reset $flag_state.yellow_left match
+scoreboard players reset $flag_state.yellow_right match
+scoreboard players reset $tie_breaker_timer global
+scoreboard players reset $1v1_duel_time_out_period global
+scoreboard players reset $checkered_flag_waving_animation_timer global
+scoreboard players reset $restore_blue_nexus_a_top_banner global
+scoreboard players reset $restore_blue_nexus_b_top_banner global
+scoreboard players reset $restore_yellow_nexus_a_top_banner global
+scoreboard players reset $restore_yellow_nexus_b_top_banner global
+scoreboard players reset $restore_blue_kit_sign_knight global
+scoreboard players reset $restore_blue_kit_sign_archer global
+scoreboard players reset $restore_blue_kit_sign_mage global
+scoreboard players reset $restore_yellow_kit_sign_knight global
+scoreboard players reset $restore_yellow_kit_sign_archer global
+scoreboard players reset $restore_yellow_kit_sign_mage global
+scoreboard players reset $flags_captured_by_blue global
+scoreboard players reset $flags_captured_by_yellow global
+
 # expand parkour area wall
 fill 95 186 -6 36 219 -16 minecraft:black_concrete hollow
 fill 37 187 -6 94 218 -6 minecraft:air strict

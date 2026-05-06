@@ -20,7 +20,7 @@
       "condition": "minecraft:value_check",
       "value": {
         "type": "minecraft:score",
-        "score": "global",
+        "score": "match",
         "target": {
           "type": "minecraft:fixed",
           "name": "$1v1_duel_time_out_period"

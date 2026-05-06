@@ -1,7 +1,7 @@
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match.play.tie_breaker"]}
 
 ##
-scoreboard players set $tie_breaker_timer global 0
+scoreboard players set $tie_breaker_sequence.time match 0
 
 # Remove explosives
 kill @e[x=0,type=tnt]

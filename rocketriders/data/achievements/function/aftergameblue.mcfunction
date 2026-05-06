@@ -11,7 +11,7 @@ execute unless predicate game:modifiers/hardcore/on if score $total_air_blocks v
 execute if predicate game:modifiers/hardcore/on if score $total_air_blocks var matches 2298.. run tag @a[x=0,predicate=custom:team/blue] add GrantSwissCheeseAchievement
 
 #Simple and Clean (part 1)
-execute if score $total_air_blocks var matches 0 if score $match_play_time global matches ..2400 run tag @a[x=0,predicate=custom:team/blue] add SimpleAndClean
+execute if score $total_air_blocks var matches 0 if score $play_time match matches ..2400 run tag @a[x=0,predicate=custom:team/blue] add SimpleAndClean
 
 #Deus Ex Machina (part 1)
 execute if predicate game:portal_type/default if function achievements:machina_check/blue run tag @a[x=0,predicate=custom:team/blue] add DeusExMachina

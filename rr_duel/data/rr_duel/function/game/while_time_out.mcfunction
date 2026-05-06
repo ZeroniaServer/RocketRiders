@@ -9,7 +9,7 @@ execute unless predicate game:phase/match/pause run tp @a[x=0,predicate=custom:t
 execute unless predicate game:phase/match/pause run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 scoreboard players set @s RandomItem -3
 execute if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run scoreboard players operation @s RandomItem += @s MaxItemTime
-execute if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run return run scoreboard players reset $1v1_duel_time_out_period global
+execute if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run return run scoreboard players reset $1v1_duel_time_out_period match
 
 bossbar add rr_duel:forfeit_timer {color:"red",text:"You win by default in..."}
 bossbar set rr_duel:forfeit_timer color red

@@ -6,7 +6,7 @@
       "type": "minecraft:fixed",
       "name": "$flag_state.yellow_right"
     },
-    "score": "global"
+    "score": "match"
   },
   "range": {
     "min": 1,

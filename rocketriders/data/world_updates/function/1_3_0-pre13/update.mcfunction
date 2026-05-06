@@ -2,12 +2,12 @@
 execute unless block -67 192 83 minecraft:air run function world_updates:1_3_0-pre13/move_modroom_signs
 
 ## Removed unused scoreboard objectives
-execute if predicate game:phase/match/closing if score @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer matches 1.. run scoreboard players operation $closing_timer global = @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer
+execute if predicate game:phase/match/closing if score @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer matches 1.. run scoreboard players operation $closing_sequence.time match = @e[limit=1,x=0,type=armor_stand,tag=Selection] endtimer
 scoreboard objectives remove endtimer
-execute if score $match_over_timer global matches 1.. run scoreboard players operation $closing_timer global = $match_over_timer global
+execute if score $match_over_timer global matches 1.. run scoreboard players operation $closing_sequence.time match = $match_over_timer global
 scoreboard players reset $match_over_timer global
-execute if score $closing_timer global matches ..0 run scoreboard players reset $closing_timer global
-execute unless predicate game:phase/match/closing run scoreboard players reset $closing_timer global
+execute if score $closing_sequence.time match matches ..0 run scoreboard players reset $closing_sequence.time match
+execute unless predicate game:phase/match/closing run scoreboard players reset $closing_sequence.time match
 
 scoreboard objectives remove deathCooldown
 
@@ -77,7 +77,7 @@ scoreboard players reset $periodic_tick.3 global
 scoreboard players reset $periodic_tick.5 global
 scoreboard players reset $periodic_tick.20 global
 
-scoreboard players operation $match_play_time global = $game_duration global
+scoreboard players operation $play_time match = $game_duration global
 scoreboard players reset $game_duration global
-execute unless predicate game:phase/match run scoreboard players reset $match_play_time global
-execute if score $match_play_time global matches ..-1 run scoreboard players set $match_play_time global 0
+execute unless predicate game:phase/match run scoreboard players reset $play_time match
+execute if score $play_time match matches ..-1 run scoreboard players set $play_time match 0

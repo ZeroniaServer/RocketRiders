@@ -1,8 +1,8 @@
 # Break when out of bounds
-execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/canopy_projectile/actions/break
-execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/canopy_projectile/actions/break
-execute on vehicle positioned as @s if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/canopy_projectile/actions/break
-execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/canopy_projectile/actions/break
+execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/canopy_projectile/actions/break_with_reason {message:""}
+execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/canopy_projectile/actions/break_with_reason {message:"Canopy failed to deploy"}
+execute on vehicle positioned as @s if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/canopy_projectile/actions/break_with_reason {message:"Canopy failed to deploy"}
+execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/canopy_projectile/actions/break_with_reason {message:"Canopy failed to deploy"}
 
 # Early impact
 execute unless predicate custom:entity/has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/canopy_projectile/tick/early_impact
@@ -21,4 +21,4 @@ execute if score @s entity.age matches 1.. if predicate entities:origin_team/non
 
 # Deploy
 execute if score @s entity.age >= $canopy_flight_duration match_components on vehicle positioned as @s if predicate entities:canopy_can_be_deployed run return run function entities:type/canopy_projectile/actions/deploy
-execute if score @s entity.age matches 60.. run return run function entities:type/canopy_projectile/actions/break
+execute if score @s entity.age matches 60.. run return run function entities:type/canopy_projectile/actions/break_with_reason {message:"Canopy failed to deploy; it took too long to deploy"}

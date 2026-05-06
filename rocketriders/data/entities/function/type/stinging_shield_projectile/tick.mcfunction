@@ -1,9 +1,9 @@
 
 # Break when out of bounds
-execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/stinging_shield_projectile/actions/break
-execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/stinging_shield_projectile/actions/break
-execute on vehicle positioned as @s if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/stinging_shield_projectile/actions/break
-execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/stinging_shield_projectile/actions/break
+execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to the roof"}
+execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to the void"}
+execute on vehicle positioned as @s if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to the world border"}
+execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it left the arena"}
 
 # Early impact
 execute unless predicate custom:entity/has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/stinging_shield_projectile/tick/early_impact
@@ -17,4 +17,4 @@ execute if score @s entity.age matches 1.. if predicate custom:periodic_tick/3 r
 
 # Deploy
 execute if score @s entity.age >= $stinging_shield_flight_duration match_components on vehicle positioned as @s if predicate entities:stinging_shield_can_be_deployed unless function custom:location/is_near_flag_base run return run function entities:type/stinging_shield_projectile/actions/deploy
-execute if score @s entity.age matches 60.. run return run function entities:type/stinging_shield_projectile/actions/break
+execute if score @s entity.age matches 60.. run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it took too long to deploy"}

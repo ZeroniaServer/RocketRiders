@@ -9,8 +9,6 @@ tag @s remove YellowWon
 tag @s remove BlueWonFirst
 tag @s remove YellowWonFirst
 tag @s remove BothWon
-scoreboard players reset $blue_single_portal var
-scoreboard players reset $yellow_single_portal var
 
 gamerule minecraft:mob_griefing false
 execute if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s minecraft:attack_speed base reset

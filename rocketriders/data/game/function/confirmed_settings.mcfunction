@@ -10,7 +10,7 @@ function game:assets/refresh
 ## Close modification room dialogs
 dialog clear @a[x=0]
 
-## Per-game-mode upon edited settings
+## Per-game-mode "upon confirmed settings" functions
 function #rr:game/upon_confirmed_settings
 
 ## Place facade
@@ -25,12 +25,12 @@ execute if predicate game:match_components/one_team run tag @e[limit=1,x=0,type=
 execute unless predicate game:match_components/one_team run tag @e[limit=1,x=0,type=marker,tag=join_pad.left] remove join_pad.blue
 execute unless predicate game:match_components/one_team run tag @e[limit=1,x=0,type=marker,tag=join_pad.left] add join_pad.yellow
 
+## Refresh rocket nomicon
+execute if predicate game:match_components/has_rocket_nomicon run function rr_sandbox:nomicon/load_pages
+
 ##Next phase
 function game:set_phase/staging.queue.waiting
 execute unless predicate rr:server_mode/cubekrowd_duels unless predicate rr:server_mode/cubekrowd_voting run function lobby:cancelsettings/begin
 
 ##Update inventories
 execute as @a[x=0,predicate=custom:team/lobby] run function custom:player/reset_inventory
-
-##Stop all sounds
-# execute as @a[x=0] run function everytick:stopsounds

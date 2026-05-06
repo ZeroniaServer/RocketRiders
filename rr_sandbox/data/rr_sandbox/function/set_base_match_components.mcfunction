@@ -8,6 +8,7 @@ scoreboard players set $config_override.special_treatment match_components -1
 scoreboard players set $config_override.surprise_eggs match_components -1
 scoreboard players set $config_override.wind_down match_components -1
 scoreboard players set $has_powerups match_components 1
+scoreboard players set $has_rocket_nomicon match_components 1
 scoreboard players set $has_spells match_components 1
 scoreboard players set $min_players_per_team match_components 0
 scoreboard players set $no_achievements match_components 1

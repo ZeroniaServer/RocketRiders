@@ -317,5 +317,5 @@ function game:assets/load
 # Update nav book
 function lobby:update_nav_book
 
-# Load Rocket-Nomicon data
-function rr_sandbox:nomicon/load_pages
+# Refresh Rocket-Nomicon
+execute if predicate game:phase/match if predicate game:match_components/has_rocket_nomicon run function rr_sandbox:nomicon/load_pages

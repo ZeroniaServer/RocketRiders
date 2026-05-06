@@ -45,6 +45,10 @@ scoreboard players reset $instant_tnt_explosions config
 execute if score $no_fall_damage config matches 1 run scoreboard players set $no_fall config 1
 scoreboard players reset $no_fall_damage config
 
+execute unless predicate game:feature_flags/1_4_0_update/on as @e[limit=1,x=0,type=armor_stand,tag=Selection] if score @s modifierID matches 2.. run scoreboard players add @s modifierID 1
+execute as @e[limit=1,x=0,type=armor_stand,tag=Selection] if score @s modifierID = @s modifierID run scoreboard players operation $modification_room.selected_modifier global = @e[limit=1,x=0,type=armor_stand,tag=Selection] modifierID
+scoreboard objectives remove modifierID
+
 function game:forcestop
 schedule function game:match_components/reset 5t
 
@@ -73,8 +77,6 @@ fill 79 217 72 81 209 70 minecraft:light[level=15] replace minecraft:air strict
 fill 66 206 81 64 218 83 minecraft:light[level=15] replace minecraft:air strict
 function world_updates:1_3_3-pre1/try_fill_biome {_:""}
 
-execute as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function arenaclear:refreshoptionssigns
-
 # add "Punch Me!" name tags to zeronia credit heads
 kill @e[x=0,tag=zeronia_credit_name_tag.left]
 summon minecraft:armor_stand -46.5 211.5 81.5 {Tags:["zeronia_credit_name_tag.left"],Invisible:true,Marker:true,Small:true,attributes:[{id:"minecraft:scale",base:0.0625},{id:"minecraft:name_tag_distance",base:3}],CustomNameVisible:true,CustomName:"Punch Me!"}
@@ -90,3 +92,7 @@ execute as @e[x=0,type=text_display,tag=join_pad_display] run data modify entity
 # update vortex decoy
 kill @e[x=0,predicate=entities:type/vortex_decoy]
 execute positioned -69.5 206.5 48.5 run function entities:type/vortex_decoy/summon
+
+# refresh options signs & wrap modifiers sign correctly
+scoreboad players reset $total_modifiers constant
+execute as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function arenaclear:refreshoptionssigns

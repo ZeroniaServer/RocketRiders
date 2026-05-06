@@ -50,6 +50,9 @@ tag @a[x=0,scores={LeaveGame=1..}] remove is_nova_attached
 scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:effects/infinity_saber/on] effects.infinity_saber.time
 scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:effects/multishot_saber/on] effects.multishot_saber.time
 scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:effects/elytra/on] effects.elytra.state
+execute as @a[x=0,scores={LeaveGame=1..}] run attribute @s minecraft:fall_damage_multiplier modifier remove rocketriders:yes_fall
+execute as @a[x=0,scores={LeaveGame=1..}] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:yes_fall
+
 
 #Parkour quit
 execute if predicate rr:has_parkour as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]

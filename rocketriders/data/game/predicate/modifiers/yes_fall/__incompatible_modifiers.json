@@ -3,7 +3,7 @@
   "terms": [
     {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/yes_fall/on"
+      "name": "game:modifiers/no_fall/on"
     }
   ]
 }

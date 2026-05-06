@@ -1,0 +1,34 @@
+[
+  {
+    "condition": "minecraft:reference",
+    "name": "game:feature_flags/1_4_0_update/on"
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/yes_fall/__forced_off"
+    }
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "score": "config",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "$yes_fall"
+          }
+        },
+        "range": 1
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:modifiers/yes_fall/__forced_on"
+      }
+    ]
+  }
+]

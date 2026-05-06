@@ -221,7 +221,6 @@ scoreboard objectives add xp_bar dummy
 scoreboard objectives add DealtDamage minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add arrowtime dummy
 scoreboard objectives add ShowTip dummy
-scoreboard objectives add modifierID dummy
 scoreboard objectives add testplat dummy
 scoreboard objectives add testplat2 dummy
 scoreboard objectives add canopySmoke dummy

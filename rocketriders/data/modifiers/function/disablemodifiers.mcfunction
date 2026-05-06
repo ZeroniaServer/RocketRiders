@@ -1,6 +1,7 @@
 ##Disables all Modifiers
 scoreboard players reset $instamine config
 scoreboard players reset $no_fall config
+scoreboard players reset $yes_fall config
 scoreboard players reset $explosive config
 scoreboard players reset $rocket_residers config
 scoreboard players reset $sonar config

@@ -339,6 +339,9 @@ execute if score $config_override.ninja_jump match_components matches -1 run dat
 execute if score $config_override.no_fall match_components matches 1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.no_fall"},width:300,options:[{id:"1",display:"on"}]}
 execute if score $config_override.no_fall match_components matches -1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.no_fall"},width:300,options:[{id:"-1",display:"off"}]}
 
+execute if score $config_override.yes_fall match_components matches 1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.yes_fall"},width:300,options:[{id:"1",display:"on"}]}
+execute if score $config_override.yes_fall match_components matches -1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.yes_fall"},width:300,options:[{id:"-1",display:"off"}]}
+
 execute if score $config_override.punchable_tnt match_components matches 1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.punchable_tnt"},width:300,options:[{id:"1",display:"on"}]}
 execute if score $config_override.punchable_tnt match_components matches -1 run data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"",label:{color:"gray",text:"🔒 config_override.punchable_tnt"},width:300,options:[{id:"-1",display:"off"}]}
 

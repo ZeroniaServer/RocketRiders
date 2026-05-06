@@ -12,7 +12,7 @@ execute unless predicate game:modifiers/instamine/on as @a[x=0] run attribute @s
 ##Sonar
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run effect clear @a[x=0,predicate=custom:team/any_playing_team] night_vision
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
-execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/any_playing_team] darkness infinite 0 true
+execute unless predicate game:phase/match/pause unless predicate game:phase/match/closing if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/any_playing_team] darkness infinite 0 true
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/any_playing_team] glowing infinite 1 true
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,type=#arrows,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,type=snowball,tag=!is_glowing] run function game:glowing/on
@@ -25,8 +25,8 @@ execute unless predicate game:phase/match/pause if predicate game:modifiers/sona
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,type=item,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,predicate=entities:type/vortex/body,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,type=armor_stand,tag=Bot,tag=!is_glowing] run function game:glowing/on
-execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase/match/pause] run effect give @a[x=0,predicate=custom:team/any_arena_team] night_vision infinite 100 true
-execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase/match/pause] run effect clear @a[x=0,predicate=custom:team/any_arena_team] darkness
+execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase/match/pause,predicate=!game:phase/match/closing] run effect give @a[x=0,predicate=custom:team/any_arena_team] night_vision infinite 100 true
+execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase/match/pause,predicate=!game:phase/match/closing] run effect clear @a[x=0,predicate=custom:team/any_arena_team] darkness
 
 ##Rocket Residers (anti-crossing behavior)
 execute unless predicate game:phase/match/pause if predicate game:modifiers/rocket_residers/on unless predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue,predicate=custom:in_rocket_residers_crosser_zone] run tag @s add crosser

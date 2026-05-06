@@ -17,8 +17,7 @@
                   "sound": "intentionally_empty"
                 },
                 "minecraft:custom_data": {
-                  "id": "spell_book",
-                  "update_inventory/ignore": true
+                  "id": "spell_book"
                 },
                 "minecraft:custom_model_data": {
                   "floats": [],

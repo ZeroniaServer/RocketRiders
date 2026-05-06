@@ -79,3 +79,5 @@ kill @e[x=0,tag=zeronia_credit_name_tag.left]
 summon minecraft:armor_stand -46.5 211.5 81.5 {Tags:["zeronia_credit_name_tag.left"],Invisible:true,Marker:true,Small:true,attributes:[{id:"minecraft:scale",base:0.0625},{id:"minecraft:name_tag_distance",base:3}],CustomNameVisible:true,CustomName:"Punch Me!"}
 kill @e[x=0,tag=zeronia_credit_name_tag.right]
 summon minecraft:armor_stand -46.5 211.5 75.5 {Tags:["zeronia_credit_name_tag.right"],Invisible:true,Marker:true,Small:true,attributes:[{id:"minecraft:scale",base:0.0625},{id:"minecraft:name_tag_distance",base:3}],CustomNameVisible:true,CustomName:"Punch Me!"}
+
+data remove storage rocketriders:items id_to_loot_table_map

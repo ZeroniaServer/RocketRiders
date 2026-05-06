@@ -1,3 +1,4 @@
+loot replace block 0 184 -16 container.0 27 loot custom:empty
 execute if items entity @s hotbar.0 * run function custom:__impl__/update_inventory/update_slot {slot:"hotbar.0"}
 execute if items entity @s hotbar.1 * run function custom:__impl__/update_inventory/update_slot {slot:"hotbar.1"}
 execute if items entity @s hotbar.2 * run function custom:__impl__/update_inventory/update_slot {slot:"hotbar.2"}

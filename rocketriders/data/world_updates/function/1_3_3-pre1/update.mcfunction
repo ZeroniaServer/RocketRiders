@@ -94,5 +94,5 @@ kill @e[x=0,predicate=entities:type/vortex_decoy]
 execute positioned -69.5 206.5 48.5 run function entities:type/vortex_decoy/summon
 
 # refresh options signs & wrap modifiers sign correctly
-scoreboad players reset $total_modifiers constant
+scoreboard players reset $total_modifiers constant
 execute as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function arenaclear:refreshoptionssigns

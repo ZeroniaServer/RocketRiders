@@ -24,5 +24,4 @@ execute if score $colored_portal_frames var matches 1.. run scoreboard players o
 execute if score $geysers var matches 1.. run scoreboard players operation $geysers config = $geysers var
 
 # defaults
-execute if predicate rr:default_config/impact_utilities run scoreboard players set $impact_utilities config 1
 execute if predicate rr:default_config/disable_cannoning run scoreboard players set $disable_cannoning config 1

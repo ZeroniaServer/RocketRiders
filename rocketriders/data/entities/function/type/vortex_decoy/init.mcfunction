@@ -8,5 +8,5 @@ data modify entity @s data.vortex_decoy set value {}
 data modify entity @s CustomName set value "Vortex Decoy"
 
 ## Display
-data merge entity @s {item_display:"fixed",teleport_duration:10,transformation:{scale:[0.6,0.6,0.6],translation:[-0.03125,0.0125,0]}}
-item replace entity @s contents with ender_pearl
+data merge entity @s {item_display:"fixed",teleport_duration:10,transformation:{scale:[0.5,0.5,0.5],translation:[-0.03125,0.0125,0]}}
+item replace entity @s contents with ender_eye

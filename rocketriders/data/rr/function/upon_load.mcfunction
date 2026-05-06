@@ -96,6 +96,7 @@ scoreboard objectives add entity.vortex.fuse dummy
 scoreboard objectives add entity.vortex.drifting_for_ticks dummy
 scoreboard objectives add entity.vortex.arms dummy
 scoreboard objectives add entity.vortex_arm.index dummy
+scoreboard objectives add entity.vortex_decoy.anger_time dummy
 scoreboard objectives add entity.damage_spell.bee_cooldown dummy
 scoreboard objectives add entity.fireball.ambient_noise_timer dummy
 scoreboard objectives add entity.fireball.time_since_punched dummy

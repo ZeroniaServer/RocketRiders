@@ -86,3 +86,7 @@ data remove storage rocketriders:items id_to_loot_table_map
 
 # fix join pad sprites
 execute as @e[x=0,type=text_display,tag=join_pad_display] run data modify entity @s text set value {atlas:"minecraft:items",sprite:"minecraft:item/barrier",color:"#EFEFEF"}
+
+# update vortex decoy
+kill @e[x=0,predicate=entities:type/vortex_decoy]
+execute positioned -69.5 206.5 48.5 run function entities:type/vortex_decoy/summon

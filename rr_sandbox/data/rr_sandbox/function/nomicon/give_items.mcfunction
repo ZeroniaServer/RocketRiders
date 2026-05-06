@@ -85,7 +85,7 @@ execute if score @s nomicon matches 59 run return run function items:give_count/
 execute if score @s nomicon matches 60 if items entity @s armor.chest elytra[unbreakable] run return run tellraw @s {color:"red",text:"You already have an unbreakable elytra equipped"}
 execute if score @s nomicon matches 60 run return run function items:effects/elytra/set_unbreakable
 
-execute if score @s nomicon matches 61 unless score $no_lunging_spear global matches 1 run return run function items:give_count/lunging_spear with storage rocketriders:main nomicon
+execute if score @s nomicon matches 61 run return run function items:give_count/lunging_spear with storage rocketriders:main nomicon
 
 execute if score @s nomicon matches 62 run return run execute if predicate items:effects/elytra/on run function items:effects/elytra/remove
 

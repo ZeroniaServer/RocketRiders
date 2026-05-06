@@ -3,6 +3,7 @@ execute positioned as @s unless block ~ ~ ~ #custom:vortices_ignore run function
 execute positioned as @s unless predicate entities:vortex_can_be_deployed run return run function entities:type/vortex_projectile/actions/break
 execute positioned as @s if function custom:location/is_near_flag_base run return run function entities:type/vortex_projectile/actions/break
 
+execute positioned as @s unless predicate game:game_rules/impact_utilities/on if predicate {condition:"minecraft:entity_scores",entity:"this",scores:{entity.age:{min:{type:"minecraft:sum",summands:[-5,{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$shield_flight_duration"},score:"match_components"}]}}}} run return run function entities:type/vortex_projectile/actions/deploy
 execute positioned as @s if predicate game:game_rules/impact_utilities/on run return run function entities:type/vortex_projectile/actions/deploy
 
 # 6.25% chance of creating a feathered vortex landmine

@@ -21,7 +21,7 @@ data modify storage rocketriders:main match_components.dialog set value {\
     },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_base_frames:$(arena__bedrock_base_frames),armor_type:$(armor_type),arrow_pickup__:$(arrow_pickup__),main_item:$(main_item),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),blue_team_skin:$(blue_team_skin),no_achievements:$(no_achievements),decreased_icbm_flight_duration:$(decreased_icbm_flight_duration),yellow_team_skin:$(yellow_team_skin),checkered_yellow_base:$(checkered_yellow_base),shield_type:$(shield_type),crusade_banners:$(crusade_banners),castle_type:$(castle_type),arena__classic_base_frames:$(arena__classic_base_frames)}"\
+      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_base_frames:$(arena__bedrock_base_frames),armor_type:$(armor_type),arrow_pickup__:$(arrow_pickup__),main_item:$(main_item),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),blue_team_skin:$(blue_team_skin),no_achievements:$(no_achievements),yellow_team_skin:$(yellow_team_skin),checkered_yellow_base:$(checkered_yellow_base),shield_type:$(shield_type),crusade_banners:$(crusade_banners),castle_type:$(castle_type),arena__classic_base_frames:$(arena__classic_base_frames),canopy_flight_duration:$(canopy_flight_duration),icbm_flight_duration:$(icbm_flight_duration),nova_rocket_flight_duration:$(nova_rocket_flight_duration),obsidian_shield_flight_duration:$(obsidian_shield_flight_duration),shield_flight_duration:$(shield_flight_duration),stinging_shield_flight_duration:$(stinging_shield_flight_duration),vortex_flight_duration:$(vortex_flight_duration)}"\
     }\
   },\
   "no": {\
@@ -95,6 +95,10 @@ data modify storage rocketriders:main match_components.dialog.inputs append valu
 execute if predicate game:blue_team_skin/dark_red run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 execute if predicate game:blue_team_skin/classic_red run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].initial set value true
 
+# canopy_flight_duration
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"number_range",key:"canopy_flight_duration",width:300,label:"canopy_flight_duration",label_format:"%1$s: %2$s ticks",start:1,end:60,step:1,initial:1}
+execute store result storage rocketriders:main match_components.dialog.inputs[-1].initial int 1 run scoreboard players get $canopy_flight_duration match_components
+
 # castle_type
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"castle_type",label:"castle_type",width:300,options:[{id:"0",display:{color:"white",text:'"',extra:[{color:"green",text:"normal"},'"']}},{id:"1",display:{color:"white",text:'"',extra:[{color:"green",text:"deepslate"},'"']}}]}
 execute if predicate game:castle_type/normal run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true
@@ -127,10 +131,6 @@ execute if predicate game:match_components/cubekrowd/disable_shield_or_obsidian_
 # custom_team_colors
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"custom_team_colors",label:"custom_team_colors",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/custom_team_colors run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
-
-# decreased_icbm_flight_duration
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"decreased_icbm_flight_duration",label:"decreased_icbm_flight_duration",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
-execute if predicate game:match_components/decreased_icbm_flight_duration run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
 # decreased_shooting_saber_attack_damage
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"decreased_shooting_saber_attack_damage",label:"decreased_shooting_saber_attack_damage",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
@@ -167,6 +167,10 @@ execute if predicate game:match_components/has_powerups run data modify storage 
 # has_spells (locked)
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"has_spells",label:"🔒 has_spells",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
 execute if predicate game:match_components/has_spells run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display.text set value "true"
+
+# icbm_flight_duration
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"number_range",key:"icbm_flight_duration",width:300,label:"icbm_flight_duration",label_format:"%1$s: %2$s ticks",start:1,end:60,step:1,initial:1}
+execute store result storage rocketriders:main match_components.dialog.inputs[-1].initial int 1 run scoreboard players get $icbm_flight_duration match_components
 
 # item_signs/replace_fireball_with_cluster_fireball (locked)
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"duel_settings_locked",label:"🔒 item_signs/replace_fireball_with_cluster_fireball",width:300,options:[{id:"",display:{color:"white",text:"false"}}]}
@@ -224,6 +228,14 @@ execute if predicate game:match_components/no_item_timer run data modify storage
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=sandboxEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].display.extra append value {color:"red",text:" ⚠"}
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!sandboxEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].display.extra append value {color:"red",text:" ⚠"}
 
+# nova_rocket_flight_duration
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"number_range",key:"nova_rocket_flight_duration",width:300,label:"nova_rocket_flight_duration",label_format:"%1$s: %2$s ticks",start:1,end:60,step:1,initial:1}
+execute store result storage rocketriders:main match_components.dialog.inputs[-1].initial int 1 run scoreboard players get $nova_rocket_flight_duration match_components
+
+# obsidian_shield_flight_duration
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"number_range",key:"obsidian_shield_flight_duration",width:300,label:"obsidian_shield_flight_duration",label_format:"%1$s: %2$s ticks",start:1,end:60,step:1,initial:1}
+execute store result storage rocketriders:main match_components.dialog.inputs[-1].initial int 1 run scoreboard players get $obsidian_shield_flight_duration match_components
+
 # one_team
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"one_team",label:"one_team",width:300,options:[{id:"0",display:{color:"white",text:"false"}},{id:"1",display:{color:"white",text:"true"}}]}
 execute if predicate game:match_components/one_team run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
@@ -235,11 +247,23 @@ execute if predicate game:portal_type/default run data modify storage rocketride
 execute if predicate game:portal_type/small run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[{display:{text:"small"}}].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!ctfEnabled,tag=!chaseEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].display.extra append value {color:"red",text:" ⚠"}
 
+# shield_flight_duration
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"number_range",key:"shield_flight_duration",width:300,label:"shield_flight_duration",label_format:"%1$s: %2$s ticks",start:1,end:60,step:1,initial:1}
+execute store result storage rocketriders:main match_components.dialog.inputs[-1].initial int 1 run scoreboard players get $shield_flight_duration match_components
+
 # shield_type
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"shield_type",label:"shield_type",width:300,options:[{id:"0",display:{color:"white",text:'"',extra:[{color:"green",text:"normal"},'"']}},{id:"1",display:{color:"white",text:'"',extra:[{color:"green",text:"checkered"},'"']}},{id:"2",display:{color:"white",text:'"',extra:[{color:"green",text:"classic"},'"']}}]}
 execute if predicate game:shield_type/normal run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true
 execute if predicate game:shield_type/checkered run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 execute if predicate game:shield_type/classic run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].initial set value true
+
+# stinging_shield_flight_duration
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"number_range",key:"stinging_shield_flight_duration",width:300,label:"stinging_shield_flight_duration",label_format:"%1$s: %2$s ticks",start:1,end:60,step:1,initial:1}
+execute store result storage rocketriders:main match_components.dialog.inputs[-1].initial int 1 run scoreboard players get $stinging_shield_flight_duration match_components
+
+# vortex_flight_duration
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"number_range",key:"vortex_flight_duration",width:300,label:"vortex_flight_duration",label_format:"%1$s: %2$s ticks",start:1,end:60,step:1,initial:1}
+execute store result storage rocketriders:main match_components.dialog.inputs[-1].initial int 1 run scoreboard players get $vortex_flight_duration match_components
 
 # yellow_team_skin
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"yellow_team_skin",label:"yellow_team_skin",width:300,options:[{id:"0",display:{color:"white",text:"yellow"}},{id:"1",display:{color:"white",text:"green"}}]}

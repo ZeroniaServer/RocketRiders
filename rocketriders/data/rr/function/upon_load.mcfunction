@@ -305,12 +305,17 @@ scoreboard objectives add prevUseful dummy
 scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevFellVoid dummy
 
+# Resolve components
+function game:match_components/resolve
+
 # Update team attributes
 function game:team_attributes/update_all
 
+# Instantly load assets
 function game:assets/load
 
 # Update nav book
 function lobby:update_nav_book
 
+# Load Rocket-Nomicon data
 function rr_sandbox:nomicon/load_pages

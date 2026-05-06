@@ -39,10 +39,6 @@ execute if score $main_item var matches 4 run data modify storage rocketriders:m
 $execute store success score $custom_team_colors match_components if predicate {condition:"value_check",value:$(custom_team_colors),range:1}
 execute if score $custom_team_colors match_components matches 0 run scoreboard players reset $custom_team_colors match_components
 
-# decreased_icbm_flight_duration
-$execute store success score $decreased_icbm_flight_duration match_components if predicate {condition:"value_check",value:$(decreased_icbm_flight_duration),range:1}
-execute if score $decreased_icbm_flight_duration match_components matches 0 run scoreboard players reset $decreased_icbm_flight_duration match_components
-
 # decreased_shooting_saber_attack_damage
 $execute store success score $decreased_shooting_saber_attack_damage match_components if predicate {condition:"value_check",value:$(decreased_shooting_saber_attack_damage),range:1}
 execute if score $decreased_shooting_saber_attack_damage match_components matches 0 run scoreboard players reset $decreased_shooting_saber_attack_damage match_components
@@ -110,6 +106,27 @@ execute if score $castle_type var matches 1 run data modify storage rocketriders
 # arena/classic_base_frames
 $execute store success score $arena/classic_base_frames match_components if predicate {condition:"value_check",value:$(arena__classic_base_frames),range:1}
 execute if score $arena/classic_base_frames match_components matches 0 run scoreboard players reset $arena/classic_base_frames match_components
+
+# canopy_flight_duration
+$scoreboard players set $canopy_flight_duration match_components $(canopy_flight_duration)
+
+# icbm_flight_duration
+$scoreboard players set $icbm_flight_duration match_components $(icbm_flight_duration)
+
+# nova_rocket_flight_duration
+$scoreboard players set $nova_rocket_flight_duration match_components $(nova_rocket_flight_duration)
+
+# obsidian_shield_flight_duration
+$scoreboard players set $obsidian_shield_flight_duration match_components $(obsidian_shield_flight_duration)
+
+# shield_flight_duration
+$scoreboard players set $shield_flight_duration match_components $(shield_flight_duration)
+
+# stinging_shield_flight_duration
+$scoreboard players set $stinging_shield_flight_duration match_components $(stinging_shield_flight_duration)
+
+# vortex_flight_duration
+$scoreboard players set $vortex_flight_duration match_components $(vortex_flight_duration)
 
 ## POST
 function game:match_components/resolve

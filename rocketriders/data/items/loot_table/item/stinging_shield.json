@@ -32,16 +32,40 @@
                     "color": "gray",
                     "italic": false,
                     "text": "beehives and unstable TNT!"
-                  },
-                  "",
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "text": "Flight Duration: 1 second"
                   }
                 ],
                 "minecraft:max_stack_size": 64
               }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                "",
+                [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: "
+                  },
+                  {
+                    "score": {
+                      "name": "$stinging_shield_flight_duration",
+                      "objective": "match_components"
+                    }
+                  }
+                ]
+              ],
+              "mode": "append",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "minecraft:entity_type": "minecraft:player"
+                  }
+                }
+              ]
             },
             {
               "function": "minecraft:set_name",

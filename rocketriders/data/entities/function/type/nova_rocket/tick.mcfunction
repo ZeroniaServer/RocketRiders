@@ -37,4 +37,4 @@ execute if predicate custom:periodic_tick/3 if score @s entity.age matches 1.. i
 execute if score @s entity.age matches 10 on vehicle run data modify entity @s FireworksItem.components.minecraft:fireworks.explosions[].shape set value "large_ball"
 
 # Explode
-execute if score @s entity.age matches 30.. run function entities:type/nova_rocket/actions/explode
+execute if score @s entity.age >= $nova_rocket_flight_duration match_components run function entities:type/nova_rocket/actions/explode

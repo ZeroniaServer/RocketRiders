@@ -1,3 +1,5 @@
+execute unless entity @s in minecraft:overworld summon marker if function custom:entity/kill_marker run return run function game:team_attributes/update_all
+
 ## Base Attributes
 # Blue
 execute if predicate game:blue_team_skin/blue run data modify storage rocketriders:teams blue set value \

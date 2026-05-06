@@ -8,7 +8,7 @@
 #Detecting motion
 scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball,predicate=custom:entity/fireball_min_speed] obshieldtime 1
 execute as @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=15..}] run function everytick:obsidian_shield_check_punch
-kill @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=30..}]
+execute as @e[x=0,type=dragon_fireball,tag=blueobfireball] if score @s obshieldtime >= $obsidian_shield_flight_duration match_components run kill @s
 tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:entity/has_vehicle] add blueobalone
 
 #Do the same but for Hole in One
@@ -31,7 +31,7 @@ kill @e[x=0,type=marker,tag=BlueObshield]
 #Detecting motion
 scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball,predicate=custom:entity/fireball_min_speed] obshieldtime 1
 execute as @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=15..}] run function everytick:obsidian_shield_check_punch
-kill @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=30..}]
+execute as @e[x=0,type=dragon_fireball,tag=yellowobfireball] if score @s obshieldtime >= $obsidian_shield_flight_duration match_components run kill @s
 tag @e[x=0,type=marker,tag=yellowobtracker,predicate=!custom:entity/has_vehicle] add yellowobalone
 
 #Do the same but for Hole in One

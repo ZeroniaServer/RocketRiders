@@ -2,6 +2,11 @@
 scoreboard players reset * match_components
 data modify storage rocketriders:match components set value {}
 
+# Default values
+execute if predicate game:game_rules/classic_team_colors/on run scoreboard players set $blue_team_skin match_components 2
+execute if predicate game:game_rules/classic_team_colors/on run scoreboard players set $yellow_team_skin match_components 1
+
+# Game mode components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run function rr_chase:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=classicEnabled] run function rr_classic:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=crusadeEnabled] run function rr_crusade:set_base_match_components
@@ -11,9 +16,6 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=normalEnable
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=powerupsEnabled] run function rr_powerups:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=sandboxEnabled] run function rr_sandbox:set_base_match_components
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=swapEnabled] run function rr_swap:set_base_match_components
-
-execute if predicate game:game_rules/classic_team_colors/on run scoreboard players set $blue_team_skin match_components 2
-execute if predicate game:game_rules/classic_team_colors/on run scoreboard players set $yellow_team_skin match_components 1
 
 # Resolve components
 function game:match_components/resolve

@@ -37,16 +37,40 @@
                     "color": "gray",
                     "italic": false,
                     "text": "shot by projectiles. It also follows enemies!"
-                  },
-                  "",
-                  {
-                    "color": "gray",
-                    "italic": false,
-                    "text": "Flight Duration: 1 second"
                   }
                 ],
                 "minecraft:max_stack_size": 64
               }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                "",
+                [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: "
+                  },
+                  {
+                    "score": {
+                      "name": "$vortex_flight_duration",
+                      "objective": "match_components"
+                    }
+                  }
+                ]
+              ],
+              "mode": "append",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "minecraft:entity_type": "minecraft:player"
+                  }
+                }
+              ]
             },
             {
               "function": "minecraft:set_name",

@@ -74,4 +74,4 @@ execute as @e[x=0,type=item,tag=!item_entity.processed] at @s run function every
 execute as @e[x=0,type=item,predicate=custom:item_entity/contains_droppable_item] at @s run function everytick:item_entity/while_contents_is_droppable_item
 
 # Geysers
-execute if predicate game:feature_flags/geysers/on if predicate game:phase/match run function everytick:geyser
+execute if predicate game:feature_flags/1_4_0_update/on if predicate game:phase/match run function everytick:geyser

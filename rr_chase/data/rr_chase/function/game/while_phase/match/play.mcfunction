@@ -7,9 +7,6 @@ execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @
 execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
 execute if predicate game:modifiers/minute_mix/on run function items:minutemix
 
-#Actionbar for who's in the lead
-execute as @p[predicate=custom:team/blue,tag=InLead,distance=0..22,tag=!DelayActionbar] run title @s actionbar [{"text":"You're in the lead! Run to the Finish Flag to win!","color":"white","bold":true}]
-
 #Crystals
 function rr_chase:chaseblocks/chasecrystal
 
@@ -25,10 +22,16 @@ function rr_chase:chaseblocks/pickup
 #Tag who's in the lead
 execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=28] run tag @s add onBlue
 execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=10] run tag @s add onBlue
+tag @a[limit=1,x=0,tag=InLead] add was_in_the_lead
 tag @a[x=0,predicate=custom:team/blue] remove InLead
 execute positioned 12 64 65 run tag @p[predicate=custom:team/blue,predicate=custom:in_arena,tag=!onBlue,predicate=custom:alive] add InLead
 execute unless predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{location:{position:{z:{max:-45}}}}} run tag @s remove InLead
 execute if predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{location:{position:{z:{max:-63}}}}} run tag @s remove InLead
+
+#Actionbar for who's in the lead
+title @a[limit=1,x=0,tag=was_in_the_lead,tag=!InLead,predicate=custom:team/blue,tag=!DelayActionbar] actionbar ""
+title @a[limit=1,x=0,tag=InLead,predicate=custom:team/blue,tag=!DelayActionbar] actionbar {bold:true,text:"You're in the lead! Run to the Checkered Flag to win!"}
+tag @a[x=0] remove was_in_the_lead
 
 #Bossbar for who's in the lead
 bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]

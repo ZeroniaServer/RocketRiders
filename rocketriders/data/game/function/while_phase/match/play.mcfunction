@@ -22,7 +22,7 @@ scoreboard players add $play_time match 1
 execute if score $play_time match matches 1..5 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:entity/is_on_fire] at @s run function game:putoutfire
 
 ##Enable fall damage (considers modifiers)
-execute if score $play_time match matches 10 unless predicate game:modifiers/no_fall/on run gamerule minecraft:fall_damage true
+execute if score $play_time match matches 10.. unless predicate game:modifiers/no_fall/on run gamerule minecraft:fall_damage true
 
 ##Remove kills
 execute if score $play_time match matches ..4 run scoreboard players reset @a[x=0,predicate=custom:team/any_playing_team] match_statistic.deaths

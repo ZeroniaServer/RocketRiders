@@ -19,6 +19,7 @@ execute store result score $inventory_count var run clear @s *[custom_data~{id:"
 
 ## Get batch size
 scoreboard players set $intended_batch_size var 1
+execute if score $item_batch_size.splash match_components matches 1.. run scoreboard players operation $intended_batch_size var = $item_batch_size.splash match_components
 
 scoreboard players operation $final_batch_size var = $inventory_count var
 scoreboard players operation $final_batch_size var += $intended_batch_size var

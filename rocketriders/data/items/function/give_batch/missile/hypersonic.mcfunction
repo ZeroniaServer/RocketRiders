@@ -21,6 +21,7 @@ execute if entity @s[tag=BackHyper] run scoreboard players add $inventory_count 
 
 ## Get batch size
 scoreboard players set $intended_batch_size var 1
+execute if score $item_batch_size.missile/hypersonic match_components matches 1.. run scoreboard players operation $intended_batch_size var = $item_batch_size.missile/hypersonic match_components
 
 scoreboard players operation $final_batch_size var = $inventory_count var
 scoreboard players operation $final_batch_size var += $intended_batch_size var

@@ -24,14 +24,15 @@ function rr_chase:chaseblocks/pickup
 execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=28] run tag @s add onBlue
 execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=10] run tag @s add onBlue
 tag @a[limit=1,x=0,tag=InLead] add was_in_the_lead
-tag @a[x=0,predicate=custom:team/blue] remove InLead
-execute positioned 12 64 65 run tag @p[gamemode=!spectator,predicate=custom:team/blue,predicate=custom:in_arena,tag=!onBlue,predicate=custom:player/is_alive] add InLead
-execute unless predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{z:{max:-45}}}}} run tag @s remove InLead
-execute if predicate game:modifiers/hardcore/on as @a[limit=1,x=0,predicate=custom:team/blue,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{z:{max:-63}}}}} run tag @s remove InLead
+tag @a[x=0] remove InLead
+execute unless predicate game:modifiers/hardcore/on positioned 12 64 64 run tag @e[limit=1,sort=nearest,distance=0..,type=player,gamemode=!spectator,tag=!onBlue,predicate=custom:team/blue,predicate=custom:in_arena] add InLead
+execute if predicate game:modifiers/hardcore/on positioned 12 64 65 run tag @e[limit=1,sort=nearest,distance=0..,type=player,gamemode=!spectator,tag=!onBlue,predicate=custom:team/blue,predicate=custom:in_arena] add InLead
+execute unless predicate game:modifiers/hardcore/on as @a[limit=1,x=0,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{z:{max:-45}}}}} run tag @s remove InLead
+execute if predicate game:modifiers/hardcore/on as @a[limit=1,x=0,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{z:{max:-63}}}}} run tag @s remove InLead
 
 #Actionbar for who's in the lead
-title @a[limit=1,x=0,tag=was_in_the_lead,tag=!InLead,predicate=custom:team/blue,tag=!DelayActionbar] actionbar ""
-title @a[limit=1,x=0,tag=InLead,predicate=custom:team/blue,tag=!DelayActionbar] actionbar {bold:true,text:"You're in the lead! Run to the Checkered Flag to win!"}
+title @a[limit=1,x=0,tag=was_in_the_lead,tag=!InLead,tag=!DelayActionbar] actionbar ""
+title @a[limit=1,x=0,tag=InLead,tag=!DelayActionbar] actionbar {bold:true,text:"You're in the lead! Run to the Checkered Flag to win!"}
 tag @a[x=0] remove was_in_the_lead
 
 #Bossbar for who's in the lead
@@ -39,19 +40,19 @@ bossbar set rr:startgame players @a[x=0,predicate=custom:team/lobby]
 bossbar set rr_chase:lead players @a[x=0,predicate=!custom:team/lobby]
 execute if predicate game:blue_team_skin/blue run bossbar set rr_chase:lead color blue
 execute if predicate game:blue_team_skin/any_red_skin run bossbar set rr_chase:lead color red
-execute as @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name [{score:{name:"@s",objective:"text.accent_color"}},{bold:true,selector:"@s"}," is in the lead!"]
-execute unless entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead name [{score:{name:"#blue",objective:"text.accent_color"}},"No one is in the lead!"]
-execute unless entity @p[predicate=custom:team/blue,tag=InLead] run bossbar set rr_chase:lead value 0
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=100..110] run bossbar set rr_chase:lead value 1
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=89..99] run bossbar set rr_chase:lead value 2
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=78..88] run bossbar set rr_chase:lead value 3
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=67..77] run bossbar set rr_chase:lead value 4
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=56..66] run bossbar set rr_chase:lead value 5
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=45..55] run bossbar set rr_chase:lead value 6
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=34..44] run bossbar set rr_chase:lead value 7
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=23..33] run bossbar set rr_chase:lead value 8
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=12..22] run bossbar set rr_chase:lead value 9
-execute positioned 12 64 65 if entity @p[predicate=custom:team/blue,tag=InLead,distance=0..11] run bossbar set rr_chase:lead value 10
+execute as @a[limit=1,x=0,tag=InLead] run bossbar set rr_chase:lead name [{score:{name:"@s",objective:"text.accent_color"}},{bold:true,selector:"@s"}," is in the lead!"]
+execute unless entity @a[limit=1,x=0,tag=InLead] run bossbar set rr_chase:lead name [{score:{name:"#blue",objective:"text.accent_color"}},"No one is in the lead!"]
+execute unless entity @a[limit=1,x=0,tag=InLead] run bossbar set rr_chase:lead value 0
+execute positioned 12 64 64 if entity @a[limit=1,distance=100..110,tag=InLead] run bossbar set rr_chase:lead value 1
+execute positioned 12 64 64 if entity @a[limit=1,distance=89..99,tag=InLead] run bossbar set rr_chase:lead value 2
+execute positioned 12 64 64 if entity @a[limit=1,distance=78..88,tag=InLead] run bossbar set rr_chase:lead value 3
+execute positioned 12 64 64 if entity @a[limit=1,distance=67..77,tag=InLead] run bossbar set rr_chase:lead value 4
+execute positioned 12 64 64 if entity @a[limit=1,distance=56..66,tag=InLead] run bossbar set rr_chase:lead value 5
+execute positioned 12 64 64 if entity @a[limit=1,distance=45..55,tag=InLead] run bossbar set rr_chase:lead value 6
+execute positioned 12 64 64 if entity @a[limit=1,distance=34..44,tag=InLead] run bossbar set rr_chase:lead value 7
+execute positioned 12 64 64 if entity @a[limit=1,distance=23..33,tag=InLead] run bossbar set rr_chase:lead value 8
+execute positioned 12 64 64 if entity @a[limit=1,distance=12..22,tag=InLead] run bossbar set rr_chase:lead value 9
+execute positioned 12 64 64 if entity @a[limit=1,distance=0..11,tag=InLead] run bossbar set rr_chase:lead value 10
 
 #Tablist icon for who's in the lead
 scoreboard players display numberformat @a[x=0,tag=!InLead] flag_tablist_display blank
@@ -65,8 +66,8 @@ execute if predicate game:modifiers/sonar/on run scoreboard players operation $g
 execute if predicate game:modifiers/sonar/on if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=InLead] glowing
 
 #Win
-execute positioned 12 64 65 if score $play_time match matches 0..4 run tp @a[distance=..2,predicate=custom:team/blue] 12 64 -66 0 0
-execute positioned 12 64 65 run tag @a[limit=1,distance=..2,gamemode=!spectator,predicate=custom:team/blue] add Winner
-execute as @a[limit=1,x=0,predicate=custom:team/blue,tag=Winner] run title @s actionbar ""
-execute if entity @a[limit=1,x=0,predicate=custom:team/blue,tag=Winner] run tag @a[x=0,predicate=custom:team/blue,tag=!Winner] add Loser
-execute if entity @a[limit=1,x=0,predicate=custom:team/blue,tag=Winner] run function rr_chase:game/win
+execute unless predicate game:modifiers/hardcore/on positioned 12 64 64 run tag @a[limit=1,distance=..2,gamemode=!spectator,predicate=custom:team/blue] add Winner
+execute if predicate game:modifiers/hardcore/on positioned 12 64 65 run tag @a[limit=1,distance=..2,gamemode=!spectator,predicate=custom:team/blue] add Winner
+execute as @a[limit=1,x=0,tag=Winner,predicate=custom:team/blue] run title @s actionbar ""
+execute if entity @a[limit=1,x=0,tag=Winner,predicate=custom:team/blue] run tag @a[x=0,predicate=custom:team/blue,tag=!Winner] add Loser
+execute if entity @a[limit=1,x=0,tag=Winner,predicate=custom:team/blue] run function rr_chase:game/win

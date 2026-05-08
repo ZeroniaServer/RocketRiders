@@ -21,12 +21,10 @@ execute if score $ChaseBlockCheck CmdData matches ..145 run function rr_chase:ch
 function rr_chase:chaseblocks/pickup
 
 #Tag who's in the lead
-execute unless predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=28] run tag @s add onBlue
-execute if predicate game:modifiers/hardcore/on as @a[x=0,predicate=custom:team/blue] at @s if entity @s[x=-15,y=33,z=-74,dx=54,dy=40,dz=10] run tag @s add onBlue
 tag @a[limit=1,x=0,tag=InLead] add was_in_the_lead
 tag @a[x=0] remove InLead
-execute unless predicate game:modifiers/hardcore/on positioned 12 64 64 run tag @e[limit=1,sort=nearest,distance=0..,type=player,gamemode=!spectator,tag=!onBlue,predicate=custom:team/blue,predicate=custom:in_arena] add InLead
-execute if predicate game:modifiers/hardcore/on positioned 12 64 65 run tag @e[limit=1,sort=nearest,distance=0..,type=player,gamemode=!spectator,tag=!onBlue,predicate=custom:team/blue,predicate=custom:in_arena] add InLead
+execute unless predicate game:modifiers/hardcore/on positioned 12 64 64 run tag @e[limit=1,sort=nearest,distance=0..,type=player,gamemode=!spectator,predicate=!custom:location/on_blue_base,predicate=custom:team/blue,predicate=custom:in_arena] add InLead
+execute if predicate game:modifiers/hardcore/on positioned 12 64 65 run tag @e[limit=1,sort=nearest,distance=0..,type=player,gamemode=!spectator,predicate=!custom:location/on_blue_base,predicate=custom:team/blue,predicate=custom:in_arena] add InLead
 execute unless predicate game:modifiers/hardcore/on as @a[limit=1,x=0,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{z:{max:-45}}}}} run tag @s remove InLead
 execute if predicate game:modifiers/hardcore/on as @a[limit=1,x=0,tag=InLead] at @s if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{z:{max:-63}}}}} run tag @s remove InLead
 

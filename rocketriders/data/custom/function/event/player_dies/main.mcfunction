@@ -84,9 +84,6 @@ tag @s remove matchOrigin
 function custom:player/forget_canopy
 function custom:player/forget_spell_emitter
 
-tag @s remove onBlue
-tag @s remove onYellow
-
 tag @s remove beenOnBlue
 tag @s remove beenOnYellow
 tag @s remove beenOnBoth

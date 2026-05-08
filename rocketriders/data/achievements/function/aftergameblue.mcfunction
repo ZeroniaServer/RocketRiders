@@ -14,7 +14,7 @@ execute if predicate game:modifiers/hardcore/on if score $total_air_blocks var m
 execute if score $total_air_blocks var matches 0 if score $play_time match matches ..2400 run tag @a[x=0,predicate=custom:team/blue] add SimpleAndClean
 
 #Deus Ex Machina (part 1)
-execute if predicate game:portal_type/default if function achievements:machina_check/blue run tag @a[x=0,predicate=custom:team/blue] add DeusExMachina
+execute if predicate game:portal_type/normal if function achievements:machina_check/blue run tag @a[x=0,predicate=custom:team/blue] add DeusExMachina
 
 #One is the Loneliest Number (part 1)
 execute if score $blue_team_count global matches 1 if score $yellow_team_count global matches 2.. run tag @a[x=0,predicate=custom:team/blue] add Loneliest
@@ -26,5 +26,5 @@ execute if score $blue_team_count global < $initial_blue_team_count global run t
 tag @a[x=0,predicate=custom:team/blue,scores={jumps=..0}] add GroundBound
 
 #I Swear I Had It (part 1)
-execute if predicate game:portal_type/default as @a[x=0,predicate=custom:team/yellow] store result score @s HasMissiles run clear @s #custom:missile 0
+execute if predicate game:portal_type/normal as @a[x=0,predicate=custom:team/yellow] store result score @s HasMissiles run clear @s #custom:missile 0
 execute as @a[x=0,predicate=custom:team/yellow,scores={HasMissiles=1..}] at @s if entity @s[z=-74,dz=28] run tag @s add HadIt

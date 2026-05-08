@@ -1,9 +1,10 @@
 data modify storage rocketriders:match components."arena/regenerate_floor" set value true
 data modify storage rocketriders:match components."armor_type" set value "crusade_mode"
+data modify storage rocketriders:match components."arrow_pickup_rule" set value "crusade_kit_dependent"
 data modify storage rocketriders:match components."castle_type" set value "deepslate"
 data modify storage rocketriders:match components."main_item" set value "crusade_kit_dependent"
+data modify storage rocketriders:match components."portal_type" set value "small"
 
-scoreboard players set $arrow_pickup/only_crusade_mode_archer_kit match_components 1
 scoreboard players set $config_override.arena_details/bottom match_components -1
 scoreboard players set $config_override.arena_details/middle match_components -1
 scoreboard players set $config_override.arena_details/top match_components 4
@@ -22,7 +23,6 @@ scoreboard players set $disable_arrow_stacking match_components 1
 scoreboard players set $has_spells match_components 1
 scoreboard players set $has_nexuses match_components 1
 scoreboard players set $icbm_flight_duration match_components 20
-scoreboard players set $small_portals match_components 1
 
 # items
 scoreboard players set $item_pool.missile/auxiliary match_components 1

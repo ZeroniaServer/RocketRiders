@@ -44,7 +44,7 @@
           "condition": "minecraft:inverted",
           "term": {
             "condition": "minecraft:reference",
-            "name": "game:match_components/no_portals"
+            "name": "game:portal_type/none"
           }
         }
       ]

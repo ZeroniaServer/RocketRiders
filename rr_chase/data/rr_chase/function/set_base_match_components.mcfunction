@@ -1,5 +1,6 @@
 data modify storage rocketriders:match components."arena/regenerate_back_layer" set value {blue:true}
 data modify storage rocketriders:match components."main_item" set value "shooting_saber"
+data modify storage rocketriders:match components."portal_type" set value "none"
 data modify storage rocketriders:match components."shield_type" set value "checkered"
 
 scoreboard players set $blue_team_skin match_components 1
@@ -17,7 +18,6 @@ scoreboard players set $has_chase_blocks match_components 1
 scoreboard players set $has_chase_crystals match_components 1
 scoreboard players set $min_players_per_team match_components 2
 scoreboard players set $neutral_items match_components 1
-scoreboard players set $no_portals match_components 1
 scoreboard players set $one_team match_components 1
 
 # items

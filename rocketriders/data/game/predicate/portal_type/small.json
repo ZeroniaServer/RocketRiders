@@ -1,13 +1,12 @@
-[
-  {
-    "condition": "minecraft:reference",
-    "name": "game:match_components/small_portals"
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$portal_type.enum"
+    },
+    "score": "match_components"
   },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:match_components/no_portals"
-    }
-  }
-]
+  "range": 2
+}

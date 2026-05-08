@@ -29,7 +29,7 @@
       "condition": "minecraft:inverted",
       "term": {
         "condition": "minecraft:reference",
-        "name": "game:portal_type/default"
+        "name": "game:portal_type/normal"
       }
     }
   ]

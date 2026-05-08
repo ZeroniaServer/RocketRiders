@@ -23,9 +23,10 @@ data remove storage rocketriders:match components."armor_type"
 execute if score $armor_type var matches 1 run data modify storage rocketriders:match components."armor_type" set value "crusade_mode"
 execute if score $armor_type var matches 2 run data modify storage rocketriders:match components."armor_type" set value "swap_mode"
 
-# arrow_pickup/only_crusade_mode_archer_kit
-$execute store success score $arrow_pickup/only_crusade_mode_archer_kit match_components if predicate {condition:"value_check",value:$(arrow_pickup__),range:1}
-execute if score $arrow_pickup/only_crusade_mode_archer_kit match_components matches 0 run scoreboard players reset $arrow_pickup/only_crusade_mode_archer_kit match_components
+# arrow_pickup_rule
+$scoreboard players set $arrow_pickup_rule var $(arrow_pickup_rule)
+data remove storage rocketriders:match components."arrow_pickup_rule"
+execute if score $arrow_pickup_rule var matches 1 run data modify storage rocketriders:match components."main_item" set value "crusade_kit_dependent"
 
 # main_item
 $scoreboard players set $main_item var $(main_item)
@@ -67,12 +68,11 @@ execute if score $no_feathered_vortices match_components matches 0 run scoreboar
 $execute store success score $no_item_timer match_components if predicate {condition:"value_check",value:$(no_item_timer),range:1}
 execute if score $no_item_timer match_components matches 0 run scoreboard players reset $no_item_timer match_components
 
-# small_portals & no_portals
-$scoreboard players set $portal_type var $(__portal_type)
-execute store success score $small_portals match_components if score $portal_type var matches 2
-execute if score $small_portals match_components matches 0 run scoreboard players reset $small_portals match_components
-execute store success score $no_portals match_components if score $portal_type var matches 0
-execute if score $no_portals match_components matches 0 run scoreboard players reset $no_portals match_components
+# portal_type
+$scoreboard players set $portal_type var $(portal_type)
+data remove storage rocketriders:match components."portal_type"
+execute if score $portal_type var matches 1 run data modify storage rocketriders:match components."main_item" set value "none"
+execute if score $portal_type var matches 2 run data modify storage rocketriders:match components."main_item" set value "small"
 
 # one_team
 $execute store success score $one_team match_components if predicate {condition:"value_check",value:$(one_team),range:1}

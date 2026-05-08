@@ -37,7 +37,7 @@ execute if predicate game:arena_details/portal/glass_cover run data modify block
 execute if predicate game:arena_details/portal/end_stone_cover run data modify block -58 192 73 front_text.messages[1].text set value "End Stone Cover"
 execute if predicate game:arena_details/portal/hole_in_one run data modify block -58 192 73 front_text.messages[1].text set value "Hole in One"
 execute unless predicate game:match_components/duel_settings_locked run data modify block -58 192 73 front_text.messages[3] set value {color:"gray",italic:true,text:"(Click for next)"}
-execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/portal/__locked_by_game_mode,predicate=!game:match_components/no_portals] run data modify block -58 192 73 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
+execute unless predicate game:match_components/duel_settings_locked unless entity @s[predicate=!game:arena_details/portal/__locked_by_game_mode,predicate=!game:portal_type/none] run data modify block -58 192 73 front_text.messages[3] set value {color:"white",bold:true,text:"Locked"}
 execute if predicate game:match_components/duel_settings_locked run data modify block -58 192 73 front_text.messages[1] set value {bold:true,color:"white",text:"Locked"}
 setblock -57 192 73 minecraft:purple_stained_glass
 execute if predicate game:arena_details/portal/__locked_by_game_mode run setblock -57 192 73 minecraft:light_gray_stained_glass

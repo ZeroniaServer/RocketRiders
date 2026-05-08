@@ -6,7 +6,7 @@ base_predicate = {
       "terms": [
         {
           "condition": "minecraft:reference",
-          "name": "game:portal_type/default"
+          "name": "game:portal_type/normal"
         },
         {
           "condition": "minecraft:any_of",

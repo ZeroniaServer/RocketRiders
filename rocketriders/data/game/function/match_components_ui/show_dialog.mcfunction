@@ -21,7 +21,7 @@ data modify storage rocketriders:main match_components.dialog set value {\
     },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_base_frames:$(arena__bedrock_base_frames),armor_type:$(armor_type),arrow_pickup__:$(arrow_pickup__),main_item:$(main_item),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),__portal_type:$(__portal_type),one_team:$(one_team),blue_team_skin:$(blue_team_skin),no_achievements:$(no_achievements),yellow_team_skin:$(yellow_team_skin),checkered_yellow_base:$(checkered_yellow_base),shield_type:$(shield_type),crusade_banners:$(crusade_banners),castle_type:$(castle_type),arena__classic_base_frames:$(arena__classic_base_frames),canopy_flight_duration:$(canopy_flight_duration),icbm_flight_duration:$(icbm_flight_duration),nova_rocket_flight_duration:$(nova_rocket_flight_duration),obsidian_shield_flight_duration:$(obsidian_shield_flight_duration),shield_flight_duration:$(shield_flight_duration),stinging_shield_flight_duration:$(stinging_shield_flight_duration),vortex_flight_duration:$(vortex_flight_duration),classic_shooting_saber_name:$(classic_shooting_saber_name)}"\
+      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_base_frames:$(arena__bedrock_base_frames),armor_type:$(armor_type),arrow_pickup_rule:$(arrow_pickup_rule),main_item:$(main_item),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),portal_type:$(portal_type),one_team:$(one_team),blue_team_skin:$(blue_team_skin),no_achievements:$(no_achievements),yellow_team_skin:$(yellow_team_skin),checkered_yellow_base:$(checkered_yellow_base),shield_type:$(shield_type),crusade_banners:$(crusade_banners),castle_type:$(castle_type),arena__classic_base_frames:$(arena__classic_base_frames),canopy_flight_duration:$(canopy_flight_duration),icbm_flight_duration:$(icbm_flight_duration),nova_rocket_flight_duration:$(nova_rocket_flight_duration),obsidian_shield_flight_duration:$(obsidian_shield_flight_duration),shield_flight_duration:$(shield_flight_duration),stinging_shield_flight_duration:$(stinging_shield_flight_duration),vortex_flight_duration:$(vortex_flight_duration),classic_shooting_saber_name:$(classic_shooting_saber_name)}"\
     }\
   },\
   "no": {\
@@ -66,16 +66,16 @@ execute unless predicate game:regenerate_floor/blue if predicate game:regenerate
 execute if predicate game:regenerate_floor/blue if predicate game:regenerate_floor/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[].display set value {color:"gold",text:"true"}
 
 # armor_type
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"armor_type",label:"armor_type",width:300,options:[{id:"0",display:{color:"white",text:'"',extra:[{color:"green",text:"generic"},'"']}},{id:"1",display:{color:"white",text:'"',extra:[{color:"green",text:"crusade_mode"},'"']}},{id:"2",display:{color:"white",text:'"',extra:[{color:"green",text:"swap_mode"},'"']}}]}
-execute if predicate game:armor_type/generic run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"armor_type",label:"armor_type",width:300,options:[{id:"0",display:{color:"white",text:'"',extra:[{color:"green",text:"normal"},'"']}},{id:"1",display:{color:"white",text:'"',extra:[{color:"green",text:"crusade_mode"},'"']}},{id:"2",display:{color:"white",text:'"',extra:[{color:"green",text:"swap_mode"},'"']}}]}
+execute if predicate game:armor_type/normal run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true
 execute if predicate game:armor_type/crusade_mode run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 execute if predicate game:armor_type/swap_mode run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].display.extra append value {color:"red",text:" ⚠"}
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!swapEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].display.extra append value {color:"red",text:" ⚠"}
 
-# arrow_pickup/*
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arrow_pickup__",label:"arrow_pickup/*",width:300,options:[{id:"0",display:{color:"white",text:"",extra:[['"',{color:"green",text:"anyone"},'"']]}},{id:"1",display:{color:"white",text:"",extra:[['"',{color:"green",text:"only_crusade_mode_archer_kit"},'"']]}}]}
-execute if predicate game:match_components/arrow_pickup/only_crusade_mode_archer_kit run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
+# arrow_pickup_rule
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arrow_pickup_rule",label:"arrow_pickup_rule",width:300,options:[{id:"0",display:{color:"white",text:"",extra:[['"',{color:"green",text:"anyone"},'"']]}},{id:"1",display:{color:"white",text:"",extra:[['"',{color:"green",text:"crusade_kit_dependent"},'"']]}}]}
+execute if predicate game:arrow_pickup_rule/crusade_kit_dependent run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!crusadeEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].display.extra append value {color:"red",text:" ⚠"}
 
 # base_item_limit
@@ -244,10 +244,10 @@ execute store result storage rocketriders:main match_components.dialog.inputs[-1
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"one_team",label:"one_team",width:300,options:[{id:"0",display:{color:"gold",text:"false"}},{id:"1",display:{color:"gold",text:"true"}}]}
 execute if predicate game:match_components/one_team run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
-# "portal_type"
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"__portal_type",label:"portal_type",width:300,options:[{id:"0",display:{text:"",extra:[['"',{color:"green",text:"none"},'"']]}},{id:"1",display:{text:"",extra:[['"',{color:"green",text:"default"},'"']]}},{id:"2",display:{text:"",extra:[['"',{color:"green",text:"small"},'"']]}}]}
+# portal_type
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"portal_type",label:"portal_type",width:300,options:[{id:"0",display:{text:"",extra:[['"',{color:"green",text:"none"},'"']]}},{id:"1",display:{text:"",extra:[['"',{color:"green",text:"normal"},'"']]}},{id:"2",display:{text:"",extra:[['"',{color:"green",text:"small"},'"']]}}]}
 execute if predicate game:portal_type/none run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true
-execute if predicate game:portal_type/default run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
+execute if predicate game:portal_type/normal run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 execute if predicate game:portal_type/small run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[2].initial set value true
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=!ctfEnabled,tag=!chaseEnabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].display.extra append value {color:"red",text:" ⚠"}
 

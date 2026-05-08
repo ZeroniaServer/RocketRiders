@@ -14,16 +14,8 @@
       "range": 1
     },
     {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "score": "match_components",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$no_portals"
-        }
-      },
-      "range": 1
+      "condition": "minecraft:reference",
+      "name": "game:portal_type/none"
     }
   ]
 }

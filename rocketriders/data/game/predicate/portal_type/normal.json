@@ -2,11 +2,11 @@
   "condition": "minecraft:value_check",
   "value": {
     "type": "minecraft:score",
-    "score": "match_components",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$arrow_pickup/only_crusade_mode_archer_kit"
-    }
+      "name": "$portal_type.enum"
+    },
+    "score": "match_components"
   },
-  "range": 1
+  "range": 0
 }

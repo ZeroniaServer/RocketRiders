@@ -2,7 +2,7 @@
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed] run playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1
 
 # overrides
-execute if predicate game:match_components/no_portals run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Detail is incompatible with this game mode."}
+execute if predicate game:portal_type/none run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Detail is incompatible with this game mode."}
 execute if predicate game:arena_details/portal/__locked_by_game_mode run return run tellraw @s {color:"dark_gray",italic:true,text:"Portal Detail is not adjustable in this game mode."}
 
 # cycle options

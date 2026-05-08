@@ -5,7 +5,7 @@
     "score": "match_components",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$no_portals"
+      "name": "$arrow_pickup_rule.enum"
     }
   },
   "range": 1

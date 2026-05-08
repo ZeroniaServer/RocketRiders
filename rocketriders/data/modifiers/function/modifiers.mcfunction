@@ -78,7 +78,7 @@ execute if predicate game:modifiers/rotting/on run function modifiers:rotting/ch
 execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
 
 ## Yes Fall
-execute as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:fall_damage_multiplier modifier add rocketriders:yes_fall 1 add_multiplied_base
-execute as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:safe_fall_distance modifier add rocketriders:yes_fall -0.5 add_multiplied_base
-execute as @a[x=0,predicate=!custom:team/any_playing_team] run attribute @s minecraft:fall_damage_multiplier modifier remove rocketriders:yes_fall
-execute as @a[x=0,predicate=!custom:team/any_playing_team] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:yes_fall
+execute if predicate game:modifiers/yes_fall/on as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:fall_damage_multiplier modifier add rocketriders:yes_fall 1 add_multiplied_base
+execute if predicate game:modifiers/yes_fall/on as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:safe_fall_distance modifier add rocketriders:yes_fall -0.5 add_multiplied_base
+execute if predicate game:modifiers/yes_fall/on as @a[x=0,predicate=!custom:team/any_playing_team] run attribute @s minecraft:fall_damage_multiplier modifier remove rocketriders:yes_fall
+execute if predicate game:modifiers/yes_fall/on as @a[x=0,predicate=!custom:team/any_playing_team] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:yes_fall

@@ -33,8 +33,7 @@ execute if predicate game:outcome/yellow_won_only run effect give @a[x=0,predica
 effect give @a[x=0,predicate=custom:team/any_playing_team] resistance infinite 100 true
 effect give @a[x=0,predicate=custom:team/any_playing_team] instant_health 1 100 true
 
-execute unless predicate game:match_components/custom_match_closing_teleport_locations run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-execute unless predicate game:match_components/custom_match_closing_teleport_locations run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/teleport_to_start
 
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/closing

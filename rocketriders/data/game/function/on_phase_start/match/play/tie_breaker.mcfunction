@@ -29,8 +29,6 @@ worldborder warning distance 1000000
 stopsound @a[x=0] master minecraft:ui.toast.challenge_complete
 stopsound @a[x=0] master minecraft:entity.wither.spawn
 title @a[x=0,predicate=custom:team/any_playing_team] actionbar [""]
-tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
 
 #Halves the Item Delay (more intense gameplay)
 scoreboard players operation @s[scores={MaxItemTime=3..}] MaxItemTime /= $2 constant

@@ -43,12 +43,12 @@ execute if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinBlue] run funct
 execute if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinBlue] run function modifiers:long_arms/set
 execute as @a[x=0,tag=JoinBlue] run function custom:player/update_armor
 execute as @a[x=0,tag=JoinBlue] run function custom:player/reset_inventory
-execute if predicate game:phase/staging run tp @a[x=0,tag=JoinBlue] -95 202 60 0 0
+execute if predicate game:phase/staging as @a[x=0,tag=JoinBlue] run function custom:player/teleport_to_start
 execute if predicate game:phase/staging unless predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
 execute if predicate game:phase/staging if predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the match!"]
 execute if predicate game:phase/staging run tellraw @a[x=0,tag=JoinBlue] [{italic:true,score:{name:"*",objective:"text.accent_color"}},"Fall off the base to return to the Lobby."]
 execute if predicate game:phase/staging run effect give @a[x=0,tag=JoinBlue] resistance infinite 100 true
-execute if predicate game:phase/match run tp @a[x=0,tag=JoinBlue] 12 64 -66 0 0
+execute if predicate game:phase/match as @a[x=0,tag=JoinBlue] run function custom:player/teleport_to_start
 execute if predicate game:phase/match unless predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team! A late arrival, unfortunately."]
 execute if predicate game:phase/match if predicate game:match_components/one_team as @a[x=0,tag=JoinBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the match! A late arrival, unfortunately."]
 execute if predicate game:phase/match as @a[x=0,tag=JoinBlue] run function game:notify_join
@@ -78,7 +78,7 @@ execute if predicate game:modifiers/hobbits/on as @a[x=0,tag=JoinYellow] run fun
 execute if predicate game:modifiers/long_arms/on as @a[x=0,tag=JoinYellow] run function modifiers:long_arms/set
 execute as @a[x=0,tag=JoinYellow] run function custom:player/update_armor
 execute as @a[x=0,tag=JoinYellow] run function custom:player/reset_inventory
-execute if predicate game:phase/staging run tp @a[x=0,tag=JoinYellow] -95 202 96 180 0
+execute if predicate game:phase/staging as @a[x=0,tag=JoinYellow] run function custom:player/teleport_to_start
 execute if predicate game:phase/staging as @a[x=0,tag=JoinYellow] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," joined the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
 execute if predicate game:phase/staging run tellraw @a[x=0,tag=JoinYellow] [{italic:true,score:{name:"*",objective:"text.accent_color"}},"Fall off the base to return to the Lobby."]
 execute if predicate game:phase/staging run effect give @a[x=0,tag=JoinYellow] resistance infinite 100 true
@@ -120,8 +120,7 @@ scoreboard players reset @a[x=0,predicate=!custom:team/spectator] leaveSpec
 execute if predicate rr:enable_spectator_leave_cloud run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or enter the green particle cluster to stop spectating!","color":"dark_green","italic":true}]
 execute unless predicate rr:enable_spectator_leave_cloud if predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" or use ","color":"dark_green"},{"text":"/leave","color":"green"},{"text":" to stop spectating!","color":"dark_green","italic":true}]
 execute unless predicate rr:enable_spectator_leave_cloud unless predicate rr:is_cubekrowd run tellraw @a[x=0,tag=JoinSpec,gamemode=!spectator] ["",{"text":"Click ","color":"dark_green","italic":true},{"text":"[HERE]","color":"green","click_event":{"action":"run_command","command":"/trigger leaveSpec set 1"},"hover_event":{"action":"show_text","value":{"color":"green","text":"Click to stop spectating"}}},{"text":" to stop spectating!","color":"dark_green","italic":true}]
-execute if predicate game:phase/match run tp @a[x=0,tag=JoinSpec] 12 100 0.5 90 90
-execute if predicate game:phase/staging run tp @a[x=0,tag=JoinSpec] -95 213 78 90 90
+execute as @a[x=0,tag=JoinSpec] run function custom:player/teleport_to_start
 tag @a[x=0,tag=JoinSpec] add teleport_sound
 execute as @a[x=0,tag=JoinSpec] run title @s actionbar ""
 execute as @a[x=0,tag=JoinSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is now spectating the match!","color":"gray"}]
@@ -133,7 +132,7 @@ gamemode adventure @a[x=0,tag=JoinSpec]
 execute if predicate game:phase/match run gamemode spectator @a[x=0,tag=JoinSpec]
 execute if predicate game:phase/match/pause run gamemode adventure @a[x=0,tag=JoinSpec]
 tag @a[x=0] remove JoinSpec
-tp @a[x=0,tag=AlreadySpec] 12 100 0.5 90 90
+execute as @a[x=0,tag=AlreadySpec] run function custom:player/teleport_to_start
 tag @a[x=0,tag=AlreadySpec] add teleport_sound
 tag @a[x=0] remove AlreadySpec
 execute if predicate rr:enable_spectator_leave_cloud if predicate game:phase/match if predicate custom:periodic_tick/3 positioned 12.5 95.0 0.5 run particle minecraft:dust{color:[0,1,0],scale:4} ~ ~ ~ 0.7 0.7 0.7 0.3 5 force @a[x=0,predicate=custom:team/spectator,predicate=custom:in_arena]
@@ -146,8 +145,8 @@ execute if predicate rr:enable_spectator_leave_cloud if predicate game:phase/sta
 execute if predicate rr:enable_spectator_leave_cloud if predicate game:phase/staging if predicate custom:periodic_tick/3 positioned -89 213.5 78 run particle minecraft:dust{color:[0,1,0],scale:0.5} ~ ~ ~ 0.5 0.5 0.5 0.3 5 force @a[x=0,predicate=custom:team/spectator,predicate=!custom:in_arena]
 execute if predicate rr:enable_spectator_leave_cloud if predicate game:phase/staging positioned -89 213.5 78 run tag @a[predicate=custom:team/spectator,distance=..1] add LeaveTeams
 
-execute if predicate game:phase/staging as @a[x=0,predicate=custom:team/spectator] unless entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s -95 213 78 90 90
-execute if predicate game:phase/match as @a[x=0,predicate=custom:team/spectator] if entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run tp @s 12 100 0.5 90 90
+execute if predicate game:phase/staging as @a[x=0,predicate=custom:team/spectator] unless entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run function custom:player/teleport_to_start
+execute if predicate game:phase/match as @a[x=0,predicate=custom:team/spectator] if entity @s[x=-89,y=213,z=97,dx=-12,dy=10,dz=-38] run function custom:player/teleport_to_start
 
 effect give @a[x=0,predicate=custom:team/spectator] invisibility infinite 0 true
 
@@ -158,7 +157,7 @@ execute as @a[x=0,predicate=!custom:team/any_arena_team] run attribute @s minecr
 
 ##Keep spectators inside arena
 execute as @a[x=0,predicate=custom:team/spectator] at @s unless predicate custom:location/within_or_nearby_world_border run tag @s add leftBorder
-tp @a[x=0,predicate=custom:team/spectator,tag=leftBorder] 12 100 0.5 90 90
+execute as @a[x=0,predicate=custom:team/spectator,tag=leftBorder] run function custom:player/teleport_to_start
 tellraw @a[x=0,predicate=custom:team/spectator,tag=leftBorder] {"text":"You cannot leave world border!","color":"red"}
 tag @a[x=0] remove leftBorder
 

@@ -10,8 +10,7 @@ function custom:player/update_armor
 function custom:player/update_inventory
 
 execute if predicate game:phase/match run advancement grant @s only custom:event/player_dies die_other
-execute if predicate game:phase/staging run tp @s[predicate=custom:team/blue] -95 202 60 0 0
-execute if predicate game:phase/staging run tp @a[predicate=custom:team/yellow] -95 202 96 180 0
+execute if predicate game:phase/staging if predicate=custom:team/any_playing_team run function custom:player/teleport_to_start
 
 tag @s add teleport_sound
 

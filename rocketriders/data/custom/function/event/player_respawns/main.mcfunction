@@ -5,8 +5,7 @@ scoreboard players set @s time_since_respawn 0
 effect clear @s levitation
 
 # Ensure return to spawnpoint
-tp @s[predicate=custom:team/blue] 12 64 -66 0 0
-tp @s[predicate=custom:team/yellow] 12 64 66 -180 0
+function custom:player/teleport_to_start
 
 # Reset motion
 tp @s @s

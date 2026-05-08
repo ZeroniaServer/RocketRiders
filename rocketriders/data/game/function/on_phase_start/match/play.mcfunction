@@ -12,8 +12,7 @@ execute if predicate game:modifiers/no_fall/on run gamerule minecraft:fall_damag
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/forget_canopy
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/forget_nova_attach
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/forget_spell_emitter
-tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
-tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/teleport_to_start
 
 clear @a[x=0,predicate=custom:team/any_arena_team] *
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/update_armor

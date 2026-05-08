@@ -183,7 +183,7 @@ execute if function game:norankboots run item replace entity @a[x=0,predicate=cu
 #Servermode teleport out of modification room
 execute unless predicate rr:has_modification_room run tellraw @a[x=0,predicate=2811iaj1:in_modification] ["",{"text":"You shouldn't be here!","color":"red"}]
 execute unless predicate rr:has_modification_room as @a[x=0,predicate=!custom:team/spectator,predicate=2811iaj1:in_modification] at @s run function custom:player/leave_match
-execute unless predicate rr:has_modification_room as @a[x=0,predicate=custom:team/spectator,predicate=2811iaj1:in_modification] run tp @s 12 100 0.5 90 90
+execute unless predicate rr:has_modification_room as @a[x=0,predicate=custom:team/spectator,predicate=2811iaj1:in_modification] run function custom:player/teleport_to_start
 
 #Servermode quick fix for Duel Mode
 execute if predicate rr:server_mode/cubekrowd_duels run tag @s add duelLast

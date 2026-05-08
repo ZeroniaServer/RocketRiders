@@ -5,11 +5,9 @@ tag @s[scores={fakeendtimer=1}] remove gaveFirstItem
 execute store result score @s[scores={fakeendtimer=1}] MaxItemTime run function game:config/get_item_delay_ticks
 scoreboard players set @s RandomItem -3
 execute if entity @s[scores={fakeendtimer=1}] run function game:endstats
-execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,predicate=custom:team/blue]
-execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,predicate=custom:team/yellow]
+execute if entity @s[scores={fakeendtimer=1}] run gamemode spectator @a[x=0,predicate=custom:team/any_playing_team]
 execute if entity @s[scores={fakeendtimer=1..2}] run tag @a[x=0,predicate=custom:team/any_playing_team] remove force_mount
-execute if entity @s[scores={fakeendtimer=1..2}] run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-execute if entity @s[scores={fakeendtimer=1..2}] run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
+execute if entity @s[scores={fakeendtimer=1..2}] as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/teleport_to_start
 execute if entity @s[scores={fakeendtimer=1}] as @a[x=0] run attribute @s minecraft:block_break_speed modifier remove rocketriders:instamine
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] blindness
 execute if entity @s[scores={fakeendtimer=1}] run effect clear @a[x=0] glowing

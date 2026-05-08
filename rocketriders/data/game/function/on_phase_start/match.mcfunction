@@ -14,10 +14,9 @@ bossbar set rr:startgame value 30
 bossbar set rr:startgame max 30
 function game:randomsplash
 execute as @a[x=0] at @s run playsound entity.generic.explode master @s ~ ~ ~ 100 1.2
-tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
-tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/teleport_to_start
 execute if predicate game:modifiers/sonar/on run tellraw @a[x=0,predicate=custom:team/spectator,tag=!JoinSpec] [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
-tp @a[x=0,predicate=custom:team/spectator] 12 100 0.5 90 90
+execute as @a[x=0,predicate=custom:team/spectator] run function custom:player/teleport_to_start
 effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
 effect give @a[x=0,predicate=custom:team/any_playing_team] fire_resistance 10 100 true
 #Hotfix for losing shield upon game starting

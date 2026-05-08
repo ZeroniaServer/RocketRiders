@@ -7,8 +7,7 @@
 scoreboard players add $tie_breaker_sequence.time match 1
 
 ##Preparing for Tiebreaker
-execute if score $tie_breaker_sequence.time match matches 1..2 run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-execute if score $tie_breaker_sequence.time match matches 1..2 run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
+execute if score $tie_breaker_sequence.time match matches 1..2 as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/teleport_to_start
 execute if score $tie_breaker_sequence.time match matches 1 run effect give @a[x=0,predicate=custom:team/any_arena_team] blindness 1 100 true
 execute if score $tie_breaker_sequence.time match matches 4 run effect clear @a[x=0,predicate=custom:team/any_arena_team] blindness
 

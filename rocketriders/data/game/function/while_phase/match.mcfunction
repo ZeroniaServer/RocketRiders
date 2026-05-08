@@ -12,15 +12,12 @@ spawnpoint @a[x=0,predicate=custom:team/yellow] 12 64 66 -180 0
 
 ##Prevent players from going above the arena
 execute if predicate game:phase/match/play as @a[x=0,predicate=custom:team/any_playing_team,gamemode=!spectator,tag=!JoinBlue,tag=!JoinYellow,predicate=custom:breaching_lobby] at @s run function game:punishbreach
-execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue,predicate=custom:breaching_lobby] run tp @s 12 64 -66 0 0
-execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/yellow,predicate=custom:breaching_lobby] run tp @s 12 64 66 180 0
-execute as @a[x=0,predicate=custom:team/spectator,predicate=custom:breaching_lobby] run tp @s 12 100 0.5 90 90
+execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:breaching_lobby] run function custom:player/teleport_to_start
+execute as @a[x=0,predicate=custom:team/spectator,predicate=custom:breaching_lobby] run function custom:player/teleport_to_start
 
 ##Player void
 execute if predicate game:phase/match/play as @a[x=0,predicate=custom:team/any_arena_team,predicate=custom:in_void] unless score @s ThrowPlat matches 1.. at @s run function game:void
-execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue,predicate=custom:in_void] run tp @s 12 64 -66 0 0
-execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/yellow,predicate=custom:in_void] run tp @s 12 64 66 180 0
-execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/spectator,predicate=custom:in_void] run tp @s 12 100 0.5 90 90
+execute if predicate game:phase/match/closing as @a[x=0,predicate=custom:team/any_arena_team,predicate=custom:in_void] run function custom:player/teleport_to_start
 
 ##General everytick commands
 function everytick:spawnables

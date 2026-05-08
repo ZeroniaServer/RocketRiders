@@ -8,7 +8,7 @@ tag @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=tetrisTime] add givenShiel
 
 ## Get limit
 scoreboard players set $item_limit var 1
-execute if score $increase_item_limit.shield match_components matches 1.. run scoreboard players operation $item_limit var += $increase_item_limit.shield match_components
+execute if score $base_item_limit.shield match_components matches 1.. run scoreboard players operation $item_limit var = $base_item_limit.shield match_components
 execute if predicate game:game_rules/item_stacking/on run scoreboard players set $item_limit var 64
 execute if score $item_limit var matches 65.. run scoreboard players set $item_limit var 64
 

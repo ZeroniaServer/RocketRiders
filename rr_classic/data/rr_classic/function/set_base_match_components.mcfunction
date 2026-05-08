@@ -2,6 +2,7 @@ data modify storage rocketriders:match components."main_item" set value "shootin
 data modify storage rocketriders:match components."shield_type" set value "classic"
 
 scoreboard players set $arena/classic_base_frames match_components 1
+scoreboard players set $base_item_limit.arrow match_components 3
 scoreboard players set $blue_team_skin match_components 2
 scoreboard players set $classic_shooting_saber_name match_components 1
 scoreboard players set $config_override.arena_details/bottom match_components -1

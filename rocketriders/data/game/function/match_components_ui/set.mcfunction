@@ -128,6 +128,9 @@ $scoreboard players set $stinging_shield_flight_duration match_components $(stin
 # vortex_flight_duration
 $scoreboard players set $vortex_flight_duration match_components $(vortex_flight_duration)
 
+# classic_shooting_saber_name
+$scoreboard players set $classic_shooting_saber_name match_components $(classic_shooting_saber_name)
+
 ## POST
 function game:match_components/resolve
 function game:team_attributes/update_all

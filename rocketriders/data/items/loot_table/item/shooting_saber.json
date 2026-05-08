@@ -159,7 +159,38 @@
                   "Shooting Saber"
                 ]
               ],
-              "target": "item_name"
+              "target": "item_name",
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:match_components/classic_shooting_saber_name"
+                  }
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                [
+                  "GunBlade"
+                ]
+              ],
+              "target": "item_name",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/classic_shooting_saber_name"
+                }
+              ]
             },
             {
               "function": "minecraft:reference",

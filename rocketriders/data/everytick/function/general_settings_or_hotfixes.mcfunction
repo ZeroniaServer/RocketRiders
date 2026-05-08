@@ -132,10 +132,6 @@ execute if predicate rr:force_gamemodes if predicate game:phase/match/pause run 
 #Spectator void
 execute as @a[x=0,gamemode=spectator,predicate=custom:in_void] at @s run function game:void
 
-#Full offhand check
-tag @a[x=0] remove fullOffhand
-execute as @a[x=0] if items entity @s weapon.offhand * run tag @s add fullOffhand
-
 #Remove some tags for Lobby players. Just a failsave
 tag @a[x=0,predicate=!custom:team/any_playing_team] remove Winner
 tag @a[x=0,predicate=!custom:team/any_playing_team] remove Loser

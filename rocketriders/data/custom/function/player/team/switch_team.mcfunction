@@ -9,8 +9,9 @@ tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s
 function custom:player/update_armor
 function custom:player/update_inventory
 
-execute if predicate game:phase/match run advancement grant @s only custom:event/player_dies die_other
-execute if predicate game:phase/staging if predicate=custom:team/any_playing_team run function custom:player/teleport_to_start
+execute if predicate game:phase/match unless predicate game:phase/match/pause run advancement grant @s only custom:event/player_dies die_other
+execute if predicate game:phase/match if predicate game:phase/match/pause run function custom:player/teleport_to_start
+execute if predicate game:phase/staging if predicate custom:team/any_playing_team run function custom:player/teleport_to_start
 
 tag @s add teleport_sound
 

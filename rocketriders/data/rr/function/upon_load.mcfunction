@@ -313,6 +313,28 @@ function game:match_components/resolve
 # Update team attributes
 function game:team_attributes/update_all
 
+# Register missiles
+function items:missile/register {id: "ant", properties:            {width: 1, height: 4, depth: 7,  offset: [0,0,0]}}
+function items:missile/register {id: "auxiliary", properties:      {width: 3, height: 4, depth: 11, offset: [0,0,0]}}
+function items:missile/register {id: "blade", properties:          {width: 3, height: 2, depth: 15, offset: [0,0,0]}}
+function items:missile/register {id: "broadsword", properties:     {width: 3, height: 3, depth: 12, offset: [0,0,0]}}
+function items:missile/register {id: "bullet", properties:         {width: 3, height: 3, depth: 13, offset: [0,0,0]}}
+function items:missile/register {id: "catapult", properties:       {width: 3, height: 3, depth: 12, offset: [0,0,0]}}
+function items:missile/register {id: "chronullifier", properties:  {width: 2, height: 3, depth: 9,  offset: [0,0,0]}}
+function items:missile/register {id: "citadel", properties:        {width: 3, height: 3, depth: 10, offset: [0,0,0]}}
+function items:missile/register {id: "duplex", properties:         {width: 3, height: 3, depth: 18, offset: [0,0,0]}}
+function items:missile/register {id: "elder_guardian", properties: {width: 3, height: 3, depth: 11, offset: [0,0,0]}}
+function items:missile/register {id: "gemini", properties:         {width: 3, height: 2, depth: 10, offset: [0,0,0]}}
+function items:missile/register {id: "hurricane", properties:      {width: 3, height: 2, depth: 9,  offset: [0,0,0]}}
+function items:missile/register {id: "hypersonic", properties:     {width: 3, height: 3, depth: 9,  offset: [0,0,0]}}
+function items:missile/register {id: "juggerbuster", properties:   {width: 3, height: 3, depth: 17, offset: [0,0,0]}}
+function items:missile/register {id: "lifter", properties:         {width: 3, height: 3, depth: 7,  offset: [0,0,0]}}
+function items:missile/register {id: "rifter", properties:         {width: 3, height: 2, depth: 14, offset: [0,0,0]}}
+function items:missile/register {id: "slasher", properties:        {width: 3, height: 4, depth: 13, offset: [0,0,0]}}
+function items:missile/register {id: "thunderbolt", properties:    {width: 2, height: 2, depth: 11, offset: [0,0,0]}}
+function items:missile/register {id: "tomatwo", properties:        {width: 2, height: 2, depth: 9,  offset: [0,0,0]}}
+function items:missile/register {id: "warhead", properties:        {width: 3, height: 3, depth: 11, offset: [0,0,0]}}
+
 # Instantly load assets
 function game:assets/load
 

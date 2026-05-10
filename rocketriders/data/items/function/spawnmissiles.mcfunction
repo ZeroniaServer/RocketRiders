@@ -74,6 +74,60 @@ execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run
 execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
 execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 
+
+##Modern Place
+data modify storage rocketriders:main missile.place set value {}
+data modify storage rocketriders:main missile.place.missile set from storage rocketriders:main spawn_egg.missile
+function items:missile/get_properties with storage rocketriders:main missile.place
+
+# get placer team (-1:=none, 0:=blue, 1:=yellow)
+scoreboard players set $missile_origin_team var -1
+execute as @a[limit=1,tag=spawn_egg.placer] if predicate custom:team/any_playing_team store success score $missile_origin_team var if predicate custom:team/yellow
+
+# set missile team
+execute if score $missile_origin_team var matches -1 run data modify storage rocketriders:main missile.place.team set value "none"
+execute if score $missile_origin_team var matches 0 run data modify storage rocketriders:main missile.place.team set value "blue"
+execute if score $missile_origin_team var matches 1 run data modify storage rocketriders:main missile.place.team set value "yellow"
+
+# set direction
+#scoreboard players set $direction var 0
+#execute if score $missile_origin_team var matches 1 run scoreboard players set $direction var 1
+#execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,tag=FlipMissile] store success score $direction var if score $direction var matches 0
+#execute if score $direction var matches 0 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.south
+#execute if score $direction var matches 1 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.north
+
+scoreboard players set $direction var 0
+execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=45..135] run scoreboard players set $direction var 1
+execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=135..-135] run scoreboard players set $direction var 2
+execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=-135..-45] run scoreboard players set $direction var 3
+execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=-45..0] run scoreboard players set $direction var 0
+execute if score $direction var matches 0 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.south
+execute if score $direction var matches 1 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.west
+execute if score $direction var matches 2 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.north
+execute if score $direction var matches 3 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.east
+
+# check basic antigrief
+scoreboard players set $antigrief_flagged var 0
+execute if score $missile_origin_team var matches 0 store success score $antigrief_flagged var run function items:missile/check_antigrief_blue with storage rocketriders:main missile.place
+execute if score $missile_origin_team var matches 1 store success score $antigrief_flagged var run function items:missile/check_antigrief_yellow with storage rocketriders:main missile.place
+execute if score $antigrief_flagged var matches 1 run say ANTIGRIEF FLAGGED
+
+# check strict antigrief
+scoreboard players set $strict_antigrief_flagged var 0
+execute if score $play_time match matches ..199 store success score $strict_antigrief_flagged var run function items:missile/check_antigrief_strict with storage rocketriders:main missile.place
+execute if score $play_time match matches ..199 if score $strict_antigrief_flagged var matches 1 run say STRICT ANTIGRIEF FLAGGED
+
+# check for portal intersection
+scoreboard players set $intersecting_portal var 0
+execute store success score $intersecting_portal var run function items:missile/check_portal with storage rocketriders:main missile.place
+execute if score $intersecting_portal var matches 1 run say PORTAL INTERSECTED
+
+# place
+execute if score $intersecting_portal var matches 0 run function items:missile/place with storage rocketriders:main missile.place
+execute if score $intersecting_portal var matches 1 unless predicate game:game_rules/disable_pierce_prevention/on run function items:missile/place_in_portal with storage rocketriders:main missile.place
+execute if score $intersecting_portal var matches 1 if predicate game:game_rules/disable_pierce_prevention/on run function items:missile/place with storage rocketriders:main missile.place
+
+
 ##Individual missile positioning
 #Auxiliary
 tp @s[tag=BlueAux] ~-1 ~-9 ~4
@@ -165,19 +219,6 @@ execute if entity @s[tag=BlueBroad] run tp @s ~-1 ~-8 ~5
 execute if entity @s[tag=YellowBroad] run summon marker ~ ~ ~ {Tags:[broadExtraYellow]}
 execute if entity @s[tag=YellowBroad] run tp @s ~-1 ~-8 ~-16
 
-##Pierce Prevention -- track portals
-execute if entity @s[tag=strict] run function items:prevention/trackportals
-
-##Place structure
-execute at @s[tag=!missileflip,tag=!strict] positioned ~ ~2 ~ run function items:placestructure
-execute at @s[tag=missileflip,tag=!strict] positioned ~ ~2 ~ run function items:flip/placestructure
-execute at @s[tag=!missileflip,tag=strict] positioned ~ ~2 ~ run function items:placestructurestrict
-execute at @s[tag=missileflip,tag=strict] positioned ~ ~2 ~ run function items:flip/placestructurestrict
-
-#Cut down on redundant spawn position entries
-execute if entity @s[tag=bluemissile] run function items:minify/minifyblue
-execute if entity @s[tag=yellowmissile] run function items:minify/minifyyellow
-
 #Extra for Duplex
 execute if entity @s[tag=BlueDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s if block ~ ~-6 ~20 end_stone run fill ~ ~-5 ~20 ~ ~-5 ~20 powered_rail[shape=north_south] replace powered_rail
 execute if entity @s[tag=BlueDuplex,tag=!strict] as @e[x=0,type=marker,tag=duplexExtraBlue,limit=1] at @s run setblock ~1 ~-5 ~17 air
@@ -221,12 +262,6 @@ execute if entity @s[tag=YellowWar] run kill @e[x=0,type=marker,tag=warExtraYell
 #Extra for Hypersonic
 execute if entity @s[tag=BlueHyper,tag=strict] as @e[x=0,type=marker,tag=hyperExtraBlue,tag=strict,limit=1] at @s run function items:hyperextra
 execute if entity @s[tag=YellowHyper,tag=strict] as @e[x=0,type=marker,tag=hyperExtraYellow,tag=strict,limit=1] at @s run function items:hyperextra
-
-#Unstable TNT Modifier
-execute if predicate game:modifiers/unstable_tnt/on run function modifiers:unstabletnt
-
-##Pierce Prevention -- resolve portals
-execute if entity @s[tag=strict] run function items:prevention/resolveportals
 
 ##Kill entity
 kill @s

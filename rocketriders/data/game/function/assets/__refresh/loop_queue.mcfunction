@@ -3,6 +3,7 @@ data remove storage rocketriders:assets remaining_assets[-1]
 
 execute unless data storage rocketriders:assets remaining_assets[0] run scoreboard players set $assets_refresh_progress global 100
 execute if score $assets_refresh_progress global matches 100 run fill -161 184 -161 -161 185 -161 air strict
+execute if score $assets_refresh_progress global matches 100 run fill -113 184 -161 -113 185 -161 air strict
 execute if score $assets_refresh_progress global matches 100 run data remove storage rocketriders:assets remaining_assets
 execute if score $assets_refresh_progress global matches 100 run return run scoreboard players reset $assets_refresh_max global
 

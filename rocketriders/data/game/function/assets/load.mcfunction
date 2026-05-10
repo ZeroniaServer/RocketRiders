@@ -46,6 +46,66 @@ execute positioned -160 184 -160 run function game:assets/__load/load with stora
 data modify storage rocketriders:assets assets append value {asset_type:"canopy"}
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
 
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"ant"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"auxiliary"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"blade"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"broadsword"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"bullet"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"catapult"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"chronullifier"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"citadel"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"duplex"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"elder_guardian"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"gemini"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"hurricane"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"hypersonic"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"juggerbuster"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"lifter"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"rifter"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"slasher"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"thunderbolt"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"tomatwo"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"warhead"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
 # update palettes (do so instantly if /reload is ran in the middle of a match)
 function game:assets/refresh
 execute if predicate game:phase/match run schedule clear game:assets/__refresh/loop_queue

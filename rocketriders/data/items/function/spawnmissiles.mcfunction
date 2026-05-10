@@ -124,7 +124,7 @@ execute if score $intersecting_portal var matches 1 run say PORTAL INTERSECTED
 
 # place
 execute if score $intersecting_portal var matches 0 run function items:missile/place with storage rocketriders:main missile.place
-execute if score $intersecting_portal var matches 1 unless predicate game:game_rules/disable_pierce_prevention/on run function items:missile/place_in_portal with storage rocketriders:main missile.place
+execute if score $intersecting_portal var matches 1 unless predicate game:game_rules/disable_pierce_prevention/on run function items:missile/place_pierce_prevention with storage rocketriders:main missile.place
 execute if score $intersecting_portal var matches 1 if predicate game:game_rules/disable_pierce_prevention/on run function items:missile/place with storage rocketriders:main missile.place
 
 

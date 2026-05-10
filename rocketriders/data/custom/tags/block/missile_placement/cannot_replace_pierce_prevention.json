@@ -1,6 +1,7 @@
 {
   "values": [
     "#custom:missile_placement/cannot_replace",
-    "#custom:piston"
+    "#custom:piston",
+    "minecraft:nether_portal"
   ]
 }

@@ -79,4 +79,5 @@ execute unless predicate game:phase/match/pause if predicate game:regenerate_flo
 ## Missile Delayed TNT
 scoreboard players add @e[x=0,type=block_display,tag=missile_delayed_tnt] entity.age 1
 execute as @e[x=0,type=block_display,tag=missile_delayed_tnt,scores={entity.age=1..}] store result score @s entity.age run data get entity @s data.missile_delayed_tnt.delay -1
-execute as @e[x=0,type=block_display,tag=missile_delayed_tnt,scores={entity.age=0}] at @s if function custom:entity/kill if block ~ ~ ~ #custom:air run setblock ~ ~ ~ minecraft:tnt strict
+execute unless predicate game:modifiers/unstable_tnt/on as @e[x=0,type=block_display,tag=missile_delayed_tnt,scores={entity.age=0}] at @s if function custom:entity/kill if block ~ ~ ~ #custom:air run setblock ~ ~ ~ minecraft:tnt strict
+execute if predicate game:modifiers/unstable_tnt/on as @e[x=0,type=block_display,tag=missile_delayed_tnt,scores={entity.age=0}] at @s if function custom:entity/kill if block ~ ~ ~ #custom:air run setblock ~ ~ ~ minecraft:tnt[unstable=true] strict

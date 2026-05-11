@@ -8,13 +8,9 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 
 scoreboard players set $previous_page var 1
 
-fill 22 202 69 15 206 87 air
-
-place template game:missile/south/blue/hypersonic 18 203 74
-
-fill 22 202 69 15 206 87 moving_piston replace #custom:lobby_air
-fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
-fill 22 202 69 15 206 87 white_glazed_terracotta replace blue_glazed_terracotta
+fill 22 202 69 15 206 87 air strict
+place template game:missile/south/white/hypersonic 18 203 74 none none 1 0 strict
+fill 22 202 69 15 206 87 light[level=15] replace #custom:lobby_air strict
 
 fill 19 203 78 20 203 78 tnt
 setblock 19 205 78 tnt

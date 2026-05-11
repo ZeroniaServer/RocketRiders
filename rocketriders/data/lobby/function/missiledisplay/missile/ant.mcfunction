@@ -10,7 +10,7 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 scoreboard players set $previous_page var 0
 
 fill 22 202 69 15 206 87 light[level=15] strict
-game:asset/missile/ant/display 18 203 75 none none 1 0 strict
+place template game:asset/missile/ant/display 18 203 75 none none 1 0 strict
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Normal] ","color":"green","bold":true},{"text":"A.N.T.","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The A.N.T. stands for Almost No TNT. It is one of the smallest functional missiles, made with only two TNT blocks.","color":"gray","italic":true}

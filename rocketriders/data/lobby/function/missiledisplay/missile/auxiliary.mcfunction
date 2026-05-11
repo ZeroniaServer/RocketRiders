@@ -9,7 +9,7 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 scoreboard players set $previous_page var 1
 
 fill 22 202 69 15 206 87 light[level=15] strict
-game:asset/missile/auxiliary/display 18 203 73 none none 1 0 strict
+place template game:asset/missile/auxiliary/display 18 203 73 none none 1 0 strict
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Heavy] ","color":"red","bold":true},{"text":"Auxiliary","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Auxiliary is a heavy missile. This missile has 6 triggers in it, making it risky to defuse.","color":"gray","italic":true}

@@ -9,7 +9,7 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 scoreboard players set $previous_page var 0
 
 fill 22 202 69 15 206 87 light[level=15] strict
-game:asset/missile/slasher/display 18 203 72 none none 1 0 strict
+place template game:asset/missile/slasher/display 18 203 72 none none 1 0 strict
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Normal] ","color":"green","bold":true},{"text":"Slasher","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Slasher is a glass-encased missile with not much TNT. It can slash straight through Shields.","color":"gray","italic":true}

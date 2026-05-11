@@ -9,7 +9,7 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 scoreboard players set $previous_page var 1
 
 fill 22 202 69 15 206 87 light[level=15] strict
-game:asset/missile/hypersonic/display 18 203 74 none none 1 0 strict
+place template game:asset/missile/hypersonic/display 18 203 74 none none 1 0 strict
 
 fill 19 203 78 20 203 78 tnt
 setblock 19 205 78 tnt

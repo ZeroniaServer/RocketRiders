@@ -317,7 +317,7 @@ function game:team_attributes/update_all
 function items:missile/register {id: "ant", properties:            {width: 1, height: 4, depth: 7,  offset: [0,0,0]}}
 function items:missile/register {id: "auxiliary", properties:      {width: 3, height: 4, depth: 11, offset: [0,0,0]}}
 function items:missile/register {id: "blade", properties:          {width: 3, height: 2, depth: 15, offset: [0,0,0]}}
-function items:missile/register {id: "broadsword", properties:     {width: 3, height: 3, depth: 12, offset: [0,0,0]}}
+function items:missile/register {id: "broadsword", properties:     {width: 3, height: 3, depth: 12, offset: [0,0,1]}}
 function items:missile/register {id: "bullet", properties:         {width: 3, height: 3, depth: 13, offset: [0,0,0]}}
 function items:missile/register {id: "catapult", properties:       {width: 3, height: 3, depth: 12, offset: [0,0,0]}}
 function items:missile/register {id: "chronullifier", properties:  {width: 2, height: 3, depth: 9,  offset: [0,0,0]}}

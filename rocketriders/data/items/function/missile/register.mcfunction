@@ -7,7 +7,7 @@ execute store result score $width var run data get storage rocketriders:main mis
 scoreboard players operation $origin_to_placement_local_x var = $width var
 scoreboard players operation $origin_to_placement_local_x var /= $2 constant
 scoreboard players operation $origin_to_placement_local_x var *= $-1 constant
-execute store result score $offset_width var run data get storage rocketriders:main missiles.properties.offset[2]
+execute store result score $offset_width var run data get storage rocketriders:main missiles.properties.offset[0]
 execute store result storage rocketriders:main missiles.properties.origin_to_placement_local_x int 1 run scoreboard players operation $origin_to_placement_local_x var += $offset_width var
 
 execute store result score $height var run data get storage rocketriders:main missiles.properties.height
@@ -18,7 +18,7 @@ execute store result storage rocketriders:main missiles.properties.origin_to_pla
 
 execute store result score $depth var run data get storage rocketriders:main missiles.properties.depth
 scoreboard players set $origin_to_placement_local_z var 4
-execute store result score $offset_depth var run data get storage rocketriders:main missiles.properties.offset[0]
+execute store result score $offset_depth var run data get storage rocketriders:main missiles.properties.offset[2]
 execute store result storage rocketriders:main missiles.properties.origin_to_placement_local_z int 1 run scoreboard players operation $origin_to_placement_local_z var += $offset_depth var
 
 data remove storage rocketriders:main missiles.properties.offset

@@ -85,7 +85,7 @@ scoreboard players operation $start_to_end_relative_x var = $depth var
 execute store result storage rocketriders:main missiles.properties.transforms.east.start_to_end_relative_x int 1 run scoreboard players remove $start_to_end_relative_x var 1
 scoreboard players operation $start_to_end_relative_y var = $height var
 execute store result storage rocketriders:main missiles.properties.transforms.east.start_to_end_relative_y int 1 run scoreboard players remove $start_to_end_relative_y var 1
-scoreboard players operation $start_to_end_relative_z var = $with var
+scoreboard players operation $start_to_end_relative_z var = $width var
 execute store result storage rocketriders:main missiles.properties.transforms.east.start_to_end_relative_z int 1 run scoreboard players remove $start_to_end_relative_z var 1
 
 
@@ -144,7 +144,7 @@ scoreboard players operation $start_to_end_relative_x var = $depth var
 execute store result storage rocketriders:main missiles.properties.transforms.west.start_to_end_relative_x int 1 run scoreboard players remove $start_to_end_relative_x var 1
 scoreboard players operation $start_to_end_relative_y var = $height var
 execute store result storage rocketriders:main missiles.properties.transforms.west.start_to_end_relative_y int 1 run scoreboard players remove $start_to_end_relative_y var 1
-scoreboard players operation $start_to_end_relative_z var = $with var
+scoreboard players operation $start_to_end_relative_z var = $width var
 execute store result storage rocketriders:main missiles.properties.transforms.west.start_to_end_relative_z int 1 run scoreboard players remove $start_to_end_relative_z var 1
 
 

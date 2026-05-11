@@ -4,7 +4,6 @@ scoreboard players set $config_override.disable_hotbar_limit match_components 1
 scoreboard players set $config_override.disable_team_balancing match_components 1
 scoreboard players set $config_override.item_stacking match_components 1
 scoreboard players set $config_override.minute_mix match_components -1
-scoreboard players set $config_override.special_treatment match_components -1
 scoreboard players set $config_override.surprise_eggs match_components -1
 scoreboard players set $config_override.wind_down match_components -1
 scoreboard players set $has_powerups match_components 1

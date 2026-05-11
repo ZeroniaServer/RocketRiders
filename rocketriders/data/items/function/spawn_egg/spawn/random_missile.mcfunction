@@ -1,9 +1,7 @@
 # Converts to random legacy missile spawner entity
 
-execute unless score $spawn_egg.placer_team var matches 1 run tag @s add BlueSurprise
 execute unless score $spawn_egg.placer_team var matches 1 run scoreboard players add @a[limit=1,tag=spawn_egg.placer] BSurpriseSpawned 1
 execute if score $spawn_egg.placer_team var matches 1 run scoreboard players add @a[limit=1,tag=spawn_egg.placer] YSurpriseSpawned 1
-execute if score $spawn_egg.placer_team var matches 1 run tag @s add YellowSurprise
 
 # choose a random category, then choose a random missile from that category
 loot replace block 0 184 -16 container.0 loot {pools:[{rolls:1,entries:[{type:"minecraft:item",name:"minecraft:stone",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{category:"heavy"}}}],conditions:[{condition:"minecraft:inverted",term:{condition:"minecraft:reference",name:"game:item_pool/__all_heavy_missiles_disabled"}}]},{type:"minecraft:item",name:"minecraft:stone",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{category:"normal"}}}],conditions:[{condition:"minecraft:inverted",term:{condition:"minecraft:reference",name:"game:item_pool/__all_normal_missiles_disabled"}}]},{type:"minecraft:item",name:"minecraft:stone",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{category:"lightning"}}}],conditions:[{condition:"minecraft:inverted",term:{condition:"minecraft:reference",name:"game:item_pool/__all_lightning_missiles_disabled"}}]},{type:"minecraft:item",name:"minecraft:stone",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{category:"special"}}}],conditions:[{condition:"minecraft:reference",name:"game:modifiers/special_treatment/on"}]}]}]}

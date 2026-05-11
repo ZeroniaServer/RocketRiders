@@ -3,6 +3,7 @@
     "minecraft:barrier",
     "minecraft:bedrock",
     "minecraft:crying_obsidian",
+    "minecraft:light",
     "minecraft:obsidian"
   ]
 }

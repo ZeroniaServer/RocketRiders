@@ -1,88 +1,102 @@
-# Converts to legacy missile spawner entity
+## Fail if out of bounds
+execute if predicate custom:near_void run return run say FAILED: VOID
+execute if predicate custom:near_or_above_roof run return run say FAILED: ROOF
 
-tag @s add missile
+## Get missile placement properties
+data modify storage rocketriders:main missile.place set value {}
+data modify storage rocketriders:main missile.place.missile set from storage rocketriders:main spawn_egg.missile
+function items:missile/get_properties with storage rocketriders:main missile.place
 
-execute if entity @a[limit=1,tag=spawn_egg.placer,predicate=!custom:team/yellow] run tag @s add bluemissile
-execute if entity @a[limit=1,tag=spawn_egg.placer,predicate=custom:team/yellow] run tag @s add yellowmissile
+# get placer team (-1:=none, 0:=blue, 1:=yellow)
+scoreboard players set $missile_origin_team var -1
+execute as @a[limit=1,tag=spawn_egg.placer] if predicate custom:team/any_playing_team store success score $missile_origin_team var if predicate custom:team/yellow
 
-execute if data storage rocketriders:main spawn_egg{missile:"ant"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] AntsSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"ant"} run tag @s[tag=bluemissile] add BlueAnt
-execute if data storage rocketriders:main spawn_egg{missile:"ant"} run tag @s[tag=yellowmissile] add YellowAnt
+# set missile team
+execute if score $missile_origin_team var matches -1 run data modify storage rocketriders:main missile.place.team set value "none"
+execute if score $missile_origin_team var matches 0 run data modify storage rocketriders:main missile.place.team set value "blue"
+execute if score $missile_origin_team var matches 1 run data modify storage rocketriders:main missile.place.team set value "yellow"
 
-execute if data storage rocketriders:main spawn_egg{missile:"auxiliary"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] AuxSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"auxiliary"} run tag @s[tag=bluemissile] add BlueAux
-execute if data storage rocketriders:main spawn_egg{missile:"auxiliary"} run tag @s[tag=yellowmissile] add YellowAux
+# set direction
+#scoreboard players set $direction var 0
+#execute if score $missile_origin_team var matches 1 run scoreboard players set $direction var 1
+#execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,tag=FlipMissile] store success score $direction var if score $direction var matches 0
+#execute if score $direction var matches 1 run scoreboard players set $direction 2
+#execute if score $direction var matches 0 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.south
+#execute if score $direction var matches 1 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.north
 
-execute if data storage rocketriders:main spawn_egg{missile:"blade"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] BladeSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"blade"} run tag @s[tag=bluemissile] add BlueBlade
-execute if data storage rocketriders:main spawn_egg{missile:"blade"} run tag @s[tag=yellowmissile] add YellowBlade
+scoreboard players set $direction var 0
+execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=45..135] run scoreboard players set $direction var 1
+execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=135..-135] run scoreboard players set $direction var 2
+execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=-135..-45] run scoreboard players set $direction var 3
+execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=-45..0] run scoreboard players set $direction var 0
+execute if score $direction var matches 0 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.south
+execute if score $direction var matches 1 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.west
+execute if score $direction var matches 2 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.north
+execute if score $direction var matches 3 run data modify storage rocketriders:main missile.place merge from storage rocketriders:main missile.place.transforms.east
 
-execute if data storage rocketriders:main spawn_egg{missile:"bullet"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] BulletSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"bullet"} run tag @s[tag=bluemissile] add BlueBull
-execute if data storage rocketriders:main spawn_egg{missile:"bullet"} run tag @s[tag=yellowmissile] add YellowBull
+## Block intersection checks
+# check basic antigrief
+scoreboard players set $antigrief_flagged var 0
+execute if score $missile_origin_team var matches 0 if predicate custom:in_blue_half unless predicate game:match_components/disable_antigrief_system store success score $antigrief_flagged var run function items:missile/check_antigrief_blue with storage rocketriders:main missile.place
+execute if score $missile_origin_team var matches 1 if predicate custom:in_yellow_half unless predicate game:match_components/disable_antigrief_system store success score $antigrief_flagged var run function items:missile/check_antigrief_yellow with storage rocketriders:main missile.place
+execute if score $antigrief_flagged var matches 1 run return run say FAILED: ANTIGRIEF
 
-execute if data storage rocketriders:main spawn_egg{missile:"broadsword"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] BroadSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"broadsword"} run tag @s[tag=bluemissile] add BlueBroad
-execute if data storage rocketriders:main spawn_egg{missile:"broadsword"} run tag @s[tag=yellowmissile] add YellowBroad
+# check collision control or strong antigrief
+scoreboard players set $collision_control var 0
+execute if predicate game:modifiers/collision_control/on if score $missile_origin_team var matches 0 if predicate custom:in_yellow_half run scoreboard players set $collision_control var 1
+execute if predicate game:modifiers/collision_control/on if score $missile_origin_team var matches 1 if predicate custom:in_blue_half run scoreboard players set $collision_control var 1
 
-execute if data storage rocketriders:main spawn_egg{missile:"catapult"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] CataSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"catapult"} run tag @s[tag=bluemissile] add BlueCata
-execute if data storage rocketriders:main spawn_egg{missile:"catapult"} run tag @s[tag=yellowmissile] add YellowCata
+scoreboard players set $strong_antigrief var 0
+execute if score $play_time match matches ..199 unless predicate game:match_components/disable_antigrief_system if score $missile_origin_team var matches 0 if predicate custom:in_blue_half run scoreboard players set $strong_antigrief var 1
+execute if score $play_time match matches ..199 unless predicate game:match_components/disable_antigrief_system if score $missile_origin_team var matches 1 if predicate custom:in_yellow_half run scoreboard players set $strong_antigrief var 1
 
-execute if data storage rocketriders:main spawn_egg{missile:"chronullifier"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] NullSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"chronullifier"} run tag @s[tag=bluemissile] add BlueNull
-execute if data storage rocketriders:main spawn_egg{missile:"chronullifier"} run tag @s[tag=yellowmissile] add YellowNull
+scoreboard players set $check_collision var 0
+execute if score $collision_control var matches 1 run scoreboard players set $check_collision var 1
+execute if score $strong_antigrief var matches 1 run scoreboard players set $check_collision var 1
 
-execute if data storage rocketriders:main spawn_egg{missile:"citadel"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] CitaSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"citadel"} run tag @s[tag=bluemissile] add BlueCitadel
-execute if data storage rocketriders:main spawn_egg{missile:"citadel"} run tag @s[tag=yellowmissile] add YellowCitadel
+scoreboard players set $collision_flagged var 0
+execute if score $check_collision var matches 1 store success score $collision_flagged var run function items:missile/check_collision with storage rocketriders:main missile.place
+execute if score $collision_flagged var matches 1 if score $strong_antigrief var matches 1 run return run say FAILED: ANTIGRIEF (10sec)
+execute if score $collision_flagged var matches 1 if score $collision_control var matches 1 run return run say FAILED: COLLISION CONTROL
 
-execute if data storage rocketriders:main spawn_egg{missile:"duplex"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] DuplexSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"duplex"} run tag @s[tag=bluemissile] add BlueDuplex
-execute if data storage rocketriders:main spawn_egg{missile:"duplex"} run tag @s[tag=yellowmissile] add YellowDuplex
+# check portal intersection
+scoreboard players set $intersecting_portal var 0
+execute store success score $intersecting_portal var run function items:missile/check_portal with storage rocketriders:main missile.place
+execute if score $intersecting_portal var matches 1 if score $missile_origin_team var matches 0 if predicate custom:in_blue_half run return run say FAILED: ANTIGRIEF
+execute if score $intersecting_portal var matches 1 if score $missile_origin_team var matches 1 if predicate custom:in_yellow_half run return run say FAILED: ANTIGRIEF
+execute if score $intersecting_portal var matches 1 unless predicate game:game_rules/disable_pierce_prevention/on run return run say FAILED: PIERCE PREVENTION
 
-execute if data storage rocketriders:main spawn_egg{missile:"elder_guardian"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] GuardSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"elder_guardian"} run tag @s[tag=bluemissile] add BlueGuard
-execute if data storage rocketriders:main spawn_egg{missile:"elder_guardian"} run tag @s[tag=yellowmissile] add YellowGuard
+## Place missile
+execute if score $intersecting_portal var matches 0 run function items:missile/place with storage rocketriders:main missile.place
+execute if score $intersecting_portal var matches 1 unless predicate game:game_rules/disable_pierce_prevention/on run function items:missile/place_pierce_prevention with storage rocketriders:main missile.place
+execute if score $intersecting_portal var matches 1 if predicate game:game_rules/disable_pierce_prevention/on run function items:missile/place with storage rocketriders:main missile.place
+# mark arena clear regions (TODO: east & west)
+execute if score $direction var matches 0 positioned ~ ~-5 ~ run function items:missile/mark_regions/south
+execute if score $direction var matches 2 positioned ~ ~-5 ~ run function items:missile/mark_regions/north
 
-execute if data storage rocketriders:main spawn_egg{missile:"gemini"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] GemiSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"gemini"} run tag @s[tag=bluemissile] add BlueGemi
-execute if data storage rocketriders:main spawn_egg{missile:"gemini"} run tag @s[tag=yellowmissile] add YellowGemi
+## Play sounds
+execute as @a[distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
+execute as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
+execute as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 
-execute if data storage rocketriders:main spawn_egg{missile:"hurricane"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] HurSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"hurricane"} run tag @s[tag=bluemissile] add BlueHur
-execute if data storage rocketriders:main spawn_egg{missile:"hurricane"} run tag @s[tag=yellowmissile] add YellowHur
+## Legacy (TODO) extra Hypersonic logic
+execute if data storage rocketriders:main spawn_egg{missile:"hypersonic"} if score $missile_origin_team var matches 0 run summon marker ~ ~ ~ {Tags:["hyperExtraBlue","hyperExtra"]}
+execute if data storage rocketriders:main spawn_egg{missile:"hypersonic"} if score $missile_origin_team var matches 1 run summon marker ~ ~ ~ {Tags:["hyperExtraYellow","hyperExtra"]}
 
-execute if data storage rocketriders:main spawn_egg{missile:"hypersonic"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] HyperSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"hypersonic"} run tag @s[tag=bluemissile] add BlueHyper
-execute if data storage rocketriders:main spawn_egg{missile:"hypersonic"} run tag @s[tag=yellowmissile] add YellowHyper
+## Clear any blocks that are outside the world border
+# south border
+execute positioned ~ ~ ~30 if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run fill ~-5 ~-10 177 ~5 ~5 ~ minecraft:air strict
+execute positioned ~ ~ ~30 if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run fill ~-5 ~-10 176 ~5 ~5 176 minecraft:barrier strict
+# north border
+execute positioned ~ ~ ~-30 unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run fill ~-5 ~-10 ~ ~5 ~5 -177 minecraft:air strict
+execute positioned ~ ~ ~-30 unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run fill ~-5 ~-10 -176 ~5 ~5 -176 minecraft:barrier strict
+# east border
+execute positioned ~5 ~ ~ if predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:188.0}}}} run fill 189 ~-10 ~-30 ~ ~5 ~30 minecraft:air strict
+execute positioned ~5 ~ ~ if predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:188.0}}}} run fill 188 ~-10 ~-30 188 ~5 ~30 minecraft:barrier strict
+# west border
+execute positioned ~-5 ~ ~ unless predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:-163.0}}}} run fill ~ ~-10 ~-30 -165 ~5 ~30 minecraft:air strict
+execute positioned ~-5 ~ ~ unless predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:-163.0}}}} run fill -164 ~-10 ~-30 -164 ~5 ~30 minecraft:barrier strict
 
-execute if data storage rocketriders:main spawn_egg{missile:"juggerbuster"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] JugbSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"juggerbuster"} run tag @s[tag=bluemissile] add BlueJug
-execute if data storage rocketriders:main spawn_egg{missile:"juggerbuster"} run tag @s[tag=yellowmissile] add YellowJug
-
-execute if data storage rocketriders:main spawn_egg{missile:"lifter"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] LifterSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"lifter"} run tag @s[tag=bluemissile] add BlueLift
-execute if data storage rocketriders:main spawn_egg{missile:"lifter"} run tag @s[tag=yellowmissile] add YellowLift
-
-execute if data storage rocketriders:main spawn_egg{missile:"rifter"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] RifterSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"rifter"} run tag @s[tag=bluemissile] add BlueRift
-execute if data storage rocketriders:main spawn_egg{missile:"rifter"} run tag @s[tag=yellowmissile] add YellowRift
-
-execute if data storage rocketriders:main spawn_egg{missile:"slasher"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] SlashSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"slasher"} run tag @s[tag=bluemissile] add BlueSlash
-execute if data storage rocketriders:main spawn_egg{missile:"slasher"} run tag @s[tag=yellowmissile] add YellowSlash
-
-execute if data storage rocketriders:main spawn_egg{missile:"thunderbolt"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] ThunSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"thunderbolt"} run tag @s[tag=bluemissile] add BlueBolt
-execute if data storage rocketriders:main spawn_egg{missile:"thunderbolt"} run tag @s[tag=yellowmissile] add YellowBolt
-
-execute if data storage rocketriders:main spawn_egg{missile:"tomatwo"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] TomaSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"tomatwo"} run tag @s[tag=bluemissile] add BlueToma
-execute if data storage rocketriders:main spawn_egg{missile:"tomatwo"} run tag @s[tag=yellowmissile] add YellowToma
-
-execute if data storage rocketriders:main spawn_egg{missile:"warhead"} run scoreboard players add @a[limit=1,tag=spawn_egg.placer] WarSpawned 1
-execute if data storage rocketriders:main spawn_egg{missile:"warhead"} run tag @s[tag=bluemissile] add BlueWar
-execute if data storage rocketriders:main spawn_egg{missile:"warhead"} run tag @s[tag=yellowmissile] add YellowWar
-
-function items:spawnmissiles
+## Bot preparation (for PVE mode) (OLD)
+#execute if entity @s[tag=bluemissile] if entity @e[x=0,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}
+#execute if entity @s[tag=yellowmissile] if entity @e[x=0,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}

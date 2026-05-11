@@ -3,10 +3,6 @@
 ## and placed upon spawning them from a spawn egg ##
 ####################################################
 
-##Surprise Egg
-execute if entity @s[tag=BlueSurprise] run function items:rng/surprise_blue/rng
-execute if entity @s[tag=YellowSurprise] run function items:rng/surprise_yellow/rng
-
 ##Flipping Capability
 execute if entity @s[tag=yellowmissile] if entity @a[limit=1,x=0,tag=spawn_egg.placer,tag=FlipMissile,predicate=custom:team/yellow] run tag @s add missileflip
 execute if entity @s[tag=bluemissile] if entity @a[limit=1,x=0,tag=spawn_egg.placer,tag=FlipMissile,predicate=custom:team/blue] run tag @s add missileflip
@@ -70,9 +66,9 @@ execute if entity @s[tag=bluemissile] if entity @e[x=0,type=armor_stand,tag=Bot]
 execute if entity @s[tag=yellowmissile] if entity @e[x=0,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}
 
 ##Play sounds
-execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
-execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
-execute if entity @s[tag=!UnableMissile,tag=!surprising] as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile] as @a[distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile] as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
+execute if entity @s[tag=!UnableMissile] as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
 
 
 ##Modern Place
@@ -219,9 +215,6 @@ execute if entity @s[tag=YellowHyper,tag=strict] as @e[x=0,type=marker,tag=hyper
 
 ##Kill entity
 kill @s
-
-##Surprise Egg support
-execute as @e[x=0,type=marker,tag=surp] at @s run function items:spawnmissiles
 
 ## Clear any blocks that are outside the world border
 # south border

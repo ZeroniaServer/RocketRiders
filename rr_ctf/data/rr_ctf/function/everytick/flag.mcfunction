@@ -209,7 +209,3 @@ execute if predicate game:phase/match/play unless predicate game:modifiers/sonar
 execute if predicate game:phase/match/play if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var = $time match
 execute if predicate game:phase/match/play if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var %= $20 constant
 execute if predicate game:phase/match/play if predicate game:modifiers/sonar/on if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,predicate=custom:player/is_carrying_flag] glowing
-
-#Flip missile tags
-execute if predicate game:phase/match/play run tag @a[x=0,predicate=custom:player/is_carrying_flag,tag=!FlipMissile] add FlipMissile
-execute if predicate game:phase/match/play run tag @a[x=0,predicate=!custom:player/is_carrying_flag] remove FlipMissile

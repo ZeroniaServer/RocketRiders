@@ -19,18 +19,17 @@ execute if score $missile_origin_team var matches 0 run data modify storage rock
 execute if score $missile_origin_team var matches 1 run data modify storage rocketriders:main missile.properties.team set value "yellow"
 
 # set direction
-#scoreboard players set $direction var 0
-#execute if score $missile_origin_team var matches 1 run scoreboard players set $direction var 1
-#execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,tag=FlipMissile] store success score $direction var if score $direction var matches 0
-#execute if score $direction var matches 1 run scoreboard players set $direction 2
-#execute if score $direction var matches 0 run data modify storage rocketriders:main missile.properties merge from storage rocketriders:main missile.properties.transforms.south
-#execute if score $direction var matches 1 run data modify storage rocketriders:main missile.properties merge from storage rocketriders:main missile.properties.transforms.north
-
 scoreboard players set $direction var 0
-execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=45..135] run scoreboard players set $direction var 1
-execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=135..-135] run scoreboard players set $direction var 2
-execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=-135..-45] run scoreboard players set $direction var 3
-execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=-45..0] run scoreboard players set $direction var 0
+execute if score $missile_origin_team var matches 1 run scoreboard players set $direction var 1
+execute if predicate game:match_components/has_flags as @a[limit=1,x=0,tag=spawn_egg.placer] if predicate custom:player/is_carrying_flag store success score $direction var if score $direction var matches 0
+execute if score $direction var matches 1 run scoreboard players set $direction var 2
+
+#scoreboard players set $direction var 0
+#execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=45..135] run scoreboard players set $direction var 1
+#execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=135..-135] run scoreboard players set $direction var 2
+#execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=-135..-45] run scoreboard players set $direction var 3
+#execute if entity @a[limit=1,x=0,tag=spawn_egg.placer,y_rotation=-45..0] run scoreboard players set $direction var 0
+
 execute if score $direction var matches 0 run data modify storage rocketriders:main missile.properties merge from storage rocketriders:main missile.properties.transforms.south
 execute if score $direction var matches 1 run data modify storage rocketriders:main missile.properties merge from storage rocketriders:main missile.properties.transforms.west
 execute if score $direction var matches 2 run data modify storage rocketriders:main missile.properties merge from storage rocketriders:main missile.properties.transforms.north

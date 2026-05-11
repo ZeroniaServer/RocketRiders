@@ -325,10 +325,10 @@ function items:missile/register {id: "citadel", properties:        {width: 3, he
 function items:missile/register {id: "duplex", properties:         {width: 3, height: 3, depth: 18}}
 function items:missile/register {id: "elder_guardian", properties: {width: 3, height: 3, depth: 11}}
 function items:missile/register {id: "gemini", properties:         {width: 3, height: 2, depth: 10}}
-function items:missile/register {id: "hurricane", properties:      {width: 3, height: 2, depth: 9,  offset: [0,0,1]}}
-function items:missile/register {id: "hypersonic", properties:     {width: 3, height: 3, depth: 9,  offset: [0,0,1]}}
+function items:missile/register {id: "hurricane", properties:      {width: 3, height: 2, depth: 9, offset: [0,0,1]}}
+function items:missile/register {id: "hypersonic", properties:     {width: 3, height: 3, depth: 9, offset: [0,0,1]}}
 function items:missile/register {id: "juggerbuster", properties:   {width: 3, height: 3, depth: 17}}
-function items:missile/register {id: "lifter", properties:         {width: 3, height: 3, depth: 7,  offset: [0,1,0]}}
+function items:missile/register {id: "lifter", properties:         {width: 3, height: 3, depth: 7, offset: [0,1,0]}}
 function items:missile/register {id: "rifter", properties:         {width: 3, height: 2, depth: 14}}
 function items:missile/register {id: "slasher", properties:        {width: 3, height: 4, depth: 13}}
 function items:missile/register {id: "thunderbolt", properties:    {width: 2, height: 2, depth: 11}}

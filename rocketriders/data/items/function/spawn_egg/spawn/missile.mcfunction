@@ -37,16 +37,21 @@ execute if score $direction var matches 2 run data modify storage rocketriders:m
 execute if score $direction var matches 3 run data modify storage rocketriders:main missile.properties merge from storage rocketriders:main missile.properties.transforms.east
 
 ## Block intersection checks
+scoreboard players set $intersecting_blue var 0
+execute if predicate custom:in_blue_half store success score $intersecting_blue var run function items:missile/check_intersecting_blue with storage rocketriders:main missile.properties
+scoreboard players set $intersecting_yellow var 0
+execute if predicate custom:in_yellow_half store success score $intersecting_yellow var run function items:missile/check_intersecting_yellow with storage rocketriders:main missile.properties
+
 # check basic antigrief
 scoreboard players set $antigrief_flagged var 0
-execute if score $missile_origin_team var matches 0 if predicate custom:in_blue_half unless predicate game:match_components/disable_antigrief_system store success score $antigrief_flagged var run function items:missile/check_antigrief_blue with storage rocketriders:main missile.properties
-execute if score $missile_origin_team var matches 1 if predicate custom:in_yellow_half unless predicate game:match_components/disable_antigrief_system store success score $antigrief_flagged var run function items:missile/check_antigrief_yellow with storage rocketriders:main missile.properties
+execute if score $play_time match matches 200.. if score $missile_origin_team var matches 0 if score $intersecting_blue var matches 1 unless predicate game:match_components/disable_antigrief_system store success score $antigrief_flagged var run function items:missile/check_antigrief_blue with storage rocketriders:main missile.properties
+execute if score $play_time match matches 200.. if score $missile_origin_team var matches 1 if score $intersecting_yellow var matches 1 unless predicate game:match_components/disable_antigrief_system store success score $antigrief_flagged var run function items:missile/check_antigrief_yellow with storage rocketriders:main missile.properties
 execute if score $antigrief_flagged var matches 1 run return run say FAILED: ANTIGRIEF
 
 # check collision control or strong antigrief
 scoreboard players set $collision_control var 0
-execute if predicate game:modifiers/collision_control/on if score $missile_origin_team var matches 0 if predicate custom:in_yellow_half run scoreboard players set $collision_control var 1
-execute if predicate game:modifiers/collision_control/on if score $missile_origin_team var matches 1 if predicate custom:in_blue_half run scoreboard players set $collision_control var 1
+execute if predicate game:modifiers/collision_control/on if score $missile_origin_team var matches 0 if score $intersecting_yellow var matches 1 run scoreboard players set $collision_control var 1
+execute if predicate game:modifiers/collision_control/on if score $missile_origin_team var matches 1 if score $intersecting_blue var matches 1 run scoreboard players set $collision_control var 1
 
 scoreboard players set $strong_antigrief var 0
 execute if score $play_time match matches ..199 unless predicate game:match_components/disable_antigrief_system if score $missile_origin_team var matches 0 if predicate custom:in_blue_half run scoreboard players set $strong_antigrief var 1

@@ -24,6 +24,12 @@ execute store result storage rocketriders:main missiles.properties.origin_to_pla
 data remove storage rocketriders:main missiles.properties.offset
 
 
+## Calculate volume
+scoreboard players operation $volume var = $width var
+scoreboard players operation $volume var *= $height var
+execute store result storage rocketriders:main missiles.properties.volume int 1 run scoreboard players operation $volume var *= $depth var
+
+
 ## Calculate north positions
 #piston_buffer_corner_absolute = (-160,184,-160) + (width,height,depth) + (1,1,1)
 #origin_to_start_relative = (-origin_to_placement_local.x,origin_to_placement_local.y,-origin_to_placement_local.z) + (-width,0,-depth) + (1,0,1)

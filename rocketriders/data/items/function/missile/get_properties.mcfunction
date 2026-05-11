@@ -1,1 +1,1 @@
-$data modify storage rocketriders:main missile.place merge from storage rocketriders:missiles properties."$(missile)"
+$data modify storage rocketriders:main missile.properties set from storage rocketriders:missiles properties."$(missile)"

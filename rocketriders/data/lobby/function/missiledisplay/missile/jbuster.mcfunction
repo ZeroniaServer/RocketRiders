@@ -8,12 +8,9 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 
 scoreboard players set $previous_page var 1
 
-fill 22 202 69 15 206 87 air
-
-place template game:missile/south/blue/juggerbuster 18 203 70
-
-fill 22 202 69 15 206 79 moving_piston replace #custom:lobby_air
-fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
+fill 22 202 69 15 206 87 air strict
+place template game:missile/south/white/juggerbuster 18 203 70 none none 1 0 strict
+fill 22 202 69 15 206 87 light[level=15] replace #custom:lobby_air strict
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Heavy] ","color":"red","bold":true},{"text":"Juggerbuster","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"This is a Juggernaut-ShieldBuster hybrid. This missile has the power of a Juggernaut plus the ability to bust through a Shield.","color":"gray","italic":true}

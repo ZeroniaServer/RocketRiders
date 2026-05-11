@@ -5,7 +5,6 @@
     "minecraft:void_air",
     "minecraft:water",
     "minecraft:lava",
-    "minecraft:structure_void",
     "minecraft:fire",
     "minecraft:nether_portal"
   ]

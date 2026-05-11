@@ -71,7 +71,6 @@ scoreboard players set $intersecting_portal var 0
 execute store success score $intersecting_portal var run function items:missile/check_portal with storage rocketriders:main missile.properties
 execute if score $intersecting_portal var matches 1 if score $missile_origin_team var matches 0 if predicate custom:in_blue_half run return run say FAILED: ANTIGRIEF
 execute if score $intersecting_portal var matches 1 if score $missile_origin_team var matches 1 if predicate custom:in_yellow_half run return run say FAILED: ANTIGRIEF
-execute if score $intersecting_portal var matches 1 unless predicate game:game_rules/disable_pierce_prevention/on run return run say FAILED: PIERCE PREVENTION
 
 ## Place missile
 execute if score $intersecting_portal var matches 0 run function items:missile/place with storage rocketriders:main missile.properties
@@ -85,10 +84,6 @@ execute if score $direction var matches 2 positioned ~ ~-5 ~ run function items:
 execute as @a[distance=..6] run playsound minecraft:block.slime_block.place master @s ~ ~ ~ 1 1
 execute as @a[distance=..6] run playsound minecraft:block.stone.place master @s ~ ~ ~ 1 1
 execute as @a[distance=..6] run playsound minecraft:item.flintandsteel.use master @s ~ ~ ~ 1 1
-
-## Legacy (TODO) extra Hypersonic logic
-execute if data storage rocketriders:main spawn_egg{missile:"hypersonic"} if score $missile_origin_team var matches 0 run summon marker ~ ~ ~ {Tags:["hyperExtraBlue","hyperExtra"]}
-execute if data storage rocketriders:main spawn_egg{missile:"hypersonic"} if score $missile_origin_team var matches 1 run summon marker ~ ~ ~ {Tags:["hyperExtraYellow","hyperExtra"]}
 
 ## Clear any blocks that are outside the world border
 # south border

@@ -64,9 +64,6 @@ execute if predicate game:arena_details/top/castle unless block 0 61 52 minecraf
 execute if predicate game:arena_details/portal/hole_in_one if predicate game:blue_portal_revealed run function game:place_hole_in_one/blue
 execute if predicate game:arena_details/portal/hole_in_one if predicate game:yellow_portal_revealed run function game:place_hole_in_one/yellow
 
-##Hotfix for Hypersonic
-execute as @e[x=0,type=marker,tag=hyperExtra] at @s run function items:hyperextra
-
 ##Modifiers
 execute unless predicate game:phase/match/pause run function modifiers:modifiers
 
@@ -78,3 +75,8 @@ scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMi
 ## Regenerate back layer
 execute unless predicate game:phase/match/pause if predicate game:regenerate_back_layer/any run function game:regenerate_back_layer/tick
 execute unless predicate game:phase/match/pause if predicate game:regenerate_floor/any run function game:regenerate_floor/tick
+
+## Missile Delayed TNT
+scoreboard players add @e[x=0,type=block_display,tag=missile_delayed_tnt] entity.age 1
+execute as @e[x=0,type=block_display,tag=missile_delayed_tnt,scores={entity.age=1..}] store result score @s entity.age run data get entity @s data.missile_delayed_tnt.delay -1
+execute as @e[x=0,type=block_display,tag=missile_delayed_tnt,scores={entity.age=0}] at @s if function custom:entity/kill if block ~ ~ ~ #custom:air run setblock ~ ~ ~ minecraft:tnt strict

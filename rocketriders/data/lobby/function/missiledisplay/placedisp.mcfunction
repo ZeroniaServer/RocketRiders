@@ -23,8 +23,8 @@ execute if score $page var matches 7 run return run function lobby:missiledispla
 execute if score $page var matches 8 run return run function lobby:missiledisplay/missile/catapult
 execute if score $page var matches 9 run return run function lobby:missiledisplay/missile/slasher
 execute if score $page var matches 10 run return run function lobby:missiledisplay/missile/lifter
-execute if score $page var matches 11 run return run function lobby:missiledisplay/missile/chronull
-execute if score $page var matches 12 run return run function lobby:missiledisplay/missile/eguard
+execute if score $page var matches 11 run return run function lobby:missiledisplay/missile/chronullifier
+execute if score $page var matches 12 run return run function lobby:missiledisplay/missile/elder_guardian
 execute if score $page var matches 13 run return run function lobby:missiledisplay/missile/citadel
 execute if score $page var matches 14 run return run function lobby:missiledisplay/missile/gemini
 execute if score $page var matches 15 run return run function lobby:missiledisplay/missile/thunderbolt
@@ -32,7 +32,7 @@ execute if score $page var matches 16 run return run function lobby:missiledispl
 execute if score $page var matches 17 run return run function lobby:missiledisplay/missile/auxiliary
 execute if score $page var matches 18 run return run function lobby:missiledisplay/missile/warhead
 execute if score $page var matches 19 run return run function lobby:missiledisplay/missile/rifter
-execute if score $page var matches 20 run return run function lobby:missiledisplay/missile/jbuster
+execute if score $page var matches 20 run return run function lobby:missiledisplay/missile/juggerbuster
 execute if score $page var matches 21 run return run function lobby:missiledisplay/missile/hypersonic
 execute if score $page var matches 22 run return run function lobby:missiledisplay/missile/bullet
 execute if score $page var matches 23 run return run function lobby:missiledisplay/missile/duplex

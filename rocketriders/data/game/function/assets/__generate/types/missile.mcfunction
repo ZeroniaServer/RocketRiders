@@ -21,7 +21,8 @@ $execute if predicate game:match_components/neutral_items positioned -161 183 -1
 fill -161 184 -161 -161 185 -161 air strict
 $setblock -161 184 -161 minecraft:structure_block[mode=save]{author:"",ignoreEntities:0b,integrity:1.0f,metadata:"",mirror:"NONE",mode:"SAVE",name:"game:asset/missile/$(name)/blue",posX:1,posY:0,posZ:1,powered:0b,rotation:"NONE",seed:0L,showair:0b,showboundingbox:0b,sizeX:$(x_length),sizeY:$(y_length),sizeZ:$(z_length),strict:0b} strict
 setblock -161 185 -161 redstone_block
-kill @e[x=-160,y=184,z=-160,dx=47,dy=47,dz=47,type=tnt_minecart]
+kill @e[x=-161,y=183,z=-161,dx=49,dy=49,dz=49,type=tnt_minecart]
+kill @e[x=-161,y=183,z=-161,dx=49,dy=49,dz=49,type=block_display,tag=missile_delayed_tnt]
 
 # asset/missile/.../pistons  & asset/missile/.../pistons_and_observers  &  asset/missile/.../blue_no_pistons_or_observers
 $execute positioned -112 184 -160 run fill -112 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) structure_void strict
@@ -61,7 +62,8 @@ $execute if predicate game:match_components/neutral_items positioned -161 183 -1
 fill -161 184 -161 -161 185 -161 air strict
 $setblock -161 184 -161 minecraft:structure_block[mode=save]{author:"",ignoreEntities:0b,integrity:1.0f,metadata:"",mirror:"NONE",mode:"SAVE",name:"game:asset/missile/$(name)/yellow",posX:1,posY:0,posZ:1,powered:0b,rotation:"NONE",seed:0L,showair:0b,showboundingbox:0b,sizeX:$(x_length),sizeY:$(y_length),sizeZ:$(z_length),strict:0b} strict
 setblock -161 185 -161 redstone_block
-kill @e[x=-160,y=184,z=-160,dx=47,dy=47,dz=47,type=tnt_minecart]
+kill @e[x=-161,y=183,z=-161,dx=49,dy=49,dz=49,type=tnt_minecart]
+kill @e[x=-161,y=183,z=-161,dx=49,dy=49,dz=49,type=block_display,tag=missile_delayed_tnt]
 
 # asset/missile/.../yellow_no_pistons_or_observers
 $execute positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) structure_void replace #custom:missile_placement/pistons_and_observers strict
@@ -85,7 +87,8 @@ $execute positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_lengt
 fill -161 184 -161 -161 185 -161 air strict
 $setblock -161 184 -161 minecraft:structure_block[mode=save]{author:"",ignoreEntities:0b,integrity:1.0f,metadata:"",mirror:"NONE",mode:"SAVE",name:"game:asset/missile/$(name)/none",posX:1,posY:0,posZ:1,powered:0b,rotation:"NONE",seed:0L,showair:0b,showboundingbox:0b,sizeX:$(x_length),sizeY:$(y_length),sizeZ:$(z_length),strict:0b} strict
 setblock -161 185 -161 redstone_block
-kill @e[x=-160,y=184,z=-160,dx=47,dy=47,dz=47,type=tnt_minecart]
+kill @e[x=-161,y=183,z=-161,dx=49,dy=49,dz=49,type=tnt_minecart]
+kill @e[x=-161,y=183,z=-161,dx=49,dy=49,dz=49,type=block_display,tag=missile_delayed_tnt]
 
 # asset/missile/.../none_no_pistons_or_observers
 $execute positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) structure_void replace #custom:missile_placement/pistons_and_observers strict

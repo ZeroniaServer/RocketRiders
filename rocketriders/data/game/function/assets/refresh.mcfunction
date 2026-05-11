@@ -27,3 +27,4 @@ data modify storage rocketriders:assets remaining_assets[] merge from storage ro
 execute store result score $assets_refresh_max global if data storage rocketriders:assets assets[]
 scoreboard players set $assets_refresh_progress global 0
 schedule function game:assets/__refresh/loop_queue 1t
+kill @e[x=-161,y=183,z=-161,dx=49,dy=49,dz=49,type=!player]

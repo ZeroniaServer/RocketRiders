@@ -8,9 +8,8 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 
 scoreboard players set $previous_page var 1
 
-fill 22 202 69 15 206 87 air strict
-place template game:missile/south/white/thunderbolt 18 203 73 none none 1 0 strict
-fill 22 202 69 15 206 87 light[level=15] replace #custom:lobby_air strict
+fill 22 202 69 15 206 87 light[level=15] strict
+game:asset/missile/thunderbolt/display 18 203 73 none none 1 0 strict
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Lightning] ","color":"yellow","bold":true},{"text":"Thunderbolt","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"Breaking too much TNT may stop this missile, but its length and 2x2 form factor make it easier to cruise on to the enemy base.","color":"gray","italic":true}

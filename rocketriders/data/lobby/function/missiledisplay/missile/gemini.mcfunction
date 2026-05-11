@@ -8,9 +8,8 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 
 scoreboard players set $previous_page var 0
 
-fill 22 202 69 15 206 87 air strict
-place template game:missile/south/white/gemini 18 203 73 none none 1 0 strict
-fill 22 202 69 15 206 87 light[level=15] replace #custom:lobby_air strict
+fill 22 202 69 15 206 87 light[level=15] strict
+game:asset/missile/gemini/display 18 203 73 none none 1 0 strict
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Normal] ","color":"green","bold":true},{"text":"Gemini","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Gemini is a twin missile, in that if one side is stopped, the other side of the missile will keep going.","color":"gray","italic":true}

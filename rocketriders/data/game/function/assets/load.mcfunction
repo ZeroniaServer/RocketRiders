@@ -146,6 +146,31 @@ execute positioned -160 184 -160 run function game:assets/__load/load with stora
 data modify storage rocketriders:assets assets append value {asset_type:"missile_display",name:"warhead",__static:true}
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
 
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"classic/guardian"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+data modify storage rocketriders:assets assets append value {asset_type:"missile_display",name:"classic/guardian",__static:true}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"classic/juggernaut"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+data modify storage rocketriders:assets assets append value {asset_type:"missile_display",name:"classic/juggernaut",__static:true}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"classic/lightning"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+data modify storage rocketriders:assets assets append value {asset_type:"missile_display",name:"classic/lightning",__static:true}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"classic/shield_buster"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+data modify storage rocketriders:assets assets append value {asset_type:"missile_display",name:"classic/shield_buster",__static:true}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
+data modify storage rocketriders:assets assets append value {asset_type:"missile",name:"classic/tomahawk"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+data modify storage rocketriders:assets assets append value {asset_type:"missile_display",name:"classic/tomahawk",__static:true}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
 data modify storage rocketriders:assets assets append value {asset_type:"pegasus"}
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
 

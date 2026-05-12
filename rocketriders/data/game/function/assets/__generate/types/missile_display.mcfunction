@@ -5,6 +5,7 @@ $place template game:missile/$(name) -160 184 -160 none none 1 0 strict
 $execute positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) white_stained_glass replace blue_stained_glass strict
 $execute positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) white_glazed_terracotta replace blue_glazed_terracotta strict
 $execute positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) white_concrete replace blue_concrete strict
+$execute positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) white_terracotta replace blue_terracotta strict
 $execute positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) pale_oak_trapdoor[facing=north,half=bottom,open=true] replace warped_trapdoor[facing=north,half=bottom,open=true] strict
 $execute positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) pale_oak_fence_gate[facing=south,open=true] replace warped_fence_gate[facing=south,open=true] strict
 execute at @e[x=-161,y=183,z=-161,dx=49,dy=49,dz=49,type=block_display,tag=missile_delayed_tnt] run setblock ~ ~ ~ tnt strict

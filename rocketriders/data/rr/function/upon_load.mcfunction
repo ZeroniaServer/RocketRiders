@@ -314,26 +314,31 @@ function game:match_components/resolve
 function game:team_attributes/update_all
 
 # Register missiles
-function items:missile/register {id: "ant", properties:            {width: 1, height: 4, depth: 7}}
-function items:missile/register {id: "auxiliary", properties:      {width: 3, height: 4, depth: 11}}
-function items:missile/register {id: "blade", properties:          {width: 3, height: 2, depth: 15}}
-function items:missile/register {id: "broadsword", properties:     {width: 3, height: 3, depth: 12, offset: [0,0,1]}}
-function items:missile/register {id: "bullet", properties:         {width: 3, height: 3, depth: 13}}
-function items:missile/register {id: "catapult", properties:       {width: 3, height: 3, depth: 12, offset: [0,0,-1]}}
-function items:missile/register {id: "chronullifier", properties:  {width: 2, height: 3, depth: 9}}
-function items:missile/register {id: "citadel", properties:        {width: 3, height: 3, depth: 10, offset: [0,0,-1]}}
-function items:missile/register {id: "duplex", properties:         {width: 3, height: 3, depth: 18}}
-function items:missile/register {id: "elder_guardian", properties: {width: 3, height: 3, depth: 11}}
-function items:missile/register {id: "gemini", properties:         {width: 3, height: 2, depth: 10}}
-function items:missile/register {id: "hurricane", properties:      {width: 3, height: 2, depth: 9, offset: [0,0,1]}}
-function items:missile/register {id: "hypersonic", properties:     {width: 3, height: 3, depth: 9, offset: [0,0,1]}}
-function items:missile/register {id: "juggerbuster", properties:   {width: 3, height: 3, depth: 17}}
-function items:missile/register {id: "lifter", properties:         {width: 3, height: 3, depth: 7, offset: [0,1,0]}}
-function items:missile/register {id: "rifter", properties:         {width: 3, height: 2, depth: 14}}
-function items:missile/register {id: "slasher", properties:        {width: 3, height: 4, depth: 13}}
-function items:missile/register {id: "thunderbolt", properties:    {width: 2, height: 2, depth: 11}}
-function items:missile/register {id: "tomatwo", properties:        {width: 2, height: 2, depth: 9}}
-function items:missile/register {id: "warhead", properties:        {width: 3, height: 3, depth: 11}}
+function items:missile/register {id: "ant", properties:                   {width: 1, height: 4, depth: 7}}
+function items:missile/register {id: "auxiliary", properties:             {width: 3, height: 4, depth: 11}}
+function items:missile/register {id: "blade", properties:                 {width: 3, height: 2, depth: 15}}
+function items:missile/register {id: "broadsword", properties:            {width: 3, height: 3, depth: 12, offset: [0,0,1]}}
+function items:missile/register {id: "bullet", properties:                {width: 3, height: 3, depth: 13}}
+function items:missile/register {id: "catapult", properties:              {width: 3, height: 3, depth: 12, offset: [0,0,-1]}}
+function items:missile/register {id: "chronullifier", properties:         {width: 2, height: 3, depth: 9}}
+function items:missile/register {id: "citadel", properties:               {width: 3, height: 3, depth: 10, offset: [0,0,-1]}}
+function items:missile/register {id: "duplex", properties:                {width: 3, height: 3, depth: 18}}
+function items:missile/register {id: "elder_guardian", properties:        {width: 3, height: 3, depth: 11}}
+function items:missile/register {id: "gemini", properties:                {width: 3, height: 2, depth: 10}}
+function items:missile/register {id: "hurricane", properties:             {width: 3, height: 2, depth: 9, offset: [0,0,1]}}
+function items:missile/register {id: "hypersonic", properties:            {width: 3, height: 3, depth: 9, offset: [0,0,1]}}
+function items:missile/register {id: "juggerbuster", properties:          {width: 3, height: 3, depth: 17}}
+function items:missile/register {id: "lifter", properties:                {width: 3, height: 3, depth: 7, offset: [0,1,0]}}
+function items:missile/register {id: "rifter", properties:                {width: 3, height: 2, depth: 14}}
+function items:missile/register {id: "slasher", properties:               {width: 3, height: 4, depth: 13}}
+function items:missile/register {id: "thunderbolt", properties:           {width: 2, height: 2, depth: 11}}
+function items:missile/register {id: "tomatwo", properties:               {width: 2, height: 2, depth: 9}}
+function items:missile/register {id: "warhead", properties:               {width: 3, height: 3, depth: 11}}
+function items:missile/register {id: "classic/guardian", properties:      {width: 3, height: 3, depth: 8}}
+function items:missile/register {id: "classic/juggernaut", properties:    {width: 3, height: 3, depth: 11, offset: [0,-1,0]}}
+function items:missile/register {id: "classic/lightning", properties:     {width: 3, height: 2, depth: 9, offset: [0,-1,1]}}
+function items:missile/register {id: "classic/shield_buster", properties: {width: 3, height: 3, depth: 15, offset: [0,-1,0]}}
+function items:missile/register {id: "classic/tomahawk", properties:      {width: 2, height: 2, depth: 13, offset: [1,-1,0]}}
 
 # Instantly load assets
 function game:assets/load
@@ -343,3 +348,6 @@ function lobby:update_nav_book
 
 # Refresh Rocket-Nomicon
 execute if predicate game:phase/match if predicate game:match_components/has_rocket_nomicon run function rr_sandbox:nomicon/load_pages
+
+# Update missile display book
+function lobby:missiledisplay/applybook

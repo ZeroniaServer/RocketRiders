@@ -401,6 +401,122 @@
                         }
                       }
                     ],
+                    [
+                      "",
+                      {
+                        "bold": true,
+                        "color": "blue",
+                        "text": "   Rocket"
+                      },
+                      {
+                        "bold": true,
+                        "color": "gold",
+                        "text": " Riders"
+                      },
+                      "\n     ",
+                      {
+                        "color": "light_purple",
+                        "underlined": true,
+                        "text": "Missile Display"
+                      },
+                      "\n",
+                      {
+                        "color": "gray",
+                        "text": "   (Click to display)"
+                      },
+                      "\n\n",
+                      {
+                        "color": "dark_aqua",
+                        "text": "[Classic]",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 26
+                        }
+                      },
+                      {
+                        "color": "dark_gray",
+                        "text": "Guardian",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 26
+                        }
+                      },
+                      "\n",
+                      {
+                        "color": "dark_aqua",
+                        "text": "[Classic]",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 27
+                        }
+                      },
+                      {
+                        "color": "dark_gray",
+                        "text": "Juggernaut",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 27
+                        }
+                      },
+                      "\n",
+                      {
+                        "color": "dark_aqua",
+                        "text": "[Classic]",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 28
+                        }
+                      },
+                      {
+                        "color": "dark_gray",
+                        "text": "Lightning",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 28
+                        }
+                      },
+                      "\n",
+                      {
+                        "color": "dark_aqua",
+                        "text": "[Classic]",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 29
+                        }
+                      },
+                      {
+                        "color": "dark_gray",
+                        "text": "Shield Buster",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 29
+                        }
+                      },
+                      "\n",
+                      {
+                        "color": "dark_aqua",
+                        "text": "[Classic]",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 30
+                        }
+                      },
+                      {
+                        "color": "dark_gray",
+                        "text": "Tomahawk",
+                        "click_event": {
+                          "action": "change_page",
+                          "page": 30
+                        }
+                      }
+                    ],
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
                     "",
                     "",
                     "",

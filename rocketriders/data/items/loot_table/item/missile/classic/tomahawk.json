@@ -1,0 +1,122 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pig_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "id": "missile/classic/tomahawk",
+                  "spawn_egg": {
+                    "type": "missile",
+                    "missile": "classic/tomahawk"
+                  }
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "missile/classic/tomahawk",
+                    "none"
+                  ]
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:item_model": "minecraft:creeper_spawn_egg",
+                "minecraft:lore": [
+                  [
+                    {
+                      "color": "gray",
+                      "italic": false,
+                      "text": "Amount of TNT: "
+                    },
+                    {
+                      "color": "red",
+                      "text": "15"
+                    }
+                  ],
+                  [
+                    {
+                      "color": "gray",
+                      "italic": false,
+                      "text": "Speed: "
+                    },
+                    {
+                      "color": "red",
+                      "text": "1.7m/s"
+                    }
+                  ],
+                  [
+                    {
+                      "color": "gray",
+                      "italic": false,
+                      "text": "Made by: "
+                    },
+                    {
+                      "color": "red",
+                      "text": "Cubehamster"
+                    }
+                  ],
+                  "",
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Front-facing explosion."
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "UUID",
+                  "target": "spawn_egg.owner"
+                }
+              ],
+              "source": "this"
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "aqua",
+                  "text": "[Classic] "
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Tomahawk"
+                ]
+              ],
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

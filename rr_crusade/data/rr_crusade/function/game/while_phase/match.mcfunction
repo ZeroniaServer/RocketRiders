@@ -45,10 +45,10 @@ execute unless block 12 63 62 obsidian run setblock 12 63 62 obsidian strict
 execute unless block 14 63 63 obsidian run setblock 14 63 63 obsidian strict
 
 # Prevent nexus bedrock being overwritten by utilities & missiles
-execute if score $CBA crusadehp matches 1.. run fill 41 52 -39 35 52 -37 bedrock strict
-execute if score $CBB crusadehp matches 1.. run fill -11 52 -39 -17 52 -37 bedrock strict
-execute if score $CYA crusadehp matches 1.. run fill -17 52 39 -11 52 37 bedrock strict
-execute if score $CYB crusadehp matches 1.. run fill 35 52 39 41 52 37 bedrock strict
+execute if score $nexus_blue_a_health match matches 1.. run fill 41 52 -39 35 52 -37 bedrock strict
+execute if score $nexus_blue_b_health match matches 1.. run fill -11 52 -39 -17 52 -37 bedrock strict
+execute if score $nexus_yellow_a_health match matches 1.. run fill -17 52 39 -11 52 37 bedrock strict
+execute if score $nexus_yellow_b_health match matches 1.. run fill 35 52 39 41 52 37 bedrock strict
 
 ## Regenerating main features
 #middle wall

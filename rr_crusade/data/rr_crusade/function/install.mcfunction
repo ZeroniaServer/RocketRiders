@@ -5,7 +5,6 @@ execute unless entity @e[x=0,type=marker,tag=PlacerClear] run function game:forc
 
 #> Crusade scoreboards
 scoreboard objectives add crusadekit dummy
-scoreboard objectives add crusadehp dummy
 scoreboard objectives add crusadechange trigger
 
 bossbar add rr_crusade:blue "Total Nexus Health"

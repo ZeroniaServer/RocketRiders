@@ -19,16 +19,27 @@
       {
         "condition": "minecraft:value_check",
         "value": {
-          "type": "minecraft:score",
-          "score": "crusadehp",
-          "target": {
-            "type": "minecraft:fixed",
-            "name": "$YellowShield"
-          }
+          "type": "minecraft:sum",
+          "summands": [
+            {
+              "type": "minecraft:score",
+              "score": "match",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$nexus_yellow_a_health"
+              }
+            },
+            {
+              "type": "minecraft:score",
+              "score": "match",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$nexus_yellow_b_health"
+              }
+            }
+          ]
         },
-        "range": {
-          "max": 0
-        }
+        "range": 0
       }
     ]
   }

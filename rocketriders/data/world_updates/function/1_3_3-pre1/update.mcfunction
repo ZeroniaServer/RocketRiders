@@ -7,6 +7,7 @@ scoreboard objectives remove shooting_saber.infinity_time
 scoreboard objectives remove shooting_saber.multishot_time
 scoreboard objectives remove elytra_time
 scoreboard objectives remove ObshieldSpawned
+scoreboard objectives remove crusadehp
 
 scoreboard objectives remove FlagsCaptured
 scoreboard objectives remove FlagDeliver

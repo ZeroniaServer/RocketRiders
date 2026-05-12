@@ -12,7 +12,7 @@ execute positioned as @e[x=0,type=marker,tag=ctf_flag] unless block ~ ~ ~ purple
 execute positioned as @e[x=0,type=marker,tag=ctf_flag] run fill ~-6 ~ ~-3 ~2 ~10 ~2 air replace #custom:wool
 
 #Actionbars for flag carrier
-execute if predicate game:phase/match/play as @a[x=0,predicate=custom:player/is_carrying_flag,tag=!DelayActionbar] run title @s actionbar [{"text":"You stole a flag! Return to your base to capture it!","color":"white","bold":true}]
+execute if predicate game:phase/match/play as @a[x=0,predicate=custom:player/is_carrying_flag,tag=!DelayActionbar] run title @s actionbar {bold:true,text:"You stole a flag! Return to your base to capture it!"}
 
 #Make flags wave around
 scoreboard players operation $flag_wave var = $time match_data

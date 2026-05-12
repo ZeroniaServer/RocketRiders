@@ -3,6 +3,7 @@ fill 35 74 68 29 64 61 moving_piston replace #custom:air
 fill -9 74 -68 -15 64 -61 moving_piston replace #custom:air
 fill 35 74 -68 29 64 -61 moving_piston replace #custom:air
 tag @a[x=0] remove FlipMissile
+title @a[x=0,predicate=custom:player/is_carrying_flag,tag=!DelayActionbar] actionbar ""
 tag @a[x=0] remove carrying_flag.yellow_right
 tag @a[x=0] remove carrying_flag.yellow_left
 tag @a[x=0] remove carrying_flag.blue_right

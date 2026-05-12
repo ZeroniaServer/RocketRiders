@@ -1,6 +1,12 @@
 ## Resolve any manually changed components
 function game:match_components/resolve
 
+## Choose swap side
+scoreboard players set $choose_swap_side var -1
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] store success score $choose_swap_side var unless score $swap_side match_data matches 0..1
+execute if score $choose_swap_side var matches 1 store result score $swap_side match_data run random value 0..1
+execute if score $choose_swap_side var matches 1 run function rr_swap:baseswap/set_palettes
+
 ## Update team attributes
 function game:team_attributes/update_all
 
@@ -12,12 +18,6 @@ dialog clear @a[x=0]
 
 ## Per-game-mode "upon confirmed settings" functions
 function #rr:game/upon_confirmed_settings
-
-## Choose swap side
-scoreboard players set $choose_swap_side var -1
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] store success score $choose_swap_side var unless score $swap_side match_data matches 0..1
-execute if score $choose_swap_side var matches 1 store result score $swap_side match_data run random value 0..1
-execute if score $choose_swap_side var matches 1 run function rr_swap:baseswap/set_palettes
 
 ## Place facade
 function game:place_facade

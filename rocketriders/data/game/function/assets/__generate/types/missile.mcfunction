@@ -15,6 +15,7 @@ $execute unless predicate game:match_components/neutral_items if predicate game:
 $execute unless predicate game:match_components/neutral_items if predicate game:blue_team_skin/any_red_skin positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) mangrove_fence_gate[facing=south,open=true] replace warped_fence_gate[facing=south,open=true] strict
 $execute if predicate game:match_components/neutral_items positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) white_stained_glass replace blue_stained_glass strict
 $execute if predicate game:match_components/neutral_items positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) white_glazed_terracotta replace blue_glazed_terracotta strict
+$execute if predicate game:match_components/neutral_items positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) white_concrete replace blue_concrete strict
 $execute if predicate game:match_components/neutral_items positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) pale_oak_trapdoor[facing=north,half=bottom,open=true] replace warped_trapdoor[facing=north,half=bottom,open=true] strict
 $execute if predicate game:match_components/neutral_items positioned -161 183 -161 run fill -160 184 -160 ~$(x_length) ~$(y_length) ~$(z_length) pale_oak_fence_gate[facing=south,open=true] replace warped_fence_gate[facing=south,open=true] strict
 

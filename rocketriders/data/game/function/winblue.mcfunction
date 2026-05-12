@@ -7,7 +7,7 @@ execute if predicate game:achievements_can_be_awarded run function achievements:
 
 ##Record tags
 scoreboard players set $blue_won_only match_data 1
-scoreboard players set $blue_won_first match 1
+scoreboard players set $blue_won_first match_data 1
 tag @a[x=0,predicate=custom:team/blue] add Winner
 tag @a[x=0,predicate=custom:team/yellow] add Loser
 

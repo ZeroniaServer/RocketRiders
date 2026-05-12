@@ -15,6 +15,7 @@ scoreboard players set $config_override.impact_utilities match_components -1
 scoreboard players set $config_override.item_stacking match_components -1
 scoreboard players set $config_override.tie_window_length match_components -1
 scoreboard players set $item_batch_size.arrow match_components 3
+scoreboard players set $winner_pegasus match_components 1
 scoreboard players set $yellow_team_skin match_components 1
 
 # items

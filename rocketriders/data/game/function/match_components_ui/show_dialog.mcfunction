@@ -278,6 +278,10 @@ execute store result storage rocketriders:main match_components.dialog.inputs[-1
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"number_range",key:"vortex_flight_duration",width:300,label:"vortex_flight_duration",label_format:"%1$s: %2$s ticks",start:1,end:60,step:1,initial:1}
 execute store result storage rocketriders:main match_components.dialog.inputs[-1].initial int 1 run scoreboard players get $vortex_flight_duration match_components
 
+# winner_pegasus
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"winner_pegasus",label:"winner_pegasus",width:300,options:[{id:"0",display:{color:"gold",text:"false"}},{id:"1",display:{color:"gold",text:"true"}}]}
+execute if predicate game:match_components/winner_pegasus run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
+
 # yellow_team_skin
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"yellow_team_skin",label:"yellow_team_skin",width:300,options:[{id:"0",display:{text:"",extra:[['"',{color:"green",text:"yellow"},'"']]}},{id:"1",display:{text:"",extra:[['"',{color:"green",text:"green"},'"']]}}]}
 execute if predicate game:yellow_team_skin/yellow run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].initial set value true

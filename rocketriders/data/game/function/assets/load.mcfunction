@@ -146,6 +146,9 @@ execute positioned -160 184 -160 run function game:assets/__load/load with stora
 data modify storage rocketriders:assets assets append value {asset_type:"missile_display",name:"warhead",__static:true}
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
 
+data modify storage rocketriders:assets assets append value {asset_type:"pegasus"}
+execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
+
 # update palettes (do so instantly if /reload is ran in the middle of a match)
 function game:assets/refresh
 execute if predicate game:phase/match run schedule clear game:assets/__refresh/loop_queue

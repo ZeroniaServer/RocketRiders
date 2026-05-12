@@ -131,6 +131,10 @@ $scoreboard players set $vortex_flight_duration match_components $(vortex_flight
 # classic_shooting_saber_name
 $scoreboard players set $classic_shooting_saber_name match_components $(classic_shooting_saber_name)
 
+# winner_pegasus
+$execute store success score $winner_pegasus match_components if predicate {condition:"value_check",value:$(winner_pegasus),range:1}
+execute if score $winner_pegasus match_components matches 0 run scoreboard players reset $winner_pegasus match_components
+
 ## POST
 function game:match_components/resolve
 function game:team_attributes/update_all

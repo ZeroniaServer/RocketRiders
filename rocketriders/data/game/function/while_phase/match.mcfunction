@@ -48,6 +48,14 @@ execute if score $obsidian_shield_projectile_count var matches 101.. run tag @e[
 execute if score $obsidian_shield_projectile_count var matches 101.. as @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving,tag=!safe] run function custom:entity/kill_entity_and_passengers
 execute if score $obsidian_shield_projectile_count var matches 101.. run tag @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving,tag=safe] remove safe
 
+## Pegasus
+execute if predicate game:match_components/winner_pegasus as @e[x=0,type=marker,tag=pegasus] at @s if predicate custom:location/touching_or_beyond_world_border run kill @s
+execute if predicate game:match_components/winner_pegasus at @e[x=0,type=marker,tag=pegasus] run function game:pegasus/__destroy_path_front
+execute if predicate game:match_components/winner_pegasus at @e[x=0,type=marker,tag=pegasus] positioned ^ ^ ^-32 run function game:pegasus/__destroy_path_back
+execute if predicate game:match_components/winner_pegasus run scoreboard players add @e[x=0,type=marker,tag=pegasus] entity.age 1
+execute if predicate game:match_components/winner_pegasus as @e[x=0,type=marker,tag=pegasus] if score @s entity.age matches 12 at @s run tp @s ^ ^ ^1
+execute if predicate game:match_components/winner_pegasus as @e[x=0,type=marker,tag=pegasus] if score @s entity.age matches 12 run scoreboard players set @s entity.age 0
+
 ##Regenerate base frames
 function game:place_base_frames
 

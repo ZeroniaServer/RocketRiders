@@ -1,5 +1,5 @@
 ##Record tags
-scoreboard players set $both_won match 1
+scoreboard players set $both_won match_data 1
 
 ##Close dialogs
 dialog clear @a[x=0]

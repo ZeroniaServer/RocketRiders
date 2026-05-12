@@ -19,16 +19,27 @@
       {
         "condition": "minecraft:value_check",
         "value": {
-          "type": "minecraft:score",
-          "score": "crusadehp",
-          "target": {
-            "type": "minecraft:fixed",
-            "name": "$BlueShield"
-          }
+          "type": "minecraft:sum",
+          "summands": [
+            {
+              "type": "minecraft:score",
+              "score": "match_data",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$nexus_blue_a_health"
+              }
+            },
+            {
+              "type": "minecraft:score",
+              "score": "match_data",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$nexus_blue_b_health"
+              }
+            }
+          ]
         },
-        "range": {
-          "max": 0
-        }
+        "range": 0
       }
     ]
   }

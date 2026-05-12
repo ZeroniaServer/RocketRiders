@@ -2,11 +2,11 @@ execute unless predicate game:modifiers/hardcore/on run scoreboard players set $
 execute if predicate game:modifiers/hardcore/on run scoreboard players set $back_layer_depth var 1
 scoreboard players set $width var 53
 
-scoreboard players operation $x_offset var = $time match
+scoreboard players operation $x_offset var = $time match_data
 scoreboard players operation $x_offset var /= $back_layer_depth var
 execute store result storage rocketriders:main regenerate_back_layer.x_offset int 1 run scoreboard players operation $x_offset var %= $width var
 
-scoreboard players operation $z_offset var = $time match
+scoreboard players operation $z_offset var = $time match_data
 execute store result storage rocketriders:main regenerate_back_layer.z_offset int 1 run scoreboard players operation $z_offset var %= $back_layer_depth var
 
 scoreboard players set $fill_column var 1

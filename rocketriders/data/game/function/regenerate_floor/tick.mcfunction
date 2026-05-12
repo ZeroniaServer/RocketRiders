@@ -10,11 +10,11 @@ execute if predicate game:modifiers/hardcore/on run scoreboard players set $fron
 execute unless predicate game:arena_details/top/castle run scoreboard players set $width var 53
 execute if predicate game:arena_details/top/castle run scoreboard players set $width var 43
 
-scoreboard players operation $x_offset var = $time match
+scoreboard players operation $x_offset var = $time match_data
 scoreboard players operation $x_offset var /= $depth var
 execute store result storage rocketriders:main regenerate_floor.x_offset int 1 run scoreboard players operation $x_offset var %= $width var
 
-scoreboard players operation $z_offset var = $time match
+scoreboard players operation $z_offset var = $time match_data
 execute store result storage rocketriders:main regenerate_floor.z_offset int 1 run scoreboard players operation $z_offset var %= $depth var
 
 execute unless predicate game:arena_details/top/castle positioned -13.5 63.5 ~ run function game:regenerate_floor/offset with storage rocketriders:main regenerate_floor

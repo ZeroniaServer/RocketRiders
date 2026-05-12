@@ -3,9 +3,9 @@ execute if predicate game:game_rules/show_debug_logs/on run function custom:log 
 ##
 gamemode survival @a[x=0,predicate=custom:team/any_playing_team]
 
-scoreboard players reset $blue_won_only match
-scoreboard players reset $yellow_won_only match
-scoreboard players reset $both_won match
+scoreboard players reset $blue_won_only match_data
+scoreboard players reset $yellow_won_only match_data
+scoreboard players reset $both_won match_data
 
 execute if predicate game:modifiers/no_fall/on run gamerule minecraft:fall_damage false
 

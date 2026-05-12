@@ -1,14 +1,14 @@
 execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match.closing"]}
 
 ##
-scoreboard players set $closing_sequence.time match 0
+scoreboard players set $closing_sequence.time match_data 0
 
 # Set timings
-execute store result score $closing_sequence.max_tie_window_time match run function game:config/get_tie_window_length_ticks
-execute unless predicate game:match_components/short_end_sequence run scoreboard players set $closing_sequence.max_time_before_review match 250
-execute if predicate game:match_components/short_end_sequence run scoreboard players set $closing_sequence.max_time_before_review match 0
-execute if score $closing_sequence.max_tie_window_time match > $closing_sequence.max_time_before_review match run scoreboard players operation $closing_sequence.max_time_before_review match = $closing_sequence.max_tie_window_time match
-scoreboard players set $closing_sequence.max_review_time match 320
+execute store result score $closing_sequence.max_tie_window_time match_data run function game:config/get_tie_window_length_ticks
+execute unless predicate game:match_components/short_end_sequence run scoreboard players set $closing_sequence.max_time_before_review match_data 250
+execute if predicate game:match_components/short_end_sequence run scoreboard players set $closing_sequence.max_time_before_review match_data 0
+execute if score $closing_sequence.max_tie_window_time match_data > $closing_sequence.max_time_before_review match_data run scoreboard players operation $closing_sequence.max_time_before_review match_data = $closing_sequence.max_tie_window_time match_data
+scoreboard players set $closing_sequence.max_review_time match_data 320
 
 # Put players into adventure mode
 gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]

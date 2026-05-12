@@ -3,7 +3,7 @@ scoreboard players reset @a[x=0,tag=JoinBlue] match_statistic.flags_captured
 scoreboard players reset @a[x=0,tag=JoinYellow] match_statistic.flags_captured
 
 #Give first item to anyone who joins within 1st second
-execute if predicate game:phase/match/play if score $play_time match matches 3..20 run function items:givefirst
+execute if predicate game:phase/match/play if score $play_time match_data matches 3..20 run function items:givefirst
 
 #Tag Removal
 tag @a[x=0] remove JoinBlue

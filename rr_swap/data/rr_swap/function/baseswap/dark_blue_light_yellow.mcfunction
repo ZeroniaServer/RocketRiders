@@ -1,5 +1,5 @@
 tag @s remove SwappingSides
-scoreboard players set $swap_side match 1
+scoreboard players set $swap_side match_data 1
 scoreboard players set SwapPlatform swapside 0
 scoreboard players set BossbarA swapside 0
 

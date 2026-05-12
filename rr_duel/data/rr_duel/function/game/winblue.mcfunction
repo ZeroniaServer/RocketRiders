@@ -3,8 +3,8 @@ tag @a[x=0] remove Winner
 tag @a[x=0] remove Loser
 tag @a[x=0,predicate=custom:team/blue] add Winner
 tag @a[x=0,predicate=custom:team/yellow] add Loser
-scoreboard players set $yellow_won_only match 1
-scoreboard players set $blue_won_only match 1
+scoreboard players set $yellow_won_only match_data 1
+scoreboard players set $blue_won_only match_data 1
 tag @s add CriteriaTrue
 scoreboard players add Blue: RoundsWon 1
 

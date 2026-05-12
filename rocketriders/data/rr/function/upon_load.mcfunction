@@ -50,7 +50,7 @@ scoreboard objectives add var dummy
 
 scoreboard objectives add config dummy
 
-scoreboard objectives add match dummy
+scoreboard objectives add match_data dummy
 scoreboard objectives add match_components dummy
 
 scoreboard objectives add constant dummy

@@ -15,8 +15,8 @@ function #rr:game/upon_confirmed_settings
 
 ## Choose swap side
 scoreboard players set $choose_swap_side var -1
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] store success score $choose_swap_side var unless score $swap_side match matches 0..1
-execute if score $choose_swap_side var matches 1 store result score $swap_side match run random value 0..1
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] store success score $choose_swap_side var unless score $swap_side match_data matches 0..1
+execute if score $choose_swap_side var matches 1 store result score $swap_side match_data run random value 0..1
 execute if score $choose_swap_side var matches 1 run function rr_swap:baseswap/set_palettes
 
 ## Place facade

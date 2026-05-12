@@ -7,6 +7,9 @@ scoreboard objectives remove shooting_saber.infinity_time
 scoreboard objectives remove shooting_saber.multishot_time
 scoreboard objectives remove elytra_time
 scoreboard objectives remove ObshieldSpawned
+scoreboard objectives remove crusadehp
+
+scoreboard objectives remove match
 
 scoreboard objectives remove FlagsCaptured
 scoreboard objectives remove FlagDeliver
@@ -58,10 +61,10 @@ scoreboard players reset $closing_timer.time global
 scoreboard players reset $closing_timer.max_tie_window_time global
 scoreboard players reset $closing_timer.max_time_before_review global
 scoreboard players reset $closing_timer.max_review_time global
-scoreboard players reset $flag_state.blue_left match
-scoreboard players reset $flag_state.blue_right match
-scoreboard players reset $flag_state.yellow_left match
-scoreboard players reset $flag_state.yellow_right match
+scoreboard players reset $flag_state.blue_left match_data
+scoreboard players reset $flag_state.blue_right match_data
+scoreboard players reset $flag_state.yellow_left match_data
+scoreboard players reset $flag_state.yellow_right match_data
 scoreboard players reset $tie_breaker_timer global
 scoreboard players reset $1v1_duel_time_out_period global
 scoreboard players reset $checkered_flag_waving_animation_timer global

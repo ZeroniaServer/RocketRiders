@@ -6,5 +6,5 @@ execute if entity @s[scores={ForfeitTimeout=1200..},tag=!noYZELO] as @a[x=0,tag=
 execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[x=0,tag=!InRanked] ForfeitWin
 execute if entity @s[scores={ForfeitTimeout=1200..}] run scoreboard players reset @a[x=0,tag=!InRanked] ForfeitLoss
 
-execute if score $closing_sequence.time match matches 2.. run tag @a[x=0,predicate=custom:team/blue] remove InRanked
-execute if score $closing_sequence.time match matches 2.. run tag @a[x=0,predicate=custom:team/yellow] remove InRanked
+execute if score $closing_sequence.time match_data matches 2.. run tag @a[x=0,predicate=custom:team/blue] remove InRanked
+execute if score $closing_sequence.time match_data matches 2.. run tag @a[x=0,predicate=custom:team/yellow] remove InRanked

@@ -27,6 +27,6 @@ execute if entity @s[type=ender_pearl,predicate=entities:type/canopy_projectile/
 
 execute if entity @s[type=trident] run data modify entity @s DealtDamage set value true
 
-execute if entity @s[type=firework_rocket] run kill @s
+execute if entity @s[type=firework_rocket] if function entities:type/nova_rocket/actions/firework_large run kill @s
 
 return 1

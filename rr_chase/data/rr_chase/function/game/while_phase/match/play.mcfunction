@@ -59,7 +59,7 @@ execute as @a[limit=1,x=0,tag=InLead] run scoreboard players display numberforma
 #Glowing for who's in the lead (blink if Sonar is enabled)
 execute unless predicate game:modifiers/sonar/on run effect clear @a[x=0,tag=!InLead] glowing
 execute unless predicate game:modifiers/sonar/on run effect give @a[limit=1,x=0,tag=InLead] glowing infinite 0 true
-execute if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var = $time match
+execute if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var = $time match_data
 execute if predicate game:modifiers/sonar/on run scoreboard players operation $glowing_period var %= $20 constant
 execute if predicate game:modifiers/sonar/on if score $glowing_period var matches 0..9 run effect clear @a[limit=1,x=0,tag=InLead] glowing
 

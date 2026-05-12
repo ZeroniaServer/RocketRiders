@@ -34,21 +34,21 @@ execute positioned 36 47 35 run function rr_crusade:game/nexus_glass_dynamic_fil
 fill 36 51 40 40 47 40 light[level=1]
 
 #> prepare nexuses and health
-scoreboard players set $nexus_blue_a_health match 100
-scoreboard players set $nexus_blue_b_health match 100
-scoreboard players reset $nexus_blue_a_cooldown match
-scoreboard players reset $nexus_blue_b_cooldown match
-scoreboard players reset $nexus_blue_a_pre_cooldown match
-scoreboard players reset $nexus_blue_b_pre_cooldown match
+scoreboard players set $nexus_blue_a_health match_data 100
+scoreboard players set $nexus_blue_b_health match_data 100
+scoreboard players reset $nexus_blue_a_cooldown match_data
+scoreboard players reset $nexus_blue_b_cooldown match_data
+scoreboard players reset $nexus_blue_a_pre_cooldown match_data
+scoreboard players reset $nexus_blue_b_pre_cooldown match_data
 function rr_crusade:game/place_nexus/blue_a
 function rr_crusade:game/place_nexus/blue_b
 
-scoreboard players set $nexus_yellow_a_health match 100
-scoreboard players set $nexus_yellow_b_health match 100
-scoreboard players reset $nexus_yellow_a_cooldown match
-scoreboard players reset $nexus_yellow_b_cooldown match
-scoreboard players reset $nexus_yellow_a_pre_cooldown match
-scoreboard players reset $nexus_yellow_b_pre_cooldown match
+scoreboard players set $nexus_yellow_a_health match_data 100
+scoreboard players set $nexus_yellow_b_health match_data 100
+scoreboard players reset $nexus_yellow_a_cooldown match_data
+scoreboard players reset $nexus_yellow_b_cooldown match_data
+scoreboard players reset $nexus_yellow_a_pre_cooldown match_data
+scoreboard players reset $nexus_yellow_b_pre_cooldown match_data
 function rr_crusade:game/place_nexus/yellow_a
 function rr_crusade:game/place_nexus/yellow_b
 

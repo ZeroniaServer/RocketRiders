@@ -23,7 +23,7 @@
           "summands": [
             {
               "type": "minecraft:score",
-              "score": "match",
+              "score": "match_data",
               "target": {
                 "type": "minecraft:fixed",
                 "name": "$nexus_yellow_a_health"
@@ -31,7 +31,7 @@
             },
             {
               "type": "minecraft:score",
-              "score": "match",
+              "score": "match_data",
               "target": {
                 "type": "minecraft:fixed",
                 "name": "$nexus_yellow_b_health"

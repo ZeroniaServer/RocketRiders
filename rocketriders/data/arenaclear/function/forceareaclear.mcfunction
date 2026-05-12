@@ -2,5 +2,5 @@
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function arenaclear:areaclear
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove needsForceClear
 tag @e[x=0,type=marker,tag=PlacerClear] add Cleared
-scoreboard players set $closing_sequence.time match 0
+scoreboard players set $closing_sequence.time match_data 0
 execute if predicate game:phase/match/closing run function game:set_phase/staging.configuration

@@ -1,7 +1,7 @@
 ##
 gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
 
-scoreboard players reset * match
+scoreboard players reset * match_data
 scoreboard players reset $initial_blue_team_count global
 scoreboard players reset $initial_yellow_team_count global
 

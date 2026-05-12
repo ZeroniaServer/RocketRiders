@@ -6,7 +6,7 @@
       "type": "minecraft:fixed",
       "name": "$flag_state.blue_left"
     },
-    "score": "match"
+    "score": "match_data"
   },
   "range": -1
 }

@@ -1,7 +1,7 @@
 #Blue: team round wins
 tag @a[x=0] remove Winner
 tag @a[x=0] remove Loser
-scoreboard players set $both_won match 1
+scoreboard players set $both_won match_data 1
 tag @s add CriteriaTrue
 
 effect give @a[x=0,predicate=custom:team/blue] instant_health 1 100

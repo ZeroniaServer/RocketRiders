@@ -17,8 +17,8 @@ execute if entity @s[scores={fakeendtimer=240}] run scoreboard players reset @a[
 execute if entity @s[scores={fakeendtimer=240}] run scoreboard players reset @a[x=0] match_statistic.deaths
 execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove Winner
 execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove Loser
-execute if entity @s[scores={fakeendtimer=240}] run scoreboard players reset $blue_won_only match
-execute if entity @s[scores={fakeendtimer=240}] run scoreboard players reset $yellow_won_only match
+execute if entity @s[scores={fakeendtimer=240}] run scoreboard players reset $blue_won_only match_data
+execute if entity @s[scores={fakeendtimer=240}] run scoreboard players reset $yellow_won_only match_data
 execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove beenOnBlue
 execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove beenOnYellow
 execute if entity @s[scores={fakeendtimer=240}] run tag @a[x=0] remove beenOnBoth

@@ -7,26 +7,26 @@ function rr_crusade:game/place_nexus_labels_yellow with storage rocketriders:tea
 
 #> Kit signs
 #blue
-execute if score $restore_blue_kit_sign_knight match matches 1 run setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 1"}},{bold:true,color:"#008805",text:"Knight"},""]}} strict
-execute if score $restore_blue_kit_sign_knight match matches 1 run scoreboard players reset $restore_blue_kit_sign_knight match
-execute unless block 14 64 -64 minecraft:oak_wall_sign run scoreboard players set $restore_blue_kit_sign_knight match 1
-execute if score $restore_blue_kit_sign_archer match matches 1 run setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 2"}},{bold:true,color:"#008805",text:"Archer"},""]}} strict
-execute if score $restore_blue_kit_sign_archer match matches 1 run scoreboard players reset $restore_blue_kit_sign_archer match
-execute unless block 12 64 -63 minecraft:oak_wall_sign run scoreboard players set $restore_blue_kit_sign_archer match 1
-execute if score $restore_blue_kit_sign_mage match matches 1 run setblock 10 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 3"}},{bold:true,color:"#008805",text:"Mage"},""]}} strict
-execute if score $restore_blue_kit_sign_mage match matches 1 run scoreboard players reset $restore_blue_kit_sign_mage match
-execute unless block 10 64 -64 minecraft:oak_wall_sign run scoreboard players set $restore_blue_kit_sign_mage match 1
+execute if score $restore_blue_kit_sign_knight match_data matches 1 run setblock 14 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 1"}},{bold:true,color:"#008805",text:"Knight"},""]}} strict
+execute if score $restore_blue_kit_sign_knight match_data matches 1 run scoreboard players reset $restore_blue_kit_sign_knight match_data
+execute unless block 14 64 -64 minecraft:oak_wall_sign run scoreboard players set $restore_blue_kit_sign_knight match_data 1
+execute if score $restore_blue_kit_sign_archer match_data matches 1 run setblock 12 64 -63 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 2"}},{bold:true,color:"#008805",text:"Archer"},""]}} strict
+execute if score $restore_blue_kit_sign_archer match_data matches 1 run scoreboard players reset $restore_blue_kit_sign_archer match_data
+execute unless block 12 64 -63 minecraft:oak_wall_sign run scoreboard players set $restore_blue_kit_sign_archer match_data 1
+execute if score $restore_blue_kit_sign_mage match_data matches 1 run setblock 10 64 -64 minecraft:oak_wall_sign[facing=north]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 3"}},{bold:true,color:"#008805",text:"Mage"},""]}} strict
+execute if score $restore_blue_kit_sign_mage match_data matches 1 run scoreboard players reset $restore_blue_kit_sign_mage match_data
+execute unless block 10 64 -64 minecraft:oak_wall_sign run scoreboard players set $restore_blue_kit_sign_mage match_data 1
 
 #yellow
-execute if score $restore_yellow_kit_sign_knight match matches 1 run setblock 10 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 1"}},{bold:true,color:"#008805",text:"Knight"},""]}} strict
-execute if score $restore_yellow_kit_sign_knight match matches 1 run scoreboard players reset $restore_yellow_kit_sign_knight match
-execute unless block 10 64 64 minecraft:oak_wall_sign run scoreboard players set $restore_yellow_kit_sign_knight match 1
-execute if score $restore_yellow_kit_sign_archer match matches 1 run setblock 12 64 63 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 2"}},{bold:true,color:"#008805",text:"Archer"},""]}} strict
-execute if score $restore_yellow_kit_sign_archer match matches 1 run scoreboard players reset $restore_yellow_kit_sign_archer match
-execute unless block 12 64 63 minecraft:oak_wall_sign run scoreboard players set $restore_yellow_kit_sign_archer match 1
-execute if score $restore_yellow_kit_sign_mage match matches 1 run setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 3"}},{bold:true,color:"#008805",text:"Mage"},""]}} strict
-execute if score $restore_yellow_kit_sign_mage match matches 1 run scoreboard players reset $restore_yellow_kit_sign_mage match
-execute unless block 14 64 64 minecraft:oak_wall_sign run scoreboard players set $restore_yellow_kit_sign_mage match 1
+execute if score $restore_yellow_kit_sign_knight match_data matches 1 run setblock 10 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 1"}},{bold:true,color:"#008805",text:"Knight"},""]}} strict
+execute if score $restore_yellow_kit_sign_knight match_data matches 1 run scoreboard players reset $restore_yellow_kit_sign_knight match_data
+execute unless block 10 64 64 minecraft:oak_wall_sign run scoreboard players set $restore_yellow_kit_sign_knight match_data 1
+execute if score $restore_yellow_kit_sign_archer match_data matches 1 run setblock 12 64 63 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 2"}},{bold:true,color:"#008805",text:"Archer"},""]}} strict
+execute if score $restore_yellow_kit_sign_archer match_data matches 1 run scoreboard players reset $restore_yellow_kit_sign_archer match_data
+execute unless block 12 64 63 minecraft:oak_wall_sign run scoreboard players set $restore_yellow_kit_sign_archer match_data 1
+execute if score $restore_yellow_kit_sign_mage match_data matches 1 run setblock 14 64 64 minecraft:oak_wall_sign[facing=south]{front_text:{color:"gray",has_glowing_text:true,messages:["",{color:"#09FF00",text:"Select Kit:",click_event:{action:"run_command",command:"trigger crusadechange set 3"}},{bold:true,color:"#008805",text:"Mage"},""]}} strict
+execute if score $restore_yellow_kit_sign_mage match_data matches 1 run scoreboard players reset $restore_yellow_kit_sign_mage match_data
+execute unless block 14 64 64 minecraft:oak_wall_sign run scoreboard players set $restore_yellow_kit_sign_mage match_data 1
 
 #> Kit obsidian
 #blue
@@ -45,10 +45,10 @@ execute unless block 12 63 62 obsidian run setblock 12 63 62 obsidian strict
 execute unless block 14 63 63 obsidian run setblock 14 63 63 obsidian strict
 
 # Prevent nexus bedrock being overwritten by utilities & missiles
-execute if score $nexus_blue_a_health match matches 1.. run fill 41 52 -39 35 52 -37 bedrock strict
-execute if score $nexus_blue_b_health match matches 1.. run fill -11 52 -39 -17 52 -37 bedrock strict
-execute if score $nexus_yellow_a_health match matches 1.. run fill -17 52 39 -11 52 37 bedrock strict
-execute if score $nexus_yellow_b_health match matches 1.. run fill 35 52 39 41 52 37 bedrock strict
+execute if score $nexus_blue_a_health match_data matches 1.. run fill 41 52 -39 35 52 -37 bedrock strict
+execute if score $nexus_blue_b_health match_data matches 1.. run fill -11 52 -39 -17 52 -37 bedrock strict
+execute if score $nexus_yellow_a_health match_data matches 1.. run fill -17 52 39 -11 52 37 bedrock strict
+execute if score $nexus_yellow_b_health match_data matches 1.. run fill 35 52 39 41 52 37 bedrock strict
 
 ## Regenerating main features
 #middle wall

@@ -9,7 +9,7 @@ execute unless predicate game:modifiers/hardcore/on run fill 12 64 64 12 71 64 o
 execute if predicate game:modifiers/hardcore/on run fill 12 64 65 12 71 65 oak_fence replace #custom:basereplace
 
 #Make flag wave around
-scoreboard players operation $flag_wave var = $time match
+scoreboard players operation $flag_wave var = $time match_data
 scoreboard players operation $flag_wave var %= $40 constant
 execute if score $flag_wave var matches 20..39 unless predicate game:modifiers/hardcore/on run place template game:asset/flag/stage_1/yellow 8 70 63 none none 1 0 strict
 execute if score $flag_wave var matches 20..39 if predicate game:modifiers/hardcore/on run place template game:asset/flag/stage_1/yellow 8 70 64 none none 1 0 strict

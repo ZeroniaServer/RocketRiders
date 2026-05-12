@@ -13,8 +13,8 @@ execute unless predicate game:phase/match/pause run bossbar remove rr_duel:reset
 
 ##forfeit
 #initial condition - use tag NOFORFEITS to disable forfeits
-execute unless predicate game:phase/match/closing unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. if entity @a[limit=1,x=0,predicate=custom:team/yellow] unless entity @a[limit=1,x=0,predicate=custom:team/blue] run scoreboard players set $1v1_duel_time_out_period match 1
-execute unless predicate game:phase/match/closing unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[limit=1,x=0,predicate=custom:team/yellow] if entity @a[limit=1,x=0,predicate=custom:team/blue] run scoreboard players set $1v1_duel_time_out_period match 1
+execute unless predicate game:phase/match/closing unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. if entity @a[limit=1,x=0,predicate=custom:team/yellow] unless entity @a[limit=1,x=0,predicate=custom:team/blue] run scoreboard players set $1v1_duel_time_out_period match_data 1
+execute unless predicate game:phase/match/closing unless entity @s[tag=NOFORFEITS] unless score Blue: RoundsWon matches 2.. unless score Yellow: RoundsWon matches 2.. unless entity @a[limit=1,x=0,predicate=custom:team/yellow] if entity @a[limit=1,x=0,predicate=custom:team/blue] run scoreboard players set $1v1_duel_time_out_period match_data 1
 execute unless predicate game:phase/match/closing if predicate rr_duel:time_out_period if predicate rr:is_cubekrowd run tellraw @a[x=0] ["",{bold:true,color:"dark_red",text:"[FORFEIT] "},{color:"red",text:"Someone left the 1v1 Duel match, so it has ended."}]
 execute unless predicate game:phase/match/closing if predicate rr_duel:time_out_period if predicate rr:is_cubekrowd run scoreboard players set @s ForfeitTimeout 1200
 

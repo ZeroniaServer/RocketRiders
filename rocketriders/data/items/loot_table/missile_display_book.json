@@ -553,6 +553,23 @@
                   "title": "Missile Display"
                 }
               }
+            },
+            {
+              "function": "minecraft:set_written_book_pages",
+              "mode": "replace_section",
+              "offset": 2,
+              "pages": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:reference",
+                    "name": "game:feature_flags/1_4_0_update/on"
+                  }
+                }
+              ]
             }
           ]
         }

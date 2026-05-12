@@ -15,7 +15,8 @@ execute unless score $display_cooldown var matches 1.. run scoreboard players re
 execute if score $display_cooldown var matches 1.. run data modify block 12 203 78 Page set value 34
 execute store result score $page var run data get block 12 203 78 Page
 execute unless score $display_cooldown var matches 1.. unless score $page var matches 0..4 unless score $page var matches 33..34 run scoreboard players set $display_cooldown var 1
-execute unless score $display_cooldown var matches 1.. unless score $page var matches 0..2 run data modify block 12 203 78 Page set value 0
+execute unless score $display_cooldown var matches 1.. unless predicate game:feature_flags/1_4_0_update/on unless score $page var matches 0..1 run data modify block 12 203 78 Page set value 0
+execute unless score $display_cooldown var matches 1.. if predicate game:feature_flags/1_4_0_update/on unless score $page var matches 0..2 run data modify block 12 203 78 Page set value 0
 
 #Display missiles
 execute if score $page var matches 5 run return run function lobby:missiledisplay/missile/tomatwo
@@ -38,8 +39,8 @@ execute if score $page var matches 21 run return run function lobby:missiledispl
 execute if score $page var matches 22 run return run function lobby:missiledisplay/missile/bullet
 execute if score $page var matches 23 run return run function lobby:missiledisplay/missile/duplex
 execute if score $page var matches 24 run return run function lobby:missiledisplay/missile/broadsword
-execute if score $page var matches 25 run return run function lobby:missiledisplay/missile/classic/guardian
-execute if score $page var matches 26 run return run function lobby:missiledisplay/missile/classic/juggernaut
-execute if score $page var matches 27 run return run function lobby:missiledisplay/missile/classic/lightning
-execute if score $page var matches 28 run return run function lobby:missiledisplay/missile/classic/shield_buster
-execute if score $page var matches 29 run return run function lobby:missiledisplay/missile/classic/tomahawk
+execute if score $page var matches 25 if predicate game:feature_flags/1_4_0_update/on run return run function lobby:missiledisplay/missile/classic/guardian
+execute if score $page var matches 26 if predicate game:feature_flags/1_4_0_update/on run return run function lobby:missiledisplay/missile/classic/juggernaut
+execute if score $page var matches 27 if predicate game:feature_flags/1_4_0_update/on run return run function lobby:missiledisplay/missile/classic/lightning
+execute if score $page var matches 28 if predicate game:feature_flags/1_4_0_update/on run return run function lobby:missiledisplay/missile/classic/shield_buster
+execute if score $page var matches 29 if predicate game:feature_flags/1_4_0_update/on run return run function lobby:missiledisplay/missile/classic/tomahawk

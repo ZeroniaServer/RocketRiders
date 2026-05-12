@@ -36,6 +36,7 @@ execute unless predicate game:arena_details/top_sides/spikes run data remove sto
 execute unless predicate game:arena_details/top/castle run data remove storage rocketriders:assets remaining_assets[{asset_type:"castles"}]
 execute unless predicate game:arena_details/top/spikes run data remove storage rocketriders:assets remaining_assets[{asset_type:"base_detail",name:"spikes_top"}]
 execute unless predicate game:arena_details/top/towers run data remove storage rocketriders:assets remaining_assets[{asset_type:"base_detail",name:"tower"}]
+execute unless predicate game:match_components/winner_pegasus run data remove storage rocketriders:assets remaining_assets[{asset_type:"pegasus"}]
 
 execute store result score $assets_refresh_max global if data storage rocketriders:assets remaining_assets[]
 scoreboard players set $assets_refresh_progress global 0

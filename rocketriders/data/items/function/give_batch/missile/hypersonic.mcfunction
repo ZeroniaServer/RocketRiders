@@ -3,8 +3,8 @@
 #######################################################
 
 ## Game tracking
-execute unless entity @s[tag=BackHyper] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenHyper
-execute unless entity @s[tag=BackHyper] run tag @e[x=0,type=armor_stand,tag=Bot] add HasHyper
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenHyper
+#tag @e[x=0,type=armor_stand,tag=Bot] add HasHyper
 
 ## Get limit
 scoreboard players set $item_limit var 1
@@ -17,7 +17,6 @@ tag @s add matchOrigin
 execute as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/hypersonic"},!custom_data~{droppable:true}] if function custom:match_origin run function items:give_batch/__return_item
 tag @s remove matchOrigin
 execute store result score $inventory_count var run clear @s *[custom_data~{id:"missile/hypersonic"}] 0
-execute if entity @s[tag=BackHyper] run scoreboard players add $inventory_count var 1
 
 ## Get batch size
 scoreboard players set $intended_batch_size var 1

@@ -3,8 +3,8 @@
 ###################################################
 
 ## Game tracking
-execute unless entity @s[tag=BackAnt] run tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenAnt
-execute unless entity @s[tag=BackAnt] run tag @e[x=0,type=armor_stand,tag=Bot] add HasAnt
+tag @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=tetrisTime] add givenAnt
+#tag @e[x=0,type=armor_stand,tag=Bot] add HasAnt
 
 ## Get limit
 scoreboard players set $item_limit var 1
@@ -17,7 +17,6 @@ tag @s add matchOrigin
 execute as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/ant"},!custom_data~{droppable:true}] if function custom:match_origin run function items:give_batch/__return_item
 tag @s remove matchOrigin
 execute store result score $inventory_count var run clear @s *[custom_data~{id:"missile/ant"}] 0
-execute if entity @s[tag=BackAnt] run scoreboard players add $inventory_count var 1
 
 ## Get batch size
 scoreboard players set $intended_batch_size var 1

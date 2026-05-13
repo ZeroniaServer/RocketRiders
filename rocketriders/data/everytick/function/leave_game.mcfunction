@@ -17,6 +17,7 @@ execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_cano
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_nova_attach
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_spell_emitter
 execute as @a[x=0,scores={LeaveGame=1..}] run ride @s dismount
+title @a[x=0,predicate=!custom:team/any_playing_team,predicate=custom:player/is_carrying_flag,tag=!DelayActionbar] actionbar ""
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.yellow_right] remove carrying_flag.yellow_right
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.yellow_left] remove carrying_flag.yellow_left
 tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.blue_right] remove carrying_flag.blue_right

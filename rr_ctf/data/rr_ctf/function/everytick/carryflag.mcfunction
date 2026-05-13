@@ -13,6 +13,7 @@ execute as @e[x=0,type=player,tag=carrying_flag.yellow_right,predicate=custom:te
 execute as @e[x=0,type=player,tag=carrying_flag.yellow_right,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players set $flag_state.yellow_right match_data -2
 execute as @e[x=0,type=player,tag=carrying_flag.yellow_right,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players add @s match_statistic.flags_captured 1
 execute as @e[x=0,type=player,tag=carrying_flag.yellow_right,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players reset @s flag_tablist_display
+execute as @e[x=0,type=player,tag=carrying_flag.yellow_right,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run title @s[tag=!DelayActionbar] actionbar ""
 execute as @e[x=0,type=player,tag=carrying_flag.yellow_right,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run tag @s remove carrying_flag.yellow_right
 
 execute as @e[x=0,type=player,tag=carrying_flag.yellow_left,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players add $flags_captured_by_blue match_data 1
@@ -26,6 +27,7 @@ execute as @e[x=0,type=player,tag=carrying_flag.yellow_left,predicate=custom:tea
 execute as @e[x=0,type=player,tag=carrying_flag.yellow_left,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players set $flag_state.yellow_left match_data -2
 execute as @e[x=0,type=player,tag=carrying_flag.yellow_left,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players add @s match_statistic.flags_captured 1
 execute as @e[x=0,type=player,tag=carrying_flag.yellow_left,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players reset @s flag_tablist_display
+execute as @e[x=0,type=player,tag=carrying_flag.yellow_left,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run title @s[tag=!DelayActionbar] actionbar ""
 execute as @e[x=0,type=player,tag=carrying_flag.yellow_left,predicate=custom:team/blue,predicate=custom:player/in_own_flag_capturing_zone] run tag @s remove carrying_flag.yellow_left
 
 #Deliver Blue flag at Yellow base
@@ -40,6 +42,7 @@ execute as @e[x=0,type=player,tag=carrying_flag.blue_right,predicate=custom:team
 execute as @e[x=0,type=player,tag=carrying_flag.blue_right,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players set $flag_state.blue_right match_data -2
 execute as @e[x=0,type=player,tag=carrying_flag.blue_right,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players add @s match_statistic.flags_captured 1
 execute as @e[x=0,type=player,tag=carrying_flag.blue_right,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players reset @s flag_tablist_display
+execute as @e[x=0,type=player,tag=carrying_flag.blue_right,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run title @s[tag=!DelayActionbar] actionbar ""
 execute as @e[x=0,type=player,tag=carrying_flag.blue_right,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run tag @s remove carrying_flag.blue_right
 
 execute as @e[x=0,type=player,tag=carrying_flag.blue_left,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players add $flags_captured_by_yellow match_data 1
@@ -53,6 +56,7 @@ execute as @e[x=0,type=player,tag=carrying_flag.blue_left,predicate=custom:team/
 execute as @e[x=0,type=player,tag=carrying_flag.blue_left,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players set $flag_state.blue_left match_data -2
 execute as @e[x=0,type=player,tag=carrying_flag.blue_left,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players add @s match_statistic.flags_captured 1
 execute as @e[x=0,type=player,tag=carrying_flag.blue_left,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run scoreboard players reset @s flag_tablist_display
+execute as @e[x=0,type=player,tag=carrying_flag.blue_left,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run title @s[tag=!DelayActionbar] actionbar ""
 execute as @e[x=0,type=player,tag=carrying_flag.blue_left,predicate=custom:team/yellow,predicate=custom:player/in_own_flag_capturing_zone] run tag @s remove carrying_flag.blue_left
 
 execute as @a[x=0,predicate=!custom:player/is_carrying_flag] if items entity @s armor.head #banners run function custom:player/update_armor

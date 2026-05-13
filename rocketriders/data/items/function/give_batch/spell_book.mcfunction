@@ -32,8 +32,8 @@ scoreboard players set $give_item var 1
 # full hotbar
 function items:give_batch/__check_full_hotbar
 # limit reached
-execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 1 run title @s actionbar {color:"aqua",text:"Spell Book already obtained"}
-execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 2.. run title @s actionbar {color:"aqua",text:"Maximum Spell Books already obtained"}
+execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 1 run title @s actionbar {color:"red",text:"Spell Book already obtained"}
+execute if score $give_item var matches 1 if score $final_batch_size var matches 0 if score $item_limit var matches 2.. run title @s actionbar {color:"red",text:"Maximum Spell Books already obtained"}
 execute if score $give_item var matches 1 if score $final_batch_size var matches 0 run scoreboard players set $give_item var 0
 
 ## Delay actionbar

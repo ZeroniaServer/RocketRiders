@@ -71,8 +71,8 @@ execute if score $no_item_timer match_components matches 0 run scoreboard player
 # portal_type
 $scoreboard players set $portal_type var $(portal_type)
 data remove storage rocketriders:match components."portal_type"
-execute if score $portal_type var matches 1 run data modify storage rocketriders:match components."main_item" set value "none"
-execute if score $portal_type var matches 2 run data modify storage rocketriders:match components."main_item" set value "small"
+execute if score $portal_type var matches 1 run data modify storage rocketriders:match components."portal_type" set value "none"
+execute if score $portal_type var matches 2 run data modify storage rocketriders:match components."portal_type" set value "small"
 
 # one_team
 $execute store success score $one_team match_components if predicate {condition:"value_check",value:$(one_team),range:1}

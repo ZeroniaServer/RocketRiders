@@ -44,9 +44,6 @@
                     "pattern": "square_top_left"
                   }
                 ],
-                "minecraft:custom_data": {
-                  "id": "flag_of_shameful_loss"
-                },
                 "minecraft:custom_model_data": {
                   "floats": [],
                   "strings": [
@@ -399,6 +396,19 @@
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "text": "Flag of Shameful Loss"
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/classic_item_names"
+                }
+              ]
             }
           ]
         }

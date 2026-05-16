@@ -63,6 +63,20 @@
                   "name": "game:phase/match/play"
                 }
               ]
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "custom_name",
+              "name": {
+                "italic": false,
+                "text": "Wither Arrow"
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/classic_item_names"
+                }
+              ]
             }
           ]
         }

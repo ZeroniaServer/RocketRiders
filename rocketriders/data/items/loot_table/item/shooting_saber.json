@@ -172,17 +172,9 @@
             {
               "function": "minecraft:set_name",
               "target": "item_name",
-              "entity": "this",
-              "name": [
-                {
-                  "bold": true,
-                  "color": "white",
-                  "text": ""
-                },
-                [
-                  "GunBlade"
-                ]
-              ],
+              "name": {
+                "text": "GunBlade"
+              },
               "conditions": [
                 {
                   "condition": "minecraft:reference",
@@ -227,6 +219,28 @@
                 {
                   "condition": "minecraft:reference",
                   "name": "items:effects/multishot_saber/on"
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "text": "Multishot-Infinity GunBlade"
+                }
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "items:effects/infinity_saber/on"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "items:effects/multishot_saber/on"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/classic_item_names"
                 }
               ]
             },

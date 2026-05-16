@@ -10,9 +10,6 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:custom_data": {
-                  "id": "celebratory_elytra"
-                },
                 "minecraft:custom_model_data": {
                   "floats": [],
                   "strings": [
@@ -64,6 +61,19 @@
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "text": "Celebratory Elytra"
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/classic_item_names"
+                }
+              ]
             }
           ]
         }

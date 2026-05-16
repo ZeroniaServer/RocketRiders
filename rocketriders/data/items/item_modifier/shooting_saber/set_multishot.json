@@ -14,5 +14,18 @@
     "enchantments": {
       "minecraft:multishot": 1
     }
+  },
+  {
+    "function": "minecraft:set_name",
+    "target": "item_name",
+    "name": {
+      "text": "Multishot GunBlade"
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:reference",
+        "name": "game:match_components/classic_item_names"
+      }
+    ]
   }
 ]

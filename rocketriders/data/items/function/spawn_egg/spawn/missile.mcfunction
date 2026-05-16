@@ -1,6 +1,6 @@
 ## Fail if out of bounds
-execute if predicate custom:near_void run return run say FAILED: VOID
-execute if predicate custom:near_or_above_roof run return run say FAILED: ROOF
+execute if predicate custom:near_void if function items:spawn_egg/give_back/missile run return run title @a[limit=1,tag=spawn_egg.placer] actionbar {color:"red",text:"You cannot spawn missiles at this height"}
+execute if predicate custom:near_or_above_roof if function items:spawn_egg/give_back/missile run return run title @a[limit=1,tag=spawn_egg.placer] actionbar {color:"red",text:"You cannot spawn missiles at this height"}
 
 ## Get missile placement properties
 function items:missile/get_properties with storage rocketriders:main spawn_egg
@@ -45,7 +45,7 @@ execute if predicate custom:in_yellow_half store success score $intersecting_yel
 scoreboard players set $antigrief_flagged var 0
 execute if score $play_time match_data matches 200.. if score $missile_origin_team var matches 0 if score $intersecting_blue var matches 1 unless predicate game:match_components/disable_antigrief_system store success score $antigrief_flagged var run function items:missile/check_antigrief_blue with storage rocketriders:main missile.properties
 execute if score $play_time match_data matches 200.. if score $missile_origin_team var matches 1 if score $intersecting_yellow var matches 1 unless predicate game:match_components/disable_antigrief_system store success score $antigrief_flagged var run function items:missile/check_antigrief_yellow with storage rocketriders:main missile.properties
-execute if score $antigrief_flagged var matches 1 run return run say FAILED: ANTIGRIEF
+execute if score $antigrief_flagged var matches 1 if function items:spawn_egg/give_back/missile run return run title @a[limit=1,tag=spawn_egg.placer] actionbar {color:"red",text:"You cannot spawn missiles inside your own base"}
 
 # check collision control or strong antigrief
 scoreboard players set $collision_control var 0
@@ -62,14 +62,14 @@ execute if score $strong_antigrief var matches 1 run scoreboard players set $che
 
 scoreboard players set $collision_flagged var 0
 execute if score $check_collision var matches 1 store success score $collision_flagged var run function items:missile/check_collision with storage rocketriders:main missile.properties
-execute if score $collision_flagged var matches 1 if score $strong_antigrief var matches 1 run return run say FAILED: ANTIGRIEF (10sec)
-execute if score $collision_flagged var matches 1 if score $collision_control var matches 1 run return run say FAILED: COLLISION CONTROL
+execute if score $collision_flagged var matches 1 if score $strong_antigrief var matches 1 if function items:spawn_egg/give_back/missile run return run title @a[limit=1,tag=spawn_egg.placer] actionbar {color:"red",text:"You cannot collide missiles for the first 10 seconds of a match"}
+execute if score $collision_flagged var matches 1 if score $collision_control var matches 1 if function items:spawn_egg/give_back/missile run return run title @a[limit=1,tag=spawn_egg.placer] actionbar [{color:"red",text:"You cannot spawn missiles inside the enemy's base "},{italic:true,text:"[Collision Control]"}]
 
 # check portal intersection
 scoreboard players set $intersecting_portal var 0
 execute store success score $intersecting_portal var run function items:missile/check_portal with storage rocketriders:main missile.properties
-execute if score $intersecting_portal var matches 1 if score $missile_origin_team var matches 0 if predicate custom:in_blue_half run return run say FAILED: ANTIGRIEF
-execute if score $intersecting_portal var matches 1 if score $missile_origin_team var matches 1 if predicate custom:in_yellow_half run return run say FAILED: ANTIGRIEF
+execute if score $intersecting_portal var matches 1 if score $missile_origin_team var matches 0 if predicate custom:in_blue_half if function items:spawn_egg/give_back/missile run return run title @a[limit=1,tag=spawn_egg.placer] actionbar {color:"red",text:"You cannot spawn missiles inside your own base"}
+execute if score $intersecting_portal var matches 1 if score $missile_origin_team var matches 1 if predicate custom:in_yellow_half if function items:spawn_egg/give_back/missile run return run title @a[limit=1,tag=spawn_egg.placer] actionbar {color:"red",text:"You cannot spawn missiles inside your own base"}
 
 ## Place missile
 execute if score $intersecting_portal var matches 0 run function items:missile/place with storage rocketriders:main missile.properties

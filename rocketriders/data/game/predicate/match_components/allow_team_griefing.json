@@ -5,7 +5,7 @@
     "score": "match_components",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$disable_antigrief_system"
+      "name": "$allow_team_griefing"
     }
   },
   "range": 1

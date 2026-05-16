@@ -155,6 +155,7 @@
             },
             {
               "function": "minecraft:set_name",
+              "target": "custom_name",
               "entity": "this",
               "name": [
                 {
@@ -173,8 +174,7 @@
                     "objective": "text.main_color"
                   }
                 }
-              ],
-              "target": "custom_name"
+              ]
             },
             {
               "function": "minecraft:reference",

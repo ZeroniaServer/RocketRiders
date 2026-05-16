@@ -21,7 +21,6 @@
                     "minecraft:item_name": {
                       "bold": true,
                       "color": "dark_gray",
-                      "italic": false,
                       "text": "Unranked Boots"
                     }
                   }
@@ -55,7 +54,6 @@
                     "minecraft:item_name": {
                       "bold": true,
                       "color": "#CD7F32",
-                      "italic": false,
                       "text": "Bronze Boots"
                     }
                   }
@@ -89,7 +87,6 @@
                     "minecraft:item_name": {
                       "bold": true,
                       "color": "gray",
-                      "italic": false,
                       "text": "Silver Boots"
                     }
                   }
@@ -123,7 +120,6 @@
                     "minecraft:item_name": {
                       "bold": true,
                       "color": "gold",
-                      "italic": false,
                       "text": "Gold Boots"
                     }
                   }
@@ -157,7 +153,6 @@
                     "minecraft:item_name": {
                       "bold": true,
                       "color": "aqua",
-                      "italic": false,
                       "text": "Diamond Boots"
                     }
                   }
@@ -191,7 +186,6 @@
                     "minecraft:item_name": {
                       "bold": true,
                       "color": "red",
-                      "italic": false,
                       "text": "Champion Boots"
                     }
                   }

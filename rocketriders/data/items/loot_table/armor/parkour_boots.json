@@ -18,7 +18,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_green",
-                  "italic": false,
                   "text": "Parkour Boots"
                 },
                 "minecraft:tooltip_display": {

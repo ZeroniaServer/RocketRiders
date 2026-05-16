@@ -29,7 +29,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "red",
-                  "italic": false,
                   "text": "Quit Parkour"
                 },
                 "minecraft:max_stack_size": 1

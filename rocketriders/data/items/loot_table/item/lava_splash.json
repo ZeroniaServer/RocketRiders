@@ -60,6 +60,7 @@
             },
             {
               "function": "minecraft:set_name",
+              "target": "custom_name",
               "entity": "this",
               "name": [
                 {
@@ -82,8 +83,7 @@
                   },
                   "Lava Splash"
                 ]
-              ],
-              "target": "custom_name"
+              ]
             },
             {
               "function": "minecraft:reference",

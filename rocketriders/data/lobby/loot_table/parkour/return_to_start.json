@@ -29,7 +29,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "yellow",
-                  "italic": false,
                   "text": "Return to Start"
                 },
                 "minecraft:max_stack_size": 1

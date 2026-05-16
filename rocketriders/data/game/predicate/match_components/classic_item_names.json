@@ -5,7 +5,7 @@
     "score": "match_components",
     "target": {
       "type": "minecraft:fixed",
-      "name": "$classic_shooting_saber_name"
+      "name": "$classic_item_names"
     }
   },
   "range": 1

@@ -141,12 +141,12 @@
             },
             {
               "function": "minecraft:set_name",
+              "target": "item_name",
               "entity": "this",
               "name": [
                 {
                   "bold": true,
                   "color": "white",
-                  "italic": false,
                   "text": ""
                 },
                 [
@@ -159,36 +159,34 @@
                   "Shooting Saber"
                 ]
               ],
-              "target": "item_name",
               "conditions": [
                 {
                   "condition": "minecraft:inverted",
                   "term": {
                     "condition": "minecraft:reference",
-                    "name": "game:match_components/classic_shooting_saber_name"
+                    "name": "game:match_components/classic_item_names"
                   }
                 }
               ]
             },
             {
               "function": "minecraft:set_name",
+              "target": "item_name",
               "entity": "this",
               "name": [
                 {
                   "bold": true,
                   "color": "white",
-                  "italic": false,
                   "text": ""
                 },
                 [
                   "GunBlade"
                 ]
               ],
-              "target": "item_name",
               "conditions": [
                 {
                   "condition": "minecraft:reference",
-                  "name": "game:match_components/classic_shooting_saber_name"
+                  "name": "game:match_components/classic_item_names"
                 }
               ]
             },
@@ -218,7 +216,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_purple",
-                  "italic": false,
                   "text": "Multishot-Infinity Saber"
                 }
               },

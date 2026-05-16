@@ -134,12 +134,12 @@
             },
             {
               "function": "minecraft:set_name",
+              "target": "item_name",
               "entity": "this",
               "name": [
                 {
                   "bold": true,
                   "color": "white",
-                  "italic": false,
                   "text": ""
                 },
                 [
@@ -151,8 +151,7 @@
                   },
                   "Spell Wand"
                 ]
-              ],
-              "target": "item_name"
+              ]
             },
             {
               "function": "minecraft:set_components",

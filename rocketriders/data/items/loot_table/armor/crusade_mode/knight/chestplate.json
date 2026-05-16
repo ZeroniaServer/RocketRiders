@@ -51,12 +51,12 @@
             },
             {
               "function": "minecraft:set_name",
+              "target": "item_name",
               "entity": "this",
               "name": [
                 {
                   "bold": true,
                   "color": "white",
-                  "italic": false,
                   "text": ""
                 },
                 [
@@ -74,8 +74,7 @@
                   },
                   " Knight Chestplate"
                 ]
-              ],
-              "target": "item_name"
+              ]
             }
           ]
         }

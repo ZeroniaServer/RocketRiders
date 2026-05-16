@@ -43,7 +43,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_purple",
-                  "italic": false,
                   "text": "Elytra"
                 },
                 "minecraft:lore": [

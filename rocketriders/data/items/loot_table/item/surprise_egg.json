@@ -89,12 +89,12 @@
             },
             {
               "function": "minecraft:set_name",
+              "target": "item_name",
               "entity": "this",
               "name": [
                 {
                   "bold": true,
                   "color": "white",
-                  "italic": false,
                   "text": ""
                 },
                 {
@@ -111,8 +111,7 @@
                   },
                   "Surprise Egg"
                 ]
-              ],
-              "target": "item_name"
+              ]
             },
             {
               "function": "minecraft:reference",

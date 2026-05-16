@@ -66,6 +66,7 @@
             },
             {
               "function": "minecraft:set_name",
+              "target": "custom_name",
               "entity": "this",
               "name": [
                 {
@@ -88,8 +89,7 @@
                   },
                   "Shield"
                 ]
-              ],
-              "target": "custom_name"
+              ]
             },
             {
               "function": "minecraft:reference",

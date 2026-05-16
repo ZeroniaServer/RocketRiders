@@ -109,27 +109,24 @@
             },
             {
               "function": "minecraft:set_name",
+              "target": "item_name",
               "entity": "this",
               "name": [
                 {
                   "bold": true,
                   "color": "white",
-                  "italic": false,
                   "text": ""
                 },
-                {
-                  "extra": [
-                    {
-                      "text": "Building Block"
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
                     }
-                  ],
-                  "score": {
-                    "name": "@s",
-                    "objective": "text.main_color"
-                  }
-                }
-              ],
-              "target": "item_name"
+                  },
+                  "Building Block"
+                ]
+              ]
             },
             {
               "function": "minecraft:reference",

@@ -32,7 +32,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "#9AB0FF",
-                  "italic": false,
                   "text": "Light Blue Leggings"
                 },
                 "minecraft:tooltip_display": {
@@ -58,7 +57,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "#FF75A7",
-                  "italic": false,
                   "text": "Light Red Leggings"
                 }
               },

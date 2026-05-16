@@ -5,8 +5,8 @@ fill -14 64 58 39 74 70 air replace white_wool
 fill -14 64 58 39 74 70 air replace black_wool
 fill -14 64 58 39 74 70 air replace oak_fence
 
-execute unless predicate game:modifiers/hardcore/on run fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace
-execute if predicate game:modifiers/hardcore/on run fill 12 64 65 12 71 65 oak_fence replace #custom:basereplace
+execute unless predicate game:modifiers/hardcore/on run fill 12 64 64 12 71 64 oak_fence
+execute if predicate game:modifiers/hardcore/on run fill 12 64 65 12 71 65 oak_fence
 
 #Make flag wave around
 scoreboard players operation $flag_wave var = $time match_data

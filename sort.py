@@ -173,7 +173,9 @@ if __name__ == "__main__":
                     else:
                         tags.append(value)
 
+                tags = list(set(tags))
                 tags.sort()
+
                 contents["values"] = tags
 
             with open(file_path,"w") as file:

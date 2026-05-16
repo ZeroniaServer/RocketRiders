@@ -1,11 +1,12 @@
 {
   "values": [
-    "#custom:concrete",
     "#custom:glass",
     "#custom:glasspane",
-    "#custom:glazed_terracotta",
+    "#minecraft:concrete",
     "#minecraft:fence_gates",
+    "#minecraft:glazed_terracotta",
     "#minecraft:planks",
+    "#minecraft:terracotta",
     "#minecraft:trapdoors",
     "minecraft:cave_air",
     "minecraft:chiseled_deepslate",

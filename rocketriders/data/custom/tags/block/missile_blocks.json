@@ -1,6 +1,6 @@
 {
   "values": [
-    "#custom:missileblocks_no_moving_piston",
+    "#custom:missile_blocks_no_moving_piston",
     "minecraft:moving_piston"
   ]
 }

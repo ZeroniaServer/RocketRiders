@@ -64,10 +64,10 @@ execute as @a[x=0,predicate=!custom:player/is_carrying_flag] if items entity @s 
 scoreboard players add @a[x=0,predicate=custom:player/is_carrying_flag] carrying_flag_time 1
 
 execute as @a[x=0,predicate=custom:player/is_carrying_flag,scores={carrying_flag_time=1}] run function custom:player/update_armor
-execute if entity @a[limit=1,x=0,tag=carrying_flag.yellow_right,scores={carrying_flag_time=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #custom:wool
-execute if entity @a[limit=1,x=0,tag=carrying_flag.yellow_left,scores={carrying_flag_time=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #custom:wool
-execute if entity @a[limit=1,x=0,tag=carrying_flag.blue_right,scores={carrying_flag_time=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #custom:wool
-execute if entity @a[limit=1,x=0,tag=carrying_flag.blue_left,scores={carrying_flag_time=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #custom:wool
+execute if entity @a[limit=1,x=0,tag=carrying_flag.yellow_right,scores={carrying_flag_time=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #minecraft:wool
+execute if entity @a[limit=1,x=0,tag=carrying_flag.yellow_left,scores={carrying_flag_time=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #minecraft:wool
+execute if entity @a[limit=1,x=0,tag=carrying_flag.blue_right,scores={carrying_flag_time=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #minecraft:wool
+execute if entity @a[limit=1,x=0,tag=carrying_flag.blue_left,scores={carrying_flag_time=1}] positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run fill ~-4 ~1 ~-1 ~ ~8 ~ air replace #minecraft:wool
 execute if entity @a[limit=1,x=0,predicate=custom:player/is_carrying_flag,scores={carrying_flag_time=1}] as @a[x=0,predicate=!custom:team/lobby] at @s run playsound entity.ender_dragon.flap master @s ~ ~ ~ 1 2
 
 

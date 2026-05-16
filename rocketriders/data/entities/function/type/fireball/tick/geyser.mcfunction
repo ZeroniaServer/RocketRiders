@@ -1,4 +1,4 @@
-execute if block ~ ~ ~ #custom:nonsolid if block ~ ~-1 ~ #custom:nonsolid unless block ~ ~-1.201 ~ #custom:nonsolid run tp @s ~ ~-1 ~
+execute if block ~ ~ ~ #custom:non_solid if block ~ ~-1 ~ #custom:non_solid unless block ~ ~-1.201 ~ #custom:non_solid run tp @s ~ ~-1 ~
 
 execute positioned as @s run function entities:type/fireball/actions/break
 

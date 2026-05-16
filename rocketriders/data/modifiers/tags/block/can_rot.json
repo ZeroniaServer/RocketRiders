@@ -1,13 +1,13 @@
 {
   "values": [
     "#custom:canopy_blocks_solid",
-    "#custom:concrete",
     "#custom:glass_except_light_gray",
     "#custom:glasspane",
-    "#custom:glazed_terracotta",
-    "#custom:terracotta",
+    "#minecraft:concrete",
     "#minecraft:fence_gates",
+    "#minecraft:glazed_terracotta",
     "#minecraft:planks",
+    "#minecraft:terracotta",
     "#minecraft:trapdoors",
     "minecraft:bee_nest",
     "minecraft:beehive",

@@ -4,7 +4,7 @@
   "predicate": {
     "minecraft:stepping_on": {
       "block": {
-        "blocks": "#custom:missileblocks"
+        "blocks": "#custom:missile_blocks"
       }
     }
   }

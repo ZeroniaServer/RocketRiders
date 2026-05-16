@@ -9,7 +9,7 @@ execute positioned as @e[x=0,type=marker,tag=ctf_flag] run fill ~ ~ ~-1 ~ ~ ~1 b
 #Clear behind/in front
 execute positioned as @e[x=0,type=marker,tag=ctf_flag] unless block ~ ~ ~ white_stained_glass run fill ~-2 ~ ~-2 ~2 ~2 ~2 air replace white_stained_glass
 execute positioned as @e[x=0,type=marker,tag=ctf_flag] unless block ~ ~ ~ purple_stained_glass run fill ~-2 ~ ~-2 ~2 ~2 ~2 air replace purple_stained_glass
-execute positioned as @e[x=0,type=marker,tag=ctf_flag] run fill ~-6 ~ ~-3 ~2 ~10 ~2 air replace #custom:wool
+execute positioned as @e[x=0,type=marker,tag=ctf_flag] run fill ~-6 ~ ~-3 ~2 ~10 ~2 air replace #minecraft:wool
 
 #Actionbars for flag carrier
 execute if predicate game:phase/match/play as @a[x=0,predicate=custom:player/is_carrying_flag,tag=!DelayActionbar] run title @s actionbar {bold:true,text:"You stole a flag! Return to your base to capture it!"}

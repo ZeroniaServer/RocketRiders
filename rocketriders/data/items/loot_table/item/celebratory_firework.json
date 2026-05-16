@@ -10,9 +10,6 @@
             {
               "function": "minecraft:set_components",
               "components": {
-                "minecraft:can_place_on": {
-                  "blocks": "#custom:missileandbase"
-                },
                 "minecraft:custom_data": {
                   "id": "celebratory_firework"
                 },

@@ -2,9 +2,9 @@
   "values": [
     "minecraft:air",
     "minecraft:cave_air",
-    "minecraft:void_air",
-    "minecraft:water",
+    "minecraft:fire",
     "minecraft:lava",
-    "minecraft:fire"
+    "minecraft:void_air",
+    "minecraft:water"
   ]
 }

@@ -2,11 +2,11 @@
   "condition": "minecraft:value_check",
   "value": {
     "type": "minecraft:score",
+    "score": "match_data",
     "target": {
       "type": "minecraft:fixed",
       "name": "$both_won"
-    },
-    "score": "match_data"
+    }
   },
   "range": 1
 }

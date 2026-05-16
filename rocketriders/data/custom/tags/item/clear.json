@@ -1,9 +1,9 @@
 {
   "values": [
     "#custom:missile",
-    "minecraft:lingering_potion",
-    "minecraft:ender_pearl",
     "#minecraft:arrows",
+    "minecraft:ender_pearl",
+    "minecraft:lingering_potion",
     "minecraft:snowball"
   ]
 }

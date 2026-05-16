@@ -13,7 +13,7 @@ def custom_sort(value: Any, parent: str = None) -> Any:
     if isinstance(value, dict):
         items: list[tuple[str,Any]] = value.items()
 
-        sorted_items: list[tuple[str,Any]] = []
+        sorted_items: list[tuple[tuple[float,str],str,Any]] = []
         for k, v in items:
             # "type" ID has highest priority
             if (k == "type") and (isinstance(v,str)):
@@ -65,6 +65,11 @@ def custom_sort(value: Any, parent: str = None) -> Any:
             if (k == "range") and (("condition","minecraft:value_check") in items):
                 sorted_items.append(((99,k),k,v))
                 continue
+            
+            # "target" has hight priority in set_name loot functions
+            if (k == "target") and (("function","minecraft:set_name") in items):
+                sorted_items.append(((-1,k),k,v))
+                continue
 
             # item stack priorities
             if ((k == "count")) and ("id" in value):
@@ -109,25 +114,25 @@ def custom_sort(value: Any, parent: str = None) -> Any:
                 continue
 
             # "formatting" before component type
-            if ((k == "text") or (k == "translate") or (k == "player") or (k == "atlas") or (k == "sprite") or (k == "nbt")) and (("bold" in value) or ("color" in value) or ("font" in value) or ("italic" in value) or ("obfuscated" in value) or ("shadow_color" in value) or ("strikethrough" in value) or ("underlined" in value) or ("block" in value) or ("entity" in value) or ("storage" in value)):
+            if ((k == "text") or (k == "translate") or (k == "player") or (k == "atlas") or (k == "sprite") or (k == "nbt") or ("score" in value)) and (("bold" in value) or ("color" in value) or ("font" in value) or ("italic" in value) or ("obfuscated" in value) or ("shadow_color" in value) or ("strikethrough" in value) or ("underlined" in value) or ("block" in value) or ("entity" in value) or ("storage" in value)):
                 sorted_items.append(((2,k),k,v))
                 continue
 
-            # component type parameters after component type
-            if ((k == "with") and ("translate" in value)) or ((k == "separator") and (("selector" in value) or ("nbt" in value))) or (((k == "plain") or (k == "interpret")) and ("nbt" in value)):
+            # text component type parameters after component type
+            if ((k == "with") and ("translate" in value)) or ((k == "separator") and (("selector" in value) or ("nbt" in value))) or (((k == "plain") or (k == "interpret")) and ("nbt" in value) or ("score" in value)):
                 sorted_items.append(((3,k),k,v))
                 continue
 
             # "hover_event" and "click_event" next
-            if (k == "hover_event") and (("text" in value) or ("translate" in value) or ("player" in value) or ("sprite" in value) or ("keybind" in value) or ("nbt" in value)):
+            if (k == "hover_event") and (("text" in value) or ("translate" in value) or ("player" in value) or ("sprite" in value) or ("keybind" in value) or ("nbt" in value) or ("score" in value)):
                 sorted_items.append(((4,k),k,v))
                 continue
-            if (k == "click_event") and (("text" in value) or ("translate" in value) or ("player" in value) or ("sprite" in value) or ("keybind" in value) or ("nbt" in value)):
+            if (k == "click_event") and (("text" in value) or ("translate" in value) or ("player" in value) or ("sprite" in value) or ("keybind" in value) or ("nbt" in value) or ("score" in value)):
                 sorted_items.append(((5,k),k,v))
                 continue
             
             # "extra" last
-            if (k == "extra") and (("text" in value) or ("translate" in value) or ("player" in value) or ("sprite" in value) or ("keybind" in value) or ("nbt" in value)):
+            if (k == "extra") and (("text" in value) or ("translate" in value) or ("player" in value) or ("sprite" in value) or ("keybind" in value) or ("nbt" in value) or ("score" in value)):
                 sorted_items.append(((6,k),k,v))
                 continue
             
@@ -151,10 +156,30 @@ if __name__ == "__main__":
                 continue
 
             with open(file_path,"r") as file:
-                contents = json.load(file)
-            
+                contents = custom_sort(json.load(file))
+
+            if ("\\tags\\" in dirpath) and ("\\tags\\function" not in dirpath) and (isinstance(contents,dict)) and ("values" in contents) and (isinstance(contents["values"],list)):
+                tags: list = []
+                for value in contents["values"]:
+                    if not isinstance(value,str):
+                        tags.append(value)
+                        continue
+
+                    if ":" not in value:
+                        if value[0] == "#":
+                            tags.append("#minecraft:"+value[1:])
+                        else:
+                            tags.append("minecraft:"+value)
+                    else:
+                        tags.append(value)
+
+                tags.sort()
+                contents["values"] = tags
+
             with open(file_path,"w") as file:
-                json.dump(custom_sort(contents),file,indent="  ")
+                json.dump(contents,file,indent="  ")
                 file.write("\n")
+            
+
     
     print("Done!")

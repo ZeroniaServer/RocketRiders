@@ -1,7 +1,7 @@
 {
   "values": [
-    "minecraft:area_effect_cloud",
     "#custom:wind_charge",
+    "minecraft:area_effect_cloud",
     "minecraft:small_fireball"
   ]
 }

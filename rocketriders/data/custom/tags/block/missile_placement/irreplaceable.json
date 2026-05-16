@@ -4,6 +4,7 @@
     "minecraft:bedrock",
     "minecraft:crying_obsidian",
     "minecraft:light",
+    "minecraft:nether_portal",
     "minecraft:obsidian"
   ]
 }

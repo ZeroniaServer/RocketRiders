@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#custom:missile_placement/irreplaceable",
+    "#custom:missile_placement/suppressible",
+    "minecraft:nether_portal"
+  ]
+}

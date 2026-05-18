@@ -2,7 +2,7 @@
 data modify storage rocketriders:modifiers list set value []
 execute if predicate game:modifiers/instamine/on run data modify storage rocketriders:modifiers list append value {"text":"Instamine","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players can mine (most) blocks instantly.","color":"white"}]}}
 execute if predicate game:modifiers/no_fall/on run data modify storage rocketriders:modifiers list append value {"text":"No Fall","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players are immune to fall damage.","color":"white"}]}}
-execute if predicate game:modifiers/yes_fall/on run data modify storage rocketriders:modifiers list append value {"text":"Yes Fall","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Player fall damage is doubled.","color":"white"}]}}
+execute if predicate game:feature_flags/1_4_0_update/on if predicate game:modifiers/yes_fall/on run data modify storage rocketriders:modifiers list append value {"text":"Yes Fall","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Player fall damage is doubled.","color":"white"}]}}
 execute if predicate game:modifiers/explosive/on run data modify storage rocketriders:modifiers list append value {"text":"Explosive","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"TNT, Fireballs, Nova Rockets, and the Vortex all do more explosion damage.","color":"white"}]}}
 execute if predicate game:modifiers/rocket_residers/on run data modify storage rocketriders:modifiers list append value {"text":"Rocket Residers","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players cannot leave their bases.","color":"white"}]}}
 execute if predicate game:modifiers/sonar/on run data modify storage rocketriders:modifiers list append value {"text":"Sonar","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players lose Night Vision so they cannot see blocks. Other players, projectiles, TNT, and utilities have glowing outlines.","color":"white"}]}}
@@ -20,6 +20,7 @@ execute if predicate game:modifiers/special_treatment/on run data modify storage
 execute if predicate game:modifiers/collision_control/on run data modify storage rocketriders:modifiers list append value {"text":"Collision Control","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Missiles cannot be spawned inside the enemy base.","color":"white"}]}}
 execute if predicate game:modifiers/punchable_tnt/on run data modify storage rocketriders:modifiers list append value {"text":"Punchable TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Primed TNT can be punched forward.","color":"white"}]}}
 execute if predicate game:modifiers/unstable_tnt/on run data modify storage rocketriders:modifiers list append value {"text":"Unstable TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Breaking TNT blocks immediately ignites them.","color":"white"}]}}
+execute if predicate game:feature_flags/1_4_0_update/on if predicate game:modifiers/zero_gravity_tnt/on run data modify storage rocketriders:modifiers list append value {"text":"Zero-Gravity TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Primed TNT will disobey the law of gravity.","color":"white"}]}}
 execute if predicate game:modifiers/hobbits/on run data modify storage rocketriders:modifiers list append value {"text":"Hobbits","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Players are two thirds of their normal size, and can sneak under 1-block-tall gaps.","color":"white"}]}}
 execute if predicate game:modifiers/instant_tnt/on run data modify storage rocketriders:modifiers list append value {"text":"Instant TNT","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"Primed TNT instantly explodes.","color":"white"}]}}
 execute if predicate game:modifiers/long_arms/on run data modify storage rocketriders:modifiers list append value {"text":"Long Arms","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"You can reach blocks and players from twice as far away.","color":"white"}]}}
@@ -29,7 +30,7 @@ execute if predicate game:feature_flags/1_4_0_update/on if predicate game:modifi
 data modify storage rocketriders:modifiers length set value []
 execute if predicate game:modifiers/instamine/on run data modify storage rocketriders:modifiers length append value 9
 execute if predicate game:modifiers/no_fall/on run data modify storage rocketriders:modifiers length append value 7
-execute if predicate game:modifiers/yes_fall/on run data modify storage rocketriders:modifiers length append value 8
+execute if predicate game:feature_flags/1_4_0_update/on if predicate game:modifiers/yes_fall/on run data modify storage rocketriders:modifiers length append value 8
 execute if predicate game:modifiers/explosive/on run data modify storage rocketriders:modifiers length append value 9
 execute if predicate game:modifiers/rocket_residers/on run data modify storage rocketriders:modifiers length append value 15
 execute if predicate game:modifiers/sonar/on run data modify storage rocketriders:modifiers length append value 5
@@ -47,6 +48,7 @@ execute if predicate game:modifiers/special_treatment/on run data modify storage
 execute if predicate game:modifiers/collision_control/on run data modify storage rocketriders:modifiers length append value 17
 execute if predicate game:modifiers/punchable_tnt/on run data modify storage rocketriders:modifiers length append value 13
 execute if predicate game:modifiers/unstable_tnt/on run data modify storage rocketriders:modifiers length append value 12
+execute if predicate game:feature_flags/1_4_0_update/on if predicate game:modifiers/zero_gravity_tnt/on run data modify storage rocketriders:modifiers length append value 16
 execute if predicate game:modifiers/hobbits/on run data modify storage rocketriders:modifiers length append value 7
 execute if predicate game:modifiers/instant_tnt/on run data modify storage rocketriders:modifiers length append value 11
 execute if predicate game:modifiers/long_arms/on run data modify storage rocketriders:modifiers length append value 9

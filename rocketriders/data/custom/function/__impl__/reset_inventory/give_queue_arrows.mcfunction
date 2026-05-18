@@ -1,4 +1,6 @@
-execute store result score $expected_arrows var if entity @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:player/can_pick_up_arrows]
+scoreboard players set $expected_arrows var 0
+execute if predicate game:main_item/shooting_saber store result score $expected_arrows var if entity @a[x=0,predicate=custom:team/any_playing_team]
+execute if predicate game:main_item/crusade_kit_dependent store result score $expected_arrows var if entity @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/archer]
 scoreboard players operation $expected_arrows var *= $20 constant
 
 scoreboard players reset @a[x=0] var

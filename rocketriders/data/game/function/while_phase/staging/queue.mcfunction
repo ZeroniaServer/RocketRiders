@@ -1,7 +1,9 @@
 execute if predicate custom:periodic_tick/20 run scoreboard players reset @a[x=0] var
-execute if predicate custom:periodic_tick/20 as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:player/can_pick_up_arrows] store result score @s var run clear @s arrow 0
+execute if predicate custom:periodic_tick/20 as @a[x=0,predicate=custom:team/any_playing_team] store result score @s var run clear @s arrow 0
 
-execute if predicate custom:periodic_tick/20 store result score $expected_arrows var if entity @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:player/can_pick_up_arrows]
+execute if predicate custom:periodic_tick/20 run scoreboard players set $expected_arrows var 0
+execute if predicate custom:periodic_tick/20 if predicate game:main_item/shooting_saber store result score $expected_arrows var if entity @a[x=0,predicate=custom:team/any_playing_team]
+execute if predicate custom:periodic_tick/20 if predicate game:main_item/crusade_kit_dependent store result score $expected_arrows var if entity @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/archer]
 execute if predicate custom:periodic_tick/20 run scoreboard players operation $expected_arrows var *= $20 constant
 
 execute if predicate custom:periodic_tick/20 run scoreboard players set $total_arrows var 0

@@ -125,6 +125,9 @@ execute if score $config_override.wind_down match_components matches 1 run data 
 execute if predicate game:feature_flags/1_4_0_update/on if score $config_override.yes_fall match_components matches -1 run data modify storage rocketriders:main match_components_ui.config_override append value ["",{color:"aqua",text:"yes_fall"},": ",{color:"gold",text:"false"}]
 execute if predicate game:feature_flags/1_4_0_update/on if score $config_override.yes_fall match_components matches 1 run data modify storage rocketriders:main match_components_ui.config_override append value ["",{color:"aqua",text:"yes_fall"},": ",{color:"gold",text:"true"}]
 
+execute if predicate game:feature_flags/1_4_0_update/on if score $config_override.zero_gravity_tnt match_components matches -1 run data modify storage rocketriders:main match_components_ui.config_override append value ["",{color:"aqua",text:"zero_gravity_tnt"},": ",{color:"gold",text:"false"}]
+execute if predicate game:feature_flags/1_4_0_update/on if score $config_override.zero_gravity_tnt match_components matches 1 run data modify storage rocketriders:main match_components_ui.config_override append value ["",{color:"aqua",text:"zero_gravity_tnt"},": ",{color:"gold",text:"true"}]
+
 
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"config_override",label:"🔒 config_override",width:300,options:[{id:"",display:"{}"}]}
 function custom:resolve_text_component {text_component:["{",{storage:"rocketriders:main",nbt:'match_components_ui.config_override[]',interpret:true,separator:", "},"}"],write_to:"storage rocketriders:main match_components.dialog.inputs[-1].options[].display"}

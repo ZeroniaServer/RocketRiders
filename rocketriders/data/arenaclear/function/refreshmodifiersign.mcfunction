@@ -1,9 +1,8 @@
 ##Refreshes signs for individual Game Modifiers (warped/crimson)
-#Wrap counter around (0-21)
-execute unless predicate game:feature_flags/1_4_0_update/on run scoreboard players set $wrap_size var 23
-execute if predicate game:feature_flags/1_4_0_update/on run scoreboard players set $wrap_size var 24
-scoreboard players operation $modification_room.selected_modifier global %= $wrap_size var
-execute unless predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 2 run scoreboard players set $modification_room.selected_modifier global 3
+
+#Wrap counter around (0-24) and skip modifiers that are locked behind feature flags
+function arenaclear:selected_modifier/resolve
+
 
 #Instamine
 execute if score $modification_room.selected_modifier global matches 0 if predicate game:modifiers/instamine/on run setblock -69 191 75 warped_wall_sign[facing=east]
@@ -85,21 +84,25 @@ execute if score $modification_room.selected_modifier global matches 18 unless p
 execute if score $modification_room.selected_modifier global matches 19 if predicate game:modifiers/unstable_tnt/on run setblock -69 191 75 warped_wall_sign[facing=east]
 execute if score $modification_room.selected_modifier global matches 19 unless predicate game:modifiers/unstable_tnt/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
+#Zero-Gravity TNT
+execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 20 if predicate game:modifiers/zero_gravity_tnt/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 20 unless predicate game:modifiers/zero_gravity_tnt/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+
 #Instant TNT
-execute if score $modification_room.selected_modifier global matches 20 if predicate game:modifiers/instant_tnt/on run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if score $modification_room.selected_modifier global matches 20 unless predicate game:modifiers/instant_tnt/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if score $modification_room.selected_modifier global matches 21 if predicate game:modifiers/instant_tnt/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if score $modification_room.selected_modifier global matches 21 unless predicate game:modifiers/instant_tnt/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Hobbits
-execute if score $modification_room.selected_modifier global matches 21 if predicate game:modifiers/hobbits/on run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if score $modification_room.selected_modifier global matches 21 unless predicate game:modifiers/hobbits/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if score $modification_room.selected_modifier global matches 22 if predicate game:modifiers/hobbits/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if score $modification_room.selected_modifier global matches 22 unless predicate game:modifiers/hobbits/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Long Arms
-execute if score $modification_room.selected_modifier global matches 22 if predicate game:modifiers/long_arms/on run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if score $modification_room.selected_modifier global matches 22 unless predicate game:modifiers/long_arms/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if score $modification_room.selected_modifier global matches 23 if predicate game:modifiers/long_arms/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if score $modification_room.selected_modifier global matches 23 unless predicate game:modifiers/long_arms/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 #Rotting
-execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 23 if predicate game:modifiers/rotting/on run setblock -69 191 75 warped_wall_sign[facing=east]
-execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 23 unless predicate game:modifiers/rotting/on run setblock -69 191 75 crimson_wall_sign[facing=east]
+execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 24 if predicate game:modifiers/rotting/on run setblock -69 191 75 warped_wall_sign[facing=east]
+execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 24 unless predicate game:modifiers/rotting/on run setblock -69 191 75 crimson_wall_sign[facing=east]
 
 ##MODIFIER SELECTION
 function modifiers:modifierselect

@@ -7,6 +7,13 @@ data modify storage rocketriders:main tnt.entity_data set from entity @s {}
 # Set glowing
 execute if predicate game:phase/match unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run function game:glowing/on
 
+# Remove gravity and dampen initial momentum when the "zero_gravity_tnt" modifier is enabled
+execute if predicate game:modifiers/zero_gravity_tnt/on run data modify storage rocketriders:main tnt.zero_gravity_tnt_modification set value {NoGravity:true}
+execute if predicate game:modifiers/zero_gravity_tnt/on run data modify storage rocketriders:main tnt.zero_gravity_tnt_modification.Motion set from storage rocketriders:main tnt.entity_data.Motion
+execute if predicate game:modifiers/zero_gravity_tnt/on store result score $y_velocity var run data get storage rocketriders:main tnt.entity_data.Motion[1] 1000
+execute if predicate game:modifiers/zero_gravity_tnt/on store result storage rocketriders:main tnt.zero_gravity_tnt_modification.Motion[1] float 0.001 run scoreboard players remove $y_velocity var 175
+execute if predicate game:modifiers/zero_gravity_tnt/on run data modify entity @s {} merge from storage rocketriders:main tnt.zero_gravity_tnt_modification
+
 # correct creeper owner
 scoreboard players set $player_owner_exists var 0
 execute on origin if entity @s[type=player] run scoreboard players set $player_owner_exists var 0

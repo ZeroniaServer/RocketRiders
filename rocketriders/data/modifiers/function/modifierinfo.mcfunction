@@ -80,18 +80,22 @@ execute if score $modification_room.selected_modifier global matches 18 unless p
 execute if score $modification_room.selected_modifier global matches 19 if predicate game:modifiers/unstable_tnt/on run tellraw @s ["",{"text":"Unstable TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Breaking TNT blocks immediately ignites them.","color":"gray","italic":true}]
 execute if score $modification_room.selected_modifier global matches 19 unless predicate game:modifiers/unstable_tnt/on run tellraw @s ["",{"text":"Unstable TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
+#Zero-Gravity TNT
+execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 20 if predicate game:modifiers/zero_gravity_tnt/on run tellraw @s ["",{"text":"Zero-Gravity TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Primed TNT will disobey the law of gravity.","color":"gray","italic":true}]
+execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 20 unless predicate game:modifiers/zero_gravity_tnt/on run tellraw @s ["",{"text":"Zero-Gravity TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+
 #Instant TNT
-execute if score $modification_room.selected_modifier global matches 20 if predicate game:modifiers/instant_tnt/on run tellraw @s ["",{"text":"Instant TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Primed TNT instantly explodes.","color":"gray","italic":true}]
-execute if score $modification_room.selected_modifier global matches 20 unless predicate game:modifiers/instant_tnt/on run tellraw @s ["",{"text":"Instant TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if score $modification_room.selected_modifier global matches 21 if predicate game:modifiers/instant_tnt/on run tellraw @s ["",{"text":"Instant TNT","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Primed TNT instantly explodes.","color":"gray","italic":true}]
+execute if score $modification_room.selected_modifier global matches 21 unless predicate game:modifiers/instant_tnt/on run tellraw @s ["",{"text":"Instant TNT","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Hobbits
-execute if score $modification_room.selected_modifier global matches 21 if predicate game:modifiers/hobbits/on run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players are two thirds of their normal size, and can sneak under 1-block-tall gaps.","color":"gray","italic":true}]
-execute if score $modification_room.selected_modifier global matches 21 unless predicate game:modifiers/hobbits/on run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if score $modification_room.selected_modifier global matches 22 if predicate game:modifiers/hobbits/on run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Players are two thirds of their normal size, and can sneak under 1-block-tall gaps.","color":"gray","italic":true}]
+execute if score $modification_room.selected_modifier global matches 22 unless predicate game:modifiers/hobbits/on run tellraw @s ["",{"text":"Hobbits","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Long Arms
-execute if score $modification_room.selected_modifier global matches 22 if predicate game:modifiers/long_arms/on run tellraw @s ["",{"text":"Long Arms","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" You can reach blocks and players from twice as far away.","color":"gray","italic":true}]
-execute if score $modification_room.selected_modifier global matches 22 unless predicate game:modifiers/long_arms/on run tellraw @s ["",{"text":"Long Arms","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if score $modification_room.selected_modifier global matches 23 if predicate game:modifiers/long_arms/on run tellraw @s ["",{"text":"Long Arms","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" You can reach blocks and players from twice as far away.","color":"gray","italic":true}]
+execute if score $modification_room.selected_modifier global matches 23 unless predicate game:modifiers/long_arms/on run tellraw @s ["",{"text":"Long Arms","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
 
 #Rotting
-execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 23 if predicate game:modifiers/rotting/on run tellraw @s ["",{"text":"Rotting","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Blocks left between the bases will slowly be consumed by rot.","color":"gray","italic":true}]
-execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 23 unless predicate game:modifiers/rotting/on run tellraw @s ["",{"text":"Rotting","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]
+execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 24 if predicate game:modifiers/rotting/on run tellraw @s ["",{"text":"Rotting","color":"aqua","bold":true},{"text":" Enabled:","color":"green","bold":true},{"text":" Blocks left between the bases will slowly be consumed by rot.","color":"gray","italic":true}]
+execute if predicate game:feature_flags/1_4_0_update/on if score $modification_room.selected_modifier global matches 24 unless predicate game:modifiers/rotting/on run tellraw @s ["",{"text":"Rotting","color":"aqua","bold":true},{"text":" Disabled!","color":"red","bold":true}]

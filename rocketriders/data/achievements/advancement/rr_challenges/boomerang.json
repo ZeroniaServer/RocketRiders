@@ -9,7 +9,7 @@
     "announce_to_chat": true,
     "description": {
       "color": "green",
-      "text": "Get blown up by your own End Crystal in Chase Mode."
+      "text": "Get blown up by your own Chase Crystal in Chase Mode."
     },
     "frame": "goal",
     "hidden": false,

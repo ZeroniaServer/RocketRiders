@@ -174,6 +174,8 @@ execute if predicate game:phase/match run tag @a[x=0] remove doing_facade_parkou
 tag @a[x=0,predicate=!custom:team/any_playing_team] remove doing_facade_parkour
 
 ##Countdown
+execute if predicate game:phase/staging/queue run function game:while_phase/staging/queue
+execute if predicate game:phase/staging/queue/waiting run function game:while_phase/staging/queue/waiting
 execute if predicate game:phase/staging/queue/countdown run function game:while_phase/staging/queue/countdown
 
 ##Display non-joinable join pad barriers

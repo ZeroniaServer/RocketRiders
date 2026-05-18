@@ -41,13 +41,13 @@ execute if predicate custom:team/lobby if predicate rr:has_parkour if entity @s[
 
 # team players
 execute if predicate custom:team/any_playing_team if predicate game:main_item/shooting_saber run loot replace block 0 184 -16 container.0 loot items:item/shooting_saber
-execute if predicate custom:team/any_playing_team if predicate game:main_item/shooting_saber if predicate game:phase/staging run loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],functions:[{function:"set_count",count:20}]}]}
+execute if predicate custom:team/any_playing_team if predicate game:main_item/shooting_saber if predicate game:phase/staging/queue run function custom:__impl__/reset_inventory/give_queue_arrows
 execute if predicate custom:team/any_playing_team if predicate game:main_item/piercing_pickaxe run loot replace block 0 184 -16 container.0 loot items:item/piercing_pickaxe
 execute if predicate custom:team/any_playing_team if predicate game:main_item/rocket_nomicon run loot replace block 0 184 -16 container.0 loot items:item/rocket_nomicon
 execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.0 loot items:item/knight_sword
 execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.9 loot items:item/knight_shield
 execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.0 loot items:item/shooting_saber
-execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/staging run loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],functions:[{function:"set_count",count:20}]}]}
+execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/staging/queue run function custom:__impl__/reset_inventory/give_queue_arrows
 execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/match/play run loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],functions:[{function:"set_count",count:4}]}]}
 execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.0 loot items:item/spell_wand
 

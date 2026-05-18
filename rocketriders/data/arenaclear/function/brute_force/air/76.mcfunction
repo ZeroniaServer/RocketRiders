@@ -1,2 +1,3 @@
 fill 47 -64 79 64 180 96 air strict
 scoreboard players set $chunk_clear_progress global 45
+scoreboard players reset #chunk_clear_inactive_ticks global

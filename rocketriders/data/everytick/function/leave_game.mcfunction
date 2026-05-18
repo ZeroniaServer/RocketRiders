@@ -12,6 +12,7 @@ execute if predicate game:phase/match unless predicate game:phase/match/closing 
 
 #Clearing effects/tags and teleporting to lobby
 tag @a[x=0,scores={LeaveGame=1..}] remove force_mount
+execute if entity @a[x=0,scores={LeaveGame=1..}] as @e[x=0,type=firework_rocket] if function custom:kill_elytra_firework run kill
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player_action/forget_canopy
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player_action/forget_nova_attach
 execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player_action/forget_spell_emitter
@@ -37,6 +38,7 @@ spawnpoint @a[x=0,tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 21
 spawnpoint @a[x=0,tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96 90 0
 spawnpoint @a[x=0,tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61 90 0
 clear @a[x=0,scores={LeaveGame=1..}]
+execute as @a[x=0,scores={LeaveGame=1..}] run tp @s @s
 tp @a[x=0,scores={LeaveGame=1..},tag=!WasInYellow,tag=!WasInBlue] -43 211 78 90 0
 tp @a[x=0,scores={LeaveGame=1..},tag=WasInYellow] -36 211 96.0 90 0
 tp @a[x=0,scores={LeaveGame=1..},tag=WasInBlue] -36 211 61.0 90 0

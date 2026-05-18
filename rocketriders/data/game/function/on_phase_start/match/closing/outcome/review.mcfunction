@@ -1,4 +1,5 @@
 ##
+kill @e[x=0,type=firework_rocket]
 gamemode spectator @a[x=0,predicate=custom:team/any_playing_team]
 
 ## Game-mode-specific functions

@@ -8,7 +8,7 @@ $scoreboard players reset $(name) event.player_joins_overworld.state
 $team leave $(name)
 
 # leave message (if they disconnected on CK or switched to a different dimension)
-execute store success score $do_leave_message var unless predicate rr:has_join_and_leave_messages
+execute store success score $do_leave_message var if predicate rr:has_custom_leave_messages
 $execute if score $do_leave_message var matches 0 at $(name) unless dimension minecraft:overworld run scoreboard players set $do_leave_message var 1
 
 $data modify storage rocketriders:main player_left_overworld.name set value "$(name)"

@@ -6,7 +6,7 @@ function game:team_attributes/update_all
 dialog clear @a[x=0]
 
 ## Per-game-mode upon edited settings
-function #rr:upon_edited_settings
+function #rr:game/upon_edited_settings
 
 ## Place facade
 function game:place_facade

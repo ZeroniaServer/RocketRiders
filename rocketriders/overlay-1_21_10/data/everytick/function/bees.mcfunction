@@ -21,4 +21,6 @@ execute as @e[x=0,type=bee,predicate=custom:in_void] run function custom:kill_mo
 
 # limit the number of bees in the arena (sandbox precaution)
 execute store result score $bee_count var if entity @e[x=0,type=bee,predicate=custom:in_arena]
-execute if score $bee_count var matches 31.. as @e[limit=1,sort=random,x=0,type=bee,predicate=custom:in_arena] run function custom:kill_mob_discretely
+execute if score $bee_count var matches 31.. run tag @e[limit=30,sort=random,x=0,type=bee,predicate=custom:in_arena] add safe
+execute if score $bee_count var matches 31.. as @e[x=0,type=bee,predicate=custom:in_arena,tag=!safe] run function custom:kill_mob_discretely
+execute if score $bee_count var matches 31.. run tag @e[x=0,type=bee,predicate=custom:in_arena,tag=safe] remove safe

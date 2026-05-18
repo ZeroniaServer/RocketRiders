@@ -1,4 +1,5 @@
 scoreboard players set $chunk_clear_progress global 0
+scoreboard players reset #chunk_clear_inactive_ticks global
 
 # Kill entities in the arena
 function arenaclear:kill_arena_entities

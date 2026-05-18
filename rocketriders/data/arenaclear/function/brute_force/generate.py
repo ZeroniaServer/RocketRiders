@@ -12,21 +12,32 @@ for i, chunk in enumerate(chunks):
 for i, chunk in enumerate(chunks):
     x, y = chunk
     with open(f"air/{i}.mcfunction","w") as file:
-        file.write(
-            f"fill {max(-163,16*x-1)} -64 {max(-175,16*y-1)} {min(187,16*x+15+1)} 180 {min(175,16*y+15+1)} air strict\n"
-        )
+        file.write(f"fill {max(-163,16*x-1)} -64 {max(-175,16*y-1)} {min(187,16*x+15+1)} 180 {min(175,16*y+15+1)} air strict\n")
+
         if i <= index_of_interest:
-            file.write(
-                f"scoreboard players set $chunk_clear_progress global {max(1,int(50*(i+1)/index_of_interest))}\n"
-            )
+            file.write(f"scoreboard players set $chunk_clear_progress global {max(1,int(50*(i+1)/index_of_interest))}\n")
         else:
-            file.write(
-                f"scoreboard players set $chunk_clear_progress global {50+int(50*(i-index_of_interest+1)/(len(chunks)-index_of_interest))}\n"
-            )
+            file.write(f"scoreboard players set $chunk_clear_progress global {50+int(50*(i-index_of_interest+1)/(len(chunks)-index_of_interest))}\n")
+
+        file.write("scoreboard players reset #chunk_clear_inactive_ticks global\n")
 
 with open("start.mcfunction","w") as file:
-    file.write(
-        "scoreboard players set $chunk_clear_progress global 0\n"
+    file.writelines(
+        [
+            "scoreboard players set $chunk_clear_progress global 0\n",
+            "scoreboard players reset #chunk_clear_inactive_ticks global\n",
+            "\n",
+            "# Kill entities in the arena\n",
+            "function arenaclear:kill_arena_entities\n",
+            "\n",
+            "# Halt molerat placing progress\n",
+            "function arenaclear:molerat_place/unschedule_all\n",
+            "\n",
+            "# instantly clear pistons\n",
+            "function arenaclear:clear_missiles/schedule\n",
+            "\n",
+            "# schedule clear of chunks\n"
+        ]
     )
     for i in range(len(chunks)):
         file.write(

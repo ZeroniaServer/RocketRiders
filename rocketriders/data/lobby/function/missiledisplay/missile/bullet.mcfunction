@@ -8,14 +8,9 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 
 scoreboard players set $previous_page var 1
 
-fill 22 202 69 15 206 87 air
-
-place template game:missile/south/blue/bullet 18 203 72
-
-fill 22 202 69 15 206 73 moving_piston replace #custom:lobby_air
-fill 22 202 75 15 206 87 moving_piston replace #custom:lobby_air
-fill 22 202 69 15 206 87 white_stained_glass replace blue_stained_glass
-fill 22 202 69 15 206 87 white_concrete replace blue_concrete
+fill 22 202 69 15 206 87 air strict
+place template game:missile/south/white/bullet 18 203 72 none none 1 0 strict
+fill 22 202 69 15 206 87 light[level=15] replace #custom:lobby_air strict
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Special] ","color":"dark_purple","bold":true},{"text":"Bullet","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Bullet makes all missiles look like an A.N.T. With 44 TNT, 12 of which being triggers, you have to be very careful defusing this one!","color":"gray","italic":true}

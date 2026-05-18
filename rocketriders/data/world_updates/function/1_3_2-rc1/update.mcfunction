@@ -1,0 +1,1 @@
+execute if data block -57 203 78 front_text.messages[{click_event:{action:"run_command"}}] run data modify block -57 203 78 front_text.messages[{click_event:{action:"run_command"}}].click_event.command set value "trigger editSettings set 2"

@@ -22,3 +22,8 @@ execute as @a[x=0,predicate=!custom:has_vehicle] run attribute @s minecraft:bloc
 ## Clear out data storage rocketriders:joinwarn
 data remove storage rocketriders:joinwarn title
 data remove storage rocketriders:joinwarn subtitle
+
+## Automatically trigger arena reset if stuck for more than 5 seconds
+execute if score #chunk_clear_inactive_ticks global matches ..-1 run scoreboard players set #chunk_clear_inactive_ticks global 0
+scoreboard players add #chunk_clear_inactive_ticks global 1
+execute unless predicate game:phase/match unless score $chunk_clear_progress global matches 50.. if score #chunk_clear_inactive_ticks global matches 101.. run function arenaclear:brute_force/start

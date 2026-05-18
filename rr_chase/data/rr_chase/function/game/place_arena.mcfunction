@@ -1,8 +1,9 @@
 execute unless entity @e[x=0,type=armor_stand,tag=Selection,tag=chaseEnabled] run return fail
 
 #Flag placement
-fill 12 64 65 12 71 65 oak_fence replace #custom:air
-place template game:asset/flag/stage_1/yellow 8 70 63
+execute unless predicate game:modifiers/hardcore/on run summon marker 12.0 64.0 64.0 {Tags:["checkered_flag"]}
+execute if predicate game:modifiers/hardcore/on run summon marker 12.0 64.0 65.0 {Tags:["checkered_flag"]}
+execute positioned as @e[limit=1,x=0,type=marker,tag=checkered_flag] run function rr_chase:game/checkered_flag/place
 
 #Stair placement
 kill @e[x=0,type=marker,tag=chaseStairs]

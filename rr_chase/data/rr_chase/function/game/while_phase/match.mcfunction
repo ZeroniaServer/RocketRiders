@@ -1,6 +1,11 @@
 # Clear flag base
 fill 10 64 62 14 67 66 air
 
+# Flag pole
+execute positioned as @e[limit=1,x=0,type=marker,tag=checkered_flag] run fill ~-2 ~ ~-2 ~2 ~6 ~2 air replace oak_fence strict
+execute positioned as @e[limit=1,x=0,type=marker,tag=checkered_flag] run fill ~-2 ~ ~-2 ~2 ~6 ~2 air replace moving_piston{blockState:{Name:"minecraft:oak_fence"}} strict
+execute positioned as @e[limit=1,x=0,type=marker,tag=checkered_flag] run fill ~ ~ ~ ~ ~6 ~ oak_fence strict
+
 # Waving flag
 scoreboard players operation $flag_wave var = $time match_data
 scoreboard players operation $flag_wave var %= $40 constant

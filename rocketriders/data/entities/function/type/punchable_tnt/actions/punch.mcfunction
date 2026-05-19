@@ -3,14 +3,18 @@
 execute on attacker if score @s time_since_tnt_punch matches ..0 run return fail
 
 ## Get impulse (motion + direction)
+scoreboard players set $motion_impulse_scale var 400
 execute on attacker store result score $impulse_motion_x var run function custom:entity/get_x_velocity
-scoreboard players operation $impulse_motion_x var /= $2 constant
+scoreboard players operation $impulse_motion_x var *= $motion_impulse_scale var
+scoreboard players operation $impulse_motion_x var /= $1000 constant
 execute on attacker store result score $impulse_motion_y var run function custom:entity/get_y_velocity
-scoreboard players operation $impulse_motion_y var /= $2 constant
+scoreboard players operation $impulse_motion_y var *= $motion_impulse_scale var
+scoreboard players operation $impulse_motion_y var /= $1000 constant
 execute on attacker store result score $impulse_motion_z var run function custom:entity/get_z_velocity
-scoreboard players operation $impulse_motion_z var /= $2 constant
+scoreboard players operation $impulse_motion_z var *= $motion_impulse_scale var
+scoreboard players operation $impulse_motion_z var /= $1000 constant
 
-execute positioned 0.0 0.0 0.0 positioned ^ ^ ^0.2 summon marker run function entities:type/punchable_tnt/actions/_punch_/get_impulse
+execute positioned 0.0 0.0 0.0 positioned ^ ^ ^0.25 summon marker run function entities:type/punchable_tnt/actions/_punch_/get_impulse
 execute store result score $impulse_x var run data get storage rocketriders:main punchable_tnt.impulse[0] 1000
 execute store result score $impulse_y var run data get storage rocketriders:main punchable_tnt.impulse[1] 1000
 execute store result score $impulse_z var run data get storage rocketriders:main punchable_tnt.impulse[2] 1000

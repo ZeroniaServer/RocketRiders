@@ -262,6 +262,13 @@
         "dialog": "experimental:settings_menu/achievements"
       },
       "label": "Achievements..."
+    },
+    {
+      "action": {
+        "type": "minecraft:run_command",
+        "command": "trigger settings set 103"
+      },
+      "label": "Version Info"
     }
   ],
   "exit_action": {

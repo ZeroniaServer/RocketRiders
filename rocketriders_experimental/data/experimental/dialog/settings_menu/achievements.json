@@ -1,6 +1,6 @@
 {
   "type": "minecraft:multi_action",
-  "title": "Rocket Riders",
+  "title": "Achievements",
   "after_action": "none",
   "pause": false,
   "actions": [
@@ -9,7 +9,7 @@
         "type": "minecraft:show_dialog",
         "dialog": {
           "type": "minecraft:multi_action",
-          "title": "Rocket Riders",
+          "title": "Achievements",
           "body": {
             "type": "minecraft:plain_message",
             "contents": {

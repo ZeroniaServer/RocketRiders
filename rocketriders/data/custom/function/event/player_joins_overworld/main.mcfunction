@@ -22,7 +22,7 @@ scoreboard players set @s time_since_joined_overworld 0
 tag @a[x=0] add is_dead
 tag @e[x=0,type=player] remove is_dead
 
-# Reset scoreboards for ingame statistics/advancements
+# Reset scoreboards for in-game statistics/advancements
 function everytick:score_reset
 
 # Join lobby

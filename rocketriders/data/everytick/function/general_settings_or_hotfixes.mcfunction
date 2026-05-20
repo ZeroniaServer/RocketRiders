@@ -34,11 +34,11 @@ tellraw @a[x=0,scores={toggle_auto_fill_hotbar=1..},tag=do_hotbar_auto_fill] [{"
 execute as @a[x=0,scores={toggle_auto_fill_hotbar=1..}] run function custom:player/playerdata/save
 scoreboard players set @a[x=0] toggle_auto_fill_hotbar 0
 
-#Toggle ingame tips
+#Toggle in-game tips
 scoreboard players add @a[x=0] GamesPlayed 0
 scoreboard players enable @a[x=0] toggle_ingame_tips
-tellraw @a[x=0,scores={toggle_ingame_tips=1..},tag=!hideTips] [{"text":"You will no longer see ingame tips.","color":"red"}]
-tellraw @a[x=0,scores={toggle_ingame_tips=1..},tag=hideTips] [{"text":"You will now see ingame tips.","color":"green"}]
+tellraw @a[x=0,scores={toggle_ingame_tips=1..},tag=!hideTips] [{"text":"You will no longer see in-game tips.","color":"red"}]
+tellraw @a[x=0,scores={toggle_ingame_tips=1..},tag=hideTips] [{"text":"You will now see in-game tips.","color":"green"}]
 tag @a[x=0,scores={toggle_ingame_tips=1..},tag=hideTips] add hidTips
 tag @a[x=0,scores={toggle_ingame_tips=1..},tag=hideTips] remove hideTips
 tag @a[x=0,scores={toggle_ingame_tips=1..},tag=!hideTips,tag=!hidTips] add hideTips

@@ -1,6 +1,6 @@
 data modify storage rocketriders:main settings.dialog set value {\
   "type": "minecraft:notice",\
-  "title": "Rocket Riders Settings",\
+  "title": "Personal Settings",\
   "inputs": [\
     {\
       "type": "minecraft:single_option",\

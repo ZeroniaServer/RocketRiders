@@ -266,15 +266,15 @@
                     "color": "gray",
                     "text": "    (Click to toggle)"
                   },
-                  "\n\n      ",
+                  "\n\n     ",
                   {
                     "color": "dark_gray",
-                    "text": "[Ingame Tips]",
+                    "text": "[In-Game Tips]",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
                         "italic": true,
-                        "text": "Click to toggle ingame tips."
+                        "text": "Click to toggle in-game tips."
                       }
                     },
                     "click_event": {

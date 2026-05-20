@@ -1,5 +1,5 @@
 # If there are no passengers at all on this canopy, poof!
-execute unless function entities:type/canopy/has_passengers run return run function entities:type/nova_rocket/actions/__explode__/canopy_poof
+execute unless function entities:type/canopy/has_passengers run return run function entities:type/nova_rocket/actions/__explode/canopy_poof
 
 # If the nova rocket shooter is on the same team as this canopy
 execute if score $nova_rocket_team var matches 0 if predicate entities:origin_team/blue run return fail
@@ -17,7 +17,7 @@ execute unless entity @a[limit=1,x=0,tag=nova_rocket.enemy_canopy_occupant] run 
 execute as @a[x=0,tag=nova_rocket.enemy_canopy_occupant] run function entities:type/nova_attach/init
 
 # If enemies are on the canopy, poof!
-function entities:type/nova_rocket/actions/__explode__/canopy_poof
+function entities:type/nova_rocket/actions/__explode/canopy_poof
 
 # Remove tag
 tag @a[x=0,tag=nova_rocket.enemy_canopy_occupant] remove nova_rocket.enemy_canopy_occupant

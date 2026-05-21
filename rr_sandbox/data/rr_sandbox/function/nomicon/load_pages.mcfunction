@@ -443,7 +443,7 @@ data modify storage rocketriders:nomicon dialogs.all.dialog.body append from sto
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.powerups.dialog.body[]
 data modify storage rocketriders:nomicon dialogs.all.dialog.body append from storage rocketriders:nomicon dialogs.experimental.dialog.body[]
 
-data remove storage rocketriders:nomicon dialogs.all.dialog.body[{__include_in_full_list__:false}]
+data remove storage rocketriders:nomicon dialogs.all.dialog.body[{__include_in_full_list:false}]
 
 # Remove top separator from every section
 data remove storage rocketriders:nomicon dialogs.all.dialog.body[0]
@@ -452,3 +452,6 @@ data remove storage rocketriders:nomicon dialogs.utilities.dialog.body[0]
 data remove storage rocketriders:nomicon dialogs.powerups.dialog.body[0]
 data remove storage rocketriders:nomicon dialogs.weapons_and_tools.dialog.body[0]
 data remove storage rocketriders:nomicon dialogs.experimental.dialog.body[0]
+
+# Remove loaded_item
+data remove storage rocketriders:nomicon loaded_item

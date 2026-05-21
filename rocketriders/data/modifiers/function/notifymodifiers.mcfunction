@@ -8,7 +8,7 @@ execute if predicate rr:has_modifiers if score $at_least_one_modifier_enabled va
 execute if predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Modifiers:","color":"dark_aqua"},{"text":" Wind Down","color":"aqua","hover_event":{"action":"show_text","value":["",{"text":"After every item given, the time between receiving items decreases, intensifying the match as it continues.","color":"white"}]}},{"text":" (hover name for info)","color":"dark_gray","italic":true}]
 
 #Also notifies about Game Rules
-execute unless entity @s[predicate=rr:server_mode/cubekrowd_voting,predicate=!game:match_components/duel_settings_locked] unless predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Game Rules","color":"yellow","hover_event":{"action":"show_text","value":[{"storage":"rocketriders:gamerules","nbt":"list[]","interpret":true,"separator":{"text":"\n"}}]}},{"text":" (hover for info)","color":"dark_gray","italic":true}]
+execute unless entity @s[predicate=rr:server_mode/cubekrowd_voting,predicate=!game:match_components/duel_settings_locked] unless predicate rr:server_mode/cubekrowd_duels run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Game Rules","color":"yellow","hover_event":{"action":"show_text","value":[{"storage":"rocketriders:game_rules","nbt":"list[]","interpret":true,"separator":{"text":"\n"}}]}},{"text":" (hover for info)","color":"dark_gray","italic":true}]
 
 #And repeat settings
 execute if predicate game:repeat_settings/finite run function arenaclear:notifyrepeat

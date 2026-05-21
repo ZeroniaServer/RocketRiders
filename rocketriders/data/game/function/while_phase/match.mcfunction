@@ -84,8 +84,7 @@ scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMi
 execute unless predicate game:phase/match/pause if predicate game:regenerate_back_layer/any run function game:regenerate_back_layer/tick
 execute unless predicate game:phase/match/pause if predicate game:regenerate_floor/any run function game:regenerate_floor/tick
 
-## Missile Delayed TNT
-scoreboard players add @e[x=0,type=block_display,tag=missile_delayed_tnt] entity.age 1
-execute as @e[x=0,type=block_display,tag=missile_delayed_tnt,scores={entity.age=1..}] store result score @s entity.age run data get entity @s data.missile_delayed_tnt.delay -1
-execute unless predicate game:modifiers/unstable_tnt/on as @e[x=0,type=block_display,tag=missile_delayed_tnt,scores={entity.age=0}] at @s if function custom:entity/kill if block ~ ~ ~ #custom:air run setblock ~ ~ ~ minecraft:tnt strict
-execute if predicate game:modifiers/unstable_tnt/on as @e[x=0,type=block_display,tag=missile_delayed_tnt,scores={entity.age=0}] at @s if function custom:entity/kill if block ~ ~ ~ #custom:air run setblock ~ ~ ~ minecraft:tnt[unstable=true] strict
+## Missile Delayed Blocks
+scoreboard players add @e[x=0,type=block_display,tag=missile_delayed_block] entity.age 1
+execute as @e[x=0,type=block_display,tag=missile_delayed_block,scores={entity.age=1..}] store result score @s entity.age run data get entity @s data.missile_delayed_block.delay -1
+execute as @e[x=0,type=block_display,tag=missile_delayed_block,scores={entity.age=0}] at @s run function game:missile_delayed_block/place

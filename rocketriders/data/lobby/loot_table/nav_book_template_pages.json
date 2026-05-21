@@ -523,7 +523,7 @@
                     },
                     {
                       "bold": true,
-                      "text": "rocketriders:version",
+                      "storage": "rocketriders:version",
                       "nbt": "name",
                       "interpret": true
                     },

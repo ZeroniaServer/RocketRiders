@@ -28,6 +28,10 @@
             }
           ],
           "exit_action": {
+            "action": {
+              "type": "minecraft:show_dialog",
+              "dialog": "experimental:settings_menu/achievements"
+            },
             "label": {
               "translate": "gui.cancel"
             }
@@ -39,11 +43,11 @@
   ],
   "exit_action": {
     "action": {
-      "type": "minecraft:run_command",
-      "command": "trigger settings set -1"
+      "type": "minecraft:show_dialog",
+      "dialog": "experimental:settings_menu"
     },
     "label": {
-      "translate": "gui.done"
+      "translate": "gui.back"
     }
   }
 }

@@ -1,3 +1,4 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Cancelling molerat placement..."]}
 schedule clear arenaclear:molerat_place/1
 schedule clear arenaclear:molerat_place/2
 schedule clear arenaclear:molerat_place/3

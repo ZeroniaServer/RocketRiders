@@ -1,4 +1,5 @@
 scoreboard players set $chunk_clear_progress global 100
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Arena clear was cancelled!"]}
 schedule clear arenaclear:brute_force/air/0
 schedule clear arenaclear:brute_force/air/1
 schedule clear arenaclear:brute_force/air/2

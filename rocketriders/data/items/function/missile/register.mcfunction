@@ -156,3 +156,6 @@ execute store result storage rocketriders:main missiles.properties.transforms.we
 
 ## Write properties to storage
 $data modify storage rocketriders:missiles properties."$(id)" set from storage rocketriders:main missiles.properties
+
+## Store assets
+$data modify storage rocketriders:assets load_missile_assets append value "$(id)"

@@ -40,14 +40,14 @@ execute if score $give_item var matches 1 if score $final_batch_size var matches
 function custom:player/delay_actionbar
 
 ## Fail
-execute if score $give_item var matches 0 if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give_batch/givenova) Failed to give Vortex to ",{selector:"@s"}]}
+execute if score $give_item var matches 0 if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give_batch/vortex) Failed to give Vortex to ",{selector:"@s"}]}
 execute if score $give_item var matches 0 at @s run playsound minecraft:block.note_block.bass master @s ~ ~ ~ 1 1
 execute if score $give_item var matches 0 run return 0
 
 ## Success
 execute if score $final_batch_size var matches 1 run title @s actionbar {color:"aqua",text:"Vortex obtained"}
 execute if score $final_batch_size var matches 2.. run title @s actionbar {color:"aqua",text:"Vortex obtained"}
-execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give_batch/givenova) Gave Vortex x",{score:{name:"$final_batch_size",objective:"var"}}," to ",{selector:"@s"}]}
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["(items:give_batch/vortex) Gave Vortex x",{score:{name:"$final_batch_size",objective:"var"}}," to ",{selector:"@s"}]}
 execute store result storage rocketriders:main items.count int 1 run scoreboard players get $final_batch_size var
 function items:give_count/vortex with storage rocketriders:main items
 return run scoreboard players get $final_batch_size var

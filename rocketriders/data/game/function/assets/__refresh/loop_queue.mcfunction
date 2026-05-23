@@ -5,6 +5,7 @@ execute unless data storage rocketriders:assets remaining_assets[0] run scoreboa
 execute if score $assets_refresh_progress global matches 100 run fill -161 184 -161 -161 185 -161 air strict
 execute if score $assets_refresh_progress global matches 100 run fill -113 184 -161 -113 185 -161 air strict
 execute if score $assets_refresh_progress global matches 100 run data remove storage rocketriders:assets remaining_assets
+execute if score $assets_refresh_progress global matches 100 if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[assets] Finished generating assets!"]}
 execute if score $assets_refresh_progress global matches 100 run return run scoreboard players reset $assets_refresh_max global
 
 execute store result score $assets_refresh_progress global if data storage rocketriders:assets remaining_assets[]

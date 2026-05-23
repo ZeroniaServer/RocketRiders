@@ -1,3 +1,4 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[assets] Started generating assets..."]}
 data modify storage rocketriders:assets palette set value {}
 
 data modify storage rocketriders:assets palette.blue_front set from storage rocketriders:teams blue.block_palette.front
@@ -37,6 +38,7 @@ execute unless predicate game:arena_details/top/castle run data remove storage r
 execute unless predicate game:arena_details/top/spikes run data remove storage rocketriders:assets remaining_assets[{asset_type:"base_detail",name:"spikes_top"}]
 execute unless predicate game:arena_details/top/towers run data remove storage rocketriders:assets remaining_assets[{asset_type:"base_detail",name:"tower"}]
 execute unless predicate game:match_components/winner_pegasus run data remove storage rocketriders:assets remaining_assets[{asset_type:"pegasus"}]
+execute as @e[limit=1,x=0,type=armor_stand,tag=Selection] if entity @s[tag=!chaseEnabled,predicate=!game:match_components/has_flags] run data remove storage rocketriders:assets remaining_assets[{asset_type:"flag"}]
 
 execute store result score $assets_refresh_max global if data storage rocketriders:assets remaining_assets[]
 scoreboard players set $assets_refresh_progress global 0

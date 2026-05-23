@@ -1,3 +1,4 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[assets] Loading assets..."]}
 data modify storage rocketriders:assets assets set value []
 
 # Make sure that each length is minimum 1 and maximum 48
@@ -52,10 +53,13 @@ data remove storage rocketriders:assets load_missile_assets
 data modify storage rocketriders:assets assets append value {asset_type:"pegasus"}
 execute positioned -160 184 -160 run function game:assets/__load/load with storage rocketriders:assets assets[-1]
 
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[assets] Loaded assets!"]}
+
 # update palettes (do so instantly if /reload is ran in the middle of a match)
 function game:assets/refresh
-execute if predicate game:phase/match run schedule clear game:assets/__refresh/loop_queue
-execute if predicate game:phase/match run function game:assets/__refresh/loop_load
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[assets] Instantly generating assets upon data pack load."]}
+schedule clear game:assets/__refresh/loop_queue
+function game:assets/__refresh/loop_load
 kill @e[x=-161,y=183,z=-161,dx=49,dy=49,dz=49,type=!player]
 
 # do not repeat assets that only need to be loaded once when the world starts

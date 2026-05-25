@@ -30,3 +30,7 @@ execute unless predicate game:phase/match unless score $chunk_clear_progress glo
 
 ## Return main item if it was accidentally removed
 execute if predicate game:phase/match as @e[x=0,type=player,predicate=custom:team/any_playing_team,predicate=!custom:player/has_main_item_in_inventory] run loot give @s loot items:main_item
+
+## In case a player leaves the facade while in the queue or paused match waiting area, teleport them back to the facade
+execute if predicate game:phase/staging as @a[x=0,predicate=custom:team/any_arena_team,predicate=!custom:location/in_facade] run function custom:player/teleport_to_start
+execute if predicate game:phase/match/pause as @a[x=0,predicate=custom:team/any_arena_team,predicate=!custom:location/in_facade] run function custom:player/teleport_to_start

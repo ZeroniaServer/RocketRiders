@@ -8,6 +8,7 @@ function rr_swap:tip
 
 #game
 function rr_swap:game/gamestart
+execute if predicate game:phase/staging run function rr_swap:game/while_phase/staging
 execute if predicate game:phase/match run function rr_swap:game/while_phase/match
 execute if predicate game:phase/match/play run function rr_swap:game/while_phase/match/play
 execute if predicate game:phase/match/closing run function rr_swap:game/while_phase/match/closing

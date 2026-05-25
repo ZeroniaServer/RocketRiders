@@ -2,10 +2,8 @@
 function game:match_components/resolve
 
 ## Choose swap side
-scoreboard players set $choose_swap_side var -1
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] store success score $choose_swap_side var unless score $swap_side match_data matches 0..1
-execute if score $choose_swap_side var matches 1 store result score $swap_side match_data run random value 0..1
-execute if score $choose_swap_side var matches 1 run function rr_swap:baseswap/set_palettes
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] store result score $chosen_swap_side match_data store result score $swap_side match_data run random value 0..1
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] run function rr_swap:baseswap/set_palettes
 
 ## Update team attributes
 function game:team_attributes/update_all
@@ -20,6 +18,8 @@ dialog clear @a[x=0]
 function #rr:game/upon_confirmed_settings
 
 ## Place facade
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] store result score $swap_side match_data run random value 0..1
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=swapEnabled] run function rr_swap:baseswap/set_palettes
 function game:place_facade
 
 ## Schedule Molerat (asynchronous)

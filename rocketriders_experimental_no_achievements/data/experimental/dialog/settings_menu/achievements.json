@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:notice",
+  "title": "Achievements",
+  "pause": false,
+  "body": {
+    "type": "minecraft:plain_message",
+    "contents": {
+      "color": "red",
+      "text": "Achievements are not enabled in this server mode."
+    },
+    "width": 400
+  },
+  "exit_action": {
+    "action": {
+      "type": "minecraft:show_dialog",
+      "dialog": "experimental:settings_menu"
+    },
+    "label": {
+      "translate": "gui.back"
+    }
+  }
+}

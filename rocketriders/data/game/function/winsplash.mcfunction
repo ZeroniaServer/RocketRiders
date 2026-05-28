@@ -8,7 +8,6 @@ execute as @a[x=0,tag=Winner] run title @s times 5 30 5
 execute store result score $winsplash CmdData run random value 0..81
 
 #Add splashes here (just copy paste the line and change the score)
-execute if score $winsplash CmdData matches 0..3 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Take some time to celebrate!"}
 execute if score $winsplash CmdData matches 4 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"GG!"}
 execute if score $winsplash CmdData matches 5 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Victory is ours!"}
 execute if score $winsplash CmdData matches 6 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Didn't even have to aim!"}
@@ -94,3 +93,5 @@ execute if score $winsplash CmdData matches 78 run title @a[x=0,tag=Winner] subt
 execute if score $winsplash CmdData matches 79 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"One for the history books!"}
 execute if score $winsplash CmdData matches 80 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"The power of SethBling compells you!"}
 execute if score $winsplash CmdData matches 81 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"The true meaning of Tiny Takeover"}
+
+execute if score $winsplash CmdData matches 0..3 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Take some time to celebrate!"}

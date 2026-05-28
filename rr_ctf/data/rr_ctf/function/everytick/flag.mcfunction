@@ -52,10 +52,16 @@ execute if predicate game:phase/match/play if entity @e[limit=1,x=0,type=player,
 execute if predicate game:phase/match/play if predicate rr_ctf:yellow_right_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass if entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/blue] run scoreboard players set $flag_state.yellow_right match_data 29
 execute if predicate game:phase/match/play if predicate rr_ctf:yellow_right_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass unless entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/blue] run setblock ~ ~ ~ purple_stained_glass
 execute unless predicate game:phase/match/play if predicate rr_ctf:yellow_right_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
-execute unless predicate rr_ctf:yellow_right_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run setblock ~ ~1 ~ white_stained_glass
+execute unless predicate rr_ctf:yellow_right_flag/raised unless predicate rr_ctf:yellow_right_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run setblock ~ ~1 ~ white_stained_glass
+execute if predicate rr_ctf:yellow_right_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run setblock ~ ~1 ~ light_gray_stained_glass
 
 execute if predicate rr_ctf:yellow_right_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run playsound entity.chicken.egg master @a[x=0] ~ ~1 ~ 1 0.8
 execute if predicate rr_ctf:yellow_right_flag/lowering run scoreboard players remove $flag_state.yellow_right match_data 1
+
+execute unless score $yellow_right_flag_unbreakable match_data matches 1 if predicate rr_ctf:yellow_right_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run summon interaction ~ ~1 ~ {Tags:["ctf_flag_mask","ctf_flag_mask.yellow","ctf_flag_mask.right"],width:1.02,height:1.01}
+execute unless score $yellow_right_flag_unbreakable match_data matches 1 if predicate rr_ctf:yellow_right_flag/lowering run scoreboard players set $yellow_right_flag_unbreakable match_data 1
+execute if score $yellow_right_flag_unbreakable match_data matches 1 unless predicate rr_ctf:yellow_right_flag/lowering run kill @e[limit=1,x=0,type=interaction,tag=ctf_flag_mask.yellow,tag=ctf_flag_mask.right]
+execute if score $yellow_right_flag_unbreakable match_data matches 1 unless predicate rr_ctf:yellow_right_flag/lowering run scoreboard players reset $yellow_right_flag_unbreakable match_data
 
 execute if score $flag_state.yellow_right match_data matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_1/yellow ~-4 ~6 ~-1
 execute if score $flag_state.yellow_right match_data matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.right] run place template game:asset/flag/stage_1/yellow ~-4 ~5 ~-1
@@ -78,10 +84,16 @@ execute if predicate game:phase/match/play if entity @e[limit=1,x=0,type=player,
 execute if predicate game:phase/match/play if predicate rr_ctf:yellow_left_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass if entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/blue] run scoreboard players set $flag_state.yellow_left match_data 29
 execute if predicate game:phase/match/play if predicate rr_ctf:yellow_left_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass unless entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/blue] run setblock ~ ~ ~ purple_stained_glass
 execute unless predicate game:phase/match/play if predicate rr_ctf:yellow_left_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
-execute unless predicate rr_ctf:yellow_left_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run setblock ~ ~1 ~ white_stained_glass
+execute unless predicate rr_ctf:yellow_left_flag/raised unless predicate rr_ctf:yellow_left_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run setblock ~ ~1 ~ white_stained_glass
+execute if predicate rr_ctf:yellow_left_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run setblock ~ ~1 ~ light_gray_stained_glass
 
 execute if predicate rr_ctf:yellow_left_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run playsound entity.chicken.egg master @a[x=0] ~ ~1 ~ 1 0.8
 execute if predicate rr_ctf:yellow_left_flag/lowering run scoreboard players remove $flag_state.yellow_left match_data 1
+
+execute unless score $yellow_left_flag_unbreakable match_data matches 1 if predicate rr_ctf:yellow_left_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run summon interaction ~ ~1 ~ {Tags:["ctf_flag_mask","ctf_flag_mask.yellow","ctf_flag_mask.left"],width:1.02,height:1.01}
+execute unless score $yellow_left_flag_unbreakable match_data matches 1 if predicate rr_ctf:yellow_left_flag/lowering run scoreboard players set $yellow_left_flag_unbreakable match_data 1
+execute if score $yellow_left_flag_unbreakable match_data matches 1 unless predicate rr_ctf:yellow_left_flag/lowering run kill @e[limit=1,x=0,type=interaction,tag=ctf_flag_mask.yellow,tag=ctf_flag_mask.left]
+execute if score $yellow_left_flag_unbreakable match_data matches 1 unless predicate rr_ctf:yellow_left_flag/lowering run scoreboard players reset $yellow_left_flag_unbreakable match_data
 
 execute if score $flag_state.yellow_left match_data matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_1/yellow ~-4 ~6 ~-1
 execute if score $flag_state.yellow_left match_data matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.yellow,tag=ctf_flag.left] run place template game:asset/flag/stage_1/yellow ~-4 ~5 ~-1
@@ -104,10 +116,16 @@ execute if predicate game:phase/match/play if entity @e[limit=1,x=0,type=player,
 execute if predicate game:phase/match/play if predicate rr_ctf:blue_right_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass if entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/yellow] run scoreboard players set $flag_state.blue_right match_data 29
 execute if predicate game:phase/match/play if predicate rr_ctf:blue_right_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass unless entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/yellow] run setblock ~ ~ ~ purple_stained_glass
 execute unless predicate game:phase/match/play if predicate rr_ctf:blue_right_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
-execute unless predicate rr_ctf:blue_right_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run setblock ~ ~1 ~ white_stained_glass
+execute unless predicate rr_ctf:blue_right_flag/raised unless predicate rr_ctf:blue_right_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run setblock ~ ~1 ~ white_stained_glass
+execute if predicate rr_ctf:blue_right_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run setblock ~ ~1 ~ light_gray_stained_glass
 
 execute if predicate rr_ctf:blue_right_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] positioned ~ ~1 ~ run playsound entity.chicken.egg master @a[x=0] ~ ~1 ~ 1 0.8
 execute if predicate rr_ctf:blue_right_flag/lowering run scoreboard players remove $flag_state.blue_right match_data 1
+
+execute unless score $blue_right_flag_unbreakable match_data matches 1 if predicate rr_ctf:blue_right_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run summon interaction ~ ~1 ~ {Tags:["ctf_flag_mask","ctf_flag_mask.blue","ctf_flag_mask.right"],width:1.02,height:1.01}
+execute unless score $blue_right_flag_unbreakable match_data matches 1 if predicate rr_ctf:blue_right_flag/lowering run scoreboard players set $blue_right_flag_unbreakable match_data 1
+execute if score $blue_right_flag_unbreakable match_data matches 1 unless predicate rr_ctf:blue_right_flag/lowering run kill @e[limit=1,x=0,type=interaction,tag=ctf_flag_mask.blue,tag=ctf_flag_mask.right]
+execute if score $blue_right_flag_unbreakable match_data matches 1 unless predicate rr_ctf:blue_right_flag/lowering run scoreboard players reset $blue_right_flag_unbreakable match_data
 
 execute if score $flag_state.blue_right match_data matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_1/blue ~-4 ~6 ~-1
 execute if score $flag_state.blue_right match_data matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.right] run place template game:asset/flag/stage_1/blue ~-4 ~5 ~-1
@@ -130,10 +148,16 @@ execute if predicate game:phase/match/play if entity @e[limit=1,x=0,type=player,
 execute if predicate game:phase/match/play if predicate rr_ctf:blue_left_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass if entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/yellow] run scoreboard players set $flag_state.blue_left match_data 29
 execute if predicate game:phase/match/play if predicate rr_ctf:blue_left_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass unless entity @e[distance=..12,type=player,scores={MinePurpleGlass=1..},predicate=custom:team/yellow] run setblock ~ ~ ~ purple_stained_glass
 execute unless predicate game:phase/match/play if predicate rr_ctf:blue_left_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] positioned ~ ~1 ~ unless block ~ ~ ~ purple_stained_glass run setblock ~ ~ ~ purple_stained_glass
-execute unless predicate rr_ctf:blue_left_flag/raised positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run setblock ~ ~1 ~ white_stained_glass
+execute unless predicate rr_ctf:blue_left_flag/raised unless predicate rr_ctf:blue_left_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run setblock ~ ~1 ~ white_stained_glass
+execute if predicate rr_ctf:blue_left_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run setblock ~ ~1 ~ light_gray_stained_glass
 
 execute if predicate rr_ctf:blue_left_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] positioned ~ ~1 ~ run playsound entity.chicken.egg master @a[x=0] ~ ~1 ~ 1 0.8
 execute if predicate rr_ctf:blue_left_flag/lowering run scoreboard players remove $flag_state.blue_left match_data 1
+
+execute unless score $blue_left_flag_unbreakable match_data matches 1 if predicate rr_ctf:blue_left_flag/lowering positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run summon interaction ~ ~1 ~ {Tags:["ctf_flag_mask","ctf_flag_mask.blue","ctf_flag_mask.left"],width:1.02,height:1.01}
+execute unless score $blue_left_flag_unbreakable match_data matches 1 if predicate rr_ctf:blue_left_flag/lowering run scoreboard players set $blue_left_flag_unbreakable match_data 1
+execute if score $blue_left_flag_unbreakable match_data matches 1 unless predicate rr_ctf:blue_left_flag/lowering run kill @e[limit=1,x=0,type=interaction,tag=ctf_flag_mask.blue,tag=ctf_flag_mask.left]
+execute if score $blue_left_flag_unbreakable match_data matches 1 unless predicate rr_ctf:blue_left_flag/lowering run scoreboard players reset $blue_left_flag_unbreakable match_data
 
 execute if score $flag_state.blue_left match_data matches 23..26 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_1/blue ~-4 ~6 ~-1
 execute if score $flag_state.blue_left match_data matches 19..22 positioned as @e[limit=1,x=0,type=marker,tag=ctf_flag.blue,tag=ctf_flag.left] run place template game:asset/flag/stage_1/blue ~-4 ~5 ~-1

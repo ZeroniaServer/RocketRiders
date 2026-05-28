@@ -54,28 +54,7 @@ execute if predicate game:modifiers/hobbits/on as @a[x=0,predicate=!custom:team/
 execute unless predicate game:modifiers/hobbits/on as @a[x=0,tag=hobbit] run function modifiers:hobbit/reset
 
 ##Rotting
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/batch
 
 ## Yes Fall
 execute if predicate game:modifiers/yes_fall/on as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:fall_damage_multiplier modifier add rocketriders:yes_fall 1 add_multiplied_base

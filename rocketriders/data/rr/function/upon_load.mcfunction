@@ -232,7 +232,6 @@ scoreboard objectives add obmove dummy
 scoreboard objectives add obshieldtime dummy
 scoreboard objectives add obshieldTick dummy
 scoreboard objectives add regenTimer dummy
-scoreboard objectives add splashtick dummy
 scoreboard objectives add MissilesSpawned dummy
 scoreboard objectives add creditsSet dummy
 scoreboard objectives add HasAux dummy

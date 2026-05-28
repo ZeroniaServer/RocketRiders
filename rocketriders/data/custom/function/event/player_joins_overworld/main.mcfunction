@@ -22,6 +22,9 @@ scoreboard players set @s time_since_joined_overworld 0
 tag @a[x=0] add is_dead
 tag @e[x=0,type=player] remove is_dead
 
+# Update "playerUUID" score (TODO: remove all uses of this)
+execute store result score @s playerUUID run data get entity @s UUID[0]
+
 # Reset scoreboards for in-game statistics/advancements
 function everytick:score_reset
 

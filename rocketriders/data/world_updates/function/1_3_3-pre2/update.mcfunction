@@ -4,3 +4,5 @@ scoreboard objectives remove was_on_arena_team
 
 data remove storage rocketriders:gamerules list
 data remove storage rocketriders:items id_to_loot_table_map
+
+scoreboard objectives remove splashtick

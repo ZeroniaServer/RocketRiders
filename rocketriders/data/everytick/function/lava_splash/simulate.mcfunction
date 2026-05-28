@@ -3,8 +3,6 @@ execute as @e[x=0,type=#custom:potion,tag=!lava_splash,nbt={Item:{components:{"m
 execute as @e[x=0,type=#custom:potion,tag=lava_splash] at @s if predicate custom:periodic_tick/3 run particle lava ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 scoreboard players add @a[x=0,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash
-execute store success score $lava_splash splashtick if score $lava_splash splashtick matches 0
-execute store result entity @s Air short 1 run scoreboard players get $lava_splash splashtick
 
 ##Placing water upon impact
 execute as @e[x=0,type=area_effect_cloud,predicate=custom:area_effect_cloud_type/awkward,tag=!lava_splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["lava_splash","lava_splash_alone"],custom_particle:{type:"block",block_state:"minecraft:air"}}

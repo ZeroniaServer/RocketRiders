@@ -11,6 +11,7 @@ execute if score $display_cooldown var matches 30 run scoreboard players reset $
 execute unless score $display_cooldown var matches 1.. run scoreboard players reset $previous_page var
 
 #Set page back to 1 if someone tries to use the arrow to cycle through pages
+execute unless entity @a[limit=1,x=12,y=203,z=78,distance=..15] run return 0
 execute if score $display_cooldown var matches 1.. run data modify block 12 203 78 Page set value 26
 execute store result score $page var run data get block 12 203 78 Page
 execute unless score $display_cooldown var matches 1.. unless score $page var matches 0..4 unless score $page var matches 25..26 run scoreboard players set $display_cooldown var 1

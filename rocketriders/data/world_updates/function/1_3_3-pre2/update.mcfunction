@@ -7,3 +7,5 @@ scoreboard objectives remove last_arena_team
 data remove storage rocketriders:gamerules list
 data remove storage rocketriders:items id_to_loot_table_map
 data remove storage rocketriders:explosions creeper_to_player_map
+
+scoreboard objectives remove splashtick

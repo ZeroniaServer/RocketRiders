@@ -1,3 +1,3 @@
 ##Clear Yellow/Blue spawn blocks (for valid spawnpoints)
-execute if score $play_time match_data matches 3.. run fill 11 64 -66 13 66 -65 light[level=0]
-execute if score $play_time match_data matches 3.. unless predicate game:match_components/one_team run fill 13 64 66 11 66 65 light[level=0]
+execute if score $play_time match_data matches 3.. run fill 11 64 -66 13 66 -65 light[level=0] strict
+execute if score $play_time match_data matches 3.. unless predicate game:match_components/one_team run fill 13 64 66 11 66 65 light[level=0] strict

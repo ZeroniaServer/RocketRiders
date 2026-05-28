@@ -4,7 +4,7 @@
 #######################################################
 
 #Player UUID storage
-execute as @a[x=0] store result score @s playerUUID run data get entity @s UUID[0]
+execute as @a[x=0] unless score @s playerUUID = @s playerUUID store result score @s playerUUID run data get entity @s UUID[0]
 
 #Missile Display Area
 function lobby:missiledisplay/placedisp

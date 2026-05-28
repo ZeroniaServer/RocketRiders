@@ -4,7 +4,7 @@
 ##############################################
 
 #All achievements
-tag @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:player/is_pressing_any_movement_key] add firstMoved
+tag @a[x=0,tag=!firstMoved,predicate=custom:team/any_playing_team,predicate=custom:player/is_pressing_any_movement_key] add firstMoved
 
 execute if predicate game:achievements_can_be_awarded as @a[x=0,predicate=custom:team/any_playing_team] run function achievements:rainingmen
 execute if predicate game:achievements_can_be_awarded as @a[x=0,predicate=custom:team/any_playing_team] run function achievements:uphere

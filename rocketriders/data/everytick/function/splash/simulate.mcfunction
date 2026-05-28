@@ -8,8 +8,6 @@ execute as @e[x=0,type=#custom:potion,tag=!splash,nbt={Item:{components:{"minecr
 execute as @e[x=0,type=#custom:potion,tag=splash] at @s if predicate custom:periodic_tick/3 run particle splash ~ ~ ~ 0 0 0 0.1 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 scoreboard players add @a[x=0,scores={ThrowSplash=1..}] ThrowSplash 1
 scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash
-execute store success score $splash splashtick if score $splash splashtick matches 0
-execute store result entity @s Air short 1 run scoreboard players get $splash splashtick
 
 ##Placing water upon impact
 execute as @e[x=0,type=area_effect_cloud,predicate=custom:area_effect_cloud_type/water,tag=!splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["splash","splash_alone"],custom_particle:{type:"block",block_state:"minecraft:air"}}

@@ -5,11 +5,11 @@
       "condition": "minecraft:value_check",
       "value": {
         "type": "minecraft:score",
+        "score": "match_data",
         "target": {
           "type": "minecraft:fixed",
           "name": "$flag_state.blue_left"
-        },
-        "score": "match_data"
+        }
       },
       "range": 30
     },
@@ -17,11 +17,11 @@
       "condition": "minecraft:value_check",
       "value": {
         "type": "minecraft:score",
+        "score": "match_data",
         "target": {
           "type": "minecraft:fixed",
           "name": "$flag_state.blue_left"
-        },
-        "score": "match_data"
+        }
       },
       "range": 0
     },
@@ -32,11 +32,11 @@
           "condition": "minecraft:value_check",
           "value": {
             "type": "minecraft:score",
+            "score": "match_data",
             "target": {
               "type": "minecraft:fixed",
               "name": "$flag_state.blue_left"
-            },
-            "score": "match_data"
+            }
           },
           "range": {
             "min": 1,

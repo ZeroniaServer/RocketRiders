@@ -1,7 +1,6 @@
 {
   "type": "minecraft:notice",
   "title": "Achievements",
-  "pause": false,
   "body": {
     "type": "minecraft:plain_message",
     "contents": {
@@ -10,6 +9,7 @@
     },
     "width": 400
   },
+  "pause": false,
   "exit_action": {
     "action": {
       "type": "minecraft:show_dialog",

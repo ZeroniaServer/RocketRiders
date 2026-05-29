@@ -2,11 +2,11 @@
   "condition": "minecraft:value_check",
   "value": {
     "type": "minecraft:score",
+    "score": "match_data",
     "target": {
       "type": "minecraft:fixed",
       "name": "$yellow_won_first"
-    },
-    "score": "match_data"
+    }
   },
   "range": 1
 }

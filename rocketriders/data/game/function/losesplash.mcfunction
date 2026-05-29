@@ -8,7 +8,6 @@ execute as @a[x=0,tag=Loser] run title @s times 5 30 5
 execute store result score $losssplash CmdData run random value 0..122
 
 #Add splashes here (just copy paste the line and change the score)
-execute if score $losssplash CmdData matches 0..3 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Better luck next time..."}
 execute if score $losssplash CmdData matches 4 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"At least we have a cool flag now?"}
 execute if score $losssplash CmdData matches 5 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Exceeded missile deployment limit."}
 execute if score $losssplash CmdData matches 6 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Huh, I swear I saw portals there before."}
@@ -128,3 +127,5 @@ execute if score $losssplash CmdData matches 119 run title @a[x=0,tag=Loser] sub
 execute if score $losssplash CmdData matches 120 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"No victory popcorn for you."}
 execute if score $losssplash CmdData matches 121 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"L"}
 execute if score $losssplash CmdData matches 122 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"ratio"}
+
+execute if score $losssplash CmdData matches 0..3 run title @a[x=0,tag=Loser] subtitle {color:"red",text:"Better luck next time..."}

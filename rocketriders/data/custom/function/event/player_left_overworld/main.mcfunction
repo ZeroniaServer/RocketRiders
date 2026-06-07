@@ -20,6 +20,9 @@ $scoreboard players operation $last_arena_team var = $(name) last_arena_team
 # Do nothing if the player is not on any arena team
 execute unless score $last_arena_team var matches 1..3 run return 0
 
+# Do nothing if the match is in the outcome phase
+execute if predicate game:phase/match/closing/outcome run return 0
+
 
 # spectator message
 execute if score $last_arena_team var matches 3 run return run tellraw @a[x=0] [{score:{name:"#spectator",objective:"text.accent_color"}},[{score:{name:"#spectator",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," is no longer spectating the match!"]

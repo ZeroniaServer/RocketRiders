@@ -93,11 +93,24 @@
                   "color": "white",
                   "text": ""
                 },
-                {
-                  "bold": true,
-                  "color": "aqua",
-                  "text": "[Classic] "
-                },
+                [
+                  {
+                    "color": "aqua",
+                    "text": ""
+                  },
+                  [
+                    {
+                      "score": {
+                        "name": "@s",
+                        "objective": "text.classic_missile_item_prefix_color"
+                      }
+                    },
+                    {
+                      "bold": true,
+                      "text": "[Classic] "
+                    }
+                  ]
+                ],
                 [
                   {
                     "score": {

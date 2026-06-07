@@ -315,6 +315,13 @@ function game:team_attributes/update_all
 # Instantly load assets
 function game:assets/load
 
+# Update version full name
+data modify storage rocketriders:version server_mode_suffix set value ""
+execute if predicate rr:server_mode/cubekrowd_voting run data modify storage rocketriders:version server_mode_suffix set value " (CubeKrowd Voting Mode)"
+execute if predicate rr:server_mode/cubekrowd_duels run data modify storage rocketriders:version server_mode_suffix set value " (CubeKrowd Duels Mode)"
+execute if predicate rr:server_mode/cubekrowd_custom run data modify storage rocketriders:version server_mode_suffix set value " (CubeKrowd Custom Mode)"
+execute if predicate rr:server_mode/realms run data modify storage rocketriders:version server_mode_suffix set value " (Realms Mode)"
+
 # Update nav book
 function lobby:update_nav_book
 

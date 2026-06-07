@@ -7,6 +7,10 @@ scoreboard players reset @s text.main_color
 scoreboard players reset @s text.accent_color
 scoreboard players reset @s text.flag
 scoreboard players reset @s text.normal_missile_item_prefix_color
+scoreboard players reset @s text.heavy_missile_item_prefix_color
+scoreboard players reset @s text.lightning_missile_item_prefix_color
+scoreboard players reset @s text.special_missile_item_prefix_color
+scoreboard players reset @s text.classic_missile_item_prefix_color
 
 execute unless predicate custom:team/any_arena_team run return 0
 
@@ -34,6 +38,22 @@ execute if predicate custom:team/spectator run scoreboard players display number
 execute if predicate custom:team/blue run scoreboard players display numberformat @s text.normal_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.normal_missile_item_prefix_color",interpret:true}
 execute if predicate custom:team/yellow run scoreboard players display numberformat @s text.normal_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.normal_missile_item_prefix_color",interpret:true}
 execute if predicate custom:team/spectator run scoreboard players display numberformat @s text.normal_missile_item_prefix_color fixed {color:"gray",text:""}
+
+execute if predicate custom:team/blue run scoreboard players display numberformat @s text.heavy_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.heavy_missile_item_prefix_color",interpret:true}
+execute if predicate custom:team/yellow run scoreboard players display numberformat @s text.heavy_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.heavy_missile_item_prefix_color",interpret:true}
+execute if predicate custom:team/spectator run scoreboard players display numberformat @s text.heavy_missile_item_prefix_color fixed {color:"gray",text:""}
+
+execute if predicate custom:team/blue run scoreboard players display numberformat @s text.lightning_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.lightning_missile_item_prefix_color",interpret:true}
+execute if predicate custom:team/yellow run scoreboard players display numberformat @s text.lightning_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.lightning_missile_item_prefix_color",interpret:true}
+execute if predicate custom:team/spectator run scoreboard players display numberformat @s text.lightning_missile_item_prefix_color fixed {color:"gray",text:""}
+
+execute if predicate custom:team/blue run scoreboard players display numberformat @s text.special_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.special_missile_item_prefix_color",interpret:true}
+execute if predicate custom:team/yellow run scoreboard players display numberformat @s text.special_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.special_missile_item_prefix_color",interpret:true}
+execute if predicate custom:team/spectator run scoreboard players display numberformat @s text.special_missile_item_prefix_color fixed {color:"gray",text:""}
+
+execute if predicate custom:team/blue run scoreboard players display numberformat @s text.classic_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.classic_missile_item_prefix_color",interpret:true}
+execute if predicate custom:team/yellow run scoreboard players display numberformat @s text.classic_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.classic_missile_item_prefix_color",interpret:true}
+execute if predicate custom:team/spectator run scoreboard players display numberformat @s text.classic_missile_item_prefix_color fixed {color:"gray",text:""}
 
 #Custom team colors
 execute if predicate game:match_components/custom_team_colors run return run function custom:player/update_text/__custom/auto

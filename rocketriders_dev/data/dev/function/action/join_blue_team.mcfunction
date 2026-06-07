@@ -2,8 +2,8 @@ execute if predicate custom:team/blue run return run tellraw @s [{color:"red",te
 execute if predicate game:phase/staging/configuration run return run tellraw @s {color:"red",text:"You cannot join a team before game settings are confirmed / voting is complete."}
 
 
-execute if predicate custom:team/yellow run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
-execute if predicate custom:team/spectator run tellraw @a[x=0] ["",{selector:"@s"},{color:"gray",text:" is no longer spectating the match!"}]
+execute if predicate custom:team/yellow unless predicate game:phase/match/closing/outcome run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
+execute if predicate custom:team/spectator unless predicate game:phase/match/closing/outcome run tellraw @a[x=0] ["",{selector:"@s"},{color:"gray",text:" is no longer spectating the match!"}]
 
 execute if predicate game:phase/staging run function custom:player/team/join_lobby
 execute if predicate game:phase/staging run function everytick:team_count

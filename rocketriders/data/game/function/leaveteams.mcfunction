@@ -3,12 +3,12 @@ tag @a[x=0,tag=LeaveTeams] remove force_mount
 execute if entity @a[x=0,tag=LeaveTeams] as @e[x=0,type=firework_rocket] if function custom:kill_elytra_firework run kill
 execute as @a[x=0,tag=LeaveTeams] run ride @s dismount
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/yellow] add LeavingYellow
-execute as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
+execute unless predicate game:phase/match/closing/outcome as @a[x=0,tag=LeavingYellow] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/blue] add LeavingBlue
-execute unless predicate game:match_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
-execute if predicate game:match_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the match!"]
+execute unless predicate game:phase/match/closing/outcome unless predicate game:match_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
+execute unless predicate game:phase/match/closing/outcome if predicate game:match_components/one_team as @a[x=0,tag=LeavingBlue] run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the match!"]
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/spectator] add LeavingSpec
-execute as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is no longer spectating the match!","color":"gray"}]
+execute unless predicate game:phase/match/closing/outcome as @a[x=0,tag=LeavingSpec] run tellraw @a[x=0] ["",{"selector":"@s"},{"text":" is no longer spectating the match!","color":"gray"}]
 execute as @a[x=0,tag=LeaveTeams] run tp @s @s
 tag @a[x=0,tag=LeaveTeams,predicate=custom:team/lobby] add WasInLobby
 tag @a[x=0,tag=LeaveTeams] remove doing_facade_parkour

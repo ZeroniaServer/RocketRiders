@@ -104,10 +104,24 @@
                   "italic": false,
                   "text": ""
                 },
-                {
-                  "color": "dark_purple",
-                  "text": "[Special] "
-                },
+                [
+                  {
+                    "color": "dark_purple",
+                    "text": ""
+                  },
+                  [
+                    {
+                      "score": {
+                        "name": "@s",
+                        "objective": "text.special_missile_item_prefix_color"
+                      }
+                    },
+                    {
+                      "bold": true,
+                      "text": "[Special] "
+                    }
+                  ]
+                ],
                 [
                   {
                     "score": {

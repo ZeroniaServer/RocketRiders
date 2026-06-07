@@ -103,11 +103,24 @@
                   "italic": false,
                   "text": ""
                 },
-                {
-                  "bold": true,
-                  "color": "yellow",
-                  "text": "[Lightning] "
-                },
+                [
+                  {
+                    "color": "yellow",
+                    "text": ""
+                  },
+                  [
+                    {
+                      "score": {
+                        "name": "@s",
+                        "objective": "text.lightning_missile_item_prefix_color"
+                      }
+                    },
+                    {
+                      "bold": true,
+                      "text": "[Lightning] "
+                    }
+                  ]
+                ],
                 [
                   {
                     "score": {

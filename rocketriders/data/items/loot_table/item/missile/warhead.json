@@ -103,11 +103,24 @@
                   "italic": false,
                   "text": ""
                 },
-                {
-                  "bold": true,
-                  "color": "dark_red",
-                  "text": "[Heavy] "
-                },
+                [
+                  {
+                    "color": "dark_red",
+                    "text": ""
+                  },
+                  [
+                    {
+                      "score": {
+                        "name": "@s",
+                        "objective": "text.heavy_missile_item_prefix_color"
+                      }
+                    },
+                    {
+                      "bold": true,
+                      "text": "[Heavy] "
+                    }
+                  ]
+                ],
                 [
                   {
                     "score": {

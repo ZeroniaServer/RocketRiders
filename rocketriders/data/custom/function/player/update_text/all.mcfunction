@@ -9,6 +9,10 @@ scoreboard players reset @a[x=0] text.main_color
 scoreboard players reset @a[x=0] text.accent_color
 scoreboard players reset @a[x=0] text.flag
 scoreboard players reset @a[x=0] text.normal_missile_item_prefix_color
+scoreboard players reset @a[x=0] text.heavy_missile_item_prefix_color
+scoreboard players reset @a[x=0] text.lightning_missile_item_prefix_color
+scoreboard players reset @a[x=0] text.special_missile_item_prefix_color
+scoreboard players reset @a[x=0] text.classic_missile_item_prefix_color
 
 #Normal team colors
 scoreboard players display numberformat @a[x=0,predicate=custom:team/blue] text.team_name fixed {storage:"rocketriders:teams",nbt:"blue.text.team_name",interpret:true}
@@ -34,6 +38,22 @@ scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] 
 scoreboard players display numberformat @a[x=0,predicate=custom:team/blue] text.normal_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.normal_missile_item_prefix_color",interpret:true}
 scoreboard players display numberformat @a[x=0,predicate=custom:team/yellow] text.normal_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.normal_missile_item_prefix_color",interpret:true}
 scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] text.normal_missile_item_prefix_color fixed {color:"gray",text:""}
+
+scoreboard players display numberformat @a[x=0,predicate=custom:team/blue] text.lightning_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.lightning_missile_item_prefix_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/yellow] text.lightning_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.lightning_missile_item_prefix_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] text.lightning_missile_item_prefix_color fixed {color:"gray",text:""}
+
+scoreboard players display numberformat @a[x=0,predicate=custom:team/blue] text.lightning_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.lightning_missile_item_prefix_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/yellow] text.lightning_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.lightning_missile_item_prefix_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] text.lightning_missile_item_prefix_color fixed {color:"gray",text:""}
+
+scoreboard players display numberformat @a[x=0,predicate=custom:team/blue] text.special_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.special_missile_item_prefix_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/yellow] text.special_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.special_missile_item_prefix_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] text.special_missile_item_prefix_color fixed {color:"gray",text:""}
+
+scoreboard players display numberformat @a[x=0,predicate=custom:team/blue] text.classic_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"blue.text.classic_missile_item_prefix_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/yellow] text.classic_missile_item_prefix_color fixed {storage:"rocketriders:teams",nbt:"yellow.text.classic_missile_item_prefix_color",interpret:true}
+scoreboard players display numberformat @a[x=0,predicate=custom:team/spectator] text.classic_missile_item_prefix_color fixed {color:"gray",text:""}
 
 #Custom team colors
 execute if predicate game:match_components/custom_team_colors run return run execute as @a[x=0,predicate=custom:team/any_arena_team] run function custom:player/update_text/__custom/auto

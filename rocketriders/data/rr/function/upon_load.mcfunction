@@ -85,6 +85,7 @@ scoreboard players set $1200 constant 1200
 scoreboard players set $2400 constant 2400
 scoreboard players set $24000 constant 24000
 
+# general attributes
 scoreboard objectives add event.player_joins_overworld.state custom:leave_game
 scoreboard objectives add time_since_joined_overworld custom:play_time
 scoreboard objectives add event.player_dies custom:deaths
@@ -153,6 +154,18 @@ scoreboard objectives modify text.flag numberformat fixed "🏴"
 
 scoreboard objectives add text.normal_missile_item_prefix_color dummy
 scoreboard objectives modify text.normal_missile_item_prefix_color numberformat fixed ""
+
+scoreboard objectives add text.heavy_missile_item_prefix_color dummy
+scoreboard objectives modify text.heavy_missile_item_prefix_color numberformat fixed ""
+
+scoreboard objectives add text.lightning_missile_item_prefix_color dummy
+scoreboard objectives modify text.lightning_missile_item_prefix_color numberformat fixed ""
+
+scoreboard objectives add text.special_missile_item_prefix_color dummy
+scoreboard objectives modify text.special_missile_item_prefix_color numberformat fixed ""
+
+scoreboard objectives add text.classic_missile_item_prefix_color dummy
+scoreboard objectives modify text.classic_missile_item_prefix_color numberformat fixed ""
 
 # triggers
 scoreboard objectives add set_item_delay trigger

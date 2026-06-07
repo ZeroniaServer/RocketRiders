@@ -1,9 +1,17 @@
 {
   "criteria": {
-    "interact_with_trapdoor_while_in_lobby": {
+    "interact_with_trapdoor": {
       "trigger": "minecraft:default_block_use",
       "conditions": {
         "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "#minecraft:trapdoors"
+              }
+            }
+          },
           {
             "condition": "minecraft:inverted",
             "term": {
@@ -16,6 +24,6 @@
     }
   },
   "rewards": {
-    "function": "lobby:interact_with_trapdoor_while_in_lobby"
+    "function": "lobby:protection/interact_with_trapdoor"
   }
 }

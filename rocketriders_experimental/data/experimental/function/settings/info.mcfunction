@@ -56,6 +56,6 @@ data modify storage rocketriders:main settings.dialog set value {\
   }\
 }
 
-function custom:resolve_text_component {text_component:[{storage:"rocketriders:version",nbt:"name",interpret:true}],write_to:"storage rocketriders:main settings.dialog.body.contents[2]"}
+function custom:resolve_text_component {text_component:[{storage:"rocketriders:version",nbt:"name",interpret:true},{italic:true,storage:"rocketriders:version",nbt:"server_mode_suffix",interpret:true}],write_to:"storage rocketriders:main settings.dialog.body.contents[2]"}
 
 function custom:player/show_dialog with storage rocketriders:main settings

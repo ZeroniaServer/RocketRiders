@@ -527,7 +527,13 @@
                       "nbt": "name",
                       "interpret": true
                     },
-                    " of Rocket Riders.\n\n\n",
+                    " of Rocket Riders",
+                    {
+                      "storage": "rocketriders:version",
+                      "nbt": "server_mode_suffix",
+                      "interpret": true
+                    },
+                    ".\n\n\n",
                     {
                       "color": "#FFFFFF",
                       "shadow_color": 0,

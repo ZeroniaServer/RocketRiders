@@ -3,13 +3,13 @@
 schedule function lobby:credits/restart_indimension 3t append
 scoreboard players add $reloaded CmdData 1
 
-#Useful blocks
+# Useful blocks
 setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
 
 # delete "main" (volatile) storage
 function custom:delete_storage {storage_id:"rocketriders:main"}
 
-# Teams
+## Teams
 team add rocketriders.sort_000.blue "Blue"
 team add rocketriders.sort_001.yellow "Yellow"
 team add rocketriders.sort_100.spectator "Spectator"
@@ -35,16 +35,15 @@ team modify rocketriders.sort_001.yellow friendlyFire false
 team modify rocketriders.sort_100.spectator friendlyFire false
 team modify rocketriders.sort_999.developer friendlyFire false
 
-#Gamerules
+## Gamerules & difficulty
 function rr:upon_load/game_rules
-
-#Difficulty Easy
 difficulty easy
 
-#Bossbars
+## Bossbars
 bossbar add rr:startgame ""
 
-#Scores
+## Scores
+# variables
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy
 
@@ -53,6 +52,7 @@ scoreboard objectives add config dummy
 scoreboard objectives add match_data dummy
 scoreboard objectives add match_components dummy
 
+# constants
 scoreboard objectives add constant dummy
 scoreboard players set $ticks_per_second constant 20
 scoreboard players set $-1 constant -1
@@ -113,14 +113,17 @@ scoreboard objectives add default_spell dummy
 scoreboard objectives add start_as_crusade_kit dummy
 scoreboard objectives add left_game_while_team dummy
 
+# player statistics (current match)
 scoreboard objectives add match_statistic.deaths dummy
 scoreboard objectives add match_statistic.kills dummy
 scoreboard objectives add match_statistic.flags_captured dummy
 
+# item effects
 scoreboard objectives add effects.infinity_saber.time dummy
 scoreboard objectives add effects.multishot_saber.time dummy
 scoreboard objectives add effects.elytra.state dummy
 
+# damage system
 scoreboard objectives add primary_damage_origin_uuid.0 dummy
 scoreboard objectives add primary_damage_origin_uuid.1 dummy
 scoreboard objectives add primary_damage_origin_uuid.2 dummy
@@ -132,19 +135,26 @@ scoreboard objectives add secondary_damage_origin_uuid.3 dummy
 scoreboard objectives add time_since_damage custom:play_time
 scoreboard objectives add time_since_attack custom:play_time
 
+# text
 scoreboard objectives add text.team_name dummy
 scoreboard objectives modify text.team_name numberformat fixed ""
+
 scoreboard objectives add text.team_name_lowercase dummy
 scoreboard objectives modify text.team_name_lowercase numberformat fixed ""
+
 scoreboard objectives add text.main_color dummy
 scoreboard objectives modify text.main_color numberformat fixed ""
+
 scoreboard objectives add text.accent_color dummy
 scoreboard objectives modify text.accent_color numberformat fixed ""
+
 scoreboard objectives add text.flag dummy
 scoreboard objectives modify text.flag numberformat fixed "🏴"
+
 scoreboard objectives add text.normal_missile_item_prefix_color dummy
 scoreboard objectives modify text.normal_missile_item_prefix_color numberformat fixed ""
 
+# triggers
 scoreboard objectives add set_item_delay trigger
 scoreboard objectives add set_tie_window trigger
 scoreboard objectives add set_time_of_day trigger
@@ -159,6 +169,7 @@ scoreboard objectives add toggle_particles trigger
 scoreboard objectives add toggle_parkour_instructions trigger
 scoreboard objectives add toggle_ingame_tips trigger
 
+# player statistics (all-time)
 scoreboard objectives add play_time_save_cooldown custom:play_time
 scoreboard objectives add player_statistics.chase_play_time dummy
 scoreboard objectives add player_statistics.classic_play_time dummy
@@ -170,6 +181,7 @@ scoreboard objectives add player_statistics.powerups_play_time dummy
 scoreboard objectives add player_statistics.sandbox_play_time dummy
 scoreboard objectives add player_statistics.swap_play_time dummy
 
+# misc
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
 scoreboard objectives add z dummy
@@ -306,13 +318,13 @@ scoreboard objectives add prevUseful dummy
 scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevFellVoid dummy
 
-# Resolve components
+## Resolve components
 function game:match_components/resolve
 
-# Update team attributes
+## Update team attributes
 function game:team_attributes/update_all
 
-# Register missiles
+## Register missiles
 data modify storage rocketriders:assets load_missile_assets set value []
 function items:missile/register {id: "ant", properties: {width: 1, height: 4, depth: 7}}
 function items:missile/register {id: "auxiliary", properties: {width: 3, height: 4, depth: 11}}
@@ -343,10 +355,17 @@ function items:missile/register {id: "classic/tomahawk", properties: {width: 2, 
 # Instantly load assets
 function game:assets/load
 
-# Update nav book
+## Update version full name
+data modify storage rocketriders:version server_mode_suffix set value ""
+execute if predicate rr:server_mode/cubekrowd_voting run data modify storage rocketriders:version server_mode_suffix set value " (CubeKrowd Voting Mode)"
+execute if predicate rr:server_mode/cubekrowd_duels run data modify storage rocketriders:version server_mode_suffix set value " (CubeKrowd Duels Mode)"
+execute if predicate rr:server_mode/cubekrowd_custom run data modify storage rocketriders:version server_mode_suffix set value " (CubeKrowd Custom Mode)"
+execute if predicate rr:server_mode/realms run data modify storage rocketriders:version server_mode_suffix set value " (Realms Mode)"
+
+## Update nav book
 function lobby:update_nav_book
 
-# Refresh Rocket-Nomicon
+## Refresh Rocket-Nomicon
 execute if predicate game:phase/match if predicate game:match_components/has_rocket_nomicon run function rr_sandbox:nomicon/load_pages
 
 # Update missile display book

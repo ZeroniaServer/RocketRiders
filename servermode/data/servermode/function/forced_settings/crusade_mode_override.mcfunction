@@ -7,4 +7,4 @@ tellraw @s ["",{bold:true,color:"dark_gray",text:"|"},{color:"red",text:"  "},{c
 tellraw @s ["",{bold:true,color:"dark_gray",text:"|"}," ",{color:"green",text:"Mage","bold":true,"color":"#ca00ca"},{"text":": "},{color:"light_purple",text:"Spell Book"},{color:"gray",text:", "},{color:"light_purple",text:"Nova Rocket"},{color:"gray",text:", "},{color:"light_purple",text:"Vortex"}]
 tellraw @s ["",{bold:true,color:"dark_gray",text:"|"},{color:"#ca00ca",text:"  "},{color:"green",text:"A.N.T."},{color:"gray",text:", "},{color:"green",text:"TomaTwo"},{color:"gray",text:", "},{color:"green",text:"Catapult"},{color:"gray",text:", "},{color:"green",text:"Lifter"},{color:"gray",text:", "},{color:"green",text:"Chronullifier"}]
 
-tellraw @s ""
+execute unless entity @s[tag=informMe.joining_world] run tellraw @s ""

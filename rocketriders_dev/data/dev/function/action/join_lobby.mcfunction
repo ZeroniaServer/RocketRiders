@@ -4,9 +4,9 @@ execute if predicate game:phase/match/play if predicate custom:team/any_playing_
 execute if predicate game:phase/match/play if entity @s[predicate=custom:team/spectator] run return run trigger leaveSpec
 execute if predicate game:phase/staging/queue if predicate custom:team/any_arena_team run return run tag @s add LeaveTeams
 
-execute if predicate custom:team/any_playing_team unless predicate game:match_components/one_team run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
-execute if predicate custom:team/any_playing_team if predicate game:match_components/one_team run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the match!"]
-execute if predicate custom:team/spectator run tellraw @a[x=0] ["",{selector:"@s"},{color:"gray",text:" is no longer spectating the match!"}]
+execute if predicate custom:team/any_playing_team unless predicate game:match_components/one_team unless predicate game:phase/match/closing/outcome run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the ",{score:{name:"@s",objective:"text.team_name_lowercase"}}," team!"]
+execute if predicate custom:team/any_playing_team if predicate game:match_components/one_team unless predicate game:phase/match/closing/outcome run tellraw @a[x=0] [{score:{name:"@s",objective:"text.accent_color"}},{selector:"@s"}," left the match!"]
+execute if predicate custom:team/spectator unless predicate game:phase/match/closing/outcome run tellraw @a[x=0] ["",{selector:"@s"},{color:"gray",text:" is no longer spectating the match!"}]
 
 function custom:player/team/join_lobby
 gamemode adventure @s[gamemode=!adventure]

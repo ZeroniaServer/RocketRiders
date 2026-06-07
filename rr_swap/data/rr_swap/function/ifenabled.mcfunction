@@ -15,6 +15,7 @@ execute if predicate game:phase/match/closing run function rr_swap:game/while_ph
 
 #reset
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] run function game:confirmed_settings
+execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging run tag @a[x=0] remove informMe.joining_world
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging run tag @a[x=0] remove informMe
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging as @a[x=0] at @s run function arenaclear:notifystart
 execute if entity @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] if predicate game:phase/staging run tellraw @a[x=0] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Game Mode: ","color":"#ca00ca"},{"text":"Swap","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Teams swap 'sides' between Light and Dark every minute\n"},{"text":"- Base materials and armor color change accordingly\n"},{"text":"Items:\n","color":"aqua"},{"text":"- Light team gets fast missiles and punchable utilities\n"},{"text":"- Dark team gets powerful missiles and throwable utilities\n"},{"text":"- Exclusive: Special Missiles, Cluster Fireballs, and I.C.B.M.s"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
@@ -26,4 +27,5 @@ tag @e[x=0,type=marker,tag=PlacerClear,tag=Cleared] add BasePlaced
 execute if predicate game:joinable_match_phase as @a[x=0,tag=informMe] run function arenaclear:notifystart
 execute if predicate game:joinable_match_phase run tellraw @a[x=0,tag=informMe] ["",{"text":"|","bold":true,"color":"dark_gray"},{"text":" Game Mode: ","color":"#ca00ca"},{"text":"Swap","color":"light_purple","hover_event":{"action":"show_text","value":["",{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals\n","color":"yellow"},{"text":"Specifics:\n","color":"dark_aqua"},{"text":"- Teams swap 'sides' between Light and Dark every minute\n"},{"text":"- Base materials and armor color change accordingly\n"},{"text":"Items:\n","color":"aqua"},{"text":"- Light team gets fast missiles and punchable utilities\n"},{"text":"- Dark team gets powerful missiles and throwable utilities\n"},{"text":"- Exclusive: Special Missiles, Cluster Fireballs, and I.C.B.M.s"}]}},{"text":" (hover name for info)","italic":true,"color":"dark_gray"}]
 execute if predicate game:joinable_match_phase if entity @a[x=0,tag=informMe] run function modifiers:informmodifiers
+tag @a[x=0,tag=informMe] remove informMe.joining_world
 tag @a[x=0,tag=informMe] remove informMe

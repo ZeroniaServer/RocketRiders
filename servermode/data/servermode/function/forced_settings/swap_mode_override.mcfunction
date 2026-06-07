@@ -3,4 +3,5 @@ tellraw @s ["",{bold:true,color:"dark_gray",text:"|"},{color:"light_purple",text
 tellraw @s ["",{bold:true,color:"dark_gray",text:"|"},{color:"gold",text:" - Hurricane"},{color:"gray",text:", "},{color:"gold",text:"Thunderbolt"}]
 tellraw @s ["",{bold:true,color:"dark_gray",text:"|"},{color:"red",text:" - Auxiliary"},{color:"gray",text:", "},{color:"red",text:"Warhead"}]
 tellraw @s ["",{bold:true,color:"dark_gray",text:"|"},{color:"#ca00ca",text:" - Broadsword"},{color:"gray",text:", "},{color:"#ca00ca",text:"Bullet"},{color:"gray",text:", "},{color:"#ca00ca",text:"Duplex"},{color:"gray",text:", "},{color:"#ca00ca",text:"Hypersonic"}]
-tellraw @s ""
+
+execute unless entity @s[tag=informMe.joining_world] run tellraw @s ""

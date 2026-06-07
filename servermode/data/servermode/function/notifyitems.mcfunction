@@ -48,4 +48,4 @@ execute if entity @e[x=0,type=marker,tag=Thunderbolt] run tellraw @s ["",{"text"
 execute if entity @e[limit=1,x=0,type=marker,tag=RMisRNG,tag=RHeavyRNG] run tellraw @s ["",{"text":"|","color":"dark_gray","bold":true},{"text":" - ","color":"red","bold":false},{"selector":"@e[x=0,type=marker,tag=RMisRNG,tag=RHeavyRNG]","color":"red","bold":false}]
 kill @e[x=0,type=marker,tag=ServerRNG]
 
-tellraw @s [{"text":""}]
+execute unless entity @s[tag=informMe.joining_world] run tellraw @s ""

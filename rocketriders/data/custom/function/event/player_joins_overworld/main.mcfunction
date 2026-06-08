@@ -4,15 +4,17 @@ execute if predicate custom:entity/has_vehicle at @s run function custom:event/p
 # If player had previously joined, give them a storage entry (legacy score)
 execute if score @s firstJoined matches 1.. run function custom:player/playerdata/save
 
-# Reset team, scores, triggers, and tags
+# Reset team, scores, and triggers
 team leave @s
 scoreboard players reset @s
-function custom:event/player_joins_overworld/reset_tags/main
 
-# Reset items, effects, and attributes
+# Reset items, and effects
 effect clear @s
 clear @s *
-function custom:event/player_joins_overworld/reset_attributes/main
+item replace entity @s armor.body with stone[minecraft:equippable={slot:body,equip_sound:"minecraft:intentionally_empty"},custom_data={}]
+
+# Remove all entity tags, reset all attributes, and remove all attribute modifiers (uses triggered advancements so that the recursive loops can't block the rest of this function from running)
+item replace entity @s container.9 with stone[custom_data={remove_all_entity_tags:true,reset_all_attributes:true}]
 
 # Update join state and time_since_joined_overworld
 scoreboard players set @s event.player_joins_overworld.state -1

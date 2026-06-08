@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "remove_all_entity_tags": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "predicates": {
+              "minecraft:custom_data": {
+                "remove_all_entity_tags": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom:event/player_joins_overworld/reset_tags/main"
+  }
+}

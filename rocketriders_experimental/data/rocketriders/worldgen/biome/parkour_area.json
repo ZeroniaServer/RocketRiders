@@ -3,6 +3,7 @@
     "minecraft:visual/ambient_light_color": "#000000",
     "minecraft:visual/block_light_tint": "#ffffff",
     "minecraft:visual/fog_color": "#000000",
+    "minecraft:visual/fog_start_distance": 1000,
     "minecraft:visual/sky_color": "#7ba4ff"
   },
   "carvers": [],

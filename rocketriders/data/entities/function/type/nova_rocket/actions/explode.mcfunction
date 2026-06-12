@@ -1,11 +1,14 @@
 # Redirect function to the brain
 execute unless entity @s[predicate=entities:type/nova_rocket/brain] run return run execute on passengers if entity @s[predicate=entities:type/nova_rocket/brain] run function entities:type/nova_rocket/actions/explode
 
-execute at @s unless predicate entities:nova_rocket_can_explode run return run function entities:type/nova_rocket/actions/break
-
 # Dismount the brain and trigger the firework
 execute on vehicle run data merge entity @s {LifeTime:0,Motion:[0,0,0],ShotAtAngle:false}
 execute on vehicle positioned as @s on passengers run tp @s ~ ~ ~
+
+# Break conditions
+execute at @s if predicate entities:nova_rocket_near_enemy_spawn_zone run return run function entities:type/nova_rocket/actions/break_with_reason {message:"Nova Rocket failed to explode; it was too close to an enemy spawnpoint"}
+execute at @s if predicate custom:near_or_above_roof run return run function entities:type/nova_rocket/actions/break_with_reason {message:"Nova Rocket failed to explode; it was too close to the roof"}
+execute at @s unless predicate entities:nova_rocket_can_explode run return run function entities:type/nova_rocket/actions/break_with_reason {message:"Nova Rocket failed to explode"}
 
 # Create explosion
 tag @e[x=0,type=creeper,tag=explosion] add old_explosion

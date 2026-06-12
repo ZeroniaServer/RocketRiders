@@ -1,6 +1,8 @@
 # Redirect function to the brain
 execute unless entity @s[predicate=entities:type/stinging_shield_projectile/brain] run return run execute on passengers if entity @s[predicate=entities:type/stinging_shield_projectile/brain] run function entities:type/stinging_shield_projectile/actions/deploy
 
+execute positioned as @s positioned ~ ~-2 ~ if predicate custom:near_any_spawn_zone run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to a spawnpoint"}
+
 # Kill body and correct position
 execute on vehicle if entity @s[predicate=entities:type/stinging_shield_projectile/body] run function custom:entity/teleport_passengers_to_self_and_die
 

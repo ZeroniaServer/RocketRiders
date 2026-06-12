@@ -18,3 +18,5 @@ execute on passengers if predicate entities:type/stinging_shield_projectile/brai
 execute on passengers if predicate entities:type/stinging_shield_projectile/brain run kill @s
 tag @s add stinging_shield_projectile.killed
 kill @s
+
+return 1

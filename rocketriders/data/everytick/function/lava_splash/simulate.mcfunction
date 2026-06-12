@@ -8,8 +8,7 @@ scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash
 execute as @e[x=0,type=area_effect_cloud,predicate=custom:area_effect_cloud_type/awkward,tag=!lava_splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["lava_splash","lava_splash_alone"],custom_particle:{type:"block",block_state:"minecraft:air"}}
 
 #Kill if near spawnpoints
-execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked,predicate=custom:near_blue_spawn_zone] run kill @s
-execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked,predicate=custom:near_yellow_spawn_zone] run kill @s
+execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked,predicate=custom:near_any_spawn_zone] run function custom:entity/kill_with_reason {message:"Lava Splash hit the ground too close to a spawnpoint"}
 execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:non_solid run function everytick:lava_splash/correct_position
 execute at @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] unless block ~1 ~ ~ #custom:non_solid unless block ~-1 ~ ~ #custom:non_solid unless block ~ ~ ~1 #custom:non_solid unless block ~ ~ ~-1 #custom:non_solid if block ~ ~-1 ~ #custom:air run fill ~ ~ ~ ~ ~-1 ~ water[level=8] replace #custom:air
 execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] at @s run function everytick:lava_splash/adjust_corner_position

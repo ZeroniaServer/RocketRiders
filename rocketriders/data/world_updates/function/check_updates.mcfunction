@@ -19,7 +19,6 @@ execute unless score $WorldVersion CmdData matches 1293.. run function world_upd
 execute unless score $WorldVersion CmdData matches 1301.. run function world_updates:do_update {version_id: 1301, function: "world_updates:1_2_13/update", version_display_name: "1.2.13", is_indev: false}
 execute unless score $WorldVersion CmdData matches 1302.. run function world_updates:do_update {version_id: 1302, function: "world_updates:1_2_14/update", version_display_name: "1.2.14", is_indev: false}
 execute unless score $WorldVersion CmdData matches 1303.. run function world_updates:do_update {version_id: 1303, function: "world_updates:1_2_15/update", version_display_name: "1.2.15", is_indev: false}
-
 execute unless score $WorldVersion CmdData matches 1304.. run function world_updates:do_update {version_id: 1304, function: "world_updates:1_3_0-pre1/update", version_display_name: "1.3.0-pre1", is_indev: true}
 execute unless score $WorldVersion CmdData matches 1305.. run function world_updates:do_update {version_id: 1305, function: "world_updates:1_3_0-pre7/update", version_display_name: "1.3.0-pre7", is_indev: true}
 execute unless score $WorldVersion CmdData matches 1306.. run function world_updates:do_update {version_id: 1306, function: "world_updates:1_3_0-pre8/update", version_display_name: "1.3.0-pre8", is_indev: true}
@@ -36,5 +35,5 @@ execute unless score $WorldVersion CmdData matches 1316.. run function world_upd
 execute unless score $WorldVersion CmdData matches 1317.. run function world_updates:do_update {version_id: 1317, function: "world_updates:1_3_2-rc1/update", version_display_name: "1.3.2-rc1", is_indev: true}
 execute unless score $WorldVersion CmdData matches 1318.. run function world_updates:do_update {version_id: 1318, function: "world_updates:1_3_2/_", version_display_name: "1.3.2", is_indev: false}
 execute unless score $WorldVersion CmdData matches 1400.. run function world_updates:do_update {version_id: 1400, function: "world_updates:1_3_3-pre1/update", version_display_name: "1.3.3-pre1", is_indev: true}
-execute unless score $WorldVersion CmdData matches 1401.. run function world_updates:do_update {version_id: 1401, function: "world_updates:1_3_3-pre2/update", version_display_name: "1.3.3-pre2", is_indev: true}
+execute unless score $WorldVersion CmdData matches 1401.. run function world_updates:do_update {version_id: 1401, function: "world_updates:1_3_3-rc1/update", version_display_name: "1.3.3-rc1", is_indev: true}
 execute unless score $WorldVersion CmdData matches 1500.. run function world_updates:do_update {version_id: 1500, function: "world_updates:1_4_0-pre1/update", version_display_name: "1.4.0-pre1", is_indev: true}

@@ -12,3 +12,5 @@ execute on origin run tag @s remove icbm.origin
 execute on vehicle run kill @s[predicate=entities:type/icbm]
 execute on passengers run kill @s[predicate=entities:type/icbm]
 kill @s[predicate=entities:type/icbm]
+
+return 1

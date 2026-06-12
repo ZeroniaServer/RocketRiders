@@ -13,3 +13,5 @@ execute on origin run tag @s remove shield_projectile.origin
 execute on vehicle run kill @s[predicate=entities:type/shield_projectile]
 execute on passengers run kill @s[predicate=entities:type/shield_projectile]
 kill @s[predicate=entities:type/shield_projectile]
+
+return 1

@@ -4,3 +4,5 @@ execute as @a[limit=1,tag=break_with_reason.thrower] run function custom:player/
 execute on origin run tag @s remove break_with_reason.thrower
 
 function entities:type/nova_rocket/actions/break
+
+return 1

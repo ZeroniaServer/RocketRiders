@@ -1,4 +1,3 @@
-
 # Break when out of bounds
 execute on vehicle positioned as @s if function entities:type/shield_projectile/tick/check_passive_break run return 0
 

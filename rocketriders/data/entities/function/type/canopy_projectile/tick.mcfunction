@@ -17,5 +17,5 @@ execute if score @s entity.age matches 1.. if predicate entities:origin_team/yel
 execute if score @s entity.age matches 1.. if predicate entities:origin_team/none if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 # Deploy
-execute if score @s entity.age >= $canopy_flight_duration match_components on vehicle positioned as @s if predicate entities:canopy_can_be_deployed run return run function entities:type/canopy_projectile/actions/deploy
+execute if score @s entity.age >= $canopy_flight_duration match_components on vehicle positioned as @s on passengers if predicate entities:type/canopy_projectile/brain if predicate entities:canopy_can_be_deployed run return run function entities:type/canopy_projectile/actions/deploy
 execute if score @s entity.age matches 60.. run return run function entities:type/canopy_projectile/actions/break_with_reason {message:"Canopy failed to deploy; it took too long to deploy"}

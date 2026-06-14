@@ -113,6 +113,7 @@ scoreboard objectives modify flag_tablist_display numberformat blank
 scoreboard objectives add default_spell dummy
 scoreboard objectives add start_as_crusade_kit dummy
 scoreboard objectives add last_arena_team dummy
+scoreboard objectives add zeronia_credit_cooldown_end_timestamp dummy
 
 # player statistics (current match)
 scoreboard objectives add match_statistic.deaths dummy

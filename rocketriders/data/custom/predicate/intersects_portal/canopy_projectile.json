@@ -24,16 +24,16 @@
                     "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
-                        "min": -13,
-                        "max": 38
+                        "min": -11,
+                        "max": 36
                       },
                       "y": {
                         "min": 36,
                         "max": 59
                       },
                       "z": {
-                        "min": -77,
-                        "max": -70
+                        "min": -75,
+                        "max": -72
                       }
                     }
                   }
@@ -44,7 +44,7 @@
                     "condition": "minecraft:location_check",
                     "predicate": {
                       "position": {
-                        "z": -70
+                        "z": -72
                       }
                     }
                   }
@@ -64,16 +64,16 @@
                     "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
-                        "min": -13,
-                        "max": 38
+                        "min": -11,
+                        "max": 36
                       },
                       "y": {
                         "min": 36,
                         "max": 59
                       },
                       "z": {
-                        "min": 71,
-                        "max": 78
+                        "min": 73,
+                        "max": 76
                       }
                     }
                   }
@@ -84,7 +84,7 @@
                     "condition": "minecraft:location_check",
                     "predicate": {
                       "position": {
-                        "z": 78
+                        "z": 76
                       }
                     }
                   }
@@ -99,7 +99,7 @@
             "condition": "minecraft:location_check",
             "predicate": {
               "position": {
-                "x": 38
+                "x": 36
               }
             }
           }
@@ -140,16 +140,16 @@
                     "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
-                        "min": 1,
-                        "max": 24
+                        "min": 3,
+                        "max": 22
                       },
                       "y": {
                         "min": 44,
                         "max": 56
                       },
                       "z": {
-                        "min": -70,
-                        "max": -63
+                        "min": -68,
+                        "max": -65
                       }
                     }
                   }
@@ -160,7 +160,7 @@
                     "condition": "minecraft:location_check",
                     "predicate": {
                       "position": {
-                        "z": -63
+                        "z": -65
                       }
                     }
                   }
@@ -180,16 +180,16 @@
                     "dimension": "minecraft:overworld",
                     "position": {
                       "x": {
-                        "min": 1,
-                        "max": 24
+                        "min": 3,
+                        "max": 22
                       },
                       "y": {
                         "min": 44,
                         "max": 56
                       },
                       "z": {
-                        "min": 64,
-                        "max": 71
+                        "min": 66,
+                        "max": 69
                       }
                     }
                   }
@@ -200,7 +200,7 @@
                     "condition": "minecraft:location_check",
                     "predicate": {
                       "position": {
-                        "z": 71
+                        "z": 69
                       }
                     }
                   }
@@ -215,7 +215,7 @@
             "condition": "minecraft:location_check",
             "predicate": {
               "position": {
-                "x": 24
+                "x": 22
               }
             }
           }

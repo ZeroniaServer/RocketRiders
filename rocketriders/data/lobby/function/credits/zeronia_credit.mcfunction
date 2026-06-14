@@ -1,3 +1,10 @@
+execute if score $gametime global < @s zeronia_credit_cooldown_end_timestamp run return 0
+scoreboard players operation @s zeronia_credit_cooldown_end_timestamp = $gametime global
+scoreboard players add @s zeronia_credit_cooldown_end_timestamp 20
+
+particle minecraft:block{block_state:"minecraft:command_block"} ~ ~ ~ 0.2 0.2 0.2 0.1 50 normal @s[tag=!hideParticles,predicate=!custom:in_arena]
+particle minecraft:end_rod ~ ~ ~ 0.2 0.2 0.2 0.1 10 normal @s[tag=!hideParticles,predicate=!custom:in_arena]
+
 tellraw @s [\
     "\n",\
     {color:"gray",text:"============ "},{color:"green",text:"Zeronia"},{color:"gray",text:" ============"},"\n",\
@@ -11,5 +18,5 @@ tellraw @s [\
     {color:"gray",text:"================================"},"\n"\
 ]
 
-playsound minecraft:block.end_portal_frame.fill master @s ~ ~ ~ 1 1.8
-playsound minecraft:block.note_block.bit master @s ~ ~ ~ 1 1
+execute positioned as @s run playsound minecraft:block.end_portal_frame.fill master @s ~ ~ ~ 1 1.8
+execute positioned as @s run playsound minecraft:block.note_block.bit master @s ~ ~ ~ 1 1

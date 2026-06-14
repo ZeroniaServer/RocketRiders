@@ -1,7 +1,7 @@
 # Break when out of bounds
 execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/fireball/actions/break
 execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/fireball/actions/break
-execute on vehicle positioned as @s if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/fireball/actions/break
+execute on vehicle positioned as @s if predicate custom:location/near_or_beyond_world_border run return run function entities:type/fireball/actions/break
 execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/fireball/actions/break
 
 # Break when near an enemy spawn point

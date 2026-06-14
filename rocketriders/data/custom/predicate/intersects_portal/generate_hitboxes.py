@@ -299,7 +299,7 @@ for i in range(1, 18 + 1):
 # entity hitboxes
 generate(f"player_normal",(-0.3,0,-0.3),(0.3,0,0.3))
 generate(f"player_small",(-0.2,0,-0.2),(0.2,0,0.2))
-generate(f"canopy_projectile",(-3,0,-3),(3,1,3))
+generate(f"canopy_projectile",(-1,0,-1),(1,1,1))
 generate(f"shield_projectile",(-3,-3,0),(3,3,0))
 generate(f"stinging_shield_projectile",(-2,-4,0),(2,0,0))
 

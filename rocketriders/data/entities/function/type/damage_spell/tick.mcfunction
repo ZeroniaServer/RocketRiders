@@ -5,7 +5,7 @@ execute if entity @s[tag=damage_spell.trailing_arrow] on vehicle rotated as @s p
 # Break when out of bounds
 execute if predicate custom:near_or_above_roof run return run function entities:type/damage_spell/actions/break
 execute if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/damage_spell/actions/break
-execute positioned as @s if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/damage_spell/actions/break
+execute positioned as @s if predicate custom:location/near_or_beyond_world_border run return run function entities:type/damage_spell/actions/break
 execute unless predicate custom:in_arena run return run function entities:type/damage_spell/actions/break
 
 # Break when near an enemy spawn point

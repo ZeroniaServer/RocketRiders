@@ -9,8 +9,9 @@ execute at @s run tp ~ ~2 ~
 
 execute positioned as @s if predicate custom:near_void run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to the void"}
 execute positioned as @s if predicate custom:near_any_spawn_zone run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to a spawnpoint"}
-execute positioned as @s if predicate entities:stinging_shield_blocked_by_portal run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to a portal"}
 execute positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to the roof"}
+execute positioned as @s if predicate entities:stinging_shield_blocked_by_portal unless predicate game:game_rules/snipe_portals/on run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to a portal"}
+execute positioned as @s if predicate entities:stinging_shield_blocked_by_portal if predicate game:game_rules/snipe_portals/on run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to your own portal"}
 execute positioned as @s if function custom:location/is_near_flag_base positioned as @s run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to a flag"}
 execute positioned as @s unless predicate entities:stinging_shield_can_be_deployed run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy"}
 

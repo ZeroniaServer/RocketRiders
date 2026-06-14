@@ -27,12 +27,13 @@ execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at 
 
 # Splash
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:nonsolid run function everytick:splash/correct_position
-execute at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] unless block ~1 ~ ~ #custom:nonsolid unless block ~-1 ~ ~ #custom:nonsolid unless block ~ ~ ~1 #custom:nonsolid unless block ~ ~ ~-1 #custom:nonsolid if block ~ ~-1 ~ #custom:air run fill ~ ~ ~ ~ ~-1 ~ water[level=8] replace #custom:air
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~1 ~ ~ #custom:nonsolid unless block ~-1 ~ ~ #custom:nonsolid unless block ~ ~ ~1 #custom:nonsolid unless block ~ ~ ~-1 #custom:nonsolid if block ~ ~-1 ~ #custom:air run fill ~ ~ ~ ~ ~-1 ~ water[level=8] replace #custom:air
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s run function everytick:splash/adjust_corner_position
-execute at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] rotated 0 0 run function everytick:splash/place_water
-execute at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] rotated 90 0 run function everytick:splash/place_water
-execute at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] rotated 180 0 run function everytick:splash/place_water
-execute at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] rotated -90 0 run function everytick:splash/place_water
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] positioned as @s if predicate game:game_rules/snipe_portals/on run function everytick:splash/check_can_break_portal
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] positioned as @s rotated 0 0 run function everytick:splash/place_water
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] positioned as @s rotated 90 0 run function everytick:splash/place_water
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] positioned as @s rotated 180 0 run function everytick:splash/place_water
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] positioned as @s rotated -90 0 run function everytick:splash/place_water
 execute if predicate game:feature_flags/1_4_0_update/on at @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] as @e[limit=1,sort=nearest,distance=..1.5,type=fireball,predicate=entities:type/fireball/body] at @s run function entities:type/fireball/tick/geyser
 tag @e[x=0,type=area_effect_cloud,tag=splash_alone] add splashMarked
 execute if predicate game:achievements_can_be_awarded as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!markedForDeath] at @s unless block ~ ~ ~ water run data merge entity @s {Duration:100}

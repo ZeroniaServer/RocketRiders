@@ -7,15 +7,15 @@ scoreboard players reset @a[x=0,scores={ThrowSplash=3..}] ThrowSplash
 ## Break potion mid-air when out of bounds
 execute as @e[x=0,type=#custom:potion,tag=lava_splash] at @s if predicate custom:in_void run kill @s
 execute as @e[x=0,type=#custom:potion,tag=lava_splash] at @s if predicate custom:near_or_above_roof run function everytick:lava_splash/break_with_reason {message:"Lava Splash got too close to the roof"}
-execute as @e[x=0,type=#custom:potion,tag=lava_splash] at @s if predicate custom:location/touching_or_beyond_world_border run function everytick:lava_splash/break_with_reason {message:"Lava Splash got too close to the world border"}
+execute as @e[x=0,type=#custom:potion,tag=lava_splash] at @s if predicate custom:location/near_or_beyond_world_border run function everytick:lava_splash/break_with_reason {message:"Lava Splash got too close to the world border"}
 
 ##Placing water upon impact
 execute as @e[x=0,type=area_effect_cloud,predicate=custom:area_effect_cloud_type/awkward,tag=!lava_splash] at @s run data merge entity @s {Duration:200000000,RadiusPerTick:0,RadiusOnUse:0,DurationOnUse:0,Radius:0,Tags:["lava_splash","lava_splash_alone"],custom_particle:{type:"block",block_state:"minecraft:air"}}
 
 # Kill if hit out of bounds
-execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] at @s if predicate custom:in_void run kill @s
-execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] at @s if predicate custom:near_or_above_roof run function custom:entity/kill_with_reason {message:"Lava Splash got too close to the roof"}
-execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] at @s if predicate custom:location/touching_or_beyond_world_border run function custom:entity/kill_with_reason {message:"Lava Splash got too close to the world border"}
+execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] at @s if predicate custom:in_void run function custom:entity/kill_with_reason {message:"Lava Splash hit the ground too close to the void"}
+execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] at @s if predicate custom:near_or_above_roof run function custom:entity/kill_with_reason {message:"Lava Splash hit the ground too close to the roof"}
+execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] at @s if predicate custom:location/near_or_beyond_world_border run function custom:entity/kill_with_reason {message:"Lava Splash got too close to the world border"}
 
 # Kill if hit spawn zone
 execute as @e[x=0,type=area_effect_cloud,tag=lava_splash_alone,tag=!splashMarked] at @s if predicate custom:near_any_spawn_zone run function custom:entity/kill_with_reason {message:"Lava Splash hit the ground too close to a spawnpoint"}

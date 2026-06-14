@@ -1,4 +1,4 @@
 execute if predicate custom:near_or_above_roof run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to the roof"}
 execute if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to the void"}
-execute if predicate custom:location/touching_or_beyond_world_border run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to the world border"}
+execute if predicate custom:location/near_or_beyond_world_border run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it was too close to the world border"}
 execute unless predicate custom:in_arena run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield failed to deploy; it left the arena"}

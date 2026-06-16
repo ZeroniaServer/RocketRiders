@@ -1,0 +1,32 @@
+[
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:reference",
+      "name": "game:game_rules/tie_window_length/__forced_zero"
+    }
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:value_check",
+        "value": {
+          "type": "minecraft:score",
+          "score": "config",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "$tie_window_length"
+          }
+        },
+        "range": {
+          "min": 0
+        }
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:game_rules/tie_window_length/__forced_non_zero"
+      }
+    ]
+  }
+]

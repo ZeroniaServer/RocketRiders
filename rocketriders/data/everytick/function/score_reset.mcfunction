@@ -18,7 +18,6 @@ scoreboard players set @s JugbSpawned 0
 scoreboard players set @s LifterSpawned 0
 scoreboard players set @s MissilesSpawned 0
 scoreboard players set @s NullSpawned 0
-scoreboard players set @s ObshieldSpawned 0
 scoreboard players set @s RifterSpawned 0
 scoreboard players set @s SlashSpawned 0
 scoreboard players set @s ThunSpawned 0
@@ -31,9 +30,10 @@ scoreboard players set @s gravShot 0
 scoreboard players set @s regifts 0
 scoreboard players reset @s match_statistic.deaths
 scoreboard players reset @s match_statistic.kills
-scoreboard players reset @s shooting_saber.infinity_time
-scoreboard players reset @s shooting_saber.multishot_time
-scoreboard players reset @s elytra_time
+scoreboard players reset @s match_statistic.flags_captured
+scoreboard players reset @s effects.infinity_saber.time
+scoreboard players reset @s effects.multishot_saber.time
+scoreboard players reset @s effects.elytra.state
 
 #Reset advancement criteria progress for the temp trackables also
 function everytick:score_reset_advancements

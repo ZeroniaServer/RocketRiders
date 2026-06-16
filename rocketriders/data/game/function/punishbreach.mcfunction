@@ -2,6 +2,6 @@
 
 execute unless predicate game:game_rules/disable_death_messages/on run tellraw @a[x=0] ["",{selector:"@s"}," tried to breach the lobby"]
 
-function custom:game_rules/show_death_messages/off
+gamerule minecraft:show_death_messages false
 kill @s
-execute unless predicate game:game_rules/disable_death_messages/on run function custom:game_rules/show_death_messages/on
+execute unless predicate game:game_rules/disable_death_messages/on run gamerule minecraft:show_death_messages true

@@ -1,15 +1,12 @@
-data modify storage rocketriders:match components."arena/base_materials" set value {front:"stained_glass",middle:"stained_glass",back:"concrete"}
-execute unless score $swap_side global matches 1 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"light",middle:"light_accent",back:"white"},yellow:{front:"dark",middle:"dark_accent",back:"black"}}
-execute if score $swap_side global matches 1 run data modify storage rocketriders:match components."arena/base_colors" set value {blue:{front:"dark",middle:"dark_accent",back:"black"},yellow:{front:"light",middle:"light_accent",back:"white"}}
+data modify storage rocketriders:match components."armor_type" set value "swap_mode"
+data modify storage rocketriders:match components."main_item" set value "shooting_saber"
+function rr_swap:baseswap/set_palettes
 
-scoreboard players set $armor/swap match_components 1
 scoreboard players set $config_override.special_treatment match_components -1
 scoreboard players set $config_override.splash_streams match_components -1
 scoreboard players set $config_override.surprise_eggs match_components -1
 scoreboard players set $item_signs/replace_fireball_with_cluster_fireball match_components 1
 scoreboard players set $item_signs/replace_vortex_with_icbm match_components 1
-scoreboard players set $main_item/shooting_saber match_components 1
-scoreboard players set $min_players_per_team match_components 1
 
 # items
 scoreboard players set $config_override.disable_item_category/heavy_missiles match_components -1

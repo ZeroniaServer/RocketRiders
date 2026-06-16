@@ -100,18 +100,18 @@ tag @a[x=0] remove CarryFB2
 kill @e[x=0,type=marker,tag=FlagParticle]
 scoreboard players reset * FlagScore
 scoreboard players reset * FlagDeliver
-bossbar set rr_ctf:fy1 players
-bossbar set rr_ctf:fy1 name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
-bossbar set rr_ctf:fy1 value 0
-bossbar set rr_ctf:fy2 players
-bossbar set rr_ctf:fy2 name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
-bossbar set rr_ctf:fy2 value 0
-bossbar set rr_ctf:fb1 players
-bossbar set rr_ctf:fb1 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
-bossbar set rr_ctf:fb1 value 0
-bossbar set rr_ctf:fb2 players
-bossbar set rr_ctf:fb2 name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
-bossbar set rr_ctf:fb2 value 0
+bossbar set rr_ctf:flag/yellow_right players
+bossbar set rr_ctf:flag/yellow_right name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
+bossbar set rr_ctf:flag/yellow_right value 0
+bossbar set rr_ctf:flag/yellow_left players
+bossbar set rr_ctf:flag/yellow_left name ["",{"text":" is carrying a ","color":"dark_aqua"},{"text":"Yellow","color":"gold"},{"text":" flag!","color":"dark_aqua"}]
+bossbar set rr_ctf:flag/yellow_left value 0
+bossbar set rr_ctf:flag/blue_right players
+bossbar set rr_ctf:flag/blue_right name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+bossbar set rr_ctf:flag/blue_right value 0
+bossbar set rr_ctf:flag/blue_left players
+bossbar set rr_ctf:flag/blue_left name ["",{"text":" is carrying a ","color":"yellow"},{"text":"Blue","color":"blue"},{"text":" flag!","color":"yellow"}]
+bossbar set rr_ctf:flag/blue_left value 0
 scoreboard players reset * FlagDisp
 
 scoreboard objectives setdisplay sidebar.team.gold

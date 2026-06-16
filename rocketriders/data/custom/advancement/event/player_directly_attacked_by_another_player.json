@@ -1,9 +1,10 @@
 {
   "criteria": {
     "get_directly_killed_by_another_player": {
+      "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "entity": {
-          "type": "minecraft:player"
+          "minecraft:entity_type": "minecraft:player"
         },
         "player": [
           {
@@ -13,14 +14,14 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_killed_player"
+      }
     },
     "get_directly_non_fatally_attacked_by_another_player": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "source_entity": {
-            "type": "minecraft:player"
+            "minecraft:entity_type": "minecraft:player"
           }
         },
         "player": [
@@ -32,16 +33,16 @@
           },
           {
             "condition": "minecraft:reference",
-            "name": "custom:alive"
+            "name": "custom:player/is_alive"
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     },
     "get_killed_by_mob_with_damage_origins": {
+      "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "entity": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "damage_origin": {}
             }
@@ -55,14 +56,14 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_killed_player"
+      }
     },
     "get_non_fatally_hurt_by_mob_with_damage_origins": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "source_entity": {
-            "predicates": {
+            "minecraft:predicates": {
               "minecraft:custom_data": {
                 "damage_origin": {}
               }
@@ -78,11 +79,10 @@
           },
           {
             "condition": "minecraft:reference",
-            "name": "custom:alive"
+            "name": "custom:player/is_alive"
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     }
   },
   "requirements": [

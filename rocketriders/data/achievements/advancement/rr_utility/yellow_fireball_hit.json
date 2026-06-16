@@ -1,17 +1,18 @@
 {
   "criteria": {
     "fireball_hit": {
+      "trigger": "minecraft:player_hurt_entity",
       "conditions": {
         "damage": {
           "type": {
             "direct_entity": {
-              "predicates": {
+              "minecraft:entity_type": "minecraft:fireball",
+              "minecraft:predicates": {
                 "minecraft:custom_data": {
                   "fireball": {},
                   "origin_team": "blue"
                 }
-              },
-              "type": "minecraft:fireball"
+              }
             },
             "tags": [
               {
@@ -22,12 +23,11 @@
           }
         },
         "player": {
-          "location": {
+          "minecraft:location": {
             "dimension": "minecraft:overworld"
           }
         }
-      },
-      "trigger": "minecraft:player_hurt_entity"
+      }
     }
   },
   "rewards": {

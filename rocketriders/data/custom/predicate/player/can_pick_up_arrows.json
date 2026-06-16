@@ -1,0 +1,43 @@
+[
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "minecraft:type_specific/player": {
+          "gamemode": [
+            "spectator"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "minecraft:type_specific/player": {
+            "gamemode": [
+              "creative"
+            ]
+          }
+        }
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:arrow_pickup_rule/crusade_kit_dependent"
+        }
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "rr_crusade:kit/archer"
+      }
+    ]
+  }
+]

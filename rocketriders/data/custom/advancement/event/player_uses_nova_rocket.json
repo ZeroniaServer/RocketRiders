@@ -1,6 +1,7 @@
 {
   "criteria": {
     "player_uses_nova_rocket": {
+      "trigger": "minecraft:shot_crossbow",
       "conditions": {
         "item": {
           "predicates": {
@@ -17,8 +18,7 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:shot_crossbow"
+      }
     }
   },
   "rewards": {

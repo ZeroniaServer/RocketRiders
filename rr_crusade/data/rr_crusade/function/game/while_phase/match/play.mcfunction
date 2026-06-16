@@ -1,6 +1,6 @@
 #Item RNG
 scoreboard players add @s RandomItem 1
-execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/archer] run function rr_crusade:items/util/givearrows
+execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime if entity @s[tag=!gaveFirstItem] as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/archer] run function items:give_batch/arrow
 execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem = @s MaxItemTime run function rr_crusade:items/giverandom
 execute unless predicate game:modifiers/minute_mix/on if score @s RandomItem > @s MaxItemTime run scoreboard players set @s RandomItem 1
 execute if predicate game:modifiers/minute_mix/on run function rr_crusade:items/minutemix
@@ -24,56 +24,66 @@ tag @a[x=0,tag=notInGlass] remove inGlass
 tag @a[x=0] remove notInGlass
 tag @a[x=0,predicate=!custom:team/any_playing_team] remove inGlass
 
-#> Crystal health & bossbars
-execute if score $match_play_time global matches 1.. run bossbar set rr_crusade:blue players @a[x=0,predicate=!custom:team/lobby]
-execute if score $match_play_time global matches 1.. run bossbar set rr_crusade:yellow players @a[x=0,predicate=!custom:team/lobby]
-execute store result bossbar rr_crusade:blue value run scoreboard players get $BlueShield crusadehp
-execute store result bossbar rr_crusade:yellow value run scoreboard players get $YellowShield crusadehp
+#> Nexus health & bossbars
+execute if score $play_time match_data matches 1.. run bossbar set rr_crusade:blue players @a[x=0,predicate=!custom:team/lobby]
+execute if score $play_time match_data matches 1.. run bossbar set rr_crusade:yellow players @a[x=0,predicate=!custom:team/lobby]
+scoreboard players operation $health var = $nexus_blue_a_health match_data
+execute store result bossbar rr_crusade:blue value run scoreboard players operation $health var += $nexus_blue_b_health match_data
+scoreboard players operation $health var = $nexus_yellow_a_health match_data
+execute store result bossbar rr_crusade:yellow value run scoreboard players operation $health var += $nexus_yellow_b_health match_data
 
 #> Deplete health
-execute if score $BlueShield crusadehp matches 1.. if score $CBA crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueA] run function rr_crusade:game/restorecba
-execute if score $BlueShield crusadehp matches 1.. if score $CBB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeBlueB] run function rr_crusade:game/restorecbb
-execute if score $YellowShield crusadehp matches 1.. if score $CYA crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowA] run function rr_crusade:game/restorecya
-execute if score $YellowShield crusadehp matches 1.. if score $CYB crusadehp matches 1.. unless entity @e[x=0,type=end_crystal,tag=CrusadeYellowB] run function rr_crusade:game/restorecyb
+execute if score $nexus_blue_a_health match_data matches 1.. unless entity @e[x=0,type=end_crystal,tag=nexus.blue_a] run function rr_crusade:game/restorecba
+execute if score $nexus_blue_b_health match_data matches 1.. unless entity @e[x=0,type=end_crystal,tag=nexus.blue_b] run function rr_crusade:game/restorecbb
+execute if score $nexus_yellow_a_health match_data matches 1.. unless entity @e[x=0,type=end_crystal,tag=nexus.yellow_a] run function rr_crusade:game/restorecya
+execute if score $nexus_yellow_b_health match_data matches 1.. unless entity @e[x=0,type=end_crystal,tag=nexus.yellow_b] run function rr_crusade:game/restorecyb
 
 #> Cooldown behavior
 # Pre cooldown
-execute if score $CBAprecd crusadehp matches 1.. run scoreboard players remove $CBAprecd crusadehp 1
-execute if score $CBBprecd crusadehp matches 1.. run scoreboard players remove $CBBprecd crusadehp 1
-execute if score $CYAprecd crusadehp matches 1.. run scoreboard players remove $CYAprecd crusadehp 1
-execute if score $CYBprecd crusadehp matches 1.. run scoreboard players remove $CYBprecd crusadehp 1
+execute if score $nexus_blue_a_pre_cooldown match_data matches 1.. run scoreboard players remove $nexus_blue_a_pre_cooldown match_data 1
+execute unless score $nexus_blue_a_pre_cooldown match_data matches 1.. run scoreboard players reset $nexus_blue_a_pre_cooldown match_data
+execute if score $nexus_blue_b_pre_cooldown match_data matches 1.. run scoreboard players remove $nexus_blue_b_pre_cooldown match_data 1
+execute unless score $nexus_blue_b_pre_cooldown match_data matches 1.. run scoreboard players reset $nexus_blue_b_pre_cooldown match_data
+execute if score $nexus_yellow_a_pre_cooldown match_data matches 1.. run scoreboard players remove $nexus_yellow_a_pre_cooldown match_data 1
+execute unless score $nexus_yellow_a_pre_cooldown match_data matches 1.. run scoreboard players reset $nexus_yellow_a_pre_cooldown match_data
+execute if score $nexus_yellow_b_pre_cooldown match_data matches 1.. run scoreboard players remove $nexus_yellow_b_pre_cooldown match_data 1
+execute unless score $nexus_yellow_b_pre_cooldown match_data matches 1.. run scoreboard players reset $nexus_yellow_b_pre_cooldown match_data
 
 # Actual cooldown
-execute if score $CBAcd crusadehp matches 0.. run scoreboard players remove $CBAcd crusadehp 1
-execute if score $CBBcd crusadehp matches 0.. run scoreboard players remove $CBBcd crusadehp 1
-execute if score $CYAcd crusadehp matches 0.. run scoreboard players remove $CYAcd crusadehp 1
-execute if score $CYBcd crusadehp matches 0.. run scoreboard players remove $CYBcd crusadehp 1
+execute if score $nexus_blue_a_cooldown match_data matches 0.. run scoreboard players remove $nexus_blue_a_cooldown match_data 1
+execute unless score $nexus_blue_a_cooldown match_data matches 0.. run scoreboard players reset $nexus_blue_a_cooldown match_data
+execute if score $nexus_blue_b_cooldown match_data matches 0.. run scoreboard players remove $nexus_blue_b_cooldown match_data 1
+execute unless score $nexus_blue_b_cooldown match_data matches 0.. run scoreboard players reset $nexus_blue_b_cooldown match_data
+execute if score $nexus_yellow_a_cooldown match_data matches 0.. run scoreboard players remove $nexus_yellow_a_cooldown match_data 1
+execute unless score $nexus_yellow_a_cooldown match_data matches 0.. run scoreboard players reset $nexus_yellow_a_cooldown match_data
+execute if score $nexus_yellow_b_cooldown match_data matches 0.. run scoreboard players remove $nexus_yellow_b_cooldown match_data 1
+execute unless score $nexus_yellow_b_cooldown match_data matches 0.. run scoreboard players reset $nexus_yellow_b_cooldown match_data
 
 # Glass during cooldown
-execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 1.. run fill 36 47 -35 40 51 -39 minecraft:tinted_glass
-execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 1.. run fill -16 47 -35 -12 51 -39 minecraft:tinted_glass
-execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 1.. run fill -12 47 35 -16 51 39 minecraft:tinted_glass
-execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 1.. run fill 36 47 35 40 51 39 minecraft:tinted_glass
+execute if score $nexus_blue_a_health match_data matches 1.. if score $nexus_blue_a_cooldown match_data matches 1.. run fill 36 47 -35 40 51 -39 minecraft:tinted_glass
+execute if score $nexus_blue_b_health match_data matches 1.. if score $nexus_blue_b_cooldown match_data matches 1.. run fill -16 47 -35 -12 51 -39 minecraft:tinted_glass
+execute if score $nexus_yellow_a_health match_data matches 1.. if score $nexus_yellow_a_cooldown match_data matches 1.. run fill -12 47 35 -16 51 39 minecraft:tinted_glass
+execute if score $nexus_yellow_b_health match_data matches 1.. if score $nexus_yellow_b_cooldown match_data matches 1.. run fill 36 47 35 40 51 39 minecraft:tinted_glass
 
 # Glass after cooldown
-execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 run fill 36 47 -35 40 51 -39 minecraft:blue_stained_glass replace tinted_glass
-execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 run fill -16 47 -35 -12 51 -39 minecraft:blue_stained_glass replace tinted_glass
-execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 run fill -12 47 35 -16 51 39 minecraft:yellow_stained_glass replace tinted_glass
-execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 run fill 36 47 35 40 51 39 minecraft:yellow_stained_glass replace tinted_glass
+execute if score $nexus_blue_a_health match_data matches 1.. if score $nexus_blue_a_cooldown match_data matches 0 positioned 36 47 -39 run function rr_crusade:game/nexus_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
+execute if score $nexus_blue_b_health match_data matches 1.. if score $nexus_blue_b_cooldown match_data matches 0 positioned -16 47 -39 run function rr_crusade:game/nexus_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams blue.color_palette
+execute if score $nexus_yellow_a_health match_data matches 1.. if score $nexus_yellow_a_cooldown match_data matches 0 positioned -16 47 35 run function rr_crusade:game/nexus_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
+execute if score $nexus_yellow_b_health match_data matches 1.. if score $nexus_yellow_b_cooldown match_data matches 0 positioned 36 47 35 run function rr_crusade:game/nexus_glass_dynamic_fill_replace_tinted_glass with storage rocketriders:teams yellow.color_palette
 
-# End crystals after cooldown
-execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueA,limit=1] Invulnerable set value false
-execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeBlueB,limit=1] Invulnerable set value false
-execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellowA,limit=1] Invulnerable set value false
-execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 run data modify entity @e[x=0,type=end_crystal,tag=CrusadeYellowB,limit=1] Invulnerable set value false
+# Nexuses after cooldown
+execute if score $nexus_blue_a_health match_data matches 1.. if score $nexus_blue_a_cooldown match_data matches 0 run data modify entity @e[x=0,type=end_crystal,tag=nexus.blue_a,limit=1] Invulnerable set value false
+execute if score $nexus_blue_b_health match_data matches 1.. if score $nexus_blue_b_cooldown match_data matches 0 run data modify entity @e[x=0,type=end_crystal,tag=nexus.blue_b,limit=1] Invulnerable set value false
+execute if score $nexus_yellow_a_health match_data matches 1.. if score $nexus_yellow_a_cooldown match_data matches 0 run data modify entity @e[x=0,type=end_crystal,tag=nexus.yellow_a,limit=1] Invulnerable set value false
+execute if score $nexus_yellow_b_health match_data matches 1.. if score $nexus_yellow_b_cooldown match_data matches 0 run data modify entity @e[x=0,type=end_crystal,tag=nexus.yellow_b,limit=1] Invulnerable set value false
 
 # Sounds after cooldown
-execute if score $CBA crusadehp matches 1.. if score $CBAcd crusadehp matches 0 positioned 38 49 -37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2
-execute if score $CBB crusadehp matches 1.. if score $CBBcd crusadehp matches 0 positioned -14 49 -37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2
-execute if score $CYA crusadehp matches 1.. if score $CYAcd crusadehp matches 0 positioned -14 49 37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2
-execute if score $CYB crusadehp matches 1.. if score $CYBcd crusadehp matches 0 positioned 38 49 37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2
+execute if score $nexus_blue_a_health match_data matches 1.. if score $nexus_blue_a_cooldown match_data matches 0 positioned 38 49 -37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2
+execute if score $nexus_blue_b_health match_data matches 1.. if score $nexus_blue_b_cooldown match_data matches 0 positioned -14 49 -37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2
+execute if score $nexus_yellow_a_health match_data matches 1.. if score $nexus_yellow_a_cooldown match_data matches 0 positioned -14 49 37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2
+execute if score $nexus_yellow_b_health match_data matches 1.. if score $nexus_yellow_b_cooldown match_data matches 0 positioned 38 49 37 run playsound minecraft:block.respawn_anchor.charge master @a[x=0] ~ ~ ~ 2 2
 
 #> Win condition
 execute if function game:check/blue_portal_broken if function game:check/yellow_portal_broken run function game:winbothcheck
-execute if entity @s[tag=!BothWon] if function game:check/blue_portal_broken run function rr_crusade:game/winyellow
-execute if entity @s[tag=!BothWon] if function game:check/yellow_portal_broken run function rr_crusade:game/winblue
+execute unless predicate game:outcome/both_won if function game:check/blue_portal_broken run function rr_crusade:game/winyellow
+execute unless predicate game:outcome/both_won if function game:check/yellow_portal_broken run function rr_crusade:game/winblue

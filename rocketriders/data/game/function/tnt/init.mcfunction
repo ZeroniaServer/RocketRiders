@@ -7,6 +7,13 @@ data modify storage rocketriders:main tnt.entity_data set from entity @s {}
 # Set glowing
 execute if predicate game:phase/match unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run function game:glowing/on
 
+# Remove gravity and dampen initial momentum when the "zero_gravity_tnt" modifier is enabled
+execute if predicate game:modifiers/zero_gravity_tnt/on run data modify storage rocketriders:main tnt.zero_gravity_tnt_modification set value {NoGravity:true}
+execute if predicate game:modifiers/zero_gravity_tnt/on run data modify storage rocketriders:main tnt.zero_gravity_tnt_modification.Motion set from storage rocketriders:main tnt.entity_data.Motion
+execute if predicate game:modifiers/zero_gravity_tnt/on store result score $y_velocity var run data get storage rocketriders:main tnt.entity_data.Motion[1] 1000
+execute if predicate game:modifiers/zero_gravity_tnt/on store result storage rocketriders:main tnt.zero_gravity_tnt_modification.Motion[1] float 0.001 run scoreboard players remove $y_velocity var 175
+execute if predicate game:modifiers/zero_gravity_tnt/on run data modify entity @s {} merge from storage rocketriders:main tnt.zero_gravity_tnt_modification
+
 # correct creeper owner
 scoreboard players set $player_owner_exists var 0
 execute on origin if entity @s[type=player] run scoreboard players set $player_owner_exists var 0
@@ -14,14 +21,14 @@ execute if score $player_owner_exists var matches 0 if data storage rocketriders
 
 # store the timestamp that this TNT will explode at
 scoreboard players set @s tnt.explosion_timestamp 80
-execute unless predicate game:modifiers/instant_tnt_explosions/on if data storage rocketriders:main tnt.entity_data.fuse store result score @s tnt.explosion_timestamp run data get storage rocketriders:main tnt.entity_data.fuse
+execute unless predicate game:modifiers/instant_tnt/on if data storage rocketriders:main tnt.entity_data.fuse store result score @s tnt.explosion_timestamp run data get storage rocketriders:main tnt.entity_data.fuse
 
-execute if predicate game:modifiers/instant_tnt_explosions/on run scoreboard players add $instant_explosion_buffer var 1
-execute if predicate game:modifiers/instant_tnt_explosions/on store result score @s tnt.explosion_timestamp run scoreboard players operation $instant_explosion_buffer var %= $4 constant
+execute if predicate game:modifiers/instant_tnt/on run scoreboard players add $instant_explosion_buffer var 1
+execute if predicate game:modifiers/instant_tnt/on store result score @s tnt.explosion_timestamp run scoreboard players operation $instant_explosion_buffer var %= $4 constant
 
 execute if score @s tnt.explosion_timestamp matches ..0 run scoreboard players set @s tnt.explosion_timestamp 1
 scoreboard players operation @s tnt.explosion_timestamp += $gametime global
 scoreboard players remove @s tnt.explosion_timestamp 1
 
 # make punchable
-execute if predicate game:modifiers/punchable_tnt/on unless predicate game:modifiers/instant_tnt_explosions/on at @s run function entities:type/punchable_tnt/init
+execute if predicate game:modifiers/punchable_tnt/on unless predicate game:modifiers/instant_tnt/on at @s run function entities:type/punchable_tnt/init

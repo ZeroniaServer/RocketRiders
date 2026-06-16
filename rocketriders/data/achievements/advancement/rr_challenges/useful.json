@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_fffmedium/root",
   "criteria": {
     "1": {
       "trigger": "minecraft:impossible"
@@ -70,16 +71,15 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
+      "id": "minecraft:lingering_potion",
       "components": {
         "minecraft:potion_contents": "minecraft:water"
-      },
-      "id": "minecraft:lingering_potion"
+      }
     },
     "show_toast": true,
     "title": {
       "color": "#fe6309",
       "text": "They're Useful!"
     }
-  },
-  "parent": "achievements:rr_fffmedium/root"
+  }
 }

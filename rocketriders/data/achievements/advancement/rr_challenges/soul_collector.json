@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_zzzhard/root",
   "criteria": {
     "1": {
       "trigger": "minecraft:impossible"
@@ -167,6 +168,5 @@
       "color": "#c20000",
       "text": "Soul Collector"
     }
-  },
-  "parent": "achievements:rr_zzzhard/root"
+  }
 }

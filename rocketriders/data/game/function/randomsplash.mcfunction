@@ -9,8 +9,6 @@ execute as @a[x=0] run title @s times 5 30 5
 execute store result score $startsplash CmdData run random value 0..196
 
 #Add splashes here (just copy paste the line and change the score)
-execute if score $startsplash CmdData matches -1 run title @a[x=0] subtitle {color:"green",text:"This splash will never be shown in-game! :)"}
-execute if score $startsplash CmdData matches 0..1 run title @a[x=0] subtitle {color:"green",text:"GL HF!"}
 execute if score $startsplash CmdData matches 2 run title @a[x=0] subtitle {color:"green",text:"SpaceX, but sideways!"}
 execute if score $startsplash CmdData matches 3 run title @a[x=0] subtitle {color:"green",text:"command block fish piston"}
 execute if score $startsplash CmdData matches 4 run title @a[x=0] subtitle [{color:"green",text:"4 years of "},{strikethrough:true,text:"non-stop"}," development!"]
@@ -206,3 +204,5 @@ execute if score $startsplash CmdData matches 193 run title @a[x=0] subtitle {co
 execute if score $startsplash CmdData matches 194 run title @a[x=0] subtitle {color:"green",text:"Why are they all pig spawn eggs?!"}
 execute if score $startsplash CmdData matches 195 run title @a[x=0] subtitle {color:"green",text:"no way this guy might be the... deus ex machina"}
 execute if score $startsplash CmdData matches 196 run title @a[x=0] subtitle {color:"green",text:"Delayed due to the release of Silksong"}
+
+execute if score $startsplash CmdData matches 0..1 run title @a[x=0] subtitle {color:"green",text:"GL HF!"}

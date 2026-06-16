@@ -1,11 +1,14 @@
 # Redirect function to the brain
 execute unless entity @s[predicate=entities:type/nova_rocket/brain] run return run execute on passengers if entity @s[predicate=entities:type/nova_rocket/brain] run function entities:type/nova_rocket/actions/explode
 
-execute at @s unless predicate entities:nova_rocket_can_explode run return run function entities:type/nova_rocket/actions/break
-
 # Dismount the brain and trigger the firework
 execute on vehicle run data merge entity @s {LifeTime:0,Motion:[0,0,0],ShotAtAngle:false}
 execute on vehicle positioned as @s on passengers run tp @s ~ ~ ~
+
+# Break conditions
+execute at @s if predicate entities:nova_rocket_near_enemy_spawn_zone run return run function entities:type/nova_rocket/actions/break_with_reason {message:"Nova Rocket failed to explode; it was too close to an enemy spawnpoint"}
+execute at @s if predicate custom:near_or_above_roof run return run function entities:type/nova_rocket/actions/break_with_reason {message:"Nova Rocket failed to explode; it was too close to the roof"}
+execute at @s unless predicate entities:nova_rocket_can_explode run return run function entities:type/nova_rocket/actions/break_with_reason {message:"Nova Rocket failed to explode"}
 
 # Create explosion
 tag @e[x=0,type=creeper,tag=explosion] add old_explosion
@@ -23,8 +26,8 @@ execute on origin run tag @s add nova_attach.origin
 execute if predicate entities:origin_team/blue run scoreboard players set $nova_rocket_team var 0
 execute if predicate entities:origin_team/yellow run scoreboard players set $nova_rocket_team var 1
 execute if predicate entities:origin_team/none run scoreboard players set $nova_rocket_team var -1
-execute unless predicate game:modifiers/explosive/on positioned as @s positioned ~ ~-1 ~ as @e[distance=..8,predicate=entities:type/canopy/brain] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{distance:{y:{max:5},horizontal:{max:6}}}} positioned ~ ~1 ~ run function entities:type/nova_rocket/actions/__explode__/check_canopy
-execute if predicate game:modifiers/explosive/on positioned as @s positioned ~ ~-1 ~ as @e[distance=..14,predicate=entities:type/canopy/brain] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{distance:{y:{max:9},horizontal:{max:10}}}} positioned ~ ~1 ~ run function entities:type/nova_rocket/actions/__explode__/check_canopy
+execute unless predicate game:modifiers/explosive/on positioned as @s positioned ~ ~-1 ~ as @e[distance=..8,predicate=entities:type/canopy/brain] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:distance":{y:{max:5},horizontal:{max:6}}}} positioned ~ ~1 ~ run function entities:type/nova_rocket/actions/__explode/check_canopy
+execute if predicate game:modifiers/explosive/on positioned as @s positioned ~ ~-1 ~ as @e[distance=..14,predicate=entities:type/canopy/brain] if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:distance":{y:{max:9},horizontal:{max:10}}}} positioned ~ ~1 ~ run function entities:type/nova_rocket/actions/__explode/check_canopy
 execute on origin run tag @s remove nova_rocket.origin
 execute on origin run tag @s remove nova_attach.origin
 tag @s remove nova_rocket.explode.this

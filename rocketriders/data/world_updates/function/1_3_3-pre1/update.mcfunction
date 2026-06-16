@@ -1,0 +1,132 @@
+scoreboard objectives remove text.flag_color
+scoreboard objectives remove FallDistance
+scoreboard objectives remove flag.is_nova_attached
+scoreboard objectives remove flag.is_dead
+scoreboard objectives remove SwissCheese
+scoreboard objectives remove shooting_saber.infinity_time
+scoreboard objectives remove shooting_saber.multishot_time
+scoreboard objectives remove elytra_time
+scoreboard objectives remove ObshieldSpawned
+scoreboard objectives remove crusadehp
+
+scoreboard objectives remove match
+
+scoreboard objectives remove FlagsCaptured
+scoreboard objectives remove FlagDeliver
+scoreboard objectives remove FlagScore
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run scoreboard objectives add carrying_flag_time dummy
+scoreboard objectives remove FlagDisp
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run scoreboard objectives add ctf_sidebar dummy {bold:true,color:"green",text:"Flag Count"}
+bossbar remove rr_ctf:fb1
+bossbar remove rr_ctf:fb2
+bossbar remove rr_ctf:fy1
+bossbar remove rr_ctf:fy2
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar add rr_ctf:flag/yellow_right ""
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_right color blue
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_right style notched_10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_right max 10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar add rr_ctf:flag/yellow_left ""
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_left color blue
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_left style notched_10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/yellow_left max 10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar add rr_ctf:flag/blue_right ""
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_right color yellow
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_right style notched_10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_right max 10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar add rr_ctf:flag/blue_left ""
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_left color yellow
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_left style notched_10
+execute if entity @e[limit=1,x=0,tag=gamemodeAS,tag=rr_ctf] run bossbar set rr_ctf:flag/blue_left max 10
+
+execute if score $disable_tying config matches 1 run scoreboard players set $disable_overtime config 1
+execute if score $disable_tying config matches 1 run scoreboard players set $tie_window_length config -1
+scoreboard players reset $disable_tying config
+
+execute if score $instant_tnt_explosions config matches 1 run scoreboard players set $instant_tnt config 1
+scoreboard players reset $instant_tnt_explosions config
+
+execute if score $no_fall_damage config matches 1 run scoreboard players set $no_fall config 1
+scoreboard players reset $no_fall_damage config
+
+execute unless predicate game:feature_flags/1_4_0_update/on as @e[limit=1,x=0,type=armor_stand,tag=Selection] if score @s modifierID matches 2.. run scoreboard players add @s modifierID 1
+execute as @e[limit=1,x=0,type=armor_stand,tag=Selection] if score @s modifierID = @s modifierID run scoreboard players operation $modification_room.selected_modifier global = @e[limit=1,x=0,type=armor_stand,tag=Selection] modifierID
+scoreboard objectives remove modifierID
+
+function game:forcestop
+schedule function game:match_components/reset 5t
+
+scoreboard players reset $match_time global
+scoreboard players reset $match_play_time global
+scoreboard players reset $closing_timer.time global
+scoreboard players reset $closing_timer.max_tie_window_time global
+scoreboard players reset $closing_timer.max_time_before_review global
+scoreboard players reset $closing_timer.max_review_time global
+scoreboard players reset $flag_state.blue_left match_data
+scoreboard players reset $flag_state.blue_right match_data
+scoreboard players reset $flag_state.yellow_left match_data
+scoreboard players reset $flag_state.yellow_right match_data
+scoreboard players reset $tie_breaker_timer global
+scoreboard players reset $1v1_duel_time_out_period global
+scoreboard players reset $checkered_flag_waving_animation_timer global
+scoreboard players reset $restore_blue_nexus_a_top_banner global
+scoreboard players reset $restore_blue_nexus_b_top_banner global
+scoreboard players reset $restore_yellow_nexus_a_top_banner global
+scoreboard players reset $restore_yellow_nexus_b_top_banner global
+scoreboard players reset $restore_blue_kit_sign_knight global
+scoreboard players reset $restore_blue_kit_sign_archer global
+scoreboard players reset $restore_blue_kit_sign_mage global
+scoreboard players reset $restore_yellow_kit_sign_knight global
+scoreboard players reset $restore_yellow_kit_sign_archer global
+scoreboard players reset $restore_yellow_kit_sign_mage global
+scoreboard players reset $flags_captured_by_blue global
+scoreboard players reset $flags_captured_by_yellow global
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove BlueWon
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove BlueWonFirst
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove YellowWon
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove YellowWonFirst
+tag @e[limit=1,x=0,type=armor_stand,tag=Selection] remove BothWon
+
+# expand parkour area wall
+fill 95 186 -6 36 219 -16 minecraft:black_concrete hollow
+fill 37 187 -6 94 218 -6 minecraft:air strict
+fill 95 186 123 36 219 136 minecraft:black_concrete hollow
+fill 37 187 123 94 218 123 minecraft:air strict
+fill 95 186 -16 101 219 136 minecraft:black_concrete hollow
+fill 95 187 -15 95 218 135 minecraft:air strict
+fill 37 196 -15 100 196 135 minecraft:barrier strict
+fill 36 219 -16 101 231 136 minecraft:black_concrete hollow
+fill 100 219 135 37 219 -15 minecraft:barrier strict
+fill 68 219 68 70 219 73 minecraft:red_stained_glass strict
+setblock 80 218 71 minecraft:red_stained_glass strict
+setblock 65 219 82 minecraft:red_stained_glass strict
+fill 64 218 82 64 207 82 minecraft:light[level=15] strict
+fill 50 197 90 84 210 121 minecraft:air replace minecraft:light strict
+fill 50 198 90 84 211 121 minecraft:light[level=11] replace minecraft:air strict
+fill 50 198 90 84 211 121 minecraft:light[level=11] replace minecraft:light strict
+fill 76 200 93 58 200 111 minecraft:light[level=15] replace minecraft:light strict
+fill 56 200 103 52 203 101 minecraft:light[level=15] replace minecraft:light strict
+fill 78 200 101 82 203 103 minecraft:light[level=15] replace minecraft:light strict
+fill 68 200 113 66 203 119 minecraft:light[level=15] replace minecraft:light strict
+fill 79 217 72 81 209 70 minecraft:light[level=15] replace minecraft:air strict
+fill 66 206 81 64 218 83 minecraft:light[level=15] replace minecraft:air strict
+function world_updates:1_3_3-pre1/try_fill_biome {_:""}
+
+# add "Punch Me!" name tags to zeronia credit heads
+kill @e[x=0,tag=zeronia_credit_name_tag.left]
+summon minecraft:armor_stand -46.5 211.5 81.5 {Tags:["zeronia_credit_name_tag.left"],Invisible:true,Marker:true,Small:true,attributes:[{id:"minecraft:scale",base:0.0625},{id:"minecraft:name_tag_distance",base:3}],CustomNameVisible:true,CustomName:"Punch Me!"}
+kill @e[x=0,tag=zeronia_credit_name_tag.right]
+summon minecraft:armor_stand -46.5 211.5 75.5 {Tags:["zeronia_credit_name_tag.right"],Invisible:true,Marker:true,Small:true,attributes:[{id:"minecraft:scale",base:0.0625},{id:"minecraft:name_tag_distance",base:3}],CustomNameVisible:true,CustomName:"Punch Me!"}
+
+# remove id_to_loot_table_map
+data remove storage rocketriders:items id_to_loot_table_map
+
+# fix join pad sprites
+execute as @e[x=0,type=text_display,tag=join_pad_display] run data modify entity @s text set value {atlas:"minecraft:items",sprite:"minecraft:item/barrier",color:"#EFEFEF"}
+
+# update vortex decoy
+kill @e[x=0,predicate=entities:type/vortex_decoy]
+execute positioned -69.5 206.5 48.5 run function entities:type/vortex_decoy/summon
+
+# refresh options signs & wrap modifiers sign correctly
+scoreboard players reset $total_modifiers constant
+execute as @e[limit=1,x=0,type=armor_stand,tag=Selection] run function arenaclear:refreshoptionssigns

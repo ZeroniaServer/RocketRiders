@@ -5,14 +5,14 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "team": "rocketriders.sort_000.blue"
+        "minecraft:team": "rocketriders.sort_000.blue"
       }
     },
     {
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "team": "rocketriders.sort_001.yellow"
+        "minecraft:team": "rocketriders.sort_001.yellow"
       }
     }
   ]

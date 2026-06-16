@@ -1,0 +1,29 @@
+{
+  "criteria": {
+    "interact_with_flower_pot": {
+      "trigger": "minecraft:default_block_use",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "minecraft:flower_pot"
+              }
+            }
+          },
+          {
+            "condition": "minecraft:inverted",
+            "term": {
+              "condition": "minecraft:reference",
+              "name": "custom:in_arena"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "lobby:protection/interact_with_flower_pot"
+  }
+}

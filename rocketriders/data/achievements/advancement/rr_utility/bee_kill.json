@@ -1,17 +1,17 @@
 {
   "criteria": {
     "bee_kill": {
+      "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "entity": {
-          "type": "minecraft:bee"
+          "minecraft:entity_type": "minecraft:bee"
         },
         "player": {
-          "location": {
+          "minecraft:location": {
             "dimension": "minecraft:overworld"
           }
         }
-      },
-      "trigger": "minecraft:entity_killed_player"
+      }
     }
   },
   "rewards": {

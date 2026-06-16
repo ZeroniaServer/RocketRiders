@@ -1,4 +1,4 @@
-execute if predicate game:match_components/green_for_yellow run return run function rr_powerups:everytick/green_for_yellow_platform
+execute if predicate game:yellow_team_skin/green run return run function rr_powerups:everytick/green_for_yellow_platform
 
 setblock ~ ~-1 ~ shroomlight
 

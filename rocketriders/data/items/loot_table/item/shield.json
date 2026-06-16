@@ -1,0 +1,103 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:snowball",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "id": "shield"
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "shield",
+                    "none"
+                  ]
+                },
+                "minecraft:lore": [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Throw to spawn a glass Shield."
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "This is able to stop most missiles."
+                  }
+                ],
+                "minecraft:max_stack_size": 64
+              }
+            },
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                "",
+                [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: "
+                  },
+                  {
+                    "score": {
+                      "name": "$shield_flight_duration",
+                      "objective": "match_components"
+                    }
+                  }
+                ]
+              ],
+              "mode": "append",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {}
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "light_purple",
+                  "text": "[Utility] "
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Shield"
+                ]
+              ],
+              "target": "custom_name"
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

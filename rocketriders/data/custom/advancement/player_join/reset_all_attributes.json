@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "reset_all_attributes": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "predicates": {
+              "minecraft:custom_data": {
+                "reset_all_attributes": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "function": "custom:event/player_joins_overworld/reset_attributes/main"
+  }
+}

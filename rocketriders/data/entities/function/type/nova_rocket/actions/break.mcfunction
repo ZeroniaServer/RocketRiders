@@ -13,3 +13,5 @@ execute on origin run tag @s remove nova_rocket.origin
 execute on vehicle run kill @s[predicate=entities:type/nova_rocket]
 execute on passengers run kill @s[predicate=entities:type/nova_rocket]
 kill @s[predicate=entities:type/nova_rocket]
+
+return 1

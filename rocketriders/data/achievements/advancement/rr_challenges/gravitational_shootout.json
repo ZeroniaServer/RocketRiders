@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/pigeon",
   "criteria": {
     "1": {
       "trigger": "minecraft:impossible"
@@ -32,6 +33,5 @@
       "color": "#fe6309",
       "text": "Gravitational Shootout"
     }
-  },
-  "parent": "achievements:rr_challenges/pigeon"
+  }
 }

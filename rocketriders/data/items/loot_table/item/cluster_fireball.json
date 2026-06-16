@@ -1,0 +1,102 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pig_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "id": "cluster_fireball",
+                  "spawn_egg": {
+                    "type": "cluster_fireball"
+                  }
+                },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "rocketriders",
+                    "cluster_fireball",
+                    "none"
+                  ]
+                },
+                "minecraft:enchantment_glint_override": true,
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:item_model": "minecraft:blaze_spawn_egg",
+                "minecraft:lore": [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Spawns a stationary Cluster Fireball."
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Punch fireballs to launch or "
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "redirect them into missiles, "
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "blocks, or enemy players."
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "UUID",
+                  "target": "spawn_egg.owner"
+                }
+              ],
+              "source": "this"
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "light_purple",
+                  "text": "[Utility] "
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Cluster Fireball"
+                ]
+              ],
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

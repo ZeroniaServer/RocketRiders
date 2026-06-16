@@ -5,10 +5,9 @@ execute if predicate game:game_rules/disable_titles/on run return fail
 execute as @a[x=0,tag=Winner] run title @s times 5 30 5
 
 #If you want to add more splashes just increase this number.
-execute store result score $winsplash CmdData run random value 0..79
+execute store result score $winsplash CmdData run random value 0..81
 
 #Add splashes here (just copy paste the line and change the score)
-execute if score $winsplash CmdData matches 0..3 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Take some time to celebrate!"}
 execute if score $winsplash CmdData matches 4 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"GG!"}
 execute if score $winsplash CmdData matches 5 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Victory is ours!"}
 execute if score $winsplash CmdData matches 6 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Didn't even have to aim!"}
@@ -24,8 +23,8 @@ execute if score $winsplash CmdData matches 15 run title @a[x=0,tag=Winner] subt
 execute if score $winsplash CmdData matches 16 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Victory Royale!"}
 execute if score $winsplash CmdData matches 17 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"We got them good!"}
 execute if score $winsplash CmdData matches 18 if predicate game:match_components/one_team run scoreboard players set $winsplash CmdData 0
-execute if score $winsplash CmdData matches 18 run title @a[x=0,tag=Winner,predicate=custom:team/yellow] subtitle {color:"green",text:"We did it boys, Blue is no more."}
-execute if score $winsplash CmdData matches 18 run title @a[x=0,tag=Winner,predicate=custom:team/blue] subtitle {color:"green",text:"We did it boys, Yellow is no more."}
+execute if score $winsplash CmdData matches 18 run title @a[x=0,tag=Winner,predicate=custom:team/blue] subtitle [{color:"green",text:"We did it team, "},{score:{name:"#yellow",objective:"text.team_name"}}," is no more."]
+execute if score $winsplash CmdData matches 18 run title @a[x=0,tag=Winner,predicate=custom:team/yellow] subtitle [{color:"green",text:"We did it team, "},{score:{name:"#blue",objective:"text.team_name"}}," is no more."]
 execute if score $winsplash CmdData matches 19 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"oops"}
 execute if score $winsplash CmdData matches 20 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"It was already decided beforehand."}
 execute if score $winsplash CmdData matches 21 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"*Insert victory fanfare here*"}
@@ -37,8 +36,8 @@ execute if score $winsplash CmdData matches 26 run title @a[x=0,tag=Winner] subt
 execute if score $winsplash CmdData matches 27 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"get carried lmao"}
 execute if score $winsplash CmdData matches 28 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Winner winner chicken dinner!"}
 execute if score $winsplash CmdData matches 29 if predicate game:match_components/one_team run scoreboard players set $winsplash CmdData 0
-execute if score $winsplash CmdData matches 29 run title @a[x=0,tag=Winner,predicate=custom:team/yellow] subtitle {color:"green",text:"Blue was ejected."}
-execute if score $winsplash CmdData matches 29 run title @a[x=0,tag=Winner,predicate=custom:team/blue] subtitle {color:"green",text:"Yellow was ejected."}
+execute if score $winsplash CmdData matches 29 run title @a[x=0,tag=Winner,predicate=custom:team/blue] subtitle  [{color:"green",text:""},{score:{name:"#yellow",objective:"text.team_name"}}," was ejected."]
+execute if score $winsplash CmdData matches 29 run title @a[x=0,tag=Winner,predicate=custom:team/yellow] subtitle  [{color:"green",text:""},{score:{name:"#blue",objective:"text.team_name"}}," was ejected."]
 execute if score $winsplash CmdData matches 30 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Drink the salty tears of your enemies!"}
 execute if score $winsplash CmdData matches 31 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Good, now proceed to the next test chamber."}
 execute if score $winsplash CmdData matches 32 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Better gaming chairs ;)"}
@@ -48,8 +47,8 @@ execute if score $winsplash CmdData matches 35 run title @a[x=0,tag=Winner] subt
 execute if score $winsplash CmdData matches 36 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Knock knock, who's there? Nuclear warfare!"}
 execute if score $winsplash CmdData matches 37 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Imagine losing"}
 execute if score $winsplash CmdData matches 38 if predicate game:match_components/one_team run scoreboard players set $winsplash CmdData 0
-execute if score $winsplash CmdData matches 38 run title @a[x=0,tag=Winner,predicate=custom:team/yellow] subtitle {color:"green",text:"Bet Yellow won, I just know it!"}
-execute if score $winsplash CmdData matches 38 run title @a[x=0,tag=Winner,predicate=custom:team/blue] subtitle {color:"green",text:"Bet Blue won, I just know it!"}
+execute if score $winsplash CmdData matches 38 run title @a[x=0,tag=Winner,predicate=custom:team/blue] subtitle [{color:"green",text:"Bet "},{score:{name:"#blue",objective:"text.team_name"}}," won, I just know it!"]
+execute if score $winsplash CmdData matches 38 run title @a[x=0,tag=Winner,predicate=custom:team/yellow] subtitle [{color:"green",text:"Bet "},{score:{name:"#yellow",objective:"text.team_name"}}," won, I just know it!"]
 execute if score $winsplash CmdData matches 39 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"MISSILE WENT BOOM!!!!!"}
 execute if score $winsplash CmdData matches 40 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Somewhere, Goldy smiles on you."}
 execute if score $winsplash CmdData matches 41 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Ez carry"}
@@ -92,3 +91,7 @@ execute if score $winsplash CmdData matches 76 run title @a[x=0,tag=Winner] subt
 execute if score $winsplash CmdData matches 77 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Huzzah!"}
 execute if score $winsplash CmdData matches 78 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Hooray!"}
 execute if score $winsplash CmdData matches 79 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"One for the history books!"}
+execute if score $winsplash CmdData matches 80 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"The power of SethBling compells you!"}
+execute if score $winsplash CmdData matches 81 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"The true meaning of Tiny Takeover"}
+
+execute if score $winsplash CmdData matches 0..3 run title @a[x=0,tag=Winner] subtitle {color:"green",text:"Take some time to celebrate!"}

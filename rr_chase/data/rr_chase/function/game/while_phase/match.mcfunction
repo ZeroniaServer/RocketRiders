@@ -1,20 +1,19 @@
-#Flagpole
-fill 12 64 64 12 71 64 oak_fence replace #custom:basereplace
+# Clear flag base
+fill 10 64 62 14 67 66 air
 
-fill -14 64 66 39 74 70 air replace white_wool
-fill -14 64 66 39 74 70 air replace black_wool
-fill -14 64 65 39 74 70 air replace oak_fence
+# Flag pole
+execute positioned as @e[limit=1,x=0,type=marker,tag=checkered_flag] run fill ~-2 ~ ~-2 ~2 ~6 ~2 air replace oak_fence strict
+execute positioned as @e[limit=1,x=0,type=marker,tag=checkered_flag] run fill ~-2 ~ ~-2 ~2 ~6 ~2 air replace moving_piston{blockState:{Name:"minecraft:oak_fence"}} strict
+execute positioned as @e[limit=1,x=0,type=marker,tag=checkered_flag] run fill ~ ~ ~ ~ ~6 ~ oak_fence strict
 
-fill -14 64 62 39 74 58 air replace white_wool
-fill -14 64 62 39 74 58 air replace black_wool
-fill -14 64 63 39 74 58 air replace oak_fence
-
-#Make flag wave around
-scoreboard players add $checkered_flag_waving_animation_timer global 1
-execute unless score $checkered_flag_waving_animation_timer global matches 0..39 run scoreboard players set $checkered_flag_waving_animation_timer global 0
-execute if score $checkered_flag_waving_animation_timer global matches 20..39 run place template game:flag/checkered/stage_1 8 70 63 none none 1 0 strict
-execute if score $checkered_flag_waving_animation_timer global matches 0..19 run place template game:flag/checkered/stage_2 8 70 63 none none 1 0 strict
+# Waving flag
+scoreboard players operation $flag_wave var = $time match_data
+scoreboard players operation $flag_wave var %= $40 constant
+execute if score $flag_wave var matches 0 positioned as @e[limit=1,x=0,type=marker,tag=checkered_flag] run function rr_chase:game/checkered_flag/set_stage_1
+execute if score $flag_wave var matches 20 positioned as @e[limit=1,x=0,type=marker,tag=checkered_flag] run function rr_chase:game/checkered_flag/set_stage_2
 
 #Place stairs
 execute positioned 10 63 66 run function rr_chase:arenaclear/stairleft
 execute positioned 14 63 66 run function rr_chase:arenaclear/stairright
+execute unless predicate game:modifiers/hardcore/on run fill 11 63 62 13 63 64 minecraft:obsidian
+execute if predicate game:modifiers/hardcore/on run fill 11 63 64 13 63 64 minecraft:obsidian

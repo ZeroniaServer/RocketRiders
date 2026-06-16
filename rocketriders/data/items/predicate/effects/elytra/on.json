@@ -1,0 +1,9 @@
+{
+  "condition": "minecraft:entity_scores",
+  "entity": "this",
+  "scores": {
+    "effects.elytra.state": {
+      "min": 1
+    }
+  }
+}

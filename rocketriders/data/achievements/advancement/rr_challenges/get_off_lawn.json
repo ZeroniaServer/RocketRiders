@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/fire_within_me",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -20,6 +21,5 @@
       "color": "#fe6309",
       "text": "Get Off My Lawn!"
     }
-  },
-  "parent": "achievements:rr_challenges/fire_within_me"
+  }
 }

@@ -1,0 +1,9 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "minecraft:targeted_entity": {
+      "minecraft:team": "rocketriders.sort_001.yellow"
+    }
+  }
+}

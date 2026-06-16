@@ -1,16 +1,17 @@
-scoreboard players set $arena/no_base_details match_components 1
-scoreboard players set $arena/no_portal_details match_components 1
-scoreboard players set $armor/generic match_components 1
+data modify storage rocketriders:match components."main_item" set value "shooting_saber"
+
+scoreboard players set $config_override.arena_details/bottom match_components -1
+scoreboard players set $config_override.arena_details/middle match_components -1
+scoreboard players set $config_override.arena_details/portal match_components -1
+scoreboard players set $config_override.arena_details/top match_components -1
+scoreboard players set $config_override.arena_details/top_sides match_components -1
 scoreboard players set $config_override.disable_pierce_prevention match_components -1
-scoreboard players set $config_override.disable_tying match_components 1
 scoreboard players set $config_override.item_delay match_components 15
 scoreboard players set $config_override.wind_down match_components 1
 scoreboard players set $custom_leave_handling match_components 1
 scoreboard players set $duel_settings_locked match_components 1
 scoreboard players set $lock_playing_teams_during_match match_components 1
-scoreboard players set $main_item/shooting_saber match_components 1
 scoreboard players set $max_players_per_team match_components 1
-scoreboard players set $min_players_per_team match_components 1
 scoreboard players set $no_feathered_vortices match_components 1
 
 # items

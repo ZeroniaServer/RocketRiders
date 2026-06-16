@@ -12,7 +12,7 @@ execute unless predicate game:modifiers/instamine/on as @a[x=0] run attribute @s
 ##Sonar
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run effect clear @a[x=0,predicate=custom:team/any_playing_team] night_vision
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/spectator] night_vision infinite 100 true
-execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/any_playing_team] darkness infinite 0 true
+execute unless predicate game:phase/match/pause unless predicate game:phase/match/closing if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/any_playing_team] darkness infinite 0 true
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on run effect give @a[x=0,predicate=custom:team/any_playing_team] glowing infinite 1 true
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,type=#arrows,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,type=snowball,tag=!is_glowing] run function game:glowing/on
@@ -25,12 +25,12 @@ execute unless predicate game:phase/match/pause if predicate game:modifiers/sona
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,type=item,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,predicate=entities:type/vortex/body,tag=!is_glowing] run function game:glowing/on
 execute unless predicate game:phase/match/pause if predicate game:modifiers/sonar/on as @e[x=0,type=armor_stand,tag=Bot,tag=!is_glowing] run function game:glowing/on
-execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase/match/pause] run effect give @a[x=0,predicate=custom:team/any_arena_team] night_vision infinite 100 true
-execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase/match/pause] run effect clear @a[x=0,predicate=custom:team/any_arena_team] darkness
+execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase/match/pause,predicate=!game:phase/match/closing] run effect give @a[x=0,predicate=custom:team/any_arena_team] night_vision infinite 100 true
+execute unless entity @s[predicate=game:modifiers/sonar/on,predicate=!game:phase/match/pause,predicate=!game:phase/match/closing] run effect clear @a[x=0,predicate=custom:team/any_arena_team] darkness
 
 ##Rocket Residers (anti-crossing behavior)
-execute unless predicate game:phase/match/pause if predicate game:modifiers/rocket_residers/on unless predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue,predicate=custom:residers] run tag @s add crosser
-execute unless predicate game:phase/match/pause if predicate game:modifiers/rocket_residers/on unless predicate game:phase/match/closing as @a[x=0,predicate=custom:team/yellow,predicate=custom:residers] run tag @s add crosser
+execute unless predicate game:phase/match/pause if predicate game:modifiers/rocket_residers/on unless predicate game:phase/match/closing as @a[x=0,predicate=custom:team/blue,predicate=custom:in_rocket_residers_crosser_zone] run tag @s add crosser
+execute unless predicate game:phase/match/pause if predicate game:modifiers/rocket_residers/on unless predicate game:phase/match/closing as @a[x=0,predicate=custom:team/yellow,predicate=custom:in_rocket_residers_crosser_zone] run tag @s add crosser
 #Hackfix: void works for crossers too
 execute unless predicate game:phase/match/pause as @a[x=0,tag=crosser] run function game:void
 tag @a[x=0] remove crosser
@@ -54,25 +54,10 @@ execute if predicate game:modifiers/hobbits/on as @a[x=0,predicate=!custom:team/
 execute unless predicate game:modifiers/hobbits/on as @a[x=0,tag=hobbit] run function modifiers:hobbit/reset
 
 ##Rotting
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
-execute if predicate game:modifiers/rotting/on run function modifiers:rotting/check_random_location
+execute if predicate game:modifiers/rotting/on run function modifiers:rotting/batch
+
+## Yes Fall
+execute if predicate game:modifiers/yes_fall/on as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:fall_damage_multiplier modifier add rocketriders:yes_fall 1 add_multiplied_base
+execute if predicate game:modifiers/yes_fall/on as @a[x=0,predicate=custom:team/any_playing_team] run attribute @s minecraft:safe_fall_distance modifier add rocketriders:yes_fall -0.5 add_multiplied_base
+execute if predicate game:modifiers/yes_fall/on as @a[x=0,predicate=!custom:team/any_playing_team] run attribute @s minecraft:fall_damage_multiplier modifier remove rocketriders:yes_fall
+execute if predicate game:modifiers/yes_fall/on as @a[x=0,predicate=!custom:team/any_playing_team] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:yes_fall

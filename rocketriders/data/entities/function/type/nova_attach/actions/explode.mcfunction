@@ -5,7 +5,7 @@ execute on origin run tag @s add nova_attach.origin
 execute on vehicle on origin run tag @s add nova_attach.target
 
 execute at @a[limit=1,tag=nova_attach.target] run function entities:type/nova_attach/actions/firework
-execute at @a[limit=1,tag=nova_attach.target] run function entities:type/nova_attach/actions/__explode__/offset_explosion
+execute at @a[limit=1,tag=nova_attach.target] run function entities:type/nova_attach/actions/__explode/offset_explosion
 execute if predicate entities:origin_team/blue at @a[limit=1,tag=nova_attach.target] run tag @n[predicate=entities:type/canopy/brain,predicate=entities:origin_team/yellow,distance=..7] add canopy.kill
 execute if predicate entities:origin_team/yellow at @a[limit=1,tag=nova_attach.target] run tag @n[predicate=entities:type/canopy/brain,predicate=entities:origin_team/blue,distance=..7] add canopy.kill
 execute if predicate entities:origin_team/none at @a[limit=1,tag=nova_attach.target] run tag @n[predicate=entities:type/canopy/brain,distance=..7] add canopy.kill

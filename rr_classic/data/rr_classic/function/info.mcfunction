@@ -1,0 +1,6 @@
+tellraw @s ["",{"text":"Classic Mode:","color":"light_purple","bold":true},{"text":" A faithful recreation of Missile Wars!"}]
+tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Objective:","color":"gold"},{"text":" Destroy enemy portals","color":"yellow"}]
+tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Ride missiles to enemy base to destroy portals"}]
+tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Protect your own team's portals"}]
+tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Items:","color":"aqua"},{"text":" Classic missiles, shields, and fireballs"}]
+tellraw @s [""]

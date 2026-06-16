@@ -6,56 +6,54 @@
 
 ##Blue Obsidian Shield functionality
 #Detecting motion
-scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball,predicate=custom:is_moving] obshieldtime 1
-kill @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=30..}]
-tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:has_vehicle] add blueobalone
+scoreboard players add @e[x=0,type=dragon_fireball,tag=blueobfireball,predicate=custom:entity/fireball_min_speed] obshieldtime 1
+execute as @e[x=0,type=dragon_fireball,tag=blueobfireball,scores={obshieldtime=15..}] run function everytick:obsidian_shield_check_punch
+execute as @e[x=0,type=dragon_fireball,tag=blueobfireball] if score @s obshieldtime >= $obsidian_shield_flight_duration match_components run kill @s
+tag @e[x=0,type=marker,tag=blueobtracker,predicate=!custom:entity/has_vehicle] add blueobalone
 
-#Disable Blue Obsidian Shields inside of portals
-execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=-74,dx=48,dy=25] run kill @s
-execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=74,dx=48,dy=25] run kill @s
 #Do the same but for Hole in One
-execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=-75,dx=48,dy=25,dz=2] run kill @s
-execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=73,dx=48,dy=25,dz=2] run kill @s
+execute if predicate game:portal_type/normal if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=-75,dx=48,dy=25,dz=2] run kill @s
+execute if predicate game:portal_type/normal if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=blueobalone] at @s if entity @s[x=-12,y=34,z=73,dx=48,dy=25,dz=2] run kill @s
 #Disable Blue Obsidian Shields near void
-execute as @e[x=0,type=marker,tag=blueobalone] at @s if predicate custom:nearvoid run kill @s
+kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_void]
 #Disable Blue Obsidian Shields near spawnpoints
 kill @e[x=0,type=marker,tag=blueobalone,predicate=custom:near_any_spawn_zone_lenient]
+#Disable Blue Obsidian Shields in invalid blocks
+execute as @e[x=0,type=marker,tag=blueobalone] at @s if block ~ ~-1 ~ #custom:obsidian_shield_not_replaceable run kill @s
+execute as @e[x=0,type=marker,tag=blueobsidianshield] at @s if block ~ ~ ~ #custom:obsidian_shield_not_replaceable run function everytick:obsidian_shield_break
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=blueobalone] shieldplacement 1
 execute as @e[x=0,type=marker,tag=blueobalone] at @s align xyz positioned ~ ~-1 ~ run function everytick:obsidian_shield_place
-tp @e[x=0,type=marker,tag=BlueObshield] ~ ~-250 ~
 kill @e[x=0,type=marker,tag=BlueObshield]
 
 ##Yellow Obsidian Shield functionality
 #Detecting motion
-scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball,predicate=custom:is_moving] obshieldtime 1
-kill @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=30..}]
-tag @e[x=0,type=marker,tag=yellowobtracker,predicate=!custom:has_vehicle] add yellowobalone
+scoreboard players add @e[x=0,type=dragon_fireball,tag=yellowobfireball,predicate=custom:entity/fireball_min_speed] obshieldtime 1
+execute as @e[x=0,type=dragon_fireball,tag=yellowobfireball,scores={obshieldtime=15..}] run function everytick:obsidian_shield_check_punch
+execute as @e[x=0,type=dragon_fireball,tag=yellowobfireball] if score @s obshieldtime >= $obsidian_shield_flight_duration match_components run kill @s
+tag @e[x=0,type=marker,tag=yellowobtracker,predicate=!custom:entity/has_vehicle] add yellowobalone
 
-#Disable Yellow Obsidian Shields inside of portals
-execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-74,dx=48,dy=25] run kill @s
-execute if predicate game:portal_type/default as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=74,dx=48,dy=25] run kill @s
 #Do the same but for Hole in One
-execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
-execute if predicate game:portal_type/default if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
+execute if predicate game:portal_type/normal if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=-75,dx=48,dy=25,dz=2] run kill @s
+execute if predicate game:portal_type/normal if predicate game:arena_details/portal/hole_in_one as @e[x=0,type=marker,tag=yellowobalone] at @s if entity @s[x=-12,y=35,z=73,dx=48,dy=25,dz=2] run kill @s
 #Disable Yellow Obsidian Shields near void
-execute as @e[x=0,type=marker,tag=yellowobalone] at @s if predicate custom:nearvoid run kill @s
+kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_void]
 #Disable Yellow Obsidian Shields near spawnpoints
 kill @e[x=0,type=marker,tag=yellowobalone,predicate=custom:near_any_spawn_zone_lenient]
+#Disable Yellow Obsidian Shields in invalid blocks
+execute as @e[x=0,type=marker,tag=yellowobalone] at @s if block ~ ~-1 ~ #custom:obsidian_shield_not_replaceable run kill @s
+execute as @e[x=0,type=marker,tag=yellowobsidianshield] at @s if block ~ ~ ~ #custom:obsidian_shield_not_replaceable run function everytick:obsidian_shield_break
 
 #Place Obsidian Shield
 scoreboard players add @e[x=0,type=marker,tag=yellowobalone] shieldplacement 1
 execute as @e[x=0,type=marker,tag=yellowobalone] at @s align xyz positioned ~ ~-1 ~ run function everytick:obsidian_shield_place
-tp @e[x=0,type=marker,tag=YellowObshield] ~ ~-250 ~
 kill @e[x=0,type=marker,tag=YellowObshield]
 
 ##General Obsidian Shield functionality
 #Thanks @Maxaxik for this fix!!! Makes animations smoother
-scoreboard players add obShield obshieldTick 1
-execute if score obShield obshieldTick matches 1 as @e[x=0,type=dragon_fireball] run data merge entity @s {Air:0}
-execute if score obShield obshieldTick matches 2 as @e[x=0,type=dragon_fireball] run data merge entity @s {Air:1}
-execute if score obShield obshieldTick matches 2 run scoreboard players set obShield obshieldTick 0
+execute unless predicate custom:periodic_tick/2 as @e[x=0,type=dragon_fireball] run data merge entity @s {Air:0}
+execute if predicate custom:periodic_tick/2 as @e[x=0,type=dragon_fireball] run data merge entity @s {Air:1}
 
 #Obsidian Shield Break
 execute as @e[x=0,type=marker,tag=blueobsidianshield,scores={breakobshield=..0}] at @s unless block ~ ~ ~ minecraft:purple_stained_glass_pane unless block ~ ~ ~ minecraft:crying_obsidian run scoreboard players set @s breakobshield 1

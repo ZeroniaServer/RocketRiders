@@ -1,4 +1,5 @@
 {
+  "parent": "2811iaj1:disp",
   "criteria": {
     "Impossible": {
       "trigger": "minecraft:impossible"
@@ -21,7 +22,6 @@
       "text": "Parkour Area"
     }
   },
-  "parent": "2811iaj1:disp",
   "rewards": {
     "function": "2811iaj1:parkour_indimension"
   }

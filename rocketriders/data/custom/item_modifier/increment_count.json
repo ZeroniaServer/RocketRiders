@@ -1,5 +1,5 @@
 {
+  "function": "minecraft:set_count",
   "add": true,
-  "count": 1,
-  "function": "minecraft:set_count"
+  "count": 1
 }

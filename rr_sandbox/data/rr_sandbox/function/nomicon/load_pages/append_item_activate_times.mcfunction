@@ -2,7 +2,7 @@
 
 $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body append value \
 {\
-  "__include_in_full_list__": $(include_in_full_list)b,\
+  "__include_in_full_list": $(include_in_full_list)b,\
   "type": "minecraft:item",\
   "item": {\
     "id": "minecraft:barrier"\
@@ -35,7 +35,7 @@ $data modify storage rocketriders:nomicon dialogs.$(dialog_name).dialog.body app
         },\
         " ",\
         {\
-          "text": "[On]",\
+          "text": "[∞]",\
           "hover_event": {\
             "action": "show_text",\
             "value": {\

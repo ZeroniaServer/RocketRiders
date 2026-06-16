@@ -1,0 +1,15 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "score": "match_components",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$blue_team_skin"
+    }
+  },
+  "range": {
+    "min": 1,
+    "max": 2
+  }
+}

@@ -1,7 +1,7 @@
 scoreboard players add @a[x=0,tag=Winner] wins 1
 scoreboard players add @a[x=0,tag=Loser] losses 1
-execute as @a[x=0,tag=Winner] run function custom:player_action/playerdata/save
-execute as @a[x=0,tag=Loser] run function custom:player_action/playerdata/save
+execute as @a[x=0,tag=Winner] run function custom:player/playerdata/save
+execute as @a[x=0,tag=Loser] run function custom:player/playerdata/save
 
 ##Any achievements to be given by the official end of a match.
 ##The execution of this function may be delayed for the Tie/Tiebreaker window.
@@ -11,8 +11,8 @@ advancement grant @a[x=0,scores={WinStreak=10..},tag=Loser] only achievements:rr
 scoreboard players reset @a[x=0,tag=Loser] WinStreak
 
 #Swiss Cheese (part 2)
-advancement grant @a[x=0,tag=SwissCheese,tag=Winner] only achievements:rr_challenges/swiss_cheese
-tag @a[x=0] remove SwissCheese
+advancement grant @a[x=0,tag=GrantSwissCheeseAchievement,tag=Winner] only achievements:rr_challenges/swiss_cheese
+tag @a[x=0] remove GrantSwissCheeseAchievement
 
 #Simple And Clean (part 2)
 advancement grant @a[x=0,tag=SimpleAndClean,tag=Winner] only achievements:rr_challenges/simple_and_clean

@@ -1,30 +1,50 @@
 {
+  "type": "minecraft:block",
   "__smithed__": {
     "priority": {
       "stage": "early"
     },
     "rules": [
       {
+        "type": "append",
         "source": {
-          "path": "pools[0].conditions[0]",
-          "type": "reference"
+          "type": "reference",
+          "path": "pools[0].conditions[0]"
         },
-        "target": "pools[0].conditions",
-        "type": "append"
+        "target": "pools[0].conditions"
       },
       {
+        "type": "append",
         "source": {
-          "path": "pools[1]",
-          "type": "reference"
+          "type": "reference",
+          "path": "pools[1]"
         },
-        "target": "pools",
-        "type": "append"
+        "target": "pools"
       }
     ]
   },
   "pools": [
     {
+      "rolls": 1,
       "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:yellow_shulker_box",
+          "functions": [
+            {
+              "function": "minecraft:copy_components",
+              "include": [
+                "minecraft:custom_name",
+                "minecraft:container",
+                "minecraft:lock",
+                "minecraft:container_loot"
+              ],
+              "source": "block_entity"
+            }
+          ]
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:inverted",
@@ -39,29 +59,17 @@
             }
           }
         }
-      ],
-      "entries": [
-        {
-          "functions": [
-            {
-              "function": "minecraft:copy_components",
-              "include": [
-                "minecraft:custom_name",
-                "minecraft:container",
-                "minecraft:lock",
-                "minecraft:container_loot"
-              ],
-              "source": "block_entity"
-            }
-          ],
-          "name": "minecraft:yellow_shulker_box",
-          "type": "minecraft:item"
-        }
-      ],
-      "rolls": 1
+      ]
     },
     {
+      "rolls": 1,
       "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:dynamic",
+          "name": "minecraft:contents"
+        }
+      ],
       "conditions": [
         {
           "condition": "minecraft:match_tool",
@@ -73,16 +81,8 @@
             }
           }
         }
-      ],
-      "entries": [
-        {
-          "name": "minecraft:contents",
-          "type": "minecraft:dynamic"
-        }
-      ],
-      "rolls": 1
+      ]
     }
   ],
-  "random_sequence": "minecraft:blocks/yellow_shulker_box",
-  "type": "minecraft:block"
+  "random_sequence": "minecraft:blocks/yellow_shulker_box"
 }

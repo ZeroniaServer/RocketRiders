@@ -12,3 +12,5 @@ execute on origin run tag @s remove vortex_projectile.origin
 execute on vehicle run kill @s[predicate=entities:type/vortex_projectile]
 execute on passengers run kill @s[predicate=entities:type/vortex_projectile]
 kill @s[predicate=entities:type/vortex_projectile]
+
+return 1

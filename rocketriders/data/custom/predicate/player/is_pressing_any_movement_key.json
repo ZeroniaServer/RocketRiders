@@ -1,0 +1,17 @@
+{
+  "condition": "minecraft:inverted",
+  "term": {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "minecraft:type_specific/player": {
+        "input": {
+          "backward": false,
+          "forward": false,
+          "left": false,
+          "right": false
+        }
+      }
+    }
+  }
+}

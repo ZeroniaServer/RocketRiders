@@ -1,0 +1,102 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pig_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "id": "fireball",
+                  "spawn_egg": {
+                    "type": "fireball"
+                  }
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "fireball",
+                    "none"
+                  ]
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:item_model": "minecraft:blaze_spawn_egg",
+                "minecraft:lore": [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Spawns a stationary Fireball."
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Punch fireballs to launch or "
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "redirect them into missiles, "
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "blocks, or enemy players."
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "UUID",
+                  "target": "spawn_egg.owner"
+                }
+              ],
+              "source": "this"
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "light_purple",
+                  "text": "[Utility] "
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Fireball"
+                ]
+              ],
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

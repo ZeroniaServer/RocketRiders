@@ -1,6 +1,7 @@
 {
   "criteria": {
     "place_building_block_too_high": {
+      "trigger": "minecraft:placed_block",
       "conditions": {
         "location": [
           {
@@ -24,8 +25,7 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:placed_block"
+      }
     }
   },
   "rewards": {

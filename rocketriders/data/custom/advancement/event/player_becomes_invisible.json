@@ -1,6 +1,7 @@
 {
   "criteria": {
     "gain_invisibility_effect": {
+      "trigger": "minecraft:effects_changed",
       "conditions": {
         "effects": {
           "minecraft:invisibility": {}
@@ -13,8 +14,7 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:effects_changed"
+      }
     }
   },
   "rewards": {

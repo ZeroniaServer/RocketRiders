@@ -1,12 +1,12 @@
 {
   "criteria": {
     "use_item": {
+      "trigger": "minecraft:using_item",
       "conditions": {
         "item": {
           "items": "enchanted_book"
         }
-      },
-      "trigger": "minecraft:using_item"
+      }
     }
   },
   "rewards": {

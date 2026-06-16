@@ -3,13 +3,13 @@
 schedule function lobby:credits/restart_indimension 3t append
 scoreboard players add $reloaded CmdData 1
 
-#Useful blocks
+# Useful blocks
 setblock 0 184 -16 yellow_shulker_box{lock:{count:-1}} strict
 
 # delete "main" (volatile) storage
 function custom:delete_storage {storage_id:"rocketriders:main"}
 
-#Add teams for Paper compatibility
+## Teams
 team add rocketriders.sort_000.blue "Blue"
 team add rocketriders.sort_001.yellow "Yellow"
 team add rocketriders.sort_100.spectator "Spectator"
@@ -17,12 +17,10 @@ team add rocketriders.sort_200.lobby "Lobby"
 team add rocketriders.sort_999.developer "Developer"
 
 team modify rocketriders.sort_200.lobby color gray
-execute unless predicate game:match_components/red_for_blue run team modify rocketriders.sort_000.blue color blue
-execute if predicate game:match_components/red_for_blue run team modify rocketriders.sort_000.blue color dark_red
-execute unless predicate game:match_components/green_for_yellow run team modify rocketriders.sort_001.yellow color gold
-execute if predicate game:match_components/green_for_yellow run team modify rocketriders.sort_001.yellow color dark_green
+#blue is handled by game:team_attributes/update_all
+#yellow is handled by game:team_attributes/update_all
 team modify rocketriders.sort_100.spectator color dark_gray
-team modify rocketriders.sort_999.developer color dark_green
+team modify rocketriders.sort_999.developer color dark_purple
 
 team modify rocketriders.sort_200.lobby collisionRule never
 team modify rocketriders.sort_000.blue collisionRule never
@@ -31,31 +29,34 @@ team modify rocketriders.sort_100.spectator collisionRule never
 team modify rocketriders.sort_999.developer collisionRule never
 
 team modify rocketriders.sort_200.lobby friendlyFire false
-execute unless entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run team modify rocketriders.sort_000.blue friendlyFire false
-execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=chaseEnabled] run team modify rocketriders.sort_000.blue friendlyFire true
+execute unless predicate game:match_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire false
+execute if predicate game:match_components/friendly_fire run team modify rocketriders.sort_000.blue friendlyFire true
 team modify rocketriders.sort_001.yellow friendlyFire false
 team modify rocketriders.sort_100.spectator friendlyFire false
 team modify rocketriders.sort_999.developer friendlyFire false
 
-#Gamerules
+## Gamerules & difficulty
 function rr:upon_load/game_rules
-
-#Difficulty Easy
 difficulty easy
 
-#Bossbars
+## Bossbars
 bossbar add rr:startgame ""
 
-#Scores
+## Scores
+# variables
 scoreboard objectives add global dummy
 scoreboard objectives add var dummy
 
 scoreboard objectives add config dummy
+
+scoreboard objectives add match_data dummy
 scoreboard objectives add match_components dummy
 
+# constants
 scoreboard objectives add constant dummy
 scoreboard players set $ticks_per_second constant 20
 scoreboard players set $-1 constant -1
+scoreboard players set $0 constant 0
 scoreboard players set $1 constant 1
 scoreboard players set $2 constant 2
 scoreboard players set $3 constant 3
@@ -84,14 +85,13 @@ scoreboard players set $1200 constant 1200
 scoreboard players set $2400 constant 2400
 scoreboard players set $24000 constant 24000
 
+# general attributes
 scoreboard objectives add event.player_joins_overworld.state custom:leave_game
 scoreboard objectives add time_since_joined_overworld custom:play_time
 scoreboard objectives add event.player_dies custom:deaths
 scoreboard objectives add event.player_uses_writable_book used:writable_book
 scoreboard objectives add event.player_uses_written_book used:written_book
 scoreboard objectives add event.player_uses_pig_spawn_egg used:pig_spawn_egg
-scoreboard objectives add flag.is_dead dummy
-scoreboard objectives add flag.is_nova_attached dummy
 scoreboard objectives add entity.age dummy
 scoreboard objectives add entity.speed dummy
 scoreboard objectives add entity.canopy.movement_cooldown dummy
@@ -99,6 +99,7 @@ scoreboard objectives add entity.vortex.fuse dummy
 scoreboard objectives add entity.vortex.drifting_for_ticks dummy
 scoreboard objectives add entity.vortex.arms dummy
 scoreboard objectives add entity.vortex_arm.index dummy
+scoreboard objectives add entity.vortex_decoy.anger_time dummy
 scoreboard objectives add entity.damage_spell.bee_cooldown dummy
 scoreboard objectives add entity.fireball.ambient_noise_timer dummy
 scoreboard objectives add entity.fireball.time_since_punched dummy
@@ -111,15 +112,20 @@ scoreboard objectives add flag_tablist_display dummy
 scoreboard objectives modify flag_tablist_display numberformat blank
 scoreboard objectives add default_spell dummy
 scoreboard objectives add start_as_crusade_kit dummy
-scoreboard objectives add was_on_arena_team dummy
+scoreboard objectives add last_arena_team dummy
+scoreboard objectives add zeronia_credit_cooldown_end_timestamp dummy
 
+# player statistics (current match)
 scoreboard objectives add match_statistic.deaths dummy
 scoreboard objectives add match_statistic.kills dummy
+scoreboard objectives add match_statistic.flags_captured dummy
 
-scoreboard objectives add shooting_saber.infinity_time dummy
-scoreboard objectives add shooting_saber.multishot_time dummy
-scoreboard objectives add elytra_time dummy
+# item effects
+scoreboard objectives add effects.infinity_saber.time dummy
+scoreboard objectives add effects.multishot_saber.time dummy
+scoreboard objectives add effects.elytra.state dummy
 
+# damage system
 scoreboard objectives add primary_damage_origin_uuid.0 dummy
 scoreboard objectives add primary_damage_origin_uuid.1 dummy
 scoreboard objectives add primary_damage_origin_uuid.2 dummy
@@ -131,16 +137,40 @@ scoreboard objectives add secondary_damage_origin_uuid.3 dummy
 scoreboard objectives add time_since_damage custom:play_time
 scoreboard objectives add time_since_attack custom:play_time
 
+# text
 scoreboard objectives add text.team_name dummy
 scoreboard objectives modify text.team_name numberformat fixed ""
+
 scoreboard objectives add text.team_name_lowercase dummy
 scoreboard objectives modify text.team_name_lowercase numberformat fixed ""
+
 scoreboard objectives add text.main_color dummy
 scoreboard objectives modify text.main_color numberformat fixed ""
+
 scoreboard objectives add text.accent_color dummy
 scoreboard objectives modify text.accent_color numberformat fixed ""
 
+scoreboard objectives add text.flag dummy
+scoreboard objectives modify text.flag numberformat fixed "🏴"
+
+scoreboard objectives add text.normal_missile_item_prefix_color dummy
+scoreboard objectives modify text.normal_missile_item_prefix_color numberformat fixed ""
+
+scoreboard objectives add text.heavy_missile_item_prefix_color dummy
+scoreboard objectives modify text.heavy_missile_item_prefix_color numberformat fixed ""
+
+scoreboard objectives add text.lightning_missile_item_prefix_color dummy
+scoreboard objectives modify text.lightning_missile_item_prefix_color numberformat fixed ""
+
+scoreboard objectives add text.special_missile_item_prefix_color dummy
+scoreboard objectives modify text.special_missile_item_prefix_color numberformat fixed ""
+
+scoreboard objectives add text.classic_missile_item_prefix_color dummy
+scoreboard objectives modify text.classic_missile_item_prefix_color numberformat fixed ""
+
+# triggers
 scoreboard objectives add set_item_delay trigger
+scoreboard objectives add set_tie_window trigger
 scoreboard objectives add set_time_of_day trigger
 scoreboard objectives add editSettings trigger
 scoreboard objectives add LeaveMidgame trigger
@@ -153,8 +183,10 @@ scoreboard objectives add toggle_particles trigger
 scoreboard objectives add toggle_parkour_instructions trigger
 scoreboard objectives add toggle_ingame_tips trigger
 
+# player statistics (all-time)
 scoreboard objectives add play_time_save_cooldown custom:play_time
 scoreboard objectives add player_statistics.chase_play_time dummy
+scoreboard objectives add player_statistics.classic_play_time dummy
 scoreboard objectives add player_statistics.crusade_play_time dummy
 scoreboard objectives add player_statistics.ctf_play_time dummy
 scoreboard objectives add player_statistics.duel_play_time dummy
@@ -163,6 +195,7 @@ scoreboard objectives add player_statistics.powerups_play_time dummy
 scoreboard objectives add player_statistics.sandbox_play_time dummy
 scoreboard objectives add player_statistics.swap_play_time dummy
 
+# misc
 scoreboard objectives add x dummy
 scoreboard objectives add y dummy
 scoreboard objectives add z dummy
@@ -174,7 +207,6 @@ scoreboard objectives add playerUUID dummy
 scoreboard objectives add PlatTime dummy
 scoreboard objectives add ClearArena dummy
 scoreboard objectives add GamesPlayed dummy
-scoreboard objectives add FallDistance dummy
 scoreboard objectives add bestParkourMins dummy
 scoreboard objectives add bestParkourSecs dummy
 scoreboard objectives add bestParkourDeci dummy
@@ -217,7 +249,6 @@ scoreboard objectives add xp_bar dummy
 scoreboard objectives add DealtDamage minecraft.custom:minecraft.damage_dealt
 scoreboard objectives add arrowtime dummy
 scoreboard objectives add ShowTip dummy
-scoreboard objectives add modifierID dummy
 scoreboard objectives add testplat dummy
 scoreboard objectives add testplat2 dummy
 scoreboard objectives add canopySmoke dummy
@@ -227,7 +258,6 @@ scoreboard objectives add obmove dummy
 scoreboard objectives add obshieldtime dummy
 scoreboard objectives add obshieldTick dummy
 scoreboard objectives add regenTimer dummy
-scoreboard objectives add splashtick dummy
 scoreboard objectives add MissilesSpawned dummy
 scoreboard objectives add creditsSet dummy
 scoreboard objectives add HasAux dummy
@@ -284,7 +314,6 @@ scoreboard objectives add HyperSpawned minecraft.used:minecraft.turtle_spawn_egg
 scoreboard objectives add BulletSpawned minecraft.used:minecraft.skeleton_horse_spawn_egg
 scoreboard objectives add DuplexSpawned minecraft.used:minecraft.parrot_spawn_egg
 scoreboard objectives add BroadSpawned minecraft.used:minecraft.magma_cube_spawn_egg
-scoreboard objectives add ObshieldSpawned minecraft.used:minecraft.enderman_spawn_egg
 scoreboard objectives add BSurpriseSpawned minecraft.used:minecraft.squid_spawn_egg
 scoreboard objectives add YSurpriseSpawned minecraft.used:minecraft.cod_spawn_egg
 scoreboard objectives add BowShot minecraft.used:minecraft.bow
@@ -303,82 +332,24 @@ scoreboard objectives add prevUseful dummy
 scoreboard objectives add fireballkill dummy
 scoreboard objectives add prevFellVoid dummy
 
-# Fix join pad sprite depending on version
-function rr:upon_load/join_pad_sprite
+## Resolve components
+function game:match_components/resolve
 
-# Update team attributes
+## Update team attributes
 function game:team_attributes/update_all
 
-# Update nav book
+## Instantly load assets
+function game:assets/load
+
+## Update version full name
+data modify storage rocketriders:version server_mode_suffix set value ""
+execute if predicate rr:server_mode/cubekrowd_voting run data modify storage rocketriders:version server_mode_suffix set value " (CubeKrowd Voting Mode)"
+execute if predicate rr:server_mode/cubekrowd_duels run data modify storage rocketriders:version server_mode_suffix set value " (CubeKrowd Duels Mode)"
+execute if predicate rr:server_mode/cubekrowd_custom run data modify storage rocketriders:version server_mode_suffix set value " (CubeKrowd Custom Mode)"
+execute if predicate rr:server_mode/realms run data modify storage rocketriders:version server_mode_suffix set value " (Realms Mode)"
+
+## Update nav book
 function lobby:update_nav_book
 
-# Nomicon Dialog Data
-function rr_sandbox:nomicon/load_pages
-
-# Item Custom Data ID to Loot Table Map
-data modify storage rocketriders:items id_to_loot_table_map set value {\
-    "arrow": "items:misc/arrow",\
-    "booster_rocket": "items:experimental/booster_rocket",\
-    "lunging_spear": "items:experimental/lunging_spear",\
-    "building_block": "items:experimental/building_block",\
-    "canopy": "items:util/canopy",\
-    "celebratory_elytra": "items:ending/celebratory_elytra",\
-    "celebratory_fireworks": "items:ending/celebratory_fireworks",\
-    "cluster_fireball": "items:util/cluster_fireball",\
-    "elytra": "items:misc/elytra",\
-    "fireball": "items:util/fireball",\
-    "icbm": "items:util/icbm",\
-    "invisibility_potion": "items:experimental/invisibility_potion",\
-    "jump_boost_potion": "items:experimental/jump_boost_potion",\
-    "knight_shield": "items:misc/knight_shield",\
-    "knight_sword": "items:misc/knight_sword",\
-    "lava_splash": "items:util/lava_splash",\
-    "loser_banner": "items:ending/loser_banner",\
-    "missile/auxiliary": "items:missile/heavy/auxiliary",\
-    "missile/juggerbuster": "items:missile/heavy/juggerbuster",\
-    "missile/rifter": "items:missile/heavy/rifter",\
-    "missile/warhead": "items:missile/heavy/warhead",\
-    "missile/hurricane": "items:missile/lightning/hurricane",\
-    "missile/thunderbolt": "items:missile/lightning/thunderbolt",\
-    "missile/ant": "items:missile/normal/ant",\
-    "missile/blade": "items:missile/normal/blade",\
-    "missile/catapult": "items:missile/normal/catapult",\
-    "missile/chronullifier": "items:missile/normal/chronullifier",\
-    "missile/citadel": "items:missile/normal/citadel",\
-    "missile/elder_guardian": "items:missile/normal/elder_guardian",\
-    "missile/gemini": "items:missile/normal/gemini",\
-    "missile/lifter": "items:missile/normal/lifter",\
-    "missile/slasher": "items:missile/normal/slasher",\
-    "missile/tomatwo": "items:missile/normal/tomatwo",\
-    "missile/broadsword": "items:missile/special/broadsword",\
-    "missile/bullet": "items:missile/special/bullet",\
-    "missile/duplex": "items:missile/special/duplex",\
-    "missile/hypersonic": "items:missile/special/hypersonic",\
-    "nova_rocket": "items:util/nova_rocket",\
-    "obsidian_shield": "items:util/obsidian_shield",\
-    "parkour/quit_parkour": "lobby:parkour/quit_parkour",\
-    "parkour/return_to_checkpoint": "lobby:parkour/return_to_checkpoint",\
-    "parkour/return_to_start": "lobby:parkour/return_to_start",\
-    "piercing_pickaxe": "items:misc/piercing_pickaxe",\
-    "rocket_nomicon": "items:misc/rocket_nomicon",\
-    "shield": "items:util/shield",\
-    "splash": "items:util/splash",\
-    "stinging_shield": "items:util/stinging_shield",\
-    "shooting_saber": "items:misc/shooting_saber",\
-    "slap_fish": "items:misc/slap_fish",\
-    "spectral_arrow": "items:experimental/spectral_arrow",\
-    "spell_book": "items:misc/spell_book",\
-    "spell_wand": "items:misc/spell_wand",\
-    "surprise_missile/all": "items:missile/surprise/all",\
-    "surprise_missile/heavy": "items:missile/surprise/heavy",\
-    "surprise_missile/lightning": "items:missile/surprise/lightning",\
-    "surprise_missile/normal": "items:missile/surprise/normal",\
-    "surprise_missile/special": "items:missile/surprise/special",\
-    "tipped_arrow_blindness": "items:misc/tipped_arrow_blindness",\
-    "tipped_arrow_levitation": "items:misc/tipped_arrow_levitation",\
-    "tipped_arrow_slowness": "items:misc/tipped_arrow_slowness",\
-    "tipped_arrow_wither": "items:misc/tipped_arrow_wither",\
-    "totem_of_undying": "items:misc/totem_of_undying",\
-    "trident": "items:misc/trident",\
-    "vortex": "items:util/vortex",\
-}
+## Refresh Rocket-Nomicon
+execute if predicate game:phase/match if predicate game:match_components/has_rocket_nomicon run function rr_sandbox:nomicon/load_pages

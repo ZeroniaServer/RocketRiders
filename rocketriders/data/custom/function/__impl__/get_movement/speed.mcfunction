@@ -1,7 +1,7 @@
 # arguments: min, max, mean
 
 # check range
-$execute store success score $low var if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{movement:{speed:{min:$(min),max:$(mean)}}}}
+$execute store success score $low var if predicate {condition:entity_properties,entity:this,predicate:{movement:{speed:{min:$(min),max:$(mean)}}}}
 
 # update bounds
 execute if score $low var matches 1 run scoreboard players operation $max var = $mean var

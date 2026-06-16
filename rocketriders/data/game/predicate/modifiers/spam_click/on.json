@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/spam_click/forced_off"
+      "name": "game:modifiers/spam_click/__forced_off"
     }
   },
   {
@@ -11,19 +11,19 @@
     "terms": [
       {
         "condition": "minecraft:value_check",
-        "range": 1,
         "value": {
+          "type": "minecraft:score",
           "score": "config",
           "target": {
-            "name": "$spam_click",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
-        }
+            "type": "minecraft:fixed",
+            "name": "$spam_click"
+          }
+        },
+        "range": 1
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/spam_click/forced_on"
+        "name": "game:modifiers/spam_click/__forced_on"
       }
     ]
   }

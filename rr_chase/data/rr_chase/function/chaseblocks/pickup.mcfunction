@@ -10,7 +10,7 @@ execute as @e[x=0,type=marker,tag=ChaseBlock] at @s unless block ~ ~2.25 ~-1 #rr
 execute as @e[x=0,type=marker,tag=ChaseBlock] at @s unless block ~ ~0.25 ~-1 #rr_chase:chaseblockneighbor run setblock ~ ~ ~ air destroy
 
 execute as @e[x=0,type=marker,tag=MissileBlock,tag=!KillChaseblock] at @s unless block ~ ~ ~ red_stained_glass run fill ~1 ~3 ~2 ~-1 ~-1 ~-2 air replace red_stained_glass
-execute as @e[x=0,type=marker,tag=MissileBlock,tag=!KillChaseblock] at @s unless block ~ ~ ~ red_stained_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston
+execute as @e[x=0,type=marker,tag=MissileBlock,tag=!KillChaseblock] at @s unless block ~ ~ ~ red_stained_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston{blockState:{Name:"minecraft:red_stained_glass"}}
 execute as @e[x=0,type=marker,tag=MissileBlock,tag=!KillChaseblock] at @s unless block ~ ~ ~ red_stained_glass if entity @a[predicate=custom:team/blue,scores={BreakCBRed=1..},distance=..12] run playsound minecraft:block.grass.place master @a[x=0] ~ ~1.5 ~ 0.6 1
 execute as @e[x=0,type=marker,tag=MissileBlock,tag=!KillChaseblock] at @s unless block ~ ~ ~ red_stained_glass if entity @a[predicate=custom:team/blue,scores={BreakCBRed=1..},distance=..12] run playsound minecraft:block.note_block.bit master @a[x=0] ~ ~1.5 ~ 1 0.8
 execute as @e[x=0,type=marker,tag=MissileBlock,tag=!KillChaseblock] at @s unless block ~ ~ ~ red_stained_glass if entity @a[predicate=custom:team/blue,scores={BreakCBRed=1..},distance=..12] run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~1.5 ~ 0.5 0.5 0.5 0.1 20 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
@@ -24,7 +24,7 @@ execute as @e[x=0,type=marker,tag=MissileBlock,tag=!KillChaseblock] at @s unless
 scoreboard players reset @a[x=0,scores={BreakCBRed=1..}] BreakCBRed
 
 execute as @e[x=0,type=marker,tag=UtilBlock,tag=!KillChaseblock2] at @s unless block ~ ~ ~ purple_stained_glass run fill ~1 ~3 ~2 ~-1 ~-1 ~-2 air replace purple_stained_glass
-execute as @e[x=0,type=marker,tag=UtilBlock,tag=!KillChaseblock2] at @s unless block ~ ~ ~ purple_stained_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston
+execute as @e[x=0,type=marker,tag=UtilBlock,tag=!KillChaseblock2] at @s unless block ~ ~ ~ purple_stained_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston{blockState:{Name:"minecraft:purple_stained_glass"}}
 execute as @e[x=0,type=marker,tag=UtilBlock,tag=!KillChaseblock2] at @s unless block ~ ~ ~ purple_stained_glass if entity @a[predicate=custom:team/blue,scores={BreakCBPurple=1..},distance=..12] run playsound minecraft:block.end_portal_frame.fill master @a[x=0] ~ ~1.5 ~ 1 2
 execute as @e[x=0,type=marker,tag=UtilBlock,tag=!KillChaseblock2] at @s unless block ~ ~ ~ purple_stained_glass if entity @a[predicate=custom:team/blue,scores={BreakCBPurple=1..},distance=..12] run playsound minecraft:block.note_block.bit master @a[x=0] ~ ~1.5 ~ 1 0.8
 execute as @e[x=0,type=marker,tag=UtilBlock,tag=!KillChaseblock2] at @s unless block ~ ~ ~ purple_stained_glass if entity @a[predicate=custom:team/blue,scores={BreakCBPurple=1..},distance=..12] run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~1.5 ~ 0.5 0.5 0.5 0.1 20 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
@@ -38,7 +38,7 @@ execute as @e[x=0,type=marker,tag=UtilBlock,tag=!KillChaseblock2] at @s unless b
 scoreboard players reset @a[x=0,scores={BreakCBPurple=1..}] BreakCBPurple
 
 execute as @e[x=0,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run fill ~1 ~3 ~2 ~-1 ~-1 ~-2 air replace cyan_stained_glass
-execute as @e[x=0,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston
+execute as @e[x=0,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston{blockState:{Name:"minecraft:cyan_stained_glass"}}
 execute as @e[x=0,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass if entity @a[predicate=custom:team/blue,distance=..12,scores={BreakCBCyan=1..}] run playsound minecraft:item.crossbow.loading_end master @a[x=0] ~ ~ ~ 1 1.2
 execute as @e[x=0,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass if entity @a[predicate=custom:team/blue,distance=..12,scores={BreakCBCyan=1..}] run playsound minecraft:block.note_block.bit master @a[x=0] ~ ~1.5 ~ 1 0.8
 execute as @e[x=0,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass if entity @a[predicate=custom:team/blue,distance=..12,scores={BreakCBCyan=1..}] run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~1.5 ~ 0.5 0.5 0.5 0.1 20 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
@@ -51,11 +51,11 @@ kill @e[x=0,type=marker,tag=KillChaseblock3]
 execute as @e[x=0,type=marker,tag=ArrowBlock,tag=!KillChaseblock3] at @s unless block ~ ~ ~ cyan_stained_glass run tag @s add KillChaseblock3
 scoreboard players reset @a[x=0,scores={BreakCBCyan=1..}] BreakCBCyan
 
-execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[predicate=custom:team/blue,tag=InLead,distance=..12,scores={BreakCBTint=1..}] run title @a[predicate=custom:team/blue,tag=InLead,distance=..12,scores={BreakCBTint=1..}] actionbar {"text":"You're in the lead! You cannot shoot End Crystals at yourself!","bold":true,"color":"white"}
+execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[predicate=custom:team/blue,tag=InLead,distance=..12,scores={BreakCBTint=1..}] run title @a[predicate=custom:team/blue,tag=InLead,distance=..12,scores={BreakCBTint=1..}] actionbar {"text":"You're in the lead! You cannot shoot Chase Crystals at yourself!","bold":true,"color":"white"}
 execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[predicate=custom:team/blue,tag=InLead,distance=..12,scores={BreakCBTint=1..}] run tag @s remove Display
 execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[predicate=custom:team/blue,tag=InLead,distance=..12,scores={BreakCBTint=1..}] run setblock ~ ~ ~ tinted_glass
 execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass run fill ~ ~ ~3 ~ ~ ~ air replace tinted_glass
-execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston
+execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass run fill ~-1 ~ ~-1 ~1 ~ ~3 air replace moving_piston{blockState:{Name:"minecraft:tinted_glass"}}
 execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[predicate=custom:team/blue,distance=..12,scores={BreakCBTint=1..}] run playsound minecraft:block.end_portal_frame.fill master @a[x=0] ~ ~ ~ 1 1.1
 execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[predicate=custom:team/blue,distance=..12,scores={BreakCBTint=1..}] run playsound minecraft:block.beacon.power_select master @a[x=0] ~ ~ ~ 1 2
 execute as @e[x=0,type=marker,tag=CrystalBlock,tag=!KillChaseblock4] at @s unless block ~ ~ ~ tinted_glass if entity @a[predicate=custom:team/blue,distance=..12,scores={BreakCBTint=1..}] run particle minecraft:dragon_breath ~ ~ ~ 0.1 0.1 0.1 0.1 30 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]

@@ -5,7 +5,7 @@ tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Attack o
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Specifics:","color":"dark_aqua"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Special \"Chase Blocks\" spawn on the map"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Break Chase Blocks to obtain extra items"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- End Crystal Chase Blocks fire a Crystal at the leader"}]
+tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- \"Chase Crystal\" blocks fire a flying explosive at the leader"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Item Stacking is enabled"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Obsidian stairs lead up to Finish Flag"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- No portals at bases"}]

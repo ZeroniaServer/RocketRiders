@@ -14,7 +14,7 @@ data modify storage rocketriders:main nova_rocket.name set value "Nova Rocket"
 execute on origin run function custom:resolve_text_component {text_component:["",{selector:"@s"},"'s Nova Rocket"], write_to:"storage rocketriders:main nova_rocket.name"}
 data modify entity @s CustomName set from storage rocketriders:main nova_rocket.name
 
-data merge entity @s {LifeTime:30}
+execute store result entity @s LifeTime int 1 run scoreboard players get $nova_rocket_flight_duration match_components
 
 ## Achievements
 execute if predicate game:achievements_can_be_awarded on origin run advancement grant @s only achievements:rr_challenges/veteran NovaSpawned

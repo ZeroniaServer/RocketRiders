@@ -1,0 +1,129 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pig_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "id": "obsidian_shield",
+                  "spawn_egg": {
+                    "type": "obsidian_shield"
+                  }
+                },
+                "minecraft:custom_model_data": {
+                  "strings": [
+                    "rocketriders",
+                    "obsidian_shield",
+                    "none"
+                  ]
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:item_model": "minecraft:enderman_spawn_egg",
+                "minecraft:lore": [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Spawns a stationary Obsidian Fireball."
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Punch them to launch or "
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "redirect them to where you"
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "want to place an obsidian shield."
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "UUID",
+                  "target": "spawn_egg.owner"
+                }
+              ],
+              "source": "this"
+            },
+            {
+              "function": "minecraft:set_lore",
+              "entity": "this",
+              "lore": [
+                "",
+                [
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Flight Duration: "
+                  },
+                  {
+                    "score": {
+                      "name": "$obsidian_shield_flight_duration",
+                      "objective": "match_components"
+                    }
+                  }
+                ]
+              ],
+              "mode": "append",
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {}
+                }
+              ]
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                {
+                  "bold": true,
+                  "color": "light_purple",
+                  "text": "[Utility] "
+                },
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Obsidian Shield"
+                ]
+              ],
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

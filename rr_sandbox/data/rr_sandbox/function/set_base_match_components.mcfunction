@@ -1,20 +1,20 @@
-scoreboard players set $armor/generic match_components 1
+data modify storage rocketriders:match components."main_item" set value "rocket_nomicon"
+
 scoreboard players set $config_override.disable_hotbar_limit match_components 1
 scoreboard players set $config_override.disable_team_balancing match_components 1
-scoreboard players set $config_override.disable_tying match_components 1
 scoreboard players set $config_override.item_stacking match_components 1
 scoreboard players set $config_override.minute_mix match_components -1
 scoreboard players set $config_override.special_treatment match_components -1
 scoreboard players set $config_override.surprise_eggs match_components -1
 scoreboard players set $config_override.wind_down match_components -1
-scoreboard players set $config_override.disable_tying match_components 1
 scoreboard players set $has_powerups match_components 1
+scoreboard players set $has_rocket_nomicon match_components 1
 scoreboard players set $has_spells match_components 1
-scoreboard players set $main_item/rocket_nomicon match_components 1
 scoreboard players set $min_players_per_team match_components 0
 scoreboard players set $no_achievements match_components 1
 scoreboard players set $no_item_timer match_components 1
 scoreboard players set $short_end_sequence match_components 1
+scoreboard players set $stackable_nova_rockets match_components 1
 
 # items
 scoreboard players set $item_pool.missile/auxiliary match_components 1

@@ -1,0 +1,29 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "minecraft:movement": {
+          "speed": {
+            "min": 2
+          }
+        }
+      }
+    },
+    {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "minecraft:vehicle": {
+          "minecraft:movement": {
+            "speed": {
+              "min": 2
+            }
+          }
+        }
+      }
+    }
+  ]
+}

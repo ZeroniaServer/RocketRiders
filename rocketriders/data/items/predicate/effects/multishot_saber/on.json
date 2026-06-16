@@ -1,0 +1,9 @@
+{
+  "condition": "minecraft:entity_scores",
+  "entity": "this",
+  "scores": {
+    "effects.multishot_saber.time": {
+      "min": 1
+    }
+  }
+}

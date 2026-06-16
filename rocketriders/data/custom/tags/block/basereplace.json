@@ -28,15 +28,10 @@
     "minecraft:end_stone",
     "minecraft:warped_fence_gate",
     "minecraft:birch_fence_gate",
-    "minecraft:black_concrete",
-    "minecraft:white_concrete",
+    "#custom:concrete",
     "minecraft:end_stone_brick_wall",
     "minecraft:powered_rail",
     "minecraft:iron_trapdoor",
-    "minecraft:yellow_concrete",
-    "minecraft:orange_concrete",
-    "minecraft:blue_concrete",
-    "minecraft:cyan_concrete",
     "minecraft:target",
     "minecraft:obsidian",
     "minecraft:barrier",
@@ -48,8 +43,6 @@
     "#custom:explosion_crackable_deepslate_blocks",
     "#custom:explosion_cracked_deepslate_blocks",
     "minecraft:glass",
-    "minecraft:green_stained_glass",
-    "minecraft:lime_stained_glass",
     "minecraft:crying_obsidian"
   ]
 }

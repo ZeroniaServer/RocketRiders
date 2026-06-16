@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/volcanic_hatred",
   "criteria": {
     "1": {
       "trigger": "minecraft:impossible"
@@ -25,6 +26,7 @@
     "frame": "challenge",
     "hidden": false,
     "icon": {
+      "id": "minecraft:player_head",
       "components": {
         "minecraft:profile": {
           "properties": [
@@ -34,8 +36,7 @@
             }
           ]
         }
-      },
-      "id": "minecraft:player_head"
+      }
     },
     "show_toast": true,
     "title": {
@@ -43,7 +44,6 @@
       "text": "Regifting"
     }
   },
-  "parent": "achievements:rr_challenges/volcanic_hatred",
   "requirements": [
     [
       "1"

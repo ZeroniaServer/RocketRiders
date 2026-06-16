@@ -1,1 +1,0 @@
-gamerule naturalRegeneration false

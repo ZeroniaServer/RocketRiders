@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/soul_collector",
   "criteria": {
     "1": {
       "trigger": "minecraft:impossible"
@@ -47,6 +48,5 @@
       "color": "#c20000",
       "text": "Blocks into Bits"
     }
-  },
-  "parent": "achievements:rr_challenges/soul_collector"
+  }
 }

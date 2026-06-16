@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/sabotage",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -20,6 +21,5 @@
       "color": "#00be2f",
       "text": "I'm Helping!"
     }
-  },
-  "parent": "achievements:rr_challenges/sabotage"
+  }
 }

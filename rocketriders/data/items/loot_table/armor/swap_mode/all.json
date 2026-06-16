@@ -1,0 +1,202 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/blue_dark/boots",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:blue_team_is_dark"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/yellow_light/boots",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:yellow_team_is_light"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/blue_light/boots",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:blue_team_is_light"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/yellow_dark/boots",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:yellow_team_is_dark"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/blue_dark/leggings",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:blue_team_is_dark"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/yellow_light/leggings",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:yellow_team_is_light"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/blue_light/leggings",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:blue_team_is_light"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/yellow_dark/leggings",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:yellow_team_is_dark"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/blue_dark/chestplate",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:blue_team_is_dark"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/yellow_light/chestplate",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:yellow_team_is_light"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/blue_light/chestplate",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:blue_team_is_light"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/blue"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:loot_table",
+              "value": "items:armor/swap_mode/yellow_dark/chestplate",
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "rr_swap:yellow_team_is_dark"
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "custom:team/yellow"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

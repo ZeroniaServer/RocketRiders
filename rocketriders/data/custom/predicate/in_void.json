@@ -2,7 +2,6 @@
   "condition": "minecraft:any_of",
   "terms": [
     {
-      "condition": "location_check",
       "predicate": {
         "dimension": "minecraft:overworld",
         "position": {
@@ -10,7 +9,8 @@
             "max": -20
           }
         }
-      }
+      },
+      "condition": "location_check"
     },
     {
       "condition": "minecraft:all_of",
@@ -23,7 +23,6 @@
           }
         },
         {
-          "condition": "location_check",
           "predicate": {
             "dimension": "minecraft:overworld",
             "position": {
@@ -31,7 +30,8 @@
                 "max": 0
               }
             }
-          }
+          },
+          "condition": "location_check"
         }
       ]
     }

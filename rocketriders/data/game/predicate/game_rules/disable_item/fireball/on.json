@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:game_rules/disable_item/fireball/forced_off"
+      "name": "game:game_rules/disable_item/fireball/__forced_off"
     }
   },
   {
@@ -11,19 +11,19 @@
     "terms": [
       {
         "condition": "minecraft:value_check",
-        "range": 1,
         "value": {
+          "type": "minecraft:score",
           "score": "config",
           "target": {
-            "name": "$disable_item/fireball",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
-        }
+            "type": "minecraft:fixed",
+            "name": "$disable_item/fireball"
+          }
+        },
+        "range": 1
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:game_rules/disable_item/fireball/forced_on"
+        "name": "game:game_rules/disable_item/fireball/__forced_on"
       }
     ]
   }

@@ -26,16 +26,14 @@ execute if predicate game:phase/match/play on origin run tag @s add canopy.origi
 execute if predicate game:phase/match/play at @s[tag=!canopy.small] run playsound minecraft:entity.player.teleport player @a[x=0,tag=!canopy.origin] ~ ~2 ~ 1 1
 execute if predicate game:phase/match/play on origin run tag @s remove canopy.origin
 
-execute if predicate game:phase/match/play on origin run function custom:player_action/forget_canopy
+execute if predicate game:phase/match/play on origin run function custom:player/forget_canopy
 tag @s remove canopy.forgotten_origin
 
-execute positioned ~ ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
-execute positioned ~ ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:destroy_bee_block
-execute if predicate entities:origin_team/blue unless predicate game:match_components/red_for_blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/blue",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
-execute if predicate entities:origin_team/blue if predicate game:match_components/red_for_blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/red",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
-execute if predicate entities:origin_team/yellow unless predicate game:match_components/green_for_yellow at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/yellow",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
-execute if predicate entities:origin_team/yellow if predicate game:match_components/green_for_yellow at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/green",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
-execute if predicate entities:origin_team/none at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:canopy/white",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
+execute positioned ~ ~ ~ if block ~ ~ ~ #minecraft:beehives run function custom:block/release_bees_and_destroy_hive
+execute positioned ~ ~1 ~ if block ~ ~ ~ #minecraft:beehives run function custom:block/release_bees_and_destroy_hive
+execute if predicate entities:origin_team/blue at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:asset/canopy/blue",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
+execute if predicate entities:origin_team/yellow at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:asset/canopy/yellow",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
+execute if predicate entities:origin_team/none at @s positioned ~-1 ~ ~-1 run function custom:place_utility_structure {template:"game:asset/canopy/none",x_length:3,y_length:2,z_length:3,rules:{blocks_that_require_air:"#banners"}}
 
 execute at @s run playsound ui.stonecutter.take_result master @a[x=0] ~ ~ ~ 2 0
 execute at @s run playsound block.wood.break master @a[x=0] ~ ~ ~ 2 1

@@ -19,15 +19,15 @@ execute if block ~0.3 ~1 ~-0.3 #custom:fire run return 1
 execute if block ~0.3 ~1 ~0.3 #custom:fire run return 1
 
 # sneaking
-execute if predicate custom:is_sneaking if block ~-0.3 ~1.5 ~-0.3 #custom:fire run return 1
-execute if predicate custom:is_sneaking if block ~-0.3 ~1.5 ~0.3 #custom:fire run return 1
-execute if predicate custom:is_sneaking if block ~0.3 ~1.5 ~-0.3 #custom:fire run return 1
-execute if predicate custom:is_sneaking if block ~0.3 ~1.5 ~0.3 #custom:fire run return 1
+execute if predicate custom:player/is_sneaking if block ~-0.3 ~1.5 ~-0.3 #custom:fire run return 1
+execute if predicate custom:player/is_sneaking if block ~-0.3 ~1.5 ~0.3 #custom:fire run return 1
+execute if predicate custom:player/is_sneaking if block ~0.3 ~1.5 ~-0.3 #custom:fire run return 1
+execute if predicate custom:player/is_sneaking if block ~0.3 ~1.5 ~0.3 #custom:fire run return 1
 
 # standing
-execute unless predicate custom:is_sneaking if block ~-0.3 ~1.8 ~-0.3 #custom:fire run return 1
-execute unless predicate custom:is_sneaking if block ~-0.3 ~1.8 ~0.3 #custom:fire run return 1
-execute unless predicate custom:is_sneaking if block ~0.3 ~1.8 ~-0.3 #custom:fire run return 1
-execute unless predicate custom:is_sneaking if block ~0.3 ~1.8 ~0.3 #custom:fire run return 1
+execute unless predicate custom:player/is_sneaking if block ~-0.3 ~1.8 ~-0.3 #custom:fire run return 1
+execute unless predicate custom:player/is_sneaking if block ~-0.3 ~1.8 ~0.3 #custom:fire run return 1
+execute unless predicate custom:player/is_sneaking if block ~0.3 ~1.8 ~-0.3 #custom:fire run return 1
+execute unless predicate custom:player/is_sneaking if block ~0.3 ~1.8 ~0.3 #custom:fire run return 1
 
 return fail

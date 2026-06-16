@@ -5,8 +5,8 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "vehicle": {
-          "predicates": {
+        "minecraft:vehicle": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "fireball/split_after_use": {}
             }
@@ -18,7 +18,7 @@
       "condition": "minecraft:entity_properties",
       "entity": "this",
       "predicate": {
-        "predicates": {
+        "minecraft:predicates": {
           "minecraft:custom_data": {
             "fireball/split_after_use": {}
           }

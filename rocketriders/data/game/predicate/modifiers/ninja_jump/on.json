@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/ninja_jump/forced_off"
+      "name": "game:modifiers/ninja_jump/__forced_off"
     }
   },
   {
@@ -11,19 +11,19 @@
     "terms": [
       {
         "condition": "minecraft:value_check",
-        "range": 1,
         "value": {
+          "type": "minecraft:score",
           "score": "config",
           "target": {
-            "name": "$ninja_jump",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
-        }
+            "type": "minecraft:fixed",
+            "name": "$ninja_jump"
+          }
+        },
+        "range": 1
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/ninja_jump/forced_on"
+        "name": "game:modifiers/ninja_jump/__forced_on"
       }
     ]
   }

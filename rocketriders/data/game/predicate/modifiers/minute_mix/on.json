@@ -3,7 +3,7 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/minute_mix/forced_off"
+      "name": "game:modifiers/minute_mix/__forced_off"
     }
   },
   {
@@ -11,19 +11,19 @@
     "terms": [
       {
         "condition": "minecraft:value_check",
-        "range": 1,
         "value": {
+          "type": "minecraft:score",
           "score": "config",
           "target": {
-            "name": "$minute_mix",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
-        }
+            "type": "minecraft:fixed",
+            "name": "$minute_mix"
+          }
+        },
+        "range": 1
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/minute_mix/forced_on"
+        "name": "game:modifiers/minute_mix/__forced_on"
       }
     ]
   }

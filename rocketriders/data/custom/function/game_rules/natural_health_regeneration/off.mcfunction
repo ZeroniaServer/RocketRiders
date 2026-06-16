@@ -1,1 +1,0 @@
-gamerule minecraft:natural_health_regeneration false

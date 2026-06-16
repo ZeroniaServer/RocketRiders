@@ -1,0 +1,8 @@
+execute on origin run tag @s add kill_with_reason.thrower
+$title @a[limit=1,tag=kill_with_reason.thrower] actionbar {color:"red",text:"$(message)"}
+execute as @a[limit=1,tag=kill_with_reason.thrower] run function custom:player/delay_actionbar
+execute on origin run tag @s remove kill_with_reason.thrower
+
+kill @s
+
+return 1

@@ -1,5 +1,6 @@
 execute unless score @s[predicate=custom:team/lobby,tag=inParkour] impulse_cooldown matches 1.. run tellraw @s [{"text":"You quit the Parkour. Returning to the Lobby.","color":"red"}]
 execute unless score @s[predicate=custom:team/lobby,tag=inParkour] impulse_cooldown matches 1.. run scoreboard players set @s LobbyWarp 1
+execute unless score @s[predicate=custom:team/lobby,tag=inParkour] impulse_cooldown matches 1.. run title @s actionbar ""
 execute unless score @s[predicate=custom:team/lobby,tag=inParkour] impulse_cooldown matches 1.. run tag @s remove inParkour
 
 advancement revoke @s only lobby:use_barrier

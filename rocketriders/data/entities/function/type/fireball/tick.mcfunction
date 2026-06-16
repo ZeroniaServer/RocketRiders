@@ -1,26 +1,35 @@
 # Break when out of bounds
 execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/fireball/actions/break
-execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:moving_up run return run function entities:type/fireball/actions/break
-execute on vehicle positioned as @s unless predicate custom:insideborder run return run function entities:type/fireball/actions/break
+execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:entity/is_moving_upwards run return run function entities:type/fireball/actions/break
+execute on vehicle positioned as @s if predicate custom:location/near_or_beyond_world_border run return run function entities:type/fireball/actions/break
 execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/fireball/actions/break
 
 # Break when near an enemy spawn point
-execute if predicate entities:origin_team/blue on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_yellow_half run return run function entities:type/fireball/actions/break
-execute if predicate entities:origin_team/yellow on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:on_blue_half run return run function entities:type/fireball/actions/break
+execute if predicate entities:origin_team/blue on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:in_yellow_half run return run function entities:type/fireball/actions/break
+execute if predicate entities:origin_team/yellow on vehicle positioned as @s if predicate custom:near_any_spawn_zone if predicate custom:in_blue_half run return run function entities:type/fireball/actions/break
 execute if predicate entities:origin_team/none on vehicle positioned as @s if predicate custom:near_any_spawn_zone run return run function entities:type/fireball/actions/break
 
+# Freeze when moving too slowly
+execute if predicate custom:entity/vehicle_is_moving on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{speed:{max:0.01}}}} run data modify entity @s Motion set value [0,0,0]
+
 # Tick age while moving
-execute unless predicate custom:vehicle_is_moving run scoreboard players set @s entity.fireball.time_since_punched 0
-execute if predicate custom:vehicle_is_moving run scoreboard players add @s entity.fireball.time_since_punched 1
+execute unless predicate custom:entity/fireball_min_speed run scoreboard players set @s entity.fireball.time_since_punched 0
+execute if predicate custom:entity/fireball_min_speed run scoreboard players add @s entity.fireball.time_since_punched 1
 
 # Early impact
-execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/fireball/tick/impact
+execute unless predicate custom:entity/has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/fireball/tick/impact
+
+# Water interaction
+execute if predicate game:feature_flags/1_4_0_update/on on vehicle if predicate custom:entity/is_touching_water positioned as @s if block ~ ~0.5 ~ water run return run function entities:type/fireball/tick/geyser
+execute if predicate game:feature_flags/1_4_0_update/on run scoreboard players set $geyser var 1
+execute if predicate game:feature_flags/1_4_0_update/on on vehicle unless predicate custom:entity/is_touching_water positioned as @s unless block ~-0.5 ~-0.5 ~-0.5 water unless block ~-0.5 ~-0.5 ~0.5 water unless block ~0.5 ~-0.5 ~-0.5 water unless block ~0.5 ~-0.5 ~0.5 water unless block ~-0.5 ~0.5 ~-0.5 water unless block ~-0.5 ~0.5 ~0.5 water unless block ~0.5 ~0.5 ~-0.5 water unless block ~0.5 ~0.5 ~0.5 water run scoreboard players set $geyser var 0
+execute if predicate game:feature_flags/1_4_0_update/on if predicate custom:entity/vehicle_is_moving if score $geyser var matches 1 on vehicle positioned as @s run return run function entities:type/fireball/tick/geyser
 
 # Store the rotation and speed of vehicle
-execute if predicate custom:has_vehicle run function custom:projectile_motion_save
+execute if predicate custom:entity/has_vehicle run function custom:projectile_motion_save
 
 # Movement trail
-execute if predicate custom:periodic_tick/3 on vehicle positioned as @s if predicate custom:is_moving run function entities:type/fireball/tick/particle
+execute if predicate custom:periodic_tick/3 on vehicle positioned as @s if predicate custom:entity/is_moving run function entities:type/fireball/tick/particle
 
 # Ambient sounds
 execute if predicate custom:coin_flip if predicate custom:coin_flip run scoreboard players add @s entity.fireball.ambient_noise_timer 1
@@ -28,20 +37,20 @@ execute if score @s entity.fireball.ambient_noise_timer matches 20.. on vehicle 
 execute if score @s entity.fireball.ambient_noise_timer matches 20.. run scoreboard players set @s entity.fireball.ambient_noise_timer 0
 
 #Fireballs poof Canopies
-execute if predicate custom:vehicle_is_moving on vehicle positioned as @s run function entities:type/fireball/tick/try_poof
+execute if predicate custom:entity/vehicle_is_moving on vehicle positioned as @s run function entities:type/fireball/tick/try_poof
 
 #Disable fireballs near portals (depends on Snipe Portals game rule)
-execute if predicate game:portal_type/default unless predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on on vehicle positioned as @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 1
-execute if predicate game:portal_type/default unless predicate game:modifiers/explosive/on if predicate game:modifiers/clutter_collector/on on vehicle positioned as @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
-execute if predicate game:portal_type/default unless predicate game:game_rules/snipe_portals/on on vehicle positioned as @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
-execute if predicate game:portal_type/default unless predicate game:game_rules/snipe_portals/on on vehicle positioned as @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
+execute if predicate game:portal_type/normal unless predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on on vehicle positioned as @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 1
+execute if predicate game:portal_type/normal unless predicate game:modifiers/explosive/on if predicate game:modifiers/clutter_collector/on on vehicle positioned as @s unless entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] unless entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
+execute if predicate game:portal_type/normal unless predicate game:game_rules/snipe_portals/on on vehicle positioned as @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
+execute if predicate game:portal_type/normal unless predicate game:game_rules/snipe_portals/on on vehicle positioned as @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
 execute if predicate game:portal_type/small if predicate game:blue_portal_revealed unless predicate game:modifiers/explosive/on unless predicate game:modifiers/clutter_collector/on on vehicle positioned as @s unless entity @s[x=2,y=43,z=66,dx=20,dy=14,dz=2] unless entity @s[x=2,y=43,z=-68,dx=20,dy=14,dz=2] run data modify entity @s ExplosionPower set value 1
 execute if predicate game:portal_type/small if predicate game:yellow_portal_revealed unless predicate game:modifiers/explosive/on if predicate game:modifiers/clutter_collector/on on vehicle positioned as @s unless entity @s[x=2,y=43,z=66,dx=20,dy=14,dz=2] unless entity @s[x=2,y=43,z=-68,dx=20,dy=14,dz=2] run data modify entity @s ExplosionPower set value 0
 execute if predicate game:portal_type/small if predicate game:yellow_portal_revealed unless predicate game:game_rules/snipe_portals/on on vehicle positioned as @s if entity @s[x=2,y=43,z=66,dx=20,dy=14,dz=2] run data modify entity @s ExplosionPower set value 0
 execute if predicate game:portal_type/small if predicate game:blue_portal_revealed unless predicate game:game_rules/snipe_portals/on on vehicle positioned as @s if entity @s[x=2,y=43,z=-68,dx=20,dy=14,dz=2] run data modify entity @s ExplosionPower set value 0
 #Exception for own portal
-execute if predicate game:portal_type/default if predicate entities:origin_team/yellow on vehicle positioned as @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
-execute if predicate game:portal_type/default if predicate entities:origin_team/blue on vehicle positioned as @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
+execute if predicate game:portal_type/normal if predicate entities:origin_team/yellow on vehicle positioned as @s if entity @s[x=-11,y=36,z=73,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
+execute if predicate game:portal_type/normal if predicate entities:origin_team/blue on vehicle positioned as @s if entity @s[x=-11,y=36,z=-75,dx=46,dy=23,dz=2] run data modify entity @s ExplosionPower set value 0
 execute if predicate game:portal_type/small if predicate entities:origin_team/yellow if predicate game:yellow_portal_revealed on vehicle positioned as @s if entity @s[x=2,y=43,z=66,dx=20,dy=14,dz=2] run data modify entity @s ExplosionPower set value 0
 execute if predicate game:portal_type/small if predicate entities:origin_team/blue if predicate game:blue_portal_revealed on vehicle positioned as @s if entity @s[x=2,y=43,z=-68,dx=20,dy=14,dz=2] run data modify entity @s ExplosionPower set value 0
 

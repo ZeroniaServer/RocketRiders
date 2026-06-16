@@ -1,0 +1,23 @@
+[
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "minecraft:vehicle": {}
+    }
+  },
+  {
+    "condition": "minecraft:inverted",
+    "term": {
+      "condition": "minecraft:entity_properties",
+      "entity": "this",
+      "predicate": {
+        "minecraft:vehicle": {
+          "minecraft:movement": {
+            "speed": 0
+          }
+        }
+      }
+    }
+  }
+]

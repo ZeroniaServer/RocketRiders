@@ -8,17 +8,17 @@
             "condition": "minecraft:value_check",
             "value": {
               "type": "minecraft:score",
+              "score": "global",
               "target": {
                 "type": "minecraft:fixed",
                 "name": "$subtick_hackery_done"
-              },
-              "score": "global"
+              }
             },
             "range": 0
           }
         ],
         "zombie": {
-          "predicates": {
+          "minecraft:predicates": {
             "minecraft:custom_data": {
               "subtick_hackery": {}
             }

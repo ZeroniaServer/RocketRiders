@@ -16,7 +16,7 @@
           "condition": "minecraft:inverted",
           "term": {
             "condition": "minecraft:reference",
-            "name": "game:phase/match/closing"
+            "name": "game:phase/match/closing/outcome"
           }
         }
       ]

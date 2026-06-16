@@ -1,26 +1,16 @@
 ##
 gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
 
-scoreboard players reset $match_time global
-scoreboard players reset $match_play_time global
+scoreboard players reset * match_data
 scoreboard players reset $initial_blue_team_count global
 scoreboard players reset $initial_yellow_team_count global
-tag @s remove BlueWon
-tag @s remove YellowWon
-tag @s remove BlueWonFirst
-tag @s remove YellowWonFirst
-tag @s remove BothWon
-scoreboard players reset $blue_single_portal var
-scoreboard players reset $yellow_single_portal var
-scoreboard players reset $1v1_duel_time_out_period global
-scoreboard players reset $swap_side global
 
-function custom:game_rules/mob_griefing/off
+gamerule minecraft:mob_griefing false
 execute if predicate game:modifiers/spam_click/on as @a[x=0] run attribute @s minecraft:attack_speed base reset
 function achievements:scoresreset
 
 scoreboard players add @a[x=0,predicate=custom:team/any_playing_team] GamesPlayed 1
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player_action/playerdata/save
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/playerdata/save
 
 tag @a[x=0] remove Winner
 tag @a[x=0] remove Loser
@@ -42,11 +32,12 @@ execute if predicate rr:server_mode/cubekrowd_duels run schedule function server
 
 ##For repeating settings
 execute unless score $match_repeat_amount global matches 1.. unless predicate game:repeat_settings/forever run scoreboard players reset $extra_match_repetitions config
-execute if predicate game:repeat_settings/on unless score $mcancel CmdData matches 1 unless entity @s[predicate=game:item_pool_meta/all_normal_missiles_disabled,predicate=game:item_pool_meta/all_heavy_missiles_disabled,predicate=game:item_pool_meta/all_lightning_missiles_disabled,predicate=game:item_pool_meta/all_utilities_disabled] run function arenaclear:areaclear
+execute if predicate game:repeat_settings/on unless score $mcancel CmdData matches 1 unless entity @s[predicate=game:item_pool/__all_normal_missiles_disabled,predicate=game:item_pool/__all_heavy_missiles_disabled,predicate=game:item_pool/__all_lightning_missiles_disabled,predicate=game:item_pool/__all_utilities_disabled] run function arenaclear:areaclear
 scoreboard players set $mcancel CmdData 0
 
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_end/match
+execute if entity @s[tag=classicEnabled] run function rr_classic:game/on_phase_end/match
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_end/match
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_end/match
 execute if entity @s[tag=duelEnabled] run function rr_duel:game/on_phase_end/match

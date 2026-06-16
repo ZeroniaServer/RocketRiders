@@ -5,8 +5,7 @@ function game:config/reset
 execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] run function game:tipreset
 tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove ServerModeVoting
 scoreboard players set $realms global 0
-tag @e[x=0,type=armor_stand,tag=Selection,limit=1] remove noFullHotbarSound
-scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] modifierID 0
+scoreboard players set $modification_room.selected_modifier global 0
 function lobby:open_modification_room
 execute as @a[x=0] run function achievements:roots
 clear @a[x=0]

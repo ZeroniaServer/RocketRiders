@@ -6,7 +6,7 @@ execute unless score @s useful matches 1.. run return fail
 
 # update count
 tag @s add matchOrigin
-execute as @e[x=0,type=area_effect_cloud,tag=splash_alone] if function custom:match_origin at @s run tag @e[type=tnt,distance=..7,tag=!useful,predicate=custom:in_water_fluid,nbt={fuse:1s}] add useful
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone] if function custom:match_origin at @s run tag @e[type=tnt,distance=..7,tag=!useful,predicate=custom:block/water_fluid,nbt={fuse:1s}] add useful
 tag @s remove matchOrigin
 execute at @e[x=0,type=tnt,tag=useful] run scoreboard players add @s useful 1
 tag @e[x=0,type=tnt,tag=useful] remove useful
@@ -34,5 +34,5 @@ execute if score @s useful matches 19.. run advancement grant @s only achievemen
 execute if score @s useful matches 20.. run advancement grant @s only achievements:rr_challenges/useful 20
 
 # save progress
-function custom:player_action/playerdata/save
+function custom:player/playerdata/save
 scoreboard players operation @s prevUseful = @s useful

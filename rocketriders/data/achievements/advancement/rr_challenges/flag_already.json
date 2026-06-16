@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/get_off_lawn",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -13,6 +14,7 @@
     "frame": "goal",
     "hidden": false,
     "icon": {
+      "id": "minecraft:black_banner",
       "components": {
         "minecraft:banner_patterns": [
           {
@@ -48,14 +50,12 @@
             "pattern": "square_top_left"
           }
         ]
-      },
-      "id": "minecraft:black_banner"
+      }
     },
     "show_toast": true,
     "title": {
       "color": "#fe6309",
       "text": "Just Give Me That L Already"
     }
-  },
-  "parent": "achievements:rr_challenges/get_off_lawn"
+  }
 }

@@ -1,0 +1,72 @@
+[
+  {
+    "condition": "minecraft:any_of",
+    "terms": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "minecraft:entity_type": [
+            "minecraft:arrow",
+            "minecraft:spectral_arrow",
+            "minecraft:fireball",
+            "minecraft:dragon_fireball",
+            "minecraft:splash_potion",
+            "minecraft:lingering_potion",
+            "minecraft:ender_pearl",
+            "minecraft:trident",
+            "minecraft:firework_rocket"
+          ]
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
+          "minecraft:predicates": {
+            "minecraft:custom_data": {
+              "shield": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
+          "minecraft:predicates": {
+            "minecraft:custom_data": {
+              "vortex": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
+          "minecraft:predicates": {
+            "minecraft:custom_data": {
+              "icbm": {}
+            }
+          }
+        }
+      },
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "minecraft:entity_type": "minecraft:snowball",
+          "minecraft:predicates": {
+            "minecraft:custom_data": {
+              "stinging_shield": {}
+            }
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "score": "match_components",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$arena/bedrock_base_frames"
+    }
+  },
+  "range": 1
+}

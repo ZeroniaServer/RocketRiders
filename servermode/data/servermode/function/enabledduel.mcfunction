@@ -16,7 +16,6 @@ execute as @e[x=0,type=armor_stand,tag=Selection,limit=1] store result score @s 
 clear @a[x=0]
 kill @e[x=0,type=armor_stand,tag=ParkourLB]
 kill @e[x=0,type=text_display,tag=ParkourLB]
-kill @e[x=0,type=#custom:crystal,tag=CrusadeEntity]
 setblock -31 190 17 air
 setblock -32 190 17 air
 setblock -31 190 16 air

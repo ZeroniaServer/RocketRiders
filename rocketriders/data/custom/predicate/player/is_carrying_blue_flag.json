@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "minecraft:entity_tags": {
+      "any_of": [
+        "carrying_flag.blue_left",
+        "carrying_flag.blue_right"
+      ]
+    }
+  }
+}

@@ -1,14 +1,15 @@
 {
   "criteria": {
     "get_killed_from_pre_death_projectile": {
+      "trigger": "minecraft:entity_hurt_player",
       "conditions": {
         "damage": {
           "source_entity": {
-            "type": "minecraft:player"
+            "minecraft:entity_type": "minecraft:player"
           },
           "type": {
             "direct_entity": {
-              "predicates": {
+              "minecraft:predicates": {
                 "minecraft:custom_data": {
                   "pre_death_projectile": true
                 }
@@ -27,12 +28,11 @@
             "condition": "minecraft:inverted",
             "term": {
               "condition": "minecraft:reference",
-              "name": "custom:alive"
+              "name": "custom:player/is_alive"
             }
           }
         ]
-      },
-      "trigger": "minecraft:entity_hurt_player"
+      }
     }
   },
   "rewards": {

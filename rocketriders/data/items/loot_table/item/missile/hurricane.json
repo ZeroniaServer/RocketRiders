@@ -1,0 +1,145 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:pig_spawn_egg",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "id": "missile/hurricane",
+                  "spawn_egg": {
+                    "type": "missile",
+                    "missile": "hurricane"
+                  }
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "missile/hurricane",
+                    "none"
+                  ]
+                },
+                "minecraft:entity_data": {
+                  "id": "minecraft:marker"
+                },
+                "minecraft:item_model": "minecraft:drowned_spawn_egg",
+                "minecraft:lore": [
+                  [
+                    {
+                      "color": "gray",
+                      "italic": false,
+                      "text": "Amount of TNT: "
+                    },
+                    {
+                      "color": "red",
+                      "text": "18"
+                    }
+                  ],
+                  [
+                    {
+                      "color": "gray",
+                      "italic": false,
+                      "text": "Speed: "
+                    },
+                    {
+                      "color": "red",
+                      "text": "3.3m/s"
+                    }
+                  ],
+                  [
+                    {
+                      "color": "gray",
+                      "italic": false,
+                      "text": "Made by: "
+                    },
+                    {
+                      "color": "red",
+                      "text": "HolyToiletPaper"
+                    }
+                  ],
+                  "",
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "The Hurricane bears much resemblance to the"
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "Lightning, but with more TNT and a tight design."
+                  },
+                  {
+                    "color": "gray",
+                    "italic": false,
+                    "text": "It might be harder to get on this one."
+                  }
+                ]
+              }
+            },
+            {
+              "function": "minecraft:copy_custom_data",
+              "ops": [
+                {
+                  "op": "replace",
+                  "source": "UUID",
+                  "target": "spawn_egg.owner"
+                }
+              ],
+              "source": "this"
+            },
+            {
+              "function": "minecraft:set_name",
+              "entity": "this",
+              "name": [
+                {
+                  "bold": true,
+                  "color": "white",
+                  "italic": false,
+                  "text": ""
+                },
+                [
+                  {
+                    "color": "yellow",
+                    "text": ""
+                  },
+                  [
+                    {
+                      "score": {
+                        "name": "@s",
+                        "objective": "text.lightning_missile_item_prefix_color"
+                      }
+                    },
+                    {
+                      "bold": true,
+                      "text": "[Lightning] "
+                    }
+                  ]
+                ],
+                [
+                  {
+                    "score": {
+                      "name": "@s",
+                      "objective": "text.main_color"
+                    }
+                  },
+                  "Hurricane"
+                ]
+              ],
+              "target": "item_name"
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

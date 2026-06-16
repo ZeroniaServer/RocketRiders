@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/flag_already",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -13,6 +14,7 @@
     "frame": "goal",
     "hidden": false,
     "icon": {
+      "id": "minecraft:player_head",
       "components": {
         "minecraft:profile": {
           "properties": [
@@ -22,14 +24,12 @@
             }
           ]
         }
-      },
-      "id": "minecraft:player_head"
+      }
     },
     "show_toast": true,
     "title": {
       "color": "#fe6309",
       "text": "You Shouldn't Bee Here!"
     }
-  },
-  "parent": "achievements:rr_challenges/flag_already"
+  }
 }

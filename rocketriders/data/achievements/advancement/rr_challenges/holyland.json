@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_zzzhard/root",
   "criteria": {
     "1": {
       "trigger": "minecraft:impossible"
@@ -33,7 +34,6 @@
       "text": "For The Holy Land!"
     }
   },
-  "parent": "achievements:rr_zzzhard/root",
   "rewards": {
     "function": "achievements:holyland_gain"
   }

@@ -27,7 +27,6 @@ advancement grant @a[scores={TomaSpawned=1..},tag=!had_veteran_achievement] only
 advancement grant @a[scores={WarSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran WarSpawned
 
 # Utilities
-advancement grant @a[scores={ObshieldSpawned=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran ObshieldSpawned
 advancement grant @a[scores={ThrowSplash=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran SplashSpawned
 advancement grant @a[scores={BowShot=1..},tag=!had_veteran_achievement] only achievements:rr_challenges/veteran ArrowSpawned
 

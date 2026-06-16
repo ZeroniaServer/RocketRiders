@@ -1,11 +1,12 @@
 {
   "criteria": {
     "shot_arrow": {
+      "trigger": "minecraft:player_hurt_entity",
       "conditions": {
         "damage": {
           "type": {
             "direct_entity": {
-              "type": "#minecraft:arrows"
+              "minecraft:entity_type": "#minecraft:arrows"
             },
             "tags": [
               {
@@ -16,15 +17,14 @@
           }
         },
         "entity": {
-          "type": "minecraft:player"
+          "minecraft:entity_type": "minecraft:player"
         },
         "player": {
-          "location": {
+          "minecraft:location": {
             "dimension": "minecraft:overworld"
           }
         }
-      },
-      "trigger": "minecraft:player_hurt_entity"
+      }
     }
   },
   "rewards": {

@@ -1,7 +1,0 @@
-{
-  "condition": "minecraft:entity_scores",
-  "entity": "this",
-  "scores": {
-    "flag.is_nova_attached": 1
-  }
-}

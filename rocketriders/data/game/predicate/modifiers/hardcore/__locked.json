@@ -1,0 +1,17 @@
+{
+  "condition": "minecraft:any_of",
+  "terms": [
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/hardcore/__forced_on"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/hardcore/__forced_off"
+    },
+    {
+      "condition": "minecraft:reference",
+      "name": "game:modifiers/hardcore/__incompatible_modifiers"
+    }
+  ]
+}

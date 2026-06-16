@@ -1,14 +1,19 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: staging.configuration"]}
+
 ##
+function game:match_components/reset
 function arenaclear:refreshsigns
+function game:place_facade
 
 bossbar set rr:startgame max 30
 bossbar set rr:startgame value 30
 
 function lobby:update_nav_book
-execute as @a[x=0,predicate=custom:team/lobby] run function custom:reset_inventory
+execute as @a[x=0,predicate=custom:team/lobby] run function custom:player/reset_inventory
 
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/staging/configuration
+execute if entity @s[tag=classicEnabled] run function rr_classic:game/on_phase_start/staging/configuration
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/staging/configuration
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/staging/configuration
 execute if entity @s[tag=duelEnabled] run function rr_duel:game/on_phase_start/staging/configuration

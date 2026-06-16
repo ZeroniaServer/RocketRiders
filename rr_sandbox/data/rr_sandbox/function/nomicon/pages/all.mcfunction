@@ -1,1 +1,1 @@
-function custom:show_dialog with storage rocketriders:nomicon dialogs.all
+function custom:player/show_dialog with storage rocketriders:nomicon dialogs.all

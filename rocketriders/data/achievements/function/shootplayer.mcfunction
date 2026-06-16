@@ -3,5 +3,5 @@
 advancement revoke @s only achievements:rr_utility/shoot_player
 execute unless predicate game:achievements_can_be_awarded run return fail
 
-scoreboard players add @s[predicate=custom:fall_gravshot] gravShot 1
-execute if entity @s[predicate=custom:fall_gravshot] run function achievements:gravitationalshootout
+scoreboard players add @s[predicate=custom:entity/is_falling_for_at_least_2_blocks] gravShot 1
+execute if entity @s[predicate=custom:entity/is_falling_for_at_least_2_blocks] run function achievements:gravitationalshootout

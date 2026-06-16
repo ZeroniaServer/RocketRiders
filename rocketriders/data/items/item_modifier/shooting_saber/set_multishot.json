@@ -1,5 +1,6 @@
 [
   {
+    "function": "minecraft:set_components",
     "components": {
       "minecraft:item_name": {
         "bold": true,
@@ -7,13 +8,12 @@
         "italic": false,
         "text": "Multishot Saber"
       }
-    },
-    "function": "minecraft:set_components"
+    }
   },
   {
+    "function": "minecraft:set_enchantments",
     "enchantments": {
       "minecraft:multishot": 1
-    },
-    "function": "minecraft:set_enchantments"
+    }
   }
 ]

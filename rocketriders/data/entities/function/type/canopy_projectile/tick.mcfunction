@@ -1,24 +1,21 @@
 # Break when out of bounds
-execute on vehicle positioned as @s if predicate custom:near_or_above_roof run return run function entities:type/canopy_projectile/actions/break
-execute on vehicle positioned as @s if predicate custom:in_void unless predicate custom:moving_up run return run function entities:type/canopy_projectile/actions/break
-execute on vehicle positioned as @s unless predicate custom:insideborder run return run function entities:type/canopy_projectile/actions/break
-execute on vehicle positioned as @s unless predicate custom:in_arena run return run function entities:type/canopy_projectile/actions/break
+execute on vehicle positioned as @s if function entities:type/canopy_projectile/tick/check_passive_break run return 0
 
 # Early impact
-execute unless predicate custom:has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/canopy_projectile/tick/early_impact
+execute unless predicate custom:entity/has_vehicle if function custom:projectile_motion_step positioned as @s run return run function entities:type/canopy_projectile/tick/early_impact
 
 # Store the rotation and speed of vehicle
-execute if predicate custom:has_vehicle run function custom:projectile_motion_save
+execute if predicate custom:entity/has_vehicle run function custom:projectile_motion_save
 
 # Movement trail
 execute if score @s entity.age matches 1.. if predicate custom:periodic_tick/3 run particle minecraft:block{block_state:"minecraft:spruce_leaves"} ~ ~ ~ 0 0 0 0.1 2 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
-execute if score @s entity.age matches 1.. if predicate entities:origin_team/blue unless predicate game:match_components/red_for_blue if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[0,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if score @s entity.age matches 1.. if predicate entities:origin_team/blue if predicate game:match_components/red_for_blue if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,0.5,0.5],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if score @s entity.age matches 1.. if predicate entities:origin_team/yellow unless predicate game:match_components/green_for_yellow if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,1,0],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
-execute if score @s entity.age matches 1.. if predicate entities:origin_team/yellow if predicate game:match_components/green_for_yellow if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[0,1,0],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if score @s entity.age matches 1.. if predicate entities:origin_team/blue if predicate game:blue_team_skin/blue if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[0,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if score @s entity.age matches 1.. if predicate entities:origin_team/blue if predicate game:blue_team_skin/any_red_skin if predicate custom:periodic_tick/3 run particle minecraft:dust{color:0xDC2828,scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if score @s entity.age matches 1.. if predicate entities:origin_team/yellow if predicate game:yellow_team_skin/yellow if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,1,0],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if score @s entity.age matches 1.. if predicate entities:origin_team/yellow if predicate game:yellow_team_skin/green if predicate custom:periodic_tick/3 run particle minecraft:dust{color:0x3DC210,scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 execute if score @s entity.age matches 1.. if predicate entities:origin_team/none if predicate custom:periodic_tick/3 run particle minecraft:dust{color:[1,1,1],scale:1} ~ ~ ~ 0 0 0 0.1 10 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 # Deploy
-execute if score @s entity.age matches 10.. on vehicle positioned as @s if predicate entities:canopy_can_be_deployed run return run function entities:type/canopy_projectile/actions/deploy
-execute if score @s entity.age matches 60.. run return run function entities:type/canopy_projectile/actions/break
+execute if score @s entity.age >= $canopy_flight_duration match_components on vehicle positioned as @s on passengers if predicate entities:type/canopy_projectile/brain if predicate entities:canopy_can_be_deployed run return run function entities:type/canopy_projectile/actions/deploy
+execute if score @s entity.age matches 60.. run return run function entities:type/canopy_projectile/actions/break_with_reason {message:"Canopy failed to deploy; it took too long to deploy"}

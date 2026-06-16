@@ -3,8 +3,8 @@ execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefres
 
 # overrides
 execute if predicate game:match_components/duel_settings_locked run return run tellraw @s {color:"dark_gray",italic:true,text:"Game Rules are not adjustable in this game mode."}
-execute if predicate game:game_rules/item_stacking/forced_off run return run tellraw @s {color:"dark_gray",italic:true,text:"Item Stacking is incompatible with this game mode."}
-execute if predicate game:game_rules/item_stacking/forced_on run return run tellraw @s {color:"dark_gray",italic:true,text:"Item Stacking required in this game mode."}
+execute if predicate game:game_rules/item_stacking/__forced_off run return run tellraw @s {color:"dark_gray",italic:true,text:"Item Stacking is incompatible with this game mode."}
+execute if predicate game:game_rules/item_stacking/__forced_on run return run tellraw @s {color:"dark_gray",italic:true,text:"Item Stacking required in this game mode."}
 
 # toggle
 execute if entity @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!SignsRefreshed,scores={refreshsigns=0}] store success score $item_stacking config unless score $item_stacking config matches 1

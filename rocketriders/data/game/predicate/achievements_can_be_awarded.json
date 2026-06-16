@@ -18,15 +18,15 @@
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:value_check",
-      "range": 1,
       "value": {
-        "score": "global",
+        "type": "minecraft:score",
+        "score": "match_data",
         "target": {
-          "name": "$1v1_duel_time_out_period",
-          "type": "minecraft:fixed"
-        },
-        "type": "minecraft:score"
-      }
+          "type": "minecraft:fixed",
+          "name": "$1v1_duel_time_out_period"
+        }
+      },
+      "range": 1
     }
   }
 ]

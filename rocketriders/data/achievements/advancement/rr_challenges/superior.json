@@ -13,6 +13,7 @@
     "frame": "task",
     "hidden": true,
     "icon": {
+      "id": "minecraft:player_head",
       "components": {
         "minecraft:profile": {
           "properties": [
@@ -22,8 +23,7 @@
             }
           ]
         }
-      },
-      "id": "minecraft:player_head"
+      }
     },
     "show_toast": true,
     "title": {

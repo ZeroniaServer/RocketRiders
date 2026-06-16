@@ -1,0 +1,23 @@
+$fill -101 195 93 -101 201 96 $(front)
+$fill -89 195 93 -89 201 96 $(front)
+$setblock -101 202 94 $(front)
+$setblock -101 202 91 $(front)
+$setblock -98 202 91 $(front)
+$setblock -95 202 91 $(front)
+$setblock -92 202 91 $(front)
+$setblock -89 202 91 $(front)
+$setblock -89 202 94 $(front)
+
+# Pathways
+fill -96 201 96 -94 201 95 obsidian
+$setblock -97 201 96 $(front)
+$setblock -96 201 95 $(front)
+$setblock -93 201 96 $(front)
+$setblock -94 201 95 $(front)
+$fill -100 201 94 -90 201 94 $(middle)
+$setblock -92 201 94 $(front)
+$setblock -95 201 94 $(front)
+$setblock -98 201 94 $(front)
+$setblock -98 201 93 $(middle)
+$setblock -95 201 93 $(middle)
+$setblock -92 201 93 $(middle)

@@ -3,10 +3,10 @@ advancement revoke @s only dev:check_triggers_even_while_tick_rate_is_frozen
 execute unless dimension minecraft:overworld run return run scoreboard players reset @s dev
 
 scoreboard players reset @s[scores={dev=..-1}] dev
-execute if score @s dev matches 1.. unless score @s confirmed_dev matches 1 run function custom:show_dialog {dialog:"dev:confirm_dev"}
+execute if score @s dev matches 1.. unless score @s confirmed_dev matches 1 run function custom:player/show_dialog {dialog:"dev:confirm_dev"}
 execute if score @s dev matches 1.. unless score @s confirmed_dev matches 1 run scoreboard players reset @s dev
 
-execute if score @s dev matches 1 at @s run function custom:show_dialog {dialog:"dev:quick_actions"}
+execute if score @s dev matches 1 at @s run function custom:player/show_dialog {dialog:"dev:quick_actions"}
 execute if score @s dev matches 2 at @s run function dev:action/force_stop
 execute if score @s dev matches 3 at @s run function dev:action/force_start
 execute if score @s dev matches 4 at @s run function dev:action/join_or_leave

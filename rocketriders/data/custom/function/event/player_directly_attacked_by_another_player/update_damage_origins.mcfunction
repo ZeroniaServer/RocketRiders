@@ -7,7 +7,7 @@ execute on attacker run scoreboard players set $attacker_exists var 1
 execute if score $attacker_exists var matches 0 run return 0
 
 data modify storage rocketriders:main update_damage_origins set value {}
-execute on attacker if predicate custom:damage_origin run data modify storage rocketriders:main update_damage_origins.damage_origin set from entity @s data.damage_origin
+execute on attacker if predicate custom:entity/has_damage_origin run data modify storage rocketriders:main update_damage_origins.damage_origin set from entity @s data.damage_origin
 
 tag @s add update_damage_origins.this
 execute if data storage rocketriders:main update_damage_origins.damage_origin.primary run function custom:target_uuid {read_from:"storage rocketriders:main update_damage_origins.damage_origin.primary",run:"execute if entity @s[tag=update_damage_origins.this] run data remove storage rocketriders:main update_damage_origins.damage_origin.primary"}

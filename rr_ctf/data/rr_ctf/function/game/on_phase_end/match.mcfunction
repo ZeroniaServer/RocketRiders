@@ -1,11 +1,9 @@
 scoreboard objectives setdisplay sidebar.team.blue
 scoreboard objectives setdisplay sidebar.team.dark_red
+scoreboard objectives setdisplay sidebar.team.red
 scoreboard objectives setdisplay sidebar.team.gold
-scoreboard objectives setdisplay sidebar.team.dark_green
+scoreboard objectives setdisplay sidebar.team.green
 scoreboard objectives setdisplay sidebar.team.dark_gray
 scoreboard objectives setdisplay list
-scoreboard players reset * FlagScore
-scoreboard players reset * FlagDeliver
-scoreboard players reset * FlagDisp
-scoreboard players reset $flags_captured_by_blue global
-scoreboard players reset $flags_captured_by_yellow global
+scoreboard players reset @a[x=0] carrying_flag_time
+scoreboard players reset * ctf_sidebar

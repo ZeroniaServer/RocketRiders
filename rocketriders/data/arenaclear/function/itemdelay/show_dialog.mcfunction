@@ -46,6 +46,6 @@ data modify storage rocketriders:main itemdelay.dialog set value {\
 }
 execute store result storage rocketriders:main itemdelay.dialog.inputs[0].initial int 1 run function game:config/get_item_delay
 
-function custom:show_dialog with storage rocketriders:main itemdelay
+function custom:player/show_dialog with storage rocketriders:main itemdelay
 
 data remove storage rocketriders:main itemdelay

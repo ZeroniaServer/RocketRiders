@@ -120,12 +120,12 @@ data modify storage rocketriders:main time_of_day.dialog set value {\
   ]\
 }
 
-execute store result score $displayed_hour var run function custom:get_daytime
+execute store result score $displayed_hour var run time query minecraft:day
 scoreboard players remove $displayed_hour var 18000
 scoreboard players add $displayed_hour var 500
 scoreboard players operation $displayed_hour var %= $24000 constant
 execute store result storage rocketriders:main time_of_day.dialog.inputs[0].initial int 100 run scoreboard players operation $displayed_hour var /= $1000 constant
 
-function custom:show_dialog with storage rocketriders:main time_of_day
+function custom:player/show_dialog with storage rocketriders:main time_of_day
 
 data remove storage rocketriders:main time_of_day

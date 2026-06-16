@@ -6,5 +6,5 @@ tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Base mat
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"Items:","color":"aqua"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Light team gets fast missiles and punchable utilities"}]
 tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Dark team gets powerful missiles and throwable utilities"}]
-tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Exclusive: Special Missiles, Cluster Fireballs, and ICBMs"}]
+tellraw @s ["",{"text":"| ","bold":true,"color":"dark_gray"},{"text":"- Exclusive: Special Missiles, Cluster Fireballs, and I.C.B.M.s"}]
 tellraw @s [""]

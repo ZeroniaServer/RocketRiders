@@ -1,11 +1,12 @@
 {
   "criteria": {
     "requirement": {
+      "trigger": "minecraft:player_hurt_entity",
       "conditions": {
         "damage": {
           "type": {
             "direct_entity": {
-              "type": "minecraft:arrow"
+              "minecraft:entity_type": "minecraft:arrow"
             },
             "tags": [
               {
@@ -16,15 +17,14 @@
           }
         },
         "entity": {
-          "nbt": {
-            "Tags": [
+          "minecraft:entity_tags": {
+            "all_of": [
               "BotHPZombie"
             ]
           },
-          "type": "minecraft:zombie"
+          "minecraft:entity_type": "minecraft:zombie"
         }
-      },
-      "trigger": "minecraft:player_hurt_entity"
+      }
     }
   },
   "rewards": {

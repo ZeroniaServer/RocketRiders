@@ -1,13 +1,13 @@
 [
   {
     "condition": "minecraft:reference",
-    "name": "game:feature_flags/1_4_0_update"
+    "name": "game:feature_flags/1_4_0_update/on"
   },
   {
     "condition": "minecraft:inverted",
     "term": {
       "condition": "minecraft:reference",
-      "name": "game:modifiers/rotting/forced_off"
+      "name": "game:modifiers/rotting/__forced_off"
     }
   },
   {
@@ -15,19 +15,19 @@
     "terms": [
       {
         "condition": "minecraft:value_check",
-        "range": 1,
         "value": {
+          "type": "minecraft:score",
           "score": "config",
           "target": {
-            "name": "$rotting",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
-        }
+            "type": "minecraft:fixed",
+            "name": "$rotting"
+          }
+        },
+        "range": 1
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:modifiers/rotting/forced_on"
+        "name": "game:modifiers/rotting/__forced_on"
       }
     ]
   }

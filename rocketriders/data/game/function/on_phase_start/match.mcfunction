@@ -1,9 +1,11 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match"]}
+
 ##
 gamemode spectator @a[x=0,predicate=custom:team/spectator]
 gamemode adventure @a[x=0,predicate=custom:team/any_playing_team]
 
-scoreboard players set $match_time global 0
-scoreboard players set $match_play_time global 0
+scoreboard players set $time match_data 0
+scoreboard players set $play_time match_data 0
 
 scoreboard objectives add UUIDTracker dummy
 scoreboard objectives add KillerUUID dummy
@@ -12,31 +14,31 @@ bossbar set rr:startgame value 30
 bossbar set rr:startgame max 30
 function game:randomsplash
 execute as @a[x=0] at @s run playsound entity.generic.explode master @s ~ ~ ~ 100 1.2
-tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
-tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/teleport_to_start
 execute if predicate game:modifiers/sonar/on run tellraw @a[x=0,predicate=custom:team/spectator,tag=!JoinSpec] [{color:"gray",text:""},{color:"yellow",text:"⚠"}," The Sonar modifier is enabled! Non-spectating players cannot see the whole arena."]
-tp @a[x=0,predicate=custom:team/spectator] 12 100 0.5 90 90
+execute as @a[x=0,predicate=custom:team/spectator] run function custom:player/teleport_to_start
 effect clear @a[x=0,predicate=custom:team/any_playing_team] resistance
 effect give @a[x=0,predicate=custom:team/any_playing_team] fire_resistance 10 100 true
 #Hotfix for losing shield upon game starting
-execute if predicate game:match_components/main_item/crusade_kit_dependent as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:misc/knight_shield
+execute if predicate game:main_item/crusade_kit_dependent as @a[x=0,predicate=custom:team/any_playing_team,predicate=rr_crusade:kit/knight] run loot replace entity @s weapon.offhand loot items:item/knight_shield
 execute as @a[x=0,predicate=custom:team/any_playing_team] run function game:notify_join
 execute unless predicate game:phase/match/closing run tag @a[x=0] remove CalculateWin
 execute unless predicate game:phase/match/closing run tag @a[x=0] remove CalculateLoss
 #Hotfix for bug where jumping in queue rooms disqualifies you from Ground Bound achievement
 scoreboard players set @a[x=0,predicate=custom:team/any_playing_team] jumps 0
 #Enabling damage gamerules
-function custom:game_rules/drowning_damage/on
-function custom:game_rules/fire_damage/on
+gamerule minecraft:drowning_damage true
+gamerule minecraft:fire_damage true
 scoreboard players operation $initial_blue_team_count global = $blue_team_count global
 scoreboard players operation $initial_yellow_team_count global = $yellow_team_count global
 function lobby:credits/restart
-function custom:game_rules/mob_griefing/on
+gamerule minecraft:mob_griefing true
 scoreboard players reset $force_countdown global
 
 
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match
+execute if entity @s[tag=classicEnabled] run function rr_classic:game/on_phase_start/match
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/match
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/match
 execute if entity @s[tag=duelEnabled] run function rr_duel:game/on_phase_start/match

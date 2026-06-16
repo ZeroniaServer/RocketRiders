@@ -1,0 +1,60 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:spectral_arrow",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:custom_data": {
+                  "id": "spectral_arrow"
+                },
+                "minecraft:custom_model_data": {
+                  "floats": [],
+                  "strings": [
+                    "rocketriders",
+                    "spectral_arrow",
+                    "none"
+                  ]
+                },
+                "minecraft:item_name": {
+                  "bold": true,
+                  "color": "dark_purple",
+                  "italic": false,
+                  "text": "Spectral Arrow"
+                }
+              }
+            },
+            {
+              "function": "minecraft:reference",
+              "name": "items:set_custom_model_data"
+            },
+            {
+              "function": "minecraft:set_custom_data",
+              "tag": {
+                "droppable": true
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "minecraft:entity_type": "minecraft:player"
+                  }
+                },
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:phase/match/play"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

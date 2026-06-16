@@ -13,27 +13,27 @@ execute if predicate game:phase/match unless predicate game:phase/match/closing 
 #Clearing effects/tags and teleporting to lobby
 tag @a[x=0,scores={LeaveGame=1..}] remove force_mount
 execute if entity @a[x=0,scores={LeaveGame=1..}] as @e[x=0,type=firework_rocket] if function custom:kill_elytra_firework run kill
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player_action/forget_canopy
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player_action/forget_nova_attach
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player_action/forget_spell_emitter
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_canopy
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_nova_attach
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/forget_spell_emitter
 execute as @a[x=0,scores={LeaveGame=1..}] run ride @s dismount
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFlag] remove CarryFlag
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY1] remove CarryFY1
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFY2] remove CarryFY2
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFB1] remove CarryFB1
-tag @a[x=0,predicate=!custom:team/any_playing_team,tag=CarryFB2] remove CarryFB2
+title @a[x=0,predicate=!custom:team/any_playing_team,predicate=custom:player/is_carrying_flag,tag=!DelayActionbar] actionbar ""
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.yellow_right] remove carrying_flag.yellow_right
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.yellow_left] remove carrying_flag.yellow_left
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.blue_right] remove carrying_flag.blue_right
+tag @a[x=0,predicate=!custom:team/any_playing_team,tag=carrying_flag.blue_left] remove carrying_flag.blue_left
 effect clear @a[x=0,scores={LeaveGame=1..}]
 effect give @a[x=0,scores={LeaveGame=1..}] instant_health 1 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] resistance infinite 100 true
 effect give @a[x=0,scores={LeaveGame=1..}] night_vision infinite 100 true
-execute as @a[x=0,scores={LeaveGame=1..},predicate=!custom:team/lobby] run function custom:team/join_lobby
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:reset_inventory
+execute as @a[x=0,scores={LeaveGame=1..},predicate=!custom:team/lobby] run function custom:player/team/join_lobby
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/reset_inventory
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode survival
 execute as @a[x=0,scores={LeaveGame=1..}] run gamemode adventure
 title @a[x=0,scores={LeaveGame=1..}] times 5 30 5
-title @a[x=0,scores={LeaveGame=1..}] actionbar [""]
-title @a[x=0,scores={LeaveGame=1..}] title [""]
-title @a[x=0,scores={LeaveGame=1..}] subtitle [""]
+title @a[x=0,scores={LeaveGame=1..}] actionbar ""
+title @a[x=0,scores={LeaveGame=1..}] title ""
+title @a[x=0,scores={LeaveGame=1..}] subtitle ""
 spawnpoint @a[x=0,tag=!WasInYellow,tag=!WasInBlue,scores={LeaveGame=1..}] -43 211 78 90 0
 spawnpoint @a[x=0,tag=WasInYellow,scores={LeaveGame=1..}] -36 211 96 90 0
 spawnpoint @a[x=0,tag=WasInBlue,scores={LeaveGame=1..}] -36 211 61 90 0
@@ -45,12 +45,15 @@ tp @a[x=0,scores={LeaveGame=1..},tag=WasInBlue] -36 211 61.0 90 0
 execute unless predicate game:phase/match/closing unless predicate game:phase_last/match/closing run tp @a[x=0,scores={LeaveGame=1..},tag=WasInYellow] -77.50 204.00 92.50 45.00 0.00
 execute unless predicate game:phase/match/closing unless predicate game:phase_last/match/closing run tp @a[x=0,scores={LeaveGame=1..},tag=WasInBlue] -77.50 204.00 64.50 135.00 0.00
 execute unless predicate game:phase/match/closing unless predicate game:phase_last/match/closing run tag @a[x=0,scores={LeaveGame=1..}] add teleport_sound
-execute as @a[x=0,scores={LeaveGame=1..},predicate=custom:is_on_fire] at @s run function game:putoutfire
+execute as @a[x=0,scores={LeaveGame=1..},predicate=custom:entity/is_on_fire] at @s run function game:putoutfire
 tag @a[x=0,scores={LeaveGame=1..}] remove cursorItem
-scoreboard players reset @a[x=0,scores={LeaveGame=1..}] flag.is_nova_attached
-scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/infinity] shooting_saber.infinity_time
-scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:shooting_saber/multishot] shooting_saber.multishot_time
-scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:elytra/elytra] elytra_time
+tag @a[x=0,scores={LeaveGame=1..}] remove is_nova_attached
+scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:effects/infinity_saber/on] effects.infinity_saber.time
+scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:effects/multishot_saber/on] effects.multishot_saber.time
+scoreboard players reset @a[x=0,scores={LeaveGame=1..},predicate=items:effects/elytra/on] effects.elytra.state
+execute as @a[x=0,scores={LeaveGame=1..}] run attribute @s minecraft:fall_damage_multiplier modifier remove rocketriders:yes_fall
+execute as @a[x=0,scores={LeaveGame=1..}] run attribute @s minecraft:safe_fall_distance modifier remove rocketriders:yes_fall
+
 
 #Parkour quit
 execute if predicate rr:has_parkour as @a[x=0,scores={LeaveGame=1..},tag=inParkour] run tellraw @s [{"text":"You left the game, so your Parkour run was canceled.","color":"red"}]
@@ -78,7 +81,7 @@ execute if entity @s[tag=SMSwitch] run tag @a[x=0] remove informMeLate
 scoreboard players reset @a[x=0,tag=!informMeLate] informMeLate
 
 #Update Armor
-execute as @a[x=0,scores={LeaveGame=1..}] run function custom:update_armor
+execute as @a[x=0,scores={LeaveGame=1..}] run function custom:player/update_armor
 
 #Reset
 execute if entity @a[limit=1,x=0,scores={LeaveGame=1..}] run function everytick:team_count

@@ -1,6 +1,7 @@
 {
   "criteria": {
     "requirement": {
+      "trigger": "minecraft:item_used_on_block",
       "conditions": {
         "location": [
           {
@@ -12,8 +13,7 @@
             }
           }
         ]
-      },
-      "trigger": "minecraft:item_used_on_block"
+      }
     }
   },
   "rewards": {

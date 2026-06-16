@@ -3,14 +3,18 @@
 execute on attacker if score @s time_since_tnt_punch matches ..0 run return fail
 
 ## Get impulse (motion + direction)
-execute on attacker store result score $impulse_motion_x var run function custom:get_x_velocity
-scoreboard players operation $impulse_motion_x var /= $2 constant
-execute on attacker store result score $impulse_motion_y var run function custom:get_y_velocity
-scoreboard players operation $impulse_motion_y var /= $2 constant
-execute on attacker store result score $impulse_motion_z var run function custom:get_z_velocity
-scoreboard players operation $impulse_motion_z var /= $2 constant
+scoreboard players set $motion_impulse_scale var 400
+execute on attacker store result score $impulse_motion_x var run function custom:entity/get_x_velocity
+scoreboard players operation $impulse_motion_x var *= $motion_impulse_scale var
+scoreboard players operation $impulse_motion_x var /= $1000 constant
+execute on attacker store result score $impulse_motion_y var run function custom:entity/get_y_velocity
+scoreboard players operation $impulse_motion_y var *= $motion_impulse_scale var
+scoreboard players operation $impulse_motion_y var /= $1000 constant
+execute on attacker store result score $impulse_motion_z var run function custom:entity/get_z_velocity
+scoreboard players operation $impulse_motion_z var *= $motion_impulse_scale var
+scoreboard players operation $impulse_motion_z var /= $1000 constant
 
-execute positioned 0.0 0.0 0.0 positioned ^ ^ ^0.2 summon marker run function entities:type/punchable_tnt/actions/_punch_/get_impulse
+execute positioned 0.0 0.0 0.0 positioned ^ ^ ^0.25 summon marker run function entities:type/punchable_tnt/actions/__punch/get_impulse
 execute store result score $impulse_x var run data get storage rocketriders:main punchable_tnt.impulse[0] 1000
 execute store result score $impulse_y var run data get storage rocketriders:main punchable_tnt.impulse[1] 1000
 execute store result score $impulse_z var run data get storage rocketriders:main punchable_tnt.impulse[2] 1000
@@ -19,10 +23,28 @@ scoreboard players operation $impulse_x var += $impulse_motion_x var
 scoreboard players operation $impulse_y var += $impulse_motion_y var
 scoreboard players operation $impulse_z var += $impulse_motion_z var
 
-# bounce upwards if on ground
-execute on vehicle on vehicle store success score $on_ground var if predicate custom:is_on_ground
-execute if score $on_ground var matches 1 if score $impulse_y var matches ..-1 run scoreboard players operation $impulse_y var *= $-1 constant
-execute if score $on_ground var matches 1 if score $impulse_y var matches ..0200 run scoreboard players set $impulse_y var 0200
+# bounce off of the adjacent surface (slow down and cancel the bounce if that surface is a honey block)
+scoreboard players set $touching_honey var 0
+execute on vehicle on vehicle positioned as @s store success score $inside_block var unless block ~ ~0.49 ~ #custom:nonsolid
+
+scoreboard players set $x_bounces var 0
+execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{x:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_east_wall
+execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{x:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_west_wall
+execute if score $x_bounces var matches 2 unless score $inside_block var matches 1 run scoreboard players set $impulse_x var 0
+scoreboard players set $y_bounces var 0
+execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{y:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_ceiling
+execute on vehicle on vehicle if predicate {condition:"minecraft:any_of",terms:[{condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{y:0}}},{condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:flags":{is_on_ground:true}}}]} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_floor
+execute if score $y_bounces var matches 2 unless score $inside_block var matches 1 run scoreboard players set $impulse_y var 0
+scoreboard players set $z_bounces var 0
+execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{z:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_south_wall
+execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{z:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_north_wall
+execute if score $z_bounces var matches 2 unless score $inside_block var matches 1 run scoreboard players set $impulse_z var 0
+
+execute if score $touching_honey var matches 1 run scoreboard players operation $impulse_x var /= $5 constant
+execute if score $touching_honey var matches 1 unless predicate game:modifiers/zero_gravity_tnt/on if score $impulse_y var matches 1.. run scoreboard players operation $impulse_y var /= $2 constant
+execute if score $touching_honey var matches 1 unless predicate game:modifiers/zero_gravity_tnt/on if score $impulse_y var matches ..-1 run scoreboard players operation $impulse_y var /= $5 constant
+execute if score $touching_honey var matches 1 if predicate game:modifiers/zero_gravity_tnt/on run scoreboard players operation $impulse_y var /= $5 constant
+execute if score $touching_honey var matches 1 run scoreboard players operation $impulse_z var /= $5 constant
 
 # clamp
 execute if score $impulse_x var matches 500.. run scoreboard players set $impulse_x var 500

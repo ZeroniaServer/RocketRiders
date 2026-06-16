@@ -1,12 +1,12 @@
 [
   {
+    "function": "minecraft:set_custom_model_data",
     "colors": {
+      "mode": "replace_all",
       "values": [
         16777215
-      ],
-      "mode": "replace_all"
+      ]
     },
-    "function": "minecraft:set_custom_model_data",
     "floats": {
       "mode": "replace_all",
       "values": [
@@ -23,6 +23,8 @@
     }
   },
   {
+    "function": "minecraft:reference",
+    "name": "items:set_custom_model_data/custom_team_colors",
     "conditions": [
       {
         "condition": "minecraft:reference",
@@ -33,44 +35,22 @@
         "entity": "this",
         "predicate": {}
       }
-    ],
-    "function": "minecraft:reference",
-    "name": "items:set_custom_model_data/custom_team_colors"
+    ]
   },
   {
+    "function": "minecraft:set_custom_model_data",
     "colors": {
+      "mode": "replace_all",
       "values": [
         3949738
-      ],
-      "mode": "replace_all"
+      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:team/blue"
-      },
-      {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/red_for_blue"
-        }
-      },
-      {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/custom_team_colors"
-        }
-      }
-    ],
     "floats": {
       "mode": "replace_all",
       "values": [
         1
       ]
     },
-    "function": "minecraft:set_custom_model_data",
     "strings": {
       "mode": "replace_section",
       "offset": 2,
@@ -78,14 +58,6 @@
       "values": [
         "blue"
       ]
-    }
-  },
-  {
-    "colors": {
-      "values": [
-        16711680
-      ],
-      "mode": "replace_all"
     },
     "conditions": [
       {
@@ -94,7 +66,7 @@
       },
       {
         "condition": "minecraft:reference",
-        "name": "game:match_components/red_for_blue"
+        "name": "game:blue_team_skin/blue"
       },
       {
         "condition": "minecraft:inverted",
@@ -103,14 +75,22 @@
           "name": "game:match_components/custom_team_colors"
         }
       }
-    ],
+    ]
+  },
+  {
+    "function": "minecraft:set_custom_model_data",
+    "colors": {
+      "mode": "replace_all",
+      "values": [
+        16711680
+      ]
+    },
     "floats": {
       "mode": "replace_all",
       "values": [
         1
       ]
     },
-    "function": "minecraft:set_custom_model_data",
     "strings": {
       "mode": "replace_section",
       "offset": 2,
@@ -118,19 +98,15 @@
       "values": [
         "dark_red"
       ]
-    }
-  },
-  {
-    "colors": {
-      "values": [
-        16768000
-      ],
-      "mode": "replace_all"
     },
     "conditions": [
       {
         "condition": "minecraft:reference",
-        "name": "custom:team/yellow"
+        "name": "custom:team/blue"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:blue_team_skin/any_red_skin"
       },
       {
         "condition": "minecraft:inverted",
@@ -139,14 +115,22 @@
           "name": "game:match_components/custom_team_colors"
         }
       }
-    ],
+    ]
+  },
+  {
+    "function": "minecraft:set_custom_model_data",
+    "colors": {
+      "mode": "replace_all",
+      "values": [
+        16768000
+      ]
+    },
     "floats": {
       "mode": "replace_all",
       "values": [
         2
       ]
     },
-    "function": "minecraft:set_custom_model_data",
     "strings": {
       "mode": "replace_section",
       "offset": 2,
@@ -154,23 +138,11 @@
       "values": [
         "yellow"
       ]
-    }
-  },
-  {
-    "colors": {
-      "values": [
-        8439583
-      ],
-      "mode": "replace_all"
     },
     "conditions": [
       {
         "condition": "minecraft:reference",
         "name": "custom:team/yellow"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:match_components/green_for_yellow"
       },
       {
         "condition": "minecraft:inverted",
@@ -179,14 +151,22 @@
           "name": "game:match_components/custom_team_colors"
         }
       }
-    ],
+    ]
+  },
+  {
+    "function": "minecraft:set_custom_model_data",
+    "colors": {
+      "mode": "replace_all",
+      "values": [
+        8439583
+      ]
+    },
     "floats": {
       "mode": "replace_all",
       "values": [
         2
       ]
     },
-    "function": "minecraft:set_custom_model_data",
     "strings": {
       "mode": "replace_section",
       "offset": 2,
@@ -194,6 +174,23 @@
       "values": [
         "green"
       ]
-    }
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:reference",
+        "name": "custom:team/yellow"
+      },
+      {
+        "condition": "minecraft:reference",
+        "name": "game:yellow_team_skin/green"
+      },
+      {
+        "condition": "minecraft:inverted",
+        "term": {
+          "condition": "minecraft:reference",
+          "name": "game:match_components/custom_team_colors"
+        }
+      }
+    ]
   }
 ]

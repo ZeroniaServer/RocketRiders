@@ -1,4 +1,5 @@
 {
+  "parent": "2811iaj1:parkour",
   "criteria": {
     "Impossible": {
       "trigger": "minecraft:impossible"
@@ -20,6 +21,5 @@
       "color": "#d901d9",
       "text": "Complete the Parkour"
     }
-  },
-  "parent": "2811iaj1:parkour"
+  }
 }

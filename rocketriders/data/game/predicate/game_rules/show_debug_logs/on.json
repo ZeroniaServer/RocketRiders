@@ -1,0 +1,12 @@
+{
+  "condition": "minecraft:value_check",
+  "value": {
+    "type": "minecraft:score",
+    "score": "config",
+    "target": {
+      "type": "minecraft:fixed",
+      "name": "$show_debug_logs"
+    }
+  },
+  "range": 1
+}

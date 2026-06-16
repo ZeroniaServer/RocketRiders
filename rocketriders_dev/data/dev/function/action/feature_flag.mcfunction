@@ -31,4 +31,4 @@ function dev:__impl__/feature_flag/option {name:"Colored Portal Frames",descript
 function dev:__impl__/feature_flag/option {name:"1.4.0 Update",description:"Adds features intended for version 1.4.0.",index:1,config_id:"1_4_0_update"}
 
 # Show Dialog
-function custom:show_dialog with storage rocketriders:main dev
+function custom:player/show_dialog with storage rocketriders:main dev

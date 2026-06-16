@@ -33,4 +33,4 @@ execute if score $crusade_kit var matches 2 run scoreboard players set @s start_
 execute if score $crusade_kit var matches 3 run scoreboard players set @s start_as_crusade_kit 3
 
 # Save Settings
-function custom:player_action/playerdata/save
+function custom:player/playerdata/save

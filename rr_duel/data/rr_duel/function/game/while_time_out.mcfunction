@@ -3,13 +3,12 @@ execute if entity @s[scores={ForfeitTimeout=1}] run tellraw @a[x=0] ["",{bold:tr
 kill @e[x=0,type=tnt]
 
 execute if predicate game:modifiers/punchable_tnt/on run kill @e[x=0,predicate=entities:type/punchable_tnt]
-execute unless predicate game:phase/match/pause as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute unless predicate game:phase/match/pause as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/reset_inventory
 execute unless predicate game:phase/match/pause run tag @a[x=0,predicate=custom:team/any_playing_team] remove force_mount
-execute unless predicate game:phase/match/pause run tp @a[x=0,predicate=custom:team/blue] 12 64 -66 0 0
-execute unless predicate game:phase/match/pause run tp @a[x=0,predicate=custom:team/yellow] 12 64 66 180 0
+execute unless predicate game:phase/match/pause as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/teleport_to_start
 scoreboard players set @s RandomItem -3
 execute if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run scoreboard players operation @s RandomItem += @s MaxItemTime
-execute if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run return run scoreboard players reset $1v1_duel_time_out_period global
+execute if entity @a[x=0,predicate=custom:team/blue] if entity @a[x=0,predicate=custom:team/yellow] run return run scoreboard players reset $1v1_duel_time_out_period match_data
 
 bossbar add rr_duel:forfeit_timer {color:"red",text:"You win by default in..."}
 bossbar set rr_duel:forfeit_timer color red

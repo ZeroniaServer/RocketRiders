@@ -17,7 +17,7 @@ execute as @e[x=0,type=villager,tag=subtick_hackery.mob] run data merge entity @
 execute if entity @a[limit=1,x=0] run function everytick:subtick_hackery/start
 
 ## Remove canopy rider penalty (hotfix for broken CK death handling, but also probably other cases where it isn't removed correctly)
-execute as @a[x=0,predicate=!custom:has_vehicle] run attribute @s minecraft:block_interaction_range modifier remove rocketriders:canopy_rider_penalty
+execute as @a[x=0,predicate=!custom:entity/has_vehicle] run attribute @s minecraft:block_interaction_range modifier remove rocketriders:canopy_rider_penalty
 
 ## Clear out data storage rocketriders:joinwarn
 data remove storage rocketriders:joinwarn title
@@ -27,3 +27,10 @@ data remove storage rocketriders:joinwarn subtitle
 execute if score #chunk_clear_inactive_ticks global matches ..-1 run scoreboard players set #chunk_clear_inactive_ticks global 0
 scoreboard players add #chunk_clear_inactive_ticks global 1
 execute unless predicate game:phase/match unless score $chunk_clear_progress global matches 50.. if score #chunk_clear_inactive_ticks global matches 101.. run function arenaclear:brute_force/start
+
+## Return main item if it was accidentally removed
+execute if predicate game:phase/match as @e[x=0,type=player,predicate=custom:team/any_playing_team,predicate=!custom:player/has_main_item_in_inventory] run loot give @s loot items:main_item
+
+## In case a player leaves the facade while in the queue or paused match waiting area, teleport them back to the facade
+execute if predicate game:phase/staging as @a[x=0,predicate=custom:team/any_arena_team,predicate=!custom:location/in_facade] run function custom:player/teleport_to_start
+execute if predicate game:phase/match/pause as @a[x=0,predicate=custom:team/any_arena_team,predicate=!custom:location/in_facade] run function custom:player/teleport_to_start

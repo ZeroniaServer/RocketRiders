@@ -3,20 +3,15 @@
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
-      "flags": {
+      "minecraft:flags": {
         "is_on_ground": true
       },
-      "location": {
+      "minecraft:location": {
         "dimension": "minecraft:overworld"
       },
-      "stepping_on": {
+      "minecraft:stepping_on": {
         "block": {
-          "blocks": [
-            "minecraft:barrier",
-            "minecraft:nether_portal",
-            "minecraft:blue_stained_glass_pane",
-            "minecraft:yellow_stained_glass_pane"
-          ]
+          "blocks": "#custom:standing_on_portal_blocks"
         }
       }
     }
@@ -42,7 +37,7 @@
                 "terms": [
                   {
                     "condition": "minecraft:reference",
-                    "name": "game:portal_type/default"
+                    "name": "game:portal_type/normal"
                   },
                   {
                     "condition": "minecraft:any_of",
@@ -196,7 +191,7 @@
                 "terms": [
                   {
                     "condition": "minecraft:reference",
-                    "name": "game:portal_type/default"
+                    "name": "game:portal_type/normal"
                   },
                   {
                     "condition": "minecraft:any_of",

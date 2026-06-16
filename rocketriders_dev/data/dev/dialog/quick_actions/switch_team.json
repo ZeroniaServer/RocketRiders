@@ -1,9 +1,12 @@
 {
+  "type": "minecraft:multi_action",
+  "title": "RR Developer Actions: Switch Team",
+  "external_title": "Switch Team...",
   "actions": [
     {
       "action": {
-        "command": "/trigger dev set 14",
-        "type": "minecraft:run_command"
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 14"
       },
       "label": [
         {
@@ -18,8 +21,8 @@
     },
     {
       "action": {
-        "command": "/trigger dev set 15",
-        "type": "minecraft:run_command"
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 15"
       },
       "label": [
         {
@@ -34,8 +37,8 @@
     },
     {
       "action": {
-        "command": "/trigger dev set 16",
-        "type": "minecraft:run_command"
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 16"
       },
       "label": {
         "color": "dark_gray",
@@ -44,8 +47,8 @@
     },
     {
       "action": {
-        "command": "/trigger dev set 17",
-        "type": "minecraft:run_command"
+        "type": "minecraft:run_command",
+        "command": "/trigger dev set 17"
       },
       "label": {
         "color": "green",
@@ -55,12 +58,9 @@
   ],
   "exit_action": {
     "action": {
-      "dialog": "dev:quick_actions",
-      "type": "minecraft:show_dialog"
+      "type": "minecraft:show_dialog",
+      "dialog": "dev:quick_actions"
     },
     "label": "Back"
-  },
-  "external_title": "Switch Team...",
-  "title": "RR Developer Actions: Switch Team",
-  "type": "minecraft:multi_action"
+  }
 }

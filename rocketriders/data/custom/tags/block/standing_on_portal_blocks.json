@@ -1,0 +1,7 @@
+{
+  "values": [
+    "minecraft:barrier",
+    "minecraft:nether_portal",
+    "#custom:glass"
+  ]
+}

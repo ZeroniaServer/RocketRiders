@@ -1,4 +1,5 @@
 {
+  "parent": "2811iaj1:root",
   "criteria": {
     "Impossible": {
       "trigger": "minecraft:impossible"
@@ -21,7 +22,6 @@
       "text": "Missile Display Area"
     }
   },
-  "parent": "2811iaj1:root",
   "rewards": {
     "function": "2811iaj1:misdisp_indimension"
   }

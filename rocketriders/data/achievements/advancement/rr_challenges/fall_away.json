@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/committed",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -20,6 +21,5 @@
       "color": "#c20000",
       "text": "So Close, Yet So Fall Away"
     }
-  },
-  "parent": "achievements:rr_challenges/committed"
+  }
 }

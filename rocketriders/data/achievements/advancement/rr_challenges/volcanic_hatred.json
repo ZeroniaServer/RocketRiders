@@ -1,4 +1,5 @@
 {
+  "parent": "achievements:rr_challenges/blocks_into_bits",
   "criteria": {
     "impossible": {
       "trigger": "minecraft:impossible"
@@ -13,6 +14,7 @@
     "frame": "goal",
     "hidden": false,
     "icon": {
+      "id": "minecraft:lingering_potion",
       "components": {
         "minecraft:enchantment_glint_override": true,
         "minecraft:potion_contents": {
@@ -20,14 +22,12 @@
           "custom_effects": [],
           "potion": "minecraft:awkward"
         }
-      },
-      "id": "minecraft:lingering_potion"
+      }
     },
     "show_toast": true,
     "title": {
       "color": "#c20000",
       "text": "Volcanic Hatred"
     }
-  },
-  "parent": "achievements:rr_challenges/blocks_into_bits"
+  }
 }

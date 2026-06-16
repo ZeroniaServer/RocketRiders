@@ -1,12 +1,15 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["Phase Started: match.pause"]}
+
 ##
 gamemode adventure @a[x=0,predicate=custom:team/any_arena_team]
 
 clear @a[x=0,predicate=custom:team/any_arena_team] *
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:update_armor
-execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:reset_inventory
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/update_armor
+execute as @a[x=0,predicate=custom:team/any_playing_team] run function custom:player/reset_inventory
 
 ## Game-mode-specific functions
 execute if entity @s[tag=chaseEnabled] run function rr_chase:game/on_phase_start/match/pause
+execute if entity @s[tag=classicEnabled] run function rr_classic:game/on_phase_start/match/pause
 execute if entity @s[tag=crusadeEnabled] run function rr_crusade:game/on_phase_start/match/pause
 execute if entity @s[tag=ctfEnabled] run function rr_ctf:game/on_phase_start/match/pause
 execute if entity @s[tag=duelEnabled] run function rr_duel:game/on_phase_start/match/pause

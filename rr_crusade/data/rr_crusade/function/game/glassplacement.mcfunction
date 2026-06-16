@@ -1,3 +1,3 @@
-execute unless entity @e[x=0,type=marker,tag=GlassSetMarker] run summon minecraft:marker 12 53 0 {Tags:["CrusadeEntity","GlassSetMarker"]}
+execute unless entity @e[x=0,type=marker,tag=GlassSetMarker] run summon minecraft:marker 12 53 0 {Tags:["GlassSetMarker"]}
 scoreboard players set @e[x=0,type=marker,tag=GlassSetMarker] CmdData 20
 function rr_crusade:game/glassovertime

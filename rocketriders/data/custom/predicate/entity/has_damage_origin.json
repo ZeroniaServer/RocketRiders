@@ -1,0 +1,11 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "minecraft:predicates": {
+      "minecraft:custom_data": {
+        "damage_origin": {}
+      }
+    }
+  }
+}

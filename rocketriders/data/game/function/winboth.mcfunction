@@ -7,7 +7,7 @@ execute if predicate game:achievements_can_be_awarded run function achievements:
 execute if predicate game:achievements_can_be_awarded run function achievements:aftergameblue
 
 ##Record tags
-tag @s add BothWon
+scoreboard players set $both_won match_data 1
 tag @a[x=0,predicate=custom:team/yellow] add Winner
 tag @a[x=0,predicate=custom:team/blue] add Winner
 
@@ -24,7 +24,7 @@ execute as @a[x=0,predicate=custom:team/blue] at @s run stopsound @s
 execute as @a[x=0,predicate=custom:team/yellow] at @s run stopsound @s
 execute as @a[x=0,predicate=custom:team/blue] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
 execute as @a[x=0,predicate=custom:team/yellow] at @s run playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 100 0.85
-execute unless predicate game:game_rules/disable_titles/on run title @a[x=0,predicate=!custom:team/lobby] title ["",{"text":"Everyone Wins!","color":"green","bold":false}]
+execute unless predicate game:game_rules/disable_titles/on run title @a[x=0,predicate=!custom:team/lobby] title {color:"green",text:"Everyone Wins!"}
 
 ##Splashes
 execute as @a[x=0,tag=Winner,limit=1,sort=random] run function game:winsplash

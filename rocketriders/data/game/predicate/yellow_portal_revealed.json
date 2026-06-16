@@ -13,22 +13,33 @@
         "condition": "minecraft:inverted",
         "term": {
           "condition": "minecraft:reference",
-          "name": "game:match_components/portal_crystal_protection"
+          "name": "game:match_components/has_nexuses"
         }
       },
       {
         "condition": "minecraft:value_check",
-        "range": {
-          "max": 0
-        },
         "value": {
-          "score": "crusadehp",
-          "target": {
-            "name": "$YellowShield",
-            "type": "minecraft:fixed"
-          },
-          "type": "minecraft:score"
-        }
+          "type": "minecraft:sum",
+          "summands": [
+            {
+              "type": "minecraft:score",
+              "score": "match_data",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$nexus_yellow_a_health"
+              }
+            },
+            {
+              "type": "minecraft:score",
+              "score": "match_data",
+              "target": {
+                "type": "minecraft:fixed",
+                "name": "$nexus_yellow_b_health"
+              }
+            }
+          ]
+        },
+        "range": 0
       }
     ]
   }

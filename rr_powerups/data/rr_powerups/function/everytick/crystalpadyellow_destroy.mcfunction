@@ -1,4 +1,4 @@
-tp @a[x=0,predicate=custom:team/yellow,predicate=rr_powerups:oncrystalyellow] 12 64 66 -180 0
+execute as @a[x=0,predicate=custom:team/yellow,predicate=rr_powerups:oncrystalyellow] run function custom:player/teleport_to_start
 execute as @a[x=0,predicate=custom:team/yellow] at @s run playsound minecraft:entity.ender_eye.death master @s
 execute if entity @s[scores={PowerupCrystal=19..,captureBlue=98..}] run tellraw @a[x=0,predicate=custom:team/yellow] {"text":"Crystal Crafter Deactivated!","color":"red","bold":true}
 scoreboard players reset @s PowerupCrystal

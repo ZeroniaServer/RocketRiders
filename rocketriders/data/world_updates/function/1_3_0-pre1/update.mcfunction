@@ -285,7 +285,7 @@ kill @e[x=0,type=marker,tag=BlueSpawnZone]
 kill @e[x=0,type=marker,tag=YellowSpawnZone]
 
 setblock -69 190 78 air
-setblock -69 190 78 minecraft:cherry_wall_sign[facing=east,waterlogged=false]{front_text:{color:"purple",has_glowing_text:true,messages:["",{bold:true,click_event:{action:"run_command",command:"function arenaclear:testvalidclear"},color:"light_purple",text:"Start"},{bold:true,color:"light_purple",text:"Game"},""]},is_waxed:true}
+setblock -69 190 78 minecraft:cherry_wall_sign[facing=east,waterlogged=false]{allow_op_features:true,front_text:{color:"purple",has_glowing_text:true,messages:["",{bold:true,click_event:{action:"run_command",command:"function arenaclear:testvalidclear"},color:"light_purple",text:"Start"},{bold:true,color:"light_purple",text:"Game"},""]},is_waxed:true}
 
 setblock -47 211 81 air
 setblock -47 211 81 minecraft:player_head[powered=false,rotation=3]{profile:{id:[I;1909544700,370756089,-1576344790,1695827449]}}
@@ -348,7 +348,7 @@ execute if predicate rr:has_modification_room run function lobby:open_modificati
 # Modification Room redesign
 setblock -70 190 80 netherite_block strict
 setblock -70 190 76 netherite_block strict
-setblock -69 190 80 jungle_wall_sign[facing=east]{front_text:{color:"black",has_glowing_text:0b,messages:["",{bold:1b,click_event:{action:"run_command",command:"execute as @e[type=armor_stand,tag=Selection] run function arenaclear:globaldefaults"},color:"#FF0044",text:"Restore Global"},{bold:1b,click_event:{action:"run_command",command:"playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"},color:"#FF0044",text:"Defaults"},""]},is_waxed:0b} strict
+setblock -69 190 80 jungle_wall_sign[facing=east]{allow_op_features:true,front_text:{color:"black",has_glowing_text:0b,messages:["",{bold:1b,click_event:{action:"run_command",command:"execute as @e[type=armor_stand,tag=Selection] run function arenaclear:globaldefaults"},color:"#FF0044",text:"Restore Global"},{bold:1b,click_event:{action:"run_command",command:"playsound ui.button.click master @a[x=0] ~ ~ ~ 1 1"},color:"#FF0044",text:"Defaults"},""]},is_waxed:0b} strict
 setblock -69 190 76 birch_wall_sign[facing=east] strict
 setblock -71 192 78 yellow_stained_glass strict
 scoreboard players set @e[x=0,type=armor_stand,tag=Selection,limit=1] refreshsigns 1

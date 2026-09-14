@@ -2,6 +2,6 @@
   "type": "minecraft:any_of",
   "terms": [
     "rr:server_mode/cubekrowd_voting",
-    "rr:has_modiciation_room"
+    "rr:has_modification_room"
   ]
 }

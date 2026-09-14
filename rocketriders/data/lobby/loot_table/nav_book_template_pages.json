@@ -6,64 +6,41 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:stone",
-          "functions": [
-            {
-              "function": "minecraft:set_lore",
-              "entity": "this",
-              "lore": [
+          "modifier": {
+            "type": "minecraft:set_lore",
+            "entity": "this",
+            "lore": [
+              [
+                "",
+                {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "   Rocket"
+                },
+                {
+                  "bold": true,
+                  "color": "gold",
+                  "text": " Riders"
+                },
+                "\n      ",
+                {
+                  "color": "light_purple",
+                  "underlined": true,
+                  "text": "Lobby Warps"
+                },
+                "\n",
+                {
+                  "color": "gray",
+                  "text": "   (Click to teleport)"
+                },
+                "\n\n",
+                {
+                  "storage": "rocketriders:navbook",
+                  "nbt": "join_teams",
+                  "interpret": true
+                },
+                "\n",
                 [
-                  "",
-                  {
-                    "bold": true,
-                    "color": "blue",
-                    "text": "   Rocket"
-                  },
-                  {
-                    "bold": true,
-                    "color": "gold",
-                    "text": " Riders"
-                  },
-                  "\n      ",
-                  {
-                    "color": "light_purple",
-                    "underlined": true,
-                    "text": "Lobby Warps"
-                  },
-                  "\n",
-                  {
-                    "color": "gray",
-                    "text": "   (Click to teleport)"
-                  },
-                  "\n\n",
-                  {
-                    "storage": "rocketriders:navbook",
-                    "nbt": "join_teams",
-                    "interpret": true
-                  },
-                  "\n",
-                  [
-                    {
-                      "color": "gray",
-                      "text": "* ",
-                      "hover_event": {
-                        "action": "show_text",
-                        "value": {
-                          "italic": true,
-                          "text": "Click to teleport to the Spectator join pad."
-                        }
-                      },
-                      "click_event": {
-                        "action": "run_command",
-                        "command": "/trigger LobbyWarp set 5"
-                      }
-                    },
-                    {
-                      "bold": true,
-                      "color": "gray",
-                      "text": "Spectate"
-                    }
-                  ],
-                  "\n",
                   {
                     "color": "gray",
                     "text": "* ",
@@ -71,505 +48,526 @@
                       "action": "show_text",
                       "value": {
                         "italic": true,
-                        "text": "Click to teleport to the Lobby."
+                        "text": "Click to teleport to the Spectator join pad."
                       }
                     },
                     "click_event": {
                       "action": "run_command",
-                      "command": "/trigger LobbyWarp set 1"
+                      "command": "/trigger LobbyWarp set 5"
                     }
                   },
                   {
-                    "color": "dark_purple",
-                    "text": "Lobby",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Lobby."
-                      }
-                    },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 1"
-                    }
-                  },
-                  {
-                    "storage": "rocketriders:navbook",
-                    "nbt": "modroom",
-                    "interpret": true
-                  },
-                  "\n",
-                  {
+                    "bold": true,
                     "color": "gray",
-                    "text": "* ",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Missile Display Area."
-                      }
-                    },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 6"
+                    "text": "Spectate"
+                  }
+                ],
+                "\n",
+                {
+                  "color": "gray",
+                  "text": "* ",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to teleport to the Lobby."
                     }
                   },
-                  {
-                    "color": "dark_purple",
-                    "text": "Missile Display Area",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Missile Display Area."
-                      }
-                    },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 6"
+                  "click_event": {
+                    "action": "run_command",
+                    "command": "/trigger LobbyWarp set 1"
+                  }
+                },
+                {
+                  "color": "dark_purple",
+                  "text": "Lobby",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to teleport to the Lobby."
                     }
                   },
-                  "\n",
-                  {
-                    "color": "gray",
-                    "text": "*",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Parkour Area."
-                      }
-                    },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 7"
+                  "click_event": {
+                    "action": "run_command",
+                    "command": "/trigger LobbyWarp set 1"
+                  }
+                },
+                {
+                  "storage": "rocketriders:navbook",
+                  "nbt": "modroom",
+                  "interpret": true
+                },
+                "\n",
+                {
+                  "color": "gray",
+                  "text": "* ",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to teleport to the Missile Display Area."
                     }
                   },
-                  {
-                    "color": "dark_purple",
-                    "text": " Parkour Area",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to teleport to the Parkour Area."
-                      }
-                    },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger LobbyWarp set 7"
+                  "click_event": {
+                    "action": "run_command",
+                    "command": "/trigger LobbyWarp set 6"
+                  }
+                },
+                {
+                  "color": "dark_purple",
+                  "text": "Missile Display Area",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to teleport to the Missile Display Area."
                     }
                   },
-                  {
-                    "storage": "rocketriders:navbook",
-                    "nbt": "first_page_spacing",
-                    "interpret": true
+                  "click_event": {
+                    "action": "run_command",
+                    "command": "/trigger LobbyWarp set 6"
+                  }
+                },
+                "\n",
+                {
+                  "color": "gray",
+                  "text": "*",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to teleport to the Parkour Area."
+                    }
                   },
-                  "\n      ",
+                  "click_event": {
+                    "action": "run_command",
+                    "command": "/trigger LobbyWarp set 7"
+                  }
+                },
+                {
+                  "color": "dark_purple",
+                  "text": " Parkour Area",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to teleport to the Parkour Area."
+                    }
+                  },
+                  "click_event": {
+                    "action": "run_command",
+                    "command": "/trigger LobbyWarp set 7"
+                  }
+                },
+                {
+                  "storage": "rocketriders:navbook",
+                  "nbt": "first_page_spacing",
+                  "interpret": true
+                },
+                "\n      ",
+                {
+                  "color": "dark_gray",
+                  "text": "[How to Play]",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": [
+                      "",
+                      {
+                        "color": "white",
+                        "italic": true,
+                        "text": "Click to learn how to play Rocket Riders."
+                      }
+                    ]
+                  },
+                  "click_event": {
+                    "action": "change_page",
+                    "page": 2
+                  }
+                },
+                "\n  ",
+                {
+                  "color": "dark_gray",
+                  "text": "[Settings]",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to configure player settings."
+                    }
+                  },
+                  "click_event": {
+                    "action": "change_page",
+                    "page": 3
+                  }
+                },
+                " ",
+                {
+                  "color": "dark_gray",
+                  "text": "[Credits]",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to see credits."
+                    }
+                  },
+                  "click_event": {
+                    "action": "change_page",
+                    "page": 4
+                  }
+                }
+              ],
+              [
+                "",
+                {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "   Rocket"
+                },
+                {
+                  "bold": true,
+                  "color": "gold",
+                  "text": " Riders"
+                },
+                "\n       ",
+                {
+                  "color": "light_purple",
+                  "underlined": true,
+                  "text": "How to Play"
+                },
+                {
+                  "storage": "rocketriders:navbook",
+                  "nbt": "description",
+                  "interpret": true
+                }
+              ],
+              [
+                "",
+                {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "   Rocket"
+                },
+                {
+                  "bold": true,
+                  "color": "gold",
+                  "text": " Riders"
+                },
+                "\n         ",
+                {
+                  "color": "light_purple",
+                  "underlined": true,
+                  "text": "Settings"
+                },
+                "\n",
+                {
+                  "color": "gray",
+                  "text": "    (Click to toggle)"
+                },
+                "\n\n     ",
+                {
+                  "color": "dark_gray",
+                  "text": "[In-Game Tips]",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to toggle in-game tips."
+                    }
+                  },
+                  "click_event": {
+                    "action": "run_command",
+                    "command": "/trigger toggle_ingame_tips set 1"
+                  }
+                },
+                {
+                  "storage": "rocketriders:navbook",
+                  "nbt": "parkourtips",
+                  "interpret": true
+                },
+                {
+                  "bold": true,
+                  "text": "\n\n      "
+                },
+                {
+                  "color": "dark_gray",
+                  "text": "[Particles]",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to toggle particles from Rocket Riders gameplay elements."
+                    }
+                  },
+                  "click_event": {
+                    "action": "run_command",
+                    "command": "/trigger toggle_particles set 1"
+                  }
+                },
+                {
+                  "bold": true,
+                  "text": "\n\n "
+                },
+                "  ",
+                {
+                  "color": "dark_gray",
+                  "text": "[Auto-Fill Hotbar]",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to toggle automatic hotbar filling."
+                    }
+                  },
+                  "click_event": {
+                    "action": "run_command",
+                    "command": "/trigger toggle_auto_fill_hotbar set 1"
+                  }
+                },
+                {
+                  "storage": "rocketriders:navbook",
+                  "nbt": "crusade_mode_settings",
+                  "interpret": true
+                }
+              ],
+              [
+                "",
+                {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "   Rocket"
+                },
+                {
+                  "bold": true,
+                  "color": "gold",
+                  "text": " Riders"
+                },
+                "\n         ",
+                {
+                  "color": "light_purple",
+                  "underlined": true,
+                  "text": "Credits"
+                },
+                "\n\n",
+                {
+                  "color": "dark_gray",
+                  "text": "This game has been developed over the course of "
+                },
+                {
+                  "color": "light_purple",
+                  "text": "8+ years"
+                },
+                {
+                  "color": "dark_gray",
+                  "text": "!"
+                },
+                "\n",
+                {
+                  "color": "dark_gray",
+                  "text": "\nBrought to you by:\n- "
+                },
+                {
+                  "color": "red",
+                  "text": "Evtema3",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to check out Evtema3!"
+                    }
+                  },
+                  "click_event": {
+                    "action": "open_url",
+                    "url": "https://www.youtube.com/Evtema3"
+                  }
+                },
+                "\n",
+                {
+                  "color": "dark_gray",
+                  "text": "- "
+                },
+                {
+                  "color": "#00DB19",
+                  "text": "YZEROgame",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to check out YZEROgame!"
+                    }
+                  },
+                  "click_event": {
+                    "action": "open_url",
+                    "url": "https://www.youtube.com/channel/UC7-j3tkiF9PeT2FVbI8WR4A"
+                  }
+                },
+                "\n",
+                {
+                  "color": "dark_gray",
+                  "text": "- "
+                },
+                {
+                  "color": "#0248e9",
+                  "text": "Chronos22",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to check out Chronos22!"
+                    }
+                  },
+                  "click_event": {
+                    "action": "open_url",
+                    "url": "https://www.youtube.com/channel/UCK1WeblW__mSmkjV4jJ5h-Q"
+                  }
+                },
+                "\n",
+                {
+                  "color": "dark_gray",
+                  "text": "- "
+                },
+                {
+                  "color": "#FF9900",
+                  "text": "DorkOrc",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to check out DorkOrc!"
+                    }
+                  },
+                  "click_event": {
+                    "action": "open_url",
+                    "url": "https://github.com/DorkOrc"
+                  }
+                },
+                "\n",
+                {
+                  "color": "dark_gray",
+                  "text": "- "
+                },
+                {
+                  "color": "dark_aqua",
+                  "text": "Cube",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to check out CubeKrowd!"
+                    }
+                  },
+                  "click_event": {
+                    "action": "open_url",
+                    "url": "https://cubekrowd.net/"
+                  }
+                },
+                {
+                  "color": "gold",
+                  "text": "Krowd",
+                  "hover_event": {
+                    "action": "show_text",
+                    "value": {
+                      "italic": true,
+                      "text": "Click to check out CubeKrowd!"
+                    }
+                  },
+                  "click_event": {
+                    "action": "open_url",
+                    "url": "https://cubekrowd.net/"
+                  }
+                },
+                "\n",
+                {
+                  "color": "dark_gray",
+                  "text": "- "
+                },
+                {
+                  "color": "dark_purple",
+                  "text": "All "
+                },
+                {
+                  "color": "gold",
+                  "underlined": true,
+                  "text": "80+"
+                },
+                {
+                  "color": "dark_purple",
+                  "text": " playtesters"
+                }
+              ],
+              [
+                "",
+                {
+                  "bold": true,
+                  "color": "blue",
+                  "text": "   Rocket"
+                },
+                {
+                  "bold": true,
+                  "color": "gold",
+                  "text": " Riders"
+                },
+                "\n      ",
+                {
+                  "color": "light_purple",
+                  "underlined": true,
+                  "text": "Version Info"
+                },
+                "\n\n",
+                [
                   {
                     "color": "dark_gray",
-                    "text": "[How to Play]",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": [
-                        "",
+                    "text": "This is version "
+                  },
+                  {
+                    "bold": true,
+                    "storage": "rocketriders:version",
+                    "nbt": "name",
+                    "interpret": true
+                  },
+                  " of Rocket Riders",
+                  {
+                    "storage": "rocketriders:version",
+                    "nbt": "server_mode_suffix",
+                    "interpret": true
+                  },
+                  ".\n\n\n",
+                  {
+                    "color": "#FFFFFF",
+                    "shadow_color": 0,
+                    "player": {
+                      "properties": [
                         {
-                          "color": "white",
-                          "italic": true,
-                          "text": "Click to learn how to play Rocket Riders."
+                          "name": "textures",
+                          "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmY1NTBhMGVmNmViOGFjN2U1OTY5ZTNiMWVkY2VmMmUyMTY5OGMwMmU4NDYzNjRlZGZhYTNkYWIzMDI5OTRlIn19fQ=="
                         }
                       ]
-                    },
-                    "click_event": {
-                      "action": "change_page",
-                      "page": 2
-                    }
-                  },
-                  "\n  ",
-                  {
-                    "color": "dark_gray",
-                    "text": "[Settings]",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to configure player settings."
-                      }
-                    },
-                    "click_event": {
-                      "action": "change_page",
-                      "page": 3
                     }
                   },
                   " ",
                   {
-                    "color": "dark_gray",
-                    "text": "[Credits]",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to see credits."
-                      }
-                    },
-                    "click_event": {
-                      "action": "change_page",
-                      "page": 4
-                    }
-                  }
-                ],
-                [
-                  "",
-                  {
-                    "bold": true,
-                    "color": "blue",
-                    "text": "   Rocket"
-                  },
-                  {
-                    "bold": true,
-                    "color": "gold",
-                    "text": " Riders"
-                  },
-                  "\n       ",
-                  {
-                    "color": "light_purple",
+                    "color": "#5865F2",
                     "underlined": true,
-                    "text": "How to Play"
-                  },
-                  {
-                    "storage": "rocketriders:navbook",
-                    "nbt": "description",
-                    "interpret": true
-                  }
-                ],
-                [
-                  "",
-                  {
-                    "bold": true,
-                    "color": "blue",
-                    "text": "   Rocket"
-                  },
-                  {
-                    "bold": true,
-                    "color": "gold",
-                    "text": " Riders"
-                  },
-                  "\n         ",
-                  {
-                    "color": "light_purple",
-                    "underlined": true,
-                    "text": "Settings"
-                  },
-                  "\n",
-                  {
-                    "color": "gray",
-                    "text": "    (Click to toggle)"
-                  },
-                  "\n\n     ",
-                  {
-                    "color": "dark_gray",
-                    "text": "[In-Game Tips]",
+                    "text": "Join our Discord server",
                     "hover_event": {
                       "action": "show_text",
                       "value": {
-                        "italic": true,
-                        "text": "Click to toggle in-game tips."
-                      }
-                    },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger toggle_ingame_tips set 1"
-                    }
-                  },
-                  {
-                    "storage": "rocketriders:navbook",
-                    "nbt": "parkourtips",
-                    "interpret": true
-                  },
-                  {
-                    "bold": true,
-                    "text": "\n\n      "
-                  },
-                  {
-                    "color": "dark_gray",
-                    "text": "[Particles]",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to toggle particles from Rocket Riders gameplay elements."
-                      }
-                    },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger toggle_particles set 1"
-                    }
-                  },
-                  {
-                    "bold": true,
-                    "text": "\n\n "
-                  },
-                  "  ",
-                  {
-                    "color": "dark_gray",
-                    "text": "[Auto-Fill Hotbar]",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to toggle automatic hotbar filling."
-                      }
-                    },
-                    "click_event": {
-                      "action": "run_command",
-                      "command": "/trigger toggle_auto_fill_hotbar set 1"
-                    }
-                  },
-                  {
-                    "storage": "rocketriders:navbook",
-                    "nbt": "crusade_mode_settings",
-                    "interpret": true
-                  }
-                ],
-                [
-                  "",
-                  {
-                    "bold": true,
-                    "color": "blue",
-                    "text": "   Rocket"
-                  },
-                  {
-                    "bold": true,
-                    "color": "gold",
-                    "text": " Riders"
-                  },
-                  "\n         ",
-                  {
-                    "color": "light_purple",
-                    "underlined": true,
-                    "text": "Credits"
-                  },
-                  "\n\n",
-                  {
-                    "color": "dark_gray",
-                    "text": "This game has been developed over the course of "
-                  },
-                  {
-                    "color": "light_purple",
-                    "text": "8+ years"
-                  },
-                  {
-                    "color": "dark_gray",
-                    "text": "!"
-                  },
-                  "\n",
-                  {
-                    "color": "dark_gray",
-                    "text": "\nBrought to you by:\n- "
-                  },
-                  {
-                    "color": "red",
-                    "text": "Evtema3",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to check out Evtema3!"
+                        "color": "#5865F2",
+                        "text": "Click to join our Discord community"
                       }
                     },
                     "click_event": {
                       "action": "open_url",
-                      "url": "https://www.youtube.com/Evtema3"
+                      "url": "https://discord.gg/X9bZgw7"
                     }
                   },
-                  "\n",
-                  {
-                    "color": "dark_gray",
-                    "text": "- "
-                  },
-                  {
-                    "color": "#00DB19",
-                    "text": "YZEROgame",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to check out YZEROgame!"
-                      }
-                    },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://www.youtube.com/channel/UC7-j3tkiF9PeT2FVbI8WR4A"
-                    }
-                  },
-                  "\n",
-                  {
-                    "color": "dark_gray",
-                    "text": "- "
-                  },
-                  {
-                    "color": "#0248e9",
-                    "text": "Chronos22",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to check out Chronos22!"
-                      }
-                    },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://www.youtube.com/channel/UCK1WeblW__mSmkjV4jJ5h-Q"
-                    }
-                  },
-                  "\n",
-                  {
-                    "color": "dark_gray",
-                    "text": "- "
-                  },
-                  {
-                    "color": "#FF9900",
-                    "text": "DorkOrc",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to check out DorkOrc!"
-                      }
-                    },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://github.com/DorkOrc"
-                    }
-                  },
-                  "\n",
-                  {
-                    "color": "dark_gray",
-                    "text": "- "
-                  },
-                  {
-                    "color": "dark_aqua",
-                    "text": "Cube",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to check out CubeKrowd!"
-                      }
-                    },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://cubekrowd.net/"
-                    }
-                  },
-                  {
-                    "color": "gold",
-                    "text": "Krowd",
-                    "hover_event": {
-                      "action": "show_text",
-                      "value": {
-                        "italic": true,
-                        "text": "Click to check out CubeKrowd!"
-                      }
-                    },
-                    "click_event": {
-                      "action": "open_url",
-                      "url": "https://cubekrowd.net/"
-                    }
-                  },
-                  "\n",
-                  {
-                    "color": "dark_gray",
-                    "text": "- "
-                  },
-                  {
-                    "color": "dark_purple",
-                    "text": "All "
-                  },
-                  {
-                    "color": "gold",
-                    "underlined": true,
-                    "text": "80+"
-                  },
-                  {
-                    "color": "dark_purple",
-                    "text": " playtesters"
-                  }
-                ],
-                [
-                  "",
-                  {
-                    "bold": true,
-                    "color": "blue",
-                    "text": "   Rocket"
-                  },
-                  {
-                    "bold": true,
-                    "color": "gold",
-                    "text": " Riders"
-                  },
-                  "\n      ",
-                  {
-                    "color": "light_purple",
-                    "underlined": true,
-                    "text": "Version Info"
-                  },
-                  "\n\n",
-                  [
-                    {
-                      "color": "dark_gray",
-                      "text": "This is version "
-                    },
-                    {
-                      "bold": true,
-                      "storage": "rocketriders:version",
-                      "nbt": "name",
-                      "interpret": true
-                    },
-                    " of Rocket Riders",
-                    {
-                      "storage": "rocketriders:version",
-                      "nbt": "server_mode_suffix",
-                      "interpret": true
-                    },
-                    ".\n\n\n",
-                    {
-                      "color": "#FFFFFF",
-                      "shadow_color": 0,
-                      "player": {
-                        "properties": [
-                          {
-                            "name": "textures",
-                            "value": "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmY1NTBhMGVmNmViOGFjN2U1OTY5ZTNiMWVkY2VmMmUyMTY5OGMwMmU4NDYzNjRlZGZhYTNkYWIzMDI5OTRlIn19fQ=="
-                          }
-                        ]
-                      }
-                    },
-                    " ",
-                    {
-                      "color": "#5865F2",
-                      "underlined": true,
-                      "text": "Join our Discord server",
-                      "hover_event": {
-                        "action": "show_text",
-                        "value": {
-                          "color": "#5865F2",
-                          "text": "Click to join our Discord community"
-                        }
-                      },
-                      "click_event": {
-                        "action": "open_url",
-                        "url": "https://discord.gg/X9bZgw7"
-                      }
-                    },
-                    " to report bugs and submit feedback!"
-                  ]
+                  " to report bugs and submit feedback!"
                 ]
-              ],
-              "mode": "replace_all"
-            }
-          ]
+              ]
+            ],
+            "mode": "replace_all"
+          }
         }
       ]
     }

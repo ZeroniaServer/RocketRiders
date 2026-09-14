@@ -13,25 +13,22 @@
             }
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            "custom:player/is_alive",
+            {
+              "type": "minecraft:inverted",
+              "term": "custom:player/is_nova_attached"
             }
-          },
-          {
-            "condition": "minecraft:reference",
-            "name": "custom:player/is_alive"
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:reference",
-              "name": "custom:player/is_nova_attached"
-            }
-          }
-        ]
+          ]
+        }
       }
     },
     "player_non_fatally_hurt_by_nova_rocket_firework_explosion": {
@@ -49,25 +46,22 @@
             }
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            "custom:player/is_alive",
+            {
+              "type": "minecraft:inverted",
+              "term": "custom:player/is_nova_attached"
             }
-          },
-          {
-            "condition": "minecraft:reference",
-            "name": "custom:player/is_alive"
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:reference",
-              "name": "custom:player/is_nova_attached"
-            }
-          }
-        ]
+          ]
+        }
       }
     }
   },

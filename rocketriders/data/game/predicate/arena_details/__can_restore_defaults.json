@@ -1,8 +1,8 @@
 {
-  "condition": "minecraft:any_of",
+  "type": "minecraft:any_of",
   "terms": [
     {
-      "condition": "minecraft:value_check",
+      "type": "minecraft:int_value_check",
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -11,10 +11,10 @@
           "name": "$config_override.arena_details/bottom"
         }
       },
-      "range": 0
+      "test": 0
     },
     {
-      "condition": "minecraft:value_check",
+      "type": "minecraft:int_value_check",
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -23,10 +23,10 @@
           "name": "$config_override.arena_details/middle"
         }
       },
-      "range": 0
+      "test": 0
     },
     {
-      "condition": "minecraft:value_check",
+      "type": "minecraft:int_value_check",
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -35,10 +35,10 @@
           "name": "$config_override.arena_details/portal"
         }
       },
-      "range": 0
+      "test": 0
     },
     {
-      "condition": "minecraft:value_check",
+      "type": "minecraft:int_value_check",
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -47,10 +47,10 @@
           "name": "$config_override.arena_details/top"
         }
       },
-      "range": 0
+      "test": 0
     },
     {
-      "condition": "minecraft:value_check",
+      "type": "minecraft:int_value_check",
       "value": {
         "type": "minecraft:score",
         "score": "match_components",
@@ -59,7 +59,7 @@
           "name": "$config_override.arena_details/top_sides"
         }
       },
-      "range": 0
+      "test": 0
     }
   ]
 }

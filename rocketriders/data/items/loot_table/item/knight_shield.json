@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:shield",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -50,7 +50,7 @@
               }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -64,19 +64,16 @@
                 ],
                 "minecraft:base_color": "blue"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:blue_team_skin/blue"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  "game:blue_team_skin/blue",
+                  "custom:team/blue"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -90,19 +87,16 @@
                 ],
                 "minecraft:base_color": "red"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:blue_team_skin/any_red_skin"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  "game:blue_team_skin/any_red_skin",
+                  "custom:team/blue"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -116,19 +110,16 @@
                 ],
                 "minecraft:base_color": "yellow"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:yellow_team_skin/yellow"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/yellow"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  "game:yellow_team_skin/yellow",
+                  "custom:team/yellow"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:banner_patterns": [
                   {
@@ -142,19 +133,16 @@
                 ],
                 "minecraft:base_color": "green"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:yellow_team_skin/green"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/yellow"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  "game:yellow_team_skin/green",
+                  "custom:team/yellow"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "custom_name",
               "entity": "this",
               "name": [
@@ -176,23 +164,15 @@
                 }
               ]
             },
+            "items:set_custom_model_data",
             {
-              "function": "minecraft:reference",
-              "name": "items:set_custom_model_data"
-            },
-            {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "custom_name",
               "name": {
                 "italic": false,
                 "text": "Knight Shield"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:match_components/classic_item_names"
-                }
-              ]
+              "condition": "game:match_components/classic_item_names"
             }
           ]
         }

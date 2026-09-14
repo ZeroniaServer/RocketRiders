@@ -4,10 +4,14 @@
       "trigger": "minecraft:player_killed_entity",
       "conditions": {
         "entity": {
-          "minecraft:effects": {
-            "levitation": {}
-          },
-          "minecraft:entity_type": "minecraft:player"
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:effects": {
+              "levitation": {}
+            },
+            "minecraft:entity_type": "minecraft:player"
+          }
         },
         "killing_blow": {
           "direct_entity": {
@@ -16,13 +20,17 @@
           "tags": [
             {
               "expected": true,
-              "id": "minecraft:is_projectile"
+              "id": "#minecraft:is_projectile"
             }
           ]
         },
         "player": {
-          "minecraft:location": {
-            "dimension": "minecraft:overworld"
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "dimension": "minecraft:overworld"
+            }
           }
         }
       }

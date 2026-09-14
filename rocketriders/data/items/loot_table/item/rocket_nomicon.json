@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:written_book",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "!minecraft:written_book_content": {},
                 "minecraft:custom_data": {
@@ -49,45 +49,45 @@
               }
             },
             {
-              "function": "minecraft:set_custom_data",
+              "type": "minecraft:set_custom_data",
               "tag": {
                 "main_item": true
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:main_item/rocket_nomicon"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:main_item/rocket_nomicon"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_custom_data",
+              "type": "minecraft:set_custom_data",
               "tag": {
                 "nomicon": {}
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:phase/match/play"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:phase/match/play"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:written_book_content": {
                   "author": "Zeronia",
@@ -129,22 +129,22 @@
                   "title": ""
                 }
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:phase/staging"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:phase/staging"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:written_book_content": {
                   "author": "Zeronia",
@@ -181,37 +181,29 @@
                   "title": ""
                 }
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:phase/match/closing"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:phase/match/closing"
+                ]
+              }
             },
+            "items:set_custom_model_data",
             {
-              "function": "minecraft:reference",
-              "name": "items:set_custom_model_data"
-            },
-            {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "entity": "this",
               "target": "item_name",
               "name": {
                 "text": "Rocket Nomicon"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:match_components/classic_item_names"
-                }
-              ]
+              "condition": "game:match_components/classic_item_names"
             }
           ]
         }

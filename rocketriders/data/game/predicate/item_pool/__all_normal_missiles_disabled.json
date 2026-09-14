@@ -1,48 +1,18 @@
 {
-  "condition": "minecraft:inverted",
+  "type": "minecraft:inverted",
   "term": {
-    "condition": "minecraft:any_of",
+    "type": "minecraft:any_of",
     "terms": [
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/ant"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/blade"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/catapult"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/chronullifier"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/citadel"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/elder_guardian"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/gemini"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/lifter"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/slasher"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:item_pool/missile/tomatwo"
-      }
+      "game:item_pool/missile/ant",
+      "game:item_pool/missile/blade",
+      "game:item_pool/missile/catapult",
+      "game:item_pool/missile/chronullifier",
+      "game:item_pool/missile/citadel",
+      "game:item_pool/missile/elder_guardian",
+      "game:item_pool/missile/gemini",
+      "game:item_pool/missile/lifter",
+      "game:item_pool/missile/slasher",
+      "game:item_pool/missile/tomatwo"
     ]
   }
 }

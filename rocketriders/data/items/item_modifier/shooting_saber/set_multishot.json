@@ -1,31 +1,29 @@
-[
-  {
-    "function": "minecraft:set_components",
-    "components": {
-      "minecraft:item_name": {
-        "bold": true,
-        "color": "dark_purple",
-        "text": "Multishot Saber"
+{
+  "type": "sequence",
+  "functions": [
+    {
+      "type": "minecraft:set_components",
+      "components": {
+        "minecraft:item_name": {
+          "bold": true,
+          "color": "dark_purple",
+          "text": "Multishot Saber"
+        }
       }
-    }
-  },
-  {
-    "function": "minecraft:set_enchantments",
-    "enchantments": {
-      "minecraft:multishot": 1
-    }
-  },
-  {
-    "function": "minecraft:set_name",
-    "target": "item_name",
-    "name": {
-      "text": "Multishot GunBlade"
     },
-    "conditions": [
-      {
-        "condition": "minecraft:reference",
-        "name": "game:match_components/classic_item_names"
+    {
+      "type": "minecraft:set_enchantments",
+      "enchantments": {
+        "minecraft:multishot": 1
       }
-    ]
-  }
-]
+    },
+    {
+      "type": "minecraft:set_name",
+      "target": "item_name",
+      "name": {
+        "text": "Multishot GunBlade"
+      },
+      "condition": "game:match_components/classic_item_names"
+    }
+  ]
+}

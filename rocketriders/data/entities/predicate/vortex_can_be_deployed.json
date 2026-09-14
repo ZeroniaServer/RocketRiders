@@ -1,23 +1,17 @@
-[
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "entities:vortex_blocked"
+{
+  "type": "minecraft:all_of",
+  "terms": [
+    {
+      "type": "minecraft:inverted",
+      "term": "entities:vortex_blocked"
+    },
+    {
+      "type": "minecraft:inverted",
+      "term": "custom:near_any_spawn_zone"
+    },
+    {
+      "type": "minecraft:inverted",
+      "term": "custom:near_or_above_roof"
     }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "custom:near_any_spawn_zone"
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "custom:near_or_above_roof"
-    }
-  }
-]
+  ]
+}

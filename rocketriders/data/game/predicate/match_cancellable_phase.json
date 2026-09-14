@@ -1,16 +1,13 @@
-[
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:phase/staging/configuration"
+{
+  "type": "minecraft:all_of",
+  "terms": [
+    {
+      "type": "minecraft:inverted",
+      "term": "game:phase/staging/configuration"
+    },
+    {
+      "type": "minecraft:inverted",
+      "term": "game:phase/match/closing"
     }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:phase/match/closing"
-    }
-  }
-]
+  ]
+}

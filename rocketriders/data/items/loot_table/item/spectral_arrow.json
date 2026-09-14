@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:spectral_arrow",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "spectral_arrow"
@@ -28,41 +28,33 @@
                 }
               }
             },
+            "items:set_custom_model_data",
             {
-              "function": "minecraft:reference",
-              "name": "items:set_custom_model_data"
-            },
-            {
-              "function": "minecraft:set_custom_data",
+              "type": "minecraft:set_custom_data",
               "tag": {
                 "droppable": true
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:phase/match/play"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:phase/match/play"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "name": {
                 "text": "Spectral Arrow"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:match_components/classic_item_names"
-                }
-              ]
+              "condition": "game:match_components/classic_item_names"
             }
           ]
         }

@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:leather_leggings",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
@@ -51,7 +51,7 @@
               }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:dyed_color": 10551296,
                 "minecraft:item_name": {
@@ -60,12 +60,7 @@
                   "text": "Dark Red Leggings"
                 }
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:blue_team_skin/any_red_skin"
-                }
-              ]
+              "condition": "game:blue_team_skin/any_red_skin"
             }
           ]
         }

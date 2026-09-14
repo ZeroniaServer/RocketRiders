@@ -1,23 +1,14 @@
 {
-  "condition": "minecraft:any_of",
+  "type": "minecraft:any_of",
   "terms": [
+    "game:phase/staging/queue",
     {
-      "condition": "minecraft:reference",
-      "name": "game:phase/staging/queue"
-    },
-    {
-      "condition": "minecraft:all_of",
+      "type": "minecraft:all_of",
       "terms": [
+        "game:phase/match",
         {
-          "condition": "minecraft:reference",
-          "name": "game:phase/match"
-        },
-        {
-          "condition": "minecraft:inverted",
-          "term": {
-            "condition": "minecraft:reference",
-            "name": "game:phase/match/closing/outcome"
-          }
+          "type": "minecraft:inverted",
+          "term": "game:phase/match/closing/outcome"
         }
       ]
     }

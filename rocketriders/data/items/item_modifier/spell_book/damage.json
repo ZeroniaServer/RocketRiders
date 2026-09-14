@@ -1,64 +1,62 @@
-[
-  {
-    "function": "minecraft:set_custom_data",
-    "tag": {
-      "spell": "damage"
-    }
-  },
-  {
-    "function": "minecraft:set_name",
-    "target": "item_name",
-    "name": [
-      "",
-      {
-        "bold": true,
-        "color": "light_purple",
-        "text": "Spell Book "
-      },
-      [
-        {
-          "color": "dark_gray",
-          "text": "["
-        },
-        {
-          "bold": false,
-          "color": "gray",
-          "text": "\u2620"
-        },
-        "]"
-      ]
-    ]
-  },
-  {
-    "function": "minecraft:set_lore",
-    "lore": [
-      [
-        {
-          "color": "white",
-          "italic": false,
-          "text": "Current Spell: "
-        },
-        {
-          "color": "gray",
-          "text": "Damage"
-        }
-      ]
-    ],
-    "mode": "replace_section",
-    "offset": 0,
-    "size": 1
-  },
-  {
-    "function": "minecraft:set_name",
-    "target": "item_name",
-    "name": {
-      "text": "Choose Spell: Damage"
-    },
-    "conditions": [
-      {
-        "condition": "minecraft:reference",
-        "name": "game:match_components/classic_item_names"
+{
+  "type": "sequence",
+  "functions": [
+    {
+      "type": "minecraft:set_custom_data",
+      "tag": {
+        "spell": "damage"
       }
-    ]
-  }
-]
+    },
+    {
+      "type": "minecraft:set_name",
+      "target": "item_name",
+      "name": [
+        "",
+        {
+          "bold": true,
+          "color": "light_purple",
+          "text": "Spell Book "
+        },
+        [
+          {
+            "color": "dark_gray",
+            "text": "["
+          },
+          {
+            "bold": false,
+            "color": "gray",
+            "text": "☠"
+          },
+          "]"
+        ]
+      ]
+    },
+    {
+      "type": "minecraft:set_lore",
+      "lore": [
+        [
+          {
+            "color": "white",
+            "italic": false,
+            "text": "Current Spell: "
+          },
+          {
+            "color": "gray",
+            "text": "Damage"
+          }
+        ]
+      ],
+      "mode": "replace_section",
+      "offset": 0,
+      "size": 1
+    },
+    {
+      "type": "minecraft:set_name",
+      "target": "item_name",
+      "name": {
+        "text": "Choose Spell: Damage"
+      },
+      "condition": "game:match_components/classic_item_names"
+    }
+  ]
+}

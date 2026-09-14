@@ -1,7 +1,4 @@
 {
-  "condition": "minecraft:inverted",
-  "term": {
-    "condition": "minecraft:reference",
-    "name": "rr:is_cubekrowd"
-  }
+  "type": "minecraft:inverted",
+  "term": "rr:is_cubekrowd"
 }

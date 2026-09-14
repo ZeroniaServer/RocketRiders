@@ -4,11 +4,19 @@
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "entity": {
-          "minecraft:entity_type": "minecraft:bee"
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:bee"
+          }
         },
         "player": {
-          "minecraft:location": {
-            "dimension": "minecraft:overworld"
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "dimension": "minecraft:overworld"
+            }
           }
         }
       }

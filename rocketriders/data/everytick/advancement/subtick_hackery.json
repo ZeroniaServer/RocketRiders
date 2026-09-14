@@ -3,24 +3,26 @@
     "cured_zombie_villager": {
       "trigger": "minecraft:cured_zombie_villager",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:value_check",
-            "value": {
-              "type": "minecraft:score",
-              "score": "global",
-              "target": {
-                "type": "minecraft:fixed",
-                "name": "$subtick_hackery_done"
-              }
-            },
-            "range": 0
-          }
-        ],
+        "player": {
+          "type": "minecraft:int_value_check",
+          "value": {
+            "type": "minecraft:score",
+            "score": "global",
+            "target": {
+              "type": "minecraft:fixed",
+              "name": "$subtick_hackery_done"
+            }
+          },
+          "test": 0
+        },
         "zombie": {
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "subtick_hackery": {}
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "subtick_hackery": {}
+              }
             }
           }
         }

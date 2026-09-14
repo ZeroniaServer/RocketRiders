@@ -1,5 +1,5 @@
 {
-  "condition": "minecraft:value_check",
+  "type": "minecraft:int_value_check",
   "value": {
     "type": "minecraft:score",
     "score": "global",
@@ -8,7 +8,7 @@
       "name": "$blue_team_count"
     }
   },
-  "range": {
+  "test": {
     "min": {
       "type": "minecraft:score",
       "score": "global",

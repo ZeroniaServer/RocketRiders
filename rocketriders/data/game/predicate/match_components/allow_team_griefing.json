@@ -1,5 +1,5 @@
 {
-  "condition": "minecraft:value_check",
+  "type": "minecraft:int_value_check",
   "value": {
     "type": "minecraft:score",
     "score": "match_components",
@@ -8,5 +8,5 @@
       "name": "$allow_team_griefing"
     }
   },
-  "range": 1
+  "test": 1
 }

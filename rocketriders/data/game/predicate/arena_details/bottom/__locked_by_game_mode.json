@@ -1,7 +1,7 @@
 {
-  "condition": "minecraft:inverted",
+  "type": "minecraft:inverted",
   "term": {
-    "condition": "minecraft:value_check",
+    "type": "minecraft:int_value_check",
     "value": {
       "type": "minecraft:score",
       "score": "match_components",
@@ -10,6 +10,6 @@
         "name": "$config_override.arena_details/bottom"
       }
     },
-    "range": 0
+    "test": 0
   }
 }

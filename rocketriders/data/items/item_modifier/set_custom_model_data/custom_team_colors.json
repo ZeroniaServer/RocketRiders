@@ -1,241 +1,220 @@
-[
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        16777215
-      ]
+{
+  "type": "sequence",
+  "functions": [
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          16777215
+        ]
+      },
+      "floats": {
+        "mode": "replace_all",
+        "values": [
+          1
+        ]
+      },
+      "strings": {
+        "mode": "replace_section",
+        "offset": 2,
+        "size": 1,
+        "values": [
+          "custom"
+        ]
+      }
     },
-    "floats": {
-      "mode": "replace_all",
-      "values": [
-        1
-      ]
-    },
-    "strings": {
-      "mode": "replace_section",
-      "offset": 2,
-      "size": 1,
-      "values": [
-        "custom"
-      ]
-    }
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        3949738
-      ]
-    },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          3949738
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 1
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        16768000
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          16768000
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 2
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        16711680
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          16711680
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 3
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        65281
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          65281
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 4
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        11796735
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          11796735
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 5
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        16752877
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          16752877
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 6
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        16744704
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          16744704
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 7
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        16735636
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          16735636
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 8
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        6684628
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          6684628
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 9
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        13959061
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          13959061
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 10
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        16383860
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          16383860
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 11
         }
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_custom_model_data",
-    "colors": {
-      "mode": "replace_all",
-      "values": [
-        7506394
-      ]
     },
-    "conditions": [
-      {
-        "condition": "minecraft:entity_scores",
+    {
+      "type": "minecraft:set_custom_model_data",
+      "colors": {
+        "mode": "replace_all",
+        "values": [
+          7506394
+        ]
+      },
+      "condition": {
+        "type": "minecraft:entity_scores",
         "entity": "this",
         "scores": {
           "custom_team_color": 12
         }
       }
-    ]
-  }
-]
+    }
+  ]
+}

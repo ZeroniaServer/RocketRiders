@@ -1,17 +1,8 @@
 {
-  "condition": "minecraft:any_of",
+  "type": "minecraft:any_of",
   "terms": [
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/ninja_jump/__forced_on"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/ninja_jump/__forced_off"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/ninja_jump/__incompatible_modifiers"
-    }
+    "game:modifiers/ninja_jump/__forced_on",
+    "game:modifiers/ninja_jump/__forced_off",
+    "game:modifiers/ninja_jump/__incompatible_modifiers"
   ]
 }

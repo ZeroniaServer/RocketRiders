@@ -1,50 +1,53 @@
-[
-  {
-    "condition": "minecraft:value_check",
-    "value": {
-      "type": "minecraft:score",
-      "score": "global",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$phase/game"
-      }
+{
+  "type": "minecraft:all_of",
+  "terms": [
+    {
+      "type": "minecraft:int_value_check",
+      "value": {
+        "type": "minecraft:score",
+        "score": "global",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$phase/game"
+        }
+      },
+      "test": 1
     },
-    "range": 1
-  },
-  {
-    "condition": "minecraft:value_check",
-    "value": {
-      "type": "minecraft:score",
-      "score": "global",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$phase/game.match"
-      }
+    {
+      "type": "minecraft:int_value_check",
+      "value": {
+        "type": "minecraft:score",
+        "score": "global",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$phase/game.match"
+        }
+      },
+      "test": 2
     },
-    "range": 2
-  },
-  {
-    "condition": "minecraft:value_check",
-    "value": {
-      "type": "minecraft:score",
-      "score": "global",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$phase/game.match.closing"
-      }
+    {
+      "type": "minecraft:int_value_check",
+      "value": {
+        "type": "minecraft:score",
+        "score": "global",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$phase/game.match.closing"
+        }
+      },
+      "test": 1
     },
-    "range": 1
-  },
-  {
-    "condition": "minecraft:value_check",
-    "value": {
-      "type": "minecraft:score",
-      "score": "global",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$phase/game.match.closing.outcome"
-      }
-    },
-    "range": 1
-  }
-]
+    {
+      "type": "minecraft:int_value_check",
+      "value": {
+        "type": "minecraft:score",
+        "score": "global",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$phase/game.match.closing.outcome"
+        }
+      },
+      "test": 1
+    }
+  ]
+}

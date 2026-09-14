@@ -8,208 +8,184 @@
           "children": [
             {
               "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_components",
-                  "components": {
-                    "minecraft:dyed_color": 4210752,
-                    "minecraft:equippable": {
-                      "asset_id": "minecraft:leather",
-                      "equip_sound": "minecraft:intentionally_empty",
-                      "slot": "feet"
-                    },
-                    "minecraft:item_name": {
-                      "bold": true,
-                      "color": "dark_gray",
-                      "text": "Unranked Boots"
-                    }
-                  }
-                }
-              ],
               "name": "minecraft:leather_boots",
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "XP": {
-                      "max": 99
-                    }
+              "condition": {
+                "type": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                  "XP": {
+                    "max": 99
                   }
                 }
-              ]
+              },
+              "modifier": {
+                "type": "minecraft:set_components",
+                "components": {
+                  "minecraft:dyed_color": 4210752,
+                  "minecraft:equippable": {
+                    "asset_id": "minecraft:leather",
+                    "equip_sound": "minecraft:intentionally_empty",
+                    "slot": "feet"
+                  },
+                  "minecraft:item_name": {
+                    "bold": true,
+                    "color": "dark_gray",
+                    "text": "Unranked Boots"
+                  }
+                }
+              }
             },
             {
               "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_components",
-                  "components": {
-                    "minecraft:dyed_color": 13467442,
-                    "minecraft:equippable": {
-                      "asset_id": "minecraft:leather",
-                      "equip_sound": "minecraft:intentionally_empty",
-                      "slot": "feet"
-                    },
-                    "minecraft:item_name": {
-                      "bold": true,
-                      "color": "#CD7F32",
-                      "text": "Bronze Boots"
-                    }
-                  }
-                }
-              ],
               "name": "minecraft:leather_boots",
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "XP": {
-                      "min": 100,
-                      "max": 399
-                    }
+              "condition": {
+                "type": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                  "XP": {
+                    "min": 100,
+                    "max": 399
                   }
                 }
-              ]
+              },
+              "modifier": {
+                "type": "minecraft:set_components",
+                "components": {
+                  "minecraft:dyed_color": 13467442,
+                  "minecraft:equippable": {
+                    "asset_id": "minecraft:leather",
+                    "equip_sound": "minecraft:intentionally_empty",
+                    "slot": "feet"
+                  },
+                  "minecraft:item_name": {
+                    "bold": true,
+                    "color": "#CD7F32",
+                    "text": "Bronze Boots"
+                  }
+                }
+              }
             },
             {
               "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_components",
-                  "components": {
-                    "minecraft:equippable": {
-                      "asset_id": "minecraft:iron",
-                      "equip_sound": "minecraft:intentionally_empty",
-                      "slot": "feet"
-                    },
-                    "minecraft:item_name": {
-                      "bold": true,
-                      "color": "gray",
-                      "text": "Silver Boots"
-                    }
-                  }
-                }
-              ],
               "name": "minecraft:iron_boots",
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "XP": {
-                      "min": 400,
-                      "max": 699
-                    }
+              "condition": {
+                "type": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                  "XP": {
+                    "min": 400,
+                    "max": 699
                   }
                 }
-              ]
+              },
+              "modifier": {
+                "type": "minecraft:set_components",
+                "components": {
+                  "minecraft:equippable": {
+                    "asset_id": "minecraft:iron",
+                    "equip_sound": "minecraft:intentionally_empty",
+                    "slot": "feet"
+                  },
+                  "minecraft:item_name": {
+                    "bold": true,
+                    "color": "gray",
+                    "text": "Silver Boots"
+                  }
+                }
+              }
             },
             {
               "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_components",
-                  "components": {
-                    "minecraft:equippable": {
-                      "asset_id": "minecraft:gold",
-                      "equip_sound": "minecraft:intentionally_empty",
-                      "slot": "feet"
-                    },
-                    "minecraft:item_name": {
-                      "bold": true,
-                      "color": "gold",
-                      "text": "Gold Boots"
-                    }
-                  }
-                }
-              ],
               "name": "minecraft:golden_boots",
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "XP": {
-                      "min": 700,
-                      "max": 999
-                    }
+              "condition": {
+                "type": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                  "XP": {
+                    "min": 700,
+                    "max": 999
                   }
                 }
-              ]
+              },
+              "modifier": {
+                "type": "minecraft:set_components",
+                "components": {
+                  "minecraft:equippable": {
+                    "asset_id": "minecraft:gold",
+                    "equip_sound": "minecraft:intentionally_empty",
+                    "slot": "feet"
+                  },
+                  "minecraft:item_name": {
+                    "bold": true,
+                    "color": "gold",
+                    "text": "Gold Boots"
+                  }
+                }
+              }
             },
             {
               "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_components",
-                  "components": {
-                    "minecraft:equippable": {
-                      "asset_id": "minecraft:diamond",
-                      "equip_sound": "minecraft:intentionally_empty",
-                      "slot": "feet"
-                    },
-                    "minecraft:item_name": {
-                      "bold": true,
-                      "color": "aqua",
-                      "text": "Diamond Boots"
-                    }
-                  }
-                }
-              ],
               "name": "minecraft:diamond_boots",
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "XP": {
-                      "min": 1000,
-                      "max": 1299
-                    }
+              "condition": {
+                "type": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                  "XP": {
+                    "min": 1000,
+                    "max": 1299
                   }
                 }
-              ]
+              },
+              "modifier": {
+                "type": "minecraft:set_components",
+                "components": {
+                  "minecraft:equippable": {
+                    "asset_id": "minecraft:diamond",
+                    "equip_sound": "minecraft:intentionally_empty",
+                    "slot": "feet"
+                  },
+                  "minecraft:item_name": {
+                    "bold": true,
+                    "color": "aqua",
+                    "text": "Diamond Boots"
+                  }
+                }
+              }
             },
             {
               "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_components",
-                  "components": {
-                    "minecraft:equippable": {
-                      "asset_id": "minecraft:netherite",
-                      "equip_sound": "minecraft:intentionally_empty",
-                      "slot": "feet"
-                    },
-                    "minecraft:item_name": {
-                      "bold": true,
-                      "color": "red",
-                      "text": "Champion Boots"
-                    }
-                  }
-                }
-              ],
               "name": "minecraft:netherite_boots",
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "XP": {
-                      "min": 1300
-                    }
+              "condition": {
+                "type": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                  "XP": {
+                    "min": 1300
                   }
                 }
-              ]
+              },
+              "modifier": {
+                "type": "minecraft:set_components",
+                "components": {
+                  "minecraft:equippable": {
+                    "asset_id": "minecraft:netherite",
+                    "equip_sound": "minecraft:intentionally_empty",
+                    "slot": "feet"
+                  },
+                  "minecraft:item_name": {
+                    "bold": true,
+                    "color": "red",
+                    "text": "Champion Boots"
+                  }
+                }
+              }
             }
           ]
         }
       ],
-      "functions": [
+      "modifier": [
         {
-          "function": "minecraft:set_components",
+          "type": "minecraft:set_components",
           "components": {
             "minecraft:attribute_modifiers": [
               {
@@ -241,57 +217,46 @@
           }
         },
         {
-          "function": "minecraft:set_components",
+          "type": "minecraft:set_components",
           "components": {
             "minecraft:trim": {
               "material": "minecraft:lapis",
               "pattern": "minecraft:vex"
             }
           },
-          "conditions": [
-            {
-              "condition": "minecraft:reference",
-              "name": "game:blue_team_skin/blue"
-            },
-            {
-              "condition": "minecraft:reference",
-              "name": "custom:team/blue"
-            }
-          ]
+          "condition": {
+            "type": "minecraft:all_of",
+            "terms": [
+              "game:blue_team_skin/blue",
+              "custom:team/blue"
+            ]
+          }
         },
         {
-          "function": "minecraft:set_components",
+          "type": "minecraft:set_components",
           "components": {
             "minecraft:trim": {
               "material": "minecraft:redstone",
               "pattern": "minecraft:vex"
             }
           },
-          "conditions": [
-            {
-              "condition": "minecraft:reference",
-              "name": "game:blue_team_skin/any_red_skin"
-            },
-            {
-              "condition": "minecraft:reference",
-              "name": "custom:team/blue"
-            }
-          ]
+          "condition": {
+            "type": "minecraft:all_of",
+            "terms": [
+              "game:blue_team_skin/any_red_skin",
+              "custom:team/blue"
+            ]
+          }
         },
         {
-          "function": "minecraft:set_components",
+          "type": "minecraft:set_components",
           "components": {
             "minecraft:trim": {
               "material": "minecraft:gold",
               "pattern": "minecraft:spire"
             }
           },
-          "conditions": [
-            {
-              "condition": "minecraft:reference",
-              "name": "custom:team/yellow"
-            }
-          ]
+          "condition": "custom:team/yellow"
         }
       ]
     }

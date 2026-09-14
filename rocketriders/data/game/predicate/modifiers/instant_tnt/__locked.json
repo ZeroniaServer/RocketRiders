@@ -1,17 +1,8 @@
 {
-  "condition": "minecraft:any_of",
+  "type": "minecraft:any_of",
   "terms": [
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/instant_tnt/__forced_on"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/instant_tnt/__forced_off"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/instant_tnt/__incompatible_modifiers"
-    }
+    "game:modifiers/instant_tnt/__forced_on",
+    "game:modifiers/instant_tnt/__forced_off",
+    "game:modifiers/instant_tnt/__incompatible_modifiers"
   ]
 }

@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:white_concrete",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "building_block"
@@ -24,91 +24,67 @@
               }
             },
             {
-              "function": "minecraft:set_item",
+              "type": "minecraft:set_item",
               "item": "minecraft:light_blue_concrete",
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:match_components/custom_team_colors"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:blue_team_skin/blue"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:inverted",
+                    "term": "game:match_components/custom_team_colors"
+                  },
+                  "game:blue_team_skin/blue",
+                  "custom:team/blue"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_item",
+              "type": "minecraft:set_item",
               "item": "minecraft:red_concrete",
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:match_components/custom_team_colors"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:blue_team_skin/any_red_skin"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:inverted",
+                    "term": "game:match_components/custom_team_colors"
+                  },
+                  "game:blue_team_skin/any_red_skin",
+                  "custom:team/blue"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_item",
+              "type": "minecraft:set_item",
               "item": "minecraft:yellow_concrete",
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:match_components/custom_team_colors"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:yellow_team_skin/yellow"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/yellow"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:inverted",
+                    "term": "game:match_components/custom_team_colors"
+                  },
+                  "game:yellow_team_skin/yellow",
+                  "custom:team/yellow"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_item",
+              "type": "minecraft:set_item",
               "item": "minecraft:lime_concrete",
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:match_components/custom_team_colors"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:yellow_team_skin/green"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/yellow"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:inverted",
+                    "term": "game:match_components/custom_team_colors"
+                  },
+                  "game:yellow_team_skin/green",
+                  "custom:team/yellow"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "entity": "this",
               "name": [
@@ -128,22 +104,14 @@
                 ]
               ]
             },
+            "items:set_custom_model_data",
             {
-              "function": "minecraft:reference",
-              "name": "items:set_custom_model_data"
-            },
-            {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "name": {
                 "text": "Building Block"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:match_components/classic_item_names"
-                }
-              ]
+              "condition": "game:match_components/classic_item_names"
             }
           ]
         }

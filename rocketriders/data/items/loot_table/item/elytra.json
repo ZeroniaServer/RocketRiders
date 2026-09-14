@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:elytra",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
@@ -63,22 +63,20 @@
               }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:unbreakable": {}
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_scores",
-                  "entity": "this",
-                  "scores": {
-                    "effects.elytra.state": 2
-                  }
+              "condition": {
+                "type": "minecraft:entity_scores",
+                "entity": "this",
+                "scores": {
+                  "effects.elytra.state": 2
                 }
-              ]
+              }
             },
             {
-              "function": "minecraft:set_lore",
+              "type": "minecraft:set_lore",
               "lore": [
                 {
                   "color": "red",
@@ -92,35 +90,25 @@
                 }
               ],
               "mode": "append",
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:entity_scores",
-                    "entity": "this",
-                    "scores": {
-                      "effects.elytra.state": 2
-                    }
+              "condition": {
+                "type": "minecraft:inverted",
+                "term": {
+                  "type": "minecraft:entity_scores",
+                  "entity": "this",
+                  "scores": {
+                    "effects.elytra.state": 2
                   }
                 }
-              ]
+              }
             },
+            "items:set_custom_model_data",
             {
-              "function": "minecraft:reference",
-              "name": "items:set_custom_model_data"
-            },
-            {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "name": {
                 "text": "Elytra"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:match_components/classic_item_names"
-                }
-              ]
+              "condition": "game:match_components/classic_item_names"
             }
           ]
         }

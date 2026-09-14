@@ -4,11 +4,15 @@
       "trigger": "minecraft:player_hurt_entity",
       "conditions": {
         "entity": {
-          "minecraft:entity_type": "minecraft:interaction",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "zeronia_credit": {
-                "right": true
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:interaction",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "zeronia_credit": {
+                  "right": true
+                }
               }
             }
           }
@@ -19,11 +23,15 @@
       "trigger": "minecraft:player_interacted_with_entity",
       "conditions": {
         "entity": {
-          "minecraft:entity_type": "minecraft:interaction",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "zeronia_credit": {
-                "right": true
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:interaction",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "zeronia_credit": {
+                  "right": true
+                }
               }
             }
           }

@@ -1,64 +1,62 @@
-[
-  {
-    "function": "minecraft:set_custom_data",
-    "tag": {
-      "spell": "fire"
-    }
-  },
-  {
-    "function": "minecraft:set_name",
-    "target": "item_name",
-    "name": [
-      "",
-      {
-        "bold": true,
-        "color": "light_purple",
-        "text": "Spell Book "
-      },
-      [
-        {
-          "color": "dark_gray",
-          "text": "["
-        },
-        {
-          "bold": false,
-          "color": "gold",
-          "text": "\ud83d\udd25"
-        },
-        "]"
-      ]
-    ]
-  },
-  {
-    "function": "minecraft:set_lore",
-    "lore": [
-      [
-        {
-          "color": "white",
-          "italic": false,
-          "text": "Current Spell: "
-        },
-        {
-          "color": "gold",
-          "text": "Fire"
-        }
-      ]
-    ],
-    "mode": "replace_section",
-    "offset": 0,
-    "size": 1
-  },
-  {
-    "function": "minecraft:set_name",
-    "target": "item_name",
-    "name": {
-      "text": "Choose Spell: Fire"
-    },
-    "conditions": [
-      {
-        "condition": "minecraft:reference",
-        "name": "game:match_components/classic_item_names"
+{
+  "type": "sequence",
+  "functions": [
+    {
+      "type": "minecraft:set_custom_data",
+      "tag": {
+        "spell": "fire"
       }
-    ]
-  }
-]
+    },
+    {
+      "type": "minecraft:set_name",
+      "target": "item_name",
+      "name": [
+        "",
+        {
+          "bold": true,
+          "color": "light_purple",
+          "text": "Spell Book "
+        },
+        [
+          {
+            "color": "dark_gray",
+            "text": "["
+          },
+          {
+            "bold": false,
+            "color": "gold",
+            "text": "🔥"
+          },
+          "]"
+        ]
+      ]
+    },
+    {
+      "type": "minecraft:set_lore",
+      "lore": [
+        [
+          {
+            "color": "white",
+            "italic": false,
+            "text": "Current Spell: "
+          },
+          {
+            "color": "gold",
+            "text": "Fire"
+          }
+        ]
+      ],
+      "mode": "replace_section",
+      "offset": 0,
+      "size": 1
+    },
+    {
+      "type": "minecraft:set_name",
+      "target": "item_name",
+      "name": {
+        "text": "Choose Spell: Fire"
+      },
+      "condition": "game:match_components/classic_item_names"
+    }
+  ]
+}

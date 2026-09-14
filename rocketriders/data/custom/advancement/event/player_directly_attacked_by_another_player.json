@@ -4,16 +4,18 @@
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "entity": {
-          "minecraft:entity_type": "minecraft:player"
-        },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:player"
           }
-        ]
+        },
+        "player": {
+          "type": "minecraft:location_check",
+          "predicate": {
+            "dimension": "minecraft:overworld"
+          }
+        }
       }
     },
     "get_directly_non_fatally_attacked_by_another_player": {
@@ -24,38 +26,40 @@
             "minecraft:entity_type": "minecraft:player"
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
-          },
-          {
-            "condition": "minecraft:reference",
-            "name": "custom:player/is_alive"
-          }
-        ]
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            "custom:player/is_alive"
+          ]
+        }
       }
     },
     "get_killed_by_mob_with_damage_origins": {
       "trigger": "minecraft:entity_killed_player",
       "conditions": {
         "entity": {
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "damage_origin": {}
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "damage_origin": {}
+              }
             }
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
+        "player": {
+          "type": "minecraft:location_check",
+          "predicate": {
+            "dimension": "minecraft:overworld"
           }
-        ]
+        }
       }
     },
     "get_non_fatally_hurt_by_mob_with_damage_origins": {
@@ -70,18 +74,18 @@
             }
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
-          },
-          {
-            "condition": "minecraft:reference",
-            "name": "custom:player/is_alive"
-          }
-        ]
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            "custom:player/is_alive"
+          ]
+        }
       }
     }
   },

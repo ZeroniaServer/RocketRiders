@@ -1,17 +1,8 @@
 {
-  "condition": "minecraft:any_of",
+  "type": "minecraft:any_of",
   "terms": [
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/molerat/on"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/collision_control/on"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/rocket_residers/on"
-    }
+    "game:modifiers/molerat/on",
+    "game:modifiers/collision_control/on",
+    "game:modifiers/rocket_residers/on"
   ]
 }

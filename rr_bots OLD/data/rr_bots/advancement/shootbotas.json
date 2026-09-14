@@ -11,18 +11,22 @@
             "tags": [
               {
                 "expected": true,
-                "id": "minecraft:is_projectile"
+                "id": "#minecraft:is_projectile"
               }
             ]
           }
         },
         "entity": {
-          "minecraft:entity_tags": {
-            "all_of": [
-              "Bot"
-            ]
-          },
-          "minecraft:entity_type": "minecraft:armor_stand"
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_tags": {
+              "all_of": [
+                "Bot"
+              ]
+            },
+            "minecraft:entity_type": "minecraft:armor_stand"
+          }
         }
       }
     }

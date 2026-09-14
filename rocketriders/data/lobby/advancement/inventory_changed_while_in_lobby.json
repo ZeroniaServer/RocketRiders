@@ -3,12 +3,7 @@
     "inventory_changed_while_in_lobby": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:reference",
-            "name": "custom:team/lobby"
-          }
-        ]
+        "player": "custom:team/lobby"
       }
     }
   },

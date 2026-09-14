@@ -6,31 +6,29 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:written_book",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:custom_data": {
-                  "navbook": true
-                },
-                "minecraft:item_model": "minecraft:knowledge_book",
-                "minecraft:item_name": {
-                  "bold": true,
-                  "color": "dark_green",
-                  "text": "Navigation Book"
-                },
-                "minecraft:lore": [
-                  "A helpful book used to gain",
-                  "information and teleport",
-                  "around the Lobby."
-                ],
-                "minecraft:written_book_content": {
-                  "author": "Zeronia",
-                  "title": ""
-                }
+          "modifier": {
+            "type": "minecraft:set_components",
+            "components": {
+              "minecraft:custom_data": {
+                "navbook": true
+              },
+              "minecraft:item_model": "minecraft:knowledge_book",
+              "minecraft:item_name": {
+                "bold": true,
+                "color": "dark_green",
+                "text": "Navigation Book"
+              },
+              "minecraft:lore": [
+                "A helpful book used to gain",
+                "information and teleport",
+                "around the Lobby."
+              ],
+              "minecraft:written_book_content": {
+                "author": "Zeronia",
+                "title": ""
               }
             }
-          ]
+          }
         }
       ]
     }

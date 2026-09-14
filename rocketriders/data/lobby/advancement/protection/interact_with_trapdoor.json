@@ -3,23 +3,23 @@
     "interact_with_trapdoor": {
       "trigger": "minecraft:default_block_use",
       "conditions": {
-        "location": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "block": {
-                "blocks": "#minecraft:trapdoors"
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "#minecraft:trapdoors"
+                }
               }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": "custom:in_arena"
             }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:reference",
-              "name": "custom:in_arena"
-            }
-          }
-        ]
+          ]
+        }
       }
     }
   },

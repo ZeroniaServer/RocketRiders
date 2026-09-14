@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "writable_book",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "!minecraft:writable_book_content": {},
                 "minecraft:attribute_modifiers": [
@@ -61,79 +61,79 @@
               }
             },
             {
-              "function": "minecraft:set_custom_data",
+              "type": "minecraft:set_custom_data",
               "tag": {
                 "main_item": true
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:main_item/crusade_kit_dependent"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:main_item/crusade_kit_dependent"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": []
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:phase/match/closing"
-                },
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_tags": {
-                      "all_of": [
-                        "Loser"
-                      ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:phase/match/closing",
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_tags": {
+                        "all_of": [
+                          "Loser"
+                        ]
+                      }
                     }
                   }
-                }
-              ]
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "!minecraft:consumable": {},
                 "!minecraft:use_cooldown": {}
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  {
+                    "type": "minecraft:inverted",
+                    "term": "game:phase/match/play"
                   }
-                },
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:phase/match/play"
-                  }
-                }
-              ]
+                ]
+              }
             },
             {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "entity": "this",
               "name": [
@@ -154,59 +154,45 @@
               ]
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:breeze_rod"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:match_components/custom_team_colors"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/blue"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:inverted",
+                    "term": "game:match_components/custom_team_colors"
+                  },
+                  "custom:team/blue"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:item_model": "minecraft:blaze_rod"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:inverted",
-                  "term": {
-                    "condition": "minecraft:reference",
-                    "name": "game:match_components/custom_team_colors"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "custom:team/yellow"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:inverted",
+                    "term": "game:match_components/custom_team_colors"
+                  },
+                  "custom:team/yellow"
+                ]
+              }
             },
+            "items:set_custom_model_data",
             {
-              "function": "minecraft:reference",
-              "name": "items:set_custom_model_data"
-            },
-            {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "name": {
                 "text": "Cast Spell"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:match_components/classic_item_names"
-                }
-              ]
+              "condition": "game:match_components/classic_item_names"
             }
           ]
         }

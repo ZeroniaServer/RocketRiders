@@ -3,22 +3,18 @@
     "use_pig_spawn_egg_on_block": {
       "trigger": "minecraft:item_used_on_block",
       "conditions": {
-        "location": [
-          {
-            "condition": "minecraft:match_tool",
-            "predicate": {
-              "items": "minecraft:pig_spawn_egg"
-            }
+        "location": {
+          "type": "minecraft:match_tool",
+          "predicate": {
+            "items": "minecraft:pig_spawn_egg"
           }
-        ],
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
+        },
+        "player": {
+          "type": "minecraft:location_check",
+          "predicate": {
+            "dimension": "minecraft:overworld"
           }
-        ]
+        }
       }
     }
   },

@@ -4,30 +4,34 @@
       "trigger": "minecraft:player_hurt_entity",
       "conditions": {
         "entity": {
-          "minecraft:entity_type": "minecraft:interaction",
-          "minecraft:movement": {
-            "speed": {
-              "max": 20
-            }
-          },
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "punchable_tnt": {}
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:interaction",
+            "minecraft:movement": {
+              "speed": {
+                "max": 20
+              }
+            },
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "punchable_tnt": {}
+              }
             }
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
-          },
-          {
-            "condition": "minecraft:reference",
-            "name": "game:modifiers/punchable_tnt/on"
-          }
-        ]
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            "game:modifiers/punchable_tnt/on"
+          ]
+        }
       }
     }
   },

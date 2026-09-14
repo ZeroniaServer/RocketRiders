@@ -11,18 +11,22 @@
             "tags": [
               {
                 "expected": true,
-                "id": "minecraft:is_projectile"
+                "id": "#minecraft:is_projectile"
               }
             ]
           }
         },
         "entity": {
-          "minecraft:entity_tags": {
-            "all_of": [
-              "BotHPZombie"
-            ]
-          },
-          "minecraft:entity_type": "minecraft:zombie"
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_tags": {
+              "all_of": [
+                "BotHPZombie"
+              ]
+            },
+            "minecraft:entity_type": "minecraft:zombie"
+          }
         }
       }
     }

@@ -10,14 +10,12 @@
             }
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
+        "player": {
+          "type": "minecraft:location_check",
+          "predicate": {
+            "dimension": "minecraft:overworld"
           }
-        ]
+        }
       }
     }
   },

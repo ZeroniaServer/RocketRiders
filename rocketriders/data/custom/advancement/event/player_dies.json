@@ -8,28 +8,31 @@
             "tags": [
               {
                 "expected": true,
-                "id": "custom:lava"
+                "id": "#custom:lava"
               }
             ]
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
-          },
-          {
-            "condition": "minecraft:entity_scores",
-            "entity": "this",
-            "scores": {
-              "event.player_dies": {
-                "min": 1
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
+              "type": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "event.player_dies": {
+                  "min": 1
+                }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "die_other": {
@@ -40,32 +43,35 @@
             "tags": [
               {
                 "expected": false,
-                "id": "custom:void"
+                "id": "#custom:void"
               },
               {
                 "expected": false,
-                "id": "custom:lava"
+                "id": "#custom:lava"
               }
             ]
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
-          },
-          {
-            "condition": "minecraft:entity_scores",
-            "entity": "this",
-            "scores": {
-              "event.player_dies": {
-                "min": 1
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
+              "type": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "event.player_dies": {
+                  "min": 1
+                }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     },
     "die_void": {
@@ -76,28 +82,31 @@
             "tags": [
               {
                 "expected": true,
-                "id": "custom:void"
+                "id": "#custom:void"
               }
             ]
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
-            }
-          },
-          {
-            "condition": "minecraft:entity_scores",
-            "entity": "this",
-            "scores": {
-              "event.player_dies": {
-                "min": 1
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
+              "type": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "event.player_dies": {
+                  "min": 1
+                }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     }
   },

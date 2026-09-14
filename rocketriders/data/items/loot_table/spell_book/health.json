@@ -6,12 +6,7 @@
         {
           "type": "minecraft:loot_table",
           "value": "items:item/spell_book",
-          "functions": [
-            {
-              "function": "minecraft:reference",
-              "name": "items:spell_book/health"
-            }
-          ]
+          "modifier": "items:spell_book/health"
         }
       ]
     }

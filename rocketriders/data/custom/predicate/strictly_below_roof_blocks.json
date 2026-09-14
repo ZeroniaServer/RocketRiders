@@ -1,21 +1,24 @@
-[
-  {
-    "condition": "minecraft:location_check",
-    "predicate": {
-      "dimension": "minecraft:overworld"
-    }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:location_check",
+{
+  "type": "minecraft:all_of",
+  "terms": [
+    {
+      "type": "minecraft:location_check",
       "predicate": {
-        "position": {
-          "y": {
-            "min": 181
+        "dimension": "minecraft:overworld"
+      }
+    },
+    {
+      "type": "minecraft:inverted",
+      "term": {
+        "type": "minecraft:location_check",
+        "predicate": {
+          "position": {
+            "y": {
+              "min": 181
+            }
           }
         }
       }
     }
-  }
-]
+  ]
+}

@@ -1,166 +1,145 @@
-[
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "items": "#custom:helmets"
-    },
-    "on_fail": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:quartz",
-          "pattern": "minecraft:vex"
-        }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:quartz",
-          "pattern": "minecraft:tide"
-        }
-      }
-    },
-    "conditions": [
-      {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/one_team"
+{
+  "type": "sequence",
+  "functions": [
+    {
+      "type": "minecraft:filtered",
+      "item_filter": {
+        "items": "#custom:helmets"
+      },
+      "on_fail": {
+        "type": "minecraft:set_components",
+        "components": {
+          "minecraft:trim": {
+            "material": "minecraft:quartz",
+            "pattern": "minecraft:vex"
+          }
         }
       },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:blue_team_skin/blue"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:team/blue"
-      }
-    ]
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "items": "#custom:helmets"
-    },
-    "on_fail": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:quartz",
-          "pattern": "minecraft:vex"
-        }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:quartz",
-          "pattern": "minecraft:tide"
-        }
-      }
-    },
-    "conditions": [
-      {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/one_team"
+      "on_pass": {
+        "type": "minecraft:set_components",
+        "components": {
+          "minecraft:trim": {
+            "material": "minecraft:quartz",
+            "pattern": "minecraft:tide"
+          }
         }
       },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:blue_team_skin/any_red_skin"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:inverted",
+            "term": "game:match_components/one_team"
+          },
+          "game:blue_team_skin/blue",
+          "custom:team/blue"
+        ]
+      }
+    },
+    {
+      "type": "minecraft:filtered",
+      "item_filter": {
+        "items": "#custom:helmets"
       },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:team/blue"
-      }
-    ]
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "items": "#custom:helmets"
-    },
-    "on_fail": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:netherite",
-          "pattern": "minecraft:spire"
-        }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:netherite",
-          "pattern": "minecraft:raiser"
-        }
-      }
-    },
-    "conditions": [
-      {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/one_team"
+      "on_fail": {
+        "type": "minecraft:set_components",
+        "components": {
+          "minecraft:trim": {
+            "material": "minecraft:quartz",
+            "pattern": "minecraft:vex"
+          }
         }
       },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:yellow_team_skin/yellow"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:team/yellow"
-      }
-    ]
-  },
-  {
-    "function": "minecraft:filtered",
-    "item_filter": {
-      "items": "#custom:helmets"
-    },
-    "on_fail": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:netherite",
-          "pattern": "minecraft:spire"
-        }
-      }
-    },
-    "on_pass": {
-      "function": "minecraft:set_components",
-      "components": {
-        "minecraft:trim": {
-          "material": "minecraft:netherite",
-          "pattern": "minecraft:raiser"
-        }
-      }
-    },
-    "conditions": [
-      {
-        "condition": "minecraft:inverted",
-        "term": {
-          "condition": "minecraft:reference",
-          "name": "game:match_components/one_team"
+      "on_pass": {
+        "type": "minecraft:set_components",
+        "components": {
+          "minecraft:trim": {
+            "material": "minecraft:quartz",
+            "pattern": "minecraft:tide"
+          }
         }
       },
-      {
-        "condition": "minecraft:reference",
-        "name": "game:yellow_team_skin/green"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:team/yellow"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:inverted",
+            "term": "game:match_components/one_team"
+          },
+          "game:blue_team_skin/any_red_skin",
+          "custom:team/blue"
+        ]
       }
-    ]
-  }
-]
+    },
+    {
+      "type": "minecraft:filtered",
+      "item_filter": {
+        "items": "#custom:helmets"
+      },
+      "on_fail": {
+        "type": "minecraft:set_components",
+        "components": {
+          "minecraft:trim": {
+            "material": "minecraft:netherite",
+            "pattern": "minecraft:spire"
+          }
+        }
+      },
+      "on_pass": {
+        "type": "minecraft:set_components",
+        "components": {
+          "minecraft:trim": {
+            "material": "minecraft:netherite",
+            "pattern": "minecraft:raiser"
+          }
+        }
+      },
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:inverted",
+            "term": "game:match_components/one_team"
+          },
+          "game:yellow_team_skin/yellow",
+          "custom:team/yellow"
+        ]
+      }
+    },
+    {
+      "type": "minecraft:filtered",
+      "item_filter": {
+        "items": "#custom:helmets"
+      },
+      "on_fail": {
+        "type": "minecraft:set_components",
+        "components": {
+          "minecraft:trim": {
+            "material": "minecraft:netherite",
+            "pattern": "minecraft:spire"
+          }
+        }
+      },
+      "on_pass": {
+        "type": "minecraft:set_components",
+        "components": {
+          "minecraft:trim": {
+            "material": "minecraft:netherite",
+            "pattern": "minecraft:raiser"
+          }
+        }
+      },
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:inverted",
+            "term": "game:match_components/one_team"
+          },
+          "game:yellow_team_skin/green",
+          "custom:team/yellow"
+        ]
+      }
+    }
+  ]
+}

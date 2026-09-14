@@ -1,12 +1,12 @@
 {
-  "condition": "minecraft:value_check",
+  "type": "minecraft:int_value_check",
   "value": {
     "type": "minecraft:score",
     "scale": 1,
     "score": "playerUUID",
     "target": "this"
   },
-  "range": {
+  "test": {
     "min": {
       "type": "minecraft:score",
       "scale": 1,

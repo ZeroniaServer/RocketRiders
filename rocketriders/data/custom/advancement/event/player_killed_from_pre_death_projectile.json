@@ -17,21 +17,21 @@
             }
           }
         },
-        "player": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "dimension": "minecraft:overworld"
+        "player": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld"
+              }
+            },
+            {
+              "type": "minecraft:inverted",
+              "term": "custom:player/is_alive"
             }
-          },
-          {
-            "condition": "minecraft:inverted",
-            "term": {
-              "condition": "minecraft:reference",
-              "name": "custom:player/is_alive"
-            }
-          }
-        ]
+          ]
+        }
       }
     }
   },

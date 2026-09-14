@@ -9,22 +9,12 @@
             {
               "type": "minecraft:loot_table",
               "value": "items:item/shooting_saber",
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:main_item/shooting_saber"
-                }
-              ]
+              "condition": "game:main_item/shooting_saber"
             },
             {
               "type": "minecraft:loot_table",
               "value": "items:item/piercing_pickaxe",
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:main_item/piercing_pickaxe"
-                }
-              ]
+              "condition": "game:main_item/piercing_pickaxe"
             },
             {
               "type": "minecraft:alternatives",
@@ -32,60 +22,30 @@
                 {
                   "type": "minecraft:loot_table",
                   "value": "items:item/knight_sword",
-                  "conditions": [
-                    {
-                      "condition": "minecraft:reference",
-                      "name": "rr_crusade:kit/knight"
-                    }
-                  ]
+                  "condition": "rr_crusade:kit/knight"
                 },
                 {
                   "type": "minecraft:loot_table",
                   "value": "items:item/shooting_saber",
-                  "conditions": [
-                    {
-                      "condition": "minecraft:reference",
-                      "name": "rr_crusade:kit/archer"
-                    }
-                  ]
+                  "condition": "rr_crusade:kit/archer"
                 },
                 {
                   "type": "minecraft:loot_table",
                   "value": "items:item/spell_wand",
-                  "conditions": [
-                    {
-                      "condition": "minecraft:reference",
-                      "name": "rr_crusade:kit/mage"
-                    }
-                  ]
+                  "condition": "rr_crusade:kit/mage"
                 }
               ],
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:main_item/crusade_kit_dependent"
-                }
-              ]
+              "condition": "game:main_item/crusade_kit_dependent"
             },
             {
               "type": "minecraft:loot_table",
               "value": "items:item/rocket_nomicon",
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:main_item/rocket_nomicon"
-                }
-              ]
+              "condition": "game:main_item/rocket_nomicon"
             }
           ]
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:reference",
-          "name": "custom:team/any_playing_team"
-        }
-      ]
+      "condition": "custom:team/any_playing_team"
     }
   ]
 }

@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:pig_spawn_egg",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "id": "missile/chronullifier",
@@ -83,7 +83,7 @@
               }
             },
             {
-              "function": "minecraft:copy_custom_data",
+              "type": "minecraft:copy_custom_data",
               "ops": [
                 {
                   "op": "replace",
@@ -94,7 +94,7 @@
               "source": "this"
             },
             {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "entity": "this",
               "name": [
@@ -132,22 +132,14 @@
                 ]
               ]
             },
+            "items:set_custom_model_data",
             {
-              "function": "minecraft:reference",
-              "name": "items:set_custom_model_data"
-            },
-            {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "name": {
                 "text": "Deploy Chronullifier"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:match_components/classic_item_names"
-                }
-              ]
+              "condition": "game:match_components/classic_item_names"
             }
           ]
         }

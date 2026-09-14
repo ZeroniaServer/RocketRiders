@@ -1,13 +1,10 @@
-[
-  {
-    "condition": "minecraft:reference",
-    "name": "game:phase/match"
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:phase/match/closing"
+{
+  "type": "minecraft:all_of",
+  "terms": [
+    "game:phase/match",
+    {
+      "type": "minecraft:inverted",
+      "term": "game:phase/match/closing"
     }
-  }
-]
+  ]
+}

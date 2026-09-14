@@ -1,66 +1,57 @@
-[
-  {
-    "function": "minecraft:set_components",
-    "components": {
-      "minecraft:dyed_color": 3949738
-    },
-    "conditions": [
-      {
-        "condition": "minecraft:reference",
-        "name": "game:blue_team_skin/blue"
+{
+  "type": "sequence",
+  "functions": [
+    {
+      "type": "minecraft:set_components",
+      "components": {
+        "minecraft:dyed_color": 3949738
       },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:team/blue"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          "game:blue_team_skin/blue",
+          "custom:team/blue"
+        ]
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_components",
-    "components": {
-      "minecraft:dyed_color": 16711680
     },
-    "conditions": [
-      {
-        "condition": "minecraft:reference",
-        "name": "game:blue_team_skin/any_red_skin"
+    {
+      "type": "minecraft:set_components",
+      "components": {
+        "minecraft:dyed_color": 16711680
       },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:team/blue"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          "game:blue_team_skin/any_red_skin",
+          "custom:team/blue"
+        ]
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_components",
-    "components": {
-      "minecraft:dyed_color": 16768000
     },
-    "conditions": [
-      {
-        "condition": "minecraft:reference",
-        "name": "game:yellow_team_skin/yellow"
+    {
+      "type": "minecraft:set_components",
+      "components": {
+        "minecraft:dyed_color": 16768000
       },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:team/yellow"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          "game:yellow_team_skin/yellow",
+          "custom:team/yellow"
+        ]
       }
-    ]
-  },
-  {
-    "function": "minecraft:set_components",
-    "components": {
-      "minecraft:dyed_color": 8439583
     },
-    "conditions": [
-      {
-        "condition": "minecraft:reference",
-        "name": "game:yellow_team_skin/green"
+    {
+      "type": "minecraft:set_components",
+      "components": {
+        "minecraft:dyed_color": 8439583
       },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:team/yellow"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          "game:yellow_team_skin/green",
+          "custom:team/yellow"
+        ]
       }
-    ]
-  }
-]
+    }
+  ]
+}

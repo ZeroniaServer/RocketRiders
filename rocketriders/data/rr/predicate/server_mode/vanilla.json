@@ -1,21 +1,21 @@
-[
-  {
-    "condition": "minecraft:value_check",
-    "value": {
-      "type": "minecraft:score",
-      "score": "global",
-      "target": {
-        "type": "minecraft:fixed",
-        "name": "$server_mode"
-      }
+{
+  "type": "minecraft:all_of",
+  "terms": [
+    {
+      "type": "minecraft:int_value_check",
+      "value": {
+        "type": "minecraft:score",
+        "score": "global",
+        "target": {
+          "type": "minecraft:fixed",
+          "name": "$server_mode"
+        }
+      },
+      "test": 0
     },
-    "range": 0
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "rr:server_mode/realms"
+    {
+      "type": "minecraft:inverted",
+      "term": "rr:server_mode/realms"
     }
-  }
-]
+  ]
+}

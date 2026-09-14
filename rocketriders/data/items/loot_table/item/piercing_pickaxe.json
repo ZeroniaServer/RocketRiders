@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:netherite_pickaxe",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": [
                   {
@@ -66,93 +66,90 @@
               }
             },
             {
-              "function": "minecraft:set_custom_data",
+              "type": "minecraft:set_custom_data",
               "tag": {
                 "main_item": true
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:main_item/piercing_pickaxe"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:main_item/piercing_pickaxe"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:can_break": {
                   "blocks": "#custom:glass_except_light_gray"
                 }
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:phase/staging"
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:modifiers/molerat/on"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  "game:phase/staging",
+                  "game:modifiers/molerat/on"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "!minecraft:can_break": {}
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:phase/match/closing"
-                }
-              ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:phase/match/closing"
+                ]
+              }
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:attribute_modifiers": []
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_type": "minecraft:player"
-                  }
-                },
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:phase/match/closing"
-                },
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "minecraft:entity_tags": {
-                      "all_of": [
-                        "Loser"
-                      ]
+              "condition": {
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_type": "minecraft:player"
+                    }
+                  },
+                  "game:phase/match/closing",
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "minecraft:entity_tags": {
+                        "all_of": [
+                          "Loser"
+                        ]
+                      }
                     }
                   }
-                }
-              ]
+                ]
+              }
             },
             {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "entity": "this",
               "name": [
@@ -172,22 +169,14 @@
                 ]
               ]
             },
+            "items:set_custom_model_data",
             {
-              "function": "minecraft:reference",
-              "name": "items:set_custom_model_data"
-            },
-            {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "target": "item_name",
               "name": {
                 "text": "Piercing Pickaxe"
               },
-              "conditions": [
-                {
-                  "condition": "minecraft:reference",
-                  "name": "game:match_components/classic_item_names"
-                }
-              ]
+              "condition": "game:match_components/classic_item_names"
             }
           ]
         }

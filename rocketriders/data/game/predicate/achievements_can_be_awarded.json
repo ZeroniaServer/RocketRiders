@@ -1,32 +1,26 @@
-[
-  {
-    "condition": "minecraft:reference",
-    "name": "rr:has_achievements"
-  },
-  {
-    "condition": "minecraft:reference",
-    "name": "game:phase/match"
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "game:match_components/no_achievements"
+{
+  "type": "minecraft:all_of",
+  "terms": [
+    "rr:has_achievements",
+    "game:phase/match",
+    {
+      "type": "minecraft:inverted",
+      "term": "game:match_components/no_achievements"
+    },
+    {
+      "type": "minecraft:inverted",
+      "term": {
+        "type": "minecraft:int_value_check",
+        "value": {
+          "type": "minecraft:score",
+          "score": "match_data",
+          "target": {
+            "type": "minecraft:fixed",
+            "name": "$1v1_duel_time_out_period"
+          }
+        },
+        "test": 1
+      }
     }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:value_check",
-      "value": {
-        "type": "minecraft:score",
-        "score": "match_data",
-        "target": {
-          "type": "minecraft:fixed",
-          "name": "$1v1_duel_time_out_period"
-        }
-      },
-      "range": 1
-    }
-  }
-]
+  ]
+}

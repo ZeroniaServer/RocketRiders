@@ -17,14 +17,18 @@
             "tags": [
               {
                 "expected": true,
-                "id": "minecraft:is_projectile"
+                "id": "#minecraft:is_projectile"
               }
             ]
           }
         },
         "player": {
-          "minecraft:location": {
-            "dimension": "minecraft:overworld"
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:location": {
+              "dimension": "minecraft:overworld"
+            }
           }
         }
       }

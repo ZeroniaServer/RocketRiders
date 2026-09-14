@@ -1,8 +1,8 @@
 {
-  "condition": "minecraft:any_of",
+  "type": "minecraft:any_of",
   "terms": [
     {
-      "condition": "minecraft:location_check",
+      "type": "minecraft:location_check",
       "predicate": {
         "dimension": "minecraft:overworld",
         "position": {
@@ -22,7 +22,7 @@
       }
     },
     {
-      "condition": "minecraft:location_check",
+      "type": "minecraft:location_check",
       "predicate": {
         "dimension": "minecraft:overworld",
         "position": {

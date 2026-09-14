@@ -3,28 +3,28 @@
     "place_building_block_too_high": {
       "trigger": "minecraft:placed_block",
       "conditions": {
-        "location": [
-          {
-            "condition": "minecraft:reference",
-            "name": "custom:in_arena"
-          },
-          {
-            "condition": "minecraft:match_tool",
-            "predicate": {
-              "items": "#custom:building_blocks"
-            }
-          },
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "position": {
-                "y": {
-                  "min": 160
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            "custom:in_arena",
+            {
+              "type": "minecraft:match_tool",
+              "predicate": {
+                "items": "#custom:building_blocks"
+              }
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "position": {
+                  "y": {
+                    "min": 160
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     }
   },

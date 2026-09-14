@@ -1,17 +1,8 @@
 {
-  "condition": "minecraft:any_of",
+  "type": "minecraft:any_of",
   "terms": [
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/surprise_eggs/__forced_on"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/surprise_eggs/__forced_off"
-    },
-    {
-      "condition": "minecraft:reference",
-      "name": "game:modifiers/surprise_eggs/__incompatible_modifiers"
-    }
+    "game:modifiers/surprise_eggs/__forced_on",
+    "game:modifiers/surprise_eggs/__forced_off",
+    "game:modifiers/surprise_eggs/__incompatible_modifiers"
   ]
 }

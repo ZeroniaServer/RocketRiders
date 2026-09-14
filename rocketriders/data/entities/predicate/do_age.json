@@ -1,263 +1,266 @@
-[
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:all_of",
+{
+  "type": "minecraft:all_of",
+  "terms": [
+    {
+      "type": "minecraft:inverted",
+      "term": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:entity_scores",
+            "entity": "this",
+            "scores": {
+              "entity.age": 0
+            }
+          },
+          {
+            "type": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "minecraft:periodic_tick": 2147483647
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:any_of",
       "terms": [
         {
-          "condition": "minecraft:entity_scores",
+          "type": "minecraft:entity_properties",
           "entity": "this",
-          "scores": {
-            "entity.age": 0
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "canopy_projectile": {
+                  "brain": {}
+                }
+              }
+            }
           }
         },
         {
-          "condition": "minecraft:entity_properties",
+          "type": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
-            "minecraft:periodic_tick": 2147483647
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "canopy": {}
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "shield_projectile": {
+                  "brain": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "shield": {}
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "vortex_projectile": {
+                  "brain": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "vortex": {
+                  "brain": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "icbm": {
+                  "brain": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "stinging_shield_projectile": {
+                  "brain": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "stinging_shield": {}
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:interaction",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "punchable_tnt": {
+                  "brain": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "nova_rocket": {
+                  "brain": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "nova_attach": {
+                  "brain": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "spell_emitter": {}
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "damage_spell": {}
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:area_effect_cloud",
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "health_spell": {
+                  "brain": {}
+                }
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "fire_spell": {}
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "wind_spell": {}
+              }
+            }
+          }
+        },
+        {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:predicates": {
+              "minecraft:custom_data": {
+                "rot": {
+                  "brain": {}
+                }
+              }
+            }
           }
         }
       ]
     }
-  },
-  {
-    "condition": "minecraft:any_of",
-    "terms": [
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "canopy_projectile": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "canopy": {}
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "shield_projectile": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "shield": {}
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "vortex_projectile": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "vortex": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "icbm": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "stinging_shield_projectile": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "stinging_shield": {}
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:interaction",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "punchable_tnt": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "nova_rocket": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "nova_attach": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "spell_emitter": {}
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "damage_spell": {}
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:entity_type": "minecraft:area_effect_cloud",
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "health_spell": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "fire_spell": {}
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "wind_spell": {}
-            }
-          }
-        }
-      },
-      {
-        "condition": "minecraft:entity_properties",
-        "entity": "this",
-        "predicate": {
-          "minecraft:predicates": {
-            "minecraft:custom_data": {
-              "rot": {
-                "brain": {}
-              }
-            }
-          }
-        }
-      }
-    ]
-  }
-]
+  ]
+}

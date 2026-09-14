@@ -1,16 +1,13 @@
-[
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "entities:nova_rocket_near_enemy_spawn_zone"
+{
+  "type": "minecraft:all_of",
+  "terms": [
+    {
+      "type": "minecraft:inverted",
+      "term": "entities:nova_rocket_near_enemy_spawn_zone"
+    },
+    {
+      "type": "minecraft:inverted",
+      "term": "custom:near_or_above_roof"
     }
-  },
-  {
-    "condition": "minecraft:inverted",
-    "term": {
-      "condition": "minecraft:reference",
-      "name": "custom:near_or_above_roof"
-    }
-  }
-]
+  ]
+}

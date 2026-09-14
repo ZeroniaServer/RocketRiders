@@ -1,20 +1,11 @@
 {
-  "condition": "minecraft:inverted",
+  "type": "minecraft:inverted",
   "term": {
-    "condition": "minecraft:any_of",
+    "type": "minecraft:any_of",
     "terms": [
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:location/touching_or_beyond_world_border"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:in_void"
-      },
-      {
-        "condition": "minecraft:reference",
-        "name": "custom:near_or_above_roof"
-      }
+      "custom:location/touching_or_beyond_world_border",
+      "custom:in_void",
+      "custom:near_or_above_roof"
     ]
   }
 }

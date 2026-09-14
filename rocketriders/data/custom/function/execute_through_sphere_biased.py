@@ -18,7 +18,7 @@ def generate(name: str, radius: float) -> None:
                         continue
 
                     file.write(
-                        r"$execute if predicate {condition:random_chance,chance:{type:binomial,n:%s,p:$(p)}} positioned ~%s ~%s ~%s run $(run)" % (
+                        r"$execute if predicate {type:random_chance,chance:{type:binomial,n:%s,p:$(p)}} positioned ~%s ~%s ~%s run $(run)" % (
                             n,
                             "" if x == 0 else str(x),
                             "" if y == 0 else str(y),

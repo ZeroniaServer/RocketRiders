@@ -29,17 +29,7 @@ def custom_sort(value: Any, parent: str = None) -> Any:
             if (k == "parent") and (isinstance(v,str)):
                 sorted_items.append(((-100,k),k,v))
                 continue
-
-            # "condition" has highest priority in predicates
-            if (k == "condition") and (isinstance(v,str)) and (v.split(":")[0] == "minecraft"):
-                sorted_items.append(((-100,k),k,v))
-                continue
             
-            # "condition" and "conditions" have lowest priority in other places
-            if (k == "condition") or (k == "conditions"):
-                sorted_items.append(((100,k),k,v))
-                continue
-
             # "rolls" and "bonus_rolls" have high priority in loot table pools
             if (parent == "pools"):
                 if (k == "rolls"):
@@ -60,14 +50,19 @@ def custom_sort(value: Any, parent: str = None) -> Any:
                 if (k == "value"):
                     sorted_items.append(((-99,k),k,v))
                     continue
-            
+
+            # "condition" and "modifier" have lowest priority
+            if (k == "condition") or (k == "modifier"):
+                sorted_items.append(((100,k),k,v))
+                continue
+
             # "range" has low priority in value_check predicates
-            if (k == "range") and (("condition","minecraft:value_check") in items):
+            if (k == "range") and (("type","minecraft:value_check") in items):
                 sorted_items.append(((99,k),k,v))
                 continue
             
             # "target" has hight priority in set_name loot functions
-            if (k == "target") and (("function","minecraft:set_name") in items):
+            if (k == "target") and (("type","minecraft:set_name") in items):
                 sorted_items.append(((-1,k),k,v))
                 continue
 

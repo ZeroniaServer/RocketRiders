@@ -48,11 +48,11 @@ execute if predicate custom:team/any_playing_team if predicate game:main_item/cr
 execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace block 0 184 -16 container.9 loot items:item/knight_shield
 execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace block 0 184 -16 container.0 loot items:item/shooting_saber
 execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/staging/queue run function custom:__impl__/reset_inventory/give_queue_arrows
-execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/match/play run loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],functions:[{function:"set_count",count:4}]}]}
+execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/match/play run loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],modifier:{type:"set_count",count:4}}]}
 execute if predicate custom:team/any_playing_team if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace block 0 184 -16 container.0 loot items:item/spell_wand
 
 # winner's fireworks
-execute if predicate game:phase/match/closing if predicate custom:team/any_playing_team if entity @s[tag=Winner] run loot replace block 0 184 -16 container.1 loot {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:item/celebratory_firework"}]}],functions:[{function:"minecraft:set_count",count:5}]}
+execute if predicate game:phase/match/closing if predicate custom:team/any_playing_team if entity @s[tag=Winner] run loot replace block 0 184 -16 container.1 loot {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:item/celebratory_firework"}]}],modifier:{type:"minecraft:set_count",count:5}}
 
 ## Transfer and delete relevant items
 data modify storage rocketriders:main reset_inventory.items_replace set from block 0 184 -16 Items

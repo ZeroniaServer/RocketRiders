@@ -11,4 +11,4 @@ function entities:type/health_spell/tick/random_edge_spawn_perimeter with storag
 
 execute store result storage rocketriders:main health_spell.yaw int 1 run random value -180..179
 execute store result storage rocketriders:main health_spell.pitch int 1 run random value -50..50
-execute if predicate {condition:"minecraft:random_chance",chance:0.1} run function entities:type/health_spell/tick/random_edge_inside with storage rocketriders:main health_spell
+execute if predicate {type:"minecraft:random_chance",chance:0.1} run function entities:type/health_spell/tick/random_edge_inside with storage rocketriders:main health_spell

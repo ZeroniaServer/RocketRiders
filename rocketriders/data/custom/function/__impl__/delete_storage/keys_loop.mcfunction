@@ -1,5 +1,5 @@
 # resolve nbt text component
-loot replace block 0 184 -16 container.0 loot {pools:[{rolls:1,entries:[{type:"item",name:"stone",functions:[{function:"set_name",entity:"this",name:{storage:"rocketriders:delete_storage",nbt:"data.source",interpret:true}}]}]}]}
+loot replace block 0 184 -16 container.0 loot {pools:[{rolls:1,entries:[{type:"item",name:"stone",modifier:{type:"set_name",entity:"this",name:{storage:"rocketriders:delete_storage",nbt:"data.source",interpret:true}}}]}]}
 
 # parse first key and quote type
 data modify storage rocketriders:delete_storage data.quote_type set value ""

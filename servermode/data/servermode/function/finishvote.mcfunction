@@ -50,7 +50,7 @@ execute if entity @e[x=0,type=marker,tag=WonVote,tag=ChaseMode] store result sco
 function game:config/reset
 
 # 1% chance of classic colors
-execute if predicate {condition:"random_chance",chance:0.01} run scoreboard players set $classic_team_colors config 1
+execute if predicate {type:"random_chance",chance:0.01} run scoreboard players set $classic_team_colors config 1
 
 # Select base details
 execute if entity @e[x=0,type=marker,tag=WonVote,tag=Set1] as @e[x=0,type=marker,tag=ServermodeSet1] run function servermode:selectmap

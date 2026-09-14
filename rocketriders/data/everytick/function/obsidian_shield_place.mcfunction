@@ -1,7 +1,7 @@
-execute if entity @s if predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:186.0}}}} run tp @s 185.5 ~ ~
-execute if entity @s unless predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:-161.0}}}} run tp @s -160.5 ~ ~
-execute if entity @s if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run tp @s ~ ~ 175.5
-execute if entity @s unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run tp @s ~ ~ -174.5
+execute if entity @s if predicate {type:"minecraft:location_check",predicate:{position:{x:{min:186.0}}}} run tp @s 185.5 ~ ~
+execute if entity @s unless predicate {type:"minecraft:location_check",predicate:{position:{x:{min:-161.0}}}} run tp @s -160.5 ~ ~
+execute if entity @s if predicate {type:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run tp @s ~ ~ 175.5
+execute if entity @s unless predicate {type:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run tp @s ~ ~ -174.5
 
 #Obsidian Shield markers
 execute if entity @s[scores={shieldplacement=1}] unless entity @e[type=marker,tag=obsidianshield,distance=..0.5] run summon marker ~ ~ ~ {Tags:["obsidianshield"]}

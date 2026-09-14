@@ -3,14 +3,14 @@
 execute store result score $painting var run random value 0..7
 
 # prevent the same painting being chosen
-execute if score $painting var matches 0 if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:aztec"}}} run scoreboard players add $painting var 1
-execute if score $painting var matches 1 if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:alban"}}} run scoreboard players add $painting var 1
-execute if score $painting var matches 2 if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:aztec2"}}} run scoreboard players add $painting var 1
-execute if score $painting var matches 3 if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:bomb"}}} run scoreboard players add $painting var 1
-execute if score $painting var matches 4 if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:kebab"}}} run scoreboard players add $painting var 1
-execute if score $painting var matches 5 if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:plant"}}} run scoreboard players add $painting var 1
-execute if score $painting var matches 6 if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:wasteland"}}} run scoreboard players add $painting var 1
-execute if score $painting var matches 7 if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:meditative"}}} run scoreboard players add $painting var 1
+execute if score $painting var matches 0 if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:aztec"}}} run scoreboard players add $painting var 1
+execute if score $painting var matches 1 if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:alban"}}} run scoreboard players add $painting var 1
+execute if score $painting var matches 2 if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:aztec2"}}} run scoreboard players add $painting var 1
+execute if score $painting var matches 3 if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:bomb"}}} run scoreboard players add $painting var 1
+execute if score $painting var matches 4 if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:kebab"}}} run scoreboard players add $painting var 1
+execute if score $painting var matches 5 if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:plant"}}} run scoreboard players add $painting var 1
+execute if score $painting var matches 6 if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:wasteland"}}} run scoreboard players add $painting var 1
+execute if score $painting var matches 7 if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:components":{"minecraft:painting/variant":"minecraft:meditative"}}} run scoreboard players add $painting var 1
 execute if score $painting var matches 8 run scoreboard players set $painting var 0
 
 # apply new painting

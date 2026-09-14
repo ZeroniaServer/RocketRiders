@@ -1,7 +1,7 @@
 # Particles
 execute if predicate custom:periodic_tick/3 if entity @s[tag=!vortex_decoy.is_primed] at @s run function entities:type/vortex_decoy/tick/particles/dormant
 execute if predicate custom:periodic_tick/3 if entity @s[tag=vortex_decoy.is_primed] at @s run function entities:type/vortex_decoy/tick/particles/primed
-execute if entity @s[tag=vortex_decoy.is_primed] if predicate {condition:"random_chance",chance:0.1} run particle minecraft:electric_spark ~ ~ ~ 0 0 0 1 1 force @a[x=0,tag=!hideParticles]
+execute if entity @s[tag=vortex_decoy.is_primed] if predicate {type:"random_chance",chance:0.1} run particle minecraft:electric_spark ~ ~ ~ 0 0 0 1 1 force @a[x=0,tag=!hideParticles]
 
 # Spin
 execute unless entity @s[tag=vortex_decoy.is_primed] run execute unless entity @s[tag=vortex_decoy.is_drifting] if predicate custom:periodic_tick/5 rotated as @s run rotate @s ~35 0

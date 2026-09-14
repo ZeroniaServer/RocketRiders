@@ -1,25 +1,19 @@
 base_predicate = {
-  "condition": "minecraft:any_of",
+  "type": "minecraft:any_of",
   "terms": [
     {
-      "condition": "minecraft:all_of",
+      "type": "minecraft:all_of",
       "terms": [
+        "game:portal_type/normal",
         {
-          "condition": "minecraft:reference",
-          "name": "game:portal_type/normal"
-        },
-        {
-          "condition": "minecraft:any_of",
+          "type": "minecraft:any_of",
           "terms": [
             {
-              "condition": "minecraft:all_of",
+              "type": "minecraft:all_of",
               "terms": [
+                "game:blue_portal_revealed",
                 {
-                  "condition": "minecraft:reference",
-                  "name": "game:blue_portal_revealed"
-                },
-                {
-                  "condition": "minecraft:location_check",
+                  "type": "minecraft:location_check",
                   "predicate": {
                     "dimension": "minecraft:overworld",
                     "position": {
@@ -39,9 +33,9 @@ base_predicate = {
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
+                  "type": "minecraft:inverted",
                   "term": {
-                    "condition": "minecraft:location_check",
+                    "type": "minecraft:location_check",
                     "_exclusive_": True,
                     "predicate": {
                       "position": {
@@ -53,14 +47,11 @@ base_predicate = {
               ]
             },
             {
-              "condition": "minecraft:all_of",
+              "type": "minecraft:all_of",
               "terms": [
+                "game:yellow_portal_revealed",
                 {
-                  "condition": "minecraft:reference",
-                  "name": "game:yellow_portal_revealed"
-                },
-                {
-                  "condition": "minecraft:location_check",
+                  "type": "minecraft:location_check",
                   "predicate": {
                     "dimension": "minecraft:overworld",
                     "position": {
@@ -80,9 +71,9 @@ base_predicate = {
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
+                  "type": "minecraft:inverted",
                   "term": {
-                    "condition": "minecraft:location_check",
+                    "type": "minecraft:location_check",
                     "_exclusive_": True,
                     "predicate": {
                       "position": {
@@ -96,9 +87,9 @@ base_predicate = {
           ]
         },
         {
-          "condition": "minecraft:inverted",
+          "type": "minecraft:inverted",
           "term": {
-            "condition": "minecraft:location_check",
+            "type": "minecraft:location_check",
             "_exclusive_": True,
             "predicate": {
               "position": {
@@ -108,9 +99,9 @@ base_predicate = {
           }
         },
         {
-          "condition": "minecraft:inverted",
+          "type": "minecraft:inverted",
           "term": {
-            "condition": "minecraft:location_check",
+            "type": "minecraft:location_check",
             "_exclusive_": True,
             "predicate": {
               "position": {
@@ -122,24 +113,18 @@ base_predicate = {
       ]
     },
     {
-      "condition": "minecraft:all_of",
+      "type": "minecraft:all_of",
       "terms": [
+        "game:portal_type/small",
         {
-          "condition": "minecraft:reference",
-          "name": "game:portal_type/small"
-        },
-        {
-          "condition": "minecraft:any_of",
+          "type": "minecraft:any_of",
           "terms": [
             {
-              "condition": "minecraft:all_of",
+              "type": "minecraft:all_of",
               "terms": [
+                "game:blue_portal_revealed",
                 {
-                  "condition": "minecraft:reference",
-                  "name": "game:blue_portal_revealed"
-                },
-                {
-                  "condition": "minecraft:location_check",
+                  "type": "minecraft:location_check",
                   "predicate": {
                     "dimension": "minecraft:overworld",
                     "position": {
@@ -159,9 +144,9 @@ base_predicate = {
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
+                  "type": "minecraft:inverted",
                   "term": {
-                    "condition": "minecraft:location_check",
+                    "type": "minecraft:location_check",
                     "_exclusive_": True,
                     "predicate": {
                       "position": {
@@ -173,14 +158,11 @@ base_predicate = {
               ]
             },
             {
-              "condition": "minecraft:all_of",
+              "type": "minecraft:all_of",
               "terms": [
+                "game:yellow_portal_revealed",
                 {
-                  "condition": "minecraft:reference",
-                  "name": "game:yellow_portal_revealed"
-                },
-                {
-                  "condition": "minecraft:location_check",
+                  "type": "minecraft:location_check",
                   "predicate": {
                     "dimension": "minecraft:overworld",
                     "position": {
@@ -200,9 +182,9 @@ base_predicate = {
                   }
                 },
                 {
-                  "condition": "minecraft:inverted",
+                  "type": "minecraft:inverted",
                   "term": {
-                    "condition": "minecraft:location_check",
+                    "type": "minecraft:location_check",
                     "_exclusive_": True,
                     "predicate": {
                       "position": {
@@ -216,9 +198,9 @@ base_predicate = {
           ]
         },
         {
-          "condition": "minecraft:inverted",
+          "type": "minecraft:inverted",
           "term": {
-            "condition": "minecraft:location_check",
+            "type": "minecraft:location_check",
             "_exclusive_": True,
             "predicate": {
               "position": {
@@ -228,9 +210,9 @@ base_predicate = {
           }
         },
         {
-          "condition": "minecraft:inverted",
+          "type": "minecraft:inverted",
           "term": {
-            "condition": "minecraft:location_check",
+            "type": "minecraft:location_check",
             "_exclusive_": True,
             "predicate": {
               "position": {
@@ -254,7 +236,7 @@ def get_predicate(negative_corner: tuple[float,float,float], positive_corner: tu
         modify_value(value["term"])
       if "terms" in value:
         modify_value(value["terms"])
-      if "condition" in value and value["condition"] == "minecraft:location_check":
+      if value.get("type",None) == "minecraft:location_check":
         if "_exclusive_" in value:
           if "x" in value["predicate"]["position"]: value["predicate"]["position"]["x"] -= negative_corner[0]
           if "y" in value["predicate"]["position"]: value["predicate"]["position"]["y"] -= negative_corner[1]

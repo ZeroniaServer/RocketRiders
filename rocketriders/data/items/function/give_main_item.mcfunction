@@ -5,12 +5,12 @@ execute if items entity @s hotbar.0 * run item replace block 0 184 -16 container
 item replace entity @s hotbar.0 with air
 
 execute if predicate game:main_item/shooting_saber run loot replace entity @s hotbar.0 loot items:item/shooting_saber
-execute if predicate game:main_item/shooting_saber if predicate game:phase/staging run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],functions:[{function:"set_count",count:20}]}]}
+execute if predicate game:main_item/shooting_saber if predicate game:phase/staging run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],modifier:{type:"set_count",count:20}}]}
 execute if predicate game:main_item/piercing_pickaxe run loot replace entity @s hotbar.0 loot items:item/piercing_pickaxe
 execute if predicate game:main_item/rocket_nomicon run loot replace entity @s hotbar.0 loot items:item/rocket_nomicon
 execute if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/knight run loot replace entity @s hotbar.0 loot items:item/knight_sword
 execute if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer run loot replace entity @s hotbar.0 loot items:item/shooting_saber
-execute if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/staging run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],functions:[{function:"set_count",count:20}]}]}
+execute if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/archer if predicate game:phase/staging run loot replace entity @s weapon.offhand loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],modifier:{type:"set_count",count:20}}]}
 execute if predicate game:main_item/crusade_kit_dependent if predicate rr_crusade:kit/mage run loot replace entity @s hotbar.0 loot items:item/spell_wand
 
 loot give @s mine 0 184 -16 stick[custom_data={drop_contents:true}]

@@ -86,17 +86,17 @@ execute as @a[distance=..6] run playsound minecraft:item.flintandsteel.use maste
 
 ## Clear any blocks that are outside the world border
 # south border
-execute positioned ~ ~ ~30 if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run fill ~-5 ~-10 177 ~5 ~5 ~ minecraft:air strict
-execute positioned ~ ~ ~30 if predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run fill ~-5 ~-10 176 ~5 ~5 176 minecraft:barrier strict
+execute positioned ~ ~ ~30 if predicate {type:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run fill ~-5 ~-10 177 ~5 ~5 ~ minecraft:air strict
+execute positioned ~ ~ ~30 if predicate {type:"minecraft:location_check",predicate:{position:{z:{min:176.0}}}} run fill ~-5 ~-10 176 ~5 ~5 176 minecraft:barrier strict
 # north border
-execute positioned ~ ~ ~-30 unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run fill ~-5 ~-10 ~ ~5 ~5 -177 minecraft:air strict
-execute positioned ~ ~ ~-30 unless predicate {condition:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run fill ~-5 ~-10 -176 ~5 ~5 -176 minecraft:barrier strict
+execute positioned ~ ~ ~-30 unless predicate {type:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run fill ~-5 ~-10 ~ ~5 ~5 -177 minecraft:air strict
+execute positioned ~ ~ ~-30 unless predicate {type:"minecraft:location_check",predicate:{position:{z:{min:-175.0}}}} run fill ~-5 ~-10 -176 ~5 ~5 -176 minecraft:barrier strict
 # east border
-execute positioned ~5 ~ ~ if predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:188.0}}}} run fill 189 ~-10 ~-30 ~ ~5 ~30 minecraft:air strict
-execute positioned ~5 ~ ~ if predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:188.0}}}} run fill 188 ~-10 ~-30 188 ~5 ~30 minecraft:barrier strict
+execute positioned ~5 ~ ~ if predicate {type:"minecraft:location_check",predicate:{position:{x:{min:188.0}}}} run fill 189 ~-10 ~-30 ~ ~5 ~30 minecraft:air strict
+execute positioned ~5 ~ ~ if predicate {type:"minecraft:location_check",predicate:{position:{x:{min:188.0}}}} run fill 188 ~-10 ~-30 188 ~5 ~30 minecraft:barrier strict
 # west border
-execute positioned ~-5 ~ ~ unless predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:-163.0}}}} run fill ~ ~-10 ~-30 -165 ~5 ~30 minecraft:air strict
-execute positioned ~-5 ~ ~ unless predicate {condition:"minecraft:location_check",predicate:{position:{x:{min:-163.0}}}} run fill -164 ~-10 ~-30 -164 ~5 ~30 minecraft:barrier strict
+execute positioned ~-5 ~ ~ unless predicate {type:"minecraft:location_check",predicate:{position:{x:{min:-163.0}}}} run fill ~ ~-10 ~-30 -165 ~5 ~30 minecraft:air strict
+execute positioned ~-5 ~ ~ unless predicate {type:"minecraft:location_check",predicate:{position:{x:{min:-163.0}}}} run fill -164 ~-10 ~-30 -164 ~5 ~30 minecraft:barrier strict
 
 ## Bot preparation (for PVE mode) (OLD)
 #execute if entity @s[tag=bluemissile] if entity @e[x=0,type=armor_stand,tag=Bot] run summon marker ~ ~ ~ {Tags:[RecentBotspawn]}

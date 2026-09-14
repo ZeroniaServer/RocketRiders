@@ -1,10 +1,10 @@
 # choose a random CLASSIC missile
 loot replace block 0 184 -16 container.0 loot {pools:[{rolls:1,entries:[\
-    {type:"minecraft:item",name:"minecraft:stone",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/guardian"}}}]},\
-    {type:"minecraft:item",name:"minecraft:stone",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/juggernaut"}}}]},\
-    {type:"minecraft:item",name:"minecraft:stone",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/lightning"}}}]},\
-    {type:"minecraft:item",name:"minecraft:stone",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/shield_buster"}}}]},\
-    {type:"minecraft:item",name:"minecraft:stone",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/tomahawk"}}}]},\
+    {type:"minecraft:item",name:"minecraft:stone",modifier:[{type:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/guardian"}}}]},\
+    {type:"minecraft:item",name:"minecraft:stone",modifier:[{type:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/juggernaut"}}}]},\
+    {type:"minecraft:item",name:"minecraft:stone",modifier:[{type:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/lightning"}}}]},\
+    {type:"minecraft:item",name:"minecraft:stone",modifier:[{type:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/shield_buster"}}}]},\
+    {type:"minecraft:item",name:"minecraft:stone",modifier:[{type:"minecraft:set_components",components:{"minecraft:custom_data":{missile:"classic/tomahawk"}}}]},\
 ]}]}
 
 execute if items block 0 184 -16 container.0 *[custom_data={missile:"classic/guardian"}] run data modify storage rocketriders:main spawn_egg.missile set value "classic/guardian"

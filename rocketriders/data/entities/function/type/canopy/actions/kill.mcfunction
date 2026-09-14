@@ -11,7 +11,7 @@ execute at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 jungle_leaves[persistent=false,distance
 execute at @s run fill ~3 ~ ~-3 ~-3 ~ ~3 birch_leaves[persistent=false,distance=1] replace birch_leaves
 execute at @s if block ~ ~ ~ oak_wood run setblock ~ ~ ~ air destroy
 execute at @s if block ~ ~1 ~ oak_wood run setblock ~ ~1 ~ air destroy
-execute at @s run fill ~-3 ~-3 ~-3 ~3 ~2 ~3 air replace moving_piston{blockState:{Name:"minecraft:oak_wood"}}
+execute at @s run fill ~-3 ~-3 ~-3 ~3 ~2 ~3 air replace moving_piston{blockState:"minecraft:oak_wood"}
 execute at @s if block ~1 ~1 ~ #minecraft:banners run setblock ~1 ~1 ~ air destroy
 execute at @s if block ~-1 ~1 ~ #minecraft:banners run setblock ~-1 ~1 ~ air destroy
 execute at @s if block ~ ~1 ~1 #minecraft:banners run setblock ~ ~1 ~1 air destroy

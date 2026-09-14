@@ -5,5 +5,5 @@ execute as @e[x=0,type=item] if items entity @s contents arrow if function custo
 tag @s remove matchOrigin
 
 execute unless entity @e[limit=1,x=0,tag=deduct_arrow_candidate] run return fail
-execute at @s as @n[type=item,tag=deduct_arrow_candidate] run item modify entity @s contents {function:"set_count","count":-1,add:true}
+execute at @s as @n[type=item,tag=deduct_arrow_candidate] run item modify entity @s contents custom:decrement_count
 tag @e[x=0,type=item,tag=deduct_arrow_candidate] remove deduct_arrow_candidate

@@ -16,4 +16,4 @@ execute if score $give_arrows var matches ..-1 run scoreboard players set $give_
 
 execute if score $give_arrows var matches 0..19 as @a[limit=1,sort=random,x=0,scores={var=21..}] run function custom:__impl__/reset_inventory/redistribute_arrows 
 
-loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"loot_table",value:"items:item/arrow"}],functions:[{function:"set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$give_arrows"},score:"var"}}]}]}
+loot replace block 0 184 -16 container.9 loot {pools:[{rolls:1,entries:[{type:"minecraft:loot_table",value:"items:item/arrow"}],modifier:{type:"minecraft:set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$give_arrows"},score:"var"}}}]}

@@ -12,13 +12,13 @@ execute if block ~ ~-1 ~ fire run tag @s add rot.burning
 execute if block ~ ~1 ~ fire run tag @s add rot.burning
 execute if block ~-1 ~ ~ fire run tag @s add rot.burning
 execute if block ~1 ~ ~ fire run tag @s add rot.burning
-execute if entity @s[tag=rot.burning] if predicate {condition:"minecraft:random_chance",chance:0.1} as @e[limit=1,distance=..1.1,predicate=entities:type/rot/brain] run function entities:type/rot/actions/start_burning
+execute if entity @s[tag=rot.burning] if predicate {type:"minecraft:random_chance",chance:0.1} as @e[limit=1,distance=..1.1,predicate=entities:type/rot/brain] run function entities:type/rot/actions/start_burning
 execute if entity @s[tag=rot.burning] run particle minecraft:flame ~ ~ ~ 0.3 0.3 0.3 0.05 1 force @a[x=0,predicate=custom:in_arena,tag=!hideParticles]
 execute if entity @s[tag=rot.burning] if predicate custom:periodic_tick/20 run playsound minecraft:entity.player.hurt_on_fire master @a[x=0,predicate=custom:in_arena] ~ ~ ~ 0.2 1.5
-execute if entity @s[tag=rot.burning] run return run execute if predicate {condition:"minecraft:random_chance",chance:0.2} run function entities:type/rot/actions/burn
+execute if entity @s[tag=rot.burning] run return run execute if predicate {type:"minecraft:random_chance",chance:0.2} run function entities:type/rot/actions/burn
 
 # If not in the primary rot zone, processing ("metabolism") is slowed to ~30% its normal speed (aka 70% chance of skipping a tick).
-execute unless predicate custom:in_primary_rot_zone if predicate {condition:"minecraft:random_chance",chance:0.70} run return run scoreboard players remove @s entity.age 1
+execute unless predicate custom:in_primary_rot_zone if predicate {type:"minecraft:random_chance",chance:0.70} run return run scoreboard players remove @s entity.age 1
 
 ## Dormant
 # Do nothing until awake
@@ -30,12 +30,12 @@ execute if entity @s[type=marker] run return 0
 execute if block ~ ~ ~ #modifiers:rotting_breaks_instantly run return run function entities:type/rot/actions/rot_away
 
 # Small chance to spread to an adjacent block before it fully rots.
-execute if predicate {condition:"minecraft:random_chance",chance:0.002} positioned ~ ~ ~1 run function modifiers:rotting/check_block
-execute if predicate {condition:"minecraft:random_chance",chance:0.002} positioned ~ ~ ~-1 run function modifiers:rotting/check_block
-execute if predicate {condition:"minecraft:random_chance",chance:0.002} positioned ~1 ~ ~ run function modifiers:rotting/check_block
-execute if predicate {condition:"minecraft:random_chance",chance:0.002} positioned ~-1 ~ ~ run function modifiers:rotting/check_block
-execute if predicate {condition:"minecraft:random_chance",chance:0.002} positioned ~ ~1 ~ run function modifiers:rotting/check_block
-execute if predicate {condition:"minecraft:random_chance",chance:0.002} positioned ~ ~-1 ~ run function modifiers:rotting/check_block
+execute if predicate {type:"minecraft:random_chance",chance:0.002} positioned ~ ~ ~1 run function modifiers:rotting/check_block
+execute if predicate {type:"minecraft:random_chance",chance:0.002} positioned ~ ~ ~-1 run function modifiers:rotting/check_block
+execute if predicate {type:"minecraft:random_chance",chance:0.002} positioned ~1 ~ ~ run function modifiers:rotting/check_block
+execute if predicate {type:"minecraft:random_chance",chance:0.002} positioned ~-1 ~ ~ run function modifiers:rotting/check_block
+execute if predicate {type:"minecraft:random_chance",chance:0.002} positioned ~ ~1 ~ run function modifiers:rotting/check_block
+execute if predicate {type:"minecraft:random_chance",chance:0.002} positioned ~ ~-1 ~ run function modifiers:rotting/check_block
 
 # Eventually rot away, breaking the block.
 execute if score @s entity.age matches 100.. run return run function entities:type/rot/actions/rot_away

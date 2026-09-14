@@ -28,16 +28,16 @@ scoreboard players set $touching_honey var 0
 execute on vehicle on vehicle positioned as @s store success score $inside_block var unless block ~ ~0.49 ~ #custom:non_solid
 
 scoreboard players set $x_bounces var 0
-execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{x:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_east_wall
-execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{x:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_west_wall
+execute on vehicle on vehicle if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{x:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_east_wall
+execute on vehicle on vehicle if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{x:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_west_wall
 execute if score $x_bounces var matches 2 unless score $inside_block var matches 1 run scoreboard players set $impulse_x var 0
 scoreboard players set $y_bounces var 0
-execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{y:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_ceiling
-execute on vehicle on vehicle if predicate {condition:"minecraft:any_of",terms:[{condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{y:0}}},{condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:flags":{is_on_ground:true}}}]} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_floor
+execute on vehicle on vehicle if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{y:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_ceiling
+execute on vehicle on vehicle if predicate {type:"minecraft:any_of",terms:[{type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{y:0}}},{type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:flags":{is_on_ground:true}}}]} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_floor
 execute if score $y_bounces var matches 2 unless score $inside_block var matches 1 run scoreboard players set $impulse_y var 0
 scoreboard players set $z_bounces var 0
-execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{z:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_south_wall
-execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{z:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_north_wall
+execute on vehicle on vehicle if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{z:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_south_wall
+execute on vehicle on vehicle if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{z:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_north_wall
 execute if score $z_bounces var matches 2 unless score $inside_block var matches 1 run scoreboard players set $impulse_z var 0
 
 execute if score $touching_honey var matches 1 run scoreboard players operation $impulse_x var /= $5 constant

@@ -8,8 +8,8 @@ scoreboard players operation $fuse var > @e[distance=..4,predicate=entities:type
 execute as @e[distance=..4,predicate=entities:type/vortex/brain,sort=nearest] unless score @s entity.vortex.fuse matches 0.. store result score @s entity.vortex.fuse run scoreboard players add $fuse var 3
 
 execute if entity @s[tag=!vortex.feathered] run particle minecraft:item{item:"minecraft:ender_eye"} ~ ~ ~ 0.2 0.2 0.1 0.3 10
-execute if entity @s[tag=vortex.feathered] run loot spawn ~ ~-0.3 ~ loot {pools:[{rolls:{min:5,max:10},entries:[{type:"minecraft:item",name:"minecraft:feather",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{dummy_item_entity:true},"minecraft:damage_resistant":{types:"#minecraft:is_explosion"}}}]}]}]}
-execute if entity @s[tag=vortex.feathered] run loot spawn ~ ~-0.4 ~ loot {pools:[{rolls:{min:5,max:10},entries:[{type:"minecraft:item",name:"minecraft:feather",functions:[{function:"minecraft:set_components",components:{"minecraft:custom_data":{dummy_item_entity:true},"minecraft:damage_resistant":{types:"#minecraft:is_explosion"}}}]}]}]}
+execute if entity @s[tag=vortex.feathered] run loot spawn ~ ~-0.3 ~ loot {pools:[{rolls:{type:"minecraft:uniform",min:5,max:10},entries:[{type:"minecraft:item",name:"minecraft:feather",modifier:{type:"minecraft:set_components",components:{"minecraft:custom_data":{dummy_item_entity:true},"minecraft:damage_resistant":{types:"#minecraft:is_explosion"}}}}]}]}
+execute if entity @s[tag=vortex.feathered] run loot spawn ~ ~-0.4 ~ loot {pools:[{rolls:{type:"minecraft:uniform",min:5,max:10},entries:[{type:"minecraft:item",name:"minecraft:feather",modifier:{type:"minecraft:set_components",components:{"minecraft:custom_data":{dummy_item_entity:true},"minecraft:damage_resistant":{types:"#minecraft:is_explosion"}}}}]}]}
 execute if entity @s[tag=vortex.feathered] as @e[distance=..1,type=item] if items entity @s contents feather run data merge entity @s {PickupDelay:32767,Age:5900}
 
 function entities:type/vortex/tick/recursive_explosions

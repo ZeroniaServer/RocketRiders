@@ -18,7 +18,7 @@ execute if predicate custom:periodic_tick/3 if entity @s[tag=!vortex.neutral_lan
 execute if predicate custom:periodic_tick/3 if entity @s[tag=!vortex.neutral_landmine,tag=vortex.is_primed] if predicate entities:origin_team/yellow if predicate game:yellow_team_skin/yellow on vehicle at @s run function entities:type/vortex/tick/particles/primed/yellow
 execute if predicate custom:periodic_tick/3 if entity @s[tag=!vortex.neutral_landmine,tag=vortex.is_primed] if predicate entities:origin_team/yellow if predicate game:yellow_team_skin/green on vehicle at @s run function entities:type/vortex/tick/particles/primed/green
 execute if predicate custom:periodic_tick/3 if entity @s[tag=!vortex.neutral_landmine,tag=vortex.is_primed] if predicate entities:origin_team/none on vehicle at @s run function entities:type/vortex/tick/particles/primed/neutral
-execute if entity @s[tag=!vortex.neutral_landmine,tag=vortex.is_primed] if predicate {condition:"random_chance",chance:0.1} run particle minecraft:electric_spark ~ ~ ~ 0 0 0 1 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
+execute if entity @s[tag=!vortex.neutral_landmine,tag=vortex.is_primed] if predicate {type:"random_chance",chance:0.1} run particle minecraft:electric_spark ~ ~ ~ 0 0 0 1 1 force @a[x=0,tag=!hideParticles,predicate=custom:in_arena]
 
 # Spin
 execute unless entity @s[tag=vortex.is_primed] run execute unless entity @s[tag=vortex.is_drifting] if predicate custom:periodic_tick/5 on vehicle rotated as @s run rotate @s ~35 0

@@ -2,7 +2,7 @@
 execute on vehicle run kill @s[predicate=entities:type/stinging_shield_projectile/body]
 
 ## If impact_utilities is OFF
-execute unless predicate game:game_rules/impact_utilities/on unless predicate {condition:"minecraft:entity_scores",entity:"this",scores:{entity.age:{min:{type:"minecraft:add",inputseload:[-5,{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$stinging_shield_flight_duration"},score:"match_components"}]}}}} run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield hit the ground before it could deploy"}
+execute unless predicate game:game_rules/impact_utilities/on unless predicate {type:"minecraft:entity_scores",entity:"this",scores:{entity.age:{min:{type:"minecraft:add",inputs:[-5,{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$stinging_shield_flight_duration"},score:"match_components"}]}}}} run return run function entities:type/stinging_shield_projectile/actions/break_with_reason {message:"Stinging Shield hit the ground before it could deploy"}
 
 ## If impact_utilities is ON
 execute at @s run tp ~ ~2 ~

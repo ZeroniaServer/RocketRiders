@@ -16,5 +16,5 @@ execute store result score $total_items_afterwards var if items entity @s contai
 execute if score $total_items_afterwards var >= $expected_items_afterwards var run return 1
 
 execute store result score $missing_items var run scoreboard players operation $expected_items_afterwards var -= $total_items_afterwards var
-item modify block 0 184 -16 container.0 {function:"minecraft:set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$missing_items"},score:"var"}}
+item modify block 0 184 -16 container.0 {type:"minecraft:set_count",count:{type:"minecraft:score",target:{type:"minecraft:fixed",name:"$missing_items"},score:"var"}}
 execute at @s run loot spawn ~ ~ ~ mine 0 184 -16 stick[custom_data={drop_contents:true}]

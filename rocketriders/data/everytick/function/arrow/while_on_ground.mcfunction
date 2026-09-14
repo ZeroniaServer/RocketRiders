@@ -6,7 +6,7 @@ scoreboard players add @s entity.age 1
 
 # recirculate in the pre-game queue (also shorter despawn timer and fake void)
 execute if predicate game:phase/staging/queue if score @s entity.age matches 599 run return run function everytick:arrow/recirculate
-execute if predicate game:phase/staging/queue if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{y:{min:186,max:187}}}}} run return run function everytick:arrow/recirculate
+execute if predicate game:phase/staging/queue if predicate {type:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:location":{position:{y:{min:186,max:187}}}}} run return run function everytick:arrow/recirculate
 
 # Destroy grounded intangible arrows & cancel pickup
 execute if predicate custom:arrows/intangible run return run execute if score @s entity.age matches 5.. run function custom:entity/kill_with_smoke_poof

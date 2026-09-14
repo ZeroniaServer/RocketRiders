@@ -1,7 +1,7 @@
 ## Repositioning
-execute at @s unless block ~ ~ ~ #custom:nonsolid if block ~ ~1 ~ #custom:nonsolid run tp @s ~ ~1 ~
-execute at @s unless block ~ ~ ~ #custom:nonsolid if block ~ ~-1 ~ #custom:nonsolid run tp @s ~ ~-1 ~
-execute at @s if block ~ ~ ~ #custom:nonsolid unless block ~ ~1 ~ #custom:nonsolid run tp @s ~ ~-1 ~
+execute at @s unless block ~ ~ ~ #custom:non_solid if block ~ ~1 ~ #custom:non_solid run tp @s ~ ~1 ~
+execute at @s unless block ~ ~ ~ #custom:non_solid if block ~ ~-1 ~ #custom:non_solid run tp @s ~ ~-1 ~
+execute at @s if block ~ ~ ~ #custom:non_solid unless block ~ ~1 ~ #custom:non_solid run tp @s ~ ~-1 ~
 execute at @s run tp @s ~ ~1.2 ~
 
 ## Checks

@@ -15,23 +15,23 @@ $execute if score $do_leave_message var matches 0 at $(name) unless dimension mi
 execute if score $do_leave_message var matches 0 run return 0
 
 $data modify storage rocketriders:main player_left_overworld.name set value "$(name)"
-$scoreboard players operation $last_arena_team var = $(name) last_arena_team
+$scoreboard players operation $left_game_while_team var = $(name) left_game_while_team
 
 # Do nothing if the player is not on any arena team
-execute unless score $last_arena_team var matches 1..3 run return 0
+execute unless score $left_game_while_team var matches 1..3 run return 0
 
 # Do nothing if the match is in the outcome phase
 execute if predicate game:phase/match/closing/outcome run return 0
 
 
 # spectator message
-execute if score $last_arena_team var matches 3 run return run tellraw @a[x=0] [{score:{name:"#spectator",objective:"text.accent_color"}},[{score:{name:"#spectator",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," is no longer spectating the match!"]
+execute if score $left_game_while_team var matches 3 run return run tellraw @a[x=0] [{score:{name:"#spectator",objective:"text.accent_color"}},[{score:{name:"#spectator",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," is no longer spectating the match!"]
 
 # playing team 1v1 Duel message
-execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] if score $last_arena_team var matches 2 run return run tellraw @a[x=0] [{score:{name:"#yellow",objective:"text.accent_color"}},[{score:{name:"#yellow",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," forfeited the match!"]
+execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] if score $left_game_while_team var matches 2 run return run tellraw @a[x=0] [{score:{name:"#yellow",objective:"text.accent_color"}},[{score:{name:"#yellow",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," forfeited the match!"]
 execute if entity @e[limit=1,x=0,type=armor_stand,tag=Selection,tag=duelEnabled] run return run tellraw @a[x=0] [{score:{name:"#blue",objective:"text.accent_color"}},[{score:{name:"#blue",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," forfeited the match!"]
 
 # playing team message
 execute if predicate game:match_components/one_team run return run tellraw @a[x=0] [{score:{name:"#blue",objective:"text.accent_color"}},[{score:{name:"#blue",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," left the match!"]
-execute if score $last_arena_team var matches 2 run return run tellraw @a[x=0] [{score:{name:"#yellow",objective:"text.accent_color"}},[{score:{name:"#yellow",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," left the ",{score:{name:"#yellow",objective:"text.team_name_lowercase"}}," team!"]
+execute if score $left_game_while_team var matches 2 run return run tellraw @a[x=0] [{score:{name:"#yellow",objective:"text.accent_color"}},[{score:{name:"#yellow",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," left the ",{score:{name:"#yellow",objective:"text.team_name_lowercase"}}," team!"]
 return run tellraw @a[x=0] [{score:{name:"#blue",objective:"text.accent_color"}},[{score:{name:"#blue",objective:"text.main_color"}},{storage:"rocketriders:main",nbt:"player_left_overworld.name",interpret:true}]," left the ",{score:{name:"#blue",objective:"text.team_name_lowercase"}}," team!"]

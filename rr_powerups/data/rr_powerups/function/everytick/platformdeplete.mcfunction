@@ -26,7 +26,7 @@ execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdD
 
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run kill @e[x=0,type=marker,tag=BlueCrystalSpot]
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run kill @e[x=0,type=marker,tag=YellowCrystalSpot]
-execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run kill @e[x=0,type=#custom:crystal,tag=PUCrystalEntity]
+execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run kill @e[x=0,type=#custom:powerups_crystal_entities,tag=PUCrystalEntity]
 
 execute as @e[x=0,type=marker,tag=captureMiddle,tag=!BrokenPlatform,scores={CmdData=17..}] run tag @s add BrokenPlatform
 

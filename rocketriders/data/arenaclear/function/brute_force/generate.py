@@ -9,10 +9,14 @@ for i, chunk in enumerate(chunks):
         index_of_interest = i
         break
 
+last_index = len(chunks)-1
 for i, chunk in enumerate(chunks):
     x, y = chunk
     with open(f"air/{i}.mcfunction","w") as file:
         file.write(f"fill {max(-163,16*x-1)} -64 {max(-175,16*y-1)} {min(187,16*x+15+1)} 180 {min(175,16*y+15+1)} air strict\n")
+
+        if i == index_of_interest:
+            file.write('execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Cleared central playing area. A match may start."]}\n')
 
         if i <= index_of_interest:
             file.write(f"scoreboard players set $chunk_clear_progress global {max(1,int(50*(i+1)/index_of_interest))}\n")
@@ -21,22 +25,30 @@ for i, chunk in enumerate(chunks):
 
         file.write("scoreboard players reset #chunk_clear_inactive_ticks global\n")
 
+        if i == last_index:
+            file.write('execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Finished chunk clearing!"]}\n')
+            file.write('execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Finished arena clear!"]}\n')
+
 with open("start.mcfunction","w") as file:
     file.writelines(
         [
+            'execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Starting arena clear..."]}\n',
             "scoreboard players set $chunk_clear_progress global 0\n",
             "scoreboard players reset #chunk_clear_inactive_ticks global\n",
             "\n",
             "# Kill entities in the arena\n",
             "function arenaclear:kill_arena_entities\n",
+            'execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Killed entities"]}\n',
             "\n",
             "# Halt molerat placing progress\n",
             "function arenaclear:molerat_place/unschedule_all\n",
             "\n",
             "# instantly clear pistons\n",
+            'execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Clearing missile regions..."]}\n',
             "function arenaclear:clear_missiles/schedule\n",
             "\n",
-            "# schedule clear of chunks\n"
+            "# schedule clear of chunks\n",
+            'execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Starting chunk clearing..."]}\n'
         ]
     )
     for i in range(len(chunks)):
@@ -45,8 +57,11 @@ with open("start.mcfunction","w") as file:
         )
 
 with open("stop.mcfunction","w") as file:
-    file.write(
-        "scoreboard players set $chunk_clear_progress global 100\n"
+    file.writelines(
+        [
+            "scoreboard players set $chunk_clear_progress global 100\n",
+            'execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Arena clear was cancelled!"]}\n'
+        ]
     )
     for i in range(len(chunks)):
         file.write(

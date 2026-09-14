@@ -1,16 +1,20 @@
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Starting arena clear..."]}
 scoreboard players set $chunk_clear_progress global 0
 scoreboard players reset #chunk_clear_inactive_ticks global
 
 # Kill entities in the arena
 function arenaclear:kill_arena_entities
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Killed entities"]}
 
 # Halt molerat placing progress
 function arenaclear:molerat_place/unschedule_all
 
 # instantly clear pistons
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Clearing missile regions..."]}
 function arenaclear:clear_missiles/schedule
 
 # schedule clear of chunks
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Starting chunk clearing..."]}
 schedule function arenaclear:brute_force/air/0 1t
 schedule function arenaclear:brute_force/air/1 2t
 schedule function arenaclear:brute_force/air/2 3t

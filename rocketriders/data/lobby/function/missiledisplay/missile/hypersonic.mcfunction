@@ -8,12 +8,8 @@ particle minecraft:explosion_emitter 19 204 78 1 1 2 0.1 20 force @a[x=0,tag=!hi
 
 scoreboard players set $previous_page var 1
 
-fill 22 202 69 15 206 87 air strict
-place template game:missile/south/white/hypersonic 18 203 74 none none 1 0 strict
-fill 22 202 69 15 206 87 light[level=15] replace #custom:lobby_air strict
-
-fill 19 203 78 20 203 78 tnt
-setblock 19 205 78 tnt
+fill 22 202 69 15 206 87 light[level=15] strict
+place template game:asset/missile/hypersonic/display 18 203 74 none none 1 0 strict
 
 execute positioned 12 203 78 run tellraw @a[distance=..5] [{"text":"[Special] ","color":"dark_purple","bold":true},{"text":"Hypersonic","color":"white"}]
 execute positioned 12 203 78 run tellraw @a[distance=..5] {"text":"The Hypersonic is the fastest missile in the game. It might be tricky to ride this one!","color":"gray","italic":true}

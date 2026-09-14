@@ -92,3 +92,9 @@ execute if score @s nomicon matches 62 run return run execute if predicate items
 execute if score @s nomicon matches 63 run return run function items:give_count/spell_book/health with storage rocketriders:main nomicon
 execute if score @s nomicon matches 64 run return run function items:give_count/spell_book/damage with storage rocketriders:main nomicon
 execute if score @s nomicon matches 65 run return run function items:give_count/spell_book/wind with storage rocketriders:main nomicon
+
+execute if score @s nomicon matches 66 run return run function items:give_count/missile/classic/guardian with storage rocketriders:main nomicon
+execute if score @s nomicon matches 67 run return run function items:give_count/missile/classic/juggernaut with storage rocketriders:main nomicon
+execute if score @s nomicon matches 68 run return run function items:give_count/missile/classic/lightning with storage rocketriders:main nomicon
+execute if score @s nomicon matches 69 run return run function items:give_count/missile/classic/shield_buster with storage rocketriders:main nomicon
+execute if score @s nomicon matches 70 run return run function items:give_count/missile/classic/tomahawk with storage rocketriders:main nomicon

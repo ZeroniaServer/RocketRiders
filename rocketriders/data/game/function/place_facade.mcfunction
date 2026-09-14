@@ -2,18 +2,18 @@
 kill @e[x=0,tag=facade_entity]
 
 #Join pad colors
-execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/yellow run fill -82 204 92 -78 212 96 minecraft:yellow_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/yellow run fill -82 204 92 -78 212 96 minecraft:yellow_concrete replace #minecraft:concrete strict
 execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/yellow run setblock -80 211 94 minecraft:ochre_froglight[axis=y] strict
-execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/green run fill -82 204 92 -78 212 96 minecraft:green_concrete replace #custom:concrete strict
+execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/green run fill -82 204 92 -78 212 96 minecraft:green_concrete replace #minecraft:concrete strict
 execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/green run setblock -80 211 94 minecraft:verdant_froglight[axis=y] strict
-execute if predicate game:match_components/one_team if predicate game:blue_team_skin/blue run fill -82 204 92 -78 212 96 minecraft:blue_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team if predicate game:blue_team_skin/blue run fill -82 204 92 -78 212 96 minecraft:blue_concrete replace #minecraft:concrete strict
 execute if predicate game:match_components/one_team if predicate game:blue_team_skin/blue run setblock -80 211 94 minecraft:sea_lantern strict
-execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run fill -82 204 92 -78 212 96 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run fill -82 204 92 -78 212 96 minecraft:red_concrete replace #minecraft:concrete strict
 execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run setblock -80 211 94 minecraft:shroomlight strict
 
-execute if predicate game:blue_team_skin/blue run fill -82 204 60 -78 212 64 minecraft:blue_concrete replace #custom:concrete strict
+execute if predicate game:blue_team_skin/blue run fill -82 204 60 -78 212 64 minecraft:blue_concrete replace #minecraft:concrete strict
 execute if predicate game:blue_team_skin/blue run setblock -80 211 62 minecraft:sea_lantern strict
-execute if predicate game:blue_team_skin/any_red_skin run fill -82 204 60 -78 212 64 minecraft:red_concrete replace #custom:concrete strict
+execute if predicate game:blue_team_skin/any_red_skin run fill -82 204 60 -78 212 64 minecraft:red_concrete replace #minecraft:concrete strict
 execute if predicate game:blue_team_skin/any_red_skin run setblock -80 211 62 minecraft:shroomlight strict
 
 #Bridge colors
@@ -26,27 +26,27 @@ execute if predicate game:blue_team_skin/blue run place template lobby:right_bri
 execute if predicate game:blue_team_skin/any_red_skin run place template lobby:right_bridge/red -76 200 64 none none 1 0 strict
 
 #Lobby underside colors (blue)
-execute if predicate game:blue_team_skin/blue run fill -82 186 66 -81 201 77 minecraft:blue_terracotta replace #custom:terracotta strict
-execute if predicate game:blue_team_skin/blue run fill -83 187 70 -83 200 77 minecraft:blue_concrete replace #custom:concrete strict
-execute if predicate game:blue_team_skin/blue run fill -84 190 75 -84 199 77 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
-execute if predicate game:blue_team_skin/any_red_skin run fill -82 186 66 -81 201 77 minecraft:red_terracotta replace #custom:terracotta strict
-execute if predicate game:blue_team_skin/any_red_skin run fill -83 187 70 -83 200 77 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:blue_team_skin/any_red_skin run fill -84 190 75 -84 199 77 minecraft:red_concrete_powder replace #custom:concrete_powder strict
+execute if predicate game:blue_team_skin/blue run fill -82 186 66 -81 201 77 minecraft:blue_terracotta replace #minecraft:terracotta strict
+execute if predicate game:blue_team_skin/blue run fill -83 187 70 -83 200 77 minecraft:blue_concrete replace #minecraft:concrete strict
+execute if predicate game:blue_team_skin/blue run fill -84 190 75 -84 199 77 minecraft:blue_concrete_powder replace #minecraft:concrete_powders strict
+execute if predicate game:blue_team_skin/any_red_skin run fill -82 186 66 -81 201 77 minecraft:red_terracotta replace #minecraft:terracotta strict
+execute if predicate game:blue_team_skin/any_red_skin run fill -83 187 70 -83 200 77 minecraft:red_concrete replace #minecraft:concrete strict
+execute if predicate game:blue_team_skin/any_red_skin run fill -84 190 75 -84 199 77 minecraft:red_concrete_powder replace #minecraft:concrete_powders strict
 #Lobby underside colors (yellow)
-execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/yellow run fill -82 186 79 -81 201 90 minecraft:yellow_terracotta replace #custom:terracotta strict
-execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/yellow run fill -83 187 79 -83 200 86 minecraft:yellow_concrete replace #custom:concrete strict
-execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/yellow run fill -84 190 79 -84 199 81 minecraft:yellow_concrete_powder replace #custom:concrete_powder strict
-execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/green run fill -82 186 79 -81 201 90 minecraft:green_terracotta replace #custom:terracotta strict
-execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/green run fill -83 187 79 -83 200 86 minecraft:green_concrete replace #custom:concrete strict
-execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/green run fill -84 190 79 -84 199 81 minecraft:green_concrete_powder replace #custom:concrete_powder strict
-execute if predicate game:match_components/one_team if predicate game:blue_team_skin/blue run fill -82 186 79 -81 201 90 minecraft:blue_terracotta replace #custom:terracotta strict
-execute if predicate game:match_components/one_team if predicate game:blue_team_skin/blue run fill -83 187 79 -83 200 86 minecraft:blue_concrete replace #custom:concrete strict
-execute if predicate game:match_components/one_team if predicate game:blue_team_skin/blue run fill -84 190 79 -84 199 81 minecraft:blue_concrete_powder replace #custom:concrete_powder strict
-execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run fill -82 186 79 -81 201 90 minecraft:red_terracotta replace #custom:terracotta strict
-execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run fill -83 187 79 -83 200 86 minecraft:red_concrete replace #custom:concrete strict
-execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run fill -84 190 79 -84 199 81 minecraft:red_concrete_powder replace #custom:concrete_powder strict
+execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/yellow run fill -82 186 79 -81 201 90 minecraft:yellow_terracotta replace #minecraft:terracotta strict
+execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/yellow run fill -83 187 79 -83 200 86 minecraft:yellow_concrete replace #minecraft:concrete strict
+execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/yellow run fill -84 190 79 -84 199 81 minecraft:yellow_concrete_powder replace #minecraft:concrete_powders strict
+execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/green run fill -82 186 79 -81 201 90 minecraft:green_terracotta replace #minecraft:terracotta strict
+execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/green run fill -83 187 79 -83 200 86 minecraft:green_concrete replace #minecraft:concrete strict
+execute unless predicate game:match_components/one_team if predicate game:yellow_team_skin/green run fill -84 190 79 -84 199 81 minecraft:green_concrete_powder replace #minecraft:concrete_powders strict
+execute if predicate game:match_components/one_team if predicate game:blue_team_skin/blue run fill -82 186 79 -81 201 90 minecraft:blue_terracotta replace #minecraft:terracotta strict
+execute if predicate game:match_components/one_team if predicate game:blue_team_skin/blue run fill -83 187 79 -83 200 86 minecraft:blue_concrete replace #minecraft:concrete strict
+execute if predicate game:match_components/one_team if predicate game:blue_team_skin/blue run fill -84 190 79 -84 199 81 minecraft:blue_concrete_powder replace #minecraft:concrete_powders strict
+execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run fill -82 186 79 -81 201 90 minecraft:red_terracotta replace #minecraft:terracotta strict
+execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run fill -83 187 79 -83 200 86 minecraft:red_concrete replace #minecraft:concrete strict
+execute if predicate game:match_components/one_team if predicate game:blue_team_skin/any_red_skin run fill -84 190 79 -84 199 81 minecraft:red_concrete_powder replace #minecraft:concrete_powders strict
 # Fix for terracotta above underside region
-fill -81 199 86 -81 198 81 minecraft:lime_terracotta replace #custom:terracotta
+fill -81 199 86 -81 198 81 minecraft:lime_terracotta replace #minecraft:terracotta
 
 #Remove game pause barriers
 fill -89 202 90 -101 211 90 minecraft:air replace minecraft:barrier strict

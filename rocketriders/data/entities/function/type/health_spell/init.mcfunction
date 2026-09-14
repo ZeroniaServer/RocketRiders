@@ -19,5 +19,5 @@ particle minecraft:instant_effect{color:0x00FF00,power:1} ~ ~ ~ 0.5 1 0.5 1 30 f
 
 # Snap to floor
 execute on origin if predicate custom:entity/is_on_ground run return 1
-execute unless block ~ ~-1 ~ #custom:nonsolid align y run return run tp @s ~ ~ ~
-execute positioned as @s unless block ~ ~-2 ~ #custom:nonsolid align y run return run tp @s ~ ~-1 ~
+execute unless block ~ ~-1 ~ #custom:non_solid align y run return run tp @s ~ ~ ~
+execute positioned as @s unless block ~ ~-2 ~ #custom:non_solid align y run return run tp @s ~ ~-1 ~

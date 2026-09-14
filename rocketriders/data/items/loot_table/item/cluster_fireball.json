@@ -65,12 +65,12 @@
             },
             {
               "function": "minecraft:set_name",
+              "target": "item_name",
               "entity": "this",
               "name": [
                 {
                   "bold": true,
                   "color": "white",
-                  "italic": false,
                   "text": ""
                 },
                 {
@@ -87,12 +87,24 @@
                   },
                   "Cluster Fireball"
                 ]
-              ],
-              "target": "item_name"
+              ]
             },
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "text": "Deploy Cluster Fireball"
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/classic_item_names"
+                }
+              ]
             }
           ]
         }

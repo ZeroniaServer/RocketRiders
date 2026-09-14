@@ -1,0 +1,33 @@
+{
+  "values": [
+    "#custom:glass",
+    "#custom:glasspane",
+    "#minecraft:concrete",
+    "#minecraft:fence_gates",
+    "#minecraft:glazed_terracotta",
+    "#minecraft:planks",
+    "#minecraft:terracotta",
+    "#minecraft:trapdoors",
+    "minecraft:cave_air",
+    "minecraft:chiseled_deepslate",
+    "minecraft:cobblestone",
+    "minecraft:deepslate",
+    "minecraft:deepslate_bricks",
+    "minecraft:end_stone",
+    "minecraft:end_stone_brick_wall",
+    "minecraft:honey_block",
+    "minecraft:oak_wood",
+    "minecraft:observer",
+    "minecraft:piston",
+    "minecraft:piston_head",
+    "minecraft:polished_deepslate",
+    "minecraft:polished_deepslate_stairs",
+    "minecraft:powered_rail",
+    "minecraft:redstone_block",
+    "minecraft:slime_block",
+    "minecraft:sticky_piston",
+    "minecraft:stone",
+    "minecraft:target",
+    "minecraft:tnt"
+  ]
+}

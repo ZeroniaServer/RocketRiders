@@ -32,7 +32,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "#FFFCB1",
-                  "italic": false,
                   "text": "Light Yellow Boots"
                 },
                 "minecraft:tooltip_display": {
@@ -58,7 +57,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "#BCE38E",
-                  "italic": false,
                   "text": "Light Green Boots"
                 }
               },

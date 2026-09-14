@@ -8,7 +8,7 @@ execute if block ~ ~ ~ #custom:glasspane[west=true] align xyz positioned ~0 ~ ~0
 execute if block ~ ~ ~ #custom:glasspane[north=true] align xyz positioned ~0.4375 ~ ~0 if entity @s[dx=0] positioned ~0.125 ~1 ~0.5625 positioned ~-1 ~-1 ~-1 if entity @s[dx=0] positioned as @s run return run tp @s ^ ^ ^-0.1
 
 # in any other solid block
-execute unless block ~ ~ ~ #custom:glasspane unless block ~ ~ ~ #custom:nonsolid run return run tp @s ^ ^ ^-0.1
+execute unless block ~ ~ ~ #custom:glasspane unless block ~ ~ ~ #custom:non_solid run return run tp @s ^ ^ ^-0.1
 
 # speed exceeded
 execute unless score @s entity.speed matches 100.. run return run tp @s ~ ~ ~

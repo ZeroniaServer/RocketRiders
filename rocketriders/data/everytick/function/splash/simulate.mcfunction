@@ -26,8 +26,8 @@ execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at 
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s if predicate custom:near_any_spawn_zone run function custom:entity/kill_with_reason {message:"Splash hit the ground too close to a spawnpoint"}
 
 # Splash
-execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:nonsolid run function everytick:splash/correct_position
-execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~1 ~ ~ #custom:nonsolid unless block ~-1 ~ ~ #custom:nonsolid unless block ~ ~ ~1 #custom:nonsolid unless block ~ ~ ~-1 #custom:nonsolid if block ~ ~-1 ~ #custom:air run fill ~ ~ ~ ~ ~-1 ~ water[level=8] replace #custom:air
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~ ~ ~ #custom:non_solid run function everytick:splash/correct_position
+execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s unless block ~1 ~ ~ #custom:non_solid unless block ~-1 ~ ~ #custom:non_solid unless block ~ ~ ~1 #custom:non_solid unless block ~ ~ ~-1 #custom:non_solid if block ~ ~-1 ~ #custom:air run fill ~ ~ ~ ~ ~-1 ~ water[level=8] replace #custom:air
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] at @s run function everytick:splash/adjust_corner_position
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] positioned as @s if predicate game:game_rules/snipe_portals/on run function everytick:splash/check_can_break_portal
 execute as @e[x=0,type=area_effect_cloud,tag=splash_alone,tag=!splashMarked] positioned as @s rotated 0 0 run function everytick:splash/place_water

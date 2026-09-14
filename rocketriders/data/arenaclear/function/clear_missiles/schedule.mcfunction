@@ -4,4 +4,7 @@ function arenaclear:clear_missiles/loop with storage rocketriders:arena_clear mi
 execute unless data storage rocketriders:arena_clear missile_regions[0] run data remove storage rocketriders:arena_clear missile_regions
 
 # Continue next tick if there are regions remaining
-execute if data storage rocketriders:arena_clear missile_regions[0] run schedule function arenaclear:clear_missiles/schedule 1t
+execute if data storage rocketriders:arena_clear missile_regions[0] run return run schedule function arenaclear:clear_missiles/schedule 1t
+
+# Otherwise, finished
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Finished clearing missile regions!"]}

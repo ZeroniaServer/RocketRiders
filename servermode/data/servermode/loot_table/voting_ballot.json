@@ -21,7 +21,6 @@
             "minecraft:item_name": {
               "bold": true,
               "color": "#D586D5",
-              "italic": false,
               "text": "Voting Ballot"
             }
           }

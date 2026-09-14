@@ -1,7 +1,7 @@
 {
   "values": [
-    "#custom:nonsolid",
     "#custom:glasspane",
+    "#custom:non_solid",
     "#minecraft:fence_gates",
     "#minecraft:fences",
     "minecraft:ladder"

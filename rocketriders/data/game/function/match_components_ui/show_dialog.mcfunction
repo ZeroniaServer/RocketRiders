@@ -21,7 +21,7 @@ data modify storage rocketriders:main match_components.dialog set value {\
     },\
     "action": {\
       "type": "minecraft:dynamic/run_command",\
-      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_base_frames:$(arena__bedrock_base_frames),armor_type:$(armor_type),arrow_pickup_rule:$(arrow_pickup_rule),main_item:$(main_item),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),portal_type:$(portal_type),one_team:$(one_team),blue_team_skin:$(blue_team_skin),no_achievements:$(no_achievements),yellow_team_skin:$(yellow_team_skin),checkered_yellow_base:$(checkered_yellow_base),shield_type:$(shield_type),crusade_banners:$(crusade_banners),castle_type:$(castle_type),arena__classic_base_frames:$(arena__classic_base_frames),canopy_flight_duration:$(canopy_flight_duration),icbm_flight_duration:$(icbm_flight_duration),nova_rocket_flight_duration:$(nova_rocket_flight_duration),obsidian_shield_flight_duration:$(obsidian_shield_flight_duration),shield_flight_duration:$(shield_flight_duration),stinging_shield_flight_duration:$(stinging_shield_flight_duration),vortex_flight_duration:$(vortex_flight_duration),classic_shooting_saber_name:$(classic_shooting_saber_name)}"\
+      "template": "function game:match_components_ui/set {game_mode:$(game_mode),arena__bedrock_base_frames:$(arena__bedrock_base_frames),armor_type:$(armor_type),arrow_pickup_rule:$(arrow_pickup_rule),main_item:$(main_item),custom_team_colors:$(custom_team_colors),decreased_shooting_saber_attack_damage:$(decreased_shooting_saber_attack_damage),friendly_fire:$(friendly_fire),lower_void:$(lower_void),neutral_items:$(neutral_items),no_feathered_vortices:$(no_feathered_vortices),no_item_timer:$(no_item_timer),portal_type:$(portal_type),one_team:$(one_team),blue_team_skin:$(blue_team_skin),no_achievements:$(no_achievements),yellow_team_skin:$(yellow_team_skin),checkered_yellow_base:$(checkered_yellow_base),shield_type:$(shield_type),crusade_banners:$(crusade_banners),castle_type:$(castle_type),arena__classic_base_frames:$(arena__classic_base_frames),canopy_flight_duration:$(canopy_flight_duration),icbm_flight_duration:$(icbm_flight_duration),nova_rocket_flight_duration:$(nova_rocket_flight_duration),obsidian_shield_flight_duration:$(obsidian_shield_flight_duration),shield_flight_duration:$(shield_flight_duration),stinging_shield_flight_duration:$(stinging_shield_flight_duration),vortex_flight_duration:$(vortex_flight_duration),classic_item_names:$(classic_item_names),winner_pegasus:$(winner_pegasus)}"\
     }\
   },\
   "no": {\
@@ -35,15 +35,24 @@ data modify storage rocketriders:main match_components.dialog set value {\
 
 ## Game Mode
 data modify storage rocketriders:main match_components.dialog.body.contents[1].extra[0] set from entity @e[limit=1,x=0,type=armor_stand,tag=gamemodeAS,tag=enabled] CustomName
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"game_mode",label:"🔒 game_mode",width:150,options:[{id:"0",display:['"',{color:"green",text:""},'"']}]}
+execute if entity @e[limit=1,type=armor_stand,tag=gamemodeAS,tag=rr_normal,tag=enabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].id set value "normal"
+execute if entity @e[limit=1,type=armor_stand,tag=gamemodeAS,tag=rr_powerups,tag=enabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].id set value "powerups"
+execute if entity @e[limit=1,type=armor_stand,tag=gamemodeAS,tag=rr_swap,tag=enabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].id set value "swap"
+execute if entity @e[limit=1,type=armor_stand,tag=gamemodeAS,tag=rr_ctf,tag=enabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].id set value "ctf"
+execute if entity @e[limit=1,type=armor_stand,tag=gamemodeAS,tag=rr_chase,tag=enabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].id set value "chase"
+execute if entity @e[limit=1,type=armor_stand,tag=gamemodeAS,tag=rr_duel,tag=enabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].id set value "duel"
+execute if entity @e[limit=1,type=armor_stand,tag=gamemodeAS,tag=rr_crusade,tag=enabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].id set value "crusade"
+execute if entity @e[limit=1,type=armor_stand,tag=gamemodeAS,tag=rr_sandbox,tag=enabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].id set value "sandbox"
+execute if entity @e[limit=1,type=armor_stand,tag=gamemodeAS,tag=rr_classic,tag=enabled] run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].id set value "classic"
+data modify storage rocketriders:main match_components.dialog.inputs[-1].options[0].display[1].text set from storage rocketriders:main match_components.dialog.inputs[-1].options[0].id
 
 ## Components
 # arena/base_colors (locked)
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__base_colors",label:"🔒 arena/base_colors",width:300,options:[{id:"",display:"{}"}]}
-function custom:resolve_text_component {text_component:{storage:"rocketriders:match",nbt:'components."arena/base_colors"'},write_to:"storage rocketriders:main match_components.dialog.inputs[-1].options[].display"}
+function game:match_components_ui/__show_dialog/append_arena_base_colors
 
 # arena/base_materials (locked)
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__base_materials",label:"🔒 arena/base_materials",width:300,options:[{id:"",display:"{}"}]}
-function custom:resolve_text_component {text_component:{storage:"rocketriders:match",nbt:'components."arena/base_materials"'},write_to:"storage rocketriders:main match_components.dialog.inputs[-1].options[].display"}
+function game:match_components_ui/__show_dialog/append_arena_base_materials
 
 # arena/bedrock_base_frames
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"arena__bedrock_base_frames",label:"arena/bedrock_base_frames",width:300,options:[{id:"0",display:{color:"gold",text:"false"}},{id:"1",display:{color:"gold",text:"true"}}]}
@@ -99,9 +108,9 @@ execute if predicate game:castle_type/deepslate run data modify storage rocketri
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"checkered_yellow_base",label:"checkered_yellow_base",width:300,options:[{id:"0",display:{color:"gold",text:"false"}},{id:"1",display:{color:"gold",text:"true"}}]}
 execute if predicate game:match_components/checkered_yellow_base run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
-# classic_shooting_saber_name
-data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"classic_shooting_saber_name",label:"classic_shooting_saber_name",width:300,options:[{id:"0",display:{color:"gold",text:"false"}},{id:"1",display:{color:"gold",text:"true"}}]}
-execute if predicate game:match_components/classic_shooting_saber_name run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
+# classic_item_names
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"classic_item_names",label:"classic_item_names",width:300,options:[{id:"0",display:{color:"gold",text:"false"}},{id:"1",display:{color:"gold",text:"true"}}]}
+execute if predicate game:match_components/classic_item_names run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
 # config_override
 function game:match_components_ui/__show_dialog/append_config_override
@@ -268,6 +277,10 @@ execute store result storage rocketriders:main match_components.dialog.inputs[-1
 # vortex_flight_duration
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"number_range",key:"vortex_flight_duration",width:300,label:"vortex_flight_duration",label_format:"%1$s: %2$s ticks",start:1,end:60,step:1,initial:1}
 execute store result storage rocketriders:main match_components.dialog.inputs[-1].initial int 1 run scoreboard players get $vortex_flight_duration match_components
+
+# winner_pegasus
+data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"winner_pegasus",label:"winner_pegasus",width:300,options:[{id:"0",display:{color:"gold",text:"false"}},{id:"1",display:{color:"gold",text:"true"}}]}
+execute if predicate game:match_components/winner_pegasus run data modify storage rocketriders:main match_components.dialog.inputs[-1].options[1].initial set value true
 
 # yellow_team_skin
 data modify storage rocketriders:main match_components.dialog.inputs append value {type:"minecraft:single_option",key:"yellow_team_skin",label:"yellow_team_skin",width:300,options:[{id:"0",display:{text:"",extra:[['"',{color:"green",text:"yellow"},'"']]}},{id:"1",display:{text:"",extra:[['"',{color:"green",text:"green"},'"']]}}]}

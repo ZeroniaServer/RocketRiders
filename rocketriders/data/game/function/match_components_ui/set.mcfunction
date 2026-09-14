@@ -71,8 +71,8 @@ execute if score $no_item_timer match_components matches 0 run scoreboard player
 # portal_type
 $scoreboard players set $portal_type var $(portal_type)
 data remove storage rocketriders:match components."portal_type"
-execute if score $portal_type var matches 1 run data modify storage rocketriders:match components."main_item" set value "none"
-execute if score $portal_type var matches 2 run data modify storage rocketriders:match components."main_item" set value "small"
+execute if score $portal_type var matches 1 run data modify storage rocketriders:match components."portal_type" set value "none"
+execute if score $portal_type var matches 2 run data modify storage rocketriders:match components."portal_type" set value "small"
 
 # one_team
 $execute store success score $one_team match_components if predicate {condition:"value_check",value:$(one_team),range:1}
@@ -128,8 +128,12 @@ $scoreboard players set $stinging_shield_flight_duration match_components $(stin
 # vortex_flight_duration
 $scoreboard players set $vortex_flight_duration match_components $(vortex_flight_duration)
 
-# classic_shooting_saber_name
-$scoreboard players set $classic_shooting_saber_name match_components $(classic_shooting_saber_name)
+# classic_item_names
+$scoreboard players set $classic_item_names match_components $(classic_item_names)
+
+# winner_pegasus
+$execute store success score $winner_pegasus match_components if predicate {condition:"value_check",value:$(winner_pegasus),range:1}
+execute if score $winner_pegasus match_components matches 0 run scoreboard players reset $winner_pegasus match_components
 
 ## POST
 function game:match_components/resolve

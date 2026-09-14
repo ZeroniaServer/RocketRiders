@@ -79,5 +79,5 @@ execute as @e[x=0,type=marker,scores={breakobshield=2}] at @s if block ~ ~ ~ cry
 execute as @e[x=0,type=marker,scores={breakobshield=4}] at @s if block ~ ~ ~ crying_obsidian run setblock ~ ~ ~ pink_stained_glass_pane[west=true,east=true]
 
 #Obsidian Shields break duped glass panes
-execute as @e[x=0,type=marker,scores={breakobshield=0..}] at @s positioned ~ ~ ~-1 if block ~ ~ ~ #custom:obshieldreplace unless entity @e[type=marker,scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5] run setblock ~ ~ ~ air destroy
-execute as @e[x=0,type=marker,scores={breakobshield=0..}] at @s positioned ~ ~ ~1 if block ~ ~ ~ #custom:obshieldreplace unless entity @e[type=marker,scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5] run setblock ~ ~ ~ air destroy
+execute as @e[x=0,type=marker,scores={breakobshield=0..}] at @s positioned ~ ~ ~-1 if block ~ ~ ~ #custom:obsidian_shield_center_blocks unless entity @e[type=marker,scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5] run setblock ~ ~ ~ air destroy
+execute as @e[x=0,type=marker,scores={breakobshield=0..}] at @s positioned ~ ~ ~1 if block ~ ~ ~ #custom:obsidian_shield_center_blocks unless entity @e[type=marker,scores={breakobshield=0..},limit=1,sort=nearest,distance=..0.5] run setblock ~ ~ ~ air destroy

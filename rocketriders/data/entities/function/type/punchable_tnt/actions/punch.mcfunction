@@ -25,7 +25,7 @@ scoreboard players operation $impulse_z var += $impulse_motion_z var
 
 # bounce off of the adjacent surface (slow down and cancel the bounce if that surface is a honey block)
 scoreboard players set $touching_honey var 0
-execute on vehicle on vehicle positioned as @s store success score $inside_block var unless block ~ ~0.49 ~ #custom:nonsolid
+execute on vehicle on vehicle positioned as @s store success score $inside_block var unless block ~ ~0.49 ~ #custom:non_solid
 
 scoreboard players set $x_bounces var 0
 execute on vehicle on vehicle if predicate {condition:"minecraft:entity_properties",entity:"this",predicate:{"minecraft:movement":{x:0}}} positioned as @s run function entities:type/punchable_tnt/actions/__punch/bounce_against_east_wall

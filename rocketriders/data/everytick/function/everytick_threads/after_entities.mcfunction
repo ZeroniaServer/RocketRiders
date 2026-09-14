@@ -71,6 +71,7 @@ execute unless predicate game:phase/match/closing as @e[x=0,type=#arrows,predica
 execute if predicate game:phase/match/play/tie_breaker as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled,tag=!NoModesEnabled] run function game:while_phase/match/play/tie_breaker
 execute if predicate game:phase/match/closing as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:while_phase/match/closing
 execute if predicate game:phase/match/closing/tie_window as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:while_phase/match/closing/tie_window
+execute if predicate game:phase/match/closing/outcome as @e[x=0,type=armor_stand,tag=Selection,limit=1,tag=!NoModesInstalled] run function game:while_phase/match/closing/outcome
 execute if entity @e[x=0,type=marker,tag=ArenaClearChecker,tag=!Cleared,tag=!BasePlaced] run scoreboard players add $acdelay CmdData 1
 execute if score $acdelay CmdData matches 7.. run tellraw @a[x=0] {"text":"Warning: Force clearing arena since previous game mode is unknown.","color":"red"}
 execute if score $acdelay CmdData matches 7.. run tag @e[x=0,type=armor_stand,tag=Selection,limit=1] add normalLast

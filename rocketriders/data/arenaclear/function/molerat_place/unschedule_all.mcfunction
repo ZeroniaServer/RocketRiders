@@ -149,3 +149,4 @@ schedule clear arenaclear:molerat_place/148
 schedule clear arenaclear:molerat_place/149
 schedule clear arenaclear:molerat_place/150
 schedule clear arenaclear:molerat_place/decoration
+execute if predicate game:game_rules/show_debug_logs/on run function custom:log {message:["[arenaclear] Cancelled molerat placement"]}

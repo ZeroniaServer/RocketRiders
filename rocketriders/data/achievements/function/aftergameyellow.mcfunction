@@ -26,5 +26,5 @@ execute if score $yellow_team_count global < $initial_yellow_team_count global r
 tag @a[x=0,predicate=custom:team/yellow,scores={jumps=..0}] add GroundBound
 
 #I Swear I Had It (part 1) - necessary because players can die after game end
-execute if predicate game:portal_type/normal as @a[x=0,predicate=custom:team/blue] store result score @s HasMissiles run clear @s #custom:missile 0
+execute if predicate game:portal_type/normal as @a[x=0,predicate=custom:team/blue] store result score @s HasMissiles run clear @s *[custom_data~{spawn_egg:{type:"missile"}}] 0
 execute as @a[x=0,predicate=custom:team/blue,scores={HasMissiles=1..}] at @s if entity @s[z=46,dz=28] run tag @s add HadIt

@@ -4,7 +4,7 @@ data modify storage rocketriders:match components."shield_type" set value "class
 scoreboard players set $arena/classic_base_frames match_components 1
 scoreboard players set $base_item_limit.arrow match_components 3
 scoreboard players set $blue_team_skin match_components 2
-scoreboard players set $classic_shooting_saber_name match_components 1
+scoreboard players set $classic_item_names match_components 1
 scoreboard players set $config_override.arena_details/bottom match_components -1
 scoreboard players set $config_override.arena_details/middle match_components -1
 scoreboard players set $config_override.arena_details/portal match_components -1
@@ -14,7 +14,9 @@ scoreboard players set $config_override.disable_hotbar_limit match_components 1
 scoreboard players set $config_override.impact_utilities match_components -1
 scoreboard players set $config_override.item_stacking match_components -1
 scoreboard players set $config_override.tie_window_length match_components -1
+scoreboard players set $has_classic_missiles match_components 1
 scoreboard players set $item_batch_size.arrow match_components 3
+scoreboard players set $winner_pegasus match_components 1
 scoreboard players set $yellow_team_skin match_components 1
 
 # items

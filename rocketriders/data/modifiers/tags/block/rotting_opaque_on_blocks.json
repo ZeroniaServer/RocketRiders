@@ -1,7 +1,7 @@
 {
   "values": [
     "#custom:glass",
-    "minecraft:slime_block",
-    "minecraft:honey_block"
+    "minecraft:honey_block",
+    "minecraft:slime_block"
   ]
 }

@@ -3,6 +3,7 @@ data modify storage rocketriders:match components."main_item" set value "shootin
 data modify storage rocketriders:match components."portal_type" set value "none"
 data modify storage rocketriders:match components."shield_type" set value "checkered"
 
+scoreboard players set $allow_team_griefing match_components 1
 scoreboard players set $blue_team_skin match_components 1
 scoreboard players set $checkered_yellow_base match_components 1
 scoreboard players set $config_override.classic_team_colors match_components -1
@@ -12,7 +13,6 @@ scoreboard players set $config_override.item_stacking match_components 1
 scoreboard players set $config_override.rocket_residers match_components -1
 scoreboard players set $custom_pierce_prevention match_components 1
 scoreboard players set $custom_team_colors match_components 1
-scoreboard players set $disable_antigrief_system match_components 1
 scoreboard players set $friendly_fire match_components 1
 scoreboard players set $has_chase_blocks match_components 1
 scoreboard players set $has_chase_crystals match_components 1

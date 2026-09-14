@@ -29,7 +29,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "aqua",
-                  "italic": false,
                   "text": "Return to Checkpoint"
                 },
                 "minecraft:max_stack_size": 1

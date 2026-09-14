@@ -48,6 +48,14 @@ execute if score $obsidian_shield_projectile_count var matches 101.. run tag @e[
 execute if score $obsidian_shield_projectile_count var matches 101.. as @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving,tag=!safe] run function custom:entity/kill_entity_and_passengers
 execute if score $obsidian_shield_projectile_count var matches 101.. run tag @e[x=0,type=dragon_fireball,predicate=custom:in_arena,predicate=!custom:entity/is_moving,tag=safe] remove safe
 
+## Pegasus
+execute if predicate game:match_components/winner_pegasus as @e[x=0,type=marker,tag=pegasus] at @s if predicate custom:location/touching_or_beyond_world_border run kill @s
+execute if predicate game:match_components/winner_pegasus at @e[x=0,type=marker,tag=pegasus] run function game:pegasus/__destroy_path_front
+execute if predicate game:match_components/winner_pegasus at @e[x=0,type=marker,tag=pegasus] positioned ^ ^ ^-32 run function game:pegasus/__destroy_path_back
+execute if predicate game:match_components/winner_pegasus run scoreboard players add @e[x=0,type=marker,tag=pegasus] entity.age 1
+execute if predicate game:match_components/winner_pegasus as @e[x=0,type=marker,tag=pegasus] if score @s entity.age matches 12 at @s run tp @s ^ ^ ^1
+execute if predicate game:match_components/winner_pegasus as @e[x=0,type=marker,tag=pegasus] if score @s entity.age matches 12 run scoreboard players set @s entity.age 0
+
 ##Regenerate base frames
 function game:place_base_frames
 
@@ -64,9 +72,6 @@ execute if predicate game:arena_details/top/castle unless block 0 61 52 minecraf
 execute if predicate game:arena_details/portal/hole_in_one if predicate game:blue_portal_revealed run function game:place_hole_in_one/blue
 execute if predicate game:arena_details/portal/hole_in_one if predicate game:yellow_portal_revealed run function game:place_hole_in_one/yellow
 
-##Hotfix for Hypersonic
-execute as @e[x=0,type=marker,tag=hyperExtra] at @s run function items:hyperextra
-
 ##Modifiers
 execute unless predicate game:phase/match/pause run function modifiers:modifiers
 
@@ -78,3 +83,8 @@ scoreboard players reset @a[x=0,predicate=!custom:team/any_playing_team] LeaveMi
 ## Regenerate back layer
 execute unless predicate game:phase/match/pause if predicate game:regenerate_back_layer/any run function game:regenerate_back_layer/tick
 execute unless predicate game:phase/match/pause if predicate game:regenerate_floor/any run function game:regenerate_floor/tick
+
+## Missile Delayed Blocks
+scoreboard players add @e[x=0,type=block_display,tag=missile_delayed_block] entity.age 1
+execute as @e[x=0,type=block_display,tag=missile_delayed_block,scores={entity.age=1..}] store result score @s entity.age run data get entity @s data.missile_delayed_block.delay -1
+execute as @e[x=0,type=block_display,tag=missile_delayed_block,scores={entity.age=0}] at @s run function game:missile_delayed_block/place

@@ -1,4 +1,4 @@
-execute if block ~-0.49 ~-0.01 ~-0.49 #custom:nonsolid if block ~-0.49 ~-0.01 ~0.49 #custom:nonsolid if block ~0.49 ~-0.01 ~-0.49 #custom:nonsolid if block ~0.49 ~-0.01 ~0.49 #custom:nonsolid run return 0
+execute if block ~-0.49 ~-0.01 ~-0.49 #custom:non_solid if block ~-0.49 ~-0.01 ~0.49 #custom:non_solid if block ~0.49 ~-0.01 ~-0.49 #custom:non_solid if block ~0.49 ~-0.01 ~0.49 #custom:non_solid run return 0
 scoreboard players add $y_bounces var 1
 
 scoreboard players set $against_honey var 1

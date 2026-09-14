@@ -47,7 +47,6 @@
                 "minecraft:item_name": {
                   "bold": true,
                   "color": "dark_purple",
-                  "italic": false,
                   "text": "Trident"
                 },
                 "minecraft:lore": [
@@ -74,6 +73,19 @@
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "item_name",
+              "name": {
+                "text": "Trident"
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/classic_item_names"
+                }
+              ]
             }
           ]
         }

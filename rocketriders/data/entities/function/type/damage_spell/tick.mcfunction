@@ -32,7 +32,7 @@ execute store result storage rocketriders:main damage_spell.speed float 0.0025 r
 execute rotated as @s run function entities:type/damage_spell/tick/velocity with storage rocketriders:main damage_spell
 
 # Break on impact with a wall
-execute positioned as @s unless block ~ ~ ~ #custom:nonsolid run return run function entities:type/damage_spell/actions/break
+execute positioned as @s unless block ~ ~ ~ #custom:non_solid run return run function entities:type/damage_spell/actions/break
 
 # AOE
 execute positioned as @s run function entities:type/damage_spell/tick/damage_aoe

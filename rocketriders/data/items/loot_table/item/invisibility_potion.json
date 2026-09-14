@@ -61,6 +61,20 @@
             {
               "function": "minecraft:reference",
               "name": "items:set_custom_model_data"
+            },
+            {
+              "function": "minecraft:set_name",
+              "target": "custom_name",
+              "name": {
+                "italic": false,
+                "text": "Invisibility Potion"
+              },
+              "conditions": [
+                {
+                  "condition": "minecraft:reference",
+                  "name": "game:match_components/classic_item_names"
+                }
+              ]
             }
           ]
         }

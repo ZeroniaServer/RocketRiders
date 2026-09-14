@@ -4,7 +4,7 @@ execute if predicate game:main_item/crusade_kit_dependent store result score $ex
 scoreboard players operation $expected_arrows var *= $20 constant
 
 scoreboard players reset @a[x=0] var
-execute as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:player/can_pick_up_arrows] store result score @s var run clear @s arrow 0
+execute as @a[x=0,predicate=custom:team/any_playing_team,predicate=custom:player/can_pick_up_arrows] store result score @s var if items entity @s custom:player arrow
 execute store result score $total_arrows var if entity @e[x=0,type=arrow,predicate=!custom:in_arena]
 scoreboard players operation $total_arrows var += @a[x=0,scores={var=1..}] var
 scoreboard players operation $total_arrows var -= @s[scores={var=0..}] var

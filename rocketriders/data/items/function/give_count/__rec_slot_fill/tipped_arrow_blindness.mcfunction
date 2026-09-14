@@ -1,4 +1,4 @@
-execute store result score $existing_slots_remainder var run clear @s *[custom_data~{id:"tipped_arrow_blindness"},!count=64] 0
+execute store result score $existing_slots_remainder var if items entity @s custom:player *[custom_data~{id:"tipped_arrow_blindness"},!count=64]
 execute if score $existing_slots_remainder var matches 0 run return fail
 scoreboard players operation $existing_slots_remainder var %= $64 constant
 scoreboard players operation $existing_slots_remainder var *= $-1 constant

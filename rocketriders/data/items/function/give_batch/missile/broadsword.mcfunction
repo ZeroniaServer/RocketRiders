@@ -16,7 +16,7 @@ execute if score $item_limit var matches 65.. run scoreboard players set $item_l
 tag @s add matchOrigin
 execute as @e[x=0,type=item] if items entity @s contents *[custom_data~{id:"missile/broadsword"},!custom_data~{droppable:true}] if function custom:match_origin run function items:give_batch/__return_item
 tag @s remove matchOrigin
-execute store result score $inventory_count var run clear @s *[custom_data~{id:"missile/broadsword"}] 0
+execute store result score $inventory_count var if items entity @s custom:player *[custom_data~{id:"missile/broadsword"}]
 
 ## Get batch size
 scoreboard players set $intended_batch_size var 1

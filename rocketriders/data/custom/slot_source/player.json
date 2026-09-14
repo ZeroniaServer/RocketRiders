@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:group",
+  "terms": [
+    {
+      "type": "minecraft:slot_range",
+      "slots": "container.*"
+    },
+    {
+      "type": "minecraft:slot_range",
+      "slots": "armor.*"
+    },
+    {
+      "type": "minecraft:slot_range",
+      "slots": "weapon.offhand"
+    },
+    {
+      "type": "minecraft:slot_range",
+      "slots": "player.cursor"
+    },
+    {
+      "type": "minecraft:slot_range",
+      "slots": "player.crafting.*"
+    }
+  ]
+}

@@ -1,1 +1,4 @@
-"rr:is_cubekrowd"
+{
+  "type": "minecraft:all_of",
+  "terms": "rr:is_cubekrowd"
+}

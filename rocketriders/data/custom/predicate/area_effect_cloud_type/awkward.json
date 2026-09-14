@@ -3,7 +3,9 @@
   "entity": "this",
   "predicate": {
     "minecraft:predicates": {
-      "minecraft:potion_contents": "minecraft:awkward"
+      "minecraft:potion_contents": {
+        "potion": "minecraft:awkward"
+      }
     }
   }
 }

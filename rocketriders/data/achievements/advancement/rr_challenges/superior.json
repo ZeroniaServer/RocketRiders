@@ -6,6 +6,7 @@
   },
   "display": {
     "announce_to_chat": true,
+    "background": "minecraft:block/stone",
     "description": {
       "color": "red",
       "text": "Lose to the Bots in PVE Mode."

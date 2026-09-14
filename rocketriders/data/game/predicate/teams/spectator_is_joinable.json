@@ -1,1 +1,4 @@
-"game:joinable_match_phase"
+{
+  "type": "minecraft:all_of",
+  "terms": "game:joinable_match_phase"
+}

@@ -8,21 +8,19 @@
           "value": "servermode:voting_ballot"
         }
       ],
-      "functions": [
-        {
-          "function": "minecraft:set_components",
-          "components": {
-            "!minecraft:enchantment_glint_override": {},
-            "minecraft:custom_data": {
-              "id": "voting_ballot",
-              "voting_ballot": {
-                "used": true
-              }
-            },
-            "minecraft:item_model": "minecraft:filled_map"
-          }
+      "modifier": {
+        "type": "minecraft:set_components",
+        "components": {
+          "!minecraft:enchantment_glint_override": {},
+          "minecraft:custom_data": {
+            "id": "voting_ballot",
+            "voting_ballot": {
+              "used": true
+            }
+          },
+          "minecraft:item_model": "minecraft:filled_map"
         }
-      ]
+      }
     }
   ]
 }
